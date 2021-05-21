@@ -1,6 +1,10 @@
 
 import html from '../html.js';
 
+const flags = ["is_completed", "is_requirement_completed", "is_received",
+"unk3", "unk4", "unk5", "unk6", "consumed_scroll", "unk8", "unk9", "unk10",
+"unk11", "closed", "done_recently", "unk14", "unk15"]
+
 const quests = [
   {
     key: "act_i", label: "Act I",
@@ -62,11 +66,11 @@ export default {
   <div class="col-md-4" v-for="difficulty in difficulties">
     <ul>
       <li><label>{{ difficulty.label }}</label></li>
-      <ul class="col-md-offset-1" v-for="act in difficulty.acts">
+      <ul v-for="act in difficulty.acts">
         <li><label>{{ act.label }}</label></li>
-        <ul class="col-md-offset-2" v-for="quest in act.quests">
-          <li><label>{{ quest.label }}</label></li>
-          <ul class="col-md-offset-3">
+        <ul v-for="quest in act.quests">
+          <li><button  type="button" class="btn btn-link" title="Reset Quest" @click="reset(difficulty, act, quest)"><i class="fa fa-undo"></i></button><label>{{ quest.label }}</label></li>
+          <ul>
             <li v-for="state in quest.values"><label><input class="form-check-input" type="checkbox" v-model="save.header[difficulty.key][act.key][quest.key][state.key]">{{ state.label }}</label></li>
           </ul>
         </ul>
@@ -88,8 +92,10 @@ export default {
     };
   },
   methods: {
-    change(difficulty, act, quest) {
-      console.log(difficulty, act, quest);
+    reset(difficulty, act, quest) {
+      for(const flag of flags) {
+        this.save.header[difficulty.key][act.key][quest.key][flag] = false;
+      }
     }
   }
 };
