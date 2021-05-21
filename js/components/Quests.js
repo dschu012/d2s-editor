@@ -6,209 +6,13 @@ export default {
   <div class="col-md-4" v-for="difficulty in difficulties">
     <ul>
       <li><i class="fa fa-angle-right rotate"></i> {{difficulty.value}}</li>
-      <ul class="col-md-offset-1">
-        <li><i class="fa fa-angle-right rotate"></i> Act I</li>
-        <ul class="col-md-offset-2">
-          <li><i class="fa fa-angle-right rotate"></i>Den of Evil</li>
+      <ul class="col-md-offset-1" v-for="act in quests">
+        <li><i class="fa fa-angle-right rotate"></i> {{ act.label }}</li>
+        <ul class="col-md-offset-2" v-for="quest in act.quests">
+          <li><i class="fa fa-angle-right rotate"></i>{{ quest.label }}</li>
           <ul class="col-md-offset-3">
-            <li><label><input class="form-check-input" type="checkbox"
-                v-model="save.header[difficulty.key].act_i.den_of_evil.is_completed">Completed</label></li>
-          </ul>
-        </ul>
-        <ul class="col-md-offset-2">
-          <li><i class="fa fa-angle-right rotate"></i>Sisters' Burial Grounds</li>
-          <ul class="col-md-offset-3">
-            <li><label><input class="form-check-input" type="checkbox"
-                v-model="save.header[difficulty.key].act_i.sisters_burial_grounds.is_completed">Completed</label></li>
-          </ul>
-        </ul>
-        <ul class="col-md-offset-2">
-          <li><i class="fa fa-angle-right rotate"></i>Search for Cain</li>
-          <ul class="col-md-offset-3">
-            <li><label><input class="form-check-input" type="checkbox"
-                v-model="save.header[difficulty.key].act_i.the_search_for_cain.is_completed">Completed</label></li>
-          </ul>
-        </ul>
-        <ul class="col-md-offset-2">
-          <li><i class="fa fa-angle-right rotate"></i>The Forgotten Tower</li>
-          <ul class="col-md-offset-3">
-            <li><label><input class="form-check-input" type="checkbox"
-                v-model="save.header[difficulty.key].act_i.the_forgotten_tower.is_completed">Completed</label></li>
-          </ul>
-        </ul>
-        <ul class="col-md-offset-2">
-          <li><i class="fa fa-angle-right rotate"></i>Tools of the Trade</li>
-          <ul class="col-md-offset-3">
-            <li><label><input class="form-check-input" type="checkbox"
-                v-model="save.header[difficulty.key].act_i.tools_of_the_trade.is_completed">Completed</label></li>
-          </ul>
-        </ul>
-        <ul class="col-md-offset-2">
-          <li><i class="fa fa-angle-right rotate"></i>Sisters to the Slaughter</li>
-          <ul class="col-md-offset-3">
-            <li><label><input class="form-check-input" type="checkbox"
-                v-model="save.header[difficulty.key].act_i.sisters_to_the_slaughter.is_completed">Completed</label></li>
-          </ul>
-        </ul>
-      </ul>
-
-      <ul class="col-md-offset-1">
-        <li><i class="fa fa-angle-right rotate"></i> Act II</li>
-        <ul class="col-md-offset-2">
-          <li><i class="fa fa-angle-right rotate"></i>Radament's Lair</li>
-          <ul class="col-md-offset-3">
-            <li><label><input class="form-check-input" type="checkbox"
-                v-model="save.header[difficulty.key].act_ii.radaments_lair.is_completed">Completed</label></li>
-          </ul>
-        </ul>
-        <ul class="col-md-offset-2">
-          <li><i class="fa fa-angle-right rotate"></i>The Horadric Staff</li>
-          <ul class="col-md-offset-3">
-            <li><label><input class="form-check-input" type="checkbox"
-                v-model="save.header[difficulty.key].act_ii.the_horadric_staff.is_completed">Completed</label></li>
-          </ul>
-        </ul>
-        <ul class="col-md-offset-2">
-          <li><i class="fa fa-angle-right rotate"></i>Tainted Sun</li>
-          <ul class="col-md-offset-3">
-            <li><label><input class="form-check-input" type="checkbox"
-                v-model="save.header[difficulty.key].act_ii.tainted_sun.is_completed">Completed</label></li>
-          </ul>
-        </ul>
-        <ul class="col-md-offset-2">
-          <li><i class="fa fa-angle-right rotate"></i>Arcane Sanctuary</li>
-          <ul class="col-md-offset-3">
-            <li><label><input class="form-check-input" type="checkbox"
-                v-model="save.header[difficulty.key].act_ii.arcane_sanctuary.is_completed">Completed</label></li>
-          </ul>
-        </ul>
-        <ul class="col-md-offset-2">
-          <li><i class="fa fa-angle-right rotate"></i>The Summoner</li>
-          <ul class="col-md-offset-3">
-            <li><label><input class="form-check-input" type="checkbox"
-                v-model="save.header[difficulty.key].act_ii.the_summoner.is_completed">Completed</label></li>
-          </ul>
-        </ul>
-        <ul class="col-md-offset-2">
-          <li><i class="fa fa-angle-right rotate"></i>The Seven Tombs</li>
-          <ul class="col-md-offset-3">
-            <li><label><input class="form-check-input" type="checkbox"
-                v-model="save.header[difficulty.key].act_ii.the_seven_tombs.is_completed">Completed</label></li>
-          </ul>
-        </ul>
-      </ul>
-      <ul class="col-md-offset-1">
-        <li><i class="fa fa-angle-right rotate"></i> Act III</li>
-        <ul class="col-md-offset-2">
-          <li><i class="fa fa-angle-right rotate"></i>The Golden Bird</li>
-          <ul class="col-md-offset-3">
-            <li><label><input class="form-check-input" type="checkbox"
-                v-model="save.header[difficulty.key].act_iii.the_golden_bird.is_completed">Completed</label></li>
-          </ul>
-        </ul>
-        <ul class="col-md-offset-2">
-          <li><i class="fa fa-angle-right rotate"></i>Blade of the Old Religion</li>
-          <ul class="col-md-offset-3">
-            <li><label><input class="form-check-input" type="checkbox"
-                v-model="save.header[difficulty.key].act_iii.blade_of_the_old_religion.is_completed">Completed</label>
-            </li>
-          </ul>
-        </ul>
-        <ul class="col-md-offset-2">
-          <li><i class="fa fa-angle-right rotate"></i>Khalim's Will</li>
-          <ul class="col-md-offset-3">
-            <li><label><input class="form-check-input" type="checkbox"
-                v-model="save.header[difficulty.key].act_iii.khalims_will.is_completed">Completed</label></li>
-          </ul>
-        </ul>
-        <ul class="col-md-offset-2">
-          <li><i class="fa fa-angle-right rotate"></i>Lam Esen's Tome</li>
-          <ul class="col-md-offset-3">
-            <li><label><input class="form-check-input" type="checkbox"
-                v-model="save.header[difficulty.key].act_iii.lam_esens_tome.is_completed">Completed</label></li>
-          </ul>
-        </ul>
-        <ul class="col-md-offset-2">
-          <li><i class="fa fa-angle-right rotate"></i>The Blackened Temple</li>
-          <ul class="col-md-offset-3">
-            <li><label><input class="form-check-input" type="checkbox"
-                v-model="save.header[difficulty.key].act_iii.the_blackened_temple.is_completed">Completed</label></li>
-          </ul>
-        </ul>
-        <ul class="col-md-offset-2">
-          <li><i class="fa fa-angle-right rotate"></i>The Guardian</li>
-          <ul class="col-md-offset-3">
-            <li><label><input class="form-check-input" type="checkbox"
-                v-model="save.header[difficulty.key].act_iii.the_guardian.is_completed">Completed</label></li>
-          </ul>
-        </ul>
-      </ul>
-      <ul class="col-md-offset-1">
-        <li><i class="fa fa-angle-right rotate"></i> Act IV</li>
-        <ul class="col-md-offset-2">
-          <li><i class="fa fa-angle-right rotate"></i>Fallen Angel</li>
-          <ul class="col-md-offset-3">
-            <li><label><input class="form-check-input" type="checkbox"
-                v-model="save.header[difficulty.key].act_iv.the_fallen_angel.is_completed">Completed</label></li>
-          </ul>
-        </ul>
-        <ul class="col-md-offset-2">
-          <li><i class="fa fa-angle-right rotate"></i>Hell's Forge</li>
-          <ul class="col-md-offset-3">
-            <li><label><input class="form-check-input" type="checkbox"
-                v-model="save.header[difficulty.key].act_iv.hellforge.is_completed">Completed</label></li>
-          </ul>
-        </ul>
-        <ul class="col-md-offset-2">
-          <li><i class="fa fa-angle-right rotate"></i>Terror's End</li>
-          <ul class="col-md-offset-3">
-            <li><label><input class="form-check-input" type="checkbox"
-                v-model="save.header[difficulty.key].act_iv.terrors_end.is_completed">Completed</label></li>
-          </ul>
-        </ul>
-      </ul>
-      <ul class="col-md-offset-1">
-        <li><i class="fa fa-angle-right rotate"></i> Act V</li>
-        <ul class="col-md-offset-2">
-          <li><i class="fa fa-angle-right rotate"></i>Siege on Harrogath</li>
-          <ul class="col-md-offset-3">
-            <li><label><input class="form-check-input" type="checkbox"
-                v-model="save.header[difficulty.key].act_v.siege_on_harrogath.is_completed">Completed</label></li>
-          </ul>
-        </ul>
-        <ul class="col-md-offset-2">
-          <li><i class="fa fa-angle-right rotate"></i>Rescue on Mount Arreat</li>
-          <ul class="col-md-offset-3">
-            <li><label><input class="form-check-input" type="checkbox"
-                v-model="save.header[difficulty.key].act_v.rescue_on_mount_arreat.is_completed">Completed</label></li>
-          </ul>
-        </ul>
-        <ul class="col-md-offset-2">
-          <li><i class="fa fa-angle-right rotate"></i>Prison of Ice</li>
-          <ul class="col-md-offset-3">
-            <li><label><input class="form-check-input" type="checkbox"
-                v-model="save.header[difficulty.key].act_v.prison_of_ice.is_completed">Completed</label></li>
-          </ul>
-        </ul>
-        <ul class="col-md-offset-2">
-          <li><i class="fa fa-angle-right rotate"></i>Betrayal of Harrogath</li>
-          <ul class="col-md-offset-3">
-            <li><label><input class="form-check-input" type="checkbox"
-                v-model="save.header[difficulty.key].act_v.betrayal_of_harrogath.is_completed">Completed</label></li>
-          </ul>
-        </ul>
-        <ul class="col-md-offset-2">
-          <li><i class="fa fa-angle-right rotate"></i>Rite of Passage</li>
-          <ul class="col-md-offset-3">
-            <li><label><input class="form-check-input" type="checkbox"
-                v-model="save.header[difficulty.key].act_v.rite_of_passage.is_completed">Completed</label></li>
-          </ul>
-        </ul>
-        <ul class="col-md-offset-2">
-          <li><i class="fa fa-angle-right rotate"></i>Eve of Destruction</li>
-          <ul class="col-md-offset-3">
-            <li><label><input class="form-check-input" type="checkbox"
-                v-model="save.header[difficulty.key].act_v.eve_of_destruction.is_completed">Completed</label></li>
+            <li v-for="state in quest.values"><label><input class="form-check-input" type="checkbox"
+                  v-model="save.header[difficulty.key][act.key][quest.key][state.key]">{{ state.label }}</label></li>
           </ul>
         </ul>
       </ul>
@@ -216,12 +20,66 @@ export default {
   </div>
 </div>
 `,
-props: {
-  save: Object,
-},
-data() {
-  return {
-    difficulties: [{ key: 'quests_normal', value: "Normal" }, { key: 'quests_nm', value: "Nightmare" }, { key: 'quests_hell', value: "Hell" }]
-  };
-}
+  props: {
+    save: Object,
+  },
+  data() {
+    return {
+      difficulties: [{ key: 'quests_normal', value: "Normal" }, { key: 'quests_nm', value: "Nightmare" }, { key: 'quests_hell', value: "Hell" }],
+      quests: [
+        {
+          key: "act_i", label: "Act I",
+          quests: [
+            { key: "den_of_evil", label: "Den Of Evil", values: [{ key: "is_completed", label: "Completed" }] },
+            { key: "sisters_burial_grounds", label: "Sisters' Burial Grounds", values: [{ key: "is_completed", label: "Completed" }] },
+            { key: "the_search_for_cain", label: "Search for Cain", values: [{ key: "unk10", label: "Cow King Killed" }, { key: "is_completed", label: "Completed" }] },
+            { key: "the_forgotten_tower", label: "The Forgotten Tower", values: [{ key: "is_completed", label: "Completed" }] },
+            { key: "tools_of_the_trade", label: "Tools of the Trade", values: [{ key: "is_completed", label: "Completed" }] },
+            { key: "sisters_to_the_slaughter", label: "Sisters to the Slaughter", values: [{ key: "is_completed", label: "Completed" }] },
+          ]
+        },
+        {
+          key: "act_ii", label: "Act II",
+          quests: [
+            { key: "radaments_lair", label: "Radament's Lair", values: [{ key: "is_completed", label: "Completed" }] },
+            { key: "the_horadric_staff", label: "The Horadric Staff", values: [{ key: "is_completed", label: "Completed" }] },
+            { key: "tainted_sun", label: "Tainted Sun", values: [{ key: "is_completed", label: "Completed" }] },
+            { key: "arcane_sanctuary", label: "Arcane Sanctuary", values: [{ key: "is_completed", label: "Completed" }] },
+            { key: "the_summoner", label: "The Summoner", values: [{ key: "is_completed", label: "Completed" }] },
+            { key: "the_seven_tombs", label: "The Seven Tombs", values: [{ key: "is_completed", label: "Completed" }] },
+          ]
+        },
+        {
+          key: "act_iii", label: "Act III",
+          quests: [
+            { key: "the_golden_bird", label: "The Golden Bird", values: [{ key: "is_completed", label: "Completed" }] },
+            { key: "blade_of_the_old_religion", label: "Blade of the Old Religion", values: [{ key: "is_completed", label: "Completed" }] },
+            { key: "khalims_will", label: "Khalim's Will", values: [{ key: "is_completed", label: "Completed" }] },
+            { key: "lam_esens_tome", label: "Lam Esen's Tome", values: [{ key: "is_completed", label: "Completed" }] },
+            { key: "the_blackened_temple", label: "The Blackened Temple", values: [{ key: "is_completed", label: "Completed" }] },
+            { key: "the_guardian", label: "The Guardian", values: [{ key: "is_completed", label: "Completed" }] },
+          ]
+        },
+        {
+          key: "act_iv", label: "Act IV",
+          quests: [
+            { key: "the_fallen_angel", label: "Fallen Angel", values: [{ key: "is_completed", label: "Completed" }] },
+            { key: "hellforge", label: "Hell's Forge", values: [{ key: "is_completed", label: "Completed" }] },
+            { key: "terrors_end", label: "Terror's End", values: [{ key: "is_completed", label: "Completed" }] },
+          ]
+        },
+        {
+          key: "act_v", label: "Act V",
+          quests: [
+            { key: "siege_on_harrogath", label: "Siege on Harrogath", values: [{ key: "is_completed", label: "Completed" }] },
+            { key: "rescue_on_mount_arreat", label: "Rescue on Mount Arreat", values: [{ key: "is_completed", label: "Completed" }] },
+            { key: "prison_of_ice", label: "Prison of Ice", values: [{ key: "consumed_scroll ", label: "Consumed Scroll" }, { key: "is_completed", label: "Completed" }] },
+            { key: "betrayal_of_harrogath", label: "Betrayal of Harrogath", values: [{ key: "is_completed", label: "Completed" }] },
+            { key: "rite_of_passage", label: "Rite of Passage", values: [{ key: "is_completed", label: "Completed" }] },
+            { key: "eve_of_destruction", label: "Eve of Destruction", values: [{ key: "is_completed", label: "Completed" }] },
+          ]
+        },
+      ]
+    };
+  }
 };
