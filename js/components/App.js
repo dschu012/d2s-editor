@@ -314,8 +314,6 @@ const mainContent = html`
                           </div>
                         </div>
                       </div>
-                      <button type="button" class="btn btn-primary" :disabled="!selected"
-                        @click="copy(selected)">Copy</button>
                       <button type="button" class="btn btn-primary" :disabled="!clipboard"
                         @click="paste()">Paste</button>
                       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#LoadItem">Load
@@ -333,7 +331,7 @@ const mainContent = html`
                   </Grid>
                   <Mercenary v-if="activeTab == 5 || activeTab == 6" :items.sync="mercenary" @item-selected="onSelect">
                   </Mercenary>
-                  <ItemEditor v-if="selected" :item.sync="selected" ref="editor" @item-changed="onChanged"></ItemEditor>
+                  <ItemEditor v-if="selected" :item.sync="selected" :location="location" ref="editor" @item-event="onEvent" @move-event="onMove"></ItemEditor>
                 </div>
               </div>
             </div>
@@ -390,7 +388,8 @@ export default {
       clipboard: null,
       load: null,
       notifications: [],
-      grid: { inv: { w: 10, h: 4 }, stash: { w: 10, h: 10 }, cube: { w: 3, h: 4 } }
+      grid: { inv: { w: 10, h: 4 }, stash: { w: 10, h: 10 }, cube: { w: 3, h: 4 } },
+      location: {}
     };
   },
   async mounted() {
@@ -457,13 +456,72 @@ export default {
     changeTab(i) {
       this.activeTab = i;
     },
+    updateLocation(val) {
+      this.location = {
+        location: val.location_id,
+        equipped_location: val.equipped_id,
+        x: val.position_x,
+        y: val.position_y,
+        storage_page: val.alt_position_id
+      }
+    },
     onSelect(e) {
       this.selected = e;
-      if (this.$refs.editor) this.$refs.editor.updateTarget(e);
+      this.updateLocation(this.selected);
     },
-    onChanged(e) {
-      d2s.enhanceItem(this.selected, window.constants.constants);
-      this.setPropertiesOnItem(this.selected);
+    findIndex(list) {
+      return list.findIndex(item => 
+        item.location_id == this.selected.location_id
+        && item.equipped_id == this.selected.equipped_id
+        && item.position_x == this.selected.position_x
+        && item.position_y == this.selected.position_y
+        && item.alt_position_id == this.selected.alt_position_id
+      );
+    },
+    deleteItem(list, idx) {
+      list.splice(idx, 1);
+      this.selected = null;
+      this.location = null;
+    },
+    onEvent(e) {
+      if(e.type == 'copy') {
+        this.clipboard = JSON.parse(JSON.stringify(e.item));
+      } else if(e.type == 'update') {
+        d2s.enhanceItem(e.item, window.constants.constants);
+        this.setPropertiesOnItem(e.item);
+      } else if(e.type == 'delete') {
+        let idx = this.findIndex(this.save.items);
+        if(idx != -1) {
+          this.deleteItem(this.save.items, idx);
+          return;
+        }
+        idx = this.findIndex(this.save.merc_items);
+        if(idx != -1) {
+          this.deleteItem(this.save.merc_items, idx);
+          return;
+        }
+      }
+    },
+    onMove(e) {
+      if (this.location.location == 1) {
+        this.selected.location_id = this.location.location;
+        this.selected.equipped_id = this.location.equipped_location;
+        this.selected.position_x = 0;
+        this.selected.position_y = 0;
+        this.selected.alt_position_id = 0;
+      } else if (this.location.location == 0) {
+        this.selected.location_id = this.location.location;
+        this.selected.equipped_id = 0;
+        this.selected.position_x = this.location.x;
+        this.selected.position_y = this.location.y;
+        this.selected.alt_position_id = this.location.storage_page;
+      } else if (this.location.location == 4) {
+        this.selected.location_id = this.location.location;
+        this.selected.equipped_id = 0;
+        this.selected.position_x = 4; //why?
+        this.selected.position_y = 0;
+        this.selected.alt_position_id = 0;
+      }
     },
     async previewItem(e) {
       let bytes = b64ToArrayBuffer(this.previewModel.value);
@@ -472,9 +530,6 @@ export default {
     },
     loadItem() {
       this.paste(this.preview);
-    },
-    copy(item) {
-      this.clipboard = JSON.parse(JSON.stringify(item));
     },
     paste(item) {
       let copy = JSON.parse(JSON.stringify(item != null ? item : this.clipboard));
@@ -493,7 +548,7 @@ export default {
       }
       this.save.items.push(copy);
       this.selected = copy;
-      if (this.$refs.editor) this.$refs.editor.updateTarget(copy);
+      this.updateLocation(this.selected);
     },
     findSafeLocation(item) {
       //inv = 1, cube = 4, stash = 5
