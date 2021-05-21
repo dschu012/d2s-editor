@@ -525,6 +525,8 @@ export default {
     },
     readBuffer(bytes) {
       let that = this;
+      this.save = null;
+      this.selected = null;
       d2s.read(bytes, constants.constants).then(response => {
         that.save = response;
         that.setPropertiesOnSave();
