@@ -44,30 +44,30 @@ export default {
   </div>
   <div class="form-row" v-if="location">
     <div class="col-md-2">
-      <label for="Location">Location</label>
-      <select class="form-control" id="Location" v-model.number="location.location">
+      <label :for="id + 'Location'">Location</label>
+      <select class="form-control" :id="id + 'Location'" v-model.number="location.location">
         <option v-for="l in locations" :value="l.key" :key="l.key">{{l.value}}</option>
       </select>
     </div>
     <div class="col-md-2" v-if="location.location == 1">
-      <label for="EquippedLocation">Equipped Location</label>
-      <select class="form-control" id="EquippedLocation" v-model.number="location.equipped_location">
+      <label :for="id + 'EquippedLocation'">Equipped Location</label>
+      <select class="form-control" :id="id + 'EquippedLocation'" v-model.number="location.equipped_location">
         <option v-for="l in equipped_locations" :value="l.key" :key="l.key">{{l.value}}</option>
       </select>
     </div>
     <div class="col-md-2" v-if="location.location == 0">
-      <label for="StorageLocation">Storage Location</label>
-      <select class="form-control" id="StorageLocation" v-model.number="location.storage_page">
+      <label :for="id + 'StorageLocation'">Storage Location</label>
+      <select class="form-control" :id="id + 'StorageLocation'" v-model.number="location.storage_page">
         <option v-for="l in storage_pages" :value="l.key" :key="l.key">{{l.value}}</option>
       </select>
     </div>
     <div class="col-md-2" v-if="location.location == 0">
-      <label for="X">X</label>
-      <input type="number" class="form-control" id="X" v-model.number="location.x">
+      <label :for="id + 'X'">X</label>
+      <input type="number" class="form-control" :id="id + 'X'" v-model.number="location.x">
     </div>
     <div class="col-md-2" v-if="location.location == 0">
-      <label for="Y">Y</label>
-      <input type="number" class="form-control" id="Y" v-model.number="location.y">
+      <label :for="id + 'Y'">Y</label>
+      <input type="number" class="form-control" :id="id + 'Y'" v-model.number="location.y">
     </div>
     <div class="col-md-2">
       <label>&nbsp;</label>
@@ -77,8 +77,8 @@ export default {
   <span v-if="!item.simple_item">
     <div class="form-row">
       <div class="col-md-6">
-        <label for="Type">Type</label>
-        <select class="form-control" id="Type" v-model="item.type" @change="onEvent('update')" v-select>
+        <label :for="id + 'Type'">Type</label>
+        <select class="form-control" :id="id + 'Type'" v-model="item.type" @change="onEvent('update')" v-select>
           <optgroup label="Armor">
             <option v-for="s in armor_items" :value="s[0]" :key="s[0]">{{s[1].n}}</option>
           </optgroup>
@@ -93,32 +93,32 @@ export default {
     </div>
     <div class="form-row">
       <div class="col-md-2">
-        <label for="ILvl">Item Level</label>
-        <input type="number" class="form-control" id="ILvl" v-model.number="item.level" @input="onEvent('update')">
+        <label :for="id + 'ILvl'">Item Level</label>
+        <input type="number" class="form-control" :id="id + 'ILvl'" v-model.number="item.level" @input="onEvent('update')">
       </div>
       <div class="col-md-2">
-        <label for="Rarity">Rarity</label>
-        <select class="form-control" id="Rarity" v-model.number="item.quality" @change="onEvent('update')">
+        <label :for="id + 'Rarity'">Rarity</label>
+        <select class="form-control" :id="id + 'Rarity'" v-model.number="item.quality" @change="onEvent('update')">
           <option v-for="rarity in rarities" :value="rarity.key" :key="rarity.key">{{rarity.value}}</option>
         </select>
       </div>
       <div class="col-md-2" v-if="item.socketed">
-        <label for="Sockets">Sockets</label>
-        <input type="number" class="form-control" id="Sockets" v-model.number="item.total_nr_of_sockets"
+        <label :for="id + 'Sockets'">Sockets</label>
+        <input type="number" class="form-control" :id="id + 'Sockets'" v-model.number="item.total_nr_of_sockets"
           @input="onEvent('update')">
       </div>
     </div>
     <div class="form-row" v-if="item.quality == 4">
       <div class="col-md-3">
-        <label for="Prefix">Prefix</label>
-        <select class="form-control" id="Prefix" v-model.number="item.magic_prefix" @change="onEvent('update')">
+        <label :for="id + 'Prefix'">Prefix</label>
+        <select class="form-control" :id="id + 'Prefix'" v-model.number="item.magic_prefix" @change="onEvent('update')">
           <option value="0">None</option>
           <option v-for="s in prefixes" :value="s.i" :key="s.i">{{s.v.n}}</option>
         </select>
       </div>
       <div class="col-md-3">
-        <label for="Suffix">Suffix</label>
-        <select class="form-control" id="Suffix" v-model.number="item.magic_suffix" @change="onEvent('update')">
+        <label :for="id + 'Suffix'">Suffix</label>
+        <select class="form-control" :id="id + 'Suffix'" v-model.number="item.magic_suffix" @change="onEvent('update')">
           <option value="0">None</option>
           <option v-for="s in suffixes" :value="s.i" :key="s.i">{{s.v.n}}</option>
         </select>
@@ -126,14 +126,14 @@ export default {
     </div>
     <div class="form-row" v-if="item.quality == 6 || item.quality == 8">
       <div class="col-md-3">
-        <label for="RareName1">Rare Name 1</label>
-        <select class="form-control" id="RareName1" v-model.number="item.rare_name" @change="onEvent('update')">
+        <label :for="id + 'RareName1'">Rare Name 1</label>
+        <select class="form-control" :id="id + 'RareName1'" v-model.number="item.rare_name" @change="onEvent('update')">
           <option v-for="s in rare_names" :value="s.i" :key="s.i">{{s.v.n}}</option>
         </select>
       </div>
       <div class="col-md-3">
-        <label for="RareName1">Rare Name 2</label>
-        <select class="form-control" id="RareName1" v-model.number="item.rare_name2" @change="onEvent('update')">
+        <label :for="id + 'RareName2'">Rare Name 2</label>
+        <select class="form-control" :id="id + 'RareName2'" v-model.number="item.rare_name2" @change="onEvent('update')">
         <option v-for="s in rare_names" :value="s.i" :key="s.i">{{s.v.n}}</option>
         </select>
       </div>
@@ -141,16 +141,16 @@ export default {
     <!-- crashes game -->
     <div class="form-row" v-if="false && item.quality == 5">
       <div class="col-md-3">
-        <label for="SetName">Set Name</label>
-        <select class="form-control" id="SetName" v-model.number="item.set_id" @change="onEvent('update')">
+        <label :for="id + 'SetName'">Set Name</label>
+        <select class="form-control" :id="id + 'SetName'" v-model.number="item.set_id" @change="onEvent('update')">
         <option v-for="s in set_items" :value="s.i" :key="s.i">{{s.v.n}}</option>
         </select>
       </div>
     </div>
     <div class="form-row" v-if="false && item.quality == 7">
       <div class="col-md-3">
-        <label for="UniqueName">Unique Name</label>
-        <select class="form-control" id="UniqueName" v-model.number="item.unique_id" @change="onEvent('update')">
+        <label :for="id + 'UniqueName'">Unique Name</label>
+        <select class="form-control" :id="id + 'UniqueName'" v-model.number="item.unique_id" @change="onEvent('update')">
           <option v-for="s in unq_items" :value="s.i" :key="s.i">{{s.v.n}}</option>
         </select>
       </div>
@@ -158,22 +158,22 @@ export default {
 
     <div v-if="item.magic_attributes">
       <div>Item Stats</div>
-      <ItemStatsEditor :item-stats.sync="item.magic_attributes" @stat-change="onEvent('update')"></ItemStatsEditor>
+      <ItemStatsEditor :item-stats.sync="item.magic_attributes" :id="id + 'Magic'" @stat-change="onEvent('update')"></ItemStatsEditor>
     </div>
     <div v-if="item.runeword_attributes">
       <div>Runeword Stats</div>
-      <ItemStatsEditor :item-stats.sync="item.runeword_attributes" @stat-change="onEvent('update')"></ItemStatsEditor>
+      <ItemStatsEditor :item-stats.sync="item.runeword_attributes" :id="id + 'Runeword'" @stat-change="onEvent('update')"></ItemStatsEditor>
     </div>
     <div v-if="item.set_attributes">
       <div v-for="(set_attribute, index) in item.set_attributes">
         <div>Set Stats List {{index}}</div>
-        <ItemStatsEditor :item-stats.sync="set_attribute" @stat-change="onEvent('update')"></ItemStatsEditor>
+        <ItemStatsEditor :item-stats.sync="set_attribute" :id="id + 'Set' + index" @stat-change="onEvent('update')"></ItemStatsEditor>
       </div>
     </div>
 
     <div v-if="item.socketed_items">
-      <div v-for="socketed_item in item.socketed_items">
-        <ItemEditor ref="itemEditor" :item.sync="socketed_item" @item-event="onChildEvent"></ItemEditor>
+      <div v-for="(socketed_item, index) in item.socketed_items">
+        <ItemEditor ref="itemEditor" :item.sync="socketed_item" :id="id + 'Socketed' + index" @item-event="onChildEvent"></ItemEditor>
       </div>
     </div>
   </span>
@@ -181,6 +181,7 @@ export default {
 `,
 name: 'ItemEditor',
 props: {
+  id: String,
   item: Object,
   location: Object,
 },

@@ -18,7 +18,7 @@ export default {
         <div class="col-md-2"><button type="button" class="btn btn-link red" @click="remove(statIdx)">&times;</button>
         </div>
         <div class="col-md-10">
-          <select class="form-control" :id="'Stat' + statIdx" v-model.number="s.id" @change="onChange">
+          <select class="form-control" :id="id + 'Stat' + statIdx" v-model.number="s.id" @change="onChange">
             <option v-for="(stat, idx) in stats" :value="idx" :key="idx">{{stat.s}}</option>
           </select>
         </div>
@@ -27,20 +27,20 @@ export default {
     </div>
     <div class="col-md-2" v-for="i in numValues(s.id)">
       <!-- <label :for="'Stat' + statIdx + 'Value'+ i">Value</label> -->
-      <select class="form-control" :id="'Stat' + statIdx + 'Value'+ i" v-model.number="s.values[i-1]"
+      <select class="form-control" :id="id + 'Stat' + statIdx + 'Value'+ i" v-model.number="s.values[i-1]"
         v-if="isClass(s.id, i)" @change="onChange">
         <option v-for="(c, idx) in classes" :value="idx" :key="idx">{{c.co}}</option>
       </select>
-      <select class="form-control" :id="'Stat' + statIdx + 'Value'+ i" v-model.number="s.values[i-1]"
+      <select class="form-control" :id="id + 'Stat' + statIdx + 'Value'+ i" v-model.number="s.values[i-1]"
         v-else-if="isClassSkill(s.id, i)" @change="onChange">
         <option v-for="(t, idx) in classes[s.values[i]].ts" :value="idx" :key="idx">{{t}}</option>
       </select>
-      <select class="form-control" :id="'Stat' + statIdx + 'Value'+ i" v-model.number="s.values[i-1]"
+      <select class="form-control" :id="id + 'Stat' + statIdx + 'Value'+ i" v-model.number="s.values[i-1]"
         v-else-if="isSkill(s.id, i)" @change="onChange">
         <option v-for="s in skills" :value="s.i" :key="s.i">{{s.v.s}}</option>
       </select>
       <input type="number" class="form-control" :min="min(s.id)" :max="max(s.id)" @input="change(s.id, s.values, i-1)"
-        :id="'Stat' + statIdx + 'Value'+ i" v-model.number="s.values[i-1]" v-else>
+        :id="id + 'Stat' + statIdx + 'Value'+ i" v-model.number="s.values[i-1]" v-else>
     </div>
   </div>
   <div class="form-row">
@@ -49,6 +49,7 @@ export default {
 </div>
 `,
 props: {
+  id: String,
   itemStats: Array
 },
 data() {

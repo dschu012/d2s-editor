@@ -331,7 +331,7 @@ const mainContent = html`
                   </Grid>
                   <Mercenary v-if="activeTab == 5 || activeTab == 6" :items.sync="mercenary" @item-selected="onSelect">
                   </Mercenary>
-                  <ItemEditor v-if="selected" :item.sync="selected" :location="location" ref="editor" @item-event="onEvent" @move-event="onMove"></ItemEditor>
+                  <ItemEditor v-if="selected" :id="'Selected'" :item.sync="selected" :location="location" ref="editor" @item-event="onEvent" @move-event="onMove"></ItemEditor>
                 </div>
               </div>
             </div>
