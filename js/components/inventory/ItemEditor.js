@@ -173,7 +173,7 @@ export default {
 
     <div v-if="item.socketed_items">
       <div v-for="socketed_item in item.socketed_items">
-        <ItemEditor ref="itemEditor" :item.sync="socketed_item" @item-event="onEvent('update')"></ItemEditor>
+        <ItemEditor ref="itemEditor" :item.sync="socketed_item" @item-event="onChildEvent"></ItemEditor>
       </div>
     </div>
   </span>
@@ -207,6 +207,9 @@ data() {
 methods: {
   onEvent(type) {
     this.$emit('item-event', { item: this.item, type: type });
+  },
+  onChildEvent(e) {
+    this.$emit('item-event', { item: e.item, type: e.type });
   },
   onMove() {
     this.$emit('move-event', { item: this.item, location: this.location, type: 'move' });
