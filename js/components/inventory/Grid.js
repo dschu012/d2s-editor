@@ -1,6 +1,6 @@
 import Item from './Item.js';
 
-import html from '../html.js';
+import html from '../../html.js';
 
 export default {
   template: html`

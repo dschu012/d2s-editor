@@ -1,4 +1,4 @@
-import html from '../html.js';
+import html from '../../html.js';
 
 function shift(number, shift) {
   return number * Math.pow(2, shift);
