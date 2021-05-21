@@ -42,7 +42,7 @@ export default {
   </div>
   <div class="form-row" ref="moveItemErrors">
   </div>
-  <div class="form-row">
+  <div class="form-row" v-if="location">
     <div class="col-md-2">
       <label for="Location">Location</label>
       <select class="form-control" id="Location" v-model.number="location.location">
