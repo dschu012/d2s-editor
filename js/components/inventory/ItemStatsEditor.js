@@ -1,8 +1,6 @@
-import html from '../../html.js';
+import utils from '../../utils.js';
 
-function shift(number, shift) {
-  return number * Math.pow(2, shift);
-}
+import html from '../../html.js';
 
 export default {
   template: html`
@@ -66,7 +64,7 @@ methods: {
   max(id) {
     let stat = this.stats[id];
     let add = stat.sA ? stat.sA : 0;
-    return shift(1, stat.sB) - 1 - stat.sA;
+    return utils.shift(1, stat.sB) - 1 - stat.sA;
   },
   min(id) {
     //for the stat to be present need value > 0
