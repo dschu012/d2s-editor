@@ -1,4 +1,5 @@
 import App from './components/App.js';
+import Select2 from './Select2.js';
 
 const app = Vue.createApp({
   template: '<App></App>',
@@ -7,22 +8,6 @@ const app = Vue.createApp({
   },
 });
 
-app.directive('select', {
-  inserted: function (el, binding) {
-    var self = this;
-    $(el).select2({
-      width: 'auto',
-      dropdownParent: binding.value ? $(binding.value) : null
-    }).on('change', function (e) {
-      if (e.detail === "vue-directive") {
-        return;
-      }
-      el.dispatchEvent(new CustomEvent("change", {
-        detail: "vue-directive"
-      }));
-      return false;
-    })
-  }
-});
+app.directive('select', Select2);
 
 app.mount('#app');
