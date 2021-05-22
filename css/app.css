@@ -274,7 +274,8 @@ ul {
 }
 
 .cell {
-  display: inline-block;
+  display: inline;
+  position: absolute;
 }
 
 .x-0 {
