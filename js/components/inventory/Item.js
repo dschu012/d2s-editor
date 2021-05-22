@@ -3,7 +3,7 @@ import html from '../../html.js';
 export default {
   template: html`
 <div>
-  <div ref="itemRef" tabindex="0" :class="itemClass">
+  <div ref="itemRef" tabindex="0" :class="itemClass" v-on:dragstart="dragStart">
     <img :src="item.src" :class="{ ethereal: item.ethereal}" />
     <div v-if="item.total_nr_of_sockets && tooltipShown" class="sockets">
       <div :style="socketStyle(idx)" class="socket"
@@ -194,5 +194,8 @@ export default {
         onHidden: () => { vm.tooltipShown = false; },
       });
     },
+    dragStart(event) {
+      event.dataTransfer.setData("item", JSON.stringify(this.item));
+    }
   }
 };

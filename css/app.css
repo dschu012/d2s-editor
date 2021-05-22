@@ -273,6 +273,18 @@ ul {
   color: rgb(255, 255, 255);
 }
 
+.cell {
+  display: inline-block;
+}
+
+.x-0 {
+  left: 0px
+}
+
+.y-0 {
+  top: 0px
+}
+
 .x-1 {
   left: 32px
 }

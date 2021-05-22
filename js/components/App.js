@@ -210,18 +210,18 @@ const mainContent = html`
                       </div>
                     </div>
                   </div>
-                  <Equipped v-if="activeTab == 1 || activeTab == 6" :items.sync="equipped" @item-selected="onSelect">
+                  <Equipped v-if="activeTab == 1 || activeTab == 6" :items.sync="equipped" @item-selected="onSelect" @item-event="onEvent">
                   </Equipped>
-                  <Grid v-if="activeTab == 2 || activeTab == 6" :width="grid.inv.w" :height="grid.inv.h"
-                    :items.sync="inventory" @item-selected="onSelect"></Grid>
-                  <Grid v-if="activeTab == 3 || activeTab == 6" :width="grid.stash.w" :height="grid.stash.h"
-                    :items.sync="stash" @item-selected="onSelect"></Grid>
-                  <Grid v-if="activeTab == 4 || activeTab == 6" :width="grid.cube.w" :height="grid.cube.h"
-                    :items.sync="cube" @item-selected="onSelect">
+                  <Grid v-if="activeTab == 2 || activeTab == 6" :width="grid.inv.w" :height="grid.inv.h" :page="1"
+                    :items.sync="inventory" @item-selected="onSelect" @item-event="onEvent"></Grid>
+                  <Grid v-if="activeTab == 3 || activeTab == 6" :width="grid.stash.w" :height="grid.stash.h" :page="5"
+                    :items.sync="stash" @item-selected="onSelect" @item-event="onEvent"></Grid>
+                  <Grid v-if="activeTab == 4 || activeTab == 6" :width="grid.cube.w" :height="grid.cube.h" :page="4"
+                    :items.sync="cube" @item-selected="onSelect" @item-event="onEvent">
                   </Grid>
                   <Mercenary v-if="activeTab == 5 || activeTab == 6" :items.sync="mercenary" @item-selected="onSelect">
                   </Mercenary>
-                  <ItemEditor v-if="selected" :id="'Selected'" :item.sync="selected" :location="location" ref="editor" @item-event="onEvent" @move-event="onMove"></ItemEditor>
+                  <ItemEditor v-if="selected" :id="'Selected'" :item.sync="selected" :location="location" ref="editor" @item-event="onEvent"></ItemEditor>
                 </div>
               </div>
             </div>
@@ -351,13 +351,13 @@ export default {
       this.selected = e;
       this.updateLocation(this.selected);
     },
-    findIndex(list) {
+    findIndex(list, i) {
       return list.findIndex(item => 
-        item.location_id == this.selected.location_id
-        && item.equipped_id == this.selected.equipped_id
-        && item.position_x == this.selected.position_x
-        && item.position_y == this.selected.position_y
-        && item.alt_position_id == this.selected.alt_position_id
+        item.location_id == i.location_id
+        && item.equipped_id == i.equipped_id
+        && item.position_x == i.position_x
+        && item.position_y == i.position_y
+        && item.alt_position_id == i.alt_position_id
       );
     },
     deleteItem(list, idx) {
@@ -372,37 +372,40 @@ export default {
         d2s.enhanceItem(e.item, window.constants.constants);
         this.setPropertiesOnItem(e.item);
       } else if(e.type == 'delete') {
-        let idx = this.findIndex(this.save.items);
+        let idx = this.findIndex(this.save.items, e.item);
         if(idx != -1) {
           this.deleteItem(this.save.items, idx);
           return;
         }
-        idx = this.findIndex(this.save.merc_items);
+        idx = this.findIndex(this.save.merc_items, e.item);
         if(idx != -1) {
           this.deleteItem(this.save.merc_items, idx);
           return;
         }
+      } else if(e.type == 'move') {
+        let idx = this.findIndex(this.save.items, e.item);
+        this.onMove(this.save.items[idx], e);
       }
     },
-    onMove(e) {
-      if (this.location.location == 1) {
-        this.selected.location_id = this.location.location;
-        this.selected.equipped_id = this.location.equipped_location;
-        this.selected.position_x = 0;
-        this.selected.position_y = 0;
-        this.selected.alt_position_id = 0;
-      } else if (this.location.location == 0) {
-        this.selected.location_id = this.location.location;
-        this.selected.equipped_id = 0;
-        this.selected.position_x = this.location.x;
-        this.selected.position_y = this.location.y;
-        this.selected.alt_position_id = this.location.storage_page;
-      } else if (this.location.location == 4) {
-        this.selected.location_id = this.location.location;
-        this.selected.equipped_id = 0;
-        this.selected.position_x = 4; //why?
-        this.selected.position_y = 0;
-        this.selected.alt_position_id = 0;
+    onMove(item, e) {
+      if (e.location.location == 1) {
+        item.location_id = e.location.location;
+        item.equipped_id = e.location.equipped_location;
+        item.position_x = 0;
+        item.position_y = 0;
+        item.alt_position_id = 0;
+      } else if (e.location.location == 0) {
+        item.location_id = e.location.location;
+        item.equipped_id = 0;
+        item.position_x = e.location.x;
+        item.position_y = e.location.y;
+        item.alt_position_id = e.location.storage_page;
+      } else if (e.location.location == 4) {
+        item.location_id = e.location.location;
+        item.equipped_id = 0;
+        item.position_x = 4; //why?
+        item.position_y = 0;
+        item.alt_position_id = 0;
       }
     },
     async previewItem(e) {

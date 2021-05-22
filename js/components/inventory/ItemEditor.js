@@ -213,7 +213,7 @@ methods: {
     this.$emit('item-event', { item: e.item, type: e.type });
   },
   onMove() {
-    this.$emit('move-event', { item: this.item, location: this.location, type: 'move' });
+    this.$emit('item-event', { item: this.item, location: this.location, type: 'move' });
   }
 }
 };
