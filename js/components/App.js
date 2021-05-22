@@ -139,9 +139,8 @@ const mainContent = html`
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
-                  <div class="row d-flex justify-content-between mt-3 pl-5 pr-5">
-                    <div></div>
-                    <div class="btn-group" role="group">
+                  <div class="row mt-3">
+                    <div class="btn-group offset-md-3 col-md-6 btn-group" role="group">
                       <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 1 }"
                         @click="changeTab(1)">Equipped</button>
                       <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 2 }"
@@ -155,58 +154,60 @@ const mainContent = html`
                       <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 6 }"
                         @click="changeTab(6)">All</button>
                     </div>
-                    <div>
-                      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"></button>
-                      <div class="dropdown-menu dropdown-menu-right">
-                        <div class="p-3 form-group">
-                          <div class="form-row">
-                            <div class="col-md-12">
-                              <label>Inventory</label>
-                              <div class="input-group">
-                                <input type="number" min="1" max="20" class="form-control" v-model.number="grid.inv.w"
-                                  @input="gridChange">
-                                <div class="input-group-prepend input-group-append">
-                                  <div class="input-group-text">,</div>
+                    <div class="col-md-3">
+                      <div class="float-right">
+                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"></button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                          <div class="p-3 form-group">
+                            <div class="form-row">
+                              <div class="col-md-12">
+                                <label>Inventory</label>
+                                <div class="input-group">
+                                  <input type="number" min="1" max="20" class="form-control" v-model.number="grid.inv.w"
+                                    @input="gridChange">
+                                  <div class="input-group-prepend input-group-append">
+                                    <div class="input-group-text">,</div>
+                                  </div>
+                                  <input type="number" min="1" max="20" class="form-control" v-model.number="grid.inv.h"
+                                    @input="gridChange">
                                 </div>
-                                <input type="number" min="1" max="20" class="form-control" v-model.number="grid.inv.h"
-                                  @input="gridChange">
                               </div>
                             </div>
-                          </div>
-                          <div class="form-row">
-                            <div class="col-md-12">
-                              <label>Stash</label>
-                              <div class="input-group">
-                                <input type="number" min="1" max="20" class="form-control" v-model.number="grid.stash.w"
-                                  @input="gridChange">
-                                <div class="input-group-prepend input-group-append">
-                                  <div class="input-group-text">,</div>
+                            <div class="form-row">
+                              <div class="col-md-12">
+                                <label>Stash</label>
+                                <div class="input-group">
+                                  <input type="number" min="1" max="20" class="form-control" v-model.number="grid.stash.w"
+                                    @input="gridChange">
+                                  <div class="input-group-prepend input-group-append">
+                                    <div class="input-group-text">,</div>
+                                  </div>
+                                  <input type="number" min="1" max="20" class="form-control" v-model.number="grid.stash.h"
+                                    @input="gridChange">
                                 </div>
-                                <input type="number" min="1" max="20" class="form-control" v-model.number="grid.stash.h"
-                                  @input="gridChange">
                               </div>
                             </div>
-                          </div>
-                          <div class="form-row">
-                            <div class="col-md-12">
-                              <label>Cube</label>
-                              <div class="input-group">
-                                <input type="number" min="1" max="20" class="form-control" v-model.number="grid.cube.w"
-                                  @input="gridChange">
-                                <div class="input-group-prepend input-group-append">
-                                  <div class="input-group-text">,</div>
+                            <div class="form-row">
+                              <div class="col-md-12">
+                                <label>Cube</label>
+                                <div class="input-group">
+                                  <input type="number" min="1" max="20" class="form-control" v-model.number="grid.cube.w"
+                                    @input="gridChange">
+                                  <div class="input-group-prepend input-group-append">
+                                    <div class="input-group-text">,</div>
+                                  </div>
+                                  <input type="number" min="1" max="20" class="form-control" v-model.number="grid.cube.h"
+                                    @input="gridChange">
                                 </div>
-                                <input type="number" min="1" max="20" class="form-control" v-model.number="grid.cube.h"
-                                  @input="gridChange">
                               </div>
                             </div>
                           </div>
                         </div>
+                        <button type="button" class="btn btn-primary" :disabled="!clipboard"
+                          @click="paste()">Paste</button>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#LoadItem">Load
+                          Item</button>
                       </div>
-                      <button type="button" class="btn btn-primary" :disabled="!clipboard"
-                        @click="paste()">Paste</button>
-                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#LoadItem">Load
-                        Item</button>
                     </div>
                   </div>
                   <Equipped v-if="activeTab == 1 || activeTab == 6" :items.sync="equipped" @item-selected="onSelect">
