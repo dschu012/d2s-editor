@@ -140,7 +140,7 @@ const mainContent = html`
                     </button>
                   </div>
                   <div class="row mt-3">
-                    <div class="btn-group offset-md-3 col-md-6 mx-auto" role="group">
+                    <div class="btn-group offset-md-3 col-md-6" role="group">
                       <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 1 }"
                         @click="changeTab(1)">Equipped</button>
                       <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 2 }"
