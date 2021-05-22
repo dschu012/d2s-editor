@@ -388,6 +388,9 @@ export default {
       }
     },
     onMove(item, e) {
+      if(!this.canPlaceItem(item, e.location.storage_page, e.location.x, e.location.y)) {
+        return;
+      }
       if (e.location.location == 1) {
         item.location_id = e.location.location;
         item.equipped_id = e.location.equipped_location;
