@@ -186,7 +186,7 @@ export default {
       const vm = this;
       this.tooltip = tippy(this.$refs.itemRef, {
         content: this.$refs.tooltipRef,
-        hideOnClick: false,
+        hideOnClick: true,
         duration: [0, 0],
         distance: 0,
         arrow: false,
@@ -195,7 +195,10 @@ export default {
       });
     },
     dragStart(event) {
-      event.dataTransfer.setData("item", JSON.stringify(this.item));
+      localStorage.setItem('dragElement', JSON.stringify({
+        uuid: window.uuid,
+        item: this.item
+      }));
     }
   }
 };

@@ -63,8 +63,7 @@ const addItemModal = html`
 
 const mainContent = html`
 <div class="row">
-  <div class="col-2 d-none d-md-block"></div>
-  <div class="col-8 mt-2">
+  <div class="offset-lg-2 col-lg-8 mt-2">
     <div class="card bg-light">
       <div class="card-body">
         <div class="alert alert-primary" role="alert">
@@ -213,11 +212,11 @@ const mainContent = html`
                   <Equipped v-if="activeTab == 1 || activeTab == 6" :items.sync="equipped" @item-selected="onSelect" @item-event="onEvent">
                   </Equipped>
                   <Grid v-if="activeTab == 2 || activeTab == 6" :width="grid.inv.w" :height="grid.inv.h" :page="1"
-                    :items.sync="inventory" @item-selected="onSelect" @item-event="onEvent"></Grid>
+                    :items.sync="inventory" @item-selected="onSelect" @item-event="onEvent" :id="'InventoryGrid'"></Grid>
                   <Grid v-if="activeTab == 3 || activeTab == 6" :width="grid.stash.w" :height="grid.stash.h" :page="5"
-                    :items.sync="stash" @item-selected="onSelect" @item-event="onEvent"></Grid>
+                    :items.sync="stash" @item-selected="onSelect" @item-event="onEvent" :id="'StashGrid'"></Grid>
                   <Grid v-if="activeTab == 4 || activeTab == 6" :width="grid.cube.w" :height="grid.cube.h" :page="4"
-                    :items.sync="cube" @item-selected="onSelect" @item-event="onEvent">
+                    :items.sync="cube" @item-selected="onSelect" @item-event="onEvent" :id="'CubeGrid'">
                   </Grid>
                   <Mercenary v-if="activeTab == 5 || activeTab == 6" :items.sync="mercenary" @item-selected="onSelect">
                   </Mercenary>
@@ -383,13 +382,31 @@ export default {
           return;
         }
       } else if(e.type == 'move') {
-        let idx = this.findIndex(this.save.items, e.item);
-        this.onMove(this.save.items[idx], e);
+        let element = document.getElementById(e.id);
+        element.style.backgroundColor = ""; element.style.width = ""; element.style.height = "";
+        if(window.uuid == e.uuid) {
+          let idx = this.findIndex(this.save.items, e.item);
+          this.onMove(this.save.items[idx], e);
+        } else {
+          //copy to another tab
+          if(this.onMove(e.item, e)) {
+            this.save.items.push(e.item);
+          }
+        }
+      } else if(e.type == 'dragenter') {
+        let item = e.item;
+        if(this.canPlaceItem(item, e.location.storage_page, e.location.x, e.location.y)) {
+          let element = document.getElementById(e.id);
+          element.style.backgroundColor = "green"; element.style.width = `calc(var(--grid-size) * ${item.inv_width})`; element.style.height = `calc(var(--grid-size) * ${item.inv_height})`;
+        }
+      } else if(e.type == 'dragleave') {
+        let element = document.getElementById(e.id);
+        element.style.backgroundColor = ""; element.style.width = ""; element.style.height = "";
       }
     },
     onMove(item, e) {
       if(!this.canPlaceItem(item, e.location.storage_page, e.location.x, e.location.y)) {
-        return;
+        return false;
       }
       if (e.location.location == 1) {
         item.location_id = e.location.location;
@@ -410,6 +427,7 @@ export default {
         item.position_y = 0;
         item.alt_position_id = 0;
       }
+      return true;
     },
     async previewItem(e) {
       let bytes = utils.b64ToArrayBuffer(this.previewModel.value);
