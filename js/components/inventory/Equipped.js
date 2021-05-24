@@ -5,11 +5,11 @@ import html from '../../html.js';
 export default {
   template: html`
 <div class="inventory">
-  <span class="head" v-on:drop="drop($event, 1)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 1)" v-on:dragleave="dragleave($event, 1)">
+  <span class="head" v-on:drop="drop($event, 1)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 1)" v-on:dragleave="dragleave($event, 1)" :id="id + '-1'">
     <Item v-if="head" :item.sync="head" @click.native="onSelect(head)" /></span>
-  <span class="neck" v-on:drop="drop($event, 2)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 2)" v-on:dragleave="dragleave($event, 2)">
+  <span class="neck" v-on:drop="drop($event, 2)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 2)" v-on:dragleave="dragleave($event, 2)" :id="id + '-2'">
     <Item v-if="neck" :item.sync="neck" @click.native="onSelect(neck)" /></span>
-  <span class="torso" v-on:drop="drop($event, 3)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 3)" v-on:dragleave="dragleave($event, 3)">
+  <span class="torso" v-on:drop="drop($event, 3)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 3)" v-on:dragleave="dragleave($event, 3)" :id="id + '-3'">
     <Item v-if="torso" :item.sync="torso" @click.native="onSelect(torso)" /></span>
   <span class="right-tab tabs">
     <div class="btn-group" role="group">
@@ -19,10 +19,10 @@ export default {
         @click="setAltDisplayed(true)">II</button>
     </div>
   </span>
-  <span v-show="!alt_displayed" class="right-hand weapon" v-on:drop="drop($event, 4)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 4)" v-on:dragleave="dragleave($event, 4)">
+  <span v-show="!alt_displayed" class="right-hand weapon" v-on:drop="drop($event, 4)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 4)" v-on:dragleave="dragleave($event, 4)" :id="id + '-4'">
     <Item v-if="right_hand" :item.sync="right_hand" @click.native="onSelect(right_hand)" />
   </span>
-  <span v-show="alt_displayed" class="alt-right-hand weapon" v-on:drop="drop($event, 11)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 11)" v-on:dragleave="dragleave($event, 11)">
+  <span v-show="alt_displayed" class="alt-right-hand weapon" v-on:drop="drop($event, 11)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 11)" v-on:dragleave="dragleave($event, 11)" :id="id + '-11'">
     <Item v-if="alt_right_hand" :item.sync="alt_right_hand" @click.native="onSelect(alt_right_hand)" />
   </span>
   <span class="left-tab tabs">
@@ -33,21 +33,21 @@ export default {
         @click="setAltDisplayed(true)">II</button>
     </div>
   </span>
-  <span v-show="!alt_displayed" class="left-hand weapon" v-on:drop="drop($event, 5)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 5)" v-on:dragleave="dragleave($event, 5)">
+  <span v-show="!alt_displayed" class="left-hand weapon" v-on:drop="drop($event, 5)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 5)" v-on:dragleave="dragleave($event, 5)" :id="id + '-5'">
     <Item v-if="left_hand" :item.sync="left_hand" @click.native="onSelect(left_hand)" />
   </span>
-  <span v-show="alt_displayed" class="alt-left-hand weapon" v-on:drop="drop($event, 12)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 12)" v-on:dragleave="dragleave($event, 12)">
+  <span v-show="alt_displayed" class="alt-left-hand weapon" v-on:drop="drop($event, 12)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 12)" v-on:dragleave="dragleave($event, 12)" :id="id + '-12'">
     <Item v-if="alt_left_hand" :item.sync="alt_left_hand" @click.native="onSelect(alt_left_hand)" />
   </span>
-  <span class="right-finger ring" v-on:drop="drop($event, 6)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 6)" v-on:dragleave="dragleave($event, 6)">
+  <span class="right-finger ring" v-on:drop="drop($event, 6)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 6)" v-on:dragleave="dragleave($event, 6)" :id="id + '-6'">
     <Item v-if="right_finger" :item.sync="right_finger" @click.native="onSelect(right_finger)" /></span>
-  <span class="left-finger ring" v-on:drop="drop($event, 7)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 7)" v-on:dragleave="dragleave($event, 7)">
+  <span class="left-finger ring" v-on:drop="drop($event, 7)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 7)" v-on:dragleave="dragleave($event, 7)" :id="id + '-7'">
     <Item v-if="left_finger" :item.sync="left_finger" @click.native="onSelect(left_finger)" /></span>
-  <span class="waist" v-on:drop="drop($event, 8)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 8)" v-on:dragleave="dragleave($event, 8)">
+  <span class="waist" v-on:drop="drop($event, 8)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 8)" v-on:dragleave="dragleave($event, 8)" :id="id + '-8'">
     <Item v-if="waist" :item.sync="waist" @click.native="onSelect(waist)" /></span>
-  <span class="feet" v-on:drop="drop($event, 9)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 9)" v-on:dragleave="dragleave($event, 9)">
+  <span class="feet" v-on:drop="drop($event, 9)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 9)" v-on:dragleave="dragleave($event, 9)" :id="id + '-9'">
     <Item v-if="feet" :item.sync="feet" @click.native="onSelect(feet)" /></span>
-  <span class="hands" v-on:drop="drop($event, 10)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 10)" v-on:dragleave="dragleave($event, 10)">
+  <span class="hands" v-on:drop="drop($event, 10)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 10)" v-on:dragleave="dragleave($event, 10)" :id="id + '-10'">
     <Item v-if="hands" :item.sync="hands" @click.native="onSelect(hands)" /></span>
 </div>
 `,
@@ -75,6 +75,7 @@ computed: {
 },
 props: {
   items: Array,
+  id: String,
 },
 methods: {
   setAltDisplayed(value) {
@@ -88,13 +89,33 @@ methods: {
     event.dataTransfer.dropEffect = 'move';
     return false;
   },
-  dragenter(event, x, y) {
+  dragenter(event, equipped_location) {
     event.preventDefault();
-    //console.log(`dragenter ${x},${y} item:${event.dataTransfer.getData("item")} `)
+    let data = JSON.parse(localStorage.getItem('dragElement'));
+    this.$emit('item-event', {
+      uuid: data.uuid,
+      item: data.item,
+      id: `${this.id}-${equipped_location}`,
+      location: {
+        location: 1,
+        equipped_location: equipped_location,
+      },
+      type: 'dragenter'
+    });
   },
-  dragleave(event, x, y) {
+  dragleave(event, equipped_location) {
     event.preventDefault();
-    //console.log(`dragleave ${x},${y} item:${event.dataTransfer.getData("item")} `)
+    let data = JSON.parse(localStorage.getItem('dragElement'));
+    this.$emit('item-event', {
+      uuid: data.uuid,
+      item: data.item,
+      id: `${this.id}-${equipped_location}`,
+      location: {
+        location: 1,
+        equipped_location: equipped_location,
+      },
+      type: 'dragleave'
+    });
   },
   drop(event, equipped_location) {
     event.preventDefault();
@@ -102,6 +123,7 @@ methods: {
     this.$emit('item-event', {
       uuid: data.uuid,
       item: data.item,
+      id: `${this.id}-${equipped_location}`,
       location: {
         location: 1,
         equipped_location: equipped_location,

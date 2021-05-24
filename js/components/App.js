@@ -209,7 +209,7 @@ const mainContent = html`
                       </div>
                     </div>
                   </div>
-                  <Equipped v-if="activeTab == 1 || activeTab == 6" :items.sync="equipped" @item-selected="onSelect" @item-event="onEvent">
+                  <Equipped v-if="activeTab == 1 || activeTab == 6" :items.sync="equipped" @item-selected="onSelect" @item-event="onEvent" :id="'Equipped'">
                   </Equipped>
                   <Grid v-if="activeTab == 2 || activeTab == 6" :width="grid.inv.w" :height="grid.inv.h" :page="1"
                     :items.sync="inventory" @item-selected="onSelect" @item-event="onEvent" :id="'InventoryGrid'"></Grid>
