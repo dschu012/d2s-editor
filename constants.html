@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.3.1/dist/darkly/bootstrap.min.css"
+    crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link href="css/app.css" rel="stylesheet" />
+  <script src="https://unpkg.com/vue@3.0.4"></script>
+  <title>d2s - Example</title>
+</head>
+
+<body>
+    <div class="container">
+      <div class="row mt-2">
+        <p>
+          Click run. Then copy and paste the result to js/d2/constants.bundle.min.js
+        </p>
+      </div>
+      <div class="row mt-2">
+        <button id="run" class="btn btn-primary">Run</button>
+      </div>
+      <div class="row mt-2">
+        <code id="result"></code>
+      </div>
+    </div>
+    <script src="https://github.com/dschu012/d2s/releases/latest/download/d2s.bundle.min.js"></script>
+    <script>
+      const files = [
+        "data/local/LNG/ENG/string.txt",
+        "data/local/LNG/ENG/patchstring.txt",
+        "data/local/LNG/ENG/expansionstring.txt",
+        "data/global/excel/CharStats.txt",
+        "data/global/excel/PlayerClass.txt",
+        "data/global/excel/SkillDesc.txt",
+        "data/global/excel/Skills.txt",
+        "data/global/excel/RareSuffix.txt",
+        "data/global/excel/RarePrefix.txt",
+        "data/global/excel/MagicPrefix.txt",
+        "data/global/excel/MagicSuffix.txt",
+        "data/global/excel/Properties.txt",
+        "data/global/excel/ItemStatCost.txt",
+        "data/global/excel/Runes.txt",
+        "data/global/excel/SetItems.txt",
+        "data/global/excel/UniqueItems.txt",
+        "data/global/excel/ItemTypes.txt",
+        "data/global/excel/Armor.txt",
+        "data/global/excel/Weapons.txt",
+        "data/global/excel/Misc.txt",
+        "data/global/excel/Gems.txt",
+      ]
+      document.getElementById("run").addEventListener("click", async function() {
+        let data = {};
+        for(const file of files) {
+          let response = await fetch(file);
+          data[file.substring(file.lastIndexOf('/') + 1, file.length)] = await response.text();
+        }
+        document.getElementById("result").innerText = `window.constants = {"constants": ${JSON.stringify(d2s.readConstantData(data))}}`;
+      });
+    </script>
+</body>
+</html>
