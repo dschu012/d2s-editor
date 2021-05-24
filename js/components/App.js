@@ -19,7 +19,7 @@ const navbar = html`
   <div class="octicon octicon-clippy navbar-brand">
     <i class="fa fa-fw fa-github"></i>
     <a href="https://github.com/dschu012">dschu012</a> / <a class="font-weight-bold"
-      href="https://github.com/dschu012/d2s">d2s</a>
+      href="https://github.com/dschu012/d2s-editor">d2s-editor</a>
   </div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -68,7 +68,7 @@ const mainContent = html`
       <div class="card-body">
         <div class="alert alert-primary" role="alert">
           This editor is still a work in progress. Some things may not work. Found a bug? <a
-            href="https://github.com/dschu012/d2s/issues/new">Report it.</a>
+            href="https://github.com/dschu012/d2s-editor/issues/new">Report it.</a>
         </div>
         <form id="d2sForm">
           <fieldset>
