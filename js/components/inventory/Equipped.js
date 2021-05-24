@@ -5,11 +5,11 @@ import html from '../../html.js';
 export default {
   template: html`
 <div class="inventory">
-  <span class="head" v-on:drop="drop($event, 1)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 1)" v-on:dragleave="dragleave($event, 1)" :id="id + '-1'">
+  <span class="head" v-on:drop="drop($event, 1)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 1)" v-on:dragleave="dragleave($event, 1)"><div class="layer" :id="id + '-1'"></div>
     <Item v-if="head" :item.sync="head" @click.native="onSelect(head)" /></span>
-  <span class="neck" v-on:drop="drop($event, 2)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 2)" v-on:dragleave="dragleave($event, 2)" :id="id + '-2'">
+  <span class="neck" v-on:drop="drop($event, 2)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 2)" v-on:dragleave="dragleave($event, 2)"><div class="layer" :id="id + '-2'"></div>
     <Item v-if="neck" :item.sync="neck" @click.native="onSelect(neck)" /></span>
-  <span class="torso" v-on:drop="drop($event, 3)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 3)" v-on:dragleave="dragleave($event, 3)" :id="id + '-3'">
+  <span class="torso" v-on:drop="drop($event, 3)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 3)" v-on:dragleave="dragleave($event, 3)"><div class="layer" :id="id + '-3'"></div>
     <Item v-if="torso" :item.sync="torso" @click.native="onSelect(torso)" /></span>
   <span class="right-tab tabs">
     <div class="btn-group" role="group">
@@ -19,10 +19,10 @@ export default {
         @click="setAltDisplayed(true)">II</button>
     </div>
   </span>
-  <span v-show="!alt_displayed" class="right-hand weapon" v-on:drop="drop($event, 4)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 4)" v-on:dragleave="dragleave($event, 4)" :id="id + '-4'">
+  <span v-show="!alt_displayed" class="right-hand weapon" v-on:drop="drop($event, 4)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 4)" v-on:dragleave="dragleave($event, 4)"><div class="layer" :id="id + '-4'"></div>
     <Item v-if="right_hand" :item.sync="right_hand" @click.native="onSelect(right_hand)" />
   </span>
-  <span v-show="alt_displayed" class="alt-right-hand weapon" v-on:drop="drop($event, 11)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 11)" v-on:dragleave="dragleave($event, 11)" :id="id + '-11'">
+  <span v-show="alt_displayed" class="alt-right-hand weapon" v-on:drop="drop($event, 11)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 11)" v-on:dragleave="dragleave($event, 11)"><div class="layer" :id="id + '-11'"></div>
     <Item v-if="alt_right_hand" :item.sync="alt_right_hand" @click.native="onSelect(alt_right_hand)" />
   </span>
   <span class="left-tab tabs">
@@ -33,21 +33,21 @@ export default {
         @click="setAltDisplayed(true)">II</button>
     </div>
   </span>
-  <span v-show="!alt_displayed" class="left-hand weapon" v-on:drop="drop($event, 5)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 5)" v-on:dragleave="dragleave($event, 5)" :id="id + '-5'">
+  <span v-show="!alt_displayed" class="left-hand weapon" v-on:drop="drop($event, 5)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 5)" v-on:dragleave="dragleave($event, 5)"><div class="layer" :id="id + '-5'"></div>
     <Item v-if="left_hand" :item.sync="left_hand" @click.native="onSelect(left_hand)" />
   </span>
-  <span v-show="alt_displayed" class="alt-left-hand weapon" v-on:drop="drop($event, 12)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 12)" v-on:dragleave="dragleave($event, 12)" :id="id + '-12'">
+  <span v-show="alt_displayed" class="alt-left-hand weapon" v-on:drop="drop($event, 12)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 12)" v-on:dragleave="dragleave($event, 12)"><div class="layer" :id="id + '-12'"></div>
     <Item v-if="alt_left_hand" :item.sync="alt_left_hand" @click.native="onSelect(alt_left_hand)" />
   </span>
-  <span class="right-finger ring" v-on:drop="drop($event, 6)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 6)" v-on:dragleave="dragleave($event, 6)" :id="id + '-6'">
+  <span class="right-finger ring" v-on:drop="drop($event, 6)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 6)" v-on:dragleave="dragleave($event, 6)"><div class="layer" :id="id + '-6'"></div>
     <Item v-if="right_finger" :item.sync="right_finger" @click.native="onSelect(right_finger)" /></span>
-  <span class="left-finger ring" v-on:drop="drop($event, 7)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 7)" v-on:dragleave="dragleave($event, 7)" :id="id + '-7'">
+  <span class="left-finger ring" v-on:drop="drop($event, 7)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 7)" v-on:dragleave="dragleave($event, 7)"><div class="layer" :id="id + '-7'"></div>
     <Item v-if="left_finger" :item.sync="left_finger" @click.native="onSelect(left_finger)" /></span>
-  <span class="waist" v-on:drop="drop($event, 8)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 8)" v-on:dragleave="dragleave($event, 8)" :id="id + '-8'">
+  <span class="waist" v-on:drop="drop($event, 8)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 8)" v-on:dragleave="dragleave($event, 8)"><div class="layer" :id="id + '-8'"></div>
     <Item v-if="waist" :item.sync="waist" @click.native="onSelect(waist)" /></span>
-  <span class="feet" v-on:drop="drop($event, 9)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 9)" v-on:dragleave="dragleave($event, 9)" :id="id + '-9'">
+  <span class="feet" v-on:drop="drop($event, 9)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 9)" v-on:dragleave="dragleave($event, 9)"><div class="layer" :id="id + '-9'"></div>
     <Item v-if="feet" :item.sync="feet" @click.native="onSelect(feet)" /></span>
-  <span class="hands" v-on:drop="drop($event, 10)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 10)" v-on:dragleave="dragleave($event, 10)" :id="id + '-10'">
+  <span class="hands" v-on:drop="drop($event, 10)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 10)" v-on:dragleave="dragleave($event, 10)"><div class="layer" :id="id + '-10'"></div>
     <Item v-if="hands" :item.sync="hands" @click.native="onSelect(hands)" /></span>
 </div>
 `,
