@@ -139,7 +139,7 @@ export default {
       </div>
     </div>
     <!-- crashes game -->
-    <div class="form-row" v-if="false && item.quality == 5">
+    <div class="form-row" v-if="item.quality == 5">
       <div class="col-md-3">
         <label :for="id + 'SetName'">Set Name</label>
         <select class="form-control" :id="id + 'SetName'" v-model.number="item.set_id" @change="onEvent('update')">
@@ -147,7 +147,7 @@ export default {
         </select>
       </div>
     </div>
-    <div class="form-row" v-if="false && item.quality == 7">
+    <div class="form-row" v-if="item.quality == 7">
       <div class="col-md-3">
         <label :for="id + 'UniqueName'">Unique Name</label>
         <select class="form-control" :id="id + 'UniqueName'" v-model.number="item.unique_id" @change="onEvent('update')">
