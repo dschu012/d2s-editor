@@ -99,7 +99,7 @@ export default {
       <div class="col-md-2">
         <label :for="id + 'Rarity'">Rarity</label>
         <select class="form-control" :id="id + 'Rarity'" v-model.number="item.quality" @change="onEvent('update')">
-          <option v-for="rarity in rarities" :value="rarity.key" :key="rarity.key">{{rarity.value}}</option>
+          <option v-for="rarity in rarities" :value="rarity.key" :key="rarity.key">{{rarity.key}} - {{rarity.value}}</option>
         </select>
       </div>
       <div class="col-md-2" v-if="item.socketed">
@@ -111,30 +111,30 @@ export default {
     <div class="form-row" v-if="item.quality == 4">
       <div class="col-md-3">
         <label :for="id + 'Prefix'">Prefix</label>
-        <select class="form-control" :id="id + 'Prefix'" v-model.number="item.magic_prefix" @change="onEvent('update')">
+        <select class="form-control" :id="id + 'Prefix'" v-model.number="item.magic_prefix" @change="onEvent('update')" v-select>
           <option value="0">None</option>
-          <option v-for="s in prefixes" :value="s.i" :key="s.i">{{s.v.n}}</option>
+          <option v-for="s in prefixes" :value="s.v.n" :key="s.i">{{s.i}} - {{s.v.n}}</option>
         </select>
       </div>
       <div class="col-md-3">
         <label :for="id + 'Suffix'">Suffix</label>
-        <select class="form-control" :id="id + 'Suffix'" v-model.number="item.magic_suffix" @change="onEvent('update')">
+        <select class="form-control" :id="id + 'Suffix'" v-model.number="item.magic_suffix" @change="onEvent('update')" v-select>
           <option value="0">None</option>
-          <option v-for="s in suffixes" :value="s.i" :key="s.i">{{s.v.n}}</option>
+          <option v-for="s in suffixes" :value="s.v.n" :key="s.i">{{s.i}} - {{s.v.n}}</option>
         </select>
       </div>
     </div>
     <div class="form-row" v-if="item.quality == 6 || item.quality == 8">
       <div class="col-md-3">
         <label :for="id + 'RareName1'">Rare Name 1</label>
-        <select class="form-control" :id="id + 'RareName1'" v-model.number="item.rare_name" @change="onEvent('update')">
-          <option v-for="s in rare_names" :value="s.i" :key="s.i">{{s.v.n}}</option>
+        <select class="form-control" :id="id + 'RareName1'" v-model.number="item.rare_name" @change="onEvent('update')" v-select>
+          <option v-for="s in rare_names" :value="s.v.n" :key="s.i">{{s.i}} - {{s.v.n}}</option>
         </select>
       </div>
       <div class="col-md-3">
         <label :for="id + 'RareName2'">Rare Name 2</label>
-        <select class="form-control" :id="id + 'RareName2'" v-model.number="item.rare_name2" @change="onEvent('update')">
-        <option v-for="s in rare_names" :value="s.i" :key="s.i">{{s.v.n}}</option>
+        <select class="form-control" :id="id + 'RareName2'" v-model.number="item.rare_name2" @change="onEvent('update')" v-select>
+        <option v-for="s in rare_names" :value="s.v.n" :key="s.i">{{s.i}} - {{s.v.n}}</option>
         </select>
       </div>
     </div>
@@ -142,16 +142,16 @@ export default {
     <div class="form-row" v-if="item.quality == 5">
       <div class="col-md-3">
         <label :for="id + 'SetName'">Set Name</label>
-        <select class="form-control" :id="id + 'SetName'" v-model.number="item.set_id" @change="onEvent('update')">
-        <option v-for="s in set_items" :value="s.i" :key="s.i">{{s.v.n}}</option>
+        <select class="form-control" :id="id + 'SetName'" v-model.number="item.set_id" @change="onEvent('update')" v-select>
+        <option v-for="s in set_items" :value="s.i" :key="s.i">{{s.i}} - {{s.v.n}}</option>
         </select>
       </div>
     </div>
     <div class="form-row" v-if="item.quality == 7">
       <div class="col-md-3">
         <label :for="id + 'UniqueName'">Unique Name</label>
-        <select class="form-control" :id="id + 'UniqueName'" v-model.number="item.unique_id" @change="onEvent('update')">
-          <option v-for="s in unq_items" :value="s.i" :key="s.i">{{s.v.n}}</option>
+        <select class="form-control" :id="id + 'UniqueName'" v-model.number="item.unique_id" @change="onEvent('update')" v-select>
+          <option v-for="s in unq_items" :value="s.i" :key="s.i">{{s.i}} - {{s.v.n}}</option>
         </select>
       </div>
     </div>
