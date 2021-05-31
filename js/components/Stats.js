@@ -12,6 +12,26 @@ export default {
     <input type="text" class="form-control" id="name" placeholder="Character Name" v-model="save.header.name" required>
   </div>
   <div class="form-row">
+    <div class="col-md-12">
+      <div class="form-check form-check-inline">
+        <label class="form-check-label"><input class="form-check-input" type="checkbox"
+            v-model="save.header.status.expansion">Expansion</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <label class="form-check-label"><input class="form-check-input" type="checkbox"
+            v-model="save.header.status.ladder">Ladder</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <label class="form-check-label"><input class="form-check-input" type="checkbox"
+            v-model="save.header.status.hardcore">Hardcore</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <label class="form-check-label"><input class="form-check-input" type="checkbox"
+            v-model="save.header.status.died">Dead</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
     <div class="col-md-2">
       <label for="Level">Level</label>
       <input type="number" class="form-control" id="Level" v-model.number="save.attributes.level" :min="min(12)"
