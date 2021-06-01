@@ -74,23 +74,23 @@ export default {
       <button type="button" class="form-control btn btn-primary" @click="onMove">Move Item</button>
     </div>
   </div>
-  <span v-if="!item.simple_item">
-    <div class="form-row">
-      <div class="col-md-6">
-        <label :for="id + 'Type'">Type</label>
-        <select class="form-control" :id="id + 'Type'" v-model="item.type" @change="onEvent('update')" v-select>
-          <optgroup label="Armor">
-            <option v-for="s in armor_items" :value="s[0]" :key="s[0]">{{s[1].n}}</option>
-          </optgroup>
-          <optgroup label="Weapons">
-            <option v-for="s in weapon_items" :value="s[0]" :key="s[0]">{{s[1].n}}</option>
-          </optgroup>
-          <optgroup label="Misc">
-            <option v-for="s in other_items" :value="s[0]" :key="s[0]">{{s[1].n}}</option>
-          </optgroup>
-        </select>
-      </div>
+  <div class="form-row">
+    <div class="col-md-6">
+      <label :for="id + 'Type'">Type</label>
+      <select class="form-control" :id="id + 'Type'" v-model="item.type" @change="onEvent('update')" v-select>
+        <optgroup label="Armor">
+          <option v-for="s in armor_items" :value="s[0]" :key="s[0]">{{s[1].n}}</option>
+        </optgroup>
+        <optgroup label="Weapons">
+          <option v-for="s in weapon_items" :value="s[0]" :key="s[0]">{{s[1].n}}</option>
+        </optgroup>
+        <optgroup label="Misc">
+          <option v-for="s in other_items" :value="s[0]" :key="s[0]">{{s[1].n}}</option>
+        </optgroup>
+      </select>
     </div>
+  </div>
+  <span v-if="!item.simple_item">
     <div class="form-row">
       <div class="col-md-2">
         <label :for="id + 'ILvl'">Item Level</label>
