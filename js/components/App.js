@@ -54,6 +54,8 @@ const addItemModal = html`
         </select>
       </div>
       <div class="modal-footer">
+        <input style="display:none;" type="file" name="d2iFile" @change="onItemFileChange" id="d2iFile">
+        <label for="d2iFile" class="mb-0 btn btn-primary">Load From File</label>
         <button type="button" class="btn btn-primary" @click="loadItem" data-dismiss="modal">Load</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
@@ -368,7 +370,7 @@ export default {
       if(e.type == 'copy') {
         this.clipboard = JSON.parse(JSON.stringify(e.item));
       } else if(e.type == 'update') {
-        d2s.enhanceItem(e.item, window.constants.constants);
+        d2s.enhanceItems([e.item], window.constants.constants);
         this.setPropertiesOnItem(e.item);
       } else if(e.type == 'delete') {
         let idx = this.findIndex(this.save.items, e.item);
@@ -429,10 +431,22 @@ export default {
       }
       return true;
     },
+    async readItem(bytes, version) {
+      this.preview = await d2s.readItem(bytes, version, window.constants.constants);
+      this.setPropertiesOnItem(this.preview);
+    },
     async previewItem(e) {
       let bytes = utils.b64ToArrayBuffer(this.previewModel.value);
-      this.preview = await d2s.readItem(bytes, 0x60, window.constants.constants);
-      this.setPropertiesOnItem(this.preview);
+      this.readItem(bytes, 0x60);
+    },
+    async onItemFileLoad(event) {
+      this.readItem(event.target.result, 0x60);
+    },
+    onItemFileChange(event) {
+      let reader = new FileReader();
+      reader.onload = this.onItemFileLoad;
+      reader.readAsArrayBuffer(event.target.files[0]);
+      event.target.value = null;
     },
     loadItem() {
       this.paste(this.preview);
