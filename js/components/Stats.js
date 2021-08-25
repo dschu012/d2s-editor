@@ -37,6 +37,10 @@ export default {
       <input type="number" class="form-control" id="Level" v-model.number="save.attributes.level" :min="min(12)"
         :max="max(12)" @input="change(12, save.attributes, 'level')">
     </div>
+    <div class="col-md-2">
+      <label for="Experience">Experience</label>
+      <input type="number" class="form-control" id="Experience" v-model.number="save.attributes.experience">
+    </div>
   </div>
   <div class="form-row">
     <div class="col-md-2">
