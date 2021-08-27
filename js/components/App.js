@@ -30,6 +30,12 @@ const navbar = html`
       <li class="nav-item active">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
+      <li class="nav-item" v-if="theme !== 'd2'">
+        <a class="nav-link" href="#" @click="setTheme('d2')">Change Theme</a>
+      </li>
+      <li class="nav-item" v-if="theme === 'd2'">
+        <a class="nav-link" href="#" @click="setTheme('dark')">Change Theme</a>
+      </li>
     </ul>
   </div>
 </nav>`;
@@ -249,10 +255,14 @@ const mainContent = html`
 export default {
   template: html`
 <div>
+  <link v-if="theme == 'd2'" href="css/theme.css" rel="stylesheet" />
   ${navbar}
   ${addItemModal}
   <div class="container-fluid">
     ${mainContent}
+  </div>
+  <div v-if="theme == 'd2'" class="text-center mt-3">
+    Credits to Dimka-DJZLO at <a href="https://discord.gg/NvfftHY">Phrozen Keep</a> for the theme!</a>
   </div>
 </div>
 `
@@ -280,7 +290,8 @@ export default {
       load: null,
       notifications: [],
       grid: { inv: { w: 10, h: 4 }, stash: { w: 10, h: 10 }, cube: { w: 3, h: 4 } },
-      location: {}
+      location: {},
+      theme: localStorage.getItem('theme')
     };
   },
   async mounted() {
@@ -333,6 +344,11 @@ export default {
     },
   },
   methods: {
+    setTheme(theme) {
+      localStorage.setItem('theme', theme);
+      this.theme = theme;
+      return;
+    },
     gridChange() {
       localStorage.setItem('grid', JSON.stringify(this.grid));
     },
