@@ -108,6 +108,30 @@ export default {
           @input="onEvent('update')">
       </div>
     </div>
+    <div class="form-row" v-if="item.defense_rating || item.base_damage || item.current_durability">
+      <div class="col-md-2" v-if="item.current_durability">
+        <label :for="id + 'curDur'">Current durability</label>
+        <input type="number" class="form-control" :id="id + 'curDur'" v-model.number="item.current_durability" @input="onEvent('update')">
+      </div>
+      <div class="col-md-2" v-if="item.max_durability">
+        <label :for="id + 'maxDur'">Maximum durability</label>
+        <input type="number" class="form-control" :id="id + 'maxDur'" v-model.number="item.max_durability" @input="onEvent('update')">
+      </div>
+      <div class="col-md-2" v-if="item.defense_rating">
+        <label :for="id + 'Def'">Defense</label>
+        <input type="number" class="form-control" :id="id + 'Def'" v-model.number="item.defense_rating" @input="onEvent('update')">
+      </div>
+      <div class="col-md-2" v-if="item.base_damage && item.base_damage.mindam && item.base_damage.maxdam">
+        <label>One-Hand Damage</label>
+        <input type="text" :readonly="true" class="form-control"
+               :placeholder="item.base_damage.mindam+' to '+item.base_damage.maxdam"/>
+      </div>
+      <div class="col-md-2" v-if="item.base_damage && item.base_damage.twohandmindam && item.base_damage.twohandmaxdam">
+        <label>Two-Hand Damage</label>
+        <input type="text" :readonly="true" class="form-control"
+               :placeholder="item.base_damage.twohandmindam+' to '+item.base_damage.twohandmaxdam"/>
+      </div>
+    </div>
     <div class="form-row" v-if="item.quality == 4">
       <div class="col-md-3">
         <label :for="id + 'Prefix'">Prefix</label>
