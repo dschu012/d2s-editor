@@ -108,13 +108,14 @@ export default {
           @input="onEvent('update')">
       </div>
     </div>
-    <div class="form-row" v-if="item.defense_rating || item.base_damage || item.current_durability">
-      <div class="col-md-2" v-if="item.current_durability">
+    <div class="form-row" 
+         v-if="item.categories && (item.categories.indexOf('Any Armor') > -1 || item.categories.indexOf('Weapon') > -1)">
+      <div class="col-md-2">
         <label :for="id + 'curDur'">Current durability</label>
         <input type="number" class="form-control" :id="id + 'curDur'" v-model.number="item.current_durability" @input="onEvent('update')">
       </div>
-      <div class="col-md-2" v-if="item.max_durability">
-        <label :for="id + 'maxDur'">Maximum durability</label>
+      <div class="col-md-2">
+        <label :for="id + 'maxDur'">Maximum durability (0 = indestructible)</label>
         <input type="number" class="form-control" :id="id + 'maxDur'" v-model.number="item.max_durability" @input="onEvent('update')">
       </div>
       <div class="col-md-2" v-if="item.defense_rating">
