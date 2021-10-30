@@ -599,8 +599,18 @@ export default {
           this.save.header[i][j].introduced = true;
           this.save.header[i][j].completed = true;
         }
+        this.save.header[i].act_i.sisters_to_the_slaughter.is_completed = true;
+        this.save.header[i].act_ii.the_summoner.is_completed = true;
+        this.save.header[i].act_ii.tainted_sun.is_completed = true;
+        this.save.header[i].act_ii.the_horadric_staff.is_completed = true;
+        this.save.header[i].act_ii.arcane_sanctuary.is_completed = true;
+        this.save.header[i].act_ii.the_seven_tombs.is_completed = true;
+        this.save.header[i].act_iii.khalims_will.is_completed = true;
+        this.save.header[i].act_iii.the_blackened_temple.is_completed = true;
         this.save.header[i].act_iii.the_guardian.is_completed = true;
         this.save.header[i].act_iv.terrors_end.is_completed = true;
+        this.save.header[i].act_v.rite_of_passage.is_completed = true;
+        this.save.header[i].act_v.eve_of_destruction.is_completed = true;
       }
       for (var i of ["normal", "nm", "hell"]) {
         this.save.header.waypoints[i].act_i.rogue_encampement = true;
@@ -609,6 +619,7 @@ export default {
         this.save.header.waypoints[i].act_iv.the_pandemonium_fortress = true;
         this.save.header.waypoints[i].act_v.harrogath = true;
       }
+      this.save.header.progression = 15;
     },
     unlockAllWPs() {
       for (var i of ["normal", "nm", "hell"]) {
