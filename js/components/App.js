@@ -624,7 +624,16 @@ export default {
       this.save.header.level = 99;
       this.save.attributes.experience = 3520485254;
       this.save.attributes.level = 99;
-      this.save.attributes.unused_stats = ((99 - s) * 5);
+      if(!isNaN(this.save.attributes.unused_stats)) {
+        this.save.attributes.unused_stats += ((99 - s) * 5);
+      } else {
+        this.save.attributes.unused_stats = 490;
+      }
+      if(!isNaN(this.save.attributes.unused_skill_points)) {
+        this.save.attributes.unused_skill_points += (99 - s);
+      } else {
+        this.save.attributes.unused_skill_points = 98;
+      }
     },
     setAllSkills20() {
       for (var s of this.save.skills) {
