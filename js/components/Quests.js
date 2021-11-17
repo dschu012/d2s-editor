@@ -122,6 +122,12 @@ export default {
       } else if (quest.key === "the_golden_bird") {
         questReword(difficulty.key, act.key, quest.key, state.key, ["current_hp", "max_hp"], 20, newState);
       }
+      if(act.all !== newState && act.all) {
+        act.all = false;
+      }
+      if(difficulty.all !== newState && difficulty.all) {
+        difficulty.all = false;
+      }
     },
     updateDiff(difficulty) {
       for (const act of difficulty.acts) {
