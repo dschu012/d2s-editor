@@ -7,7 +7,7 @@ const flags = ["is_completed", "is_requirement_completed", "is_received",
 
 const quests = [
   {
-    key: "act_i", label: "Act I",
+    key: "act_i", label: "Act I", all: false,
     quests: [
       { key: "den_of_evil", label: "Den Of Evil", values: [{ key: "is_completed", label: "Completed" }] },
       { key: "sisters_burial_grounds", label: "Sisters' Burial Grounds", values: [{ key: "is_completed", label: "Completed" }] },
@@ -18,7 +18,7 @@ const quests = [
     ]
   },
   {
-    key: "act_ii", label: "Act II",
+    key: "act_ii", label: "Act II", all: false,
     quests: [
       { key: "radaments_lair", label: "Radament's Lair", values: [{ key: "is_completed", label: "Completed" }] },
       { key: "the_horadric_staff", label: "The Horadric Staff", values: [{ key: "is_completed", label: "Completed" }] },
@@ -29,7 +29,7 @@ const quests = [
     ]
   },
   {
-    key: "act_iii", label: "Act III",
+    key: "act_iii", label: "Act III", all: false,
     quests: [
       { key: "the_golden_bird", label: "The Golden Bird", values: [{ key: "is_completed", label: "Completed" }] },
       { key: "blade_of_the_old_religion", label: "Blade of the Old Religion", values: [{ key: "is_completed", label: "Completed" }] },
@@ -40,7 +40,7 @@ const quests = [
     ]
   },
   {
-    key: "act_iv", label: "Act IV",
+    key: "act_iv", label: "Act IV", all: false,
     quests: [
       { key: "the_fallen_angel", label: "Fallen Angel", values: [{ key: "is_completed", label: "Completed" }] },
       { key: "hellforge", label: "Hell's Forge", values: [{ key: "is_completed", label: "Completed" }] },
@@ -48,7 +48,7 @@ const quests = [
     ]
   },
   {
-    key: "act_v", label: "Act V",
+    key: "act_v", label: "Act V", all: false,
     quests: [
       { key: "siege_on_harrogath", label: "Siege on Harrogath", values: [{ key: "is_completed", label: "Completed" }] },
       { key: "rescue_on_mount_arreat", label: "Rescue on Mount Arreat", values: [{ key: "is_completed", label: "Completed" }] },
@@ -65,13 +65,19 @@ export default {
 <div class="form-row">
   <div class="col-md-4" v-for="difficulty in difficulties">
     <ul>
-      <li><label>{{ difficulty.label }}</label></li>
+      <li>
+        <label><input class="form-check-input" type="checkbox" @input="updateDiff(difficulty)" v-model="difficulty.all"/>{{ difficulty.label }}</label>
+        <button type="button" class="btn btn-link btn-sm" title="Reset Difficulty" @click="resetDifficulty(difficulty)"><i class="fa fa-undo"></i></button>
+      </li>
       <ul v-for="act in difficulty.acts">
-        <li><label>{{ act.label }}</label></li>
+        <li>
+          <label><input class="form-check-input" type="checkbox" @input="updateAct(difficulty, act)" v-model="act.all" />{{ act.label }}</label>
+          <button type="button" class="btn btn-link btn-sm" title="Reset Act" @click="resetAct(difficulty, act)"><i class="fa fa-undo"></i></button>
+        </li>
         <ul v-for="quest in act.quests">
-          <li><button  type="button" class="btn btn-link" title="Reset Quest" @click="reset(difficulty, act, quest)"><i class="fa fa-undo"></i></button><label>{{ quest.label }}</label></li>
+          <li><button type="button" class="btn btn-link" title="Reset Quest" @click="reset(difficulty, act, quest)"><i class="fa fa-undo"></i></button><label>{{ quest.label }}</label></li>
           <ul>
-            <li v-for="state in quest.values"><label><input class="form-check-input" type="checkbox" v-model="save.header[difficulty.key][act.key][quest.key][state.key]">{{ state.label }}</label></li>
+            <li v-for="state in quest.values"><label><input class="form-check-input" type="checkbox" @click="updateQuest(difficulty, act, quest, state, null)" v-model="save.header[difficulty.key][act.key][quest.key][state.key]">{{ state.label }}</label></li>
           </ul>
         </ul>
       </ul>
@@ -85,15 +91,73 @@ export default {
   data() {
     return {
       difficulties: [
-        { key: 'quests_normal', label: "Normal", acts: JSON.parse(JSON.stringify(quests)) }, 
-        { key: 'quests_nm', label: "Nightmare", acts: JSON.parse(JSON.stringify(quests)) }, 
-        { key: 'quests_hell', label: "Hell", acts: JSON.parse(JSON.stringify(quests)) }
+        { key: 'quests_normal', all: false, label: "Normal", acts: JSON.parse(JSON.stringify(quests)) },
+        { key: 'quests_nm', all: false, label: "Nightmare", acts: JSON.parse(JSON.stringify(quests)) },
+        { key: 'quests_hell', all: false, label: "Hell", acts: JSON.parse(JSON.stringify(quests)) }
       ],
     };
   },
   methods: {
+    updateQuest(difficulty, act, quest, state, newState) {
+      const self = this;
+      function questReword(difficulty, act, quest, state, attributes, amount, newState) {
+        if(newState === false){
+          amount *= -1;
+        }
+        for(const attribute of attributes) {
+          self.save.attributes[attribute] = (self.save.attributes[attribute] ?? 0) + amount;
+        }
+      }
+
+      if (newState != null && newState === self.save.header[difficulty.key][act.key][quest.key][state.key])
+        return;
+      if(newState == null)
+        newState = !self.save.header[difficulty.key][act.key][quest.key][state.key];
+      if(["den_of_evil", "radaments_lair"].indexOf(quest.key) > -1) {
+        questReword(difficulty.key, act.key, quest.key, state.key, ["unused_skill_points"], 1, newState);
+      } else if (quest.key === "the_fallen_angel") {
+        questReword(difficulty.key, act.key, quest.key, state.key, ["unused_skill_points"], 2, newState);
+      } else if (quest.key === "lam_esens_tome") {
+        questReword(difficulty.key, act.key, quest.key, state.key, ["unused_stats"], 5, newState);
+      } else if (quest.key === "the_golden_bird") {
+        questReword(difficulty.key, act.key, quest.key, state.key, ["current_hp", "max_hp"], 20, newState);
+      }
+    },
+    updateDiff(difficulty) {
+      for (const act of difficulty.acts) {
+        if (!act.all && difficulty.all) {
+          act.all = true;
+        } else if (act.all && !difficulty.all) {
+          act.all = false;
+        }
+        this.updateAct(difficulty, act);
+        act.all = !difficulty.all;
+      }
+    },
+    updateAct(difficulty, act) {
+      for (const q of act.quests) {
+        for (const state of q.values) {
+          this.updateQuest(difficulty, act, q, state, !act.all);
+          this.save.header[difficulty.key][act.key][q.key][state.key] = !act.all;
+        }
+      }
+    },
+    resetDifficulty(difficulty) {
+      for(const act of difficulty.acts) {
+        this.resetAct(difficulty, act);
+      }
+      difficulty.all = false;
+    },
+    resetAct(difficulty, act) {
+      for(const q of act.quests) {
+        this.reset(difficulty, act, q);
+      }
+      act.all = false;
+    },
     reset(difficulty, act, quest) {
       for(const flag of flags) {
+        if(flag === "is_completed" && this.save.header[difficulty.key][act.key][quest.key][flag] === true)
+          this.updateQuest(difficulty, act, quest, flag, false);
         this.save.header[difficulty.key][act.key][quest.key][flag] = false;
       }
     }

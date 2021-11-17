@@ -2,7 +2,7 @@ import html from '../html.js';
 
 const waypoints = [
   {
-    key: "act_i", label: "Act I",
+    key: "act_i", label: "Act I", all: false,
     waypoints: [
       { key: "rogue_encampement", label: "Rogue Encampement" },
       { key: "cold_plains", label: "Cold Plains" },
@@ -16,7 +16,7 @@ const waypoints = [
     ]
   },
   {
-    key: "act_ii", label: "Act II",
+    key: "act_ii", label: "Act II", all: false,
     waypoints: [
       { key: "lut_gholein", label: "Lut Gholein" },
       { key: "sewers_lvl_2", label: "Sewers Lvl 2" },
@@ -30,7 +30,7 @@ const waypoints = [
     ]
   },
   {
-    key: "act_iii", label: "Act III",
+    key: "act_iii", label: "Act III", all: false,
     waypoints: [
       { key: "kurast_docks", label: "Kurast Docks" },
       { key: "spider_forest", label: "Spider Forest" },
@@ -44,7 +44,7 @@ const waypoints = [
     ]
   },
   {
-    key: "act_iv", label: "Act IV",
+    key: "act_iv", label: "Act IV", all: false,
     waypoints: [
       { key: "the_pandemonium_fortress", label: "Pandemonium Fortress" },
       { key: "city_of_the_damned", label: "City of the Damned" },
@@ -52,7 +52,7 @@ const waypoints = [
     ]
   },
   {
-    key: "act_v", label: "Act V",
+    key: "act_v", label: "Act V", all: false,
     waypoints: [
       { key: "harrogath", label: "Harrogath" },
       { key: "frigid_highlands", label: "Frigid Highlands" },
@@ -70,13 +70,13 @@ const waypoints = [
 export default {
   template: html`
 <div class="form-row">
-  <div class="col-md-4" v-for="difficulty in difficulties">
+  <div class="col-md-4" v-for="(difficulty, i) in difficulties" :key="i">
     <ul>
-      <li><label>{{difficulty.label}}</label></li>
-      <ul class="col-md-offset-1" v-for="act in difficulty.acts">
-        <li><label>{{ act.label }}</label></li>
-        <ul class="col-md-offset-2" v-for="waypoint in act.waypoints">
-          <li><label><input class="form-check-input" type="checkbox" v-model="save.header.waypoints[difficulty.key][act.key][waypoint.key]">{{ waypoint.label }}</label></li>
+      <li><label><input class="form-check-input" type="checkbox" @input="updateDiff(difficulty)" v-model="difficulty.all" :key="difficulty.key"/>{{difficulty.label}}</label></li>
+      <ul class="col-md-offset-1" v-for="(act, j) in difficulty.acts" :key="j">
+        <li><label><input class="form-check-input" type="checkbox" @input="updateAct(difficulty, act)" v-model="act.all" :key="act.key"/>{{ act.label }}</label></li>
+        <ul class="col-md-offset-2" v-for="(waypoint, k) in act.waypoints" :key="j">
+          <li><label><input class="form-check-input" type="checkbox" @input="updateWP(difficulty, act, waypoint)" v-model="save.header.waypoints[difficulty.key][act.key][waypoint.key]" :key="waypoint.key"/>{{ waypoint.label }}</label></li>
         </ul>
       </ul>
     </ul>
@@ -86,12 +86,39 @@ export default {
   props: {
     save: Object,
   },
+  methods: {
+    updateWP(difficulty, act, wp) {
+      const value = !this.save.header.waypoints[difficulty.key][act.key][wp.key];
+      if(value !== act.all && act.all) {
+        act.all = false;
+      }
+      if(value !== difficulty.all && difficulty.all) {
+        difficulty.all = false;
+      }
+    },
+    updateAct(difficulty, act) {
+      for (const wp of act.waypoints) {
+        this.save.header.waypoints[difficulty.key][act.key][wp.key] = !act.all;
+      }
+    },
+    updateDiff(difficulty) {
+      for (const act of difficulty.acts) {
+        if (!act.all && difficulty.all) {
+          act.all = true;
+        } else if (act.all && !difficulty.all) {
+          act.all = false;
+        }
+        this.updateAct(difficulty, act);
+        act.all = !difficulty.all;
+      }
+    },
+  },
   data() {
     return {
       difficulties: [
-        { key: 'normal', label: "Normal", acts: JSON.parse(JSON.stringify(waypoints)) }, 
-        { key: 'nm', label: "Nightmare", acts: JSON.parse(JSON.stringify(waypoints)) }, 
-        { key: 'hell', label: "Hell", acts: JSON.parse(JSON.stringify(waypoints)) }
+        { key: 'normal', all: false, label: "Normal", acts: JSON.parse(JSON.stringify(waypoints)) },
+        { key: 'nm', all: false, label: "Nightmare", acts: JSON.parse(JSON.stringify(waypoints)) },
+        { key: 'hell', all: false, label: "Hell", acts: JSON.parse(JSON.stringify(waypoints)) }
       ],
     };
   }
