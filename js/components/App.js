@@ -147,7 +147,7 @@ const mainContent = html`
                     </button>
                   </div>
                   <div class="row mt-3">
-                    <div class="btn-group offset-md-3 col-md-6" role="group">
+                    <div class="btn-group overflow-auto offset-md-3 col-md-6" role="group">
                       <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 1 }"
                         @click="changeTab(1)">Equipped</button>
                       <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 2 }"
@@ -241,6 +241,8 @@ const mainContent = html`
             <button type="button" @click="unlockAllWPs" class="btn btn-primary">Unlock All WPs</button>
             <button type="button" @click="setLvl99" class="btn btn-primary">Set Level 99</button>
             <button type="button" @click="setAllSkills20" class="btn btn-primary">Set All Skills 20</button>
+            <button type="button" @click="unlockQs" class="btn btn-primary">Complete Skill/Stat Qs</button>
+            <button type="button" @click="maxGold" class="btn btn-primary">Max Gold</button>
             <br /><br />
             <button type="button" id="d2" class="btn btn-primary" @click="saveFile(0x60)">Save D2</button>
             <button type="button" id="d2r" class="btn btn-primary" @click="saveFile(0x61)">Save D2R</button>
@@ -262,7 +264,7 @@ export default {
     ${mainContent}
   </div>
   <div v-if="theme == 'd2'" class="text-center mt-3">
-    Credits to Dimka-DJZLO at <a href="https://discord.gg/NvfftHY">Phrozen Keep</a> for the theme!</a>
+    Credits to Dimka-DJZLO at <a href="https://discord.gg/NvfftHY">Phrozen Keep</a> for the theme!
   </div>
 </div>
 `
@@ -592,6 +594,33 @@ export default {
       reader.onload = this.onFileLoad;
       reader.readAsArrayBuffer(event.target.files[0]);
       event.target.value = null;
+    },
+    maxGold() {
+      this.save.attributes.gold = this.save.header.level * 10000;
+      this.save.attributes.stashed_gold = 2500000
+    },
+    unlockQs() {
+      const self = this;
+      function update(difficulty, act, quest, attributes, amount) {
+        if (self.save.header[difficulty][act][quest].is_completed === false){
+          self.save.header[difficulty][act][quest].is_completed = true;
+          if (quest === "prison_of_ice"){
+            self.save.header[difficulty][act][quest].consumed_scroll = true;
+          } else {
+            for(let attribute of attributes) {
+              self.save.attributes[attribute] = (self.save.attributes[attribute] ?? 0) + amount;
+            }
+          }
+        }
+      }
+      for (const diff of ["quests_normal", "quests_nm", "quests_hell"]) {
+        update(diff, "act_i", "den_of_evil", ["unused_skill_points"], 1);
+        update(diff, "act_ii", "radaments_lair", ["unused_skill_points"], 1);
+        update(diff, "act_iii", "lam_esens_tome", ["unused_stats"], 5);
+        update(diff, "act_iii", "the_golden_bird", ["max_hp", "current_hp"], 20);
+        update(diff, "act_iv", "the_fallen_angel", ["unused_skill_points"], 2);
+        update(diff, "act_v", "prison_of_ice", null, null);
+      }
     },
     unlockHell() {
       for (var i of ["quests_normal", "quests_nm", "quests_hell"]) {
