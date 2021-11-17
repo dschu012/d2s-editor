@@ -43,7 +43,7 @@ export default {
     </div>
   </div>
   <div class="form-row">
-    <div class="col-md-2">
+    <div class="col-md-4">
       <label for="Life">Life</label>
       <div class="input-group">
         <input class="form-control" type="number" id="Life" v-model.number="save.attributes.current_hp" :min="min(6)"
@@ -55,7 +55,7 @@ export default {
           :max="max(7)" @input="change(7, save.attributes, 'max_hp')">
       </div>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-4">
       <label for="Mana">Mana</label>
       <div class="input-group">
         <input class="form-control" type="number" id="Mana" v-model.number="save.attributes.current_mana" :min="min(8)"
@@ -65,6 +65,18 @@ export default {
         </div>
         <input class="form-control" type="number" id="MaxMana" v-model.number="save.attributes.max_mana" :min="min(9)"
           :max="max(9)" @input="change(9, save.attributes, 'max_mana')">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label for="Stamina">Stamina</label>
+      <div class="input-group">
+        <input class="form-control" type="number" id="Stamina" v-model.number="save.attributes.current_stamina" :min="min(6)"
+               :max="max(6)" @input="change(6, save.attributes, 'current_stamina')">
+        <div class="input-group-prepend input-group-append">
+          <div class="input-group-text">/</div>
+        </div>
+        <input class="form-control" type="number" id="MaxStamina" v-model.number="save.attributes.max_stamina" :min="min(7)"
+               :max="max(7)" @input="change(7, save.attributes, 'max_stamina')">
       </div>
     </div>
   </div>
@@ -97,7 +109,7 @@ export default {
         :min="min(4)" :max="max(4)" @input="change(4, save.attributes, 'unused_stats')">
     </div>
     <div class="col-md-2">
-      <label for="UnusedSkillPoints">Unused Skilled Points</label>
+      <label for="UnusedSkillPoints">Unused Skill Points</label>
       <input type="number" class="form-control" id="UnusedSkillPoints"
         v-model.number="save.attributes.unused_skill_points" :min="min(5)" :max="max(5)"
         @input="change(5, save.attributes, 'unused_skill_points')">
