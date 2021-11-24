@@ -31,6 +31,17 @@ const colormaps = {
   8: 'data/global/items/Palette/invgreybrown.dat',
 };
 
+function _constantToWeapon(value, item) {
+  item.base_damage = {
+    'mindam': value.mind,
+    'maxdam': value.maxd,
+    'twohandmindam': value.min2d,
+    'twohandmaxdmm': value.max2d
+  };
+  item.max_durability = 0; // will be updated the right value in game
+  item.current_durability = 0;
+}
+
 export default {
   colors: colors,
   colormaps: colormaps,
@@ -42,6 +53,15 @@ export default {
       bytes[i] = bin.charCodeAt(i);
     }
     return bytes.buffer;
+  },
+  arrayBufferToBase64(buffer) {
+    var binary = '';
+    var bytes = new Uint8Array( buffer );
+    var len = bytes.byteLength;
+    for (var i = 0; i < len; i++) {
+      binary += String.fromCharCode( bytes[ i ] );
+    }
+    return window.btoa(binary);
   },
   async b64PNGFromDC6(item) {
     const response = await fetch(`data/global/items/${item.inv_file}.dc6`);
@@ -119,5 +139,19 @@ export default {
       var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
       return v.toString(16);
     });
-  }  
+  },
+  constantToItem(values) {
+    const item = Object();
+    item.type = values[0];
+    const value = values[1];
+    item.quality = 2;
+    item.level = 1; // will be updated the right value in game
+    item.inv_width = value.iw;
+    item.inv_height = value.ih;
+    item.categories = value.c;
+    item.identified = 1;
+    _constantToWeapon(value, item);
+    // TODO: armor and other
+    return item;
+  } 
 }

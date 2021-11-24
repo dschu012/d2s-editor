@@ -317,6 +317,24 @@ export default {
     if (localStorage.grid) {
       this.grid = JSON.parse(localStorage.getItem('grid'));
     }
+
+    let newItems = []
+    for (const item of Object.entries(window.constants.constants.weapon_items)) {
+      if (item[1].n) {
+        let newItem = utils.constantToItem(item)
+        newItems.push(newItem)
+      }
+    }
+    d2s.enhanceItems(newItems, window.constants.constants);
+    for (const item of newItems) {
+      let bytes = await d2s.writeItem(item, 0x60, window.constants.constants);
+      let base64 = utils.arrayBufferToBase64(bytes);
+      let category = item.categories[0]
+      this.itempack.push({
+        key: "./Bases/Weapons/" + category + "/" + item.type_name + '.d2i',
+        value: base64
+      })
+    }
   },
   filters: {
   },
