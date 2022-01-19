@@ -479,7 +479,7 @@ export default {
     },
     async readItem(bytes, version) {
       this.preview = await d2s.readItem(bytes, version, window.constants.constants);
-      this.setPropertiesOnItem(this.preview);
+      await this.setPropertiesOnItem(this.preview);
     },
     async previewItem(e) {
       let bytes = utils.b64ToArrayBuffer(this.previewModel.value);
@@ -495,16 +495,14 @@ export default {
       event.target.value = null;
     },
     async loadBase64Item() {
-      let b64 = prompt("Please enter your base64 string for item.");
-      let bytes = utils.b64ToArrayBuffer(b64);
-      let that = this;
-      that.readItem(bytes, 0x60)
-      .then(() => {
-        that.paste(that.preview);
-      })
-      .catch((error) => {
+      try {
+        let b64 = prompt("Please enter your base64 string for item.");
+        let bytes = utils.b64ToArrayBuffer(b64);
+        await this.readItem(bytes, 0x60);
+        this.paste(this.preview);
+      } catch(e) {
         alert("Failed to read item.");
-      });
+      }
     },
     loadItem() {
       this.paste(this.preview);
@@ -599,21 +597,18 @@ export default {
         that.setPropertiesOnItem(item);
       });
     },
-    setPropertiesOnItem(item) {
+    async setPropertiesOnItem(item) {
       if (!item) {
         return;
       }
-      var that = this;
       if (!item.magic_attributes) item.magic_attributes = [];
-      utils.b64PNGFromDC6(item).then(src => {
-        item.src = src
-      });
+      item.src = await utils.b64PNGFromDC6(item);
       if (!item.socketed_items) {
         return;
       }
-      item.socketed_items.forEach(item => {
-        utils.b64PNGFromDC6(item).then(src => item.src = src);
-      });
+      for(let i = 0; i < item.socketed_items.length; i++) {
+        item.socketed_items[i].src = await utils.b64PNGFromDC6(item.socketed_items[i]);
+      }
     },
     newChar(index) {
       let bytes = utils.b64ToArrayBuffer(CharPack[index]);
