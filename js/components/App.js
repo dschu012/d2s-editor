@@ -62,6 +62,7 @@ const addItemModal = html`
       <div class="modal-footer">
         <input style="display:none;" type="file" name="d2iFile" @change="onItemFileChange" id="d2iFile">
         <label for="d2iFile" class="mb-0 btn btn-primary">Load From File</label>
+        <button type="button" class="btn btn-primary" @click="loadBase64Item" data-dismiss="modal">Load From String</button>
         <button type="button" class="btn btn-primary" @click="loadItem" data-dismiss="modal">Load</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
@@ -287,6 +288,7 @@ export default {
       selected: null,
       itempack: ItemPack,
       previewModel: null,
+      previewModelBase64: null,
       preview: null,
       clipboard: null,
       load: null,
@@ -402,8 +404,16 @@ export default {
       this.selected = null;
       this.location = null;
     },
+    async shareItem(item) {
+      let bytes = await d2s.writeItem(item, 0x60, window.constants.constants);
+      let base64 = utils.arrayBufferToBase64(bytes);
+      navigator.clipboard.writeText(base64);
+      this.notifications.push({ alert: "alert alert-info", message: `Item data copied to clipboard. Use load from string to share it with someone.` });
+    },
     onEvent(e) {
-      if(e.type == 'copy') {
+      if(e.type == 'share') {
+        this.shareItem(e.item);
+      } else if(e.type == 'copy') {
         this.clipboard = JSON.parse(JSON.stringify(e.item));
       } else if(e.type == 'update') {
         d2s.enhanceItems([e.item], window.constants.constants);
@@ -483,6 +493,16 @@ export default {
       reader.onload = this.onItemFileLoad;
       reader.readAsArrayBuffer(event.target.files[0]);
       event.target.value = null;
+    },
+    async loadBase64Item() {
+      try {
+        let b64 = prompt("Please enter your base64 string for item.");
+        let bytes = utils.b64ToArrayBuffer(b64);
+        await this.readItem(bytes, 0x60);
+        this.paste(this.preview);
+      } catch(e) {
+        alert("Failed to read item.");
+      }
     },
     loadItem() {
       this.paste(this.preview);

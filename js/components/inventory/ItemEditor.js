@@ -10,6 +10,7 @@ export default {
     <div></div>
     <div><Item :item.sync="item" clazz="item-edit"></Item></div>
     <div>
+      <button type="button" class="btn btn-primary" @click="onEvent('share')">Share</button>
       <button type="button" class="btn btn-primary" @click="onEvent('copy')">Copy</button>
       <span v-if="item.location_id != 6">
         <button type="button" class="btn btn-danger" @click="onEvent('delete')">Delete</button>
