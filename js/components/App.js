@@ -495,14 +495,16 @@ export default {
       event.target.value = null;
     },
     async loadBase64Item() {
-      try {
-        let b64 = prompt("Please enter your base64 string for item.");
-        let bytes = utils.b64ToArrayBuffer(b64);
-        await this.readItem(bytes, 0x60);
-        this.paste(this.preview);
-      } catch(e) {
+      let b64 = prompt("Please enter your base64 string for item.");
+      let bytes = utils.b64ToArrayBuffer(b64);
+      let that = this;
+      that.readItem(bytes, 0x60)
+      .then(() => {
+        that.paste(that.preview);
+      })
+      .catch((error) => {
         alert("Failed to read item.");
-      }
+      });
     },
     loadItem() {
       this.paste(this.preview);
@@ -603,7 +605,9 @@ export default {
       }
       var that = this;
       if (!item.magic_attributes) item.magic_attributes = [];
-      utils.b64PNGFromDC6(item).then(src => item.src = src);
+      utils.b64PNGFromDC6(item).then(src => {
+        item.src = src
+      });
       if (!item.socketed_items) {
         return;
       }
