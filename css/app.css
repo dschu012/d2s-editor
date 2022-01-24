@@ -6,27 +6,6 @@
   border-radius: 0 !important;
 }
 
-div ul.context-menu {
-  top: 0;
-  left: 0;
-  margin: 0;
-  display: none;
-  list-style: none;
-  z-index: 10;
-  box-shadow: 0 3px 6px #000000;
-  border-radius: 6px;
-
-  width: 100px;
-  text-align: center;
-}
-
-ul.context-menu li:first-of-type {
-  margin-top: 4px;
-}
-ul.context-menu li:last-of-type {
-  margin-bottom: 4px;
-}
-
 .bg-light {
   opacity: .8;
   background-color: #303030 !important;
