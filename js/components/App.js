@@ -218,16 +218,16 @@ const mainContent = html`
                       </div>
                     </div>
                   </div>
-                  <Equipped v-if="activeTab == 1 || activeTab == 6" :items.sync="equipped" @item-selected="onSelect" @item-event="onEvent" :id="'Equipped'">
+                  <Equipped v-if="activeTab == 1 || activeTab == 6" :items.sync="equipped" @item-selected="onSelect" @item-event="onEvent" :id="'Equipped'" :contextMenu="$refs.contextMenu">
                   </Equipped>
                   <Grid v-if="activeTab == 2 || activeTab == 6" :width="grid.inv.w" :height="grid.inv.h" :page="1"
-                    :items.sync="inventory" @item-selected="onSelect" @item-event="onEvent" :id="'InventoryGrid'"></Grid>
+                    :items.sync="inventory" @item-selected="onSelect" @item-event="onEvent" :id="'InventoryGrid'" :contextMenu="$refs.contextMenu"></Grid>
                   <Grid v-if="activeTab == 3 || activeTab == 6" :width="grid.stash.w" :height="grid.stash.h" :page="5"
-                    :items.sync="stash" @item-selected="onSelect" @item-event="onEvent" :id="'StashGrid'"></Grid>
+                    :items.sync="stash" @item-selected="onSelect" @item-event="onEvent" :id="'StashGrid'" :contextMenu="$refs.contextMenu"></Grid>
                   <Grid v-if="activeTab == 4 || activeTab == 6" :width="grid.cube.w" :height="grid.cube.h" :page="4"
-                    :items.sync="cube" @item-selected="onSelect" @item-event="onEvent" :id="'CubeGrid'">
+                    :items.sync="cube" @item-selected="onSelect" @item-event="onEvent" :id="'CubeGrid'" :contextMenu="$refs.contextMenu">
                   </Grid>
-                  <Mercenary v-if="activeTab == 5 || activeTab == 6" :items.sync="mercenary" @item-selected="onSelect">
+                  <Mercenary v-if="activeTab == 5 || activeTab == 6" :items.sync="mercenary" @item-selected="onSelect" :contextMenu="$refs.contextMenu">
                   </Mercenary>
                   <ItemEditor v-if="selected" :id="'Selected'" :item.sync="selected" :location="location" ref="editor" @item-event="onEvent"></ItemEditor>
                 </div>
@@ -257,7 +257,8 @@ const mainContent = html`
 
 export default {
   template: html`
-<div>
+<ContextMenu :ref="'contextMenu'" @option-clicked="optionClicked"></ContextMenu>
+<div @click.native="rootClick">
   <link v-if="theme == 'd2'" href="css/theme.css" rel="stylesheet" />
   ${navbar}
   ${addItemModal}
@@ -279,7 +280,8 @@ export default {
     Equipped,
     Grid,
     Mercenary,
-    ItemEditor
+    ItemEditor,
+    ContextMenu
   },
   data() {
     return {
@@ -371,6 +373,45 @@ export default {
       this.theme = theme;
       return;
     },
+    rootClick() {
+      this.$refs.contextMenu.close();
+    },
+    optionClicked(event) {
+      switch (event.option.text) {
+        case "Delete":
+          this.onEvent({
+            type: 'delete',
+            item: event.obj
+          });
+          break;
+        case "Copy":
+          this.onEvent({
+            type: 'copy',
+            item: event.obj
+          });
+          break;
+        case "Share":
+          this.onEvent({
+            type: 'share',
+            item: event.obj
+          });
+          break;
+        case "Paste At":
+          if(event.obj?.length !== 2 || this.clipboard == null) {
+            break;
+          }
+          this.onEvent({
+            type: 'pasteAt',
+            item: this.clipboard,
+            grid: event.obj
+          });
+          break;
+        case "Select":
+          this.onSelect(event.obj);
+          break;
+      }
+      this.$refs.contextMenu.close();
+    },
     gridChange() {
       localStorage.setItem('grid', JSON.stringify(this.grid));
     },
@@ -450,6 +491,18 @@ export default {
       } else if(e.type == 'dragleave') {
         let element = document.getElementById(e.id);
         element.style.backgroundColor = ""; element.style.width = ""; element.style.height = "";
+      }  else if(e.type === "pasteAt") {
+        const location_id = this.activeTab === 1 ? 1 : 0; // Equipped
+        const storage_page = this.activeTab === 1 ? 1 :  // Equipped
+            this.activeTab === 3 ? 5 : // Stash
+            this.activeTab === 4 ? 4 : // Cube
+                1; // Inventory
+        if(this.canPlaceItem(e.item, storage_page, e.grid[0], e.grid[1])) {
+          this.paste(e.item, [location_id, this.location?.equipped_location, e.grid[0], e.grid[1], storage_page]);
+
+        } else {
+          this.paste(e.item);
+        }
       }
     },
     onMove(item, e) {
@@ -507,9 +560,9 @@ export default {
     loadItem() {
       this.paste(this.preview);
     },
-    paste(item) {
+    paste(item, position) {
       let copy = JSON.parse(JSON.stringify(item != null ? item : this.clipboard));
-      let pos = this.findSafeLocation(copy);
+      let pos = position ?? this.findSafeLocation(copy);
       copy.location_id = pos[0];
       copy.equipped_id = pos[1];
       copy.position_x = pos[2];

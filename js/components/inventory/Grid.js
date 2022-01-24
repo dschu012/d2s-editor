@@ -6,10 +6,13 @@ export default {
   template: html`
 <div class="grid" :class="gridClass">
   <div class="h-1 cell" :class="'y-' + (h - 1)" v-for="h in height">
-    <div :id="id + '-' + w + '-' + h" class="w-1 h-1 y-0 cell" :class="'x-' + (w - 1)" v-for="w in width" v-on:drop="drop($event, w, h)" v-on:dragover="dragover" v-on:dragenter="dragenter($event, w, h)" v-on:dragleave="dragleave($event, w, h)">
+    <div :id="id + '-' + w + '-' + h" class="w-1 h-1 y-0 cell" :class="'x-' + (w - 1)" v-for="w in width" 
+         v-on:drop="drop($event, w, h)" v-on:dragover="dragover" v-on:dragenter="dragenter($event, w, h)" 
+         v-on:dragleave="dragleave($event, w, h)" @contextmenu.prevent.stop="gridRC($event, w, h)">
     </div>
   </div>
-  <Item v-for="(item, idx) in items" :key="idx" :item.sync="item" @click.native="onSelect(item)" />
+  <Item v-for="(item, idx) in items" :key="idx" :item.sync="item" @click.native="onSelect(item)" 
+        @contextmenu.prevent.stop="itemRC($event, item)"/>
 </div>
 `,
 components: {
@@ -21,6 +24,7 @@ props: {
   height: Number,
   page: Number,
   id: String,
+  contextMenu: Object,
 },
 computed: {
   gridClass() {
@@ -67,6 +71,19 @@ methods: {
       },
       type: 'dragleave'
     });
+  },
+  itemRC($evt, item) {
+    this.contextMenu.showContextMenu($evt, item, [
+        {text: "Select"},
+        {text: "Copy"},
+        {text: "Share"},
+        {text: "Delete"}
+    ])
+  },
+  gridRC($evt, w, h) {
+    this.contextMenu.showContextMenu($evt, [w - 1, h - 1], [
+        {text: "Paste At"}
+    ])
   },
   drop(event, x, y) {
     event.preventDefault();
