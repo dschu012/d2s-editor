@@ -137,6 +137,55 @@ export default {
       stats: window.constants.constants.magical_properties,
     }
   },
+  watch: {
+    "save.header.level": function(level, s) {
+      this.save.attributes.level = level;
+      this.save.attributes.experience = xp[level];
+
+      const newLevel = level - s;
+      this.save.attributes.unused_stats = (this.save.attributes.unused_stats ?? 0) + (newLevel * 5);
+      this.save.attributes.unused_skill_points = (this.save.attributes.unused_skill_points ?? 0) + newLevel;
+      for(const cCode in constants.constants.classes) {
+        const stat = constants.constants.classes[cCode];
+        if(stat.n === this.save.header.class) {
+          this.save.attributes.max_hp += newLevel * stat.s.lpl / 4;
+          this.save.attributes.current_hp += newLevel * stat.s.lpl / 4;
+
+          this.save.attributes.max_stamina += newLevel * stat.s.spl / 4;
+          this.save.attributes.current_stamina += newLevel * stat.s.spl / 4;
+
+          this.save.attributes.max_mana += newLevel * stat.s.mpl / 4;
+          this.save.attributes.current_mana += newLevel * stat.s.mpl / 4;
+          break;
+        }
+      }
+    },
+    "save.attributes.vitality": function(val, old) {
+      const change = val-old;
+      for (const cCode in window.constants.constants.classes) {
+        const stat = window.constants.constants.classes[cCode];
+        if (window.stat.n === this.save.header.class) {
+          this.save.attributes.max_hp += change * stat.s.lpv / 4;
+          this.save.attributes.current_hp += change * stat.s.lpv / 4;
+
+          this.save.attributes.max_stamina += change * stat.s.spv / 4;
+          this.save.attributes.current_stamina += change * stat.s.spv / 4;
+          break;
+        }
+      }
+    },
+    "save.attributes.energy": function(val, old) {
+      const change = val-old;
+      for (const cCode in window.constants.constants.classes) {
+        const stat = window.constants.constants.classes[cCode];
+        if (window.stat.n === this.save.header.class) {
+          this.save.attributes.max_mana += change * stat.s.mpe / 4;
+          this.save.attributes.current_mana += change * stat.s.mpe / 4;
+          break;
+        }
+      }
+    },
+  },
   methods: {
     max(id) {
       let stat = this.stats[id];
