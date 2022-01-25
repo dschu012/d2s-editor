@@ -697,41 +697,7 @@ export default {
       }
     },
     setLvl99() {
-      let s = this.save.attributes.level;
       this.save.header.level = 99;
-      this.save.attributes.experience = 3520485254;
-      this.save.attributes.level = 99;
-      if(!isNaN(this.save.attributes.unused_stats)) {
-        this.save.attributes.unused_stats += ((99 - s) * 5);
-      } else {
-        this.save.attributes.unused_stats = 490;
-      }
-      if(!isNaN(this.save.attributes.unused_skill_points)) {
-        this.save.attributes.unused_skill_points += (99 - s);
-      } else {
-        this.save.attributes.unused_skill_points = 98;
-      }
-      switch(this.save.header.class) {
-        case 'Amazon':
-          setlvl99class(2, 1.5, 1); break;
-        case 'Sorceress':
-          setlvl99class(1, 2, 1); break;
-        case 'Necromancer':
-          setlvl99class(1.5, 2, 1); break;
-        case 'Paladin':
-          setlvl99class(2, 1, 1.5); break;
-        case 'Barbarian':
-          setlvl99class(2, 1, 2); break;
-        case 'Druid':
-          setlvl99class(1.5, 2, 1); break;
-        case 'Assassin':
-          setlvl99class(2, 1, 1.5); break;
-      }
-    },
-    setlvl99class(hplvl, manalvl, staminalvl) {
-      this.save.attributes.max_hp += ((99 - s) * hplvl);
-      this.save.attributes.max_mana += ((99 - s) * manalvl);
-      this.save.attributes.max_stamina += ((99 - s) * staminalvl);
     },
     setAllSkills20() {
       for (var s of this.save.skills) {

@@ -100,12 +100,12 @@ export default {
   methods: {
     updateQuest(difficulty, act, quest, state, newState) {
       const self = this;
-      function questReword(difficulty, act, quest, state, attributes, amount, newState) {
+      function questReward(difficulty, act, quest, state, attributes, amount, newState) {
         if(newState === false){
           amount *= -1;
         }
         for(const attribute of attributes) {
-          self.save.attributes[attribute] = (self.save.attributes[attribute] ?? 0) + amount;
+          self.save.attributes[attribute] = (self.save.attributes[attribute] == null ? 0 : self.save.attributes[attribute]) + amount;
         }
       }
 
@@ -114,13 +114,13 @@ export default {
       if(newState == null)
         newState = !self.save.header[difficulty.key][act.key][quest.key][state.key];
       if(["den_of_evil", "radaments_lair"].indexOf(quest.key) > -1) {
-        questReword(difficulty.key, act.key, quest.key, state.key, ["unused_skill_points"], 1, newState);
+        questReward(difficulty.key, act.key, quest.key, state.key, ["unused_skill_points"], 1, newState);
       } else if (quest.key === "the_fallen_angel") {
-        questReword(difficulty.key, act.key, quest.key, state.key, ["unused_skill_points"], 2, newState);
+        questReward(difficulty.key, act.key, quest.key, state.key, ["unused_skill_points"], 2, newState);
       } else if (quest.key === "lam_esens_tome") {
-        questReword(difficulty.key, act.key, quest.key, state.key, ["unused_stats"], 5, newState);
+        questReward(difficulty.key, act.key, quest.key, state.key, ["unused_stats"], 5, newState);
       } else if (quest.key === "the_golden_bird") {
-        questReword(difficulty.key, act.key, quest.key, state.key, ["current_hp", "max_hp"], 20, newState);
+        questReward(difficulty.key, act.key, quest.key, state.key, ["current_hp", "max_hp"], 20, newState);
       }
       if(act.all !== newState && act.all) {
         act.all = false;
@@ -143,8 +143,8 @@ export default {
     updateAct(difficulty, act) {
       for (const q of act.quests) {
         for (const state of q.values) {
-          this.updateQuest(difficulty, act, q, state, !act.all);
           this.save.header[difficulty.key][act.key][q.key][state.key] = !act.all;
+          this.updateQuest(difficulty, act, q, state, !act.all);
         }
       }
     },
