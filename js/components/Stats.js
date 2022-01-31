@@ -140,7 +140,7 @@ export default {
   watch: {
     "save.header.level": function(level, s) {
       this.save.attributes.level = level;
-      this.save.attributes.experience = xp[level];
+      this.save.attributes.experience = xp[level-1];
 
       const newLevel = level - s;
       this.save.attributes.unused_stats = (this.save.attributes.unused_stats ?? 0) + (newLevel * 5);
