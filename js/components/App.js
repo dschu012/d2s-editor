@@ -76,17 +76,10 @@ const mainContent = html`
   <div class="offset-lg-2 col-lg-8 mt-2">
     <div class="card bg-light">
       <div class="card-body">
-        <div class="alert alert-danger" role="alert">
-          Since 2.4, this editor no longer works. I do not have time to support this project in the near future,
-          feel free to make a <a
-          href="https://github.com/dschu012/d2s-editor/compare">pull request</a> if you'd like to fix it.
-        </div>
-        <!--
         <div class="alert alert-primary" role="alert">
           This editor is still a work in progress. Some things may not work. Found a bug? <a
             href="https://github.com/dschu012/d2s-editor/issues/new">Report it.</a>
         </div>
-        -->
         <form id="d2sForm">
           <fieldset>
             <div class="form-group">
@@ -676,19 +669,23 @@ export default {
       this.readBuffer(bytes);
     },
     onFileLoad(event) {
-      this.readBuffer(event.target.result);
+      this.readBuffer(event.target.result, event.target.filename);
     },
-    readBuffer(bytes) {
+    readBuffer(bytes, filename) {
       let that = this;
       this.save = null;
       this.selected = null;
       d2s.read(bytes, constants.constants).then(response => {
         that.save = response;
+        if(filename) {
+          that.save.header.name = filename.split('.')[0];
+        }
         that.setPropertiesOnSave();
       });
     },
     onFileChange(event) {
       let reader = new FileReader();
+      reader.filename = event.target.files[0].name;
       reader.onload = this.onFileLoad;
       reader.readAsArrayBuffer(event.target.files[0]);
       event.target.value = null;
