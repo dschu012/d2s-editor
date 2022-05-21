@@ -696,6 +696,8 @@ export default [
   { key: "./Uniques/Class-Items/Ama/Amazon Torch.d2i", value: "Sk0QAIAAZAAAMtYmA4KAwYck7gXIAIAmAE0AbQDthFEKoxVGLYymYFnYmFJMhpnng4LCfw==" },
   { key: "./Uniques/Class-Items/Ama/Bloodraven's Charge.d2i", value: "Sk0QCIAAZQAIEtYmBgIFjQfs8MEUYGBEBHPm7gD11OAFAEBmxRceHv8B" },
   { key: "./Uniques/Class-Items/Ama/Lycander's Aim (Up).d2i", value: "Sk0QCIAAZQAGEtY2BgJDENBj76ERbk5EAJoAGgQKEZAhu5BhkPlATIG6oHgBAOg/" },
+  { key: "./Uniques/Class-Items/Ama/Lycander's Flank.d2i", value: "Sk0QKIAAZQAAEtaWA4LTByN72bERMhoEAJoBNAgUIiBDdiHDIOORmAJ1kfESANB/" },
+  { key: "./Uniques/Class-Items/Ama/Lycander's Flank (Eth).d2i", value: "Sk0QKMAAZQACEtaWA4LTByN72bERGhoEAJoBNAgUIiBDdiHDIOORmAJ1kfESANB/" },
   { key: "./Uniques/Class-Items/Ama/Thunderstroke.d2i", value: "Sk0QAIAAZQACEtZmBgKbS63B8CEVDAxAiYAMmYzgvy6jNRTGSwCAxpwYKE4f/gM=" },
   {
     key: "./Uniques/Class-Items/Ama/Titan's Revenge (Eth).d2i",
@@ -1056,8 +1058,6 @@ export default [
   { key: "./Uniques/Weapons/Spear/Exceptional/Hone Sundan.d2i", value: "Sk0QCIAAZQAAkjNHB4K0jbVa8fEKODhMBGTILlAYUIha/JT/" },
   { key: "./Uniques/Weapons/Spear/Exceptional/Kelpie Snare.d2i", value: "Sk0QCIAAZQAEkkMnBwKPJy6f8dEKRkYEAJUItGhd8DDITpBZWmJT/gM=" },
   { key: "./Uniques/Weapons/Spear/Exceptional/Soulfeast Tine.d2i", value: "Sk0QCIAAZQAQkiMmB4Iz17zv8eEKODhEBF++JujD4+DjkORhC5Qm1H8=" },
-  { key: "./Uniques/Weapons/Spear/Exceptional/Lycander's Flank Ceremonial Pike.d2i", value: "Sk0QKIAAZQAAEtaWA4LTByN72bERMhoEAJoBNAgUIiBDdiHDIOORmAJ1kfESANB/" },
-  { key: "./Uniques/Weapons/Spear/Exceptional/Lycander's Flank Ceremonial Pike (Eth).d2i", value: "Sk0QKMAAZQACEtaWA4LTByN72bERGhoEAJoBNAgUIiBDdiHDIOORmAJ1kfESANB/" },
   {
     key: "./Uniques/Weapons/Spear/Exceptional/Spire of Honor.d2i",
     value: "Sk0QCIAAZQAMkgOXAwJulIje8QELMjIEhAwRkCG7QGFAKZGz3BjUnRa8MAA2j/kP",
