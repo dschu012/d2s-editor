@@ -194,12 +194,12 @@ export default [
     value: "Sk0QCIAEZAAAWkcHB7KfPl8a7ZBWKBbi4TEQHiwZ/Z9idQkaeyzKJHsWKvwHSk0QAKAAZBgAIBczAwJKTRAAoABkGAIgFwMDAkpNEACgAGQYBCAnAwMC",
   },
   {
-    key: "./Runewords/Armor/CoH (AP).d2i",
+    key: "./Runewords/Armor/Chains of Honor (AP).d2i",
     value:
       "Sk0QCIAEZABmWkcHB0JKffA07RAUKBbi4UEQHiwZ/QdAA8HICbIUZCvIWpDxQOThpgfPH/0HSk0QAKAAZBgAIBdDAwJKTRAAoABkGAIgJyMDAkpNEACgAGQYBCA3AwMCSk0QAKAAZBgGICdDAwI=",
   },
   {
-    key: "./Runewords/Armor/CoH (AP, Eth).d2i",
+    key: "./Runewords/Armor/Chains of Honor (AP, Eth).d2i",
     value:
       "Sk0QCMAEZAAEUkcHB0JKffA07RAUKBzj4UEQHiwZ/QdAA8HICbIUZCvIWpDxQOThpgfPH/0HSk0QAKAAZBgAIBdDAwJKTRAAoABkGAIgJyMDAkpNEACgAGQYBCA3AwMCSk0QAKAAZBgGICdDAwI=",
   },
@@ -424,7 +424,7 @@ export default [
       "Sk0QCIAEZGQXYMYWBtL04tdW7ZATKB4eKkKAAGEqEWE2Df8jvHunRO3CCyOJCFNJCLNp+JP/Sk0QAKAAZBgAIBcTAwJKTRAAoABkGAIgB4MDAkpNEACgAGQYBCAnMwMCSk0QAKAAZBgGICdDAwJKTRAAoABkGAggJ3MDAg==",
   },
   {
-    key: "./Runewords/Weapon/Flail/Hoto (Flail).d2i",
+    key: "./Runewords/Weapon/Flail/Heart of the Oak (Flail).d2i",
     value:
       "Sk0QCIAEZACgasYWBkIdyIZ97ZAmKB4e6P8JrRRaK7RaaCmRm2RpeH/GzOmGh4cZIU5Gxn9KTRAAoABkGAAgF4MDAkpNEACgAGQYAiAnYwMCSk0QAKAAZBgEICcTAwJKTRAAoABkGAYgFwMDAg==",
   },
