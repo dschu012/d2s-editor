@@ -781,7 +781,7 @@ export default [
     key: "./Uniques/Class-Items/Pala/Paladin Torch.d2i",
     value: "Sk0QAIAAZABgOtYmA4KVvQEX7gXIAIAmAE0AbQDthFEKoxVGLYymbFnYmFJMhpnng4LCfw==",
   },
-  { key: "./Uniques/Class-Items/Sorc/Daths Fatom.d2i", value: "Sk0QCIAAZQAA8iZmBgId/9CF8SEWZGTECa0UWlOyNKilUP4D" },
+  { key: "./Uniques/Class-Items/Sorc/Death's Fathom.d2i", value: "Sk0QCIAAZQAA8iZmBgId/9CF8SEWZGTECa0UWlOyNKilUP4D" },
   { key: "./Uniques/Class-Items/Sorc/Eschutas Temper.d2i", value: "Sk0QCIAAZQAA8iY2BoI7S1SE8fEWPDhEAN+ULA0vqRGlRv4D" },
   { key: "./Uniques/Class-Items/Sorc/Ormus' Robes (Blizzard).d2i", value: "Sk0QCIAAZQBgWleXBoI9vhPS8GEWsENBITY8fPBAGtSaHUsaRGmQpUH+Aw==" },
   { key: "./Uniques/Class-Items/Sorc/Ormus' Robes (CL).d2i", value: "Sk0QCIAAZQAAWleXBoI9vhPS8GEWsENBITY8fPBAGtSaGksaRGmQpUH+Aw==" },
