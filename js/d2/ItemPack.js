@@ -194,12 +194,12 @@ export default [
     value: "Sk0QCIAEZAAAWkcHB7KfPl8a7ZBWKBbi4TEQHiwZ/Z9idQkaeyzKJHsWKvwHSk0QAKAAZBgAIBczAwJKTRAAoABkGAIgFwMDAkpNEACgAGQYBCAnAwMC",
   },
   {
-    key: "./Runewords/Armor/CoH (AP).d2i",
+    key: "./Runewords/Armor/Chains of Honor (AP).d2i",
     value:
       "Sk0QCIAEZABmWkcHB0JKffA07RAUKBbi4UEQHiwZ/QdAA8HICbIUZCvIWpDxQOThpgfPH/0HSk0QAKAAZBgAIBdDAwJKTRAAoABkGAIgJyMDAkpNEACgAGQYBCA3AwMCSk0QAKAAZBgGICdDAwI=",
   },
   {
-    key: "./Runewords/Armor/CoH (AP, Eth).d2i",
+    key: "./Runewords/Armor/Chains of Honor (AP, Eth).d2i",
     value:
       "Sk0QCMAEZAAEUkcHB0JKffA07RAUKBzj4UEQHiwZ/QdAA8HICbIUZCvIWpDxQOThpgfPH/0HSk0QAKAAZBgAIBdDAwJKTRAAoABkGAIgJyMDAkpNEACgAGQYBCA3AwMCSk0QAKAAZBgGICdDAwI=",
   },
@@ -424,7 +424,7 @@ export default [
       "Sk0QCIAEZGQXYMYWBtL04tdW7ZATKB4eKkKAAGEqEWE2Df8jvHunRO3CCyOJCFNJCLNp+JP/Sk0QAKAAZBgAIBcTAwJKTRAAoABkGAIgB4MDAkpNEACgAGQYBCAnMwMCSk0QAKAAZBgGICdDAwJKTRAAoABkGAggJ3MDAg==",
   },
   {
-    key: "./Runewords/Weapon/Flail/Hoto (Flail).d2i",
+    key: "./Runewords/Weapon/Flail/Heart of the Oak (Flail).d2i",
     value:
       "Sk0QCIAEZACgasYWBkIdyIZ97ZAmKB4e6P8JrRRaK7RaaCmRm2RpeH/GzOmGh4cZIU5Gxn9KTRAAoABkGAAgF4MDAkpNEACgAGQYAiAnYwMCSk0QAKAAZBgEICcTAwJKTRAAoABkGAYgFwMDAg==",
   },
@@ -696,6 +696,8 @@ export default [
   { key: "./Uniques/Class-Items/Ama/Amazon Torch.d2i", value: "Sk0QAIAAZAAAMtYmA4KAwYck7gXIAIAmAE0AbQDthFEKoxVGLYymYFnYmFJMhpnng4LCfw==" },
   { key: "./Uniques/Class-Items/Ama/Bloodraven's Charge.d2i", value: "Sk0QCIAAZQAIEtYmBgIFjQfs8MEUYGBEBHPm7gD11OAFAEBmxRceHv8B" },
   { key: "./Uniques/Class-Items/Ama/Lycander's Aim (Up).d2i", value: "Sk0QCIAAZQAGEtY2BgJDENBj76ERbk5EAJoAGgQKEZAhu5BhkPlATIG6oHgBAOg/" },
+  { key: "./Uniques/Class-Items/Ama/Lycander's Flank.d2i", value: "Sk0QKIAAZQAAEtaWA4LTByN72bERMhoEAJoBNAgUIiBDdiHDIOORmAJ1kfESANB/" },
+  { key: "./Uniques/Class-Items/Ama/Lycander's Flank (Eth).d2i", value: "Sk0QKMAAZQACEtaWA4LTByN72bERGhoEAJoBNAgUIiBDdiHDIOORmAJ1kfESANB/" },
   { key: "./Uniques/Class-Items/Ama/Thunderstroke.d2i", value: "Sk0QAIAAZQACEtZmBgKbS63B8CEVDAxAiYAMmYzgvy6jNRTGSwCAxpwYKE4f/gM=" },
   {
     key: "./Uniques/Class-Items/Ama/Titan's Revenge (Eth).d2i",
@@ -779,7 +781,7 @@ export default [
     key: "./Uniques/Class-Items/Pala/Paladin Torch.d2i",
     value: "Sk0QAIAAZABgOtYmA4KVvQEX7gXIAIAmAE0AbQDthFEKoxVGLYymbFnYmFJMhpnng4LCfw==",
   },
-  { key: "./Uniques/Class-Items/Sorc/Daths Fatom.d2i", value: "Sk0QCIAAZQAA8iZmBgId/9CF8SEWZGTECa0UWlOyNKilUP4D" },
+  { key: "./Uniques/Class-Items/Sorc/Death's Fathom.d2i", value: "Sk0QCIAAZQAA8iZmBgId/9CF8SEWZGTECa0UWlOyNKilUP4D" },
   { key: "./Uniques/Class-Items/Sorc/Eschutas Temper.d2i", value: "Sk0QCIAAZQAA8iY2BoI7S1SE8fEWPDhEAN+ULA0vqRGlRv4D" },
   { key: "./Uniques/Class-Items/Sorc/Ormus' Robes (Blizzard).d2i", value: "Sk0QCIAAZQBgWleXBoI9vhPS8GEWsENBITY8fPBAGtSaHUsaRGmQpUH+Aw==" },
   { key: "./Uniques/Class-Items/Sorc/Ormus' Robes (CL).d2i", value: "Sk0QCIAAZQAAWleXBoI9vhPS8GEWsENBITY8fPBAGtSaGksaRGmQpUH+Aw==" },
@@ -1049,7 +1051,7 @@ export default [
   { key: "./Uniques/Weapons/Scepter/Normal/Knell Striker.d2i", value: "Sk0QCIAAZQAAMjcGBwKRiC3z8fEAZGREgpcIUKBMGOGEUQsjRJn/" },
   { key: "./Uniques/Weapons/Scepter/Normal/Rusthandle.d2i", value: "Sk0QCIAAZQACcjY3BoIZ0fUP7wEBeHhEBB48KgwWDiMCHogpy5ozW/NmeqD8Bw==" },
   { key: "./Uniques/Weapons/Scepter/Normal/Stormeye.d2i", value: "Sk0QCIAAZQAEcjcHBwJD989CwREBjIxEBDx4ZAQG2BgosKQEXeOma+xsTZ78Bw==" },
-  { key: "./Uniques/Weapons/Spear/Elite/Arioc's Needle Etheral.d2i", value: "Sk0QCMAAZQAIcjMnBwKEPiKa8eEXPDxEBHPmckw2mb4usjn/sJHsPw==" },
+  { key: "./Uniques/Weapons/Spear/Elite/Arioc's Needle (Eth).d2i", value: "Sk0QCMAAZQAIcjMnBwKEPiKa8eEXPDxEBHPmckw2mb4usjn/sJHsPw==" },
   { key: "./Uniques/Weapons/Spear/Elite/Arioc's Needle.d2i", value: "Sk0QCIAAZQAMcjMnBwI9Cueb8eEXPDxEBHPmckw2mb4usjn/sJHsPw==" },
   { key: "./Uniques/Weapons/Spear/Elite/Steelpillar.d2i", value: "Sk0QCIAAZQAAcgN3AwIlb+vi8WEVMjIEBCgRCBLs0qJDQZTB9D8=" },
   { key: "./Uniques/Weapons/Spear/Elite/Viperfork.d2i", value: "Sk0QCIAAZQAEciMmB4JbFC/78TEUODhEBHjwJujTgixHU03p62I0lkzx+A8=" },
