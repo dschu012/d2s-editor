@@ -85,7 +85,7 @@ const mainContent = html`
             <div class="form-group">
               <div class="input-group">
                 <div class="custom-file">
-                  <input type="file" name="d2sFile" @change="onFileChange" id="d2sFile">
+                  <input type="file" multiple="multiple" name="d2sFile" @change="onFileChange" id="d2sFile">
                   <label class="custom-file-label" for="d2sFile">*.d2s</label>
                 </div>
                 <div>
@@ -149,19 +149,24 @@ const mainContent = html`
                     </button>
                   </div>
                   <div class="row mt-3">
-                    <div class="btn-group overflow-auto offset-md-3 col-md-6" role="group">
+                    <div class="btn-group offset-md-3 col-md-6" role="group">
                       <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 1 }"
                         @click="changeTab(1)">Equipped</button>
                       <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 2 }"
-                        @click="changeTab(2)">Inventory</button>
-                      <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 3 }"
-                        @click="changeTab(3)">Stash</button>
-                      <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 4 }"
-                        @click="changeTab(4)">Cube</button>
-                      <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 5 }"
-                        @click="changeTab(5)">Mercenary</button>
-                      <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 6 }"
-                        @click="changeTab(6)">All</button>
+                        @click="changeTab(2)">Inventory</button>             
+                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" :class="{ active: activeTab == 3 }">Stash</button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                          <button class="dropdown-item" type="button" @click="changeStash(0)">Personal</button>
+                          <button class="dropdown-item" type="button" @click="changeStash(1)">Shared</button>
+                          <button class="dropdown-item" type="button" @click="changeStash(2)">Shared</button>
+                          <button class="dropdown-item" type="button" @click="changeStash(3)">Shared</button>
+                        </div>
+                        <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 7 }"
+                          @click="changeTab(7)">Cube</button>
+                        <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 8 }"
+                          @click="changeTab(8)">Mercenary</button>
+                        <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 9 }"
+                          @click="changeTab(9)">All</button>
                     </div>
                     <div class="col-md-3">
                       <div class="float-right">
@@ -198,6 +203,48 @@ const mainContent = html`
                             </div>
                             <div class="form-row">
                               <div class="col-md-12">
+                                <label>Shared Stash</label>
+                                <div class="input-group">
+                                  <input type="number" min="1" max="20" class="form-control" v-model.number="grid.stashShared.w"
+                                    @input="gridChange">
+                                  <div class="input-group-prepend input-group-append">
+                                    <div class="input-group-text">,</div>
+                                  </div>
+                                  <input type="number" min="1" max="20" class="form-control" v-model.number="grid.stashShared.h"
+                                    @input="gridChange">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-row">
+                              <div class="col-md-12">
+                                <label>Shared Stash</label>
+                                <div class="input-group">
+                                  <input type="number" min="1" max="20" class="form-control" v-model.number="grid.stashShared.w"
+                                    @input="gridChange">
+                                  <div class="input-group-prepend input-group-append">
+                                    <div class="input-group-text">,</div>
+                                  </div>
+                                  <input type="number" min="1" max="20" class="form-control" v-model.number="grid.stashShared.h"
+                                    @input="gridChange">
+                                </div>
+                              </div>
+                            </div>          
+                            <div class="form-row">
+                              <div class="col-md-12">
+                                <label>Shared Stash</label>
+                                <div class="input-group">
+                                  <input type="number" min="1" max="20" class="form-control" v-model.number="grid.stashShared.w"
+                                    @input="gridChange">
+                                  <div class="input-group-prepend input-group-append">
+                                    <div class="input-group-text">,</div>
+                                  </div>
+                                  <input type="number" min="1" max="20" class="form-control" v-model.number="grid.stashShared.h"
+                                    @input="gridChange">
+                                </div>
+                              </div>
+                            </div>      
+                            <div class="form-row">
+                              <div class="col-md-12">
                                 <label>Cube</label>
                                 <div class="input-group">
                                   <input type="number" min="1" max="20" class="form-control" v-model.number="grid.cube.w"
@@ -219,16 +266,22 @@ const mainContent = html`
                       </div>
                     </div>
                   </div>
-                  <Equipped v-if="activeTab == 1 || activeTab == 6" :items.sync="equipped" @item-selected="onSelect" @item-event="onEvent" :id="'Equipped'" :contextMenu="$refs.contextMenu">
+                  <Equipped v-if="activeTab == 1 || activeTab == 9" :items.sync="equipped" @item-selected="onSelect" @item-event="onEvent" :id="'Equipped'" :contextMenu="$refs.contextMenu">
                   </Equipped>
-                  <Grid v-if="activeTab == 2 || activeTab == 6" :width="grid.inv.w" :height="grid.inv.h" :page="1"
+                  <Grid v-if="activeTab == 2 || activeTab == 9" :width="grid.inv.w" :height="grid.inv.h" :page="1"
                     :items.sync="inventory" @item-selected="onSelect" @item-event="onEvent" :id="'InventoryGrid'" :contextMenu="$refs.contextMenu"></Grid>
-                  <Grid v-if="activeTab == 3 || activeTab == 6" :width="grid.stash.w" :height="grid.stash.h" :page="5"
-                    :items.sync="stash" @item-selected="onSelect" @item-event="onEvent" :id="'StashGrid'" :contextMenu="$refs.contextMenu"></Grid>
-                  <Grid v-if="activeTab == 4 || activeTab == 6" :width="grid.cube.w" :height="grid.cube.h" :page="4"
+                  <Grid v-if="activeTab == 3 || activeTab == 9" :width="grid.stash.w" :height="grid.stash.h" :page="5"
+                    :items.sync="stash(activeStash)" @item-selected="onSelect" @item-event="onEvent" :id="'StashGrid'" :contextMenu="$refs.contextMenu"></Grid>
+                  <Grid v-if="activeTab == 4 || activeTab == 9" :width="grid.stash.w" :height="grid.stash.h" :page="6"
+                    :items.sync="stash(1)" @item-selected="onSelect" @item-event="onEvent" :id="'StashGrid'" :contextMenu="$refs.contextMenu"></Grid>
+                  <Grid v-if="activeTab == 5 || activeTab == 9" :width="grid.stash.w" :height="grid.stash.h" :page="7"
+                    :items.sync="stash(2)" @item-selected="onSelect" @item-event="onEvent" :id="'StashGrid'" :contextMenu="$refs.contextMenu"></Grid>  
+                  <Grid v-if="activeTab == 6 || activeTab == 9" :width="grid.stash.w" :height="grid.stash.h" :page="8"
+                    :items.sync="stash(3)" @item-selected="onSelect" @item-event="onEvent" :id="'StashGrid'" :contextMenu="$refs.contextMenu"></Grid>   
+                  <Grid v-if="activeTab == 7 || activeTab == 9" :width="grid.cube.w" :height="grid.cube.h" :page="4"
                     :items.sync="cube" @item-selected="onSelect" @item-event="onEvent" :id="'CubeGrid'" :contextMenu="$refs.contextMenu">
                   </Grid>
-                  <Mercenary v-if="activeTab == 5 || activeTab == 6" :items.sync="mercenary" @item-selected="onSelect" :contextMenu="$refs.contextMenu">
+                  <Mercenary v-if="activeTab == 8 || activeTab == 9" :items.sync="mercenary" @item-selected="onSelect" :contextMenu="$refs.contextMenu">
                   </Mercenary>
                   <ItemEditor v-if="selected" :id="'Selected'" :item.sync="selected" :location="location" ref="editor" @item-event="onEvent"></ItemEditor>
                 </div>
@@ -248,6 +301,7 @@ const mainContent = html`
             <br /><br />
             <button type="button" id="d2" class="btn btn-primary" @click="saveFile(0x60)">Save D2</button>
             <button type="button" id="d2r" class="btn btn-primary" @click="saveFile(0x61)">Save D2R</button>
+            <button type="button" id="d2r" class="btn btn-primary" @click="saveFileStash(0x62)">Save D2R Stash</button>
           </div>
         </form>
       </div>
@@ -287,6 +341,8 @@ export default {
   data() {
     return {
       save: null,
+      stashData: null,
+      activeStash: 0,
       activeTab: 1,
       selected: null,
       itempack: ItemPack,
@@ -296,7 +352,7 @@ export default {
       clipboard: null,
       load: null,
       notifications: [],
-      grid: { inv: { w: 10, h: 4 }, stash: { w: 10, h: 10 }, cube: { w: 3, h: 4 } },
+      grid: { inv: { w: 10, h: 4 }, stash: { w: 10, h: 10 }, stashShared: { w: 10, h: 10 }, cube: { w: 3, h: 4 } },
       location: {},
       theme: localStorage.getItem('theme')
     };
@@ -354,11 +410,6 @@ export default {
         item => item.location_id === 0 && item.alt_position_id === 1,
       );
     },
-    stash() {
-      return this.save.items.filter(
-        item => item.location_id === 0 && item.alt_position_id === 5,
-      );
-    },
     cube() {
       return this.save.items.filter(
         item => item.location_id === 0 && item.alt_position_id === 4,
@@ -369,6 +420,18 @@ export default {
     },
   },
   methods: {
+    stash(i) {
+      if (i > 0) {
+        if (this.stashData == null) return [];
+        return this.stashData.pages[i-1].items || [];
+      } else {
+        return this.save.items.filter(item => item.location_id === 0 && item.alt_position_id === 5,);
+      }
+    },
+    changeStash(i) {
+      this.activeTab = 3;
+      this.activeStash = i;
+    },
     setTheme(theme) {
       localStorage.setItem('theme', theme);
       this.theme = theme;
@@ -668,27 +731,35 @@ export default {
       let bytes = utils.b64ToArrayBuffer(CharPack[index]);
       this.readBuffer(bytes);
     },
-    onFileLoad(event) {
-      this.readBuffer(event.target.result, event.target.filename);
-    },
     readBuffer(bytes, filename) {
-      let that = this;
-      this.save = null;
-      this.selected = null;
-      d2s.read(bytes, constants.constants).then(response => {
-        that.save = response;
-        if(filename) {
-          that.save.header.name = filename.split('.')[0];
-        }
-        that.setPropertiesOnSave();
-      });
+      if (filename.includes(".d2s")) {
+        d2s.read(bytes, constants.constants).then(response => {
+          this.save = response;
+          this.setPropertiesOnSave();
+        });
+      } else if (filename.includes("SharedStashSoftCoreV2")) {
+        d2s.readStash(bytes, constants.constants, 0x62).then(response => {   
+          this.stashData = response;
+          for (var i = 0; i < this.stashData.pageCount; i++) {
+            [... this.stashData.pages[i].items].forEach(item => {
+              this.setPropertiesOnItem(item);
+            });
+          }
+        });
+      }
     },
     onFileChange(event) {
-      let reader = new FileReader();
-      reader.filename = event.target.files[0].name;
-      reader.onload = this.onFileLoad;
-      reader.readAsArrayBuffer(event.target.files[0]);
-      event.target.value = null;
+      this.save = null;
+      this.stashData = null;
+      this.selected = null;
+      const files = event.currentTarget.files;
+      Object.keys(files).forEach(i => {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          this.readBuffer(e.target.result, files[i].name);
+        }
+        reader.readAsArrayBuffer(files[i]);
+      })
     },
     maxGold() {
       this.save.attributes.gold = this.save.header.level * 10000;
@@ -775,6 +846,20 @@ export default {
         link.click();
         link.remove();
       });
+    },
+    saveFileStash(version) {
+      if (this.stashData != null) {
+        let link = document.createElement('a');
+        link.style.display = 'none';
+        document.body.appendChild(link);
+        d2s.writeStash(this.stashData, constants.constants, version).then(function (response) {
+          let blob = new Blob([response], { type: "octet/stream" });
+          link.href = window.URL.createObjectURL(blob);
+          link.download = 'SharedStashSoftCoreV2.d2i';
+          link.click();
+          link.remove();
+        });
+      }
     }
   },
 };
