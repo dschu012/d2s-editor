@@ -154,19 +154,20 @@ const mainContent = html`
                         @click="changeTab(1)">Equipped</button>
                       <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 2 }"
                         @click="changeTab(2)">Inventory</button>             
-                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" :class="{ active: activeTab == 3 }">Stash</button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                          <button class="dropdown-item" type="button" @click="changeStash(0)">Personal</button>
-                          <button class="dropdown-item" type="button" @click="changeStash(1)">Shared</button>
-                          <button class="dropdown-item" type="button" @click="changeStash(2)">Shared</button>
-                          <button class="dropdown-item" type="button" @click="changeStash(3)">Shared</button>
-                        </div>
-                        <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 7 }"
-                          @click="changeTab(7)">Cube</button>
-                        <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 8 }"
-                          @click="changeTab(8)">Mercenary</button>
-                        <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 9 }"
-                          @click="changeTab(9)">All</button>
+                      <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 3 }"
+                        @click="changeTab(3)">Stash</button>                 
+                      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" :class="{ active: activeTab == 4 }">Shared Stash</button>
+                      <div class="dropdown-menu dropdown-menu-right">
+                        <button class="dropdown-item" type="button" @click="changeStash(1)">Shared</button>
+                        <button class="dropdown-item" type="button" @click="changeStash(2)">Shared</button>
+                        <button class="dropdown-item" type="button" @click="changeStash(3)">Shared</button>
+                      </div>
+                      <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 7 }"
+                        @click="changeTab(7)">Cube</button>
+                      <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 8 }"
+                        @click="changeTab(8)">Mercenary</button>
+                      <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 9 }"
+                        @click="changeTab(9)">All</button>
                     </div>
                     <div class="col-md-3">
                       <div class="float-right">
@@ -200,49 +201,7 @@ const mainContent = html`
                                     @input="gridChange">
                                 </div>
                               </div>
-                            </div>
-                            <div class="form-row">
-                              <div class="col-md-12">
-                                <label>Shared Stash</label>
-                                <div class="input-group">
-                                  <input type="number" min="1" max="20" class="form-control" v-model.number="grid.stashShared.w"
-                                    @input="gridChange">
-                                  <div class="input-group-prepend input-group-append">
-                                    <div class="input-group-text">,</div>
-                                  </div>
-                                  <input type="number" min="1" max="20" class="form-control" v-model.number="grid.stashShared.h"
-                                    @input="gridChange">
-                                </div>
-                              </div>
-                            </div>
-                            <div class="form-row">
-                              <div class="col-md-12">
-                                <label>Shared Stash</label>
-                                <div class="input-group">
-                                  <input type="number" min="1" max="20" class="form-control" v-model.number="grid.stashShared.w"
-                                    @input="gridChange">
-                                  <div class="input-group-prepend input-group-append">
-                                    <div class="input-group-text">,</div>
-                                  </div>
-                                  <input type="number" min="1" max="20" class="form-control" v-model.number="grid.stashShared.h"
-                                    @input="gridChange">
-                                </div>
-                              </div>
-                            </div>          
-                            <div class="form-row">
-                              <div class="col-md-12">
-                                <label>Shared Stash</label>
-                                <div class="input-group">
-                                  <input type="number" min="1" max="20" class="form-control" v-model.number="grid.stashShared.w"
-                                    @input="gridChange">
-                                  <div class="input-group-prepend input-group-append">
-                                    <div class="input-group-text">,</div>
-                                  </div>
-                                  <input type="number" min="1" max="20" class="form-control" v-model.number="grid.stashShared.h"
-                                    @input="gridChange">
-                                </div>
-                              </div>
-                            </div>      
+                            </div>   
                             <div class="form-row">
                               <div class="col-md-12">
                                 <label>Cube</label>
@@ -271,13 +230,13 @@ const mainContent = html`
                   <Grid v-if="activeTab == 2 || activeTab == 9" :width="grid.inv.w" :height="grid.inv.h" :page="1"
                     :items.sync="inventory" @item-selected="onSelect" @item-event="onEvent" :id="'InventoryGrid'" :contextMenu="$refs.contextMenu"></Grid>
                   <Grid v-if="activeTab == 3 || activeTab == 9" :width="grid.stash.w" :height="grid.stash.h" :page="5"
-                    :items.sync="stash(activeStash)" @item-selected="onSelect" @item-event="onEvent" :id="'StashGrid'" :contextMenu="$refs.contextMenu"></Grid>
+                    :items.sync="stash(0)" @item-selected="onSelect" @item-event="onEvent" :id="'StashGrid'" :contextMenu="$refs.contextMenu"></Grid>
                   <Grid v-if="activeTab == 4 || activeTab == 9" :width="grid.stash.w" :height="grid.stash.h" :page="6"
-                    :items.sync="stash(1)" @item-selected="onSelect" @item-event="onEvent" :id="'StashGrid'" :contextMenu="$refs.contextMenu"></Grid>
+                    :items.sync="stash(activeStash)" @item-selected="onSelect" @item-event="onEvent" :id="'StashSharedGrid'" :contextMenu="$refs.contextMenu"></Grid>
                   <Grid v-if="activeTab == 5 || activeTab == 9" :width="grid.stash.w" :height="grid.stash.h" :page="7"
-                    :items.sync="stash(2)" @item-selected="onSelect" @item-event="onEvent" :id="'StashGrid'" :contextMenu="$refs.contextMenu"></Grid>  
+                    :items.sync="stash(2)" @item-selected="onSelect" @item-event="onEvent" :id="'StashSharedGrid'" :contextMenu="$refs.contextMenu"></Grid>  
                   <Grid v-if="activeTab == 6 || activeTab == 9" :width="grid.stash.w" :height="grid.stash.h" :page="8"
-                    :items.sync="stash(3)" @item-selected="onSelect" @item-event="onEvent" :id="'StashGrid'" :contextMenu="$refs.contextMenu"></Grid>   
+                    :items.sync="stash(3)" @item-selected="onSelect" @item-event="onEvent" :id="'StashSharedGrid'" :contextMenu="$refs.contextMenu"></Grid>   
                   <Grid v-if="activeTab == 7 || activeTab == 9" :width="grid.cube.w" :height="grid.cube.h" :page="4"
                     :items.sync="cube" @item-selected="onSelect" @item-event="onEvent" :id="'CubeGrid'" :contextMenu="$refs.contextMenu">
                   </Grid>
@@ -429,7 +388,7 @@ export default {
       }
     },
     changeStash(i) {
-      this.activeTab = 3;
+      this.activeTab = 4;
       this.activeStash = i;
     },
     setTheme(theme) {
