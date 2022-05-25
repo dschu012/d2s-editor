@@ -158,9 +158,9 @@ const mainContent = html`
                         @click="changeTab(3)">Stash</button>                 
                       <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" :class="{ active: activeTab == 4 }">Shared Stash</button>
                       <div class="dropdown-menu dropdown-menu-right">
-                        <button class="dropdown-item" type="button" @click="changeStash(1)">Shared</button>
-                        <button class="dropdown-item" type="button" @click="changeStash(2)">Shared</button>
-                        <button class="dropdown-item" type="button" @click="changeStash(3)">Shared</button>
+                        <button class="dropdown-item" type="button" @click="changeTab(4)">Shared</button>
+                        <button class="dropdown-item" type="button" @click="changeTab(5)">Shared</button>
+                        <button class="dropdown-item" type="button" @click="changeTab(6)">Shared</button>
                       </div>
                       <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 7 }"
                         @click="changeTab(7)">Cube</button>
@@ -232,7 +232,7 @@ const mainContent = html`
                   <Grid v-if="activeTab == 3 || activeTab == 9" :width="grid.stash.w" :height="grid.stash.h" :page="5"
                     :items.sync="stash(0)" @item-selected="onSelect" @item-event="onEvent" :id="'StashGrid'" :contextMenu="$refs.contextMenu"></Grid>
                   <Grid v-if="activeTab == 4 || activeTab == 9" :width="grid.stash.w" :height="grid.stash.h" :page="6"
-                    :items.sync="stash(activeStash)" @item-selected="onSelect" @item-event="onEvent" :id="'StashSharedGrid'" :contextMenu="$refs.contextMenu"></Grid>
+                    :items.sync="stash(1)" @item-selected="onSelect" @item-event="onEvent" :id="'StashSharedGrid'" :contextMenu="$refs.contextMenu"></Grid>
                   <Grid v-if="activeTab == 5 || activeTab == 9" :width="grid.stash.w" :height="grid.stash.h" :page="7"
                     :items.sync="stash(2)" @item-selected="onSelect" @item-event="onEvent" :id="'StashSharedGrid'" :contextMenu="$refs.contextMenu"></Grid>  
                   <Grid v-if="activeTab == 6 || activeTab == 9" :width="grid.stash.w" :height="grid.stash.h" :page="8"
@@ -301,7 +301,6 @@ export default {
     return {
       save: null,
       stashData: null,
-      activeStash: 0,
       activeTab: 1,
       selected: null,
       itempack: ItemPack,
@@ -311,7 +310,7 @@ export default {
       clipboard: null,
       load: null,
       notifications: [],
-      grid: { inv: { w: 10, h: 4 }, stash: { w: 10, h: 10 }, stashShared: { w: 10, h: 10 }, cube: { w: 3, h: 4 } },
+      grid: { inv: { w: 10, h: 4 }, stash: { w: 10, h: 10 }, cube: { w: 3, h: 4 } },
       location: {},
       theme: localStorage.getItem('theme')
     };
@@ -386,10 +385,6 @@ export default {
       } else {
         return this.save.items.filter(item => item.location_id === 0 && item.alt_position_id === 5,);
       }
-    },
-    changeStash(i) {
-      this.activeTab = 4;
-      this.activeStash = i;
     },
     setTheme(theme) {
       localStorage.setItem('theme', theme);
