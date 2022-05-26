@@ -157,12 +157,12 @@ const mainContent = html`
                         @click="changeTab(2)">Inventory</button>             
                       <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 3 }"
                         @click="changeTab(3)">Stash</button>     
-                      <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 7 }"
-                        @click="changeTab(7)">Cube</button>
                       <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 8 }"
-                        @click="changeTab(8)">Mercenary</button>
+                        @click="changeTab(8)">Cube</button>
                       <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 9 }"
-                        @click="changeTab(9)">All</button>
+                        @click="changeTab(9)">Mercenary</button>
+                      <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 10 }"
+                        @click="changeTab(10)">All</button>
                     </div>
                     <div class="col-md-3">
                       <div class="float-right">
@@ -220,22 +220,24 @@ const mainContent = html`
                       </div>
                     </div>
                   </div>
-                  <Equipped v-if="activeTab == 1 || activeTab == 9" :items.sync="equipped" @item-selected="onSelect" @item-event="onEvent" :id="'Equipped'" :contextMenu="$refs.contextMenu">
+                  <Equipped v-if="activeTab == 1 || activeTab == 10" :items.sync="equipped" @item-selected="onSelect" @item-event="onEvent" :id="'Equipped'" :contextMenu="$refs.contextMenu">
                   </Equipped>
-                  <Grid v-if="activeTab == 2 || activeTab == 9" :width="grid.inv.w" :height="grid.inv.h" :page="1"
+                  <Grid v-if="activeTab == 2 || activeTab == 10" :width="grid.inv.w" :height="grid.inv.h" :page="1"
                     :items.sync="inventory" @item-selected="onSelect" @item-event="onEvent" :id="'InventoryGrid'" :contextMenu="$refs.contextMenu"></Grid>                  
-                  <Stash v-if="activeTab == 3 || activeTab == 9" :items.sync="stashAll" @item-selected="onSelect" @item-event="onEvent" :id="'Stash'">
+                  <Stash v-if="activeTab == 3" :items.sync="stashAll" @item-selected="onSelect" @item-event="onEvent" :id="'Stash'">
                   </Stash>
-                  <Grid v-if="activeTab == 4 || activeTab == 9" :width="grid.stash.w" :height="grid.stash.h" :page="6"
+                  <Grid v-if="activeTab == 4 || activeTab == 10" :width="grid.stash.w" :height="grid.stash.h" :page="5"
+                    :items.sync="stash(0)" @item-selected="onSelect" @item-event="onEvent" :id="'StashSharedGrid'" :contextMenu="$refs.contextMenu"></Grid>  
+                  <Grid v-if="activeTab == 5 || activeTab == 10" :width="grid.stash.w" :height="grid.stash.h" :page="6"
                     :items.sync="stash(1)" @item-selected="onSelect" @item-event="onEvent" :id="'StashSharedGrid'" :contextMenu="$refs.contextMenu"></Grid>  
-                  <Grid v-if="activeTab == 5 || activeTab == 9" :width="grid.stash.w" :height="grid.stash.h" :page="7"
-                    :items.sync="stash(2)" @item-selected="onSelect" @item-event="onEvent" :id="'StashSharedGrid'" :contextMenu="$refs.contextMenu"></Grid>  
-                  <Grid v-if="activeTab == 6 || activeTab == 9" :width="grid.stash.w" :height="grid.stash.h" :page="8"
+                  <Grid v-if="activeTab == 6 || activeTab == 10" :width="grid.stash.w" :height="grid.stash.h" :page="7"
+                    :items.sync="stash(2)" @item-selected="onSelect" @item-event="onEvent" :id="'StashSharedGrid'" :contextMenu="$refs.contextMenu"></Grid>   
+                  <Grid v-if="activeTab == 8 || activeTab == 10" :width="grid.stash.w" :height="grid.stash.h" :page="8"
                     :items.sync="stash(3)" @item-selected="onSelect" @item-event="onEvent" :id="'StashSharedGrid'" :contextMenu="$refs.contextMenu"></Grid>   
-                  <Grid v-if="activeTab == 7 || activeTab == 9" :width="grid.cube.w" :height="grid.cube.h" :page="4"
+                  <Grid v-if="activeTab == 7 || activeTab == 10" :width="grid.cube.w" :height="grid.cube.h" :page="4"
                     :items.sync="cube" @item-selected="onSelect" @item-event="onEvent" :id="'CubeGrid'" :contextMenu="$refs.contextMenu">
                   </Grid>
-                  <Mercenary v-if="activeTab == 8 || activeTab == 9" :items.sync="mercenary" @item-selected="onSelect" :contextMenu="$refs.contextMenu">
+                  <Mercenary v-if="activeTab == 9 || activeTab == 10" :items.sync="mercenary" @item-selected="onSelect" :contextMenu="$refs.contextMenu">
                   </Mercenary>
                   <ItemEditor v-if="selected" :id="'Selected'" :item.sync="selected" :location="location" ref="editor" @item-event="onEvent"></ItemEditor>
                 </div>

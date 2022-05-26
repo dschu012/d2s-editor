@@ -10,7 +10,7 @@ export default {
     <div class="row-mt-3">
       <div class="btn-group offset-md-3 col-md-2" role="group">
         <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 1 }"
-          @click="changeTab(1)">Primary</button>
+          @click="changeTab(1)">Personal</button>
         <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 2 }"
           @click="changeTab(2)">Shared</button>             
         <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 3 }"
