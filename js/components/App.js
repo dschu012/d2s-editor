@@ -5,6 +5,7 @@ import Waypoints from './Waypoints.js';
 import Quests from './Quests.js';
 import Skills from './Skills.js';
 import Equipped from './inventory/Equipped.js';
+import Stash from './Stash.js';
 import Grid from './inventory/Grid.js';
 import Mercenary from './Mercenary.js';
 import ItemEditor from './inventory/ItemEditor.js';
@@ -155,13 +156,7 @@ const mainContent = html`
                       <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 2 }"
                         @click="changeTab(2)">Inventory</button>             
                       <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 3 }"
-                        @click="changeTab(3)">Stash</button>                 
-                      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" :class="{ active: activeTab == 4 }">Shared Stash</button>
-                      <div class="dropdown-menu dropdown-menu-right">
-                        <button class="dropdown-item" type="button" @click="changeTab(4)">Shared</button>
-                        <button class="dropdown-item" type="button" @click="changeTab(5)">Shared</button>
-                        <button class="dropdown-item" type="button" @click="changeTab(6)">Shared</button>
-                      </div>
+                        @click="changeTab(3)">Stash</button>     
                       <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 7 }"
                         @click="changeTab(7)">Cube</button>
                       <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 8 }"
@@ -228,11 +223,11 @@ const mainContent = html`
                   <Equipped v-if="activeTab == 1 || activeTab == 9" :items.sync="equipped" @item-selected="onSelect" @item-event="onEvent" :id="'Equipped'" :contextMenu="$refs.contextMenu">
                   </Equipped>
                   <Grid v-if="activeTab == 2 || activeTab == 9" :width="grid.inv.w" :height="grid.inv.h" :page="1"
-                    :items.sync="inventory" @item-selected="onSelect" @item-event="onEvent" :id="'InventoryGrid'" :contextMenu="$refs.contextMenu"></Grid>
-                  <Grid v-if="activeTab == 3 || activeTab == 9" :width="grid.stash.w" :height="grid.stash.h" :page="5"
-                    :items.sync="stash(0)" @item-selected="onSelect" @item-event="onEvent" :id="'StashGrid'" :contextMenu="$refs.contextMenu"></Grid>
+                    :items.sync="inventory" @item-selected="onSelect" @item-event="onEvent" :id="'InventoryGrid'" :contextMenu="$refs.contextMenu"></Grid>                  
+                  <Stash v-if="activeTab == 3 || activeTab == 9" :items.sync="stashAll" @item-selected="onSelect" @item-event="onEvent" :id="'Stash'">
+                  </Stash>
                   <Grid v-if="activeTab == 4 || activeTab == 9" :width="grid.stash.w" :height="grid.stash.h" :page="6"
-                    :items.sync="stash(1)" @item-selected="onSelect" @item-event="onEvent" :id="'StashSharedGrid'" :contextMenu="$refs.contextMenu"></Grid>
+                    :items.sync="stash(1)" @item-selected="onSelect" @item-event="onEvent" :id="'StashSharedGrid'" :contextMenu="$refs.contextMenu"></Grid>  
                   <Grid v-if="activeTab == 5 || activeTab == 9" :width="grid.stash.w" :height="grid.stash.h" :page="7"
                     :items.sync="stash(2)" @item-selected="onSelect" @item-event="onEvent" :id="'StashSharedGrid'" :contextMenu="$refs.contextMenu"></Grid>  
                   <Grid v-if="activeTab == 6 || activeTab == 9" :width="grid.stash.w" :height="grid.stash.h" :page="8"
@@ -292,6 +287,7 @@ export default {
     Quests,
     Skills,
     Equipped,
+    Stash,
     Grid,
     Mercenary,
     ItemEditor,
@@ -368,6 +364,20 @@ export default {
         item => item.location_id === 0 && item.alt_position_id === 1,
       );
     },
+    stashAll() {
+      let stash = Object();
+      stash.pages = [];
+      stash.pages.push([]);
+      stash.pages[0].items = [];
+      stash.pages[0].items = this.save.items.filter(item => item.location_id === 0 && item.alt_position_id === 5);
+  
+      if (this.stashData != null) {
+        stash.pages.push(this.stashData.pages[0]);
+        stash.pages.push(this.stashData.pages[1]);
+        stash.pages.push(this.stashData.pages[2]);
+      }
+      return stash;
+    },
     cube() {
       return this.save.items.filter(
         item => item.location_id === 0 && item.alt_position_id === 4,
@@ -375,15 +385,15 @@ export default {
     },
     mercenary() {
       return this.save.merc_items || [];
-    },
+    }, 
   },
   methods: {
     stash(i) {
-      if (i > 0) {
+      if (i == 0) {
+        return this.save.items.filter(item => item.location_id === 0 && item.alt_position_id === 5,);
+      } else {
         if (this.stashData == null) return [];
         return this.stashData.pages[i-1].items || [];
-      } else {
-        return this.save.items.filter(item => item.location_id === 0 && item.alt_position_id === 5,);
       }
     },
     setTheme(theme) {
@@ -713,7 +723,7 @@ export default {
           this.readBuffer(e.target.result, files[i].name);
         }
         reader.readAsArrayBuffer(files[i]);
-      })
+      });
     },
     maxGold() {
       this.save.attributes.gold = this.save.header.level * 10000;
