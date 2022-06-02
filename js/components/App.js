@@ -323,23 +323,8 @@ export default {
       this.grid = JSON.parse(localStorage.getItem('grid'));
     }
 
-    let newItems = []
-    for (const item of Object.entries(window.constants.constants.weapon_items)) {
-      if (item[1].n) {
-        let newItem = utils.constantToItem(item)
-        newItems.push(newItem)
-      }
-    }
-    d2s.enhanceItems(newItems, window.constants.constants);
-    for (const item of newItems) {
-      let bytes = await d2s.writeItem(item, 0x60, window.constants.constants);
-      let base64 = utils.arrayBufferToBase64(bytes);
-      let category = item.categories[0]
-      this.itempack.push({
-        key: "./Bases/Weapons/" + category + "/" + item.type_name + '.d2i',
-        value: base64
-      })
-    }
+    this.addItemsPackBases(window.constants.constants.weapon_items, "Weapons");
+    this.addItemsPackBases(window.constants.constants.armor_items, "Armor");
   },
   filters: {
   },
@@ -775,6 +760,46 @@ export default {
         link.click();
         link.remove();
       });
-    }
+    },
+    async addItemsPackBases(constCategory, categoryName) {
+      let newItems = [];
+      for (const item of Object.entries(constCategory)) {
+        if (item[1].n) {
+          const newItem = Object();
+          const value = item[1];
+          newItem.type = item[0];
+          newItem.quality = 2;
+          newItem.level = 41;
+          newItem.inv_width = value.iw;
+          newItem.inv_height = value.ih;
+          newItem.categories = value.c;
+          newItem.identified = 1;
+          if (newItem.categories.indexOf('Weapon') > -1) {
+            newItem.base_damage = {
+              'mindam': value.mind,
+              'maxdam': value.maxd,
+              'twohandmindam': value.min2d,
+              'twohandmaxdmm': value.max2d
+            }
+          }
+          if (newItem.categories.indexOf('Any Armor') > -1) {
+             newItem.defense_rating = value.maxac;
+          }
+          newItem.max_durability = value.durability;
+          newItem.current_durability = value.durability;
+          newItems.push(newItem);
+        }
+      }
+      d2s.enhanceItems(newItems, window.constants.constants);
+      for (const item of newItems) {      
+        let bytes = await d2s.writeItem(item, 0x60, window.constants.constants);
+        let base64 = utils.arrayBufferToBase64(bytes);
+        let category = item.categories[0];
+        this.itempack.push({
+          key: "./Bases/"+ categoryName +"/" + category + "/" + item.type_name + '.d2i',
+          value: base64
+        });
+      }
+    },
   },
 };
