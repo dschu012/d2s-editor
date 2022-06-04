@@ -137,14 +137,14 @@ export default {
     <div class="form-row" v-if="item.quality == 4">
       <div class="col-md-3">
         <label :for="id + 'Prefix'">Prefix</label>
-        <select class="form-control" :id="id + 'Prefix'" v-model.number="item.magic_prefix" @change="onEvent('update')" v-select>
+        <select class="form-control" :id="id + 'Prefix'" v-model.number="item.magic_prefix_name" @change="onEvent('update')" v-select>
           <option value="0">None</option>
           <option v-for="s in prefixes" :value="s.v.n" :key="s.i">{{s.i}} - {{s.v.n}}</option>
         </select>
       </div>
       <div class="col-md-3">
         <label :for="id + 'Suffix'">Suffix</label>
-        <select class="form-control" :id="id + 'Suffix'" v-model.number="item.magic_suffix" @change="onEvent('update')" v-select>
+        <select class="form-control" :id="id + 'Suffix'" v-model.number="item.magic_suffix_name" @change="onEvent('update')" v-select>
           <option value="0">None</option>
           <option v-for="s in suffixes" :value="s.v.n" :key="s.i">{{s.i}} - {{s.v.n}}</option>
         </select>
