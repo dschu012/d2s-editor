@@ -120,11 +120,11 @@ export default {
     },
     itemName(item) {
       let name = item.type_name;
-      if (item.magic_prefix_name) {
-        name = `${item.magic_prefix_name} ${name}`;
+      if (item.magic_prefix) {
+        name = `${item.magic_prefix} ${name}`;
       }
-      if (item.magic_suffix_name) {
-        name = `${name} ${item.magic_suffix_name}`;
+      if (item.magic_suffix) {
+        name = `${name} ${item.magic_suffix}`;
       }
       if (item.rare_name) {
         name = `${item.rare_name} ${name}`;
