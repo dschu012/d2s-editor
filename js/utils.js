@@ -129,4 +129,16 @@ export default {
       return v.toString(16);
     });
   },
+  removeMaxDurabilityFromRunwords(item) {
+    if (item.runeword_name) {
+      this.removeAttribute(item.magic_attributes, 75);
+      this.removeAttribute(item.combined_magic_attributes, 75);
+      this.removeAttribute(item.displayed_combined_magic_attributes, 75);
+    }
+  },
+  removeAttribute(array, attribute) {
+    for(let i = 0; i < array.length; i++) {
+      if (array[i].id == attribute) array.splice(i, 1);
+    }
+  }
 }

@@ -519,6 +519,7 @@ export default {
     async readItem(bytes, version) {
       this.preview = await d2s.readItem(bytes, version, window.constants.constants);
       await this.setPropertiesOnItem(this.preview);
+      utils.removeMaxDurabilityFromRunwords(this.preview);
     },
     async previewItem(e) {
       let bytes = utils.b64ToArrayBuffer(this.previewModel.value);
@@ -640,7 +641,7 @@ export default {
       if (!item) {
         return;
       }
-      if (!item.magic_attributes) item.magic_attributes = [];
+      if (!item.magic_attributes) item.magic_attributes = [];    
       item.src = await utils.b64PNGFromDC6(item);
       if (!item.socketed_items) {
         return;
