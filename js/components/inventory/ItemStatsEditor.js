@@ -74,11 +74,14 @@ methods: {
   },
   change(id, values, idx) {
     let maxValue = this.max(id),
-      minValue = this.min(id);
+    minValue = this.min(id);
     if (values[idx] > maxValue) {
       values[idx] = maxValue;
     } else if (values[idx] < minValue) {
       values[idx] = minValue;
+    }
+    if (this.stats[id].s === "item_maxdamage_percent") {
+      values[idx+1] = values[idx];
     }
     this.onChange();
   },
