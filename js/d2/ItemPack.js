@@ -305,9 +305,9 @@ export default [
       "Sk0QCIAEZAAIChdWBjIOjqZE7ZAbKMsICjIQHkR48IDCc+IrxdeKrxZfS0ZmRv8/mOOEUQqjFUYtjKD0jZFdsvOSPVEoshX/AUpNEACgAGQYACAXYwMCSk0QAKAAZBgCIDcTAwJKTRAAoABkGAQgJxMDAg==",
   },
   {
-    key: "./Runewords/Shield/Exil (Vortex, Eth).d2i",
+    key: "./Runewords/Shield/Exil (Vortex).d2i",
     value:
-      "Sk0QCMAEZAAEChdmBkIaN5YD7ZAfKF7R0kIQHkR48IDCc+IrxdeKrxZfZjz/IRA0IzMULqFxvDIAZKyQ4sEv+w9KTRAAoABkGAAgJ2MDAkpNEACgAGQYAiAncwMCSk0QAKAAZBgEICdDAwJKTRAAoABkGAYgF0MDAg==",
+      "Sk0QCIAEZAAKAhdmBkIaN5YD7ZAfKOvQ0kIQHkR48IDCc+IrxdeKrxZfZjz/IRA0IzMULqFxvDIAZKyQ4sEv+w9KTRAAoABkGAAgJ2MDAkpNEACgAGQYAiAncwMCSk0QAKAAZBgEICdDAwJKTRAAoABkGAYgF0MDAg==",
   },
   {
     key: "./Runewords/Shield/Phoenix (Mon).d2i",
@@ -347,9 +347,9 @@ export default [
       "Sk0QCIAEZAAIenMXBlKHMMsz7RAaKBoaKsKDB/8jAAXaJVgn8EeX5DBjEj2Fpzz/AUpNEACgAGQYACAXUwMCSk0QAKAAZBgCICdzAwJKTRAAoABkGAQgJyMDAkpNEACgAGQYBiAngwMCSk0QAKAAZBgIIDcjAwI=",
   },
   {
-    key: "./Runewords/Weapon/Axe/Eternity (BA, Eth).d2i",
+    key: "./Runewords/Weapon/Axe/Eternity (BA).d2i",
     value:
-      "Sk0QCMAEZACgenMXBlI5AtAs7RAfKBoaKsKDB0tG/yPYtLkBQolrKYRppsyQL7Cw/gNKTRAAoABkGAAgFxMDAkpNEACgAGQYAiA3AwMCSk0QAKAAZBgEICdDAwJKTRAAoABkGAYgFyMDAkpNEACgAGQYCCAnkwMC",
+      "Sk0QCIAEZAAOcnMXBlI5AtAs7RAfKBoaKsKDB/8j2LS5AUKJaymEaabMkC+wsP4DSk0QAKAAZBgAIBcTAwJKTRAAoABkGAIgNwMDAkpNEACgAGQYBCAnQwMCSk0QAKAAZBgGIBcjAwJKTRAAoABkGAggJ5MDAg==",
   },
   {
     key: "./Runewords/Weapon/Bows/Brand (GMB).d2i",
@@ -695,18 +695,10 @@ export default [
     value: "Sk0QAIAAZABEMtYmAwKunrcw7gXIAIAmAE0AbQDthFEKoxVGLYymeFnYmFJMhpnng4LCfw==",
   },
   {
-    key: "./Uniques/Class-Items/Assa/Bartuc's Cutthroat (Up).d2i",
-    value: "Sk0QCIAAZAAAekN3BwLMbWQx7eERiooEABoBtAjIkFXILMh4JKZYXA5jZHdQ8JIByH8=",
-  },
-  {
-    key: "./Uniques/Class-Items/Assa/Bartuc's Cutthroat (Up, Eth).d2i",
-    value: "Sk0QCMAAZAAAekN3BwLMbWQx7eERiooEABoBtAjIkFXILMh4JKZYXA5jZHdQ8JIByH8=",
+    key: "./Uniques/Class-Items/Assa/Bartuc's Cutthroat.d2i",
+    value: "Sk0QCIAAZAAEkkN3BwLMbWQx7eERiooEABoBtAjIkFXILMh4JKZYXA5jZHdQ8JIByH8=",
   },
   { key: "./Uniques/Class-Items/Assa/Jadetalon.d2i", value: "Sk0QAIAAZQAKcnMnBoK7GPTM8UETcFJEgAfvBFkKshVkLch8PMbIeMUAiJcMgP4D" },
-  {
-    key: "./Uniques/Class-Items/Barb/Arreat's Face (Up).d2i",
-    value: "Sk0QCIAAZQBOIhZmBoJDQk128HERZHFzIwDQCKBBQHYCKgXUCqgWUDwMUyguhzGyOyh4gQDoPw==",
-  },
   {
     key: "./Uniques/Class-Items/Barb/Arreat's Face.d2i",
     value: "Sk0QCIAAZQAAIhYWBoJDQk128HERBnFzIwDQCKBBQHYCKgXUCqgWUDwMU6gxsjsoeIEA6D8=",
@@ -724,8 +716,8 @@ export default [
   { key: "./Uniques/Class-Items/Dru/Cerebus' Bite.d2i", value: "Sk0QCIAAZQBKQiYnBgKDXWsp72ETOEEBISAw4qFYg053GB0K8UoB4H8=" },
   { key: "./Uniques/Class-Items/Dru/Druid Torch.d2i", value: "Sk0QAIAAZAAyMtYmA4KVvQEX7gXIAIAmAE0AbQDthFEKoxVGLYymdFnYmFJMhpnng4LCfw==" },
   {
-    key: "./Uniques/Class-Items/Dru/Jalal's Mane (Up).d2i",
-    value: "Sk0QCIAAZQAISiZnBoKvlVhm7/ERUkFBIQDQBKBBQHYCKgXUCqgWUFMqLocxsjsoFBV4pQDoPw==",
+    key: "./Uniques/Class-Items/Dru/Jalal's Mane.d2i",
+    value: "Sk0QCIAAZQAGQiYXBoKvlVhm7/ER2EBBIQDQBKBBQHYCKgXUCqgWUFMqLocxsjsoFBV4pQDoPw==",
   },
   { key: "./Uniques/Class-Items/Dru/Ravenlore.d2i", value: "Sk0QCIAAZQBKQiZXBoLjnUJa8OEVTEHRIAL4IFg6sZRiacVSi6U13c5LBWBNKf4D" },
   { key: "./Uniques/Class-Items/Dru/Spiritkeeper.d2i", value: "Sk0QCIAAZQBOQiZHBgKnp1X/8XEURkEBISD4OqHlQk2pxqAiOShl/gM=" },
@@ -738,8 +730,8 @@ export default [
   { key: "./Uniques/Class-Items/Necro/Darkforge Spawn.d2i", value: "Sk0QCIAAZQBK4lZmBgIaOa7q8aEUPkHhICDQakKlkfGCABivCIDxkgDYfw==" },
   { key: "./Uniques/Class-Items/Necro/Deaths's Web.d2i", value: "Sk0QCIAAZQAycnN2BwKGoiOj8bESJCCEFcYfKWLwigAQVJn/" },
   {
-    key: "./Uniques/Class-Items/Necro/Homunculus (Up).d2i",
-    value: "Sk0QCIAAZQBE6lZmBoIvAQNzwYERPEFBIQLQICCjgG4IOaGVQmuFVgutKRKXgxmZogIvCAD9Bw==",
+    key: "./Uniques/Class-Items/Necro/Homunculus.d2i",
+    value: "Sk0QCIAAZQBG4lYWBoIvAQNzwYERoEBBIQLQICCjgG4IOaGVQmuFVgutKRKXgxmZogIvCAD9Bw==",
   },
   {
     key: "./Uniques/Class-Items/Necro/Necromancer Torch.d2i",
