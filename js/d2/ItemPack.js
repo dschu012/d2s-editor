@@ -62,6 +62,7 @@ export default [
   { key: "./Misc/Jewels/15 Ias 15 Res (blue).d2i", value: "Sk0QAIAAZAAMolZ2B4LZm8ThMY2orMKJoBRBK4JaBHUZ/Qc=" },
   { key: "./Misc/Jewels/15 Ias 30 Fire Res (red).d2i", value: "Sk0QAIAAZABiolZ2BwLnKuSnMaVTrEKX0Qmo/w==" },
   { key: "./Misc/Jewels/15 Ias 40 Ed (green).d2i", value: "Sk0QAIAAZQAAolZ2B4JTwPABHB0ArEKXUQQUKP4D" },
+  { key: "./Misc/Jewels/15 Ias 8 Min (red).d2i", value: "Sk0QAIAAZABEolZ2BwLnKuSnMaVTrEIF5ALSZfQJ+Q8=" },
   { key: "./Misc/Jewels/15 Max 40 Ed (green).d2i", value: "Sk0QAIAAZAAyolZ2B4KpSxKUMR1jeEMEFCgsPDA8QD3+Aw==" },
   { key: "./Misc/Jewels/15 Req 15 Res (orange).d2i", value: "Sk0QAIAAZABqolZ2BwISMauhMZWozMWJoBRBK4JaBG2p+g8=" },
   { key: "./Misc/Jewels/15 Req 40 Ed (orange).d2i", value: "Sk0QAIAAZABwolZ2BwKeqoH5MRVjzEUEFCi2VP0H" },
@@ -69,8 +70,6 @@ export default [
   { key: "./Misc/Jewels/15 Res 10 MF (red).d2i", value: "Sk0QAIAAZAAIolZ2BwLHTuTaMaWokMSJoBRBK4JaBEFx+w8=" },
   { key: "./Misc/Jewels/20 Life 40 Ed (yellow).d2i", value: "Sk0QAIAAZAAwolZ2B4JF9UuhMS1jfMUBGhFQoPgP" },
   { key: "./Misc/Jewels/40 Ed 1-100 Light (orange).d2i", value: "Sk0QAIAAZAByolZ2BwJuDbe1MRVjcEoEFChkBGT8Bw==" },
-  { key: "./Misc/Jewels/40 Ed 15 Ias (blue).d2i", value: "Sk0QAIAAZADgqlZ2B4JDVxSCMQ1jrEIEFCi6jP4D" },
-  { key: "./Misc/Jewels/8 Min 15 Ias (red).d2i", value: "Sk0QAIAAZABEolZ2BwLnKuSnMaVTrEIF5ALSZfQJ+Q8=" },
   { key: "./Misc/Jewels/Fire Dmg 15 Res (green).d2i", value: "Sk0QAIAAZABsolZ2B4K+ER3NMZ2oaMqJoBRBK4JaBMHIkPEf" },
   { key: "./Misc/Jewels/Fire Dmg 40 Ed (pink).d2i", value: "Sk0QAIAAZAAQolZ2BwJY+5m9MQVjaEoEFChgZMj4Dw==" },
   { key: "./Misc/Misc/Arrows.d2i", value: "Sk0QIIAAZAAiEhZnBwJhnLhX7RBe/wM=" },
@@ -255,9 +254,9 @@ export default [
       "Sk0QCMAEZAAAcjOHA8J9vvES7RArKCAgKMKDB/8jFC0K5nZpDyNG1SBjVq3j4fGNcHrzH0pNEACgAGQYACA3AwMCSk0QAKAAZBgCICczAwJKTRAAoABkGAQgNwMDAkpNEACgAGQYBiAnQwMC",
   },
   {
-    key: "./Runewords/Merc/Infinity (CA, Eth).d2i",
+    key: "./Runewords/Merc/Infinity (Giant Thresher, Eth).d2i",
     value:
-      "Sk0QCMAEZAAAegMXBsJ9vvES7RArKEFBKMKDB0tG/yMULQrmdmkPI0bVIGNWrePh8Y1wevMfSk0QAKAAZBgAIDcDAwJKTRAAoABkGAIgJzMDAkpNEACgAGQYBCA3AwMCSk0QAKAAZBgGICdDAwI=",
+      "Sk0QCMAEZAAAcnM3BsJ9vvES7RArKBwcKMKDB/8jFC0K5nZpDyNG1SBjVq3j4fGNcHrzH0pNEACgAGQYACA3AwMCSk0QAKAAZBgCICczAwJKTRAAoABkGAQgNwMDAkpNEACgAGQYBiAnQwMC",
   },
   {
     key: "./Runewords/Merc/Insight (CA, Eth).d2i",
@@ -1108,4 +1107,5 @@ export default [
   { key: "./Uniques/Weapons/Throw/Elite/Wraithflight.d2i", value: "Sk0QAMAAZQAKcnPGBgIG0NOe8SEYICAsieDLF4+Gokc/9D8=" },
   { key: "./Uniques/Weapons/Throw/Exceptional/Deathbit.d2i", value: "Sk0QAIAAZQAAkkO3BgLXKuou8TESDAyAikCL1gTheCR8GBqh+mX/AQ==" },
   { key: "./Uniques/Weapons/Throw/Exceptional/The Scalper.d2i", value: "Sk0QAIAAZQACkkMXBgLp4J268AESHh4IioAMGQ9DF9SdFodCigj9vP8=" },
+  { key: "./Magic/Armor/Shield/Jeweler's Monarch of Deflecting.d2i", value: "Sk0QCIAAZQAAUpdGB4J0kYVaKGGaVvCEFRKiQJmR/Qc=" },
 ];
