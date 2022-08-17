@@ -33,7 +33,7 @@ export default {
       </div>
       <div class="form-check form-check-inline">
         <label class="form-check-label"><input class="form-check-input" type="checkbox"
-            v-model.number="item.ethereal" :true-value="1" :false-value="0">Ethereal</label>
+            v-model.number="item.ethereal" :true-value="1" :false-value="0" @change="onEvent('update')">Ethereal</label>
       </div>
       <div class="form-check form-check-inline">
         <label class="form-check-label"><input class="form-check-input" type="checkbox"
@@ -43,36 +43,12 @@ export default {
   </div>
   <div class="form-row" ref="moveItemErrors">
   </div>
-  <div class="form-row" v-if="location">
-    <div class="col-md-2">
-      <label :for="id + 'Location'">Location</label>
-      <select class="form-control" :id="id + 'Location'" v-model.number="location.location">
-        <option v-for="l in locations" :value="l.key" :key="l.key">{{l.value}}</option>
+  <div class="form-row">
+    <div class="col-md-6">
+      <label :for="id + 'Base'">Base</label>
+      <select class="form-control" :id="id + 'Base'" v-model="item.type" @change="onEvent('update')" v-select>
+        <option v-for="s in basesByType(item.type)" :value="s[0]" :key="s[0]">{{s[1].n}}</option>
       </select>
-    </div>
-    <div class="col-md-2" v-if="location.location == 1">
-      <label :for="id + 'EquippedLocation'">Equipped Location</label>
-      <select class="form-control" :id="id + 'EquippedLocation'" v-model.number="location.equipped_location">
-        <option v-for="l in equipped_locations" :value="l.key" :key="l.key">{{l.value}}</option>
-      </select>
-    </div>
-    <div class="col-md-2" v-if="location.location == 0">
-      <label :for="id + 'StorageLocation'">Storage Location</label>
-      <select class="form-control" :id="id + 'StorageLocation'" v-model.number="location.storage_page">
-        <option v-for="l in storage_pages" :value="l.key" :key="l.key">{{l.value}}</option>
-      </select>
-    </div>
-    <div class="col-md-2" v-if="location.location == 0">
-      <label :for="id + 'X'">X</label>
-      <input type="number" class="form-control" :id="id + 'X'" v-model.number="location.x">
-    </div>
-    <div class="col-md-2" v-if="location.location == 0">
-      <label :for="id + 'Y'">Y</label>
-      <input type="number" class="form-control" :id="id + 'Y'" v-model.number="location.y">
-    </div>
-    <div class="col-md-2">
-      <label>&nbsp;</label>
-      <button type="button" class="form-control btn btn-primary" @click="onMove">Move Item</button>
     </div>
   </div>
   <div class="form-row">
@@ -116,7 +92,7 @@ export default {
         <input type="number" class="form-control" :id="id + 'curDur'" v-model.number="item.current_durability" @input="onEvent('update')">
       </div>
       <div class="col-md-2">
-        <label :for="id + 'maxDur'">Maximum durability (0 = indestructible)</label>
+        <label :for="id + 'maxDur'">Max durability</label>
         <input type="number" class="form-control" :id="id + 'maxDur'" v-model.number="item.max_durability" @input="onEvent('update')">
       </div>
       <div class="col-md-2" v-if="item.defense_rating">
@@ -240,6 +216,17 @@ methods: {
   },
   onMove() {
     this.$emit('item-event', { item: this.item, location: this.location, type: 'move' });
+  },
+  basesByType(type) {
+    if (this.item.type_id == 3) {
+      return this.weapon_items.filter(e => e[1].nc == type || e[1].exc == type || e[1].elc == type)
+    } else if (this.item.type_id == 1) {
+      return this.armor_items.filter(e => e[1].nc == type || e[1].exc == type || e[1].elc == type)
+    } else if (this.item.type_id == 4) {
+      return this.other_items
+    } else {
+      return []
+    }
   }
 }
 };

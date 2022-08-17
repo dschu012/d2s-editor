@@ -489,7 +489,7 @@ export default {
         } else {
           this.paste(e.item);
         }
-      }
+      } 
     },
     onMove(item, e) {
       if(!this.canPlaceItem(item, e.location.storage_page, e.location.x, e.location.y)) {
@@ -780,14 +780,14 @@ export default {
               'mindam': value.mind,
               'maxdam': value.maxd,
               'twohandmindam': value.min2d,
-              'twohandmaxdmm': value.max2d
+              'twohandmaxdam': value.max2d
             }
           }
           if (newItem.categories.indexOf('Any Armor') > -1) {
              newItem.defense_rating = value.maxac;
           }
-          newItem.max_durability = value.durability;
           newItem.current_durability = value.durability;
+          newItem.max_durability = value.durability;
           newItems.push(newItem);
         }
       }
