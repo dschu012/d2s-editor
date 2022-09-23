@@ -1,3 +1,7 @@
+# Disclaimer
+
+I no longer have time to work on this project, I will look at pull requests if people want to update it, otherwise I can't promise it to work on the latest patch.
+
 # d2s-editor
 
 [Example](http://d2s.dschu012.dev/)
