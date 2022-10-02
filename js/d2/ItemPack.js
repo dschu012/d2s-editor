@@ -284,7 +284,7 @@ export default [
       "Sk0QCMAEZAAMcgMXBkKMnFVO7RBJKEFBKMKDB0tG/wGoBFAJUA1QweChRQNUnxxzWAUExBhUD4XZwwQKyn9KTRAAoABkGAAgF1MDAkpNEACgAGQYAiAXgwMCSk0QAKAAZBgEICcDAwJKTRAAoABkGAYgJ1MDAg==",
   },
   {
-    key: "./Runewords/Shield/Dragon (Mon).d2i",
+    key: "./Runewords/Shield/Dragon (Monarch).d2i",
     value:
       "Sk0QCIAEZAAEWpdGB7LUeSBM7ZAaKJ6wsjIQHlB4lozMjP4DKAlQElAaUPogFxDmLplxxh4fGMkkiyjchv9KTRAAoABkGAAgJ5MDAkpNEACgAGQYAiAngwMCSk0QAKAAZBgEIBcjAwI=",
   },
@@ -294,7 +294,7 @@ export default [
       "Sk0QCIAEZABkChdWBjKGv3kl7ZAaKMsICjIQHkR48IDCc+IrxdeKrxZfS0ZmRv8BlAQoCSgNKH2QCwhzl8w4Y48PjGSSRRRuw39KTRAAoABkGAAgJ5MDAkpNEACgAGQYAiAngwMCSk0QAKAAZBgEIBcjAwI=",
   },
   {
-    key: "./Runewords/Shield/Dream (Mon).d2i",
+    key: "./Runewords/Shield/Dream (Monarch).d2i",
     value:
       "Sk0QCIAEZACIWpdGBzLm6K9z7ZAbKJ6wsjIQHlB4lozMjP5/MMcJoxRGK4xaGEHpGyO7ZOcle6JQZCv+A0pNEACgAGQYACAXYwMCSk0QAKAAZBgCIDcTAwJKTRAAoABkGAQgJxMDAg==",
   },
@@ -309,12 +309,12 @@ export default [
       "Sk0QCIAEZAAKAhdmBkIaN5YD7ZAfKOvQ0kIQHkR48IDCc+IrxdeKrxZfZjz/IRA0IzMULqFxvDIAZKyQ4sEv+w9KTRAAoABkGAAgJ2MDAkpNEACgAGQYAiAncwMCSk0QAKAAZBgEICdDAwJKTRAAoABkGAYgF0MDAg==",
   },
   {
-    key: "./Runewords/Shield/Phoenix (Mon).d2i",
+    key: "./Runewords/Shield/Phoenix (Monarch).d2i",
     value:
       "Sk0QCIAEZAAEUpdGB0JuvRwk7RBAAJ6QkkIqygEpKMr/Y6gLZGNWOKhLfB4IyBEgQ5bp9KjyH0pNEACgAGQYACAnYwMCSk0QAKAAZBgAICdjAwJKTRAAoABkGAAgJ4MDAkpNEACgAGQYACA3EwMC",
   },
   {
-    key: "./Runewords/Shield/Spirit (Mon).d2i",
+    key: "./Runewords/Shield/Spirit (Monarch).d2i",
     value:
       "Sk0QCIAEZACAWpdGB8JwgktR7ZBNKJ6wskIQHlB4lozMjP4PsCWABKFvzDLN7Y8mIf4DSk0QAKAAZBgAIAdzAwJKTRAAoABkGAIgFwMDAkpNEACgAGQYBCAHkwMCSk0QAKAAZBgGIBcTAwI=",
   },
@@ -328,7 +328,7 @@ export default [
     value: "Sk0QCIAEZAAQ4lZmBqLcn2147RBOKJ6goCAQHiwZremiNVT0HwKZJ5ag4GU5M6g0nj/5D0pNEACgAGQYACAHUwMCSk0QAKAAZBgCIBdzAwI=",
   },
   {
-    key: "./Runewords/Shield/Splendor (Mon).d2i",
+    key: "./Runewords/Shield/Splendor (Monarch).d2i",
     value: "Sk0QCIAEZAAAWpdGB6JhJ3I27RBOKJ6wsiIQHiwZ/YdA5oklKHhZzgwqjedP/gNKTRAAoABkGAAgB1MDAkpNEACgAGQYAiAXcwMC",
   },
   {
@@ -378,7 +378,7 @@ export default [
   {
     key: "./Runewords/Weapon/Bows/Faith (GMB).d2i",
     value:
-      "Sk0QCIAEZAAOEtY2BkJQ6kkL7RAgKAAU4cGDJSNeAAD6HwEjxhNBKYJWBLUIugP0jy7peZsCUPwHSk0QAKAAZBgAICdzAwJKTRAAoABkGAIgNxMDAkpNEACgAGQYBCAnAwMCSk0QAKAAZBgGIAcjAwI=",
+      "Sk0QCIAEZQAKEtY2BkIAAACAlAAE5eYGRXjwgBcAwP5HwIjxRFCKoBVBLYJg4OG5A/SPLul5mwJQ/AdKTRAAoABkGAAgJ3MDAkpNEACgAGQYAiA3EwMCSk0QAKAAZBgEICcDAwJKTRAAoABkGAYgByMDAg==",
   },
   {
     key: "./Runewords/Weapon/Bows/Faith (HB).d2i",
@@ -664,7 +664,7 @@ export default [
   { key: "./Uniques/Belts/Snowclash.d2i", value: "Sk0QAIAAZQBookcnBoJdfg6b8VEPaiAhAYIqFs9GQ4WlNTe2ZofW8FClRzJqh8J/" },
   { key: "./Uniques/Belts/String of Ears.d2i", value: "Sk0QAIAAZQBgoscmBgIBYu/S8SEPWsDAAAKtDxkY8ZB44IFIovAf" },
   { key: "./Uniques/Belts/Thundergod's Vigor.d2i", value: "Sk0QAIAAZQAEoocmBoLyWRhh8GEPfoCBAQDNABoEZCqUjECGNSK2ZsQiUZIdeRT+Aw==" },
-  { key: "./Uniques/Belts/Verdugo's Hearty Cord.d2i", value: "Sk0QAIAAZQDAWtc2BgLwGe6N8YEXmAChYAByASYERiQelKxjPP8B" },
+  { key: "./Uniques/Belts/Verdungo's Hearty Cord.d2i", value: "Sk0QAIAAZQDAWtc2BgLwGe6N8YEXmAChYAByASYERiQelKxjPP8B" },
   { key: "./Uniques/Boots/Goblin Toe.d2i", value: "Sk0QAIAAZQBgSidGB4K4odr58eEGLCDBAAKPDxkQEYwIsgyizH8=" },
   { key: "./Uniques/Boots/Gorefoot.d2i", value: "Sk0QAIAAZQBkaidGBwJwg3Wo8MEGIuCAAIKHDxbwIXByAINaQ0iMCP8B" },
   { key: "./Uniques/Boots/Gorerider.d2i", value: "Sk0QAIAAZQAAgocmBgIQ9Aut8REPgICBYQENBGRJFLYsgZEdUiB6NHr8Bw==" },
@@ -799,14 +799,14 @@ export default [
   { key: "./Uniques/Helmets/Vampiregaze.d2i", value: "Sk0QCIAAZQBMgoeWA4JuePnh8QENEIGCIiCQGUGReLBhYIGMB8IHQtPoPw==" },
   { key: "./Uniques/Helmets/Veil of Steel.d2i", value: "Sk0QKIAAZAAMUofWBoKLKj9M7ZEPVIHCI06QpSBbQdaCDAIPAC8DXlkgCcUHS/wH" },
   { key: "./Uniques/Helmets/Wormskull.d2i", value: "Sk0QCIAAZQAEKobWBgLn5eP98bEEWICCIhKotFjKYYYZyHgUpij/AQ==" },
-  { key: "./Uniques/Jewels/Fire Facet (Die).d2i", value: "Sk0QAIAAZQCkqlZ2BwIjIqXj8SXFACOiRbEPB3LSG00L/gM=" },
-  { key: "./Uniques/Jewels/Fire Facet (Lvl).d2i", value: "Sk0QAIAAZQAIolZ2BwJSIy+9wgXHACOixbHOBXLSG00L/gM=" },
-  { key: "./Uniques/Jewels/Ice Facet (Die).d2i", value: "Sk0QAIAAZQAIqlZ2BwKQjBIhwa3EYAPDxECxcgfy0htPC/4D" },
-  { key: "./Uniques/Jewels/Ice Facet (Lvl).d2i", value: "Sk0QAIAAZQAoolZ2BwL+wTsvwYXGYAPDxMCxlQXy0htPC/4D" },
-  { key: "./Uniques/Jewels/Lightning Facet (Die).d2i", value: "Sk0QAIAAZQAqqlZ2BwJMqEk+wS3EICNQothbA1npDacF/wE=" },
-  { key: "./Uniques/Jewels/Lightning Facet (Lvl).d2i", value: "Sk0QAIAAZQAKolZ2BwKZAcaxwAXGICNQ4lgKA1npDacF/wE=" },
-  { key: "./Uniques/Jewels/Poison Facet (Die).d2i", value: "Sk0QAIAAZQAOolZ2BwJi8NtZwaXFkGOXXWQUm7kgM70BteA/" },
-  { key: "./Uniques/Jewels/Poison Facet (Lvl).d2i", value: "Sk0QAIAAZQAqolZ2BwJo0QrA8YXHkGOXXWQcuywiM70BteA/" },
+  { key: "./Uniques/Jewels/Rainbow Facet (Fire) (Die).d2i", value: "Sk0QAIAAZQCkqlZ2BwIjIqXj8SXFACOiRbEPB3LSG00L/gM=" },
+  { key: "./Uniques/Jewels/Rainbow Facet (Fire) (Lvl).d2i", value: "Sk0QAIAAZQAIolZ2BwJSIy+9wgXHACOixbHOBXLSG00L/gM=" },
+  { key: "./Uniques/Jewels/Rainbow Facet (Cold) (Die).d2i", value: "Sk0QAIAAZQAIqlZ2BwKQjBIhwa3EYAPDxECxcgfy0htPC/4D" },
+  { key: "./Uniques/Jewels/Rainbow Facet (Cold) (Lvl).d2i", value: "Sk0QAIAAZQAoolZ2BwL+wTsvwYXGYAPDxMCxlQXy0htPC/4D" },
+  { key: "./Uniques/Jewels/Rainbow Facet (Lightning) (Die).d2i", value: "Sk0QAIAAZQAqqlZ2BwJMqEk+wS3EICNQothbA1npDacF/wE=" },
+  { key: "./Uniques/Jewels/Rainbow Facet (Lightning) (Lvl).d2i", value: "Sk0QAIAAZQAKolZ2BwKZAcaxwAXGICNQ4lgKA1npDacF/wE=" },
+  { key: "./Uniques/Jewels/Rainbow Facet (Poison) (Die).d2i", value: "Sk0QAIAAZQAOolZ2BwJi8NtZwaXFkGOXXWQUm7kgM70BteA/" },
+  { key: "./Uniques/Jewels/Rainbow Facet (Poison) (Lvl).d2i", value: "Sk0QAIAAZQAqolZ2BwJo0QrA8YXHkGOXXWQcuywiM70BteA/" },
   { key: "./Uniques/Rings/Bul Katho's Wedding Band.d2i", value: "Sk0QAIAAZQCEKpfmBoLzviD98CWGsECKR+FPsBH/AQ==" },
   { key: "./Uniques/Rings/Carrion Wind.d2i", value: "Sk0QAIAAZQBkKpfmBgKM8I+g7wW9AAJUizQeCTmKsQYeRDKFCwWzypuHh/8=" },
   { key: "./Uniques/Rings/Dwarf Star.d2i", value: "Sk0QAIAAZQAAIpfmBgLdQ3Kx8SWJcADJAiQODyOeJ8gcPf4D" },
