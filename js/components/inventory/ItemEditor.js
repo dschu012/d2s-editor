@@ -104,7 +104,7 @@ export default {
           <li>
             <div class="form-check form-check-inline">
               <label class="form-check-label"><input class="form-check-input" type="checkbox"
-                v-model.number="item.ethereal" :true-value="1" :false-value="0">Ethereal</label>
+                v-model.number="item.ethereal" :true-value="1" :false-value="0" @change="onEvent('update')">Ethereal</label>
             </div>
           </li>
         </span>
