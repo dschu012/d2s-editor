@@ -323,7 +323,6 @@ export default {
       this.grid = JSON.parse(localStorage.getItem('grid'));
     }
 
-<<<<<<< HEAD
     let newItems = []
     for (const item of Object.entries(window.constants.constants.weapon_items)) {
       if (item[1].n) {
@@ -341,10 +340,8 @@ export default {
         value: base64
       })
     }
-=======
     this.addItemsPackBases(window.constants.constants.weapon_items, "Weapons");
     this.addItemsPackBases(window.constants.constants.armor_items, "Armor");
->>>>>>> 42b5bc6d9b81b36ca7e7e0f4737a1a30467a73fc
   },
   filters: {
   },
