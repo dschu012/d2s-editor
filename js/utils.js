@@ -31,17 +31,6 @@ const colormaps = {
   8: 'data/global/items/Palette/invgreybrown.dat',
 };
 
-function _constantToWeapon(value, item) {
-  item.base_damage = {
-    'mindam': value.mind,
-    'maxdam': value.maxd,
-    'twohandmindam': value.min2d,
-    'twohandmaxdmm': value.max2d
-  };
-  item.max_durability = 0; // will be updated the right value in game
-  item.current_durability = 0;
-}
-
 export default {
   colors: colors,
   colormaps: colormaps,
@@ -140,18 +129,16 @@ export default {
       return v.toString(16);
     });
   },
-  constantToItem(values) {
-    const item = Object();
-    item.type = values[0];
-    const value = values[1];
-    item.quality = 2;
-    item.level = 1; // will be updated the right value in game
-    item.inv_width = value.iw;
-    item.inv_height = value.ih;
-    item.categories = value.c;
-    item.identified = 1;
-    _constantToWeapon(value, item);
-    // TODO: armor and other
-    return item;
-  } 
+  removeMaxDurabilityFromRunwords(item) {
+    if (item.runeword_name) {
+      this.removeAttribute(item.magic_attributes, 75);
+      this.removeAttribute(item.combined_magic_attributes, 75);
+      this.removeAttribute(item.displayed_combined_magic_attributes, 75);
+    }
+  },
+  removeAttribute(array, attribute) {
+    for(let i = 0; i < array.length; i++) {
+      if (array[i].id == attribute) array.splice(i, 1);
+    }
+  }
 }

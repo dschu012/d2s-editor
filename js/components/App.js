@@ -323,6 +323,7 @@ export default {
       this.grid = JSON.parse(localStorage.getItem('grid'));
     }
 
+<<<<<<< HEAD
     let newItems = []
     for (const item of Object.entries(window.constants.constants.weapon_items)) {
       if (item[1].n) {
@@ -340,6 +341,10 @@ export default {
         value: base64
       })
     }
+=======
+    this.addItemsPackBases(window.constants.constants.weapon_items, "Weapons");
+    this.addItemsPackBases(window.constants.constants.armor_items, "Armor");
+>>>>>>> 42b5bc6d9b81b36ca7e7e0f4737a1a30467a73fc
   },
   filters: {
   },
@@ -504,7 +509,7 @@ export default {
         } else {
           this.paste(e.item);
         }
-      }
+      } 
     },
     onMove(item, e) {
       if(!this.canPlaceItem(item, e.location.storage_page, e.location.x, e.location.y)) {
@@ -534,6 +539,7 @@ export default {
     async readItem(bytes, version) {
       this.preview = await d2s.readItem(bytes, version, window.constants.constants);
       await this.setPropertiesOnItem(this.preview);
+      utils.removeMaxDurabilityFromRunwords(this.preview);
     },
     async previewItem(e) {
       let bytes = utils.b64ToArrayBuffer(this.previewModel.value);
@@ -655,7 +661,7 @@ export default {
       if (!item) {
         return;
       }
-      if (!item.magic_attributes) item.magic_attributes = [];
+      if (!item.magic_attributes) item.magic_attributes = [];    
       item.src = await utils.b64PNGFromDC6(item);
       if (!item.socketed_items) {
         return;
@@ -775,6 +781,46 @@ export default {
         link.click();
         link.remove();
       });
-    }
+    },
+    async addItemsPackBases(constCategory, categoryName) {
+      let newItems = [];
+      for (const item of Object.entries(constCategory)) {
+        if (item[1].n) {
+          const newItem = Object();
+          const value = item[1];
+          newItem.type = item[0];
+          newItem.quality = 2;
+          newItem.level = 41;
+          newItem.inv_width = value.iw;
+          newItem.inv_height = value.ih;
+          newItem.categories = value.c;
+          newItem.identified = 1;
+          if (newItem.categories.indexOf('Weapon') > -1) {
+            newItem.base_damage = {
+              'mindam': value.mind,
+              'maxdam': value.maxd,
+              'twohandmindam': value.min2d,
+              'twohandmaxdam': value.max2d
+            }
+          }
+          if (newItem.categories.indexOf('Any Armor') > -1) {
+             newItem.defense_rating = value.maxac;
+          }
+          newItem.current_durability = value.durability;
+          newItem.max_durability = value.durability;
+          newItems.push(newItem);
+        }
+      }
+      d2s.enhanceItems(newItems, window.constants.constants);
+      for (const item of newItems) {      
+        let bytes = await d2s.writeItem(item, 0x60, window.constants.constants);
+        let base64 = utils.arrayBufferToBase64(bytes);
+        let category = item.categories[0];
+        this.itempack.push({
+          key: "./Bases/"+ categoryName +"/" + category + "/" + item.type_name + '.d2i',
+          value: base64
+        });
+      }
+    },
   },
 };
