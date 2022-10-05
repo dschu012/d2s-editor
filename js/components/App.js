@@ -332,7 +332,7 @@ export default {
     }
     d2s.enhanceItems(newItems, window.constants.constants);
     for (const item of newItems) {
-      let bytes = await d2s.writeItem(item, 0x60, window.constants.constants);
+      let bytes = await d2s.writeItem(item, 0x63, window.constants.constants);
       let base64 = utils.arrayBufferToBase64(bytes);
       let category = item.categories[0]
       this.itempack.push({
@@ -447,7 +447,7 @@ export default {
       this.location = null;
     },
     async shareItem(item) {
-      let bytes = await d2s.writeItem(item, 0x60, window.constants.constants);
+      let bytes = await d2s.writeItem(item, 0x63, window.constants.constants);
       let base64 = utils.arrayBufferToBase64(bytes);
       navigator.clipboard.writeText(base64);
       this.notifications.push({ alert: "alert alert-info", message: `Item data copied to clipboard. Use load from string to share it with someone.` });
@@ -537,10 +537,10 @@ export default {
     },
     async previewItem(e) {
       let bytes = utils.b64ToArrayBuffer(this.previewModel.value);
-      this.readItem(bytes, 0x60);
+      this.readItem(bytes, 0x63);
     },
     async onItemFileLoad(event) {
-      this.readItem(event.target.result, 0x60);
+      this.readItem(event.target.result, 0x63);
     },
     onItemFileChange(event) {
       let reader = new FileReader();
@@ -552,7 +552,7 @@ export default {
       try {
         let b64 = prompt("Please enter your base64 string for item.");
         let bytes = utils.b64ToArrayBuffer(b64);
-        await this.readItem(bytes, 0x60);
+        await this.readItem(bytes, 0x63);
         this.paste(this.preview);
       } catch(e) {
         alert("Failed to read item.");
