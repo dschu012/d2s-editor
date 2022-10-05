@@ -1,1117 +1,2986 @@
 export default [
-  { key: "./Misc/Charms/Skiller/Ama/Bow-Sk Life.d2i", value: "Sk0QAIAAZAAEOtY2AwKWf0m8MQXXSMUBJLwAAPIf" },
-  { key: "./Misc/Charms/Skiller/Ama/Java-Sk Life.d2i", value: "Sk0QAIAAZAACOtY2AwKhdI/sMQ3YSMUBJLwEAPIf" },
-  { key: "./Misc/Charms/Skiller/Ama/Passiv-Sk Life.d2i", value: "Sk0QAIAAZAAAOtY2AwJ3/EyKMZXXSMUBJLwCAPIf" },
-  { key: "./Misc/Charms/Skiller/Assa/Martial Arts-Sk Life.d2i", value: "Sk0QAIAAZAAKOtY2A4Jy/mjZMQX8SMUBJLxkAPIf" },
-  { key: "./Misc/Charms/Skiller/Assa/Shadow-Sk Life.d2i", value: "Sk0QAIAAZAAIOtY2AwIXt2ntMYX7SMUBJLxiAPIf" },
-  { key: "./Misc/Charms/Skiller/Assa/Trap-Sk Life.d2i", value: "Sk0QAIAAZAAGOtY2AwJGt2qWMQ37SMUBJLxgAPIf" },
-  { key: "./Misc/Charms/Skiller/Barb/Combat-Sk Life.d2i", value: "Sk0QAIAAZACgOtY2A4KNvhy5MQ3vSMUBJLxAAPIf" },
-  { key: "./Misc/Charms/Skiller/Barb/Cry-Sk Life.d2i", value: "Sk0QAIAAZACkOtY2AwKhdFGBMQ3wSMUBJLxEAPIf" },
-  { key: "./Misc/Charms/Skiller/Barb/Mastery-Sk Life.d2i", value: "Sk0QAIAAZACiOtY2A4Lpik3HMZXvSMUBJLxCAPIf" },
-  { key: "./Misc/Charms/Skiller/Dru/Elemental-Sk Life.d2i", value: "Sk0QAIAAZACqOtY2AwJyb1vsMRX2SMUBJLxUAPIf" },
-  { key: "./Misc/Charms/Skiller/Dru/Shape-Sk Life.d2i", value: "Sk0QAIAAZACoOtY2AwIwYtSMMY31SMUBJLxSAPIf" },
-  { key: "./Misc/Charms/Skiller/Dru/Summon-Sk.d2i", value: "Sk0QAIAAZACmOtY2A4K3MRyuMRX1SMUBJLxQAPIf" },
-  { key: "./Misc/Charms/Skiller/Necro/Bone-PSN-Sk Life.d2i", value: "Sk0QAIAAZAACMtY2A4IQLuiBMZXjSMUBJLwiAPIf" },
-  { key: "./Misc/Charms/Skiller/Necro/Curse-Sk Life.d2i", value: "Sk0QAIAAZAAAMtY2A4J+eCqqMRXjSMUBJLwgAPIf" },
-  { key: "./Misc/Charms/Skiller/Necro/Summon-Sk Life.d2i", value: "Sk0QAIAAZAAEMtY2A4IP8pifMQ3kSMUBJLwkAPIf" },
-  { key: "./Misc/Charms/Skiller/Pala/Combat-Sk Life.d2i", value: "Sk0QAIAAZAAGMtY2AwKx7/P4MQXpSMUBJLwwAPIf" },
-  { key: "./Misc/Charms/Skiller/Pala/Defensive-Sk Life.d2i", value: "Sk0QAIAAZAAKMtY2AwJA992EMRXqSMUBJLw0APIf" },
-  { key: "./Misc/Charms/Skiller/Pala/Offensive-Sk Life.d2i", value: "Sk0QAIAAZAAIMtY2AwKULe6TMYXpSMUBJLwyAPIf" },
-  { key: "./Misc/Charms/Skiller/Sorc/Cold-Sk.d2i", value: "Sk0QAIAAZAAQMtY2A4KaglbiMQXeSMUBJLwUAPIf" },
-  { key: "./Misc/Charms/Skiller/Sorc/Fire-Sk Life.d2i", value: "Sk0QAIAAZAAMMtY2AwLgQnP+MQXdSMUBJLwQAPIf" },
-  { key: "./Misc/Charms/Skiller/Sorc/Light-Sk Life.d2i", value: "Sk0QAIAAZAAOMtY2A4JJWZSBMZXdSMUBJLwSAPIf" },
-  { key: "./Misc/Charms/Small Charms/3 20 20 Charm.d2i", value: "Sk0QAIAAZAAgMtYWAwIenhngMQ2AdMUBGhMosDDAMAA1+A8=" },
-  { key: "./Misc/Charms/Small Charms/Cold DMG Sc.d2i", value: "Sk0QAIAAZABkMtYWA4LTuq2mMZU4BYuNhw4y/wE=" },
-  { key: "./Misc/Charms/Small Charms/Fire DMG Sc.d2i", value: "Sk0QAIAAZABEMtYWAwKdS+qlMYU+NQsMDRX/AQ==" },
-  { key: "./Misc/Charms/Small Charms/Life Mana Sc.d2i", value: "Sk0QAIAAZABAMtYWAwJyndT1MY2XdMUBGgli/gM=" },
-  { key: "./Misc/Charms/Small Charms/Life Resis Sc.d2i", value: "Sk0QAIAAZAAoMtYWA4LhHpLoMZWnZMUBGiduUtysuGlx8x8=" },
-  { key: "./Misc/Charms/Small Charms/Light DMG Sc.d2i", value: "Sk0QAIAAZAAEMtYWAwIKGbHcMZVEZYsMYYz/" },
-  { key: "./Misc/Charms/Small Charms/MF Resis Sc.d2i", value: "Sk0QAIAAZAACMtYWAwIaP+fEMQWhjMSJmxQ3K25a3EBZ+w8=" },
-  { key: "./Misc/Charms/Small Charms/Psn DMG Sc.d2i", value: "Sk0QAIAAZAAAMtYWA4IMmaq+MZVK1UqOkUb69x8=" },
-  { key: "./Misc/Craft/Amulet/Armageddon Slippers.d2i", value: "Sk0QIIAAZAAMEtZWBwK23jY0LQZgN8CUCQCNgNiBLQm0ThilMFph1MKIy+g/" },
-  { key: "./Misc/Craft/Amulet/Gale Shell.d2i", value: "Sk0QIIAAZAASEtZWBwJ3W7cbLQbdS8AUagCNx8HH4YRRCqMVRi2MUoxxmf0H" },
-  { key: "./Misc/Craft/Amulet/Shadow Wing II.d2i", value: "Sk0QAIAAZQAEGtZWB4JlS8IYMQ7Uq+5oBz0iLRygMWECEYSNgAIyPARQ3MBw/gM=" },
-  { key: "./Misc/Craft/Amulet/Shadow Wing.d2i", value: "Sk0QAIAAZQACGtZWBwIY9gh0MQbUq/9Jj1/pBwiQHYgxYljRw0MARsNLBiD/AQ==" },
-  { key: "./Misc/Craft/Amulet/Storm Circlet.d2i", value: "Sk0QIIAAZABMEtZWB4Lgnlg/LYZUH8CUCIBMGtSBKwm2TiStSEqRNEXigvkP" },
-  { key: "./Misc/Craft/Amulet/Storm Hide.d2i", value: "Sk0QIIAAZABsEtZWBwIWnEs3LYZUI8AUCwCNgNiBLQm0ThilMFph1MKIi/E/" },
-  { key: "./Misc/Craft/Boots/Bitter Brogues Leather Boots.d2i", value: "Sk0QIIAAZABIwiZGBwLuC/lnrSHMBmgAAwMwMgAyAlorrFJ0nWDi0voP" },
-  { key: "./Misc/Craft/Boots/Grim Spur Chain Boots.d2i", value: "Sk0QIIAAZAAA0iZGB4JMl9Q5rVFaBpgABAQwsjEoADMrvlIgtTjikvoP" },
-  { key: "./Misc/Craft/Boots/Rune Slippers Plate Boots.d2i", value: "Sk0QIIAAZABEgiZGBwIvnQMbraHqBsgABgYwMgAsAk4rtFJoneji4voP" },
-  { key: "./Misc/Craft/Boots/Soul Shank Plate Boots.d2i", value: "Sk0QIIAAZAAEgiZGB4LAYeA3rcFLBsgABgYwMgAxAkgrwlJ8nRjjYvkP" },
-  { key: "./Misc/Craft/Boots/Soul Spur Heavy Boots.d2i", value: "Sk0QIIAAZABAYidGB4JRi/5XrcFbBoCAgwMwMggZAMwIcK1wShHGpfUf" },
-  { key: "./Misc/Craft/Boots/Viper Trample Chain Boots.d2i", value: "Sk0QIIAAZAAI0iZGB4Lo4YpjrfG5BpgABAQwsjEoAa0VWSewWgRxaf0H" },
-  { key: "./Misc/Craft/Glove/Bow Blood Touch.d2i", value: "Sk0QIIAAZQAAimd3BgL9vFYcIiIaljNnVDZVgRY4ODiApAUUD0MXFCIFLwAAAXj5Dw==" },
-  { key: "./Misc/Craft/Glove/Java Blood Touch.d2i", value: "Sk0QIIAAZQAEimd3BgIKxCdbIiIaljNnVDZVgRY4ODiApAUUD0MXFCIFLwEAAXj5Dw==" },
-  { key: "./Misc/Craft/Glove/Martial Arts Blood Touch.d2i", value: "Sk0QIIAAZQAIimd3BoJmDtxoIiIaljNnVDZVgRY4ODiApAUUD0MXFCIFLxkAAXj5Dw==" },
-  { key: "./Misc/Craft/Glove/Passive Gale Grasp.d2i", value: "Sk0QIIAAZAAgWtd2BoJr6JZkLaL7BWgCBAQuFmMEC4UuKB4DH4MoAScHXgEA+g8=" },
-  { key: "./Misc/Craft/Glove/Soul Touch.d2i", value: "Sk0QIIAAZAAEWmd3BoJslaMFLcIbBliCgwMujC4oHgMfA0QFACkHWqQ4+g8=" },
-  { key: "./Misc/Craft/Ring/Beast Master.d2i", value: "Sk0QAIAAZQAAKpfmBgK0LV4tMSZOye54mk1RJgAYOfAiAc0ECk7YpLBZYdPChscgWWGC4z8=" },
-  { key: "./Misc/Craft/Ring/Bone Gyre.d2i", value: "Sk0QAIAAZQAgKpfmBoJqRgIaMQZTwPPYl4apFACQOXBkwhkphHgI/gM=" },
-  { key: "./Misc/Craft/Ring/Death Knot.d2i", value: "Sk0QAIAAZQBGKpfmBoLal0o+MYbTvHJJDk/jSgAQCRA6MKOCcEE4YcRD8ElIVpjg+A8=" },
-  { key: "./Misc/Craft/Ring/Doom Loop.d2i", value: "Sk0QIIAAZQBgKpfmBoJSBr95MQbSvV7ZkIVRIQAgOfAihc6KGx4BJWOW+g8=" },
-  { key: "./Misc/Craft/Ring/Havoc Band.d2i", value: "Sk0QAIAAZMQMIJfmBgJ1IkJNMYbgwAYohgaIhEL4BABeBNAOhDnBkyKoxRIPhQ/Dfw==" },
-  { key: "./Misc/Craft/Ring/Shadow Circle.d2i", value: "Sk0QAIAAZQAiKpfmBgImRlFhMQZUvTA5FtflHAAQOSAjAYmIgMfBh+E/" },
-  { key: "./Misc/Craft/Ring/Skull Whorl.d2i", value: "Sk0QIIAAZQBIKpfmBgIYSM42MZ5QwYg5hzBpCwAQOSAjwYiIIAUSD4Gd/wE=" },
-  { key: "./Misc/Craft/Ring/Storm Eye.d2i", value: "Sk0QAIAAZQBAKpfmBoIfdmcrMY5UvobpCvMhWQAYEeA6wCLFEI9DGs9/" },
-  { key: "./Misc/Craft/Ring/Storm Master.d2i", value: "Sk0QAIAAZQAGKpfmBoLP7fUtMYZUye84DMmhXwCYOaBiAgYVBguBCwOGAI/ApwFU4D8=" },
-  { key: "./Misc/Jewels/10 MF 40 Ed (red).d2i", value: "Sk0QAIAAZAAOolZ2BwL6GxqtMSVjkEQEFCiguP0H" },
-  { key: "./Misc/Jewels/10 Min 15 Resis (red).d2i", value: "Sk0QAIAAZAAsolZ2BwK1TTTIMaWopEMF5YJyIihF0IqgFkGflP8=" },
-  { key: "./Misc/Jewels/10 Min 40 Ed (orange).d2i", value: "Sk0QAIAAZABSolZ2BwIOAob9MRVjpEMEFCgqKBeUT8p/" },
-  { key: "./Misc/Jewels/10-15 Dmg (red).d2i", value: "Sk0QAIAAZAAkolZ2BwLtvUGpMaVcpEMFxcLjgoLh8UkB9fgP" },
-  { key: "./Misc/Jewels/15 Ias (green).d2i", value: "Sk0QAIAAZQBkqFZ2B4JTwPABHB0ArEKX0X8=" },
-  { key: "./Misc/Jewels/15 Ias 15 Res (blue).d2i", value: "Sk0QAIAAZAAMolZ2B4LZm8ThMY2orMKJoBRBK4JaBHUZ/Qc=" },
-  { key: "./Misc/Jewels/15 Ias 30 Fire Res (red).d2i", value: "Sk0QAIAAZABiolZ2BwLnKuSnMaVTrEKX0Qmo/w==" },
-  { key: "./Misc/Jewels/15 Ias 40 Ed (green).d2i", value: "Sk0QAIAAZQAAolZ2B4JTwPABHB0ArEKXUQQUKP4D" },
-  { key: "./Misc/Jewels/15 Ias 8 Min (red).d2i", value: "Sk0QAIAAZABEolZ2BwLnKuSnMaVTrEIF5ALSZfQJ+Q8=" },
-  { key: "./Misc/Jewels/15 Max 40 Ed (green).d2i", value: "Sk0QAIAAZAAyolZ2B4KpSxKUMR1jeEMEFCgsPDA8QD3+Aw==" },
-  { key: "./Misc/Jewels/15 Req 15 Res (orange).d2i", value: "Sk0QAIAAZABqolZ2BwISMauhMZWozMWJoBRBK4JaBG2p+g8=" },
-  { key: "./Misc/Jewels/15 Req 40 Ed (orange).d2i", value: "Sk0QAIAAZABwolZ2BwKeqoH5MRVjzEUEFCi2VP0H" },
-  { key: "./Misc/Jewels/15 Res 1-100 Light (pink).d2i", value: "Sk0QAIAAZABMolZ2BwJg7QCQMYWocMqJoBRBK4JaBMkIyPgP" },
-  { key: "./Misc/Jewels/15 Res 10 MF (red).d2i", value: "Sk0QAIAAZAAIolZ2BwLHTuTaMaWokMSJoBRBK4JaBEFx+w8=" },
-  { key: "./Misc/Jewels/20 Life 40 Ed (yellow).d2i", value: "Sk0QAIAAZAAwolZ2B4JF9UuhMS1jfMUBGhFQoPgP" },
-  { key: "./Misc/Jewels/40 Ed 1-100 Light (orange).d2i", value: "Sk0QAIAAZAByolZ2BwJuDbe1MRVjcEoEFChkBGT8Bw==" },
-  { key: "./Misc/Jewels/Fire Dmg 15 Res (green).d2i", value: "Sk0QAIAAZABsolZ2B4K+ER3NMZ2oaMqJoBRBK4JaBMHIkPEf" },
-  { key: "./Misc/Jewels/Fire Dmg 40 Ed (pink).d2i", value: "Sk0QAIAAZAAQolZ2BwJY+5m9MQVjaEoEFChgZMj4Dw==" },
-  { key: "./Misc/Misc/Arrows.d2i", value: "Sk0QIIAAZAAiEhZnBwJhnLhX7RBe/wM=" },
-  { key: "./Misc/Misc/Bolts.d2i", value: "Sk0QIIAAZAAkMhZnB4Ktowga7RD6/gM=" },
-  { key: "./Misc/Misc/Identify Book.d2i", value: "Sk0QIIAAZABAkia2BgIRAe9LrRBQ+A8=" },
-  { key: "./Misc/Misc/Identify Scroll.d2i", value: "Sk0QIKAAZABGkjY3BgI=" },
-  { key: "./Misc/Misc/Skeleton Key.d2i", value: "Sk0QAIAAZQBuslaWB4KX+TPssIDBfw==" },
-  { key: "./Misc/Misc/Town Portal Book.d2i", value: "Sk0QIIAAZAAAQie2BgLLDjEarQBQ+A8=" },
-  { key: "./Misc/Misc/Town Portal Scroll.d2i", value: "Sk0QIKAAZAAmQjc3BgI=" },
-  { key: "./Misc/Potions/Antidote Potion.d2i", value: "Sk0QIKAAZAAAkgc3BwI=" },
-  { key: "./Misc/Potions/Full Rejuv Potion.d2i", value: "Sk0QIKAAZABiImfHBgI=" },
-  { key: "./Misc/Potions/Greater Healing Potion.d2i", value: "Sk0QIKAAZAAgggZXAwI=" },
-  { key: "./Misc/Potions/Greater Mana Potion.d2i", value: "Sk0QIKAAZAAi0gZXAwI=" },
-  { key: "./Misc/Potions/Rejuv Potion.d2i", value: "Sk0QIKAAZABgImc3BwI=" },
-  { key: "./Misc/Potions/Stamina Potion.d2i", value: "Sk0QIKAAZAACYgc3BwI=" },
-  { key: "./Misc/Potions/Thawing Potion.d2i", value: "Sk0QIKAAZAAEctc2BwI=" },
-  { key: "./Misc/Quest/Act 1/Inifuss Scroll.d2i", value: "Sk0QAKAAZQAEIrY2ByI=" },
-  { key: "./Misc/Quest/Act 1/Malus.d2i", value: "Sk0QAIAAZQBSgkbWBgLIIa8e4/H/blyQ9T8=" },
-  { key: "./Misc/Quest/Act 1/Wirt's Leg.d2i", value: "Sk0QCIAAZQAOwlZ2BgLvfpczpkDIxJD1Pw==" },
-  { key: "./Misc/Quest/Act 2/Amulet.d2i", value: "Sk0QAIAAZQBGYpcGB4JzblDb6YU9cEBFApUWS2T9Dw==" },
-  { key: "./Misc/Quest/Act 2/Book of Skill.d2i", value: "Sk0QIKAAZAAAEjY3BwI=" },
-  { key: "./Misc/Quest/Act 2/Cube.d2i", value: "Sk0QAIAAZQAAIvaGBwLcL+bQhuA/" },
-  { key: "./Misc/Quest/Act 2/Staff.d2i", value: "Sk0QAIAAZQAI0jZnBoIxTbaa6sEHWlac4EnBs4KnBU8XI1n/Aw==" },
-  { key: "./Misc/Quest/Act 3/Brain.d2i", value: "Sk0QAKAAZQDiGicmByI=" },
-  { key: "./Misc/Quest/Act 3/Complete Flail.d2i", value: "Sk0QIIAAZQAKEmcmA4KntBOKwAEIPDBMQEFGgAIPgw9DFyNZ/wM=" },
-  { key: "./Misc/Quest/Act 3/Eye.d2i", value: "Sk0QAKAAZQDgGleWByI=" },
-  { key: "./Misc/Quest/Act 3/Flail.d2i", value: "Sk0QAIAAZQAIEmcWAwIlse716vEHPDZMQEFGQEEXI1n/Aw==" },
-  { key: "./Misc/Quest/Act 3/Gidbinn.d2i", value: "Sk0QAIAAZQBEcjYzAwLzubz36fH/PCSQ9T8=" },
-  { key: "./Misc/Quest/Act 3/Gold Bird.d2i", value: "Sk0QIKAAZQAEcjZDAyI=" },
-  { key: "./Misc/Quest/Act 3/Heart.d2i", value: "Sk0QAKAAZQDkGocmByI=" },
-  { key: "./Misc/Quest/Act 3/Lam Esen's Tome.d2i", value: "Sk0QAKAAZQAKIiYmBiI=" },
-  { key: "./Misc/Quest/Act 4/Hammer.d2i", value: "Sk0QAIAAZQAIgmaGBgIWV90f7OEHbmB8aMEJLRgFFMj6Hw==" },
-  { key: "./Misc/Quest/Act 4/Soul Stone.d2i", value: "Sk0QIKAAZQBo0jY3ByI=" },
-  { key: "./Misc/Quest/Act 5/Malah's Potion.d2i", value: "Sk0QIIAAZQBqkjZWBoKX8i5up4Cs/wE=" },
-  { key: "./Misc/Quest/Act 5/Scroll of Malah.d2i", value: "Sk0QIKAAZQAIQicnAyI=" },
-  { key: "./Misc/Quest/Bugged Tal Rasha's.d2i", value: "Sk0QCIAAZQBgWkeHBgLJQM7ccfEETnRzI8IHzZDIOKGVQmuFVgstMK0RzxaUP/qfxvMf" },
-  { key: "./Misc/Quest/Essences & Token/Burning Essence of Terror (Red).d2i", value: "Sk0QIKAAZABgIlZGBwI=" },
-  { key: "./Misc/Quest/Essences & Token/Charged Essence of Hatred (Yellow).d2i", value: "Sk0QIKAAZABAMlaGBgI=" },
-  { key: "./Misc/Quest/Essences & Token/Festering Essence of Destruction (Green).d2i", value: "Sk0QIKAAZAACYlZGBgI=" },
-  { key: "./Misc/Quest/Essences & Token/Token of Absolution.d2i", value: "Sk0QIKAAZAAAQvcWBgI=" },
-  { key: "./Misc/Quest/Essences & Token/Twisted Essence of Suffering (Blue).d2i", value: "Sk0QIKAAZAAgQlc2BwI=" },
-  { key: "./Misc/Quest/Keys & Organs/Baal's Eye.d2i", value: "Sk0QIKAAZAAgIlaWBwI=" },
-  { key: "./Misc/Quest/Keys & Organs/Destruction.d2i", value: "Sk0QAIAAZQAEArc2A4L8EpSBr+A/" },
-  { key: "./Misc/Quest/Keys & Organs/Diablo's Horn.d2i", value: "Sk0QIKAAZAAAQobmBgI=" },
-  { key: "./Misc/Quest/Keys & Organs/Hate.d2i", value: "Sk0QAIAAZQAEArcmAwLI3VgNqOA/" },
-  { key: "./Misc/Quest/Keys & Organs/Mephisto's Brain.d2i", value: "Sk0QIKAAZABA0iYmBwI=" },
-  { key: "./Misc/Quest/Keys & Organs/Terror.d2i", value: "Sk0QAIAAZQAGArcWAwKxk0YMqeA/" },
-  { key: "./Misc/Quest/Standard of Heroes.d2i", value: "Sk0QAIAAZQAmO0dHBoIAMxvS8fH//gM=" },
-  { key: "./Misc/Quest/Trap Suwayyah.d2i", value: "Sk0QKIAAZAAKchMmBwIA5Ggb7RAwMIYXDMDWPNx/" },
-  { key: "./Misc/Rares/Amulet/Armageddon Fletch.d2i", value: "Sk0QIIAAZAAsEtZWBwJNkxFMrQVgFsCUCIBMGtSBKwm2TiSlSFqR1CKJS+o/" },
-  { key: "./Misc/Rares/Amulet/Fiendra Sunder.d2i", value: "Sk0QIIAAZAAyEtZWBwL3hZoprQVcB8AUCsAMGM+BLQmyBNC4tP4D" },
-  { key: "./Misc/Rares/Amulet/Grim Necklace.d2i", value: "Sk0QIIAAZABSEtZWBwIxLBoPrYVSQ8CUCUCMgFmCKztXIHEZnhhKkdQi6D8=" },
-  { key: "./Misc/Rares/Amulet/Imp Brow.d2i", value: "Sk0QIIAAZAByEtZWB4L3EYE1rYVbIcAUCsAMj4OPwxToxFGKoxVHLY64TP4D" },
-  { key: "./Misc/Rares/Amulet/Order Noose.d2i", value: "Sk0QIIAAZAAOEtZWB4I8J4VfrYXiQsAUCMCMgFaCnBVCXIYnlFIgtUD6Dw==" },
-  { key: "./Misc/Rares/Ring/Beast Circle.d2i", value: "Sk0QIIAAZABOIpfmBoJJxitrrQVOPQAPgo/DirEUPVAGuUj+Aw==" },
-  { key: "./Misc/Rares/Ring/Bitter Turn.d2i", value: "Sk0QIIAAZABuIpfmBgKovIdArQXhPgCPwoRBBLRSNAFo4eJKwPIf" },
-  { key: "./Misc/Rares/Ring/Blood Whorl.d2i", value: "Sk0QIIAAZAAuIpfmBoJSQVQ2rQVRQQAPg4/CiqYTRFAIuTT+Aw==" },
-  { key: "./Misc/Rares/Ring/Bone Master.d2i", value: "Sk0QIIAAZAAAKpfmBoJB9KokrQVTSUAaT4K4E0EpglYEtQhKYTUi4OL6Dw==" },
-  { key: "./Misc/Rares/Ring/Corruption Grip.d2i", value: "Sk0QIIAAZABwIpfmBgLJ4jtarYVkLwAPw4RKfBxOBKUIWhHUIugEFhfXE0//AQ==" },
-  { key: "./Misc/Rares/Ring/Eagle Circle.d2i", value: "Sk0QIIAAZABQIpfmBgJo5D5ZrYVOPQCPwoQhfBxOBKUIWhHUImgFGhfXfw==" },
-  { key: "./Misc/Rares/Ring/Shadow Spiral.d2i", value: "Sk0QIIAAZAAwIpfmBoIH75dWrQVUPwCPAgAXH4cUY1DguLiy2H8=" },
-  { key: "./Misc/Rares/Ring/Viper Whorl.d2i", value: "Sk0QIIAAZAAQIpfmBgLF/Z1qrYVPQQAPwwQLDhw5EZQiaEVQi6AEQFxcPg7/AQ==" },
-  { key: "./Misc/Runes/Amn Rune.d2i", value: "Sk0QAKAAZAAAIhcTAwI=" },
-  { key: "./Misc/Runes/Ber Rune.d2i", value: "Sk0QAKAAZAACIjcDAwI=" },
-  { key: "./Misc/Runes/Cham Rune.d2i", value: "Sk0QAKAAZAAEIjcjAwI=" },
-  { key: "./Misc/Runes/Dol Rune.d2i", value: "Sk0QAKAAZAAGIhdDAwI=" },
-  { key: "./Misc/Runes/El Rune.d2i", value: "Sk0QAKAAZAAIIgcTAwI=" },
-  { key: "./Misc/Runes/Eld Rune.d2i", value: "Sk0QAKAAZAAKIgcjAwI=" },
-  { key: "./Misc/Runes/Eth Rune.d2i", value: "Sk0QAKAAZAAMIgdTAwI=" },
-  { key: "./Misc/Runes/Fal Rune.d2i", value: "Sk0QAKAAZAAOIheTAwI=" },
-  { key: "./Misc/Runes/Gul Rune.d2i", value: "Sk0QAKAAZAAgIidTAwI=" },
-  { key: "./Misc/Runes/Hel Rune.d2i", value: "Sk0QAKAAZAAiIhdTAwI=" },
-  { key: "./Misc/Runes/Io Rune.d2i", value: "Sk0QIKAAZABAIhdjAwI=" },
-  { key: "./Misc/Runes/Ist Rune.d2i", value: "Sk0QAKAAZAAkIidDAwI=" },
-  { key: "./Misc/Runes/Ith Rune.d2i", value: "Sk0QAKAAZAAmIgdjAwI=" },
-  { key: "./Misc/Runes/Jah Rune.d2i", value: "Sk0QAKAAZAAoIjcTAwI=" },
-  { key: "./Misc/Runes/Ko Rune.d2i", value: "Sk0QAKAAZAAqIheDAwI=" },
-  { key: "./Misc/Runes/Lem Rune.d2i", value: "Sk0QAKAAZAAsIicDAwI=" },
-  { key: "./Misc/Runes/Lo Rune.d2i", value: "Sk0QAKAAZAAuIieDAwI=" },
-  { key: "./Misc/Runes/Lum Rune.d2i", value: "Sk0QAKAAZABAIhdzAwI=" },
-  { key: "./Misc/Runes/Mal Rune.d2i", value: "Sk0QAKAAZABCIiczAwI=" },
-  { key: "./Misc/Runes/Nef Rune.d2i", value: "Sk0QAKAAZABEIgdDAwI=" },
-  { key: "./Misc/Runes/Ohm Rune.d2i", value: "Sk0QAKAAZABGIidzAwI=" },
-  { key: "./Misc/Runes/Ort Rune.d2i", value: "Sk0QAKAAZABIIgeTAwI=" },
-  { key: "./Misc/Runes/Po Rune.d2i", value: "Sk0QAKAAZABKIhdjAwI=" },
-  { key: "./Misc/Runes/Pul Rune.d2i", value: "Sk0QAKAAZABMIicTAwI=" },
-  { key: "./Misc/Runes/Ral Rune.d2i", value: "Sk0QAKAAZABOIgeDAwI=" },
-  { key: "./Misc/Runes/Shael Rune.d2i", value: "Sk0QAKAAZABgIhczAwI=" },
-  { key: "./Misc/Runes/Sol Rune.d2i", value: "Sk0QAKAAZABiIhcjAwI=" },
-  { key: "./Misc/Runes/Sur Rune.d2i", value: "Sk0QAKAAZABkIieTAwI=" },
-  { key: "./Misc/Runes/Tal Rune.d2i", value: "Sk0QAKAAZABmIgdzAwI=" },
-  { key: "./Misc/Runes/Thul Rune.d2i", value: "Sk0QAKAAZABoIhcDAwI=" },
-  { key: "./Misc/Runes/Tir Rune.d2i", value: "Sk0QAKAAZABqIgczAwI=" },
-  { key: "./Misc/Runes/Um Rune.d2i", value: "Sk0QAKAAZABsIicjAwI=" },
-  { key: "./Misc/Runes/Vex Rune.d2i", value: "Sk0QAKAAZABuIidjAwI=" },
-  { key: "./Misc/Runes/Zod Rune.d2i", value: "Sk0QAKAAZAAQIjczAwI=" },
   {
-    key: "./Runewords/Armor/Class Specific/Bone (AP).d2i",
-    value: "Sk0QCIAEZACoWkcHB7LGUfF+7RARKBbi4TEQHiwZ/U9gO0UyplDxSKYQ8fgPSk0QAKAAZBgAIBcjAwJKTRAAoABkGAIgJyMDAkpNEACgAGQYBCAnIwMC",
+    "key": "./Misc/Charms/Skiller/Ama/Bow-Sk Life.d2i",
+    "value": "EACAAAQIVNhtYPmXxBtTcI1UHEDCCwAg/wE="
   },
   {
-    key: "./Runewords/Armor/Class Specific/Enlightenment (AP).d2i",
-    value: "Sk0QCIAEZACgWkcHBzIyzSs57RAeKBbi4TEQHiwZ/Z8ShSkRGHteKCR7XCj8B0pNEACgAGQYACAnEwMCSk0QAKAAZBgCIAeDAwJKTRAAoABkGAQgFyMDAg==",
+    "key": "./Misc/Charms/Skiller/Ama/Java-Sk Life.d2i",
+    "value": "EACAAAQEVNhtEEr3yB7TgI1UHEDCSwAg/wE="
   },
   {
-    key: "./Runewords/Armor/Class Specific/Myth (AP).d2i",
-    value: "Sk0QCIAEZAAIWkcHB7L9ht8U7RA4KBbi4TEQHiwZ/VeCTqGMBYkokgWCDP4DSk0QAKAAZBgAIBdTAwJKTRAAoABkGAIgFxMDAkpNEACgAGQYBCAHQwMC",
+    "key": "./Misc/Charms/Skiller/Ama/Passiv-Sk Life.d2i",
+    "value": "EACAAAQAVNhtcMfPpBhTeY1UHEDCKwAg/wE="
   },
   {
-    key: "./Runewords/Armor/Class Specific/Peace (AP).d2i",
-    value: "Sk0QCIAEZACkWkcHBzKix8AF7ZA9KBbi4TEQHiwZ/Z8ChUkgGHtAECQrIiD8B0pNEACgAGQYACAXMwMCSk0QAKAAZBgCIBcDAwJKTRAAoABkGAQgFxMDAg==",
+    "key": "./Misc/Charms/Skiller/Assa/Martial Arts-Sk Life.d2i",
+    "value": "EACAAAQUVNhtKOePlh1TwI9UHEDCSwYg/wE="
   },
   {
-    key: "./Runewords/Armor/Class Specific/Principle (AP).d2i",
-    value: "Sk0QCIAEZAAEWkcHB7LXlYlL7ZBDKBbi4TEQHiwZ/Z8yGSvKIOsxcsDWf0pNEACgAGQYACAHgwMCSk0QAKAAZBgCICdTAwJKTRAAoABkGAQgByMDAg==",
+    "key": "./Misc/Charms/Skiller/Assa/Shadow-Sk Life.d2i",
+    "value": "EACAAAQQVNhtcHGb1h5TuI9UHEDCKwYg/wE="
   },
   {
-    key: "./Runewords/Armor/Class Specific/Rain (AP).d2i",
-    value: "Sk0QCIAEZAAEUkcHBzLPisc67RBHKBbi4TEQHiwZ/U9gO6Uy9sBTSPasU/gPSk0QAKAAZBgAIAeTAwJKTRAAoABkGAIgJzMDAkpNEACgAGQYBCAHYwMC",
+    "key": "./Misc/Charms/Skiller/Assa/Trap-Sk Life.d2i",
+    "value": "EACAAAQMVNhtYHSrZhnTsI9UHEDCCwYg/wE="
   },
   {
-    key: "./Runewords/Armor/Class Specific/Treachery (AP).d2i",
-    value: "Sk0QCIAEZAAAWkcHB7KfPl8a7ZBWKBbi4TEQHiwZ/Z9idQkaeyzKJHsWKvwHSk0QAKAAZBgAIBczAwJKTRAAoABkGAIgFwMDAkpNEACgAGQYBCAnAwMC",
+    "key": "./Misc/Charms/Skiller/Barb/Combat-Sk Life.d2i",
+    "value": "EACAAARAVdht2OjLkRvT8I5UHEDCCwQg/wE="
   },
   {
-    key: "./Runewords/Armor/Chains of Honor (CoH) (AP).d2i",
-    value:
-      "Sk0QCIAEZABmWkcHB0JKffA07RAUKBbi4UEQHiwZ/QdAA8HICbIUZCvIWpDxQOThpgfPH/0HSk0QAKAAZBgAIBdDAwJKTRAAoABkGAIgJyMDAkpNEACgAGQYBCA3AwMCSk0QAKAAZBgGICdDAwI=",
+    "key": "./Misc/Charms/Skiller/Barb/Cry-Sk Life.d2i",
+    "value": "EACAAARIVdhtEEoXFRjTAI9UHEDCSwQg/wE="
   },
   {
-    key: "./Runewords/Armor/Duress (AP).d2i",
-    value: "Sk0QCIAEZAAAUkcHBzJs5ut67RAcKBbi4TEQHiwZ/YeALAIFCjZKCsmMQR0KIXpoAvwHSk0QAKAAZBgAIBczAwJKTRAAoABkGAIgJyMDAkpNEACgAGQYBCAXAwMC",
+    "key": "./Misc/Charms/Skiller/Barb/Mastery-Sk Life.d2i",
+    "value": "EACAAAREVdhtmK7YdBxT+Y5UHEDCKwQg/wE="
   },
   {
-    key: "./Runewords/Armor/Enigma (AP).d2i",
-    value: "Sk0QCIAEZGQGUEcHBzL625xu7ZAdKBbi2TEQHny4wP8PBLPiABMMYyP4I24GPOQ/Sk0QAKAAZBgAIDcTAwJKTRAAoABkGAIgB2MDAkpNEACgAGQYBCA3AwMC",
+    "key": "./Misc/Charms/Skiller/Dru/Elemental-Sk Life.d2i",
+    "value": "EACAAARUVdhtIPe2xR5TYY9UHEDCSwUg/wE="
   },
   {
-    key: "./Runewords/Armor/Fortitude (AP).d2i",
-    value:
-      "Sk0QCIAEZAAMUkcHB8LGiJQ27ZAhKBbi4UEQHiwZ/YeALAJLliegUkCtgGoBlaYlh0n28EDBxvwHSk0QAKAAZBgAIAcTAwJKTRAAoABkGAIgFyMDAkpNEACgAGQYBCAXQwMCSk0QAKAAZBgGICeDAwI=",
+    "key": "./Misc/Charms/Skiller/Dru/Shape-Sk Life.d2i",
+    "value": "EACAAARQVdhtACNGzRjTWI9UHEDCKwUg/wE="
   },
   {
-    key: "./Runewords/Armor/Wealth (DS).d2i",
-    value: "Sk0QCIAEZAAAUleXBjIbfBxz7ZBcKBSgoDD/n3iFgvwfSk0QAKAAZBgAICcDAwJKTRAAoABkGAIgF4MDAkpNEACgAGQYBCAHMwMC",
+    "key": "./Misc/Charms/Skiller/Dru/Summon-Sk.d2i",
+    "value": "EACAAARMVdhteBvD4RpTUY9UHEDCCwUg/wE="
   },
   {
-    key: "./Runewords/Helmet/Delirium (Corona).d2i",
-    value:
-      "Sk0QCIAEZAAAUifnBrLUNQVY7RBPFRSQATD/Pzzkj4xJUSySNU04kjkRGZLJXgWYRVbw8PwHSk0QAKAAZBgAICcDAwJKTRAAoABkGAIgJ0MDAkpNEACgAGQYBCAXYwMC",
+    "key": "./Misc/Charms/Skiller/Necro/Bone-PSN-Sk Life.d2i",
+    "value": "EACAAAQERNhtCOGCHhhTOY5UHEDCKwIg/wE="
   },
   {
-    key: "./Runewords/Helmet/Dream (Corona).d2i",
-    value:
-      "Sk0QCIAEZAAAUifnBrJl+gVa7ZACeK+QkTFLRhAe/L9k542RfTBHtuKEUQqjFUYtjKD0JXuiUPwHSk0QAKAAZBgAIBdjAwJKTRAAoABkGAIgNxMDAkpNEACgAGQYBCAnEwMC",
+    "key": "./Misc/Charms/Skiller/Necro/Curse-Sk Life.d2i",
+    "value": "EACAAAQARNht6IenohpTMY5UHEDCCwIg/wE="
   },
   {
-    key: "./Runewords/Helmet/Lore (Corona).d2i",
-    value: "Sk0QCIAEZABIUifnBqL9bjJm7ZAyKBSQkSH/A6iy2J8oEvwHSk0QAKAAZBgAIAeTAwJKTRAAoABkGAIgFyMDAg==",
+    "key": "./Misc/Charms/Skiller/Necro/Summon-Sk Life.d2i",
+    "value": "EACAAAQIRNht+CCP+RnTQI5UHEDCSwIg/wE="
   },
   {
-    key: "./Runewords/Helmet/Nadir (Corona).d2i",
-    value: "Sk0QCIAEZABEUifnBiL3p+Ei7ZA4KBSQkSH/AZRAkPGBAk+GZAlmDUIJCf8BSk0QAKAAZBgAIAdDAwJKTRAAoABkGAIgBzMDAg==",
+    "key": "./Misc/Charms/Skiller/Pala/Combat-Sk Life.d2i",
+    "value": "EACAAAQMRNhtEPs+jx9TkI5UHEDCCwMg/wE="
   },
   {
-    key: "./Runewords/Helmet/Radiance (Corona).d2i",
-    value: "Sk0QCIAEZABAUifnBrLTBJpk7ZBGKBSQkTH/A6gGqBIEQVgyYsiS/wFKTRAAoABkGAAgB0MDAkpNEACgAGQYAiAXIwMCSk0QAKAAZBgEIAdjAwI=",
+    "key": "./Misc/Charms/Skiller/Pala/Defensive-Sk Life.d2i",
+    "value": "EACAAAQURNhtAHTfTRhToY5UHEDCSwMg/wE="
   },
   {
-    key: "./Runewords/Merc/Destruction (CA, Eth).d2i",
-    value:
-      "Sk0QCMAEZAAIegMXBlKPVrBD7ZAZKEFBKsKDB0tG/yN49UqDjFadwDALhkexFgeysaucgjGGnst/Sk0QAKAAZBgAICdjAwJKTRAAoABkGAIgJ4MDAkpNEACgAGQYBCA3AwMCSk0QAKAAZBgGIDcTAwJKTRAAoABkGAggF4MDAg==",
+    "key": "./Misc/Charms/Skiller/Pala/Offensive-Sk Life.d2i",
+    "value": "EACAAAQQRNhtQNniPhlTmI5UHEDCKwMg/wE="
   },
   {
-    key: "./Runewords/Merc/Doom (CA, Eth).d2i",
-    value:
-      "Sk0QCMAEZACIegMXBtJ7dv057RAaKEFBKgIKFE8d/kfAiLFLsE7gjy7JYcYkegpPXf4DSk0QAKAAZBgAIBdTAwJKTRAAoABkGAIgJ3MDAkpNEACgAGQYBCAnIwMCSk0QAKAAZBgGICeDAwJKTRAAoABkGAggNyMDAg==",
+    "key": "./Misc/Charms/Skiller/Sorc/Cold-Sk.d2i",
+    "value": "EACAAAQgRNhtqCloJR5T4I1UHEDCSwEg/wE="
   },
   {
-    key: "./Runewords/Merc/Infinity (Thresher, Eth).d2i",
-    value:
-      "Sk0QCMAEZAAAcjOHA8J9vvES7RArKCAgKMKDB/8jFC0K5nZpDyNG1SBjVq3j4fGNcHrzH0pNEACgAGQYACA3AwMCSk0QAKAAZBgCICczAwJKTRAAoABkGAQgNwMDAkpNEACgAGQYBiAnQwMC",
+    "key": "./Misc/Charms/Skiller/Sorc/Fire-Sk Life.d2i",
+    "value": "EACAAAQYRNhtAC405x9T0I1UHEDCCwEg/wE="
   },
   {
-    key: "./Runewords/Merc/Infinity (Giant Thresher, Eth).d2i",
-    value:
-      "Sk0QCMAEZAAAcnM3BsJ9vvES7RArKBwcKMKDB/8jFC0K5nZpDyNG1SBjVq3j4fGNcHrzH0pNEACgAGQYACA3AwMCSk0QAKAAZBgCICczAwJKTRAAoABkGAQgNwMDAkpNEACgAGQYBiAnQwMC",
+    "key": "./Misc/Charms/Skiller/Sorc/Light-Sk Life.d2i",
+    "value": "EACAAAQcRNhtmJRFGRhT2Y1UHEDCKwEg/wE="
   },
   {
-    key: "./Runewords/Merc/Insight (CA, Eth).d2i",
-    value:
-      "Sk0QCMAEZAAAegMXBkLTB0U27RAsKEFB6D+AkgAlAaUBpQgECULZC5PASHO74/ASnvgfSk0QAKAAZBgAIAeDAwJKTRAAoABkGAIgBzMDAkpNEACgAGQYBCAHcwMCSk0QAKAAZBgGIBcjAwI=",
+    "key": "./Misc/Charms/Small Charms/3 20 20 Charm.d2i",
+    "value": "EACAAARARNhP4OGZAR7TAEhXHKAxgQILAwwDUIP/"
   },
   {
-    key: "./Runewords/Merc/Obedience (CA, Eth).d2i",
-    value:
-      "Sk0QCMAEZAAEcgMXBtLIsBg37ZA6KAAV4cGDJaP/EeTK/WCTE1ApoFZAtYAaw0OEIlbR4Gma8R9KTRAAoABkGAAgF1MDAkpNEACgAGQYAiAXgwMCSk0QAKAAZBgEIBcDAwJKTRAAoABkGAYgB1MDAkpNEACgAGQYCCAXkwMC",
+    "key": "./Misc/Charms/Small Charms/Cold DMG Sc.d2i",
+    "value": "EACAAATIRNhPOK3bahpTiVOw2HjoIPMf"
   },
   {
-    key: "./Runewords/Merc/Phoenix (CA, Eth).d2i",
-    value:
-      "Sk0QCMAEZIQIcAMXBkJ8B/M+7RBAKEFBKMKDB0tG/yNAhgwC8qPKJT7NmBUO6hjqArkpx39KTRAAoABkGAAgJ2MDAkpNEACgAGQYAiAnYwMCSk0QAKAAZBgEICeDAwJKTRAAoABkGAYgNxMDAg==",
+    "key": "./Misc/Charms/Small Charms/Fire DMG Sc.d2i",
+    "value": "EACAAASIRNhP0LmkXhpT6FOzwNBQ8R8="
   },
   {
-    key: "./Runewords/Merc/Pride (CA, Eth).d2i",
-    value:
-      "Sk0QCMAEZAAEcgMXBkIvwPUH7RBDKEFBKMKDB0tG/2XIGCkx7wC9FIcmi2bIvHvmIf8BSk0QAKAAZBgAIDcjAwJKTRAAoABkGAIgJ5MDAkpNEACgAGQYBCAXYwMCSk0QAKAAZBgGICeDAwI=",
+    "key": "./Misc/Charms/Small Charms/Life Mana Sc.d2i",
+    "value": "EACAAASARNhPINdJXR/TeElXHKCRIOY/"
   },
   {
-    key: "./Runewords/Merc/Rift (CA, Eth).d2i",
-    value:
-      "Sk0QCMAEZAAMcgMXBkKMnFVO7RBJKEFBKMKDB0tG/wGoBFAJUA1QweChRQNUnxxzWAUExBhUD4XZwwQKyn9KTRAAoABkGAAgF1MDAkpNEACgAGQYAiAXgwMCSk0QAKAAZBgEICcDAwJKTRAAoABkGAYgJ1MDAg==",
+    "key": "./Misc/Charms/Small Charms/Life Resis Sc.d2i",
+    "value": "EACAAARQRNhPGO4hiR5TeUpWHKBxolmKZiuatWj2Hw=="
   },
   {
-    key: "./Runewords/Shield/Dragon (Monarch).d2i",
-    value:
-      "Sk0QCIAEZAAEWpdGB7LUeSBM7ZAaKJ6wsjIQHlB4lozMjP4DKAlQElAaUPogFxDmLplxxh4fGMkkiyjchv9KTRAAoABkGAAgJ5MDAkpNEACgAGQYAiAngwMCSk0QAKAAZBgEIBcjAwI=",
+    "key": "./Misc/Charms/Small Charms/Light DMG Sc.d2i",
+    "value": "EACAAAQIRNhPoJARyx1TSVS2yBDG+A8="
   },
   {
-    key: "./Runewords/Shield/Dragon (Zaka).d2i",
-    value:
-      "Sk0QCIAEZABkChdWBjKGv3kl7ZAaKMsICjIQHkR48IDCc+IrxdeKrxZfS0ZmRv8BlAQoCSgNKH2QCwhzl8w4Y48PjGSSRRRuw39KTRAAoABkGAAgJ5MDAkpNEACgAGQYAiAngwMCSk0QAKAAZBgEIBcjAwI=",
+    "key": "./Misc/Charms/Small Charms/MF Resis Sc.d2i",
+    "value": "EACAAAQERNhPoPFzThxTEMpInGiWotmKZi2aQVn7Dw=="
   },
   {
-    key: "./Runewords/Shield/Dream (Monarch).d2i",
-    value:
-      "Sk0QCIAEZACIWpdGBzLm6K9z7ZAbKJ6wsjIQHlB4lozMjP5/MMcJoxRGK4xaGEHpGyO7ZOcle6JQZCv+A0pNEACgAGQYACAXYwMCSk0QAKAAZBgCIDcTAwJKTRAAoABkGAQgJxMDAg==",
+    "key": "./Misc/Charms/Small Charms/Psn DMG Sc.d2i",
+    "value": "EACAAAQARNhPyJCp6htTqVSt5BhppH//AQ=="
   },
   {
-    key: "./Runewords/Shield/Dream (Zaka).d2i",
-    value:
-      "Sk0QCIAEZAAIChdWBjIOjqZE7ZAbKMsICjIQHkR48IDCc+IrxdeKrxZfS0ZmRv8/mOOEUQqjFUYtjKD0jZFdsvOSPVEoshX/AUpNEACgAGQYACAXYwMCSk0QAKAAZBgCIDcTAwJKTRAAoABkGAQgJxMDAg==",
+    "key": "./Misc/Craft/Amulet/Armageddon Slippers.d2i",
+    "value": "ECCAAAQY5FkY2Hrb0LQYgN0AUyYANAJiB7Yk0DrBLQW3FdxacOMy+g8="
   },
   {
-    key: "./Runewords/Shield/Exil (Vortex).d2i",
-    value:
-      "Sk0QCIAEZAAKAhdmBkIaN5YD7ZAfKOvQ0kIQHkR48IDCc+IrxdeKrxZfZjz/IRA0IzMULqFxvDIAZKyQ4sEv+w9KTRAAoABkGAAgJ2MDAkpNEACgAGQYAiAncwMCSk0QAKAAZBgEICdDAwJKTRAAoABkGAYgF0MDAg==",
+    "key": "./Misc/Craft/Amulet/Gale Shell.d2i",
+    "value": "ECCAAAQk5FkY3G3dbrQYdC8BU6gBNB4HH4cT3FJwW8GtBbcU+bjM/gM="
   },
   {
-    key: "./Runewords/Shield/Phoenix (Monarch).d2i",
-    value:
-      "Sk0QCIAEZAAEUpdGB0JuvRwk7RBAAJ6QkkIqygEpKMr/Y6gLZGNWOKhLfB4IyBEgQ5bp9KjyH0pNEACgAGQYACAnYwMCSk0QAKAAZBgAICdjAwJKTRAAoABkGAAgJ4MDAkpNEACgAGQYACA3EwMC",
+    "key": "./Misc/Craft/Amulet/Shadow Wing II.d2i",
+    "value": "EACAAAUI9FkYli0JY8Q4UK+6ox30iLRwgMaECUQQNgIKyPAQQHEDw/kP"
   },
   {
-    key: "./Runewords/Shield/Spirit (Monarch).d2i",
-    value:
-      "Sk0QCIAEZACAWpdGB8JwgktR7ZBNKJ6wskIQHlB4lozMjP4PsCWABKFvzDLN7Y8mIf4DSk0QAKAAZBgAIAdzAwJKTRAAoABkGAIgFwMDAkpNEACgAGQYBCAHkwMCSk0QAKAAZBgGIBcTAwI=",
+    "key": "./Misc/Craft/Amulet/Shadow Wing.d2i",
+    "value": "EACAAAUE9FkYYNgj0MUYUK/+Jz1+pR8gQHYgxohhxTQeAjAaXjIA+Q8="
   },
   {
-    key: "./Runewords/Shield/Spirit (Zaka).d2i",
-    value:
-      "Sk0QCIAEZAAAChdWBkIoKXx47ZBNKMsICkIQHkR48IDCc+IrxdeKrxZfS0ZmRv8H2BJAgtA3Zpnm9keTEP8BSk0QAKAAZBgAIAdzAwJKTRAAoABkGAIgFwMDAkpNEACgAGQYBCAHkwMCSk0QAKAAZBgGIBcTAwI=",
+    "key": "./Misc/Craft/Amulet/Storm Circlet.d2i",
+    "value": "ECCAAASY5FkYgnti/bQYUn0AUyIAMmlQB64k2DrxbcW3FN+mSFww/wE="
   },
   {
-    key: "./Runewords/Shield/Splendor (BS).d2i",
-    value: "Sk0QCIAEZAAQ4lZmBqLcn2147RBOKJ6goCAQHiwZremiNVT0HwKZJ5ag4GU5M6g0nj/5D0pNEACgAGQYACAHUwMCSk0QAKAAZBgCIBdzAwI=",
+    "key": "./Misc/Craft/Amulet/Storm Hide.d2i",
+    "value": "ECCAAATY5FkYWHAu3bQYUo0AUywANAJiB7Yk0DrBLQW3FdxacONi/A8="
   },
   {
-    key: "./Runewords/Shield/Splendor (Monarch).d2i",
-    value: "Sk0QCIAEZAAAWpdGB6JhJ3I27RBOKJ6wsiIQHiwZ/YdA5oklKHhZzgwqjedP/gNKTRAAoABkGAAgB1MDAkpNEACgAGQYAiAXcwMC",
+    "key": "./Misc/Craft/Boots/Bitter Brogues Leather Boots.d2i",
+    "value": "ECCAAASQ5KoJ3Bfyz1pDmA3QAAYGYGQAZAS0VrBLMe+EOC6t/w=="
   },
   {
-    key: "./Runewords/Shield/Splendor (Zaka).d2i",
-    value: "Sk0QCIAEZAAMAhdWBiKQgH9i7RBOKMsICiIQHiwZnfhK8bXiq8XXfwhknliCgpflzKDSeP7kP0pNEACgAGQYACAHUwMCSk0QAKAAZBgCIBdzAwI=",
+    "key": "./Misc/Craft/Boots/Grim Spur Chain Boots.d2i",
+    "value": "ECCAAAQAxKoJmS6pc1qjtAwwAQgIYGRjUABmVtRL4a1FNy6p/w=="
   },
   {
-    key: "./Runewords/Weapon/Axe/Beast (BA).d2i",
-    value:
-      "Sk0QCIAEZACkenMXBtKYqR927RAPKBoaKsKDB0tG/wEgRXDosAsvDLghDLnhkp7ErLmnoOA/Sk0QAKAAZBgAIDcDAwJKTRAAoABkGAIgBzMDAkpNEACgAGQYBCAnIwMCSk0QAKAAZBgGICczAwJKTRAAoABkGAggF3MDAg==",
+    "key": "./Misc/Craft/Boots/Rune Slippers Plate Boots.d2i",
+    "value": "ECCAAASIBKsJXjoHNlpD1Q2QAQwMYGQAWAScVsBLAe/EPC6u/w=="
   },
   {
-    key: "./Runewords/Weapon/Axe/Doom (BA).d2i",
-    value:
-      "Sk0QCIAEZAAIenMXBlKHMMsz7RAaKBoaKsKDB/8jAAXaJVgn8EeX5DBjEj2Fpzz/AUpNEACgAGQYACAXUwMCSk0QAKAAZBgCICdzAwJKTRAAoABkGAQgJyMDAkpNEACgAGQYBiAngwMCSk0QAKAAZBgIIDcjAwI=",
+    "key": "./Misc/Craft/Boots/Soul Shank Plate Boots.d2i",
+    "value": "ECCAAAQIBKsJgcPAb1qDlwyQAQwMYGQAYgSQVtxLUe9EPi6W/w=="
   },
   {
-    key: "./Runewords/Weapon/Axe/Eternity (BA).d2i",
-    value:
-      "Sk0QCIAEZAAOcnMXBlI5AtAs7RAfKBoaKsKDB/8j2LS5AUKJaymEaabMkC+wsP4DSk0QAKAAZBgAIBcTAwJKTRAAoABkGAIgNwMDAkpNEACgAGQYBCAnQwMCSk0QAKAAZBgGIBcjAwJKTRAAoABkGAggJ5MDAg==",
+    "key": "./Misc/Craft/Boots/Soul Spur Heavy Boots.d2i",
+    "value": "ECCAAASAZKcmjFr0v2oN3jIABBwcgJFByABgRoBrBbkU97i0/gM="
   },
   {
-    key: "./Runewords/Weapon/Bows/Brand (GMB).d2i",
-    value:
-      "Sk0QCIAEZAAAEtY2BkK+2M1o7RASKAAU4cGDJSNeAAD6H4Eq1SiBOoE8Xj0FjElUkJM5Qoz+A0pNEACgAGQYACA3EwMCSk0QAKAAZBgCICeDAwJKTRAAoABkGAQgJzMDAkpNEACgAGQYBiAnUwMC",
+    "key": "./Misc/Craft/Boots/Viper Trample Chain Boots.d2i",
+    "value": "ECCAAAQQxKoJ0cMVx1rjcw0wAQgIYGRjUAJaK96dcNfiGpfWfw=="
   },
   {
-    key: "./Runewords/Weapon/Bows/Brand (HB).d2i",
-    value:
-      "Sk0QCIAEZAAoasN2B8KUImMJ7RASKAAU4cGDJaP/EahSjRKoE8jj1VPAmEQFOZkjxOg/Sk0QAKAAZBgAIDcTAwJKTRAAoABkGAIgJ4MDAkpNEACgAGQYBCAnMwMCSk0QAKAAZBgGICdTAwI=",
+    "key": "./Misc/Craft/Glove/Bow Blood Touch.d2i",
+    "value": "ECCAAAUAlO9W0M9rxSEiomE5c0ZlUxVogYODA0hamONh6IJCpOAFACAAL/8B"
   },
   {
-    key: "./Runewords/Weapon/Bows/Edge (GMB).d2i",
-    value:
-      "Sk0QCIAEZAAMEtY2BjLZyZBT7ZAcKAAT4cGDJSNeAAD6D0AlgEqAaoDqyqPLrU4gD2Q9LC+def8BSk0QAKAAZBgAIAczAwJKTRAAoABkGAIgB3MDAkpNEACgAGQYBCAXEwMC",
+    "key": "./Misc/Craft/Glove/Java Blood Touch.d2i",
+    "value": "ECCAAAUIlO9WoEB8siUiomE5c0ZlUxVogYODA0hamONh6IJCpOAlACAAL/8B"
   },
   {
-    key: "./Runewords/Weapon/Bows/Edge (HB).d2i",
-    value:
-      "Sk0QCIAEZAAQYsN2B7IShkBB7ZAcKAAT4cGDJaP/AFQCqASoBqiuPLrc6gTyQNbD8tKZ9x9KTRAAoABkGAAgBzMDAkpNEACgAGQYAiAHcwMCSk0QAKAAZBgEIBcTAwI=",
+    "key": "./Misc/Craft/Glove/Martial Arts Blood Touch.d2i",
+    "value": "ECCAAAUQlO9WaObAjSYiomE5c0ZlUxVogYODA0hamONh6IJCpOAlAyAAL/8B"
   },
   {
-    key: "./Runewords/Weapon/Bows/Faith (MB).d2i",
-    value:
-      "Sk0QCIAEZQAAEtYmBkIAAACAlAAEBQYGRXjwgBcAwP5HwIjxRFCKoBVBLYJg4OG5A/SPLul5mwJQ/AdKTRAAoABkGAAgJ3MDAkpNEACgAGQYAiA3EwMCSk0QAKAAZBgEICcDAwJKTRAAoABkGAYgByMDAg=="
+    "key": "./Misc/Craft/Glove/Passive Gale Grasp.d2i",
+    "value": "ECCAAARAFNoVrqFbkrWI7hegCRAQuFiMESwUuqB4DHwMogScHHgFAOg/"
   },
   {
-    key: "./Runewords/Weapon/Bows/Faith (GMB).d2i",
-    value:
-      "Sk0QCIAEZQAKEtY2BkIAAACAlAAE5eYGRXjwgBcAwP5HwIjxRFCKoBVBLYJg4OG5A/SPLul5mwJQ/AdKTRAAoABkGAAgJ3MDAkpNEACgAGQYAiA3EwMCSk0QAKAAZBgEICcDAwJKTRAAoABkGAYgByMDAg==",
+    "key": "./Misc/Craft/Glove/Soul Touch.d2i",
+    "value": "ECCAAAQIFO5WyFY5WtAivGGAJTg44MLoguIx8DFAVACQcqBFim7/AQ=="
   },
   {
-    key: "./Runewords/Weapon/Bows/Faith (HB).d2i",
-    value:
-      "Sk0QCIAEZAAAasN2B0JXISN07RAgKAAU4cGDJaP/ETBiPBGUImhFUIugO0D/6JKetykAxX9KTRAAoABkGAAgJ3MDAkpNEACgAGQYAiA3EwMCSk0QAKAAZBgEICcDAwJKTRAAoABkGAYgByMDAg==",
+    "key": "./Misc/Craft/Ring/Beast Master.d2i",
+    "value": "EACAAAUA9PzYgLbFqyXGxCnZHU+zKcoEACMHXiSgmUDBCWYpmK1g1oIZj0GywgTHfw=="
   },
   {
-    key: "./Runewords/Weapon/Bows/Harmony (GMB).d2i",
-    value:
-      "Sk0QCIAEZACAGtY2BsJ7F3BF7ZAlKAAU4cGDJSNeAAD6H2HixA0UMG5AybhBsXEDyiiLhQFhXJqjmFFfZGT8B0pNEACgAGQYACAHMwMCSk0QAKAAZBgCIAdjAwJKTRAAoABkGAQgFyMDAkpNEACgAGQYBiAXgwMC",
+    "key": "./Misc/Craft/Ring/Bone Gyre.d2i",
+    "value": "EACAAAVA9PzYUM1IQCPGYAp4HvvSMJUCADIHjkw4IwU2HoL/"
   },
   {
-    key: "./Runewords/Weapon/Bows/Harmony (HB).d2i",
-    value:
-      "Sk0QCIAEZAAEasN2B0L9DPsH7ZAlKAAU4cGDJaP/ESZO3EAB4waUjBsUGzegorJYGBDGpTmKGfVFRsZ/Sk0QAKAAZBgAIAczAwJKTRAAoABkGAIgB2MDAkpNEACgAGQYBCAXIwMCSk0QAKAAZBgGIBeDAwI=",
+    "key": "./Misc/Craft/Ring/Death Knot.d2i",
+    "value": "EACAAAWM9PzYUPtSySfGcJpXLsnhaVwJACIBQgdmVBAuCCe48RB8EpIVJjj+Aw=="
   },
   {
-    key: "./Runewords/Weapon/Bows/Ice (GMB).d2i",
-    value:
-      "Sk0QCIAEZACEGtY2BkKKRf4D7ZAqKAAU4cGDJSNeAAD6H0GatEtypDGLhcwxdAfyu2wplKcU/wFKTRAAoABkGAAgFxMDAkpNEACgAGQYAiAXMwMCSk0QAKAAZBgEIDcTAwJKTRAAoABkGAYgJ4MDAg==",
+    "key": "./Misc/Craft/Ring/Doom Loop.d2i",
+    "value": "ECCAAAXA9PzYUMrgNy/GQLrXKxuyMCoEACQHXqSAtqIZj4CSMUv9Bw=="
   },
   {
-    key: "./Runewords/Weapon/Bows/Ice (HB).d2i",
-    value:
-      "Sk0QCIAEZACAasN2B0KzxPpE7ZAqKAAU4cGDJaP/EaRJuyRHGrNYyBxDdyC/y5ZCeUrxH0pNEACgAGQYACAXEwMCSk0QAKAAZBgCIBczAwJKTRAAoABkGAQgNxMDAkpNEACgAGQYBiAngwMC",
+    "key": "./Misc/Craft/Ring/Havoc Band.d2i",
+    "value": "EACAAIwZ4PzYoE5EqCnGEBzYAMXQAJFQCJ8AwIsA2oEwJ6SluNYiHA+FD8N/"
   },
   {
-    key: "./Runewords/Weapon/Bows/Wrath (GMB).d2i",
-    value:
-      "Sk0QCIAEZAAAGtY2BsJBuMBq7ZBgKAAU4cGDJSNeAAD6LyOFh0YVnjxA9ZjM1JgiRcFYcIXnP0pNEACgAGQYACAnEwMCSk0QAKAAZBgCIBdzAwJKTRAAoABkGAQgNwMDAkpNEACgAGQYBiAnMwMC",
+    "key": "./Misc/Craft/Ring/Shadow Circle.d2i",
+    "value": "EACAAAVE9PzYwMQoKizGgKoXJsfiupwDACIHZCQgERHwOPgw/Ac="
   },
   {
-    key: "./Runewords/Weapon/Bows/Wrath (HB).d2i",
-    value:
-      "Sk0QCIAEZAAIasN2B8LrngYd7ZBgKAAU4cGDJaP/MlJ4aFThyQNUT8tMjSlSFIwFV3j+A0pNEACgAGQYACAnEwMCSk0QAKAAZBgCIBdzAwJKTRAAoABkGAQgNwMDAkpNEACgAGQYBiAnMwMC",
+    "key": "./Misc/Craft/Ring/Skull Whorl.d2i",
+    "value": "ECCAAAWQ9PzYAAPJ2SbGEyoYMecQJm0BACIHZCQYERGk8MZDYOd/"
   },
   {
-    key: "./Runewords/Weapon/Flail/Call to Arms (CTA) (Flail).d2i",
-    value:
-      "Sk0QCIAEZGQXYMYWBtL04tdW7ZATKB4eKkKAAGEqEWE2Df8jvHunRO3CCyOJCFNJCLNp+JP/Sk0QAKAAZBgAIBcTAwJKTRAAoABkGAIgB4MDAkpNEACgAGQYBCAnMwMCSk0QAKAAZBgGICdDAwJKTRAAoABkGAggJ3MDAg==",
+    "key": "./Misc/Craft/Ring/Storm Eye.d2i",
+    "value": "EACAAAWA9PzY8MPubCXGkcrXMF1hPiQLACMCXAdYpMjG45DG8x8="
   },
   {
-    key: "./Runewords/Weapon/Flail/Heart of the Oak (HOTO) (Flail).d2i",
-    value:
-      "Sk0QCIAEZACgasYWBkIdyIZ97ZAmKB4e6P8JrRRaK7RaaCmRm2RpeH/GzOmGh4cZIU5Gxn9KTRAAoABkGAAgF4MDAkpNEACgAGQYAiAnYwMCSk0QAKAAZBgEICcTAwJKTRAAoABkGAYgFwMDAg==",
+    "key": "./Misc/Craft/Ring/Storm Master.d2i",
+    "value": "EACAAAUM9PzY8Lm9viXGkCr5HYchOfQLADMHVEzAoMJgIXBhwBDgEfg0gAr8Bw=="
   },
   {
-    key: "./Runewords/Weapon/Swords/Death (PB).d2i",
-    value:
-      "Sk0QCIAEZAAEcjMmB1Jk7IhE7RAXKAAV4cGDJaP/EQIHRiTDdJh0Q6YYWwOZmVXFw4M+4j9KTRAAoABkGAAgF1MDAkpNEACgAGQYAiAHEwMCSk0QAKAAZBgEICdjAwJKTRAAoABkGAYgB5MDAkpNEACgAGQYCCAnUwMC",
+    "key": "./Misc/Jewels/10 MF 40 Ed (red).d2i",
+    "value": "EACAAAQcBN0AAv0NjdaYkjFIIgIKFFDc/gM="
   },
   {
-    key: "./Runewords/Weapon/Swords/Destruction (PB).d2i",
-    value:
-      "Sk0QCIAEZACIejMmB1KwRTcB7ZAZKAAV4cGDJaP/Ebx6pUFGq05gmAXDo1iLA9nYVU7BGEPP5T9KTRAAoABkGAAgJ2MDAkpNEACgAGQYAiAngwMCSk0QAKAAZBgEIDcDAwJKTRAAoABkGAYgNxMDAkpNEACgAGQYCCAXgwMC",
+    "key": "./Misc/Jewels/10 Min 15 Resis (red).d2i",
+    "value": "EACAAARYBN0AgtomGuSYUlTSoYJyQTlxLcW1FddaXPuk/Ac="
   },
   {
-    key: "./Runewords/Weapon/Swords/Fortitude(PB).d2i",
-    value:
-      "Sk0QCIAEZAAAcjMmB0LcoA0k7ZAhKAAU4cGDJaP/EJBFYMnyBFQKqBVQLaDStOQwyR4eKNiY/0pNEACgAGQYACAHEwMCSk0QAKAAZBgCIBcjAwJKTRAAoABkGAQgF0MDAkpNEACgAGQYBiAngwMC",
+    "key": "./Misc/Jewels/10 Min 40 Ed (orange).d2i",
+    "value": "EACAAASkBN0AAgcBw/6YijHSIQIKFBWUC8on5T8="
   },
   {
-    key: "./Runewords/Weapon/Swords/Grief (PB).d2i",
-    value:
-      "Sk0QCIAEZAAAcjMmB9LZEEVl7ZAkKAAV4cGDJaP/Vh5deG9Iz2nssWg074Ga8R9KTRAAoABkGAAgB1MDAkpNEACgAGQYAiAHMwMCSk0QAKAAZBgEICeDAwJKTRAAoABkGAYgJzMDAkpNEACgAGQYCCAHgwMC",
+    "key": "./Misc/Jewels/10-15 Dmg (red).d2i",
+    "value": "EACAAARIBN0AgvbeoNSYUi7SoYJi4XFBwfD4pIB6/Ac="
   },
   {
-    key: "./Runewords/Weapon/Swords/Last Wish (PB).d2i",
-    value:
-      "Sk0QCIAEZAAIejMmB+KWe69v7ZAvKAAW4cGDJaP/Ee7eRSS7JCYOo0ygGJOkUCRbFjLAI/4DSk0QAKAAZBgAIDcTAwJKTRAAoABkGAIgJzMDAkpNEACgAGQYBCA3EwMCSk0QAKAAZBgGICeTAwJKTRAAoABkGAggNxMDAkpNEACgAGQYCiA3AwMC",
+    "key": "./Misc/Jewels/15 Ias (green).d2i",
+    "value": "EACAAAXIEN0Awilg+ACODgBWocvoPw=="
   },
   {
-    key: "./Runewords/Weapon/Swords/Lawbringer (PB).d2i",
-    value: "Sk0QCIAEZAAAcjMmB7KSZOxG7ZAwKAAT4cGDJaP/IPTBsJRmQ5AWLZt0ZJfuSGPPFZT/Sk0QAKAAZBgAIBcTAwJKTRAAoABkGAIgJwMDAkpNEACgAGQYBCAXgwMC",
+    "key": "./Misc/Jewels/15 Ias 15 Res (blue).d2i",
+    "value": "EACAAAQYBN0AwuxN4vCYRlRW4cS1FNdWXGtxrcvoPw=="
   },
   {
-    key: "./Runewords/Weapon/Swords/Oath (PB).d2i",
-    value:
-      "Sk0QCIAEZAAIcjMmB8LlUM4B7RA6KAAU4cGDJaP/EahS7SKb9MDUGNWFh1mkhYMDM4gdCor/Sk0QAKAAZBgAIBczAwJKTRAAoABkGAIgJxMDAkpNEACgAGQYBCAnMwMCSk0QAKAAZBgGIBdzAwI=",
+    "key": "./Misc/Jewels/15 Ias 30 Fire Res (red).d2i",
+    "value": "EACAAATEBN0AgnMV8tOY0ilWocvohLn/"
   },
   {
-    key: "./Runewords/Weapon/Swords/Phoenix (PB).d2i",
-    value:
-      "Sk0QCIAEZAAIcjMmB0IPWocD7RBAKAAU4cGDJaP/ESBDBgH5UeUSn2bMCgd1DHWB3JTjP0pNEACgAGQYACAnYwMCSk0QAKAAZBgCICdjAwJKTRAAoABkGAQgJ4MDAkpNEACgAGQYBiA3EwMC",
+    "key": "./Misc/Jewels/15 Ias 40 Ed (green).d2i",
+    "value": "EACAAAUABN0Awilg+ACODgBWocsoAgoU/wE="
   },
   {
-    key: "./Runewords/Weapon/Swords/Spirit (PB).d2i",
-    value:
-      "Sk0QCIAEZACkejMmB0K57A907ZBNKAAU4cGDJaP/A2wJIEHoG7NMc/ujSYj/Sk0QAKAAZBgAIAdzAwJKTRAAoABkGAIgFwMDAkpNEACgAGQYBCAHkwMCSk0QAKAAZBgGIBcTAwI=",
+    "key": "./Misc/Jewels/15 Ias 8 Min (red).d2i",
+    "value": "EACAAASIBN0AgnMV8tOY0ilWoQJyAeky+oT8Bw=="
   },
   {
-    key: "./Runewords/Weapon/Swords/Voice of Reason (PB).d2i",
-    value:
-      "Sk0QCIAEZAAIcjMmB0Jrq4817RA+KAAU4cGDJaP/Nsi47eaRq6depsaoFiTGGiAeTzH+A0pNEACgAGQYACAnAwMCSk0QAKAAZBgCIBeDAwJKTRAAoABkGAQgBxMDAkpNEACgAGQYBiAHIwMC",
+    "key": "./Misc/Jewels/15 Max 40 Ed (green).d2i",
+    "value": "EACAAARkBN0AwtQlCcqYjjG8IQIKFBYeGB6gHv8B"
   },
-  { key: "./Sets/Aldur's Watchtower/Armor.d2i", value: "Sk0QCIAAZQAAUlfHBgJ5WxSscTEEbmRkJA4AGgGvDzZJQbZFhlcKQHipAOT/gNf/Aa//A17/AQ==" },
-  { key: "./Sets/Aldur's Watchtower/Boots.d2i", value: "Sk0QAIAAZQAEgkcnBoLkO9O7cVEEciAh4RyQsoCaA8gJMjA8OQqm/wW8/gt4/Rfw+g8=" },
-  { key: "./Sets/Aldur's Watchtower/Helmet.d2i", value: "Sk0QCIAAZQBEQiaHA4KRHPrccSEEtkBBQc6GiA9kWEGWJce0/gd4/Q/w+h/g9R8=" },
-  { key: "./Sets/Aldur's Watchtower/Weapon.d2i", value: "Sk0QCIAAZQAIktNGB4LbeSCvcUEEkJDMqYBa8MmQl+Ch8FHoIsvD7T+Al/8AXv4DePkP" },
-  { key: "./Sets/Angelic Raiment/Amulet.d2i", value: "Sk0QAIAAZAAGEtZWB4IjU8u5boUaMLKcHOr/gTX//+Q/" },
-  { key: "./Sets/Angelic Raiment/Armor.d2i", value: "Sk0QCIAAZAAgIud2BgILOa3oRTEDdqChIQYEFCKG/x9A8f8E2X8=" },
-  { key: "./Sets/Angelic Raiment/Ring.d2i", value: "Sk0QAIAAZQAAIpfmBoIGhQDQaw0aMA7QUEL+B4f9h2L5Hw==" },
-  { key: "./Sets/Angelic Raiment/Weapon.d2i", value: "Sk0QCIAAZQAEMicmBwLfYrUYVCEDQEDEmLCEHof/IyxZ8r+L7D8=" },
-  { key: "./Sets/Arcanna's Tricks/Amulet.d2i", value: "Sk0QIIAAZABkEtZWB4K6eMBnbQUdMBK8bKD4D8Xy/wmj/w==" },
-  { key: "./Sets/Arcanna's Tricks/Armor.d2i", value: "Sk0QCIAAZAAEwkYHB4IxhYuNbtED6sDDI4aIIYv9/+CG/wFU/wE=" },
-  { key: "./Sets/Arcanna's Tricks/Helmet.d2i", value: "Sk0QKIAAZAAIMrcGBwJ62RkbbcEDKiAhIYYS0YngvzXsf4qg/w==" },
-  { key: "./Sets/Arcanna's Tricks/Weapon.d2i", value: "Sk0QCIAAZAAAcjdHBwKdIvcabbEDZGTEmJI0yvxPIPV/Q8F/" },
-  { key: "./Sets/Artic Gear/Armor.d2i", value: "Sk0QCIAAZAAgEleXBoK9maCIQnEDLEBBIQaEoid4UvCs4GnB898a9n9F0H8=" },
-  { key: "./Sets/Artic Gear/Belt.d2i", value: "Sk0QAIAAZAAAYifGBoJ8wFgwbYEDGuDgYHxAwQqt/1AY/6/g+Q8=" },
-  { key: "./Sets/Artic Gear/Gloves.d2i", value: "Sk0QAIAAZAAIQnfGBgIJcmJhbZEDKiAhYRyg0cXzf4IM/wWo/gM=" },
-  { key: "./Sets/Artic Gear/Weapon.d2i", value: "Sk0QCIAAZAAEMncnBgIozkJqbWEDYGDEiCBDxh0U/8FB/21QeFj6Dw==" },
-  { key: "./Sets/Beserker's Arsenal/Armor.d2i", value: "Sk0QCIAAZAAEMgfHBoLJB1gUbdEC0uDhIcIIYQrz3xr2Hw==" },
-  { key: "./Sets/Beserker's Arsenal/Helmet.d2i", value: "Sk0QCIAAZAAIgsbWBgJXaStFW8ECOICBIcKHDJxY+g8O+g8=" },
-  { key: "./Sets/Beserker's Arsenal/Weapon.d2i", value: "Sk0QCIAAZAAAIhOGB4JgyAcAbuECMDBE8FG4I+N/BBky/gM=" },
-  { key: "./Sets/Bul Kathos' Children/Colossus Blade.d2i", value: "Sk0QCIAAZAAAcnNGBgJY5D02bTEHZGQEiIAM2QmjFEYrjFoYRQl0QSEa/Qc=" },
   {
-    key: "./Sets/Bul Kathos' Children/Mythical Sword.d2i",
-    value: "Sk0QCIAAZAAEcnNHBhLxI7URbUEHWFgEAEATARmyE2Q5/vlHRhfUf0pNEACgAAAYACA3EwMC",
+    "key": "./Misc/Jewels/15 Req 15 Res (orange).d2i",
+    "value": "EACAAATUBN0AAomY1dCYSlTm4sS1FNdWXGtxbUvVfw=="
   },
-  { key: "./Sets/Cathan's Traps/Amulet.d2i", value: "Sk0QAIAAZABiEtZWB4JJHmPTTAUOMMZ4AJX/E2T4D6XvPw==" },
-  { key: "./Sets/Cathan's Traps/Armor.d2i", value: "Sk0QCIAAZQAAMobmBoLsIwXjaqEBqtDSIsaHDGyR+e+k8P8E1H8=" },
-  { key: "./Sets/Cathan's Traps/Helmet.d2i", value: "Sk0QCIAAZAAE0ja3BgIHWwMxVLEBSkBBIUICmhVL/61B/wE=" },
-  { key: "./Sets/Cathan's Traps/Ring.d2i", value: "Sk0QAIAAZQBgIpfmBgJjmCfba5UOEEQIPAz/Aaj8Bw==" },
-  { key: "./Sets/Cathan's Traps/Weapon.d2i", value: "Sk0QKIAAZAAIIjZHB4KjYuUkbZEBUFDE8JPEUPA/gdT/EzwpeFbwtOD5Dw==" },
-  { key: "./Sets/Civerb's Vestments/Amulet.d2i", value: "Sk0QAIAAZAACEtZWB4J6IJwkbYUAMDagKBH/r1j6/2EE/wE=" },
-  { key: "./Sets/Civerb's Vestments/Shield.d2i", value: "Sk0QCIAAZAAiwiZ3BoIPW5tTbQEAMICBIQaF50MG/iew+d+C6T8=" },
-  { key: "./Sets/Civerb's Vestments/Weapon.d2i", value: "Sk0QCIAAZAAAcjY3BoJq25NvSyEAeHhEmLCEhct/bch/" },
-  { key: "./Sets/Cleglaw's Brace/Gloves.d2i", value: "Sk0QAIAAZAAA0nbGBoJe0GfEb4EAJgABIUQJWMr8B0f9Bw==" },
-  { key: "./Sets/Cleglaw's Brace/Shield.d2i", value: "Sk0QKIAAZAAIMtfGBoIOxe4bbXEAKAABIcKHDbj5+n8iKEXQiqAWQf8B" },
-  { key: "./Sets/Cleglaw's Brace/Weapon.d2i", value: "Sk0QCIAAZQAEwjZHBoJxvZLSamEAWFhEuCOjkey/NuU/" },
-  { key: "./Sets/Cow King's Leathers/Armor.d2i", value: "Sk0ACIAAZAAAMkdXBwLnEJ6/QGEHWgACIgYEHieIUhCtIGpBZKyoQfL/gI//yQoJav8B" },
-  { key: "./Sets/Cow King's Leathers/Boots.d2i", value: "Sk0AAIAAZAAEYidGB4Irb7MfbXEHHuDgAAigfWgBjIwRUPrAyP4D" },
-  { key: "./Sets/Cow King's Leathers/Helmet.d2i", value: "Sk0ACIAAZAAIghcGB4INFve/QFEHfsDAIMaHKtj5X87434niPw==" },
-  { key: "./Sets/Death's Disguise/Belt.d2i", value: "Sk0QIIAAZAACwibGBgLfvOodbQEDGMDAIHzwQKb/TwSlCFoR1CLoPw==" },
-  { key: "./Sets/Death's Disguise/Gloves.d2i", value: "Sk0QIIAAZAAiwnbGBoJ8GlMObfECGsDAILQgc/P1v4vsPw==" },
-  { key: "./Sets/Death's Disguise/Weapon.d2i", value: "Sk0QCIAAZQAAcjdHBoJhbXsnXxEDWFhEiJAhAw/CfxsZS5b+Aw==" },
-  { key: "./Sets/Griswold's Legacy/Armor.d2i", value: "Sk0QCIAAZQAAghcmBwLXAkuucSEFmMPDYwAAmg/+2cLDSwNA/wE=" },
-  { key: "./Sets/Griswold's Legacy/Helmet.d2i", value: "Sk0QCIAAZQAEUifnBgJshv/jcREFYCEjQwKEJSduUtysuGlxA0VwC4864T+vDAD9Bw==" },
-  { key: "./Sets/Griswold's Legacy/Shield.d2i", value: "Sk0QCIAAZQAIAhdmBoLXrRGicUEF1qGlZQAF6oMdTnyl+Frx1eLLTPU/" },
-  { key: "./Sets/Griswold's Legacy/Weapon.d2i", value: "Sk0QCIAAZYQIcHM3B4JkJoaKcTEFjIzQiQAP3haoLjw93P7zwgDQ/wqKBcr/CooFyn8=" },
-  { key: "./Sets/Heaven's Brethren/Armor.d2i", value: "Sk0QCIAAZQACgic3BwLisP7ncWEGqCEjI8CBNR/8A2JECJQtUP8B" },
-  { key: "./Sets/Heaven's Brethren/Helmet.d2i", value: "Sk0QCIAAZAAKUofWBgIqFl83T3EGUoGCIgAAFQGvDzzYwjOGZWxAQvEf" },
-  { key: "./Sets/Heaven's Brethren/Shield.d2i", value: "Sk0QCIAAZAAGUkc3B4IrmlUHTFEGaAEQIAEhhewDD1JAOfGYkf0H" },
-  { key: "./Sets/Heaven's Brethren/Weapon.d2i", value: "Sk0QCIAAZAAActMWBoLuOsQdTEEGeHgEgEHhoQvP2MCCQhvzHw==" },
-  { key: "./Sets/Hsaru's Defence/Belt.d2i", value: "Sk0QAIAAZAAI0ibGBgJP6spUbVEAHgABIRygscLovzXqPw==" },
-  { key: "./Sets/Hsaru's Defence/Boots.d2i", value: "Sk0QAIAAZAAE0iZGB4JTax5vbTEAJgABIZxYAoP6D476Dw==" },
-  { key: "./Sets/Hsaru's Defence/Shield.d2i", value: "Sk0QAIAAZAAAIlY3BgKlMWdPbUEAIMDAIABQESH8t0b9Bw==" },
-  { key: "./Sets/Hwanin's Majesty/Armor.d2i", value: "Sk0QCIAAZAAEgjfGBgL8i2clbdEGkEFCIsABQh+k0aIp2aCC4j8=" },
-  { key: "./Sets/Hwanin's Majesty/Belt.d2i", value: "Sk0QAIAAZAAk0ibGBoJIG5ghbeEGHgABAcgYQpDD1AlYY/4D" },
-  { key: "./Sets/Hwanin's Majesty/Helmet.d2i", value: "Sk0QCIAAZAAMgifnBgJf9TQ0bcEG+CAjIwAEMiOUFVdK5P8=" },
-  { key: "./Sets/Hwanin's Majesty/Weapon.d2i", value: "Sk0QCIAAZAAAkmP3BoK6Jm0HbfEGAAJEQIZsglIyigy68IwNLSj+Aw==" },
-  { key: "./Sets/Immortal King/Armor.d2i", value: "Sk0QCIAAZQAoUhcmBwInwgYYY3EExMTDI/4HzbQg4wUCoGQFDYX/Y1r/V2j9P6H1P4XWfwgy/gM=" },
-  { key: "./Sets/Immortal King/Belt.d2i", value: "Sk0QAIAAZQAEoocmBgLZ6iptY4EEfICB4QPI+eCCE04pov5/mMP/Ma3/EMj8J0Hxn1cIgP4D" },
-  { key: "./Sets/Immortal King/Boots.d2i", value: "Sk0QAIAAZQAkgocmBgJloFGnYaEEfoCB4R1gMsGND1UAw/sPpe8/LxAA/f+giv92/gc=" },
-  { key: "./Sets/Immortal King/Gloves.d2i", value: "Sk0QAIAAZQAIgod2BoJQmJH5YZEEfoCB4QOgEUD7sIRkhAmM/11a/z8I4j8PxX8fiv+GxH8=" },
-  { key: "./Sets/Immortal King/Helmet.d2i", value: "Sk0QCIAAZQBIIhZWAwKcw9EkY2EEeHBzQ8CHQzxJBIUxC/ISAdB/" },
-  { key: "./Sets/Immortal King/Weapon.d2i", value: "Sk0QCIAAZQAMctN2A4JkiOz1YbEEeHjIj4AMWRdeHm56uCFCYfofxnTj/zKO7v7b+GNr+T9HV11Z+k9DP+1/" },
-  { key: "./Sets/Infernal Tools/Belt.d2i", value: "Sk0QAIAAZAAEQifGBgKoislnbbECICAhYRyg8WEE/1ss/bfzPw==" },
-  { key: "./Sets/Infernal Tools/Helmet.d2i", value: "Sk0QCIAAZAAAMhYGBwK4Lhb7UJECHsDAIMIJnhQ8K3ha8Mih/luD/gM=" },
-  { key: "./Sets/Infernal Tools/Weapon.d2i", value: "Sk0QCIAAZAAIcnbnBgITjMHNU6ECHh5EqIBMUf6Do/4D" },
-  { key: "./Sets/Iratha's Finery/Amulet.d2i", value: "Sk0QIIAAZAAkEtZWBwKtAFNUbYUEEFpAufn6fyIoRdCKoBZB/wE=" },
-  { key: "./Sets/Iratha's Finery/Belt.d2i", value: "Sk0QAIAAZAAEQifGBgJjfK3Tb8EAICDRIFQoLhQfRvBfgOo/" },
-  { key: "./Sets/Iratha's Finery/Gloves.d2i", value: "Sk0QIIAAZAAIQnfGBgKQagE/baEAKiAhIayAsvN/F9R/" },
-  { key: "./Sets/Iratha's Finery/Helmet.d2i", value: "Sk0QCIAAZQAAMibnBgJQX/jocbEAbiAjI8IJqBRQ/61B/wE=" },
-  { key: "./Sets/Isenhart's Armory/Armor.d2i", value: "Sk0QCIAAZQAAIiY3BwJmW9XWcfEAnCAjI8IHGYwQ/luD/gM=" },
-  { key: "./Sets/Isenhart's Armory/Helmet.d2i", value: "Sk0QKIAAZAAMYobGBgK3dKBUbQEBSODhIYIAkwjh/wmdFDordFro/Ac=" },
-  { key: "./Sets/Isenhart's Armory/Shield.d2i", value: "Sk0QKIAAZAAIckY3B4J9CBIUbeEAWoCCIsIHGQAi/0/opNBZodNC5z8=" },
-  { key: "./Sets/Isenhart's Armory/Weapon.d2i", value: "Sk0QCIAAZQAEIjZHBgJqKOkXatEAQEBEqKB0Qf0Hp/wH" },
-  { key: "./Sets/Mavina's Battle Hymn/Armor.d2i", value: "Sk0QCIAAZQAsUsdGBgLXLXvOcbEFKgQDI8QHtIxgthjxCgBQsuEGhTXw/xjZfw==" },
-  { key: "./Sets/Mavina's Battle Hymn/Belt.d2i", value: "Sk0QAIAAZQAEomcnBgLswC/McdEFXODggHzggY9ClgSD+n9iKcXSiqUWS/8B" },
-  { key: "./Sets/Mavina's Battle Hymn/Gloves.d2i", value: "Sk0QAIAAZQAkgkd3BoJMihmHccEFciAhgQFQEfD6wAMbBhIsn3Cy87+NQX5k/5ca+Q8=" },
-  { key: "./Sets/Mavina's Battle Hymn/Helmet.d2i", value: "Sk0QCIAAZQAQMpY2A4LoO83vcaEFjEBBIU6CnA+gUIJ2kf3/k/93jPw/sZRiacVSi6X/" },
-  { key: "./Sets/Mavina's Battle Hymn/Weapon.d2i", value: "Sk0QCIAAZQAAGtY2BgIHfFa8ceEFbm7EicCL1wQZuvA6Bf7TkMv739gDg+I/LwAA/Qc=" },
-  { key: "./Sets/Milabrega's Regalia/Armor.d2i", value: "Sk0QCIAAZAAIEhYmBwJq/cHFb4EB5sHDI4IIwcngPwQy/wE=" },
-  { key: "./Sets/Milabrega's Regalia/Helmet.d2i", value: "Sk0QCIAAZQAAMibnBgIukwncY3EBbiAjI8KBFwle/q/Q+g8=" },
-  { key: "./Sets/Milabrega's Regalia/Shield.d2i", value: "Sk0QCIAAZQAEspZGBwJFrS72TVEBOODhIcaHEUDB+39Ayn8IMv4D" },
-  { key: "./Sets/Milabrega's Regalia/Weapon.d2i", value: "Sk0QCIAAZQAMcjcHBwJk8b2za2EBjIwEiCBDxpQli/0H" },
-  { key: "./Sets/Naj's Ancient Vestige/Armor.d2i", value: "Sk0QCIAAZAAEUsdGBwK1CO4/bZEHOMTDI8CBMB9scmIpxdKKpRZLW1DktH/yHw==" },
-  { key: "./Sets/Naj's Ancient Vestige/Circlet.d2i", value: "Sk0QCIAAZAAAMpYGA4LxJ6gCbaEHUDAyIgCAlw9VgJExIksmK2pg/Ac=" },
-  { key: "./Sets/Naj's Ancient Vestige/Staff.d2i", value: "Sk0QCIAAZAAIYjM2BwL26BIybYEHRkYECDBMYBbBkiUZRgtpZH/CbLGhqOg/" },
-  { key: "./Sets/Natalya's Odium/Armor.d2i", value: "Sk0QCIAAZQAAUjfGBgI4TkGzQAEE9ENCYsCHdbRYcvPFKwZA2JD/" },
-  { key: "./Sets/Natalya's Odium/Boots.d2i", value: "Sk0QAIAAZQAEgtcmBgJ2nT7NQBEEbAAhBHw4RIqlFUtJZMDw4gn/AQ==" },
-  { key: "./Sets/Natalya's Odium/Helmet.d2i", value: "Sk0QCIAAZQAEioeWAwKsfcqLQOEDDoGCIgAAGgG+DzcZMZwwSmG0wqiF0X8=" },
-  { key: "./Sets/Natalya's Odium/Weapon.d2i", value: "Sk0QCIAAZQAIehMnBwJyZLKOQPEDiIgEiIAMGQyGCDZkZJB14c2Zh5sebv8B" },
-  { key: "./Sets/Orphan's Call/Belt.d2i", value: "Sk0QAIAAZAAMokcnBoLUfHYqTJEGaiAhAUBYsoKHR8FH4T8=" },
-  { key: "./Sets/Orphan's Call/Goves.d2i", value: "Sk0QAIAAZAAEgmd3BoKIpCIPTKEGZODgAECQMYGME0FZrgvqPw==" },
-  { key: "./Sets/Orphan's Call/Helmet.d2i", value: "Sk0QCIAAZAAAgofWBoI0ev4RTIEG2oCCIgCAFwh4xsgQjRo9/gM=" },
-  { key: "./Sets/Orphan's Call/Shield.d2i", value: "Sk0QCIAAZAAIgtfGBoKyubQtTLEGhAAEJACEVxTuLGmGZ+d/" },
-  { key: "./Sets/Sander's Folly/Boots.d2i", value: "Sk0QAIAAZAAEYidGB4LEOZ8absEHIODgAAAoEaCaQAYY3n8=" },
-  { key: "./Sets/Sander's Folly/Gloves.d2i", value: "Sk0QAIAAZAAKYnfGBoKj51cKbtEHIODgABxA8mEEOTwgYUkX1H8=" },
-  { key: "./Sets/Sander's Folly/Helmet.d2i", value: "Sk0QAIAAZABAMhYGB4JPvTMNbrEHGsCwADhBQDm0hvwH" },
-  { key: "./Sets/Sander's Folly/Weapon.d2i", value: "Sk0QCIAAZAAIInbnBoIYZMMXbuEHHh4ESJATYckSGxlLZHwg0qD+Aw==" },
-  { key: "./Sets/Sazabi's Grand Tribute/Armor.d2i", value: "Sk0QCIAAZAAEUgfHBoLD57cObREHHuThIQCAnANrPmhmjGwPa/8B" },
-  { key: "./Sets/Sazabi's Grand Tribute/Helmet.d2i", value: "Sk0QCIAAZAAIgofGBgKivu40bSEHvODhIcAHN5wwSmH0J/8B" },
-  { key: "./Sets/Sazabi's Grand Tribute/Weapon.d2i", value: "Sk0QCIAAZAAAcsM2BwJOlMo3bQEHAAIAKBHwimDJko2METJdeHmk/gc=" },
-  { key: "./Sets/Sigon's Complete Steel/Armor.d2i", value: "Sk0QCIAAZAAMckaHBoLrx2wXWFECInFzIwKEDCmg/juh/Ac=" },
-  { key: "./Sets/Sigon's Complete Steel/Belt.d2i", value: "Sk0QAIAAZQBQgibGBgLoV5nSZXECKoCBIRygccLovzXoPw==" },
-  { key: "./Sets/Sigon's Complete Steel/Boots.d2i", value: "Sk0QAIAAZQAIgiZGBwJYDjwlXmECMoCBYazQAoP6P0GG/1As/wM=" },
-  { key: "./Sets/Sigon's Complete Steel/Gloves.d2i", value: "Sk0QAIAAZQAAgnbGBgJNt3TtazECMoCBIQBQmUDB/y6y/w==" },
-  { key: "./Sets/Sigon's Complete Steel/Helmet.d2i", value: "Sk0QCIAAZAAQcobWBoIItBVETUECWoCCIkICnw8j+A8O+g8=" },
-  { key: "./Sets/Sigon's Complete Steel/Shield.d2i", value: "Sk0QCIAAZAAEQvd2B4KyJPzwboECRsDDIwAF6k/+Aw==" },
-  { key: "./Sets/Tal Rasha's Wrappings/Amulet.d2i", value: "Sk0QAIAAZUQEENZWB4KDQ5GScZUmQA5ISaCUYkrGAMKU6H8az38=" },
-  { key: "./Sets/Tal Rasha's Wrappings/Armor.d2i", value: "Sk0QCIAAZQAgUkeHBgLJQM7ccfEETnRzI8IHzYx4Tmil0FqhBYV3C8r/NJ7/" },
-  { key: "./Sets/Tal Rasha's Wrappings/Belt.d2i", value: "Sk0QAIAAZQAAotcmBoKqkQG1ccEEZAABYQigJfCBMrcFSk75/4MR/qfx/Ac=" },
-  { key: "./Sets/Tal Rasha's Wrappings/Helmet.d2i", value: "Sk0QCIAAZQCAije3BgJ3TSihcQEFwEBBIcABLgl8PtzgRFCKoBVBLYJ4KHwo/gM=" },
-  { key: "./Sets/Tal Rasha's Wrappings/Weapon.d2i", value: "Sk0QCIAAZQBE+iYWBgI+YBz3ceEEZGTEC6A6kCVBWxrUmh5a80Nrguj/lOR/04f/Th/+Lw3yHw==" },
-  { key: "./Sets/Tancred's Battlegear/Amulet.d2i", value: "Sk0QAIAAZAAMEtZWBwLOaUTub4UQMEQII4L/UGT/T+DhPw==" },
-  { key: "./Sets/Tancred's Battlegear/Armor.d2i", value: "Sk0QCIAAZAAIYlbHBoKwSK4GbfEBVmFkJAKAlwNI/luD/gM=" },
-  { key: "./Sets/Tancred's Battlegear/Boots.d2i", value: "Sk0QAIAAZAAEwiZGB4L7GWC5TwECGsDAYAhQccj4D0b2H4DKfw==" },
-  { key: "./Sets/Tancred's Battlegear/Helmet.d2i", value: "Sk0QKIAAZAAOIobWBgKaitRKbSECXICCIkIEBQomoPD/BE8KnhU8LXj+Aw==" },
-  { key: "./Sets/Tancred's Battlegear/Weapon.d2i", value: "Sk0QCIAAZAAA0gaXBgItp0L3WeEBNDTEiAAFyoQl/ieg+d8F9R8=" },
-  { key: "./Sets/The Disciple/Amulet.d2i", value: "Sk0QAIAAZAAMEtZWB4LBZTUrbZUvAFYQtSBzoviT/w==" },
-  { key: "./Sets/The Disciple/Armor.d2i", value: "Sk0QCIAAZAAIUleXBgLBFtY4bSEGukNBIcCH1JxQytHHKzKSDTBk/gM=" },
-  { key: "./Sets/The Disciple/Belt.d2i", value: "Sk0QAIAAZAAAUtc2BgLrK2gXbTEGlgABAQBQEaD6wIMTQSmCVgS1CPoP" },
-  { key: "./Sets/The Disciple/Boots.d2i", value: "Sk0QAIAAZQAEgscmBgLPLixLXREGWsDAACzI+TACMDI7/wM=" },
-  { key: "./Sets/The Disciple/Laying of Hands.d2i", value: "Sk0QAIAAZAAgUsd2BoJnDjiDbgEGkMDAAHwYwQmyLqg8co0NZSj+Aw==" },
-  { key: "./Sets/Trang-Oul's Avatar/Armor.d2i", value: "Sk0QCIAAZQBmilfHBoKlMJ69cWEFwmJkJBQESyDItNDawgOGx0sCQP9TkP0nkfEf" },
-  { key: "./Sets/Trang-Oul's Avatar/Belt.d2i", value: "Sk0QAIAAZQAAWkc3BgJs5L/lcZEFmCAhQRwQk0Bqgc8HNygZt/Bk+n+F1n8=" },
-  { key: "./Sets/Trang-Oul's Avatar/Gloves.d2i", value: "Sk0QAIAAZQAgitd2BoKWRrCXcYEFbAABAXxAwQqoNCheEABiuuQ/" },
-  { key: "./Sets/Trang-Oul's Avatar/Helmet.d2i", value: "Sk0QCIAAZQDAWoeWAwK9F7uQcVEFToGCIkAC2w9uUDI6oYxp/Qc=" },
-  { key: "./Sets/Trang-Oul's Avatar/Shield.d2i", value: "Sk0QCIAAZQDE6laWAwJlFJaKcXEFlEBBIQyAHAEvCt6HQ5z4aqHFKwJA/6Fm/FfS/gc=" },
-  { key: "./Sets/Vidala's Rig/Amulet.d2i", value: "Sk0QAIAAZAAIEtZWB4Jv4OzqbhUKEA68WGH0H4rlfw==" },
-  { key: "./Sets/Vidala's Rig/Armor.d2i", value: "Sk0QCIAAZAAAwlYWBoIRPvCBTzEBNoCBIYaA1Qce/D+h9N8a9R8=" },
-  { key: "./Sets/Vidala's Rig/Boots.d2i", value: "Sk0QIIAAZAAKQidGB4JlbvdybSEBKiAhISywBSP7f0Inhc4KnRY6/wE=" },
-  { key: "./Sets/Vidala's Rig/Weapon.d2i", value: "Sk0QCIAAZAAEwiYmBgKdujpKbhEBWFhEkBFQ8B8c9B8=" },
-  { key: "./Uniques/Amulets/Atma's Scarab.d2i", value: "Sk0QAIAAZQAwEtZWBwLO/Y8z8YWI0KIvhxlmkHFSyHJ3UBgThCj8Bw==" },
-  { key: "./Uniques/Amulets/Crescent Moon.d2i", value: "Sk0QAIAAZQAQEtZWB4I54nzO742HkKBphMLD4OORReQo/wE=" },
-  { key: "./Uniques/Amulets/Highlord's Wrath.d2i", value: "Sk0QAIAAZQAmGtZWB4KnIFr08QWKkKJKRuBBF9SfAHr6hv8=" },
-  { key: "./Uniques/Amulets/Mara's Kaleidoscope.d2i", value: "Sk0QAIAAZUQEENZWB4IIcHjv8QWIAKAkQElAaUDpBFQKqBVQLaD+6D8=" },
-  { key: "./Uniques/Amulets/Metalgrid.d2i", value: "Sk0QAIAAZQAGGtZWB4LfoRr08Y27MEG4D2g5UZWiakVViypmDBMUFMwsLRYW/gM=" },
-  { key: "./Uniques/Amulets/Nokozan Relic.d2i", value: "Sk0QAIAAZQASEtZWB4LLFfDx8JU6cIIMhYIxYCDLjUH9Bw==" },
-  { key: "./Uniques/Amulets/Saracen's Chance.d2i", value: "Sk0QAIAAZQBAEtZWBwJHctc/8ZWKAIAlAEsAawDrxFKKpRVLLZaSCUwo/gM=" },
-  { key: "./Uniques/Amulets/Seraph's Hymn.d2i", value: "Sk0QAIAAZQBmGtZWBwLZNATJ8QWXkMXyGNFjZI9efPT6I14aAPoP" },
-  { key: "./Uniques/Amulets/The Cat's Eye.d2i", value: "Sk0QAIAAZQBSEtZWB4JrPmyR8JWGICD3wQ0gyHRBgZH9Bw==" },
-  { key: "./Uniques/Amulets/The Eye of Etlich.d2i", value: "Sk0QAIAAZQAyEtZWB4KdU/3H8A07AAKFDYECUDwOWfJPDKn/" },
-  { key: "./Uniques/Amulets/The Mahim-Oak Curio.d2i", value: "Sk0QAIAAZQBGGtZWB4JT8D848IU7AEAlgEqAaoAKgoIPFDjBk4JnBU8Lnjse/gM=" },
-  { key: "./Uniques/Amulets/The Rising Sun.d2i", value: "Sk0QAIAAZQByEtZWB4I8QnND7xWHAAMDhhI0C/qJklE4CNYZ/wE=" },
-  { key: "./Uniques/Armors/Arkain's Valor.d2i", value: "Sk0QCIAAZQAAWgfHBgJ/2yCs8bEPIOThISDQEvGMkf3RN+I/" },
-  { key: "./Uniques/Armors/Atma's Wail.d2i", value: "Sk0QCIAAZQAkgkeHBgK7jTAI8cENdHJzIwS8IIBKIqMEbZJBwRsjswb9Bw==" },
-  { key: "./Uniques/Armors/Black Hades.d2i", value: "Sk0QCIAAZQAIglfHBoJAZf2Z8dENwmJkZCAgyyJ25oGyR6//" },
-  { key: "./Uniques/Armors/Blinkbat's Form.d2i", value: "Sk0QCIAAZQAAylYWBoLFR40o7wEFMICBIT6MAIQMGAMGwHjG8P4D" },
-  { key: "./Uniques/Armors/Boneflesh.d2i", value: "Sk0QCIAAZQAAAsdGBwI900ur8YEF/sDDIyDgmTACj8KhzH8=" },
-  { key: "./Uniques/Armors/Corpsemourn.d2i", value: "Sk0QCIAAZQAMghcmBwIdTAZX8OENmsPDIwCgDFBBoLWiCgYDiWQCEwZmhRIoKP8B" },
-  { key: "./Uniques/Armors/Crow Caw.d2i", value: "Sk0QCIAAZQAQgjfGBgJ9GCEC8WENkkFCIgS8INDqMhozOjT6Dw==" },
-  { key: "./Uniques/Armors/Darkglow.d2i", value: "Sk0QCIAAZQAIKud2BoJUhKqz8TEFdqAhISCQmUBBCJkTPChKCh4VZQUPi9KCx0XJcv8B" },
-  { key: "./Uniques/Armors/Duriel's Shell.d2i", value: "Sk0QCIAAZQAAiic3BwIFBf6y8YENqiEjIwC8QEB2wiiF0QqjFkZJyDK1pmBDVpD9Bw==" },
-  { key: "./Uniques/Armors/Goldskin.d2i", value: "Sk0QCIAAZQAEYlbHBgKeRVtV8bEFWGFkJCBYOlGVompFVYsqJ4onyLLYfw==" },
-  { key: "./Uniques/Armors/Greyform.d2i", value: "Sk0QCIAAZQAIEleXBoKAJVjN8fEEKkAxIQSoPnhgxHDCaIURj8J/" },
-  { key: "./Uniques/Armors/Guardian Angel.d2i", value: "Sk0QCIAAZQAEisdGBwJJ6rTv8KENOsLDIyAgo0CheCoei+fiTVmyoBlZveI/" },
-  { key: "./Uniques/Armors/Hawkmail.d2i", value: "Sk0QCIAAZQAMMjfGBoLqsjCR8UEFjkBCIiCQWRHE4oHxZPof" },
-  { key: "./Uniques/Armors/Heavenly.d2i", value: "Sk0QCIAAZQAQwkYHB4I2KX2M8dEF7MDDIwK8IJDZkHGCJwXPCp4WPHqM8CHnPw==" },
-  { key: "./Uniques/Armors/Iceblink.d2i", value: "Sk0QCIAAZQAAOgfHBoIrKMjW8XEF1ODhISBAGRGsgMqChsJ/" },
-  { key: "./Uniques/Armors/Ironpelt.d2i", value: "Sk0QCIAAZQAIikdXB4IHrSkO70ENSAECIg7kgEBGBDUCStJnDfsP" },
-  { key: "./Uniques/Armors/Leviathan.d2i", value: "Sk0QCIAAZQAEWsdGBoL7PJry8dETLATTIgBIQUD2ARQkMjD9Dw==" },
-  { key: "./Uniques/Armors/Que-Hegan's Wisdon.d2i", value: "Sk0QCIAAZQBgikcHB4Im/BS58fENIMLDIwK8IIAaoYxBpUH9iaLBfw==" },
-  { key: "./Uniques/Armors/Rattlecage.d2i", value: "Sk0QCIAAZQAEekaHBoIidoq676EFInFzIya08EEacGaIMv8B" },
-  { key: "./Uniques/Armors/Rockfleece.d2i", value: "Sk0QCIAAZQAEasZGBoLJlNbz8ZEF6AADIwCUQBAkoiChsEXrPw==" },
-  { key: "./Uniques/Armors/Shaftstop.d2i", value: "Sk0QCIAAZQBkiofmBoK1EeeS8XENwNHSIg5wgcANhD4SHv8B" },
-  { key: "./Uniques/Armors/Skin of the Flayerd One.d2i", value: "Sk0QCIAAZQBoiscWBgLcQ8367zENJsHBISD44nFI4qHkdvLgp/wH" },
-  { key: "./Uniques/Armors/Skin of the Vipermagi.d2i", value: "Sk0QCIAAZQAAglcWBoLD9eEi7yENEoGBISDgGdGcqEpRtaKqRVUa2Z/8Bw==" },
-  { key: "./Uniques/Armors/Skullder's Ire.d2i", value: "Sk0QCIAAZQAAigfHBgI/6q4f8JEN/OHhISAgG6Ek4fkTeAo/6j8=" },
-  { key: "./Uniques/Armors/Sparking Mail.d2i", value: "Sk0QCIAAZQAIMobmBoJd+frG8VEFrNDSIiBUSQElI6AA0PoP" },
-  { key: "./Uniques/Armors/Spiritforge.d2i", value: "Sk0QCIAAZQAIiud2BgISopE38VENbqGhYQC8QAB14gYGRZAsiE35Dw==" },
-  { key: "./Uniques/Armors/Steel Carapice.d2i", value: "Sk0QCIAAZQAAUlfHBgLztmX58cEVcGRkJCBw2/AgwlnhNgaVzGACwa/4Dw==" },
-  { key: "./Uniques/Armors/Templar's Might.d2i", value: "Sk0QCIAAZQACWhcmB4Lz5XUN8OEWxsRzIgC8DHgtkILADQTLMSheGQD6Dw==" },
-  { key: "./Uniques/Armors/The Centurion.d2i", value: "Sk0QCIAAZQAIisYWBoLf+76k8REFRMDBIQ68SPCy4GWCDB9QIEJQMmpq/Qc=" },
-  { key: "./Uniques/Armors/The Gladiator's Bane.d2i", value: "Sk0QCIAAZQAGWkdXBwLS8X3o8aEP2AMCIiAg+8ADEdQIKsmZE8oYmRujTP8D" },
-  { key: "./Uniques/Armors/The Spirit Shroud.d2i", value: "Sk0QCIAAZQBkileXBgK8SKS58BENAEFBISBYGrEoQf8k0/8=" },
-  { key: "./Uniques/Armors/Toothrow.d2i", value: "Sk0QCIAAZQBoisdGBoI1XKpx8LENGgIDIwCoQOD2wQgngpI8OEEdQv0H" },
-  { key: "./Uniques/Armors/Twitchthroe.d2i", value: "Sk0QCIAAZQAIOkdXB4J7SXqw8SEFWgACIgCoCFBRyD6MoAtqDOo/" },
-  { key: "./Uniques/Armors/Tyrael's Might.d2i", value: "Sk0QCIAAZABkWhcmB4LoISk17XETxgQQAHwgWDoBlQJqBVQLqC3IYFBs5sGDaab/AQ==" },
-  { key: "./Uniques/Armors/Venom Ward.d2i", value: "Sk0QCIAAZQBgKiY3BwKZhTjO72EFniAjIyCQacHo4mUxN0b/AQ==" },
-  { key: "./Uniques/Armors/Victors Silk.d2i", value: "Sk0QCIAAZQAKEhYmBwI2VluP8cEF6MHDIyDg8VHIYn/yHw==" },
-  { key: "./Uniques/Belts/Arachnid Mesh.d2i", value: "Sk0QAIAAZQQRUMc2BgIVenvY8FEXksCwAAKeJk8a1J9YUjAbLFpY+A8=" },
-  { key: "./Uniques/Belts/Bladebuckle.d2i", value: "Sk0QAIAAZQBGgibGBoLedh+V70EHLIAxAUCJABUEMh9QIGJwghgj+w8=" },
-  { key: "./Uniques/Belts/Gloomstrap.d2i", value: "Sk0QAIAAZQBwotcmBgKDNkVp8EEPZgDxYMALgqUNDz4KTbIs8R8=" },
-  { key: "./Uniques/Belts/Goldwrap.d2i", value: "Sk0QAIAAZQAmQifGBoJmZhbS8DEHIiDRAAKPDyN4QguKYBbr4vkP" },
-  { key: "./Uniques/Belts/Lenyms.d2i", value: "Sk0QAIAAZQBgwibGBoLAePyk8QEHGMCQIMHLBo8TNyluVty0uMlS/wE=" },
-  { key: "./Uniques/Belts/Nightsmoke.d2i", value: "Sk0QAIAAZQAG0ibGBgKLL9PZ8SEHIACBIAENBBkfMiBCOMGTgmcFTwseOfJ/" },
-  { key: "./Uniques/Belts/Nosferatu's Coil.d2i", value: "Sk0QAIAAZQCgWmc3BoLv3e6C72EXiuBwAMALj0OW6OJRJLCk+A8=" },
-  { key: "./Uniques/Belts/Razortail.d2i", value: "Sk0QAIAAZQBsomcnBgL+yP+D8TEPXuDgQMALgiULCgyKDxngFAKlcIf+Aw==" },
-  { key: "./Uniques/Belts/Snakecord.d2i", value: "Sk0QAIAAZQBkYifGBgINJ/4Q8BEHHOBwAIKHDxRosZQDBRSWKBndGP0H" },
-  { key: "./Uniques/Belts/Snowclash.d2i", value: "Sk0QAIAAZQBookcnBoJdfg6b8VEPaiAhAYIqFs9GQ4WlNTe2ZofW8FClRzJqh8J/" },
-  { key: "./Uniques/Belts/String of Ears.d2i", value: "Sk0QAIAAZQBgoscmBgIBYu/S8SEPWsDAAAKtDxkY8ZB44IFIovAf" },
-  { key: "./Uniques/Belts/Thundergod's Vigor.d2i", value: "Sk0QAIAAZQAEoocmBoLyWRhh8GEPfoCBAQDNABoEZCqUjECGNSK2ZsQiUZIdeRT+Aw==" },
-  { key: "./Uniques/Belts/Verdungo's Hearty Cord.d2i", value: "Sk0QAIAAZQDAWtc2BgLwGe6N8YEXmAChYAByASYERiQelKxjPP8B" },
-  { key: "./Uniques/Boots/Goblin Toe.d2i", value: "Sk0QAIAAZQBgSidGB4K4odr58eEGLCDBAAKPDxkQEYwIsgyizH8=" },
-  { key: "./Uniques/Boots/Gorefoot.d2i", value: "Sk0QAIAAZQBkaidGBwJwg3Wo8MEGIuCAAIKHDxbwIXByAINaQ0iMCP8B" },
-  { key: "./Uniques/Boots/Gorerider.d2i", value: "Sk0QAIAAZQAAgocmBgIQ9Aut8REPgICBYQENBGRJFLYsgZEdUiB6NHr8Bw==" },
-  { key: "./Uniques/Boots/Hotspur.d2i", value: "Sk0QAIAAZQBoyiZGBwIgmimB77EGHMBg4MALCBQ+QODEF4oHY8DAfw==" },
-  { key: "./Uniques/Boots/Infernostride.d2i", value: "Sk0QAIAAZQBAgscmBoLOWWD58dEOXMDAAIKlDxk4AYVCwWAI8URVFgODSoa4UPgP" },
-  { key: "./Uniques/Boots/Marrowwalk.d2i", value: "Sk0QAIAAZQCoWtcmBoImyzDt8SEXnAABAQCNgBgEZBsUOCiAQa0pIjuZMVIoKDALsWho+A8=" },
-  { key: "./Uniques/Boots/Sandstorm Trek.d2i", value: "Sk0QAIAAZQAEUmcnBgIAAACA8REXluDgAMDLgBcEVS3wwKDGoDQZ5SH8iv8=" },
-  { key: "./Uniques/Boots/Shadowdancer.d2i", value: "Sk0QAIAAZSQTUIcmBoKfezvJ8VETpICBQUAOApktUGBkY2S8YgD0Hw==" },
-  { key: "./Uniques/Boots/Silkweave.d2i", value: "Sk0QAIAAZQAEgtcmBoKsLvmC7/EObgABAYIvEMiaUGBkigr/AQ==" },
-  { key: "./Uniques/Boots/Tearhaunch.d2i", value: "Sk0QAIAAZQCgiiZGBwJK3hTr7/EGNIDhAECJgBIEKB9acIInBc8KnhY8YFBr5ug/" },
-  { key: "./Uniques/Boots/Treads of Cthon.d2i", value: "Sk0QAIAAZQCk2iZGB4L+872d79EGKACx4IAKCCg+WACEDDAyTcb/" },
-  { key: "./Uniques/Boots/Wartraveler.d2i", value: "Sk0QAIAAZQBEgkcnBgJTFuM38QEPdCAhAYDKABUEXxUeC5kLD4ZMEg8nCiiWYFqaeJ8eUJn/" },
-  { key: "./Uniques/Boots/Waterwalk.d2i", value: "Sk0QAIAAZQAIgmcnBgK/06Bi8eEOZOCwQMDrQJgFSBCkcZABQQZFAYP6Dw==" },
-  { key: "./Uniques/Charms/Annihilus.d2i", value: "Sk0QAIAAZQAgMtYWA4IjJRnOwI2+AIAmAE0AbQDthFEKoxVGLYyq8PiT/w==" },
-  { key: "./Uniques/Charms/Gheed's Fortune.d2i", value: "Sk0QAIAAZQAAOtY2AwJ7P+9BwY2z8IQgFMYrj/8=" },
-  { key: "./Uniques/Charms/Bone Break.d2i", value: "Sk0QAIAAZQAAOtY2A4LJJf+P65XKQOIVMJb+Aw==" },
-  { key: "./Uniques/Charms/Black Cleft.d2i", value: "Sk0QAIAAZQACOtY2AwI/eSW36wXLUMJSMJb+Aw==" },
-  { key: "./Uniques/Charms/Crack of the Heavens.d2i", value: "Sk0QAIAAZQAEOtY2A4J/Ae7i65XJkKKPL5b+Aw==" },
-  { key: "./Uniques/Charms/Cold Rupture.d2i", value: "Sk0QAIAAZQAGOtY2A4KWmQ2U64XIsKLPLpb+Aw==" },
-  { key: "./Uniques/Charms/Flame Rift.d2i", value: "Sk0QAIAAZQAIOtY2A4JNVvDY6xXJcKJPL5b+Aw==" },
-  { key: "./Uniques/Charms/Rotting Fissure.d2i", value: "Sk0QAIAAZQAKOtY2A4JlqDWE6wXK0KLPL5b+Aw==" },
-  { key: "./Uniques/Class-Items/Ama/Amazon Torch.d2i", value: "Sk0QAIAAZAAAMtYmA4KAwYck7gXIAIAmAE0AbQDthFEKoxVGLYymYFnYmFJMhpnng4LCfw==" },
-  { key: "./Uniques/Class-Items/Ama/Bloodraven's Charge.d2i", value: "Sk0QCIAAZQAIEtYmBgIFjQfs8MEUYGBEBHPm7gD11OAFAEBmxRceHv8B" },
-  { key: "./Uniques/Class-Items/Ama/Lycander's Aim.d2i", value: "Sk0QCIAAZQAAEtZ2AwIAAACA8aERbm5EAJoAGgQKEZAhu5BhkPlATIG6oHgBAOg/" },
-  { key: "./Uniques/Class-Items/Ama/Lycander's Flank.d2i", value: "Sk0QKIAAZQAAEtaWA4LTByN72bERMhoEAJoBNAgUIiBDdiHDIOORmAJ1kfESANB/" },
-  { key: "./Uniques/Class-Items/Ama/Thunderstroke.d2i", value: "Sk0QAIAAZQACEtZmBgKbS63B8CEVDAxAiYAMmYzgvy6jNRTGSwCAxpwYKE4f/gM=" },
-  {
-    key: "./Uniques/Class-Items/Ama/Titan's Revenge.d2i",
-    value: "Sk0QAIAAZQACEtYWBgIAAACA8ZERDAwwAkAjgBYBGbIKmQUZj8QUCIzsUwZKxksAQP08fzz/AQ==",
-  },
-  {
-    key: "./Uniques/Class-Items/Assa/Assassin Torch.d2i",
-    value: "Sk0QAIAAZABEMtYmAwKunrcw7gXIAIAmAE0AbQDthFEKoxVGLYymeFnYmFJMhpnng4LCfw==",
-  },
-  {
-    key: "./Uniques/Class-Items/Assa/Bartuc's Cutthroat.d2i",
-    value: "Sk0QCIAAZAAEkkN3BwLMbWQx7eERiooEABoBtAjIkFXILMh4JKZYXA5jZHdQ8JIByH8=",
-  },
-  { key: "./Uniques/Class-Items/Assa/Jadetalon.d2i", value: "Sk0QAIAAZQAKcnMnBoK7GPTM8UETcFJEgAfvBFkKshVkLch8PMbIeMUAiJcMgP4D" },
-  {
-    key: "./Uniques/Class-Items/Barb/Arreat's Face.d2i",
-    value: "Sk0QCIAAZQAAIhYWBoJDQk128HERBnFzIwDQCKBBQHYCKgXUCqgWUDwMU6gxsjsoeIEA6D8=",
-  },
-  {
-    key: "./Uniques/Class-Items/Barb/Barbarian Torch.d2i",
-    value: "Sk0QAIAAZAAEOtYmA4KVvQEX7gXIAIAmAE0AbQDthFEKoxVGLYymcFnYmFJMhpnng4LCfw==",
-  },
-  { key: "./Uniques/Class-Items/Barb/Demonhorn's Edge.d2i", value: "Sk0QCIAAZQBKIhZGBoIg7s+W8VEUTtHyISCA4mFw0uzi4QUCMF4hAOMlArD/" },
-  { key: "./Uniques/Class-Items/Barb/Halaberd's Reign.d2i", value: "Sk0QCIAAZQAEIhZWBgIiUu9P8JEWVCEjIyCoUlJPocag1lTSmk3iFQKQ/w==" },
-  {
-    key: "./Uniques/Class-Items/Barb/Wolfhowl Fury.d2i",
-    value: "Sk0QCIAAZQAIIhY2BgKybzoJwTEWQjEyIgC8CHgNeEGwFOabEQacEQadwUsEYMyediQk/gM=",
-  },
-  { key: "./Uniques/Class-Items/Dru/Cerebus' Bite.d2i", value: "Sk0QCIAAZQBKQiYnBgKDXWsp72ETOEEBISAw4qFYg053GB0K8UoB4H8=" },
-  { key: "./Uniques/Class-Items/Dru/Druid Torch.d2i", value: "Sk0QAIAAZAAyMtYmA4KVvQEX7gXIAIAmAE0AbQDthFEKoxVGLYymdFnYmFJMhpnng4LCfw==" },
-  {
-    key: "./Uniques/Class-Items/Dru/Jalal's Mane.d2i",
-    value: "Sk0QCIAAZQAGQiYXBoKvlVhm7/ER2EBBIQDQBKBBQHYCKgXUCqgWUFMqLocxsjsoFBV4pQDoPw==",
-  },
-  { key: "./Uniques/Class-Items/Dru/Ravenlore.d2i", value: "Sk0QCIAAZQBKQiZXBoLjnUJa8OEVTEHRIAL4IFg6sZRiacVSi6U13c5LBWBNKf4D" },
-  { key: "./Uniques/Class-Items/Dru/Spiritkeeper.d2i", value: "Sk0QCIAAZQBOQiZHBgKnp1X/8XEURkEBISD4OqHlQk2pxqAiOShl/gM=" },
-  {
-    key: "./Uniques/Class-Items/Necro/Arm of King Leoric.d2i",
-    value: "Sk0QCIAAZQBCkiN2B4Lj3D9k8NEIHh5EGs+aIltjZGuaaA0U8YoAEC8JACUTsFAkU7ooZFP+Aw==",
-  },
-  { key: "./Uniques/Class-Items/Necro/Boneflame.d2i", value: "Sk0QCIAAZQBK4lZWBoKLVr1bwVEVOkHRICBYOgGVAmoFVAuoKRoYVLKhicd/" },
-  { key: "./Uniques/Class-Items/Necro/Boneshade.d2i", value: "Sk0QCIAAZQBQciN2B4I+sr5H8PEVIhbEFClNa82QriHSNU62hsrWdNF/" },
-  { key: "./Uniques/Class-Items/Necro/Darkforge Spawn.d2i", value: "Sk0QCIAAZQBK4lZmBgIaOa7q8aEUPkHhICDQakKlkfGCABivCIDxkgDYfw==" },
-  { key: "./Uniques/Class-Items/Necro/Deaths's Web.d2i", value: "Sk0QCIAAZQAycnN2BwKGoiOj8bESJCCEFcYfKWLwigAQVJn/" },
-  {
-    key: "./Uniques/Class-Items/Necro/Homunculus.d2i",
-    value: "Sk0QCIAAZQBG4lYWBoIvAQNzwYERoEBBIQLQICCjgG4IOaGVQmuFVgutKRKXgxmZogIvCAD9Bw==",
-  },
-  {
-    key: "./Uniques/Class-Items/Necro/Necromancer Torch.d2i",
-    value: "Sk0QAIAAZAAIOtYmA4KVvQEX7gXIAIAmAE0AbQDthFEKoxVGLYymaFnYmFJMhpnng4LCfw==",
-  },
-  { key: "./Uniques/Class-Items/Pala/Alma Negra.d2i", value: "Sk0QCIAAZQAIChc2BgLzj4eF75EUXkEkJCBIi7BkCQVqRDJlMiO78+U/" },
-  { key: "./Uniques/Class-Items/Pala/Astreon's Ironward.d2i", value: "Sk0QCIAAZQAQcnM3BwI8hz3P8cEXjFhEBJEiRRw0oOB18bxJc4cbopClDC8MAP4H" },
-  { key: "./Uniques/Class-Items/Pala/Dragonscale.d2i", value: "Sk0QCIAAZQAEChdWBoJMjhb68bEVmBEUJADkQECGosCYnhvGh+KIkjTIfw==" },
-  {
-    key: "./Uniques/Class-Items/Pala/Herald of Zakarum.d2i",
-    value: "Sk0QCIAAZAAIAheWA4LJtzIw7dERZiEjIwDQDKBBQEbBO0GWgmwFWQuyKZMZ2R0UvDAA9B8=",
-  },
-  {
-    key: "./Uniques/Class-Items/Pala/Paladin Torch.d2i",
-    value: "Sk0QAIAAZABgOtYmA4KVvQEX7gXIAIAmAE0AbQDthFEKoxVGLYymbFnYmFJMhpnng4LCfw==",
-  },
-  { key: "./Uniques/Class-Items/Sorc/Death's Fathom.d2i", value: "Sk0QCIAAZQAA8iZmBgId/9CF8SEWZGTECa0UWlOyNKilUP4D" },
-  { key: "./Uniques/Class-Items/Sorc/Eschutas Temper.d2i", value: "Sk0QCIAAZQAA8iY2BoI7S1SE8fEWPDhEAN+ULA0vqRGlRv4D" },
-  { key: "./Uniques/Class-Items/Sorc/Ormus' Robes (Blizzard).d2i", value: "Sk0QCIAAZQBgWleXBoI9vhPS8GEWsENBITY8fPBAGtSaHUsaRGmQpUH+Aw==" },
-  { key: "./Uniques/Class-Items/Sorc/Ormus' Robes (CL).d2i", value: "Sk0QCIAAZQAAWleXBoI9vhPS8GEWsENBITY8fPBAGtSaGksaRGmQpUH+Aw==" },
-  { key: "./Uniques/Class-Items/Sorc/Ormus' Robes (FB).d2i", value: "Sk0QCIAAZQAEWleXBoI9vhPS8GEWsENBITY8fPBAGtSaF0saRGmQpUH+Aw==" },
-  { key: "./Uniques/Class-Items/Sorc/Ormus' Robes (Fire Mast).d2i", value: "Sk0QCIAAZQAIWleXBoI9vhPS8GEWsENBITY8fPBAGtSaHksaRGmQpUH+Aw==" },
-  { key: "./Uniques/Class-Items/Sorc/Ormus' Robes (Lightning).d2i", value: "Sk0QCIAAZQAAWleXBoI9vhPS8GEWsENBITY8fPBAGtSaGEsaRGmQpUH+Aw==" },
-  { key: "./Uniques/Class-Items/Sorc/Ormus' Robes (Meteor).d2i", value: "Sk0QCIAAZQBkWleXBoI9vhPS8GEWsENBITY8fPBAGtQaHEsaRGmQpUH+Aw==" },
-  { key: "./Uniques/Class-Items/Sorc/Ormus' Robes (Orb).d2i", value: "Sk0QCIAAZQBoWleXBoI9vhPS8GEWsENBITY8fPBAGtQaIEsaRGmQpUH+Aw==" },
-  {
-    key: "./Uniques/Class-Items/Sorc/Sorceress Torch.d2i",
-    value: "Sk0QAIAAZABiOtYmA4KVvQEX7gXIAIAmAE0AbQDthFEKoxVGLYymZFnYmFJMhpnng4LCfw==",
-  },
-  { key: "./Uniques/Class-Items/Sorc/The Oculus.d2i", value: "Sk0QCIAAZQAy8iYWBoLKv83T8cERZFREANoAGgQKJ4xSGK0wamEExXJKlkamqJAssCHzHw==" },
-  { key: "./Uniques/Gloves/Bloodfist.d2i", value: "Sk0QAIAAZQAAYnfGBgJA77z+8XEGIuDg4AASCBQqFBeKDxTo4hkj+1T8Bw==" },
-  { key: "./Uniques/Gloves/Chance Guards.d2i", value: "Sk0QAIAAZQBA0nbGBoLEgWEJ74EGKAABAYKHCRl8yMATllAYs9h/" },
-  { key: "./Uniques/Gloves/Dracul's Grasp.d2i", value: "Sk0QAIAAZQCkWmd3BgI3hrDA8cEWmODgAMALBDw8FFYUhzLGFCkK/wE=" },
-  { key: "./Uniques/Gloves/Frostburn.d2i", value: "Sk0QAIAAZQAEgnbGBgJOJw0w76EGNICBAQKFCAUKfECBjQADMk3k/w==" },
-  { key: "./Uniques/Gloves/Ghoulhide.d2i", value: "Sk0QAIAAZQAAgtd2BgLR4vrh8aEObgAB4QANCL58FOhB9qD/" },
-  { key: "./Uniques/Gloves/Gravepalm.d2i", value: "Sk0QAIAAZQAAgmd3BoJhn3418ZEOZODgAIBKABUEWnq48UHqPw==" },
-  { key: "./Uniques/Gloves/Hellmouth.d2i", value: "Sk0QAIAAZQAEgod2BgIeOivb8cEOgICBAQIyGA9Ikjw8ehgjcBAYY8Ih/Ac=" },
-  { key: "./Uniques/Gloves/Lavagout.d2i", value: "Sk0QAIAAZQBEgkd3BoL71en38bEOdCAhAQKyE0owGlwkoeiCstOYQoPgPw==" },
-  { key: "./Uniques/Gloves/Magefist.d2i", value: "Sk0QAIAAZQDISnfGBoIpFpYL8JEGLCDxAIKHDRkfKAAjwEAalJ/kPw==" },
-  { key: "./Uniques/Gloves/Souldrain.d2i", value: "Sk0QAIAAZQAEUtd2BoKf6keE74ETnAABAQIeHgcfBzxOYwMSiP8=" },
-  { key: "./Uniques/Gloves/Steelrend.d2i", value: "Sk0QAIAAZQBoWod2BgLpTuKe8XEYkoBBAQBNBB48PnADkeI/" },
-  { key: "./Uniques/Gloves/The Hand of Broc.d2i", value: "Sk0QAIAAZQBEwnbGBoKyNk7t72EGHMDAIAENBAofKNCCh8fAx+A/" },
-  { key: "./Uniques/Gloves/Venom Grip.d2i", value: "Sk0QAIAAZQAIgsd2BgK49yS58YEOXMDAAAKoDyNoAeWi5MgkEzI8CogK/wE=" },
-  { key: "./Uniques/Helmets/Andariel's Visage.d2i", value: "Sk0QCIAAZQAEUje3BoIQUQT68ZEVSkFBIQD4QLB0gqIFngvFQ9EF9UfJHi4ezAaLKCj+Aw==" },
-  { key: "./Uniques/Helmets/Biggin's Bonnet.d2i", value: "Sk0QCIAAZQAIMhYGB4KB5i5u73EEHsDAIA68SPASwYOHCR58wMB/" },
-  { key: "./Uniques/Helmets/Blackhorn's Face.d2i", value: "Sk0QCIAAZQAAgje3BgJVcy0h8fEMwkBBISBwSxFUJwAoR6JYovwH" },
-  { key: "./Uniques/Helmets/Coif of Glory.d2i", value: "Sk0QCIAAZQBIgsbWBoJJ+dDw8ZEEMoCBIT5QAASZFEFxAoDOfw==" },
-  { key: "./Uniques/Helmets/Crown of Ages.d2i", value: "Sk0QCIAAZQAsUifnBgJeNOmT8YEVYCEDQyDI+AAKEg8noFJArYBqATVG9ieY/gc=" },
-  { key: "./Uniques/Helmets/Crown of Thieves.d2i", value: "Sk0QCIAAZQBAgifnBgIiOedZ8eEM+CAjIwTkDkhJMAQB2YkpHownyP4D" },
-  { key: "./Uniques/Helmets/Darksight Helm.d2i", value: "Sk0QCIAAZQAEgofGBoLpt0ei8cEMruDhIU5o+ShkgUyTDUcYmBUIeXhYg/4D" },
-  { key: "./Uniques/Helmets/Duskdeep.d2i", value: "Sk0QCIAAZQAMYobGBoL78XTA8aEESuDhISDIsIDAgPjgARHHiaAUQSuCWgRlEVCI/w==" },
-  { key: "./Uniques/Helmets/Giantskull.d2i", value: "Sk0QCIAAZQAEUoeWA4K4xLzz77EXDIGCQgAMfVBKlAAixX8=" },
-  { key: "./Uniques/Helmets/Griffon's Eye.d2i", value: "Sk0QCIAAZQBIMpY2AwLhwoEy8QEVeEAhIT5II03rT5QacUrxHw==" },
-  { key: "./Uniques/Helmets/Harlequin Crest (Shako).d2i", value: "Sk0QCIAAZQACUhcGBwLhaR6G8YEPLsHAIACIBBAJEA0QkVCAYvlH2JhszH8=" },
-  { key: "./Uniques/Helmets/Howltusk.d2i", value: "Sk0QCIAAZQBMcobWBoJx/AqG8MEEXICCIiBAGSE4GUQJwAHJGf8D" },
-  { key: "./Uniques/Helmets/Kira's Guardian.d2i", value: "Sk0QKIAAZAAGMpYmA4LteFIh7VEWeJCRIT4I4gReCrwVeC3wMh2D+g8=" },
-  { key: "./Uniques/Helmets/Nightwing's Veil.d2i", value: "Sk0QCIAAZQACUofWBgJrumaj73EVVIEyIgTQIODZImPnH1VKLA3yHw==" },
-  { key: "./Uniques/Helmets/Peasent Crown.d2i", value: "Sk0QCIAAZQBEghcGB4LLjPv/8ZEMgMDAIALQBtAgkFGighn9yX8=" },
-  { key: "./Uniques/Helmets/Rockstopper.d2i", value: "Sk0QCIAAZQAIgrcGBwJA9eqX8aEMkiAhIQa8IHAjoXCCLIXWCq0xsv8=" },
-  { key: "./Uniques/Helmets/Stealskull.d2i", value: "Sk0QCIAAZQBIgsfWBgILX0VN77EMpoCBISDA41HwUYBi2cUzxvMf" },
-  { key: "./Uniques/Helmets/Steelshade.d2i", value: "Sk0QCIAAZQAIUsfWBoJ0erOq8JESQIGBISAI8oFQAj9a/Ac=" },
-  { key: "./Uniques/Helmets/Tarnhelm.d2i", value: "Sk0QCIAAZQAQMrcGB4K5mmvd8YEEKiAhIZ68gmL5J/8B" },
-  { key: "./Uniques/Helmets/The Face of Horror.d2i", value: "Sk0QCIAAZQBQ0ja3BoLgarbo7+EEOEBBIQDQfBjBCZ4UPCt4WvDA+ekx8h8=" },
-  { key: "./Uniques/Helmets/Undead Crown.d2i", value: "Sk0QCIAAZQAAOibnBgIJTcbt8dEEcCAjIyDw+CCDFmQ8CmuKzE49RviQ8x8=" },
-  { key: "./Uniques/Helmets/Valkiry Wing.d2i", value: "Sk0QCIAAZQAMgofWBoJY9mc+79EM2oCCIiAgmwKBQY1BKSL8Bw==" },
-  { key: "./Uniques/Helmets/Vampiregaze.d2i", value: "Sk0QCIAAZQBMgoeWA4JuePnh8QENEIGCIiCQGUGReLBhYIGMB8IHQtPoPw==" },
-  { key: "./Uniques/Helmets/Veil of Steel.d2i", value: "Sk0QKIAAZAAMUofWBoKLKj9M7ZEPVIHCI06QpSBbQdaCDAIPAC8DXlkgCcUHS/wH" },
-  { key: "./Uniques/Helmets/Wormskull.d2i", value: "Sk0QCIAAZQAEKobWBgLn5eP98bEEWICCIhKotFjKYYYZyHgUpij/AQ==" },
-  { key: "./Uniques/Jewels/Rainbow Facet (Fire) (Die).d2i", value: "Sk0QAIAAZQCkqlZ2BwIjIqXj8SXFACOiRbEPB3LSG00L/gM=" },
-  { key: "./Uniques/Jewels/Rainbow Facet (Fire) (Lvl).d2i", value: "Sk0QAIAAZQAIolZ2BwJSIy+9wgXHACOixbHOBXLSG00L/gM=" },
-  { key: "./Uniques/Jewels/Rainbow Facet (Cold) (Die).d2i", value: "Sk0QAIAAZQAIqlZ2BwKQjBIhwa3EYAPDxECxcgfy0htPC/4D" },
-  { key: "./Uniques/Jewels/Rainbow Facet (Cold) (Lvl).d2i", value: "Sk0QAIAAZQAoolZ2BwL+wTsvwYXGYAPDxMCxlQXy0htPC/4D" },
-  { key: "./Uniques/Jewels/Rainbow Facet (Lightning) (Die).d2i", value: "Sk0QAIAAZQAqqlZ2BwJMqEk+wS3EICNQothbA1npDacF/wE=" },
-  { key: "./Uniques/Jewels/Rainbow Facet (Lightning) (Lvl).d2i", value: "Sk0QAIAAZQAKolZ2BwKZAcaxwAXGICNQ4lgKA1npDacF/wE=" },
-  { key: "./Uniques/Jewels/Rainbow Facet (Poison) (Die).d2i", value: "Sk0QAIAAZQAOolZ2BwJi8NtZwaXFkGOXXWQUm7kgM70BteA/" },
-  { key: "./Uniques/Jewels/Rainbow Facet (Poison) (Lvl).d2i", value: "Sk0QAIAAZQAqolZ2BwJo0QrA8YXHkGOXXWQcuywiM70BteA/" },
-  { key: "./Uniques/Rings/Bul Katho's Wedding Band.d2i", value: "Sk0QAIAAZQCEKpfmBoLzviD98CWGsECKR+FPsBH/AQ==" },
-  { key: "./Uniques/Rings/Carrion Wind.d2i", value: "Sk0QAIAAZQBkKpfmBgKM8I+g7wW9AAJUizQeCTmKsQYeRDKFCwWzypuHh/8=" },
-  { key: "./Uniques/Rings/Dwarf Star.d2i", value: "Sk0QAIAAZQAAIpfmBgLdQ3Kx8SWJcADJAiQODyOeJ8gcPf4D" },
-  { key: "./Uniques/Rings/Manald Heal.d2i", value: "Sk0QAIAAZQBAIpfmBgIabioZ8ZU8cIDGBgofByXmfw==" },
-  { key: "./Uniques/Rings/Nagelring.d2i", value: "Sk0QAIAAZQAgIpfmBgKQYC/j8QU8MGGJEYOTARTB/w==" },
-  { key: "./Uniques/Rings/Nature's Peace.d2i", value: "Sk0QAIAAZQBEKpfmBgK1D7iX7yWWIGJpAcVmnQCzQpyNjf8=" },
-  { key: "./Uniques/Rings/Raven Frost.d2i", value: "Sk0QAIAAZQAkKpfmBoLHH/Yo8JWJIICWAGmCPjYeWpBRomT6Hw==" },
-  { key: "./Uniques/Rings/Stone of Jordan.d2i", value: "Sk0QAIAAZeQOIJfmBgKpNuOp8RU9kIBGRsBAk/FP/gM=" },
-  { key: "./Uniques/Rings/Wisp Projector.d2i", value: "Sk0QAIAAZQAEKpfmBgKWYPSq742fAAUPEsUYFIOCmSDOwwOzgp2GBmaHPQsL/wE=" },
-  { key: "./Uniques/Shields/Blackoak Shield.d2i", value: "Sk0QCIAAZQBAUtfGBgL/pBP078EPDEHlIiAgS9JixmhnsgIJAjalG6Gu+A8=" },
-  { key: "./Uniques/Shields/Bverrit Keep.d2i", value: "Sk0QCIAAZQAAQvd2BwJzsYH78EEGSMDDIwCUQMBDQfmAghHFib4kZP8B" },
-  { key: "./Uniques/Shields/Headhunter's Glory.d2i", value: "Sk0QCIAAZQAIUjeHBgLz2EB58WEYWKFUYj64BoTXE1AttKwc/gM=" },
-  { key: "./Uniques/Shields/Kerke's Sanctuary.d2i", value: "Sk0QCIAAZQAAgvd2BwIJuQbO8UEOsoCEJCDAo+CJgEZIJ6BSQK2AagGVhExJ+x8=" },
-  { key: "./Uniques/Shields/Lance Guard.d2i", value: "Sk0QCIAAZQAEgge3BoKUDMTj8XEOsnBzIw5IgYDHyWuMTM7TiPIf" },
-  { key: "./Uniques/Shields/Lidless Wall.d2i", value: "Sk0QCIAAZQCgijeHBoJx+qbK8GEOQmEUJAKoIAhqQmWpNKg/UVT4Dw==" },
-  { key: "./Uniques/Shields/Medusa's Gaze.d2i", value: "Sk0QCIAAZQAMUvd2B4IAsxUF79EVWMFVIyDQWiHII2GJUoyFgZzs2ELxHw==" },
-  { key: "./Uniques/Shields/Mosers Blessed Circle.d2i", value: "Sk0QCIAAZQAMgtfGBgJYoIL88BEOhAAERCBwo5CdWEqxtGKpxZIZ2X8=" },
-  { key: "./Uniques/Shields/Pelta Lunata.d2i", value: "Sk0QCIAAZQAEIlY3BgLztKd38OEFIsDAIACIBFANUEFAQYH6gIIkDGZ4/wE=" },
-  { key: "./Uniques/Shields/Radimant's Sphere.d2i", value: "Sk0QCIAAZQAQgkc3BwI1kh2G8FEO0ABFJiAgo0C16MvBDDNkklCYQSUruCgwM6ZAQfkP" },
-  { key: "./Uniques/Shields/Spike Thorn.d2i", value: "Sk0QCIAAZQAMUge3BoKTrk7I8bEWXDE1JSBYIkGRRH+MzN36Dw==" },
-  { key: "./Uniques/Shields/Spirit Ward.d2i", value: "Sk0QCIAAZQAQUkc3BwK5fGmY8UEWakFGJiDQouCd0EqhtUKrhZaZVqVFMmShwn8=" },
-  { key: "./Uniques/Shields/Steelclash.d2i", value: "Sk0QCIAAZQAGspZGBwK950E47zEGOuDhISCQoZB98ICI4URQiqAVQS2CklBMWbKcGdR/" },
-  { key: "./Uniques/Shields/Stormchaser.d2i", value: "Sk0QCIAAZQAAiid3BoKHtl3r8SEOkODjIyBwm2AJBSoFmYyABzMeO5MZOxCSFfUQ/gM=" },
-  { key: "./Uniques/Shields/Stormguild.d2i", value: "Sk0QCIAAZQAIwiZ3BoIF9F6g8QEGMoCBISDwoOB9QMGIIMWSjMCAJA+Axn8=" },
-  { key: "./Uniques/Shields/Stormshield.d2i", value: "Sk0QCIAAZQAQUpdGBwIRlXNf8dEPKGEVJAD4UMhIjKRYWuFm5gZIYWrN+w8=" },
-  { key: "./Uniques/Shields/Swordback Hold.d2i", value: "Sk0QCIAAZQAMMge3BgKQksRP8SEGSICCIiDwoEB9oIATxSEZI8J/" },
-  { key: "./Uniques/Shields/The Ward.d2i", value: "Sk0QCIAAZQAQckY3BwJdiNGN8VEGXICCIgCoQCBDQfkggxHCCbIUZCvIWpD9Bw==" },
-  {
-    key: "./Uniques/Shields/Tiamat's Rebuke.d2i",
-    value: "Sk0QCIAAZQAEipdGB4Kx34zP7zEOnMDEJCAgOzGVYmrFVIspGCNfZAR42NioYZkEJVnCQiHZAUMhmeHD4D8=",
-  },
-  { key: "./Uniques/Shields/Umbral Disk.d2i", value: "Sk0QCIAAZQAAOtfGBoIZi5rk8PEFKgABIQSoDtCAIIOC9wEFSR6ySJzAfw==" },
-  { key: "./Uniques/Shields/Visceratuant.d2i", value: "Sk0QCIAAZQBMglc3BoLO2SYS8AEOeEBEJCBYouBNSczIAKn/" },
-  { key: "./Uniques/Shields/Wall of the Eyeless.d2i", value: "Sk0QCIAAZQAEKjaHBoJuHrzr8BEGUoCCIiCg+ECBFkY+BmlQigr/AQ==" },
-  { key: "./Uniques/Weapons/Axe/Elite/Cranebeak.d2i", value: "Sk0QCIAAZQAAetMGBwKbTpNy8fEXNDREBJYsZQQxQbHswqOTYYZ08/DwHw==" },
-  { key: "./Uniques/Weapons/Axe/Elite/Deathcleaver.d2i", value: "Sk0QCIAAZQAEenMXBgI21BXn8aETNDREBIwYrSS68OiEGgn/Aw==" },
-  { key: "./Uniques/Weapons/Axe/Elite/Ethereal Edge.d2i", value: "Sk0QCIAAZQAIeiMWBoK9r1DK8UEURkZEBFq0JnjVpZWH2yLFIwam/wE=" },
-  { key: "./Uniques/Weapons/Axe/Elite/Executioner's Justice.d2i", value: "Sk0QCIAAZQBgenOWBgI0uWcK77ETZGREBJEiu8johBBliBlXyP4D" },
-  { key: "./Uniques/Weapons/Axe/Elite/Hellslayer.d2i", value: "Sk0QCIAAZQBkeiNGBwJYsx3M8OEPUFDEgRwRyJCBYalvGPWCYhvGjfhG/Ac=" },
-  {
-    key: "./Uniques/Weapons/Axe/Elite/Messerschmidt's Reaver.d2i",
-    value: "Sk0QCIAAZQBoenMWBoJeeLaX8fEPZGQEgJcALwGvAa8IyJDBoICXJOMOnm3Ufw==",
-  },
-  { key: "./Uniques/Weapons/Axe/Elite/Razoredge.d2i", value: "Sk0QCIAAZQAAcoMWBoIbXUMW72ESODhEhHDhuvDohA7JGsn+Aw==" },
-  { key: "./Uniques/Weapons/Axe/Elite/Runemaster.d2i", value: "Sk0QCIAAZQAIciMTBgI5N7DA8ZETMBhUBIcOWZRM/wM=" },
-  {
-    key: "./Uniques/Weapons/Axe/Exceptional/Boneslayer Blade.d2i",
-    value: "Sk0QCIAAZQAAknMWBgJjUSXA8ZEIZGQEAJQI3Lh1Qd25kYwqQ8aMKgMZmR5lT/kP",
-  },
-  { key: "./Uniques/Weapons/Axe/Exceptional/Butcher's Pupil.d2i", value: "Sk0QCIAAZQAEkhOGBwIpmtFt7yEIMDBEBGTIKngWZF1khzKNRpj+Bw==" },
-  { key: "./Uniques/Weapons/Axe/Exceptional/Coldkill.d2i", value: "Sk0QCIAAZQAIkoMWBoJS5AtV8BEIODhEBF++VgSxeDZQUMh0kRlTWlAkK1hQ/Ac=" },
-  { key: "./Uniques/Weapons/Axe/Exceptional/Guardian Naga.d2i", value: "Sk0QCIAAZQAOknMXBoIrbN9e8FEINDREBFq0LFBaQOUACCB9Th7GEC4K/wE=" },
-  { key: "./Uniques/Weapons/Axe/Exceptional/Islestrike.d2i", value: "Sk0QCIAAZQAKkiMTBgLaM8uc7zEIMDAEAJUAKgGqAaoIvnyBkDGlWpMua/AFUeY/" },
-  { key: "./Uniques/Weapons/Axe/Exceptional/Pompe's Wrath.d2i", value: "Sk0QCIAAZQAAmtMGBwL4Kp5t70EINDREBFWqYIxYihKwJDOG0EP4Dw==" },
-  {
-    key: "./Uniques/Weapons/Axe/Exceptional/Spellsteel.d2i",
-    value: "Sk0QCIAAZQAEmiMWBgLmLki68XEIRkZEAsIIpUptyBjxbEFJ42EW2EBBwWy4wsODmVIGGRkzJhwenv8=",
-  },
-  {
-    key: "./Uniques/Weapons/Axe/Exceptional/Stormrider.d2i",
-    value: "Sk0QCIAAZQAImiNGBwJJzfBE8YEIUFBEBDJkLowYljICZJLIAHrGKBMUxpQaCskKEx7/AQ==",
-  },
-  { key: "./Uniques/Weapons/Axe/Exceptional/The Minataur.d2i", value: "Sk0QCIAAZQBgmnOWBgKrFgSK8aEIZGQEAJoIyJBdoDB44gjsROSxJPsP" },
-  { key: "./Uniques/Weapons/Axe/Exceptional/Warlord's Trust.d2i", value: "Sk0QCIAAZQBkmsMWBgKl3uyH8WEIPDxEhFevPlThBE8KnhU8LXiUyN8Iftl/" },
-  { key: "./Uniques/Weapons/Axe/Normal/Axe of Fechmar.d2i", value: "Sk0QCIAAZQAAwhaGBwKMmXdy71EAPDxEBC1aVpBlMUPjPw==" },
-  { key: "./Uniques/Weapons/Axe/Normal/Bladebone.d2i", value: "Sk0QCIAAZQAEIhOGB4KPygj48SEAMDBEBBkyPngABgKDLig9ePig8h8=" },
-  { key: "./Uniques/Weapons/Axe/Normal/Brainhew.d2i", value: "Sk0QCIAAZQAIchaGBwLGKML18YEAZGREgpwIUKBccGA8jPDRyIL/AQ==" },
-  { key: "./Uniques/Weapons/Axe/Normal/Deathspade.d2i", value: "Sk0QCIAAZQAMEoZXBgIAIUhV7xEAMBxEBCNGKiBxAndGKCL8Bw==" },
-  { key: "./Uniques/Weapons/Axe/Normal/Goreshovel.d2i", value: "Sk0QCIAAZQAQIhaGB4Lh2OCr8WEARkYEgJwIMmRgSHSRHeL9Bw==" },
-  { key: "./Uniques/Weapons/Axe/Normal/Humongous.d2i", value: "Sk0QCIAAZQAAepaGB4IiWF+98ZEAZGQEAJ8IePBcQDBktuAhCv0H" },
-  { key: "./Uniques/Weapons/Axe/Normal/Rakescar.d2i", value: "Sk0QCIAAZQAEeheGBwJNBAzN8UEANDREBEuWJsjQgiwHIIAs6SL7Dw==" },
-  { key: "./Uniques/Weapons/Axe/Normal/Skull Splitter.d2i", value: "Sk0QCIAAZQAI2gaXBoLJpFT08DEANBxEBDJkJpCxgUJGwEAcwaHHfw==" },
-  { key: "./Uniques/Weapons/Axe/Normal/The Chieftan.d2i", value: "Sk0QCIAAZQBgKkaHB4JzTPgV8HEAUFBEBDJkThilMFph1MJIRoBCF5Qiw38=" },
-  { key: "./Uniques/Weapons/Axe/Normal/The Gnasher.d2i", value: "Sk0QCIAAZQBkihaGB4JI+bK68QEAODgEAJQIRowckiGi/Ac=" },
-  { key: "./Uniques/Weapons/Bow/Elite/Windforce.d2i", value: "Sk0QCIAAZQAEYsN2B4Jbvi7u8aEQbkgEABUBpQj69HHw8IGIEuiC0pb9Bw==" },
-  { key: "./Uniques/Weapons/Bow/Exceptional/Cliffkiller.d2i", value: "Sk0QCIAAZQAEgsOGA4LU5+Lu8REMWFjEASkRzJm7oGDwgIASJTAF+g8=" },
-  { key: "./Uniques/Weapons/Bow/Exceptional/Endlesshail.d2i", value: "Sk0QCIAAZQAMgjMmBgJgO3GK8fELSEhEAqQI3LiBkLGiysaDh6U1Gvof" },
-  { key: "./Uniques/Weapons/Bow/Exceptional/Godstrike Arch.d2i", value: "Sk0QCIAAZQAQgsN2B4LjojN98TEMbm5EBH36lKhdjHdU5eGmh5uxI4/Cfw==" },
-  { key: "./Uniques/Weapons/Bow/Exceptional/Kuko Shakaku.d2i", value: "Sk0QCIAAZQAAisMmBgJRL7CX8eELODhEBFq0YKDQWrNhnGSeDrwAAPYf" },
-  { key: "./Uniques/Weapons/Bow/Exceptional/Magewrath.d2i", value: "Sk0QCIAAZQAIijN3BwJa8/7+8SEMYEyEAFUES5Ym6HMhwyAb0fh4TEHWWFicwH8=" },
-  { key: "./Uniques/Weapons/Bow/Exceptional/Riphook.d2i", value: "Sk0QCIAAZQCEioMmBgICLgnb8dELQEBEgqEI3LjxUHSRHfJY8vwH" },
-  { key: "./Uniques/Weapons/Bow/Exceptional/Skystrike.d2i", value: "Sk0QCIAAZQCIijMnBoJehOZ/8cELKChEAFUEZMgmkCEj0GcK0kVmzMBB8B8=" },
-  { key: "./Uniques/Weapons/Bow/Exceptional/Whichwild String.d2i", value: "Sk0QCIAAZQCIijOHA4LOimHB8QEMUFBIBFWqTmil0Fqh1UKrE8VYIYRAH/If" },
-  { key: "./Uniques/Weapons/Bow/Normal/Blastbark.d2i", value: "Sk0QCIAAZQAAwnYnBgIUVCvv8SEEbm4EgJIIggT5GExB1kDQfw==" },
-  { key: "./Uniques/Weapons/Bow/Normal/Hellclap.d2i", value: "Sk0QCIAAZQAEMncnBgJyz0977xEEYGCEAFYELVomLHFCC8aDjC4eP8l/" },
-  { key: "./Uniques/Weapons/Bow/Normal/Pluckeye.d2i", value: "Sk0QCIAAZQAIMid2BwL6VFfs8bEDKCjEARURyJCZwIGPQRZTJPgP" },
-  { key: "./Uniques/Weapons/Bow/Normal/Raven Claw.d2i", value: "Sk0QCIAAZQAMwiZ2BwLwn/7Z8dEDODgEgBEBowhGjNwx4mnwHw==" },
-  { key: "./Uniques/Weapons/Bow/Normal/Rogue's Bow.d2i", value: "Sk0QCIAAZQAQMiZ2BwLGJqf38eEDSEhEBB48JvBwgicFzwqeFjxdjHrwNPL8Bw==" },
-  { key: "./Uniques/Weapons/Bow/Normal/Stormstrike.d2i", value: "Sk0QCIAAZQAAOicmBgIl1R/P8fEDUFAEAJQIWrRM4CDFkozAA06Z/w==" },
-  { key: "./Uniques/Weapons/Bow/Normal/Witherstring.d2i", value: "Sk0QCIAAZQAEiiZ2BwLrdK6T8MEDQEBEBBkyJshwIcAw6CLrNPgP" },
-  { key: "./Uniques/Weapons/Bow/Normal/Wizendraw.d2i", value: "Sk0QCIAAZQAIyiYmBoLx1e9N8AEEWFhEgFcCnwhQoEwgYwVTF1SnwNOR/w==" },
-  { key: "./Uniques/Weapons/Crossbow/Elite/Gutsiphon.d2i", value: "Sk0QCIAAZQAAYiOHBwJtrzXc8VESUFBEBG7ceEgOhSxlOIX+Aw==" },
-  { key: "./Uniques/Weapons/Crossbow/Elite/Hellrack.d2i", value: "Sk0QCIAAZQAEYoOGBwKmv9sI74EUZGRIBHPmYPwQlfETZeOHaEgX1B1VzKQNLC3/Aw==" },
-  {
-    key: "./Uniques/Weapons/Crossbow/Exceptional/Buriza-Do Kyanon.d2i",
-    value: "Sk0QCIAAZQAAgoOGB4JOTq2g72EMZGSEgGEEZMg+gMIGCDHkLmRDgxNZG/Uf",
-  },
-  { key: "./Uniques/Weapons/Crossbow/Exceptional/Demon Machine.d2i", value: "Sk0QCIAAZQAIgiOHBwIiHOJ18XEMUFBEAqIIe/ZMwBOD8MNSOAk9Gf4D" },
-  { key: "./Uniques/Weapons/Crossbow/Exceptional/Langer Briser.d2i", value: "Sk0QCIAAZQAEisOGBwLyVqbS8UEMPDzEAR8RkCHD4JERUAMFNErgUOg/" },
-  {
-    key: "./Uniques/Weapons/Crossbow/Exceptional/Pus Spiter.d2i",
-    value: "Sk0QCIAAZACAitOGB4J0kacj7VEMUFBEBG7ccgADDLIp0haULh5jwRaEZAYXCXDKfw==",
-  },
-  { key: "./Uniques/Weapons/Crossbow/Normal/Doomslayer.d2i", value: "Sk0QCIAAZQAAIocnBgJHgd+h8WEEUFDEgRcRyJCZgnSRcRr9Bw==" },
-  { key: "./Uniques/Weapons/Crossbow/Normal/Hellcast.d2i", value: "Sk0QCIAAZQAEgoYnBgJUPSoM71EEZGREBChQJhhxIgjFg/EwogvKU+A/" },
-  { key: "./Uniques/Weapons/Crossbow/Normal/Ichorsting.d2i", value: "Sk0QCIAAZQAI0oYnBgKLRly88UEEUFCEAFoEGTImyJDDDDOWdEFxkv0H" },
-  { key: "./Uniques/Weapons/Crossbow/Normal/Leadcrow.d2i", value: "Sk0QCIAAZQAMwoYnBoLmOCXQ8TEEPDyEANUBFRGMGJmAQguoRpn/" },
-  { key: "./Uniques/Weapons/Dagger/Elite/Fleshripper.d2i", value: "Sk0QCIAAZQAAcrMmBwLo1i6u8AETSEhEBJYs6cjqBA7JEGUahSxR/gM=" },
-  { key: "./Uniques/Weapons/Dagger/Elite/Ghostflame.d2i", value: "Sk0QCIAAZQACciPGBoIueELS79EUXl5EBHjwaLCx8fHIYnNi+h8=" },
-  { key: "./Uniques/Weapons/Dagger/Elite/Wizardspike.d2i", value: "Sk0QCIAAZQAKekN2BgK1bPKc8WEQNCDEhocTfSn6VvS16GuSpTFimg36Dw==" },
-  {
-    key: "./Uniques/Weapons/Dagger/Exceptional/Blackbog's Sharp.d2i",
-    value: "Sk0QCIAAZQAAkrMmB4Klumu48KEKMBpEhcdC6wMPctBHn74usjVJumYK13ChJdl/",
-  },
-  { key: "./Uniques/Weapons/Dagger/Exceptional/Heart Carver.d2i", value: "Sk0QCIAAZQACkkOWBoI1HseZ8ZEKKChEBHjwKjwWRmsGcY0jrrHEORuN/gM=" },
-  { key: "./Uniques/Weapons/Dagger/Exceptional/Spineripper.d2i", value: "Sk0QCIAAZQAEkkN2BgK/sx7v8YEKICCEAFUEePAqPBY2PBBTlC6jOesE/gM=" },
-  { key: "./Uniques/Weapons/Dagger/Exceptional/Stormspike.d2i", value: "Sk0QCIAAZQAGkiPGBgKl3TCh77EKMDBEBEuWZAR4AKLJBhMy6JD/" },
-  { key: "./Uniques/Weapons/Dagger/Normal/Gull.d2i", value: "Sk0QCIAAZQAAQnYmBwLtxDif8HECICBEgo0KgYUHFOT/" },
-  { key: "./Uniques/Weapons/Dagger/Normal/Spectral Shard.d2i", value: "Sk0QSIAAZQAEIsZGBgIEmjfD8aECMDBEAqkJN5zgScGzgqcFTxrjfw==" },
-  { key: "./Uniques/Weapons/Dagger/Normal/The Diggler.d2i", value: "Sk0QCIAAZQBAQpYmBwIHA3uJ8YECKCiEAFUEGTJOLK1Y6iKb8z8=" },
-  { key: "./Uniques/Weapons/Dagger/Normal/The Jade Tan Do.d2i", value: "Sk0QCIAAZQACsiaXBoJir8rn8ZECMDDEBEtaRLqgOZhjjkym/wE=" },
-  { key: "./Uniques/Weapons/Mace/Elite/Baranar's Star.d2i", value: "Sk0QCIAAZQAEetNGB4IkR6yhwgEQkJAEgBcBrwjIkMEIQCYjQMZGALLJJGRdjHe4/Qc=" },
-  { key: "./Uniques/Weapons/Mace/Elite/Demonlimb.d2i", value: "Sk0QCIAAZQAAejMHBwI4fPfa8YESgoJEBHPmThjB8G7Ko5HnEbOLBgoKfsV/" },
-  { key: "./Uniques/Weapons/Mace/Elite/Earthshifter.d2i", value: "Sk0QKIAAZAAAenPWBoINgkkZ7REYeHhEBJYshznqZBCFuniYOfR4ePBSAXgaz38=" },
-  { key: "./Uniques/Weapons/Mace/Elite/Horizon's Tornado Scourge.d2i", value: "Sk0QCIAAZQAAemPGBgI3Wahk7yETgoJEBIwYt0B1MVqiGHvqofwH" },
-  { key: "./Uniques/Weapons/Mace/Elite/Nord's Tenderizer.d2i", value: "Sk0QCIAAZQAGejPGBgKRjr6F8QEYbm5EBKVKbTQf7+vSuoPMkKD0YAbtwMDwHw==" },
-  { key: "./Uniques/Weapons/Mace/Elite/Schaefer's Hammer.d2i", value: "Sk0QCIAAZAAMcnOHBoIAtMwM7REQAOKAlAiCBKXokyEjk6W6oIwpKlC0QeCg/w==" },
-  { key: "./Uniques/Weapons/Mace/Elite/Stone Crusher.d2i", value: "Sk0QCIAAZQAIenOHBgKTuEKr8TETgoIEAJ8IQIG+kUEng4eDCPUf" },
-  { key: "./Uniques/Weapons/Mace/Elite/Stormlash.d2i", value: "Sk0QCIAAZAAMcmPGBgIDtEcG7YEWgoJEBJYsZQTZdZEB8ohCkRLDFBUew6R6KP8B" },
-  {
-    key: "./Uniques/Weapons/Mace/Elite/The Cranium Basher.d2i",
-    value: "Sk0QCIAAZQBgenPWBgLDYCW+8SEQeHgEgJwI8OBdoDBQTiylWFqx1GKpCwrRElNjgRCE/w==",
-  },
-  { key: "./Uniques/Weapons/Mace/Elite/Windhammer.d2i", value: "Sk0QCIAAZQAQctN2A4J28kSA8REVeF5EBHPmukARyYxZ8IT+Aw==" },
-  {
-    key: "./Uniques/Weapons/Mace/Exceptional/Baezil's Vortex.d2i",
-    value: "Sk0QCIAAZQAAmmPGBgKu2A+N8WEJPDxEAsIIyJClWJIRWNIFZQyBocDsgQEK6j8=",
-  },
-  {
-    key: "./Uniques/Weapons/Mace/Exceptional/Bloodtree Stump.d2i",
-    value: "Sk0QCIAAZQAEmtOWAwLJ/dOf8IEJeDwEgJwI3LidMEphtMKohVESlDWBhkjGKwRA/wE=",
-  },
-  { key: "./Uniques/Weapons/Mace/Exceptional/Dark Clan Crusher.d2i", value: "Sk0QCIAAZQAImjPGBgJ5xuil8fEIMDBEhGHDplR3WuThtgepRY//" },
-  { key: "./Uniques/Weapons/Mace/Exceptional/Earthshaker.d2i", value: "Sk0QCIAAZQBgmnOHBgKd3P/88XEJbm5EBFq0kshECXSRxQnwUgGYsUOdwn8=" },
-  { key: "./Uniques/Weapons/Mace/Exceptional/Fleshrender.d2i", value: "Sk0QCIAAZQAKmjMHBwIv6mRU7zEJSEhEBGTIKowWZEkopjR1AocyiCiNKLxSAPQf" },
-  { key: "./Uniques/Weapons/Mace/Exceptional/Moonfall.d2i", value: "Sk0QCIAAZQCGmtNGB4JB3QPI71EJkJBEBEuWKigWHiMWGDdzspgxA4cCswUHHp7/" },
-  { key: "./Uniques/Weapons/Mace/Exceptional/Sureshrill Frost.d2i", value: "Sk0QCIAAZQCEmtMWBgIuUjTz70EJeHhEBFq0KhQWFDZ+4PQZGpkyS4CQkfkP" },
-  {
-    key: "./Uniques/Weapons/Mace/Exceptional/The Gavel of Pain.d2i",
-    value: "Sk0QCIAAZQBomnPWBgLgsXGI8ZEJeHhEBFCgLjAYPE40mBoLhCgkC5goMEOEGBj4Dw==",
-  },
-  { key: "./Uniques/Weapons/Mace/Normal/Bloodrise.d2i", value: "Sk0QCIAAZQAA0jZHB4IVDTrY8UEBkJBEBDx4eBSyWBfPGjC7Y+RQ5j8=" },
-  { key: "./Uniques/Weapons/Mace/Normal/Bonesnap.d2i", value: "Sk0QCIAAZQAC0hZWBwLnYwWU8XEBeHhEBJYsT0CtgNJjBBHqPw==" },
-  { key: "./Uniques/Weapons/Mace/Normal/Crushflange.d2i", value: "Sk0QCIAAZQAG0hY2BoJVNfTL8TEBeHgEgJcIPHicIIsSyGKIQv8B" },
-  { key: "./Uniques/Weapons/Mace/Normal/Felloak.d2i", value: "Sk0QCIAAZQAIMsYmBoI80NTs7+EAMDBEBChQThilcINhgCBK4D8=" },
-  { key: "./Uniques/Weapons/Mace/Normal/Ironstone.d2i", value: "Sk0QCIAAZQAKcofWBoIbaeHp8WEBbm4EAJUIlixNsERGoMB/" },
-  { key: "./Uniques/Weapons/Mace/Normal/Steeldriver.d2i", value: "Sk0QCIAAZQAOctYWBoJT8MUe8IEBeHhEBH36OGRskenC+w8=" },
-  { key: "./Uniques/Weapons/Mace/Normal/Stoutnail.d2i", value: "Sk0QCIAAZQASMgc3BgI72RuO8SEBSEjEgFMEMmRGCE4U/wE=" },
-  { key: "./Uniques/Weapons/Mace/Normal/The Generals Tan Do Li Ga.d2i", value: "Sk0QCIAAZQAAasYWBgKqtqfi8VEBPDxEBB48KgQWKB9G4KPQBWVJ9h8=" },
-  { key: "./Uniques/Weapons/Polearm/Elite/Bonehew.d2i", value: "Sk0QCIAAZQAEcvN2A4Jcv6Ki8TEYZGRIBKBAu8jqBIxBVMiYOUp4ePwH" },
-  { key: "./Uniques/Weapons/Polearm/Elite/Stormspire.d2i", value: "Sk0QCIAAZQAAcnM3BgJzgWLH8IEQbm4EAJUI+vSlIJMRtNNFBmhjmowyQZCsqKHwHw==" },
-  { key: "./Uniques/Weapons/Polearm/Elite/The Reaper's Troll.d2i", value: "Sk0QCIAAZQAEcjOHAwLsSaX68GEUgoJEBHjwbBCwOODx2LI0Z6OQseCK0H8=" },
-  {
-    key: "./Uniques/Weapons/Polearm/Elite/Tomb Reaver.d2i",
-    value: "Sk0QKIAAZAAAcgMXBgIgA+x07aESgoJMF2gWjIARox59UGhPkKUgW0HWgoyPd5sAUFhx/Ac=",
-  },
-  { key: "./Uniques/Weapons/Polearm/Exceptional/Athena's Wrath.d2i", value: "Sk0QCIAAZQAAkjOHAwJz18rn8TELgoKEgFcEWrSmdF1k2BBtyH8=" },
-  { key: "./Uniques/Weapons/Polearm/Exceptional/Blackleach Blade.d2i", value: "Sk0QCIAAZQAEkmP3BgLbjJWS8SELZGREBEaMeCCyyJYlYwUSBW3Kfw==" },
-  {
-    key: "./Uniques/Weapons/Polearm/Exceptional/Grim's Burning Dead.d2i",
-    value: "Sk0QCIAAZQAIknM3BoK7HbCs8GELbm4EBAoRaNGaoM+JLxiD6JwgpmhbZOjI/gM=",
-  },
-  { key: "./Uniques/Weapons/Polearm/Exceptional/Husoldal Evo.d2i", value: "Sk0QCIAAZQAMkoOWA4LB8IvF8VELbm5EBGTIJuhzgcIAUiJ3QdUJ/Ac=" },
-  {
-    key: "./Uniques/Weapons/Polearm/Exceptional/Pierre Tombale Couant.d2i",
-    value: "Sk0QKIAAZAAEkgMXBoKtBhp67UELgoJEo9sUbozMh+ECg4ESgRu3Ccj8Bw==",
-  },
-  { key: "./Uniques/Weapons/Polearm/Exceptional/The Meat Scraper.d2i", value: "Sk0QKIAAZAAAkiN2A4KnvmlC7RELZGREBGTIush4KA7JoPTxCgHYfw==" },
-  { key: "./Uniques/Weapons/Polearm/Normal/Dimoaks Hew.d2i", value: "Sk0QCIAAZQAEIhYmBwJQAcSk8QEDZGSEgFcEMmQ+CKAL6j8=" },
-  { key: "./Uniques/Weapons/Polearm/Normal/Soul Harvest.d2i", value: "Sk0QAIAAZQAAMjeWBwLZXw4U8SEDgmgEKEXo0WNCCyeMUhitMGph5ENxyPMf" },
-  { key: "./Uniques/Weapons/Polearm/Normal/Steelgoad.d2i", value: "Sk0QAIAAZQAAavdWB4J5cRyn8REDZEREMGJkggcnblLcrLhpcZOkA863kec/" },
-  { key: "./Uniques/Weapons/Polearm/Normal/The Battlebranch.d2i", value: "Sk0QCIAAZQAMAheGB4JJRO+s8TEDgoKEAFUEI0YmkMHj0EX2Hw==" },
-  { key: "./Uniques/Weapons/Polearm/Normal/The Grim Reaper.d2i", value: "Sk0QAIAAZQCAejc3BoIktLUj8FEDblhEoEDhwuOjUCfQiPwf" },
-  { key: "./Uniques/Weapons/Polearm/Normal/Woestave.d2i", value: "Sk0QCIAAZQAQghbGBoI//dSD8UEDbm5EBBQoskScQZ0AHqehcEhmSfYf" },
-  { key: "./Uniques/Weapons/Scepter/Elite/Heaven's Light.d2i", value: "Sk0QCIAAZQAAcjM3BoLWOz9h7zEXZGRIBJYsp2xZrguKTghRaBHlPw==" },
-  { key: "./Uniques/Weapons/Scepter/Elite/Ironward.d2i", value: "Sk0QCIAAZQACcnM3BwI8hz3P8cEXjIxEBJEiRRw0oOB18bxJc4cbopClDC8MAP4H" },
-  { key: "./Uniques/Weapons/Scepter/Elite/The Reedeemer.d2i", value: "Sk0QCIAAZQAGcjM3BoIXCM0E8FEYZGREBJYsp0xZbgvKmjJcw4dvGNEJ5XH4Hw==" },
-  {
-    key: "./Uniques/Weapons/Scepter/Exceptional/Hand of Blessed Light.d2i",
-    value: "Sk0QCIAAZAAAknM3B4KzUIBf4iEJjIxEBFCgKlAWWhsePvBgypQF15Thmjy6g8cYkUfhPw==",
-  },
-  {
-    key: "./Uniques/Weapons/Scepter/Exceptional/The Fetid Sprinkler.d2i",
-    value: "Sk0QCIAAZQAEkhM3B4JtWeFd8REJeHhEBF++JiBT4bGQyZFZZmSmTMaCKBTGgisK/wE=",
-  },
-  {
-    key: "./Uniques/Weapons/Scepter/Exceptional/Zakarum's Hand.d2i",
-    value: "Sk0QCIAAZQAGkjM3BoJR1LXx8QEJZGREBG7cNihwePCB6CJbI0dr7GhOY8UOhv8=",
-  },
-  { key: "./Uniques/Weapons/Scepter/Normal/Knell Striker.d2i", value: "Sk0QCIAAZQAAMjcGBwKRiC3z8fEAZGREgpcIUKBMGOGEUQsjRJn/" },
-  { key: "./Uniques/Weapons/Scepter/Normal/Rusthandle.d2i", value: "Sk0QCIAAZQACcjY3BoIZ0fUP7wEBeHhEBB48KgwWDiMCHogpy5ozW/NmeqD8Bw==" },
-  { key: "./Uniques/Weapons/Scepter/Normal/Stormeye.d2i", value: "Sk0QCIAAZQAEcjcHBwJD989CwREBjIxEBDx4ZAQG2BgosKQEXeOma+xsTZ78Bw==" },
-  { key: "./Uniques/Weapons/Spear/Elite/Arioc's Needle.d2i", value: "Sk0QCIAAZQAMcjMnBwI9Cueb8eEXPDxEBHPmckw2mb4usjn/sJHsPw==" },
-  { key: "./Uniques/Weapons/Spear/Elite/Steelpillar.d2i", value: "Sk0QCIAAZQAAcgN3AwIlb+vi8WEVMjIEBCgRCBLs0qJDQZTB9D8=" },
-  { key: "./Uniques/Weapons/Spear/Elite/Viperfork.d2i", value: "Sk0QCIAAZQAEciMmB4JbFC/78TEUODhEBHjwJujTgixHU03p62I0lkzx+A8=" },
-  { key: "./Uniques/Weapons/Spear/Exceptional/Hone Sundan.d2i", value: "Sk0QCIAAZQAAkjNHB4K0jbVa8fEKODhMBGTILlAYUIha/JT/" },
-  { key: "./Uniques/Weapons/Spear/Exceptional/Kelpie Snare.d2i", value: "Sk0QCIAAZQAEkkMnBwKPJy6f8dEKRkYEAJUItGhd8DDITpBZWmJT/gM=" },
-  { key: "./Uniques/Weapons/Spear/Exceptional/Soulfeast Tine.d2i", value: "Sk0QCIAAZQAQkiMmB4Iz17zv8eEKODhEBF++JujD4+DjkORhC5Qm1H8=" },
-  {
-    key: "./Uniques/Weapons/Spear/Exceptional/Spire of Honor.d2i",
-    value: "Sk0QCIAAZQAMkgOXAwJulIje8QELMjIEhAwRkCG7QGFAKZGz3BjUnRa8MAA2j/kP",
-  },
-  { key: "./Uniques/Weapons/Spear/Exceptional/The Impaler.d2i", value: "Sk0QCIAAZQAAmjMnB4LXbGjP8cEKPDxEBFWqJljSBbXGwdZM6Jx1AodQ/wE=" },
-  { key: "./Uniques/Weapons/Spear/Normal/Bloodthief.d2i", value: "Sk0QAIAAZQCEKibnBgLi6pEv8NECOBwAUDmgI4IMGTwSh0b/AQ==" },
-  { key: "./Uniques/Weapons/Spear/Normal/Lance of Yaggai.d2i", value: "Sk0QCIAAZQAAOgdHB4JSoQvK8eECODjEiaAUQSuCWgTJCHhwgujC+w8=" },
-  { key: "./Uniques/Weapons/Spear/Normal/Razortine.d2i", value: "Sk0QCIAAZQAIQieXBgLZH67K8cECRkYEgBcBqAgyZHSR0ZFZyvwH" },
-  { key: "./Uniques/Weapons/Spear/Normal/The Dragon Chang.d2i", value: "Sk0QCIAAZQCAOgcnBwITodWV8bECPDzEhBEuKDAGDGQxPXj+Aw==" },
-  { key: "./Uniques/Weapons/Spear/Normal/The Tannr Gorerod.d2i", value: "Sk0QCIAAZQCICpe2BgJNI/KG8fECMjLEAR8RyJCZwMOJIBQPxoWNLPcf" },
-  { key: "./Uniques/Weapons/Staff/Elite/Mang Song's Lesson.d2i", value: "Sk0QCIAAZQAAYnM3BwIUazPR8SEUNDTEBoU0sj9t+uD04enDfw==" },
-  { key: "./Uniques/Weapons/Staff/Elite/Ondal's Wisdom.d2i", value: "Sk0QCIAAZAAMYjM2BwL6vPQB7UEYRkZEAOkHGI1AqtxIE/zD/w==" },
-  {
-    key: "./Uniques/Weapons/Staff/Exceptional/Chromatic Ire.d2i",
-    value: "Sk0QCIAAZQAAgjM2BwIdO8Qo8ZELRkbECaMURiuMWhgxCadkaVBremTNj6wJEkD0Pw==",
-  },
-  { key: "./Uniques/Weapons/Staff/Exceptional/Razorswitch.d2i", value: "Sk0QCIAAZQACgjM3BwKTjHO28HELKCjEATgJnkc8J8hSkK0ga0Hm5JFG9if/AQ==" },
-  { key: "./Uniques/Weapons/Staff/Exceptional/Ribcracker.d2i", value: "Sk0QCIAAZQAEgsM2BwJ686g074ELPDyEgBcEMhEoUrzgYQh+cEMSsi7GMUZEsv8=" },
-  { key: "./Uniques/Weapons/Staff/Exceptional/Skullcollector.d2i", value: "Sk0QCIAAZQAGgnM3BwI0T5/+8bELZGREE++PFFHgIf8B" },
-  { key: "./Uniques/Weapons/Staff/Exceptional/Warpspear.d2i", value: "Sk0QCIAAZQAKgiM2B4IPlRO18aELUFAECH1TsjUrtsbG1ujYnP8B" },
-  { key: "./Uniques/Weapons/Staff/Normal/Bane Ash Short Staff.d2i", value: "Sk0QCIAAZQAAMjdHBwI5qc+U8GEDKChEAp8IPHicIINBYKALag2Jrimh/w==" },
-  {
-    key: "./Uniques/Weapons/Staff/Normal/Serpent Lord Long Staff.d2i",
-    value: "Sk0QCIAAZQACwjZHB4Lp0CrJ8XEDPDxEApUIKFC0IMuBAgpLfJCzDB3Zfw==",
-  },
-  {
-    key: "./Uniques/Weapons/Staff/Normal/Spire of Lazarus Gnarled Staff.d2i",
-    value: "Sk0QCIAAZQAEMjZHBwLUGaow8IEDRkZEgNeGFRFFij4ZAQdTkjUqtiaG1tTIfw==",
-  },
-  {
-    key: "./Uniques/Weapons/Staff/Normal/The Iron Jang Bong War Staff.d2i",
-    value: "Sk0QCIAAZQAGcjdHB4JSTsAW76EDZGREBDJkPqBgSpQGtYbF1rjQGhi6Y+Q/",
-  },
-  {
-    key: "./Uniques/Weapons/Staff/Normal/The Salamander Battle Staff.d2i",
-    value: "Sk0QCIAAZQAKIjZHBwIeOga975EDUFDECSgYDyDWlNiaF1ozI36i/w==",
-  },
-  { key: "./Uniques/Weapons/Sword/Elite/Azurewrath.d2i", value: "Sk0QCIAAZABoejMmB4JmV4wC7dEBAAKASgCVANUAVQSHDmno07ehT78vy3WR/cmlO+0/" },
-  { key: "./Uniques/Weapons/Sword/Elite/Bloodmoon.d2i", value: "Sk0QCIAAZQAAejMnBgKFELDL8RESQEBEBIIEeTysNA7JmD1VJCT8Bw==" },
-  { key: "./Uniques/Weapons/Sword/Elite/Djinnslayer.d2i", value: "Sk0QCIAAZQACejPXBgIwPJjC7yESLCxIBHjwYOjT92HIo2oPa5EO/wE=" },
-  { key: "./Uniques/Weapons/Sword/Elite/Doombringer.d2i", value: "Sk0QCIAAZQAEeiN2AwLSlXGu8UEQUFBEBH36KngWyBc8DGQeBybeHR6YGhuQQPwH" },
-  { key: "./Uniques/Weapons/Sword/Elite/Flamebellow.d2i", value: "Sk0QCIAAZQAGenM2BwKkb1+07xEWZGQEAJoBqgjw4MFIFx8mheQnc+QxBoXD+A8=" },
-  { key: "./Uniques/Weapons/Sword/Elite/Frostwind.d2i", value: "Sk0QCIAAZQAIesM2BwLPrfVM79EWWFhEBHPmbLSbt+zSCmPOsdMQofT4Dw==" },
-  { key: "./Uniques/Weapons/Sword/Elite/Lightsabre.d2i", value: "Sk0QCIAAZQBgejMmBwKwqxjs8TEQACICMmQVFAseGQEyNHjw+Dhk2S6oOSFlhlE1FP4D" },
-  { key: "./Uniques/Weapons/Sword/Elite/The Grandfather.d2i", value: "Sk0QCIAAZQAEcnNGBgLxkjzX8VEQZGAEAJoANAG0AbQDcCLo03fHCKbaqP8=" },
-  { key: "./Uniques/Weapons/Sword/Exceptional/Bing Sz Wang.d2i", value: "Sk0QCIAAZQAEkjPWBoJXkgqY8TEKZGQEAJoIoEDZkGG0tMXIkDA2AFH4Dw==" },
-  { key: "./Uniques/Weapons/Sword/Exceptional/Blade of Ali Baba.d2i", value: "Sk0QCIAAZQAGkmM2BoL7PUn+8NEJQECIgFeClwh48Lyj4CH/AQ==" },
-  { key: "./Uniques/Weapons/Sword/Exceptional/Bloodletter.d2i", value: "Sk0QCIAAZQAIkjM3BwL4byd78aEJMGxEBEaMJmhRgbHQ4oFI4tEFteYP11yaJs9/" },
-  {
-    key: "./Uniques/Weapons/Sword/Exceptional/Cloudcrack.d2i",
-    value: "Sk0QCIAAZQAKkiOWA4JRMDmo8VEKUFBEBGTIPqBAhZIRwJPFAD1eGQDipQEgY0cehv8=",
-  },
-  { key: "./Uniques/Weapons/Sword/Exceptional/Coldsteel Eye.d2i", value: "Sk0QCIAAZQAMkjPXBgKe9o7r8bEJLJBEBH36fBiSyHRBxQk0klny/Ac=" },
-  { key: "./Uniques/Weapons/Sword/Exceptional/Crainte Vomir.d2i", value: "Sk0QCIAAZQAOkiODBoJdJQq38SEKWFhEBGTISCh0MYJB4dFZGv0H" },
-  { key: "./Uniques/Weapons/Sword/Exceptional/Ginther's Rift.d2i", value: "Sk0QCIAAZQAQkjMmBwLYamuo8OEJKHhEBEuWRjA0ZPAkQeki40f9Bw==" },
-  { key: "./Uniques/Weapons/Sword/Exceptional/Headstriker.d2i", value: "Sk0QCIAAZQAAmiM2B4LFyai88fEJQEAEgJcIlizVCWhD9DH/AQ==" },
-  { key: "./Uniques/Weapons/Sword/Exceptional/Hexfire.d2i", value: "Sk0QCIAAZQAEmjMnBgKySiWu8cEJQEBEBFCgKowWUCeWUKg5/WTMDB9ISP4D" },
-  {
-    key: "./Uniques/Weapons/Sword/Exceptional/Plague Bearer.d2i",
-    value: "Sk0QCIAAZQAGmsM2BwI4lYIp7wEKWFhEBEuWKigWWi2+cgAGGLI17mqM4KLwHw==",
-  },
-  {
-    key: "./Uniques/Weapons/Sword/Exceptional/Swordguard.d2i",
-    value: "Sk0QSIAAZQBgmnNGBoKwmZ+W8XEKZGREBFq0KFAgyIRAPmGUwmiFUQujLTJjUHI8a+h/",
-  },
-  { key: "./Uniques/Weapons/Sword/Exceptional/The Atlantian.d2i", value: "Sk0QCIAAZQBkmnNHBoJAo3mP7xEKWCAFABgBrAGoCPr0fahCErIp0x0j/wE=" },
-  { key: "./Uniques/Weapons/Sword/Exceptional/The Vile Husk.d2i", value: "Sk0QCIAAZQBmmnM2B4JGYcsI8UEKZGREBGTIWpDlUE01S8YCIQz0eHvUfw==" },
-  {
-    key: "./Uniques/Weapons/Sword/Exceptional/Todesfaelle Flamme.d2i",
-    value: "Sk0QCIAAZQBommMmBgLkLc348GEKZGREBFCgTmjBkEH2SDHMeEHBTJmBgoKZQkNLy38=",
-  },
-  { key: "./Uniques/Weapons/Sword/Normal/Blacktongue.d2i", value: "Sk0QCIAAZQAAIjZ3BwIMgXMt8UECUFBEBB48JsjQgiwHMMBYqhP4Dw==" },
-  { key: "./Uniques/Weapons/Sword/Normal/Blood Crescent.d2i", value: "Sk0QCIAAZQACMjfWBoKkpeAl76EBLCzEgRcRoEA5EZQiaEVQiyAejyzYZXQo9B8=" },
-  { key: "./Uniques/Weapons/Sword/Normal/Culwens Point.d2i", value: "Sk0QCIAAZQAEcjdHBoI1V6fT8QECWFhEBChQJvDQBTUG5cboT/4D" },
-  { key: "./Uniques/Weapons/Sword/Normal/Gleamscythe.d2i", value: "Sk0QCIAAZQAGYsY2BgIFxL/E8MEBQEBEAp8IZMh88ICNgQIyWa4L6j8=" },
-  { key: "./Uniques/Weapons/Sword/Normal/Griswold's Edge.d2i", value: "Sk0QCIAAZQAIIjZHBgI+GqA38eEBQEAEAJYIePBMIAMGQ4YogS6e/w==" },
-  { key: "./Uniques/Weapons/Sword/Normal/Hellplague.d2i", value: "Sk0QCIAAZQAMwjZHBgI0Z7TD7/EBWFhEBChQYGQsyQEDGJZ4FHwU/ET/AQ==" },
-  { key: "./Uniques/Weapons/Sword/Normal/Kinemils Awl.d2i", value: "Sk0QCIAAZQAQcpY2BwJY85H+7zECZGREApoIZMhMsASGAYo1Zvwf" },
-  { key: "./Uniques/Weapons/Sword/Normal/Ripsaw.d2i", value: "Sk0QCIAAZQAAasYmBoLNGqu18VECZGREBDJkLDwwPHwYDkH/Aw==" },
-  { key: "./Uniques/Weapons/Sword/Normal/Rixot's Keen.d2i", value: "Sk0QCIAAZQASMjdHBgKouxI28JEBMDBEBDJkKhQfRpDF7qBAlPkP" },
-  { key: "./Uniques/Weapons/Sword/Normal/Shadowfang.d2i", value: "Sk0QCIAAZQAEKoM2BwI7eqyY8RECWFhEBDJkVhjZUPBgySPhI5FF/gM=" },
-  { key: "./Uniques/Weapons/Sword/Normal/Skewer of Krintiz.d2i", value: "Sk0QCIAAZQAGOicmBwKD/taK8LEBQEAEABUBqggyZFQYLBx8HOb8Dw==" },
-  { key: "./Uniques/Weapons/Sword/Normal/Soulflay.d2i", value: "Sk0QCIAAZQAIOsbWBgJTzuL68SECZGREBDJkTtykuFlx0+KGB8GHoovnPw==" },
-  { key: "./Uniques/Weapons/Sword/Normal/The Patriarch.d2i", value: "Sk0QCIAAZQCAejZHBoKVucJ58GECZGQEAJUIePCIGEYMT5DFCfwH" },
-  { key: "./Uniques/Weapons/Throw/Elite/Demon's Arch.d2i", value: "Sk0QIIAAZAAAcjN3AwIY7Bs+7UEVHBwoiCBNGgz0oTwY/ZQuMhlXU/8B" },
-  { key: "./Uniques/Weapons/Throw/Elite/Gargoyle's Bite.d2i", value: "Sk0QAIAAZQAAckM3B4InSJJx8QEUJCRAiWDOXA6WWNLH48FsyYCHp5/3Hw==" },
-  { key: "./Uniques/Weapons/Throw/Elite/Gimmershred.d2i", value: "Sk0QAIAAZQACckMXBgI2e1bl8fEUHh7AiyBNGgzt8TK6+mzANibrIvPH8x8=" },
-  { key: "./Uniques/Weapons/Throw/Elite/Lacerator.d2i", value: "Sk0QAIAAZQAEciOGAwIw5MvX8REUICCsiSBNWhcZnF+dwKGQsUGIUL/sPw==" },
-  { key: "./Uniques/Weapons/Throw/Elite/Warshrike.d2i", value: "Sk0QAIAAZQAIciO2BoIp5bCv70ESKCggi6BPXxdZIxknmbEEhkw/7z8=" },
-  { key: "./Uniques/Weapons/Throw/Elite/Wraithflight.d2i", value: "Sk0QAMAAZQAKcnPGBgIG0NOe8SEYICAsieDLF4+Gokc/9D8=" },
-  { key: "./Uniques/Weapons/Throw/Exceptional/Deathbit.d2i", value: "Sk0QAIAAZQAAkkO3BgLXKuou8TESDAyAikCL1gTheCR8GBqh+mX/AQ==" },
-  { key: "./Uniques/Weapons/Throw/Exceptional/The Scalper.d2i", value: "Sk0QAIAAZQACkkMXBgLp4J268AESHh4IioAMGQ9DF9SdFodCigj9vP8=" },
-  { key: "./Magic/Armor/Shield/Jeweler's Monarch of Deflecting.d2i", value: "Sk0QCIAAZQAAUpdGB4J0kYVaKGGaVvCEFRKiQJmR/Qc=" },
+  {
+    "key": "./Misc/Jewels/15 Req 40 Ed (orange).d2i",
+    "value": "EACAAATgBN0AAk/VwPyYijHmIgIKFFuq/gM="
+  },
+  {
+    "key": "./Misc/Jewels/15 Res 1-100 Light (pink).d2i",
+    "value": "EACAAASYBN0AArB2AMiYQlQ45cS1FNdWXGtxTUZAxn8="
+  },
+  {
+    "key": "./Misc/Jewels/15 Res 10 MF (red).d2i",
+    "value": "EACAAAQQBN0AgmMncu2YUlRI4sS1FNdWXGtxDYrbfw=="
+  },
+  {
+    "key": "./Misc/Jewels/20 Life 40 Ed (yellow).d2i",
+    "value": "EACAAARgBN0AwqL6pdCYljG+4gCNCChQ/Ac="
+  },
+  {
+    "key": "./Misc/Jewels/40 Ed 1-100 Light (orange).d2i",
+    "value": "EACAAATkBN0AAreG29qYijE4JQIKFDICMv4D"
+  },
+  {
+    "key": "./Misc/Jewels/Fire Dmg 15 Res (green).d2i",
+    "value": "EACAAATYBN0AQt+IjuaYTlQ05cS1FNdWXGtxDUaGjP8="
+  },
+  {
+    "key": "./Misc/Jewels/Fire Dmg 40 Ed (pink).d2i",
+    "value": "EACAAAQgBN0AAqz9zN6YgjE0JQIKFDAyZPwH"
+  },
+  {
+    "key": "./Misc/Misc/Arrows.d2i",
+    "value": "ECCAAARE5G3ugjBO3Kt2CK//AQ=="
+  },
+  {
+    "key": "./Misc/Misc/Bolts.d2i",
+    "value": "ECCAAARIRGzuwtZRBI12CH3/AQ=="
+  },
+  {
+    "key": "./Misc/Misc/Identify Book.d2i",
+    "value": "ECCAAASA5KdSEBHwvtQKAYX/"
+  },
+  {
+    "key": "./Misc/Misc/Identify Scroll.d2i",
+    "value": "ECCgAASM5Eci"
+  },
+  {
+    "key": "./Misc/Misc/Skeleton Key.d2i",
+    "value": "EACAAAXcRBpQ4WX+DDssYPAf"
+  },
+  {
+    "key": "./Misc/Misc/Town Portal Book.d2i",
+    "value": "ECCAAAQAxKgULDvEaLQCQOE/"
+  },
+  {
+    "key": "./Misc/Misc/Town Portal Scroll.d2i",
+    "value": "ECCgAARMxJAI"
+  },
+  {
+    "key": "./Misc/Potions/Antidote Potion.d2i",
+    "value": "ECCgAAQABDUp"
+  },
+  {
+    "key": "./Misc/Potions/Full Rejuv Potion.d2i",
+    "value": "ECCgAATE5OxuAA=="
+  },
+  {
+    "key": "./Misc/Potions/Greater Healing Potion.d2i",
+    "value": "ECCgAARABE+0AA=="
+  },
+  {
+    "key": "./Misc/Potions/Greater Mana Potion.d2i",
+    "value": "ECCgAARExE60AA=="
+  },
+  {
+    "key": "./Misc/Potions/Rejuv Potion.d2i",
+    "value": "ECCgAATA5Owo"
+  },
+  {
+    "key": "./Misc/Potions/Stamina Potion.d2i",
+    "value": "ECCgAAQEZDcp"
+  },
+  {
+    "key": "./Misc/Potions/Thawing Potion.d2i",
+    "value": "ECCgAAQIBFgK"
+  },
+  {
+    "key": "./Misc/Quest/Act 1/Inifuss Scroll.d2i",
+    "value": "EACgAAUIRCVK"
+  },
+  {
+    "key": "./Misc/Quest/Act 1/Malus.d2i",
+    "value": "EACAAAWkBI82QA559RiP/3fjgqz/AQ=="
+  },
+  {
+    "key": "./Misc/Quest/Act 1/Wirt's Leg.d2i",
+    "value": "EAiAAAUc5A4rePe7nDEFQiaGrP8B"
+  },
+  {
+    "key": "./Misc/Quest/Act 2/Amulet.d2i",
+    "value": "EACAAAWMZPeb4Zwb1HZ6YQ8cUJFApUU4sv4H"
+  },
+  {
+    "key": "./Misc/Quest/Act 2/Book of Skill.d2i",
+    "value": "ECCgAAQA5BEF"
+  },
+  {
+    "key": "./Misc/Quest/Act 2/Cube.d2i",
+    "value": "EACAAAUARP884H4xhzYE/wE="
+  },
+  {
+    "key": "./Misc/Quest/Act 2/Staff.d2i",
+    "value": "EACAAAUQxJIcxjTZaqoHH2hZcUJaCmkrpLWQ1sVI1v8="
+  },
+  {
+    "key": "./Misc/Quest/Act 3/Brain.d2i",
+    "value": "EACgAAXEdVNPAg=="
+  },
+  {
+    "key": "./Misc/Quest/Act 3/Complete Flail.d2i",
+    "value": "ECCAAAUUZFNmwlPaCUXgAAQeGCagICNAgYfBh6GLkaz/AQ=="
+  },
+  {
+    "key": "./Misc/Quest/Act 3/Eye.d2i",
+    "value": "EACgAAXAdXNAJQ=="
+  },
+  {
+    "key": "./Misc/Quest/Act 3/Flail.d2i",
+    "value": "EACAAAUQZFP+BCWx7vXq8Qc8NkxAQUZAQRcjWf8D"
+  },
+  {
+    "key": "./Misc/Quest/Act 3/Gidbinn.d2i",
+    "value": "EACAAAWIZG23wXwu7316/D8PCWT9Dw=="
+  },
+  {
+    "key": "./Misc/Quest/Act 3/Gold Bird.d2i",
+    "value": "ECCgAAUIZG2/Eg=="
+  },
+  {
+    "key": "./Misc/Quest/Act 3/Heart.d2i",
+    "value": "EACgAAXIdROfBA=="
+  },
+  {
+    "key": "./Misc/Quest/Act 3/Lam Esen's Tome.d2i",
+    "value": "EACgAAUURFUT"
+  },
+  {
+    "key": "./Misc/Quest/Act 4/Hammer.d2i",
+    "value": "EACAAAUQBMs4sLjq/mAPP3AD40MLTsCDUUCBrP8B"
+  },
+  {
+    "key": "./Misc/Quest/Act 4/Soul Stone.d2i",
+    "value": "ECCgAAXQxBIl"
+  },
+  {
+    "key": "./Misc/Quest/Act 5/Malah's Potion.d2i",
+    "value": "ECCAAAXU5CeG8FLexe0UkPU/"
+  },
+  {
+    "key": "./Misc/Quest/Act 5/Scroll of Malah.d2i",
+    "value": "ECCgAAUQxBwmAQ=="
+  },
+  {
+    "key": "./Misc/Quest/Bugged Tal Rasha's.d2i",
+    "value": "EAiAAAXAFBocJAM5c8fFEzjRzY0IHzRDItwJeCngrYDXAh6Y1ohnC8of/U/j+Q8="
+  },
+  {
+    "key": "./Misc/Quest/Essences & Token/Burning Essence of Terror (Red).d2i",
+    "value": "ECCgAATARAcTAA=="
+  },
+  {
+    "key": "./Misc/Quest/Essences & Token/Charged Essence of Hatred (Yellow).d2i",
+    "value": "ECCgAASARAw4AA=="
+  },
+  {
+    "key": "./Misc/Quest/Essences & Token/Festering Essence of Destruction (Green).d2i",
+    "value": "ECCgAAQERB7GAA=="
+  },
+  {
+    "key": "./Misc/Quest/Essences & Token/Token of Absolution.d2i",
+    "value": "ECCgAAQAxPxfAA=="
+  },
+  {
+    "key": "./Misc/Quest/Essences & Token/Twisted Essence of Suffering (Blue).d2i",
+    "value": "ECCgAARAxAwUAA=="
+  },
+  {
+    "key": "./Misc/Quest/Keys & Organs/Baal's Eye.d2i",
+    "value": "ECCgAARARAdUAA=="
+  },
+  {
+    "key": "./Misc/Quest/Keys & Organs/Destruction.d2i",
+    "value": "EACAAAUIZErbkF+CMvAV/Ac="
+  },
+  {
+    "key": "./Misc/Quest/Keys & Organs/Diablo's Horn.d2i",
+    "value": "ECCgAAQAZMRsAA=="
+  },
+  {
+    "key": "./Misc/Quest/Keys & Organs/Hate.d2i",
+    "value": "EACAAAUIZEpMgNyN1YAK/gM="
+  },
+  {
+    "key": "./Misc/Quest/Keys & Organs/Mephisto's Brain.d2i",
+    "value": "ECCgAASAxOoJ"
+  },
+  {
+    "key": "./Misc/Quest/Keys & Organs/Terror.d2i",
+    "value": "EACAAAUMZEqfIHbSiCEV/Ac="
+  },
+  {
+    "key": "./Misc/Quest/Standard of Heroes.d2i",
+    "value": "EACAAAVMlswYAsxsSMfH//sP"
+  },
+  {
+    "key": "./Misc/Quest/Trap Suwayyah.d2i",
+    "value": "ECiAAAQUxL8TAJCjbbRDwMAYXjAAW/Nw/wE="
+  },
+  {
+    "key": "./Misc/Rares/Amulet/Armageddon Fletch.d2i",
+    "value": "ECCAAARY5FkYNE1GMLUWgFkAUyIAMmlQB64k2DrxLcW3Fd9afOOS+g8="
+  },
+  {
+    "key": "./Misc/Rares/Amulet/Fiendra Sunder.d2i",
+    "value": "ECCAAARk5FkY3BdqprQWcB0AUygAM2A8B7YkyBJA49L6Dw=="
+  },
+  {
+    "key": "./Misc/Rares/Amulet/Grim Necklace.d2i",
+    "value": "ECCAAASk5FkYxLBoPLQWSg0BUyYAMQJmCa7sXOGNy/BEthTfWlz7Dw=="
+  },
+  {
+    "key": "./Misc/Rares/Amulet/Imp Brow.d2i",
+    "value": "ECCAAATk5FkY3kcE1rQWboUAUygAMzwOPg5ToBPdUnRb0a1FNy6T/w=="
+  },
+  {
+    "key": "./Misc/Rares/Amulet/Order Noose.d2i",
+    "value": "ECCAAAQc5FkY8pwUfrUWigsBUyAAMwJaCXJWYOMyPAEuhbcW3v4D"
+  },
+  {
+    "key": "./Misc/Rares/Ring/Beast Circle.d2i",
+    "value": "ECCAAASc5PzYMMl4Za21wKkH4EHwcViRL8U0KINcJP8B"
+  },
+  {
+    "key": "./Misc/Rares/Ring/Bitter Turn.d2i",
+    "value": "ECCAAATc5PzYAJX3EKi1INwH4FGYMIiAVopxAFq4uBKw/Ac="
+  },
+  {
+    "key": "./Misc/Rares/Ring/Blood Whorl.d2i",
+    "value": "ECCAAARc5PzYUCqIyqa1ICoI4GHwUVgx7oQ2KIRcGv8B"
+  },
+  {
+    "key": "./Misc/Rares/Ring/Bone Master.d2i",
+    "value": "ECCAAAQA9PzYMIhelaS1YCoJSONJEHfiWoprK661uJaC3YiAi+s/"
+  },
+  {
+    "key": "./Misc/Rares/Ring/Corruption Grip.d2i",
+    "value": "ECCAAATg5PzYIFl8R6u1kOwF4GGYUImPw4lrKa6tuNbi2gl3XFxPPP0H"
+  },
+  {
+    "key": "./Misc/Rares/Ring/Eagle Circle.d2i",
+    "value": "ECCAAASg5PzYAI3cJ6u10KkH4FGYMISPw4lrKa6tuNbi2gp/XFz/AQ=="
+  },
+  {
+    "key": "./Misc/Rares/Ring/Shadow Spiral.d2i",
+    "value": "ECCAAARg5PzY8OD90qq1gOoH4FEA4OLjkCIfFDguriz2Hw=="
+  },
+  {
+    "key": "./Misc/Rares/Ring/Viper Whorl.d2i",
+    "value": "ECCAAAQg5PzYoLi/U6218CkI4GGYYMGBIyeupbi24lqLawmAuLh8HP4D"
+  },
+  {
+    "key": "./Misc/Runes/Amn Rune.d2i",
+    "value": "EACgAAQA5Hw+AQ=="
+  },
+  {
+    "key": "./Misc/Runes/Ber Rune.d2i",
+    "value": "EACgAAQE5Gy/Aw=="
+  },
+  {
+    "key": "./Misc/Runes/Cham Rune.d2i",
+    "value": "EACgAAQI5GyZAA=="
+  },
+  {
+    "key": "./Misc/Runes/Dol Rune.d2i",
+    "value": "EACgAAQM5Hy+Ag=="
+  },
+  {
+    "key": "./Misc/Runes/El Rune.d2i",
+    "value": "EACgAAQQ5Hx/Ag=="
+  },
+  {
+    "key": "./Misc/Runes/Eld Rune.d2i",
+    "value": "EACgAAQU5HwzAQ=="
+  },
+  {
+    "key": "./Misc/Runes/Eth Rune.d2i",
+    "value": "EACgAAQY5HyjBQ=="
+  },
+  {
+    "key": "./Misc/Runes/Fal Rune.d2i",
+    "value": "EACgAAQc5HxcAA=="
+  },
+  {
+    "key": "./Misc/Runes/Gul Rune.d2i",
+    "value": "EACgAARA5DBoAQ=="
+  },
+  {
+    "key": "./Misc/Runes/Hel Rune.d2i",
+    "value": "EACgAARE5HzQAg=="
+  },
+  {
+    "key": "./Misc/Runes/Io Rune.d2i",
+    "value": "ECCgAASA5Hz2AQ=="
+  },
+  {
+    "key": "./Misc/Runes/Ist Rune.d2i",
+    "value": "EACgAARI5DBfAQ=="
+  },
+  {
+    "key": "./Misc/Runes/Ith Rune.d2i",
+    "value": "EACgAARM5HzvAw=="
+  },
+  {
+    "key": "./Misc/Runes/Jah Rune.d2i",
+    "value": "EACgAARQ5Gw/AQ=="
+  },
+  {
+    "key": "./Misc/Runes/Ko Rune.d2i",
+    "value": "EACgAARU5HyQAA=="
+  },
+  {
+    "key": "./Misc/Runes/Lem Rune.d2i",
+    "value": "EACgAARY5DDfAQ=="
+  },
+  {
+    "key": "./Misc/Runes/Lo Rune.d2i",
+    "value": "EACgAARc5DBIAA=="
+  },
+  {
+    "key": "./Misc/Runes/Lum Rune.d2i",
+    "value": "EACgAASA5Hx8AA=="
+  },
+  {
+    "key": "./Misc/Runes/Mal Rune.d2i",
+    "value": "EACgAASE5DDbAA=="
+  },
+  {
+    "key": "./Misc/Runes/Nef Rune.d2i",
+    "value": "EACgAASI5Hx/BQ=="
+  },
+  {
+    "key": "./Misc/Runes/Ohm Rune.d2i",
+    "value": "EACgAASM5DA+"
+  },
+  {
+    "key": "./Misc/Runes/Ort Rune.d2i",
+    "value": "EACgAASQ5Hy7AA=="
+  },
+  {
+    "key": "./Misc/Runes/Po Rune.d2i",
+    "value": "EACgAASU5Hz2AQ=="
+  },
+  {
+    "key": "./Misc/Runes/Pul Rune.d2i",
+    "value": "EACgAASY5DCfAA=="
+  },
+  {
+    "key": "./Misc/Runes/Ral Rune.d2i",
+    "value": "EACgAASc5HwjAQ=="
+  },
+  {
+    "key": "./Misc/Runes/Shael Rune.d2i",
+    "value": "EACgAATA5Hy2AQ=="
+  },
+  {
+    "key": "./Misc/Runes/Sol Rune.d2i",
+    "value": "EACgAATE5HyYAA=="
+  },
+  {
+    "key": "./Misc/Runes/Sur Rune.d2i",
+    "value": "EACgAATI5DAu"
+  },
+  {
+    "key": "./Misc/Runes/Tal Rune.d2i",
+    "value": "EACgAATM5Hz7AA=="
+  },
+  {
+    "key": "./Misc/Runes/Thul Rune.d2i",
+    "value": "EACgAATQ5Hy+Aw=="
+  },
+  {
+    "key": "./Misc/Runes/Tir Rune.d2i",
+    "value": "EACgAATU5HxvAw=="
+  },
+  {
+    "key": "./Misc/Runes/Um Rune.d2i",
+    "value": "EACgAATY5DBMAA=="
+  },
+  {
+    "key": "./Misc/Runes/Vex Rune.d2i",
+    "value": "EACgAATc5DD7AA=="
+  },
+  {
+    "key": "./Misc/Runes/Zod Rune.d2i",
+    "value": "EACgAAQg5Gy3AQ=="
+  },
+  {
+    "key": "./Runewords/Armor/Class Specific/Bone (AP).d2i",
+    "value": "EAiABARQFZrZGkfF+7VDRKBYiIfHQHiwZPQ/ge0UyZhCxSOZQsTjPxAAoAA0AOB8mAAQAKAANATgMEwAEACgADQI4DBMAA=="
+  },
+  {
+    "key": "./Runewords/Armor/Class Specific/Enlightenment (AP).d2i",
+    "value": "EAiABARAFZrZyDSv5LRDeKBYiIfHQHiwZPR/ShSmRGDseaGQ7HGh8B8QAKAANADgMJ8AEACgADQE4HwjARAAoAA0COB8mAA="
+  },
+  {
+    "key": "./Runewords/Armor/Class Specific/Myth (AP).d2i",
+    "value": "EAiABAQQFJrZ9ht+U7RD4KBYiIfHQHiwZPRfCTqFMhYkokgWCDL4DxAAoAA0AOB80AIQAKAANATgfD4BEACgADQI4Hx/BQ=="
+  },
+  {
+    "key": "./Runewords/Armor/Class Specific/Peace (AP).d2i",
+    "value": "EAiABARIFZrZiB4DF7RD9qBYiIfHQHiwZPR/ChQmgWDsAUGQrIiA8B8QAKAANADgfLYBEACgADQE4Hy+AxAAoAA0COB8PgE="
+  },
+  {
+    "key": "./Runewords/Armor/Class Specific/Principle (AP).d2i",
+    "value": "EAiABAQIFJrZXlcmLrVDDqFYiIfHQHiwZPR/ymSsKIOsx8gBW/8BEACgADQA4HwjARAAoAA0BOAwaAEQAKAANAjgfDMB"
+  },
+  {
+    "key": "./Runewords/Armor/Class Specific/Rain (AP).d2i",
+    "value": "EAiABAQIBJrZPCse67RDHKFYiIfHQHiwZPQ/ge2UytgDTyHZs07hPxAAoAA0AOB8uwAQAKAANATgMNsAEACgADQI4HzvAw=="
+  },
+  {
+    "key": "./Runewords/Armor/Class Specific/Treachery (AP).d2i",
+    "value": "EAiABAQAFJrZfvp8abRDWqFYiIfHQHiwZPR/itUlaOyxKJPsWajwHxAAoAA0AOB8tgEQAKAANATgfL4DEACgADQI4DDfAQ=="
+  },
+  {
+    "key": "./Runewords/Armor/Chains of Honor (CoH) (AP).d2i",
+    "value": "EAiABATMFJoZKfXB07RDUKBYiIcHQXiwZPQfAA0EIyf0pdC3Ql8LfTwQebjpwfNH/wEQAKAANADgfL4CEACgADQE4DBMABAAoAA0COBsvwMQAKAANAzgMF8B"
+  },
+  {
+    "key": "./Runewords/Armor/Duress (AP).d2i",
+    "value": "EAiABAQABJrZsJmv67VDcKBYiIfHQHiwZPQfArIIFCjYKCkkMwZ1KITooQnwHxAAoAA0AOB8tgEQAKAANATgMEwAEACgADQI4Hy+Aw=="
+  },
+  {
+    "key": "./Runewords/Armor/Enigma (AP).d2i",
+    "value": "EAiABMwMAJrZ6G9zurVDdqBYiGfHQHjw4QL/PxDMigNMMIyN4I+4GfCQ/xAAoAA0AOBsPwEQAKAANATgfO8DEACgADQI4Gy/Aw=="
+  },
+  {
+    "key": "./Runewords/Armor/Fortitude (AP).d2i",
+    "value": "EAiABAQYBJoZGyNS2rRDhqBYiIcHQXiwZPQfArIILFmeMJfC3ApzLcylaclhkj08ULAx/wEQAKAANADgfH8CEACgADQE4HyYABAAoAA0COB8vgIQAKAANAzgMEgA"
+  },
+  {
+    "key": "./Runewords/Armor/Wealth (DS).d2i",
+    "value": "EAiABAQABMJfs8HHMdcOyYVCAQoK8/+JVyjI/wEQAKAANADgMN8BEACgADQE4HyQABAAoAA0COB8bwM="
+  },
+  {
+    "key": "./Runewords/Helmet/Delirium (Corona).d2i",
+    "value": "EAiABAQABB62pa4pwGqHwEChgAyA+f/hIX9kTIpikaxpwpHMiciQTPYqwCyygofnPxAAoAA0AOAw3wEQAKAANATgMF8BEACgADQI4Hz2AQ=="
+  },
+  {
+    "key": "./Runewords/Helmet/Dream (Corona).d2i",
+    "value": "EAiABAQABB62LdMv0GqHFEB5hYyMWTKC8OD/JTtvjOyDObIVJ7il4LaCWwtuUPqSPVEo/gMQAKAANADgfPYBEACgADQE4Gw/ARAAoAA0COAwnwA="
+  },
+  {
+    "key": "./Runewords/Helmet/Lore (Corona).d2i",
+    "value": "EAiABASQBB427XeTMWuHlEGhgIwM+R9AlcX+RJHgPxAAoAA0AOB8uwAQAKAANATgfJgA"
+  },
+  {
+    "key": "./Runewords/Helmet/Nadir (Corona).d2i",
+    "value": "EAiABASIBB42uT8NF2mHxEGhgIwM+Q+gBIKMDxR4MiRLMGsQSkj4DxAAoAA0AOB8fwUQAKAANATgfG8D"
+  },
+  {
+    "key": "./Runewords/Helmet/Radiance (Corona).d2i",
+    "value": "EAiABASABB62nSbQJGuHNEKhgIyM+R9ANUCVIAjCkhFDlvwPEACgADQA4Hx/BRAAoAA0BOB8mAAQAKAANAjgfO8D"
+  },
+  {
+    "key": "./Runewords/Merc/Destruction (CA, Eth).d2i",
+    "value": "EAjABAQQ1M9XPVrBDrVDZqAEBakIDx4sGf2P4NUrDTJadQLDLBgexVocyMaucgrGGHou/wEQAKAANADgMPsAEACgADQE4DBIABAAoAA0COBsvwMQAKAANAzgbD8BEACgADQQ4HyQAA=="
+  },
+  {
+    "key": "./Runewords/Merc/Doom (CA, Eth).d2i",
+    "value": "EAjABAQQ1c9X79n157RDaKAEBakIKFA8dfgfASPGLsE6gT+6JIcZk+gpPHX5DxAAoAA0AOB80AIQAKAANATgMD4QAKAANAjgMEwAEACgADQM4DBIABAAoAA0EOBsmQA="
+  },
+  {
+    "key": "./Runewords/Merc/Infinity (Thresher, Eth).d2i",
+    "value": "EAjABAQAxBMS9/nGS7RDrKCAgKAIDx78j1C0KJjbpT2MGFWDjFm1jofHN8LpzX8QAKAANADgbL8DEACgADQE4DDbABAAoAA0COBsvwMQAKAANAzgMF8B"
+  },
+  {
+    "key": "./Runewords/Merc/Infinity (Giant Thresher, Eth).d2i",
+    "value": "EAjABAQAxAMR9/nGS7RDrKBwcKAIDx78j1C0KJjbpT2MGFWDjFm1jofHN8LpzX8QAKAANADgbL8DEACgADQE4DDbABAAoAA0COBsvwMQAKAANAzgMF8B"
+  },
+  {
+    "key": "./Runewords/Merc/Insight (CA, Eth).d2i",
+    "value": "EAjABAQA1M8XTR8U2bRDsKAEBaH/AEoClASUBpQiECQIZS9MAiPN7Y7DS3jifxAAoAA0AOB8IwEQAKAANATgfG8DEACgADQI4Hz7ABAAoAA0DOB8mAA="
+  },
+  {
+    "key": "./Runewords/Merc/Obedience (CA, Eth).d2i",
+    "value": "EAjABAQIxM9XI8Ni3LRD6qAAVIQHD5aM/keQK/eDTU6YS2FuhbkW5sbwEKGIVTR4mmb8BxAAoAA0AOB80AIQAKAANATgfJAAEACgADQI4Hy+AxAAoAA0DOB8owUQAKAANBDgfFwA"
+  },
+  {
+    "key": "./Runewords/Merc/Phoenix (CA, Eth).d2i",
+    "value": "EAjABAwRwM8X8R3M+7RDAKEEBaEIDx4sGf2PABkyCMiPKpf4NGNWOKhjqAvkphz/ARAAoAA0AOAw+wAQAKAANATgMPsAEACgADQI4DBIABAAoAA0DOBsPwE="
+  },
+  {
+    "key": "./Runewords/Merc/Pride (CA, Eth).d2i",
+    "value": "EAjABAQIxM8XvQDXH7RDDKEEBaEIDx4sGf2XIWOkxLwD9FIcmiyaIfPumYf8BxAAoAA0AOBsmQAQAKAANATgMC4QAKAANAjgfPYBEACgADQM4DBIAA=="
+  },
+  {
+    "key": "./Runewords/Merc/Rift (CA, Eth).d2i",
+    "value": "EAjABAQYxM8XMXJWObVDJKEEBaEIDx4sGf0HoBJAJUA1QAWDhxYNUH1yzGEVEBBjUD0UZg8TKCj/ARAAoAA0AOB80AIQAKAANATgfJAAEACgADQI4DDfARAAoAA0DOAwaAE="
+  },
+  {
+    "key": "./Runewords/Shield/Dragon (Monarch).d2i",
+    "value": "EAiABAQIFP5MS50HwtQOqYHiCSsrA+EBhWfJyMzoP4CSACUBpQGlD3IBYe6SGWfs8YGRTLKIwm34DxAAoAA0AOAwLhAAoAA0BOAwSAAQAKAANAjgfJgA"
+  },
+  {
+    "key": "./Runewords/Shield/Dragon (Zaka).d2i",
+    "value": "EAiABATIdL6hMfzNK2mH1EBZRlCQgfAgwoMHFJ4T9VLUW1GvRb0lIzOj/wBKApQElAaUPsgFhLlLZpyxxwdGMskiCrfhPxAAoAA0AOAwLhAAoAA0BOAwSAAQAKAANAjgfJgA"
+  },
+  {
+    "key": "./Runewords/Shield/Dream (Monarch).d2i",
+    "value": "EAiABAQQFf5MY47+OtcOuYHiCSsrA+EBhWfJyMzo/wdznOCWgtsKbi24QekbI7tk5yV7olBkK/4DEACgADQA4Hz2ARAAoAA0BOBsPwEQAKAANAjgMJ8A"
+  },
+  {
+    "key": "./Runewords/Shield/Dream (Zaka).d2i",
+    "value": "EAiABAQQdL6hcXA0JWqH3EBZRlCQgfAgwoMHFJ4T9VLUW1GvRb0lIzOj/x/McYJbCm4ruLXgBqVvjOySnZfsiUKRrfgPEACgADQA4Hz2ARAAoAA0BOBsPwEQAKAANAjgMJ8A"
+  },
+  {
+    "key": "./Runewords/Shield/Exil (Vortex).d2i",
+    "value": "EAiABAQUZD450rixHGiH/EBZh5YWgvAgwoMHFJ4T9VLUW1GvRT0znv8QCJqRGQqX0DheGQAyVkjx4Jf9BxAAoAA0AOAw+wAQAKAANATgMD4QAKAANAjgMF8BEACgADQM4Hy+Ag=="
+  },
+  {
+    "key": "./Runewords/Shield/Phoenix (Monarch).d2i",
+    "value": "EAiABAQIBP5M5NbLQdIOAYTiCSkppKIckIKi/D+GukA2ZoWDusTngYAcATJkmU6PKv8BEACgADQA4DD7ABAAoAA0AOAw+wAQAKAANADgMEgAEACgADQA4Gw/AQ=="
+  },
+  {
+    "key": "./Runewords/Shield/Spirit (Monarch).d2i",
+    "value": "EAiABAQAFf5MDCe4FNUO2YTiCSsrBOEBhWfJyMzo/wBbAkgQ+sYs09z+aBLiPxAAoAA0AOB8+wAQAKAANATgfL4DEACgADQI4Hy7ABAAoAA0DOB8PgE="
+  },
+  {
+    "key": "./Runewords/Shield/Spirit (Zaka).d2i",
+    "value": "EAiABAQAdL4hQknhw2uHbEJZRlAQgvAgwoMHFJ4T9VLUW1GvRb0lIzOj/wNsCSBB6BuzTHP7o0mI/xAAoAA0AOB8+wAQAKAANATgfL4DEACgADQI4Hy7ABAAoAA0DOB8PgE="
+  },
+  {
+    "key": "./Runewords/Shield/Splendor (BS).d2i",
+    "value": "EAiABAQghB3klPuzDa8dwgnFExQUBMKDJaM1XbSGiv5DIPPEEhS8LGcGlcbzJ/8BEACgADQA4HyjBRAAoAA0BOB8fAA="
+  },
+  {
+    "key": "./Runewords/Shield/Splendor (Monarch).d2i",
+    "value": "EAiABAQAFP5MGnYiZ9MO4YTiCSsrAuHBktF/CGSeWIKCl+XMoNJ4/uQ/EACgADQA4HyjBRAAoAA0BOB8fAA="
+  },
+  {
+    "key": "./Runewords/Shield/Splendor (Zaka).d2i",
+    "value": "EAiABAQYZL4hgQT8E2uHcEJZRlAQgfBgyehEvRT1VtRrUe8/BDJPLEHBy3JmUGk8f/IfEACgADQA4HyjBRAAoAA0BOB8fAA="
+  },
+  {
+    "key": "./Runewords/Weapon/Axe/Beast (BA).d2i",
+    "value": "EAiABARI1YNXY6Z+2LVDPKBoaKgIDx4sGf0HgBTBocMuvDDghjDkhkt6ErPmnoKC/xAAoAA0AOBsvwMQAKAANATgfG8DEACgADQI4DBMABAAoAA0DOAw2wAQAKAANBDgfHwA"
+  },
+  {
+    "key": "./Runewords/Weapon/Axe/Doom (BA).d2i",
+    "value": "EAiABAQQ1INXHcIsz7RDaKBoaKgIDx78jwAUaJdgncAfXZLDjEn0FJ7y/AcQAKAANADgfNACEACgADQE4DA+EACgADQI4DBMABAAoAA0DOAwSAAQAKAANBDgbJkA"
+  },
+  {
+    "key": "./Runewords/Weapon/Axe/Eternity (BA).d2i",
+    "value": "EAiABAQcxINX5QhAs7RDfKBoaKgIDx78j2DT5gYIJa6lEKaZMkO+wML6DxAAoAA0AOB8PgEQAKAANATgbL8DEACgADQI4DBfARAAoAA0DOB8mAAQAKAANBDgMC4="
+  },
+  {
+    "key": "./Runewords/Weapon/Bows/Brand (GMB).d2i",
+    "value": "EAiABAQA5FkR+WI3o7VDSKAAUIQHD5aMeAEA6H8EqlSjBOoE8nj1FDAmUUFO5ggx+g8QAKAANADgbD8BEACgADQE4DBIABAAoAA0COAw2wAQAKAANAzgMGgB"
+  },
+  {
+    "key": "./Runewords/Weapon/Bows/Brand (HB).d2i",
+    "value": "EAiABARQdH9BTCkyltAOIYECQBEePFgy+h+BKtUogTqBPF49BYxJVJCTOUKM/gMQAKAANADgbD8BEACgADQE4DBIABAAoAA0COAw2wAQAKAANAzgMGgB"
+  },
+  {
+    "key": "./Runewords/Weapon/Bows/Edge (GMB).d2i",
+    "value": "EAiABAQY5FnRZCdDTrVDcqAATIQHD5aMeAEA6D8AlQAqAaoBqiuPLrc6gTyQ9bC8dOb9BxAAoAA0AOB8bwMQAKAANATgfPsAEACgADQI4Hw+AQ=="
+  },
+  {
+    "key": "./Runewords/Weapon/Bows/Edge (HB).d2i",
+    "value": "EAiABAQgZH9BK2EIFNQOyYECMBEePFgy+g9AJYBKgGqA6sqjy61OIA9kPSwvnXn/ARAAoAA0AOB8bwMQAKAANATgfPsAEACgADQI4Hw+AQ=="
+  },
+  {
+    "key": "./Runewords/Weapon/Bows/Faith (MB).d2i",
+    "value": "EAiABAUA5FmNAAAAACkBCAoMDIrw4AEvAID9j4AR44lrKa6tuNbiGgw8PHeA/tElPW9TAIr/EACgADQA4DA+EACgADQE4Gw/ARAAoAA0COAw3wEQAKAANAzgfDMB"
+  },
+  {
+    "key": "./Runewords/Weapon/Bows/Faith (GMB).d2i",
+    "value": "EAiABAUU5FkRAQAAAFICEJSbGxThwQNeAAD7HwEjxhPXUlxbca3FNRh4eO4A/aNLet6mABT/ARAAoAA0AOAwPhAAoAA0BOBsPwEQAKAANAjgMN8BEACgADQM4HwzAQ=="
+  },
+  {
+    "key": "./Runewords/Weapon/Bows/Faith (HB).d2i",
+    "value": "EAiABAQAdH9BdBUyQtcOAYICQBEePFgy+h8BI8YT11JcW3GtxbU7QP/okp63KQDFfxAAoAA0AOAwPhAAoAA0BOBsPwEQAKAANAjgMN8BEACgADQM4HwzAQ=="
+  },
+  {
+    "key": "./Runewords/Weapon/Bows/Harmony (GMB).d2i",
+    "value": "EAiABAQA9VkR713AFbVDlqAAUIQHD5aMeAEA6H+EiRM3UMC4ASXjBsXGDSijLBYGhHFpjmJGfZGR8R8QAKAANADgfG8DEACgADQE4HzvAxAAoAA0COB8mAAQAKAANAzgfJAA"
+  },
+  {
+    "key": "./Runewords/Weapon/Bows/Harmony (HB).d2i",
+    "value": "EAiABAQIdH9B1M+wf9AOWYICQBEePFgy+h9h4sQNFDBuQMm4QbFxAyoqi4UBYVyao5hRX2Rk/AcQAKAANADgfG8DEACgADQE4HzvAxAAoAA0COB8mAAQAKAANAzgfJAA"
+  },
+  {
+    "key": "./Runewords/Weapon/Bows/Ice (GMB).d2i",
+    "value": "EAiABAQI9VkRKRb5D7RDqqAAUIQHD5aMeAEA6H8EadIuyZHGLBYyx9AdyO+ypVCeUvwHEACgADQA4Hw+ARAAoAA0BOB8tgEQAKAANAjgbD8BEACgADQM4DBIAA=="
+  },
+  {
+    "key": "./Runewords/Weapon/Bows/Ice (HB).d2i",
+    "value": "EAiABAQAdX9BNEusT9QOqYICQBEePFgy+h9BmrRLcqQxi4XMMXQH8rtsKZSnFP8BEACgADQA4Hw+ARAAoAA0BOB8tgEQAKAANAjgbD8BEACgADQM4DBIAA=="
+  },
+  {
+    "key": "./Runewords/Weapon/Bows/Wrath (GMB).d2i",
+    "value": "EAiABAQA9FkRB+ECq7VDgqEAUIQHD5aMeAEA6L+MFB4aVXjyANVjMlNjihQFY8EVnv8QAKAANADgMJ8AEACgADQE4Hx8ABAAoAA0COBsvwMQAKAANAzgMNsA"
+  },
+  {
+    "key": "./Runewords/Weapon/Bows/Wrath (HB).d2i",
+    "value": "EAiABAQQdH9BvO5p0NEOCYYCQBEePFgy+i8jhYdGFZ48QPW0zNSYIkXBWHCF5z8QAKAANADgMJ8AEACgADQE4Hx8ABAAoAA0COBsvwMQAKAANAzgMNsA"
+  },
+  {
+    "key": "./Runewords/Weapon/Flail/Call to Arms (CTA) (Flail).d2i",
+    "value": "EAiABMwuQL6vphe/tmqHnEDx8FARAgQIU4kIs2n4H+HdOyVqF14YSUSYSkKYTcOf/AcQAKAANADgfD4BEACgADQE4HwjARAAoAA0COAw2wAQAKAANAzgMF8BEACgADQQ4DA+"
+  },
+  {
+    "key": "./Runewords/Weapon/Flail/Heart of the Oak (HOTO) (Flail).d2i",
+    "value": "EAiABARAVb4v6kA27GuHNEHx8ED/T8BLAW8FvBbwlMhNsjS8P2PmdMPDw4wQJyPjPxAAoAA0AOB8kAAQAKAANATgMPsAEACgADQI4DCfABAAoAA0DOB8vgM="
+  },
+  {
+    "key": "./Runewords/Weapon/Swords/Death (PB).d2i",
+    "value": "EAiABAQIxItTkbEjErVDXKAAVIQHD5aM/kcIHBiRDNNh0g2ZYmwNZGZWFQ8P+oj/EACgADQA4HzQAhAAoAA0BOB8fwIQAKAANAjgMPsAEACgADQM4Hy7ABAAoAA0EOAwaAE="
+  },
+  {
+    "key": "./Runewords/Weapon/Swords/Destruction (PB).d2i",
+    "value": "EAiABAQQ1YtTwRbdBLRDZqAAVIQHD5aM/kfw6pUGGa06gWEWDI9iLQ5kY1c5BWMMPZf/EACgADQA4DD7ABAAoAA0BOAwSAAQAKAANAjgbL8DEACgADQM4Gw/ARAAoAA0EOB8kAA="
+  },
+  {
+    "key": "./Runewords/Weapon/Swords/Fortitude(PB).d2i",
+    "value": "EAiABAQAxIsTcYM2kLRDhqAAUIQHD5aM/kNAFoElyxPmUphbYa6FuTQtOUyyhwcKNuY/EACgADQA4Hx/AhAAoAA0BOB8mAAQAKAANAjgfL4CEACgADQM4DBIAA=="
+  },
+  {
+    "key": "./Runewords/Weapon/Swords/Grief (PB).d2i",
+    "value": "EAiABAQAxItTZ0MUlbVDkqAAVIQHD5aM/lt5dOG9IT2nscei0bwHasZ/EACgADQA4HyjBRAAoAA0BOB8bwMQAKAANAjgMEgAEACgADQM4DDbABAAoAA0EOB8IwE="
+  },
+  {
+    "key": "./Runewords/Weapon/Swords/Last Wish (PB).d2i",
+    "value": "EAiABAQQ1IuTW+69vrVDvqAAWIQHD5aM/ke4exeR7JKYOIwygWJMkkKRbFnIAI/4DxAAoAA0AOBsPwEQAKAANATgMNsAEACgADQI4Gw/ARAAoAA0DOAwLhAAoAA0EOBsPwEQAKAANBTgbL8D"
+  },
+  {
+    "key": "./Runewords/Weapon/Swords/Lawbringer (PB).d2i",
+    "value": "EAiABAQAxIvTSpKxG7VDwqAATIQHD5aM/oPQB8NSmg1BWrRs0pFduiONPVdQ/gMQAKAANADgfD4BEACgADQE4DDfARAAoAA0COB8kAA="
+  },
+  {
+    "key": "./Runewords/Weapon/Swords/Oath (PB).d2i",
+    "value": "EAiABAQQxIsTl0M5B7RD6KAAUIQHD5aM/kegSrWLbNIDU2NUFx5mkRYODswgdigo/gMQAKAANADgfLYBEACgADQE4DCfABAAoAA0COAw2wAQAKAANAzgfHwA"
+  },
+  {
+    "key": "./Runewords/Weapon/Swords/Phoenix (PB).d2i",
+    "value": "EAiABAQQxIsTPWgdDrRDAKEAUIQHD5aM/keADBkE5EeVS3yaMSsc1DHUBXJTjv8QAKAANADgMPsAEACgADQE4DD7ABAAoAA0COAwSAAQAKAANAzgbD8B"
+  },
+  {
+    "key": "./Runewords/Weapon/Swords/Spirit (PB).d2i",
+    "value": "EAiABARI1YsT5bI/0LVDNqEAUIQHD5aM/g+wJYAEoW/MMs3tjyYh/gMQAKAANADgfPsAEACgADQE4Hy+AxAAoAA0COB8uwAQAKAANAzgfD4B"
+  },
+  {
+    "key": "./Runewords/Weapon/Swords/Voice of Reason (PB).d2i",
+    "value": "EAiABAQQxIsTra0+1rRD+KAAUIQHD5aM/tsg47abR66eepkao1qQGGuAeDzF+A8QAKAANADgMN8BEACgADQE4HyQABAAoAA0COB8fwIQAKAANAzgfDMB"
+  },
+  {
+    "key": "./Sets/Aldur's Watchtower/Armor.d2i",
+    "value": "EAiAAAUABMIb5G1RsMbFELiRkZE4AGgEvD7YJIW+LTK8UgDCSwUg/we8/g94/R/w+g8="
+  },
+  {
+    "key": "./Sets/Aldur's Watchtower/Boots.d2i",
+    "value": "EACAAAUIhBsNyXemd+OiCORAQsI5IGUBNQeQE/rA8OQomP4X8Pov4PVfwOs/"
+  },
+  {
+    "key": "./Sets/Aldur's Watchtower/Helmet.d2i",
+    "value": "EAiAAAWIZDxIGMmhzx0XQmALFBTkbIj4QIYV+rLkmNb/AK//AV7/A7z+Aw=="
+  },
+  {
+    "key": "./Sets/Aldur's Watchtower/Weapon.d2i",
+    "value": "EAiAAAUQxFkTbueBvMYFEUBCMqcCasEnQ16Ch8JHoYssD7f/AF7+A3j5D+DlPw=="
+  },
+  {
+    "key": "./Sets/Angelic Raiment/Amulet.d2i",
+    "value": "EACAAAQM5FkYjkwt57oVasDIcnKo/wfW/P+T/w=="
+  },
+  {
+    "key": "./Sets/Angelic Raiment/Armor.d2i",
+    "value": "EAiAAARA5LArWMhpRS+KGbADDQ0xIKAQMfz/AIr/J/T9Bw=="
+  },
+  {
+    "key": "./Sets/Angelic Raiment/Ring.d2i",
+    "value": "EACAAAUA5PzY0KAQAHqtQQPGARpKyP/gsP9QLP8D"
+  },
+  {
+    "key": "./Sets/Angelic Raiment/Weapon.d2i",
+    "value": "EAiAAAUIhPQE32K1GFQhA0BAxJiwhB6H/yMsWfK/i+w/"
+  },
+  {
+    "key": "./Sets/Arcanna's Tricks/Amulet.d2i",
+    "value": "ECCAAATI5FkY6uIBn7UVdMBI8LKB4j8Uy/8nuP0H"
+  },
+  {
+    "key": "./Sets/Arcanna's Tricks/Armor.d2i",
+    "value": "EAiAAAQI5JoZxhQuNrpFD6gDD48YIoYs9v+DG/4HUP0H"
+  },
+  {
+    "key": "./Sets/Arcanna's Tricks/Helmet.d2i",
+    "value": "ECiAAAQQhKQZ6GVnbLQFD6iAhIQYSkQngv/WsP8prv0H"
+  },
+  {
+    "key": "./Sets/Arcanna's Tricks/Weapon.d2i",
+    "value": "EAiAAAQABJAJOkXuNdpiB8jIiDElaZT5n0Dq/4aC/w=="
+  },
+  {
+    "key": "./Sets/Artic Gear/Armor.d2i",
+    "value": "EAiAAARAZBP+wt5MUEShuAEWoKAQA0LRE9JSSFshrYW0/9aw/yuu/Qc="
+  },
+  {
+    "key": "./Sets/Artic Gear/Belt.d2i",
+    "value": "EACAAAQAZKc35APGgmkLHNAABwfjAwpWwPsPhfH/Cmn/AQ=="
+  },
+  {
+    "key": "./Sets/Artic Gear/Gloves.d2i",
+    "value": "EACAAAQQxKwbJMiJhbVFDqiAhIRxgEYXz/8JMvwXoPoP"
+  },
+  {
+    "key": "./Sets/Artic Gear/Weapon.d2i",
+    "value": "EAiAAAQIhIAGKM5Cam1hA2BgxIggQ8YdFP/BQf9tUHhY+g8="
+  },
+  {
+    "key": "./Sets/Beserker's Arsenal/Armor.d2i",
+    "value": "EAiAAAQIhOYNkw+wKNqiBaTBw0OEEcIU5r817D8="
+  },
+  {
+    "key": "./Sets/Beserker's Arsenal/Helmet.d2i",
+    "value": "EAiAAAQQBF8bXKWtFG0FC+AABoYIHzJwItx/cNB/"
+  },
+  {
+    "key": "./Sets/Beserker's Arsenal/Weapon.d2i",
+    "value": "EAiAAAQAhHk8BEM+AHALF4CBIYKPwh0Z/yPIkPEf"
+  },
+  {
+    "key": "./Sets/Bul Kathos' Children/Colossus Blade.d2i",
+    "value": "EAiAAAQAxK8xwCLvsWmLOSAjI0AEZMhOcEvBbQW3FtyiBLqgEI3+Aw=="
+  },
+  {
+    "key": "./Sets/Bul Kathos' Children/Mythical Sword.d2i",
+    "value": "EAiAAAQIxIOxiB+pjWgLOsDCIgAAmgjIkJ3Ql+Off2R0Qf0HEACgADAA4Gw/AQ=="
+  },
+  {
+    "key": "./Sets/Cathan's Traps/Amulet.d2i",
+    "value": "EACAAATE5FkYJnmMTTMVOMAY4wFU/k+Q4T+Uvv8="
+  },
+  {
+    "key": "./Sets/Cathan's Traps/Armor.d2i",
+    "value": "EAiAAAUARGA2ZB8pGFcLDVCFlhYxPmRgi8x/J4X/J8z9Bw=="
+  },
+  {
+    "key": "./Sets/Cathan's Traps/Helmet.d2i",
+    "value": "EAiAAAQIxJIUHGwNxFDFBigBBYUICWhWhPtvDfoP"
+  },
+  {
+    "key": "./Sets/Cathan's Traps/Ring.d2i",
+    "value": "EACAAAXA5PzYYAzzZHut0gGCCIGH4T8Alf8="
+  },
+  {
+    "key": "./Sets/Cathan's Traps/Weapon.d2i",
+    "value": "ECiAAAQQRMmEo2LlJG2RAVBQxPCTxFDwP4HU/xPSUkhbIa2FtP8="
+  },
+  {
+    "key": "./Sets/Civerb's Vestments/Amulet.d2i",
+    "value": "EACAAAQE5FkY6oFwkrQVAsDYgKJE/L8i3P8PI/gP"
+  },
+  {
+    "key": "./Sets/Civerb's Vestments/Shield.d2i",
+    "value": "EAiAAARE5J4VPmxtTrUFAMAABoYYFJ4PGfifwOZ/C3H/AQ=="
+  },
+  {
+    "key": "./Sets/Civerb's Vestments/Weapon.d2i",
+    "value": "EAiAAAQAZJEI1bYn35ZCAPDwiDBhCQuX/9qQ/w=="
+  },
+  {
+    "key": "./Sets/Cleglaw's Brace/Gloves.d2i",
+    "value": "EACAAAQAxK4bekGfEb8FApgABIQQJWAp8x8c9R8="
+  },
+  {
+    "key": "./Sets/Cleglaw's Brace/Shield.d2i",
+    "value": "ECiAAAQQhOwNHYrdN9riAFAAAkKEDxtw8/X/xLUU11Zca3HtPw=="
+  },
+  {
+    "key": "./Sets/Cleglaw's Brace/Weapon.d2i",
+    "value": "EAiAAAUI5NIYxvVKSquFAWBhEeGOjEay/9qU/w=="
+  },
+  {
+    "key": "./Sets/Cow King's Leathers/Armor.d2i",
+    "value": "AAiAAAQAhAwMziE8f4HCDrQABEQMCDxOaEuhbYW2FtqMFTVI/h/w8T9ZIUHtPw=="
+  },
+  {
+    "key": "./Sets/Cow King's Leathers/Boots.d2i",
+    "value": "AACAAAQIZKcmXHmb/WiLO/AABwdAAO1DC2BkjIDSB0b2Hw=="
+  },
+  {
+    "key": "./Sets/Cow King's Leathers/Helmet.d2i",
+    "value": "AAiAAAQQhL8ZNljc/wJFHfgBA4MYH6pg5385438niv8="
+  },
+  {
+    "key": "./Sets/Death's Disguise/Belt.d2i",
+    "value": "ECCAAAQE5OoNvnnVO9oCBjCAgUH44IFM/5+4luLaimstrv0H"
+  },
+  {
+    "key": "./Sets/Death's Disguise/Gloves.d2i",
+    "value": "ECCAAARE5K4b8mlMObTFC2gAA4PQQp+br/9dZP8B"
+  },
+  {
+    "key": "./Sets/Death's Disguise/Weapon.d2i",
+    "value": "EAiAAAUABNAYhrXtnXxFDGBhESFChgw8CP9tZCxZ+g8="
+  },
+  {
+    "key": "./Sets/Griswold's Legacy/Armor.d2i",
+    "value": "EAiAAAUAhL8TXAssucaFFGAOD48BAGg++GcLDy8NAP0H"
+  },
+  {
+    "key": "./Sets/Griswold's Legacy/Helmet.d2i",
+    "value": "EAiAAAUIBB42YDP8H4+LKAALGRkSICw50SxFsxXNWjSDIriFR53wn1cGgP4D"
+  },
+  {
+    "key": "./Sets/Griswold's Legacy/Shield.d2i",
+    "value": "EAiAAAUQZD45vG6NEI0LKrAOLS0DKFAf7HCiXop6K+q1qGem+h8="
+  },
+  {
+    "key": "./Sets/Griswold's Legacy/Weapon.d2i",
+    "value": "EAiAAA0RwAMKyUwMFeNiChgZoRMBHrwtUF14erj954UBoP8VFAuU/xUUC5T/"
+  },
+  {
+    "key": "./Sets/Heaven's Brethren/Armor.d2i",
+    "value": "EAiAAAUEhB8KxGH9z+PCDFBDRkaAA2s++AfEiBAoW6D+Aw=="
+  },
+  {
+    "key": "./Sets/Heaven's Brethren/Helmet.d2i",
+    "value": "EAiAAAQUBGIbqFh83TzFGUgFCooAAFQEvD7wYAvPGJaxAQnFfw=="
+  },
+  {
+    "key": "./Sets/Heaven's Brethren/Shield.d2i",
+    "value": "EAiAAAQMBBoKVzSrDpiiDNACIEACQgrZBx6kMOfEY0b2Hw=="
+  },
+  {
+    "key": "./Sets/Heaven's Brethren/Weapon.d2i",
+    "value": "EAiAAAQAxNsXuusQdzAFGeDhEQAGhYcuPGMDCwptzH8="
+  },
+  {
+    "key": "./Sets/Hsaru's Defence/Belt.d2i",
+    "value": "EACAAAQQxOoNntSVqdqiADwAAkI4QGMFt//WqP8="
+  },
+  {
+    "key": "./Sets/Hsaru's Defence/Boots.d2i",
+    "value": "EACAAAQIxKoJp9Y83tpiAEwAAkI4EQ4M6j846j8="
+  },
+  {
+    "key": "./Sets/Hsaru's Defence/Shield.d2i",
+    "value": "EACAAAQARKEISmPOntqCAECAgUEAoCJC+G+N+g8="
+  },
+  {
+    "key": "./Sets/Hwanin's Majesty/Armor.d2i",
+    "value": "EAiAAAQIhIsb8C+elbRFG0AGCYkABwh9kEaLcckGFRT/AQ=="
+  },
+  {
+    "key": "./Sets/Hwanin's Majesty/Belt.d2i",
+    "value": "EACAAARIxOoNkTYwQ9rCDTwAAgKQMYQgh6kTsMb8Bw=="
+  },
+  {
+    "key": "./Sets/Hwanin's Majesty/Helmet.d2i",
+    "value": "EAiAAAQYhB82+KqnoWkLNsAHGRkBIJAZoaxop0T+Dw=="
+  },
+  {
+    "key": "./Sets/Hwanin's Majesty/Weapon.d2i",
+    "value": "EAiAAAQAxO3+oa5J20FbvAGAABGQIZuglIwigy48Y0MLiv8="
+  },
+  {
+    "key": "./Sets/Immortal King/Armor.d2i",
+    "value": "EAiAAAVQBL4TnAgbYIzFERATD4/4HzTTQh8vEAAlK2go/B/T+r8C3v8T8P6ngPcfgoz/"
+  },
+  {
+    "key": "./Sets/Immortal King/Belt.d2i",
+    "value": "EACAAAUIZANrkK2u0jYWSMAHGBg+gJwPLjhBLsW5/x/m8H9M6z8EMv9JcPvPKwRA/wE="
+  },
+  {
+    "key": "./Sets/Immortal King/Boots.d2i",
+    "value": "EACAAAVIhGMNykCjTsNCCfwAA8M7wGSCGx+qAIb3H0rff14gAPr/QRX/7fwP"
+  },
+  {
+    "key": "./Sets/Immortal King/Gloves.d2i",
+    "value": "EACAAAUQhOMVQmFG5odFEvgBBoYPgEYA7cMSkhEmMP53af3/IIj/PBT/fSj+GxL/AQ=="
+  },
+  {
+    "key": "./Sets/Immortal King/Helmet.d2i",
+    "value": "EAiAAAWQRB9awDkcTTIWRoAHNzcEfDjEk0RQGLMgLxEA/Qc="
+  },
+  {
+    "key": "./Sets/Immortal King/Weapon.d2i",
+    "value": "EAiAAAUYxFsfkiGy14fFEuDhIT8CMmRdeHm46eGGCIXpfxjTjf/LOLr7b+OPreX/HF11Zek/Df20/wE="
+  },
+  {
+    "key": "./Sets/Infernal Tools/Belt.d2i",
+    "value": "EACAAAQIxOgNUBWTz9piBUBAQsI4QOPDCP63CPffzv8="
+  },
+  {
+    "key": "./Sets/Infernal Tools/Helmet.d2i",
+    "value": "EAiAAAQARLwZ4LpY7ENFCngAA4MIJ6SlkLZCWgtpcqj/1qD/"
+  },
+  {
+    "key": "./Sets/Infernal Tools/Weapon.d2i",
+    "value": "EAiAAAQQZAE2mGAMbp4KFfDwIEIFZIryHxz1Hw=="
+  },
+  {
+    "key": "./Sets/Iratha's Finery/Amulet.d2i",
+    "value": "ECCAAARI5FkYtAJMUbUVEkBoYc7N1/8T11JcW3GtxbX/"
+  },
+  {
+    "key": "./Sets/Iratha's Finery/Belt.d2i",
+    "value": "EACAAAQIxOgNxvhap9+CAUBAokGoUFwoPozgvwDVfw=="
+  },
+  {
+    "key": "./Sets/Iratha's Finery/Gloves.d2i",
+    "value": "ECCAAAQQxKwbQKoF/LSFAqiAhISwwpyd/7ug/gM="
+  },
+  {
+    "key": "./Sets/Iratha's Finery/Helmet.d2i",
+    "value": "EAiAAAUARBw2gPrCR4+LBXADGRkRTphLYe6/Neg/"
+  },
+  {
+    "key": "./Sets/Isenhart's Armory/Armor.d2i",
+    "value": "EAiAAAUARA8FZlvV1nHxAJwgIyPCBxmMEP5bg/4D"
+  },
+  {
+    "key": "./Sets/Isenhart's Armory/Helmet.d2i",
+    "value": "ECiAAAQYRMY3uKUDpWoLCEACDw8RBJhECP9PQEsBbQW0FtD+Aw=="
+  },
+  {
+    "key": "./Sets/Isenhart's Armory/Shield.d2i",
+    "value": "ECiAAAQQZBkK+xAkKNrCAbQABUWEDzIARP6fgJYC2gpoLaD9Bw=="
+  },
+  {
+    "key": "./Sets/Isenhart's Armory/Weapon.d2i",
+    "value": "EAiAAAUIRGkM1FDSL9SiAYCAiFBB6YL6D075Dw=="
+  },
+  {
+    "key": "./Sets/Mavina's Battle Hymn/Armor.d2i",
+    "value": "EAiAAAVYBN4xuG7Zc46LLVAhGBghPqBlBLPFiFcAgJINNyisgf/HyP4D"
+  },
+  {
+    "key": "./Sets/Mavina's Battle Hymn/Belt.d2i",
+    "value": "EACAAAUIZGOnATvwC3NcdAEXODggH3jgo5AlwaD+nwiXItyKcC3C/Qc="
+  },
+  {
+    "key": "./Sets/Mavina's Battle Hymn/Gloves.d2i",
+    "value": "EACAAAVIhJsVMilmHMYFF8iBhAQGQEXA6wMPbBhIsHzCyc7/Ngb5kf1fauQ/"
+  },
+  {
+    "key": "./Sets/Mavina's Battle Hymn/Helmet.d2i",
+    "value": "EAiAAAUgRPy2IfpO83tcaAEjUFCIkyDnAyiUoF1k///k/x0j/0+ESxFuRbgW4f4D"
+  },
+  {
+    "key": "./Sets/Mavina's Battle Hymn/Weapon.d2i",
+    "value": "EAiAAAUA9FkRHPBZ8caFF7i5EScCL14TZOjC6xT4T0Mu739jDwyK/7wAAPQf"
+  },
+  {
+    "key": "./Sets/Milabrega's Regalia/Armor.d2i",
+    "value": "EAiAAAQQ5L0TqPUHF78FBpgHD48IIgQng/8QyPwH"
+  },
+  {
+    "key": "./Sets/Milabrega's Regalia/Helmet.d2i",
+    "value": "EAiAAAUARBw2cJlM4B6LC3ADGRkRDrxI8PJ/Bbz/"
+  },
+  {
+    "key": "./Sets/Milabrega's Regalia/Shield.d2i",
+    "value": "EAiAAAUIRPqZoKjVxb4pKgAHPDzE+DACKHj/D0j5D0HGfw=="
+  },
+  {
+    "key": "./Sets/Milabrega's Regalia/Weapon.d2i",
+    "value": "EAiAAAUYBNAMyOJ7Z9fCAhgZCRBBhowpSxb7Dw=="
+  },
+  {
+    "key": "./Sets/Naj's Ancient Vestige/Armor.d2i",
+    "value": "EAiAAAQIBF4T1CK4/7RFHuAQD48AB8J8sMmJcCnCrQjXItwWFDntn/wH"
+  },
+  {
+    "key": "./Sets/Naj's Ancient Vestige/Circlet.d2i",
+    "value": "EAiAAAQARPy+w/gTVIG20AMoGBkRAMDLhyrAyBiRJZMVNTD+Aw=="
+  },
+  {
+    "key": "./Sets/Naj's Ancient Vestige/Staff.d2i",
+    "value": "EAiAAAQQZC8osEeXkGkLPDAyIkCAYQKzCJYsyTBaSCP7E2aLDUVF/wE="
+  },
+  {
+    "key": "./Sets/Natalya's Odium/Armor.d2i",
+    "value": "EAiAAAUABIob4DgFzQIFENAPCYkBH9bRIpybL14xAMKG/Ac="
+  },
+  {
+    "key": "./Sets/Natalya's Odium/Boots.d2i",
+    "value": "EACAAAUIhFsN7Dp9moEiCNgAQgj4cIgU4VaESyIDhhdP+A8="
+  },
+  {
+    "key": "./Sets/Natalya's Odium/Helmet.d2i",
+    "value": "EAiAAAUIlGMXsPYpLwKFDzgECooAAGgE+D7cZMRwglsKbiu4teD2Hw=="
+  },
+  {
+    "key": "./Sets/Natalya's Odium/Weapon.d2i",
+    "value": "EAiAAAUQ1G+eQI5M1hEofgARkQARkCGDwRDBhowMsi68OfNw08PtPw=="
+  },
+  {
+    "key": "./Sets/Orphan's Call/Belt.d2i",
+    "value": "EACAAAQYZMNoSM1np8IUaaAGEhIAhCUrpPEo+Cj8Bw=="
+  },
+  {
+    "key": "./Sets/Orphan's Call/Goves.d2i",
+    "value": "EACAAAQIhO9WiEgq8sAUakAGDg4ABBkTyDhxLct1Qf0H"
+  },
+  {
+    "key": "./Sets/Orphan's Call/Helmet.d2i",
+    "value": "EAiAAAQAhGMb0uj5RzAFGmgDCooAAF4g4BkjQzRq9PgP"
+  },
+  {
+    "key": "./Sets/Orphan's Call/Shield.d2i",
+    "value": "EAiAAAQQhNsbyubStjDFGhACEJAAEF5RuLOkGZ6d/wE="
+  },
+  {
+    "key": "./Sets/Sander's Folly/Boots.d2i",
+    "value": "EACAAAQIZKcmJM751HALPgABBwcAQIkA1QQywPD+Aw=="
+  },
+  {
+    "key": "./Sets/Sander's Folly/Gloves.d2i",
+    "value": "EACAAAQUZLduOHp+peAWfQACDg7AASQfRpDDAxKWdEH9Bw=="
+  },
+  {
+    "key": "./Sets/Sander's Folly/Helmet.d2i",
+    "value": "EACAAASARLwZPvXONLjFHmgAwwLgBAHl0BryHw=="
+  },
+  {
+    "key": "./Sets/Sander's Folly/Weapon.d2i",
+    "value": "EAiAAAQQRAEbYpANX7iFH3h4ECBBToQlS2xkLJHxgUiD+g8="
+  },
+  {
+    "key": "./Sets/Sazabi's Grand Tribute/Armor.d2i",
+    "value": "EAiAAAQIBM4bDp/fOrRFHHiQh4cAAHIOrPmgmTGyPaz9Bw=="
+  },
+  {
+    "key": "./Sets/Sazabi's Grand Tribute/Helmet.d2i",
+    "value": "EAiAAAQQhOMbiPq607SFHPCCh4cAH9xwglsKbn/yHw=="
+  },
+  {
+    "key": "./Sets/Sazabi's Grand Tribute/Weapon.d2i",
+    "value": "EAiAAAQAxF8KnCiVb9oCDgAEAFAi4BXBkiUbGSNkuvDySP0P"
+  },
+  {
+    "key": "./Sets/Sigon's Complete Steel/Armor.d2i",
+    "value": "EAiAAAQYZBkcrh+zXWBFCYjEzY0IEDKkMPffCeU/"
+  },
+  {
+    "key": "./Sets/Sigon's Complete Steel/Belt.d2i",
+    "value": "EACAAAWgBOsN0K8ypcviBFQAA0M4QOMEt//WoP8="
+  },
+  {
+    "key": "./Sets/Sigon's Complete Steel/Boots.d2i",
+    "value": "EACAAAUQBKsJsBx4SrzCBGQAA8NYAQ8M6v8EGf5DsfwP"
+  },
+  {
+    "key": "./Sets/Sigon's Complete Steel/Gloves.d2i",
+    "value": "EACAAAUABK8bNN3Sta/FCMgABoYAQGUCBf+7yP4D"
+  },
+  {
+    "key": "./Sets/Sigon's Complete Steel/Helmet.d2i",
+    "value": "EAiAAAQgZGEbItBWEDUFCWgBCooICXw+jOA/OOg/"
+  },
+  {
+    "key": "./Sets/Sigon's Complete Steel/Shield.d2i",
+    "value": "EAiAAAQIxPxBKEvCD+8WKGAEPDwCUKD+5D8="
+  },
+  {
+    "key": "./Sets/Tal Rasha's Wrappings/Amulet.d2i",
+    "value": "EACAAI0I4FkYDg5FSsZVmgA5ICWBUop0MgYQpkT/03j+Aw=="
+  },
+  {
+    "key": "./Sets/Tal Rasha's Wrappings/Armor.d2i",
+    "value": "EAiAAAVABBocJAM5c8fFEzjRzY0IHzQz4jkBLwW8FfCg8G5B+Z/G8x8="
+  },
+  {
+    "key": "./Sets/Tal Rasha's Wrappings/Belt.d2i",
+    "value": "EACAAAUAZMNqqBoZUBsXTEAGEBCGAFoCHyhzW6DklP8/GOF/Gs9/"
+  },
+  {
+    "key": "./Sets/Tal Rasha's Wrappings/Helmet.d2i",
+    "value": "EAiAAAUAlZMU3DWhhMYFFAADBYUAB7gk8PlwgxPXUlxbca3FNR4KH4r/"
+  },
+  {
+    "key": "./Sets/Tal Rasha's Wrappings/Weapon.d2i",
+    "value": "EAiAAAWI9K8v8AHjuI8LJyAjI14A1YEsCdrSoNb00JofWhNE/6ck/5s+/Hf68H9pkP8="
+  },
+  {
+    "key": "./Sets/Tancred's Battlegear/Amulet.d2i",
+    "value": "EACAAAQY5FkYOKcRub8VQsAQIYwI/kOR/T+Bh/8="
+  },
+  {
+    "key": "./Sets/Tancred's Battlegear/Armor.d2i",
+    "value": "EAiAAAQQRIY3hEVyNWiLD7AKIyMRALwcQPLfGvQf"
+  },
+  {
+    "key": "./Sets/Tancred's Battlegear/Boots.d2i",
+    "value": "EACAAAQI5KoJ9zPAcp8CBDSAgcEQoOKQ8R+M7D8Alf8="
+  },
+  {
+    "key": "./Sets/Tancred's Battlegear/Helmet.d2i",
+    "value": "ECiAAAQcRLENNBWpldpCBLgABUWECAoUTEDh/wlpKaStkNZC2n8="
+  },
+  {
+    "key": "./Sets/Tancred's Battlegear/Weapon.d2i",
+    "value": "EAiAAAQAxM5f0HIqdJ8VHkBDQ4wIUKBMWOJ/Apr/XVD/AQ=="
+  },
+  {
+    "key": "./Sets/The Disciple/Amulet.d2i",
+    "value": "EACAAAQY5FkYBpfVrLRVvgBYoa2FPieKP/kP"
+  },
+  {
+    "key": "./Sets/The Disciple/Armor.d2i",
+    "value": "EAiAAAQQBMJfEGxhjdMWYqA7FBQCfEjNCXA5+nhFRrIBhsx/"
+  },
+  {
+    "key": "./Sets/The Disciple/Belt.d2i",
+    "value": "EACAAAQABFoRrK+gXbTFGFgCBAQAQEWA6gMPTlxLcW3FtRbX/gM="
+  },
+  {
+    "key": "./Sets/The Disciple/Boots.d2i",
+    "value": "EACAAAUIhF8Nnl1YlroiDLSAgQFYkPNhBGBkdv4H"
+  },
+  {
+    "key": "./Sets/The Disciple/Laying of Hands.d2i",
+    "value": "EACAAARABN4VnjngDLoFGEACAwPwYQQn9HVB5ZFrbChD8R8="
+  },
+  {
+    "key": "./Sets/Trang-Oul's Avatar/Armor.d2i",
+    "value": "EAiAAAXMlMMblsJ49saFFQiLkZFQECyBINMC3hYeMDxeEgD6n0LffxLh/gM="
+  },
+  {
+    "key": "./Sets/Trang-Oul's Avatar/Belt.d2i",
+    "value": "EACAAAUAFBoRsJH/lsdFFmCChARxQEwCqQU+H9ygZNzCk+n/FfD+Aw=="
+  },
+  {
+    "key": "./Sets/Trang-Oul's Avatar/Gloves.d2i",
+    "value": "EACAAAVAlNsVWhrBXsYFFrABBATwAQUrzKVB8YIAENMl/wE="
+  },
+  {
+    "key": "./Sets/Trang-Oul's Avatar/Helmet.d2i",
+    "value": "EAiAAAWAFWIX9F7sQsZFFTgFCooACWw/uEHJ6IQypvUf"
+  },
+  {
+    "key": "./Sets/Trang-Oul's Avatar/Shield.d2i",
+    "value": "EAiAAAWIlR1cUEZhqRgXV0AJFBTCAMgR8KLgfTjEiXot4PGKANB/qBn/lbT/AQ=="
+  },
+  {
+    "key": "./Sets/Vidala's Rig/Amulet.d2i",
+    "value": "EACAAAQQ5FkYvoGzq7tVKEA48GIFt/9QLP8D"
+  },
+  {
+    "key": "./Sets/Vidala's Rig/Armor.d2i",
+    "value": "EAiAAAQA5A4vjPCBD3yKCbABDAwxBKw+8OD/CXD/rVH/AQ=="
+  },
+  {
+    "key": "./Sets/Vidala's Rig/Boots.d2i",
+    "value": "ECCAAAQUxKgJy9zu5dpCAlRAQkJYYAtG9v8EtBTQVkBrAe0/"
+  },
+  {
+    "key": "./Sets/Vidala's Rig/Weapon.d2i",
+    "value": "EAiAAAQI5KoGnbo6Sm4RAVhYRJARUPAfHPQf"
+  },
+  {
+    "key": "./Uniques/Amulets/Atma's Scarab.d2i",
+    "value": "EACAAAVg5FkYOPc/zsQXIkKLiTnMMIOMk0KWu4PCmCBE4T8="
+  },
+  {
+    "key": "./Uniques/Amulets/Crescent Moon.d2i",
+    "value": "EACAAAUg5FkY5ojzOb83HkKCphEKD4OPRxaRo/wH"
+  },
+  {
+    "key": "./Uniques/Amulets/Highlord's Wrath.d2i",
+    "value": "EACAAAVM9FkYnoJo0ccXKEKKdTICD7qg/gTQ0zf8Bw=="
+  },
+  {
+    "key": "./Uniques/Amulets/Mara's Kaleidoscope.d2i",
+    "value": "EACAAI0I4FkYIsDhvccXIAKAkgAlAaUBpRPmUphbYa6FuT/6Dw=="
+  },
+  {
+    "key": "./Uniques/Amulets/Metalgrid.d2i",
+    "value": "EACAAAUM9FkYfodq0Mc37sIE4T6g5cS6FOtWrGuxjhnDBAUFM0uLhYX/"
+  },
+  {
+    "key": "./Uniques/Amulets/Nokozan Relic.d2i",
+    "value": "EACAAAUk5FkYLlfAx8NX6sAJfSgUjAEDWW4M6j8="
+  },
+  {
+    "key": "./Uniques/Amulets/Saracen's Chance.d2i",
+    "value": "EACAAAWA5FkYHMld/8RXKgIAlgAsAawBrBPhUoRbEa5FuGQCE4r/"
+  },
+  {
+    "key": "./Uniques/Amulets/Seraph's Hymn.d2i",
+    "value": "EACAAAXM9FkYZNMQJMcXXEIWy2NEj5E9evHR6494aQDoPw=="
+  },
+  {
+    "key": "./Uniques/Amulets/The Cat's Eye.d2i",
+    "value": "EACAAAWk5FkYrvmwRcJXGoKA3Ac3gCDTBQVG9h8="
+  },
+  {
+    "key": "./Uniques/Amulets/The Eye of Etlich.d2i",
+    "value": "EACAAAVk5FkYdk71H8M37AAIFDYECkDxOGTJPzGk/gM="
+  },
+  {
+    "key": "./Uniques/Amulets/The Mahim-Oak Curio.d2i",
+    "value": "EACAAAWM9FkYTsH/4MAX7gAAlQAqAaoBKggKPlDghLQU0lZIayHtjof/"
+  },
+  {
+    "key": "./Uniques/Amulets/The Rising Sun.d2i",
+    "value": "EACAAAXk5FkY8gjNDb1XHAIMDBhK0CzoJ0pG4SBYZ/wH"
+  },
+  {
+    "key": "./Uniques/Armors/Arkain's Valor.d2i",
+    "value": "EAiAAAUAFM4b/G2DsMbHPoCQh4eAQEvEM0b2R9+I/w=="
+  },
+  {
+    "key": "./Uniques/Armors/Atma's Wail.d2i",
+    "value": "EAiAAAVIhBsc7DbCIMQHN9DJzY0Q8IIAKomMErRJBgVvjMwa9B8="
+  },
+  {
+    "key": "./Uniques/Armors/Black Hades.d2i",
+    "value": "EAiAAAUQhMMbApX1Z8ZHNwiLkZGBgCyL2JkHyh69/gM="
+  },
+  {
+    "key": "./Uniques/Armors/Blinkbat's Form.d2i",
+    "value": "EAiAAAUA9A4vLD5qRHkPKIABDAzxYQQgZMAYMADGM4b3Hw=="
+  },
+  {
+    "key": "./Uniques/Armors/Boneflesh.d2i",
+    "value": "EAiAAAUAZF4T9EwvrcYHFvgDD4+AgGfCCDwKhzL/AQ=="
+  },
+  {
+    "key": "./Uniques/Armors/Corpsemourn.d2i",
+    "value": "EAiAAAUYhL8TdDAZXMGHN2gOD48AgDJABYHWinUwGEgkE5gwMCuUQEH5Dw=="
+  },
+  {
+    "key": "./Uniques/Armors/Crow Caw.d2i",
+    "value": "EAiAAAUghIsb9GGECMSHNUgGCYkQ8IJAq8tozOjQ6D8="
+  },
+  {
+    "key": "./Uniques/Armors/Darkglow.d2i",
+    "value": "EAiAAAUQ9LArpCJUnY2PKbADDQkBgcwECkLInJCGoqSQpqKskMaitJDmomS5/w=="
+  },
+  {
+    "key": "./Uniques/Armors/Duriel's Shell.d2i",
+    "value": "EAiAAAUAlB8KCgr8ZeMDG1RDRkYAeIGA7AS3FNxWcGvBLQlZptYUbMgKff8B"
+  },
+  {
+    "key": "./Uniques/Armors/Goldskin.d2i",
+    "value": "EAiAAAUIRIY38CzaqoqPLcAKIyMBwdKJdSnWrVjXYp0TxRNkWew/"
+  },
+  {
+    "key": "./Uniques/Armors/Greyform.d2i",
+    "value": "EAiAAAUQZBP+QsASrOb4eAIVoJgQAlQfPDBiOMFtBTcehf8="
+  },
+  {
+    "key": "./Uniques/Armors/Guardian Angel.d2i",
+    "value": "EAiAAAUIlF8TJKnTvsOHNugID4+AgIwCheKpeCyeizdlyYJmZPWK/w=="
+  },
+  {
+    "key": "./Uniques/Armors/Hawkmail.d2i",
+    "value": "EAiAAAUYhMQN1WVhIuODChyBhERAILPiGosHxpPpfw=="
+  },
+  {
+    "key": "./Uniques/Armors/Heavenly.d2i",
+    "value": "EAiAAAUg5JoZ2qT0McZHF7ADD48I8IJAZkPGCWkppK2Q1kKaHiN8yPkP"
+  },
+  {
+    "key": "./Uniques/Armors/Iceblink.d2i",
+    "value": "EAiAAAUAlOYNV1CQrePjCqjBw0NAgDIiWGEuCxoK/wE="
+  },
+  {
+    "key": "./Uniques/Armors/Ironpelt.d2i",
+    "value": "EAiAAAUQlBsYHrSmOLwHNSAFCIg4kAMCGRHUCChJnzXsPw=="
+  },
+  {
+    "key": "./Uniques/Armors/Leviathan.d2i",
+    "value": "EAiAAAUIFN4x3OfRlI+PnmAhmBYBQAoCsg+gIBEO0/8="
+  },
+  {
+    "key": "./Uniques/Armors/Que-Hegan's Wisdon.d2i",
+    "value": "EAiAAAXAlJsZmvBT5MbHN4AID48I8IIAaoQyBpUG9SeKBv8B"
+  },
+  {
+    "key": "./Uniques/Armors/Rattlecage.d2i",
+    "value": "EAiAAAUIdBkcitgp6r6HFojEzY2Y0MIHacCZIcr8Bw=="
+  },
+  {
+    "key": "./Uniques/Armors/Rockfleece.d2i",
+    "value": "EAiAAAUIVL5jmExpPR8fWYAOMDACQAkEQSIKEtK2aP0H"
+  },
+  {
+    "key": "./Uniques/Armors/Shaftstop.d2i",
+    "value": "EAiAAAXIlGM2rI04l4yPawCOlhZxgAsEbiD0kTD3Hw=="
+  },
+  {
+    "key": "./Uniques/Armors/Skin of the Flayerd One.d2i",
+    "value": "EAiAAAXQlN8XcA8167/HNJgEB4eA4IvHIYmHktvJg5/yHw=="
+  },
+  {
+    "key": "./Uniques/Armors/Skin of the Vipermagi.d2i",
+    "value": "EAiAAAUAhA8vHK4PF3kPaZAIDAwBAc+I5sS6FOtWrGuxLo3sT/4D"
+  },
+  {
+    "key": "./Uniques/Armors/Skullder's Ire.d2i",
+    "value": "EAiAAAUAlM8b/Ki7fsBHNvCHh4eAgGyEkoTnT+Ap/Kj/"
+  },
+  {
+    "key": "./Uniques/Armors/Sparking Mail.d2i",
+    "value": "EAiAAAUQRGA27MrXN46PKmCFlhYBoUoKczICCgCt/w=="
+  },
+  {
+    "key": "./Uniques/Armors/Spiritforge.d2i",
+    "value": "EAiAAAUQlLMrkBCNvImPanALDQ0D4AUCqBPNYFAEyYLYlP8="
+  },
+  {
+    "key": "./Uniques/Armors/Steel Carapice.d2i",
+    "value": "EAiAAAUABMIbzNuW5ccHV8CRkZGAwG3DgwhnBcExqGQGEwh+xX8="
+  },
+  {
+    "key": "./Uniques/Armors/Templar's Might.d2i",
+    "value": "EAiAAAUEFL4TzpfXNcCHWxgTz4kA8DLgtUAKAjcQLMegeGUA6D8="
+  },
+  {
+    "key": "./Uniques/Armors/The Centurion.d2i",
+    "value": "EAiAAAUQFN8Xfu/7ksZHFBABB4c48CLBy4KXCTJ8QIEIQcmoqfUf"
+  },
+  {
+    "key": "./Uniques/Armors/The Gladiator's Bane.d2i",
+    "value": "EAiAAAUMFBoYSMf3oceHPmAPCIiAgOwDD0RQI6gkZ04oY2RujDL9Dw=="
+  },
+  {
+    "key": "./Uniques/Armors/The Spirit Shroud.d2i",
+    "value": "EAiAAAXIlMNfwItEmgsf0QAQFBQCgqURixL0TzL9Dw=="
+  },
+  {
+    "key": "./Uniques/Armors/Toothrow.d2i",
+    "value": "EAiAAAXQlN8xrOFSjYOPbdAQGBgBQAUCtw9GOHEtyYMT1CHUfw=="
+  },
+  {
+    "key": "./Uniques/Armors/Twitchthroe.d2i",
+    "value": "EAiAAAUQlAwM95L0YONDCrQABEQAUBGgopB9GEEX1BjUfw=="
+  },
+  {
+    "key": "./Uniques/Armors/Tyrael's Might.d2i",
+    "value": "EAiAAATIFL4Tooek1LTHTRgTQADwgWDphLkU5laYa2FuCzIYFJt58GCa6X8="
+  },
+  {
+    "key": "./Uniques/Armors/Venom Ward.d2i",
+    "value": "EAiAAAXAVA8FmYU4zu9hBZ4gIyMgkGkh0sXLYm6M/gM="
+  },
+  {
+    "key": "./Uniques/Armors/Victors Silk.d2i",
+    "value": "EAiAAAUU5L0T2FhtPcYHF6AHD4+AgMdHIYv9yX8="
+  },
+  {
+    "key": "./Uniques/Belts/Arachnid Mesh.d2i",
+    "value": "EACAAA0iAF4RVOjtYcNHXUgCwwIIeJo8aVB/YknBbLBoYeE/"
+  },
+  {
+    "key": "./Uniques/Belts/Bladebuckle.d2i",
+    "value": "EACAAAWMBOsNve0+Kt+DDlgAYwKAEgEqCGQ+oEDE4AQxRvYf"
+  },
+  {
+    "key": "./Uniques/Belts/Gloomstrap.d2i",
+    "value": "EACAAAXgZMNqMGhTlAYf9GAGEA8GvCBY2vDgo9AkyxL/AQ=="
+  },
+  {
+    "key": "./Uniques/Belts/Goldwrap.d2i",
+    "value": "EACAAAVMxOgNzcwspOFjDkRAogEEHh9G8IQWFMEs1sXzHw=="
+  },
+  {
+    "key": "./Uniques/Belts/Lenyms.d2i",
+    "value": "EACAAAXA5OoNgfH4SeMDDjCAIUGClw0eJ5qlaLaiWYtmWeo/"
+  },
+  {
+    "key": "./Uniques/Belts/Nightsmoke.d2i",
+    "value": "EACAAAUMxOoNFl+ms+NDDkAAAkECGggyPmRAhHBCWgppK6S1kCZH/g8="
+  },
+  {
+    "key": "./Uniques/Belts/Nosferatu's Coil.d2i",
+    "value": "EACAAAVAFe5E+N7tLvgedqEIDgcAvPA4ZIkuHkUCS4r/"
+  },
+  {
+    "key": "./Uniques/Belts/Razortail.d2i",
+    "value": "EACAAAXYZGOngT/y/2B8zIMXODgQ8IJgyYICg+JDBjiFQCncof8="
+  },
+  {
+    "key": "./Uniques/Belts/Snakecord.d2i",
+    "value": "EACAAAXIZKc3aDjxh4CPOOAAhwMQPHygQItwOVBAYYmS0Y3Rfw=="
+  },
+  {
+    "key": "./Uniques/Belts/Snowclash.d2i",
+    "value": "EACAAAXQZMNo2OXnsBkf9aAGEhIgqGLxbDRUWFpzY2t2aA0PVXoko3Yo/Ac="
+  },
+  {
+    "key": "./Uniques/Belts/String of Ears.d2i",
+    "value": "EACAAAXAZONqECD2Lh0f8qAFDAwg0PqQgREPiWs8EEkU/gM="
+  },
+  {
+    "key": "./Uniques/Belts/Thundergod's Vigor.d2i",
+    "value": "EACAAAUIZANrKJ+FEQYf9uAHGBgA0AygQUCmQskIZFgjYmtGLBIl2ZFH4T8="
+  },
+  {
+    "key": "./Uniques/Belts/Verdungo's Hearty Cord.d2i",
+    "value": "EACAAAWAFVoRwGe4N8YHXmAChIIByAWYEBiRuKZkHeP5Dw=="
+  },
+  {
+    "key": "./Uniques/Boots/Goblin Toe.d2i",
+    "value": "EACAAAXA1KgJcUO18+PDDVhAggEEHh8yICIYEWQZRJn/"
+  },
+  {
+    "key": "./Uniques/Boots/Gorefoot.d2i",
+    "value": "EACAAAXIdKcmgBusQ4UPNhABBwQQPHywgA+BkwMY1BpCYkT4Dw=="
+  },
+  {
+    "key": "./Uniques/Boots/Gorerider.d2i",
+    "value": "EACAAAUAhGMNIOgXWuMjHgABA8MCGgjIkihsWQIjO6RA9Gj0+A8="
+  },
+  {
+    "key": "./Uniques/Boots/Hotspur.d2i",
+    "value": "EACAAAXQ9KoJQDRTAt9jDTiAwcCBFxAofIDAiXooHowBA/8B"
+  },
+  {
+    "key": "./Uniques/Boots/Infernostride.d2i",
+    "value": "EACAAAWAhF8NnbPA8uOjHbiAgQEESx8ycMIcCgWDIcQTVVkMDCoZ4kLhPw=="
+  },
+  {
+    "key": "./Uniques/Boots/Marrowwalk.d2i",
+    "value": "EACAAAVQFVoNTZZh2uNDLjgBAgIAGgExCMg2KHBQAINaU0R2MmOkUFBgFmLR0PAf"
+  },
+  {
+    "key": "./Uniques/Boots/Sandstorm Trek.d2i",
+    "value": "EACAAAUIBO40AAAAAIyPuLAEBwcAXga8IKhq4RAMagxKk1Eewq/4Dw=="
+  },
+  {
+    "key": "./Uniques/Boots/Shadowdancer.d2i",
+    "value": "EACAAE0mAGINP/d2kuOjJkgBA4OAHAQyW6DAyMbIeMUA6D8="
+  },
+  {
+    "key": "./Uniques/Boots/Silkweave.d2i",
+    "value": "EACAAAUIhFsNWV3yBd/jHdwAAgIEXyCQNaHAyBQV/gM="
+  },
+  {
+    "key": "./Uniques/Boots/Tearhaunch.d2i",
+    "value": "EACAAAVAFasJlLwp1t/jDWgAwwGAEgElCFA+tOCEtBTSVkhrIQ0Mas0c/Qc="
+  },
+  {
+    "key": "./Uniques/Boots/Treads of Cthon.d2i",
+    "value": "EACAAAVI1aoJ/ed7O9+jDVAAYsEBFRBQfLAACBlgZJqM/wE="
+  },
+  {
+    "key": "./Uniques/Boots/Wartraveler.d2i",
+    "value": "EACAAAWIhBsNpizGb+IDHuhAQgIAlQEqCL4qPBYyFx4MmSQeThRQLMG0NPE+PaAy/wE="
+  },
+  {
+    "key": "./Uniques/Boots/Waterwalk.d2i",
+    "value": "EACAAAUQhO80+J0GFYsPdyADhwUCXgfCLECCII2DDAgyKAoY1H8="
+  },
+  {
+    "key": "./Uniques/Charms/Annihilus.d2i",
+    "value": "EACAAAVARNhPOFKS4Qzc6AsAaALQBNAG0E5wS8FtBbcW3Krw+JP/"
+  },
+  {
+    "key": "./Uniques/Charms/Gheed's Fortune.d2i",
+    "value": "EACAAAUAVNhtsPfzHhTcOAtPCEJhvPL4Dw=="
+  },
+  {
+    "key": "./Uniques/Charms/Bone Break.d2i",
+    "value": "Sk0QAIAAZQAAOtY2A4LJJf+P65XKQOIVMJb+Aw=="
+  },
+  {
+    "key": "./Uniques/Charms/Black Cleft.d2i",
+    "value": "Sk0QAIAAZQACOtY2AwI/eSW36wXLUMJSMJb+Aw=="
+  },
+  {
+    "key": "./Uniques/Charms/Crack of the Heavens.d2i",
+    "value": "Sk0QAIAAZQAEOtY2A4J/Ae7i65XJkKKPL5b+Aw=="
+  },
+  {
+    "key": "./Uniques/Charms/Cold Rupture.d2i",
+    "value": "Sk0QAIAAZQAGOtY2A4KWmQ2U64XIsKLPLpb+Aw=="
+  },
+  {
+    "key": "./Uniques/Charms/Flame Rift.d2i",
+    "value": "Sk0QAIAAZQAIOtY2A4JNVvDY6xXJcKJPL5b+Aw=="
+  },
+  {
+    "key": "./Uniques/Charms/Rotting Fissure.d2i",
+    "value": "Sk0QAIAAZQAKOtY2A4JlqDWE6wXK0KLPL5b+Aw=="
+  },
+  {
+    "key": "./Uniques/Class-Items/Ama/Amazon Torch.d2i",
+    "value": "EACAAAQARFgmBAw+JHEvQAYANAFoAmgDaCe4peC2glsLblOwLGxMKSbDzPNBQeE/"
+  },
+  {
+    "key": "./Uniques/Class-Items/Ama/Bloodraven's Charge.d2i",
+    "value": "EAiAAAUQ5FkNChoP2OGDKcDAiAjmzN0B6qnBCwCAzIovPDz+Aw=="
+  },
+  {
+    "key": "./Uniques/Class-Items/Ama/Lycander's Aim.d2i",
+    "value": "EAiAAAUA5FkfAAAAAMaHRri5EQFoAmgQKERAhuxChkHmAzEF6oLiBQCg/w=="
+  },
+  {
+    "key": "./Uniques/Class-Items/Ama/Lycander's Flank.d2i",
+    "value": "ECiAAAUA5FkXTh+M7GXHRshoEABoBtAgUIiADNmFDIOMR2IK1EXGSwBA/wE="
+  },
+  {
+    "key": "./Uniques/Class-Items/Ama/Thunderstroke.d2i",
+    "value": "EACAAAUE5Fk52FxqDYYPqWBgAEoEZMhkBP91Ga2hMF4CADTmxEBx+vAf"
+  },
+  {
+    "key": "./Uniques/Class-Items/Ama/Titan's Revenge.d2i",
+    "value": "EACAAAUE5NkXAAAAAMZHRjAwwAgAjQBaBGTIKmQWZDwSUyAwsk8ZKBkvAQD18/zx/Ac="
+  },
+  {
+    "key": "./Uniques/Class-Items/Assa/Assassin Torch.d2i",
+    "value": "EACAAASIRFgmcPW8hXEvQAYANAFoAmgDaCe4peC2glsLblO8LGxMKSbDzPNBQeE/"
+  },
+  {
+    "key": "./Uniques/Class-Items/Assa/Bartuc's Cutthroat.d2i",
+    "value": "EAiAAAQIxBkQMLeRxbSHRygqEgBoBNAiIENWIbMg45GYYnE5jJHdQcFLBiD/AQ=="
+  },
+  {
+    "key": "./Uniques/Class-Items/Assa/Jadetalon.d2i",
+    "value": "EACAAAUUxAMNdzHomeODJuCkiAAP3gl9KfSt0NdCn4/HGBmvGADxkgHQfw=="
+  },
+  {
+    "key": "./Uniques/Class-Items/Barb/Arreat's Face.d2i",
+    "value": "EAiAAAUARN8Lh4Sa7ODjIgzi5kYAoBFAg4DshLkU5laYa2GOh2EKNUZ2BwUvEAD9Bw=="
+  },
+  {
+    "key": "./Uniques/Class-Items/Barb/Barbarian Torch.d2i",
+    "value": "EACAAAQIVFgmrOwNuHAvQAYANAFoAmgDaCe4peC2glsLblO4LGxMKSbDzPNBQeE/"
+  },
+  {
+    "key": "./Uniques/Class-Items/Barb/Demonhorn's Edge.d2i",
+    "value": "EAiAAAWURN8Ygrg/W8ZHUThFy4eAAIqHwUmzi4cXCMB4hQCMlwjA/gM="
+  },
+  {
+    "key": "./Uniques/Class-Items/Barb/Halaberd's Reign.d2i",
+    "value": "EAiAAAUIRN8QiEi9P8FHWlCFjIyAoEpJPYUag1pTSWs2iVcIQP4D"
+  },
+  {
+    "key": "./Uniques/Class-Items/Barb/Wolfhowl Fury.d2i",
+    "value": "EAiAAAUQRJ8IZN90EoJjLIRiZEQAeBHwGvCCYCnMNyMMOCMMOoOXCMCYPe1ISPwH"
+  },
+  {
+    "key": "./Uniques/Class-Items/Dru/Cerebus' Bite.d2i",
+    "value": "EAiAAAWUZDwaDHatpbyHTeAEBYSAwIiHYg063WF0KMQrBYD/AQ=="
+  },
+  {
+    "key": "./Uniques/Class-Items/Dru/Druid Torch.d2i",
+    "value": "EACAAARkRFgmrOwNuHAvQAYANAFoAmgDaCe4peC2glsLblO6LGxMKSbDzPNBQeE/"
+  },
+  {
+    "key": "./Uniques/Class-Items/Dru/Jalal's Mane.d2i",
+    "value": "EAiAAAUMZDwvfK3EMnuPj8AGCgoBgCYADQKyE+ZSmFthroW5KRWXwxjZHRSKCrxSAPQf"
+  },
+  {
+    "key": "./Uniques/Class-Items/Dru/Ravenlore.d2i",
+    "value": "EAiAAAWUZDxDON4ppAUfXsEUFA0igA+CpRPhUoRbEa5FuDXdzksFYE0p/gM="
+  },
+  {
+    "key": "./Uniques/Class-Items/Dru/Spiritkeeper.d2i",
+    "value": "EAiAAAWcZDxjcHpa9R8fR2EUFBACgq8T8FyoKdUYVCQHpcx/"
+  },
+  {
+    "key": "./Uniques/Class-Items/Necro/Arm of King Leoric.d2i",
+    "value": "EAiAAAWExCkIx7l/yOCjETw8iDSeNUW2xsjWNNEaKOIVASBeEgBKJmChSKZ0Ucim/Ac="
+  },
+  {
+    "key": "./Uniques/Class-Items/Necro/Boneflame.d2i",
+    "value": "EAiAAAWUhB2GcNGqdys4qkInKBoEBEsnzKUwt8JcC3NTNDCoZEMTj/8="
+  },
+  {
+    "key": "./Uniques/Class-Items/Necro/Boneshade.d2i",
+    "value": "EAiAAAWgxCsIfWR9j+DjK0QsiClSmtaaIV1DpGucbA2Vremi/w=="
+  },
+  {
+    "key": "./Uniques/Class-Items/Necro/Darkforge Spawn.d2i",
+    "value": "EAiAAAWUhB3kQCPHVT0+lMInKBwEBFpNqDQyXhAA4xUBMF4SAPsP"
+  },
+  {
+    "key": "./Uniques/Class-Items/Necro/Deaths's Web.d2i",
+    "value": "EAiAAAVkxC8QGIqOjMbHSpCAEFYYf6SIwSsCQFBl/gM="
+  },
+  {
+    "key": "./Uniques/Class-Items/Necro/Homunculus.d2i",
+    "value": "EAiAAAWMhB1e+BIwMBccGAEKFBQiAA0CMgrohpAT8FLAWwGvBbwpEpeDGZmiAi8IAP0H"
+  },
+  {
+    "key": "./Uniques/Class-Items/Necro/Necromancer Torch.d2i",
+    "value": "EACAAAQQVFgmrOwNuHAvQAYANAFoAmgDaCe4peC2glsLblO0LGxMKSbDzPNBQeE/"
+  },
+  {
+    "key": "./Uniques/Class-Items/Pala/Alma Negra.d2i",
+    "value": "EAiAAAUQdD4RzD8eFr5HUngFkZCAIC3CkiUUqBHJlMmM7M6X/w=="
+  },
+  {
+    "key": "./Uniques/Class-Items/Pala/Astreon's Ironward.d2i",
+    "value": "EAiAAAUgxAMKeA57nuODLxixiAgiRYo4aEDB6+J5k+YON0QhSxleGAD8Dw=="
+  },
+  {
+    "key": "./Uniques/Class-Items/Pala/Dragonscale.d2i",
+    "value": "EAiAAAUIdL4hZHK00I+PrcCMoCABIAcCMhQFxvTcMD4UR5SkQf4D"
+  },
+  {
+    "key": "./Uniques/Class-Items/Pala/Herald of Zakarum.d2i",
+    "value": "EAiAAAQQZD4XJt/KwLRHR5iFjIwAQDOABgEZBe+EvhT6VuhroW/KZEZ2BwUvDAD9Bw=="
+  },
+  {
+    "key": "./Uniques/Class-Items/Pala/Paladin Torch.d2i",
+    "value": "EACAAATAVFgmrOwNuHAvQAYANAFoAmgDaCe4peC2glsLblO2LGxMKSbDzPNBQeE/"
+  },
+  {
+    "key": "./Uniques/Class-Items/Sorc/Death's Fathom.d2i",
+    "value": "EAiAAAUA5K9y0PEPXRgfYkFGRpyAlwLelCwNaimU/w=="
+  },
+  {
+    "key": "./Uniques/Class-Items/Sorc/Eschutas Temper.d2i",
+    "value": "EAiAAAUA5K8i3FmiIoyPt+DBIQL4pmRpeEmNKDXyHw=="
+  },
+  {
+    "key": "./Uniques/Class-Items/Sorc/Ormus' Robes (Blizzard).d2i",
+    "value": "EAiAAAXAFMJf2OM7IQ0fZgE7FBRiw8MHD6RBrdmxpEGUBlka5D8="
+  },
+  {
+    "key": "./Uniques/Class-Items/Sorc/Ormus' Robes (CL).d2i",
+    "value": "EAiAAAUAFMJf2OM7IQ0fZgE7FBRiw8MHD6RBramxpEGUBlka5D8="
+  },
+  {
+    "key": "./Uniques/Class-Items/Sorc/Ormus' Robes (FB).d2i",
+    "value": "EAiAAAUIFMJf2OM7IQ0fZgE7FBRiw8MHD6RBrXmxpEGUBlka5D8="
+  },
+  {
+    "key": "./Uniques/Class-Items/Sorc/Ormus' Robes (Fire Mast).d2i",
+    "value": "EAiAAAUQFMJf2OM7IQ0fZgE7FBRiw8MHD6RBremxpEGUBlka5D8="
+  },
+  {
+    "key": "./Uniques/Class-Items/Sorc/Ormus' Robes (Lightning).d2i",
+    "value": "EAiAAAUAFMJf2OM7IQ0fZgE7FBRiw8MHD6RBrYmxpEGUBlka5D8="
+  },
+  {
+    "key": "./Uniques/Class-Items/Sorc/Ormus' Robes (Meteor).d2i",
+    "value": "EAiAAAXIFMJf2OM7IQ0fZgE7FBRiw8MHD6RBrcGxpEGUBlka5D8="
+  },
+  {
+    "key": "./Uniques/Class-Items/Sorc/Ormus' Robes (Orb).d2i",
+    "value": "EAiAAAXQFMJf2OM7IQ0fZgE7FBRiw8MHD6RBrQGypEGUBlka5D8="
+  },
+  {
+    "key": "./Uniques/Class-Items/Sorc/Sorceress Torch.d2i",
+    "value": "EACAAATEVFgmrOwNuHAvQAYANAFoAmgDaCe4peC2glsLblOyLGxMKSbDzPNBQeE/"
+  },
+  {
+    "key": "./Uniques/Class-Items/Sorc/The Oculus.d2i",
+    "value": "EAiAAAVk5K8vVP5tno4PjiCjIgLQBtAgUDjBLQW3FdxacINiOSVLI1NUSBbYkPkP"
+  },
+  {
+    "key": "./Uniques/Gloves/Bloodfist.d2i",
+    "value": "EACAAAUAZLduAPTO6x8fZyACDg4OIIFAoUJxofhAgS6eMbJPxX8="
+  },
+  {
+    "key": "./Uniques/Gloves/Chance Guards.d2i",
+    "value": "EACAAAWAxK4bEgeGJbwHGqAABAQIHiZk8CEDT1hCYcxi/wE="
+  },
+  {
+    "key": "./Uniques/Gloves/Dracul's Grasp.d2i",
+    "value": "EACAAAVIFe5WcGMICxwfbIEJDg4AvEDAw0NhRXEoY0yRovAf"
+  },
+  {
+    "key": "./Uniques/Gloves/Frostburn.d2i",
+    "value": "EACAAAUIBK8bOJ00wLyHGtAABgYIFCIUKPABBTYCDMg0kf8D"
+  },
+  {
+    "key": "./Uniques/Gloves/Ghoulhide.d2i",
+    "value": "EACAAAUAhNsVRIvrh8eHOrgBBIQDNCD48lGgB9mD/gM="
+  },
+  {
+    "key": "./Uniques/Gloves/Gravepalm.d2i",
+    "value": "EACAAAUAhO9WGPbpVxMf6UAGDg4AqARQQaClhxsfpP4D"
+  },
+  {
+    "key": "./Uniques/Gloves/Hellmouth.d2i",
+    "value": "EACAAAUIhOMVeOisbMcHOwACBgYIyGA8IEny8OhhjMBBYIwJh/Af"
+  },
+  {
+    "key": "./Uniques/Gloves/Lavagout.d2i",
+    "value": "EACAAAWIhJsV7len38fHOtCBhAQIyE6Ag9HgIglFF5SdxhQaBP8B"
+  },
+  {
+    "key": "./Uniques/Gloves/Magefist.d2i",
+    "value": "EACAAAWQ1awbplhYLsBHGrCAxAMIHjZkfKAAjAADaVB+kv8="
+  },
+  {
+    "key": "./Uniques/Gloves/Souldrain.d2i",
+    "value": "EACAAAUIBNoVfqofEb4HTnACBAQIeHgcfBzwOI0NSCD+Aw=="
+  },
+  {
+    "key": "./Uniques/Gloves/Steelrend.d2i",
+    "value": "EACAAAXQFOIVpDuJe8bHYUgCBgUANBF48PjADUSK/w=="
+  },
+  {
+    "key": "./Uniques/Gloves/The Hand of Broc.d2i",
+    "value": "EACAAAWI5K4byto4tb+HGXAAA4MENBAofKBAC2k8Bj4G/wE="
+  },
+  {
+    "key": "./Uniques/Gloves/Venom Grip.d2i",
+    "value": "EACAAAUQhN8V4N6T5MYHOnABAwMIoD6MoIU5FyVHJpmQ4VFAVPgP"
+  },
+  {
+    "key": "./Uniques/Helmets/Andariel's Visage.d2i",
+    "value": "EAiAAAUIBJIUQkQR6MdHVigFBYUA4APB0glVLRy6UDwUXVB/lOzh4sFssIiC4j8="
+  },
+  {
+    "key": "./Uniques/Helmets/Biggin's Bonnet.d2i",
+    "value": "EAiAAAUQRLwZBpq7uL3HEXgAA4M48CLBSwQPHiZ48AED/wE="
+  },
+  {
+    "key": "./Uniques/Helmets/Blackhorn's Face.d2i",
+    "value": "EAiAAAUAhJMUVM21hMTHMwgDBYWAwC3FtToBQDkSxRLlPw=="
+  },
+  {
+    "key": "./Uniques/Helmets/Coif of Glory.d2i",
+    "value": "EAiAAAWQBF8bJuVDw8dHEsgABob4QAEQZFJcixMAdP4D"
+  },
+  {
+    "key": "./Uniques/Helmets/Crown of Ages.d2i",
+    "value": "EAiAAAVYBB428KJJn4wPrAALGRgCQcYHUJC4dsJcCnMrzLUwN0b2J5j+Bw=="
+  },
+  {
+    "key": "./Uniques/Helmets/Crown of Thieves.d2i",
+    "value": "EAiAAAWAhB82EMk5z4oPZ8AHGRkhIHdASoIhCMhOpOPBeILsPw=="
+  },
+  {
+    "key": "./Uniques/Helmets/Darksight Helm.d2i",
+    "value": "EAiAAAUIhOMbpt8eicYHM7iCh4c4Ac9HIQtkmmw4wsCsQMjDwxr0Hw=="
+  },
+  {
+    "key": "./Uniques/Helmets/Duskdeep.d2i",
+    "value": "EAiAAAUYRMY33I+nA44PJVACDw8BQYYFBAbEBw+IOE5cS3FtxbUW17IIKMR/"
+  },
+  {
+    "key": "./Uniques/Helmets/Giantskull.d2i",
+    "value": "EAiAAAUIBGIX4hLzzr/HXjAECgoBMPRBKVECiBT/AQ=="
+  },
+  {
+    "key": "./Uniques/Helmets/Griffon's Eye.d2i",
+    "value": "EAiAAAWQRPy2QbhwoEx8QAUeUEiID9JI0/oTpUacUvwH"
+  },
+  {
+    "key": "./Uniques/Helmets/Harlequin Crest (Shako).d2i",
+    "value": "EAiAAAUEBL4ZhKd5GMYHPrgEA4MAIBJAJEA0QERCGhTLP8LGZGP+Aw=="
+  },
+  {
+    "key": "./Uniques/Helmets/Howltusk.d2i",
+    "value": "EAiAAAWYZGEbxvErGMIHE3ABCoqAAGWE4GQQJQAHJGf8Dw=="
+  },
+  {
+    "key": "./Uniques/Helmets/Kira's Guardian.d2i",
+    "value": "ECiAAAQMRPyYsB1PKqQ9ygIPMjLEB0GccJjC4QqHLRxmOgb1Hw=="
+  },
+  {
+    "key": "./Uniques/Helmets/Nightwing's Veil.d2i",
+    "value": "EAiAAAUEBGIbrOmajb7HVVAFyogQQIOAZ4uMnX9UKbE0yH8="
+  },
+  {
+    "key": "./Uniques/Helmets/Peasent Crown.d2i",
+    "value": "EAiAAAWIhL8ZLjPu/8dHMgACA4MIQBtAg0BGiQpm9Cf/AQ=="
+  },
+  {
+    "key": "./Uniques/Helmets/Rockstopper.d2i",
+    "value": "EAiAAAUQhEszAKpXv4wPZZAECQkx4AWBGwlpJ/SlgLcC3hjZfw=="
+  },
+  {
+    "key": "./Uniques/Helmets/Stealskull.d2i",
+    "value": "EAiAAAWQhF8bLHwVNb3HMpgCBoaAAI9HwUcBimUXzxjPfw=="
+  },
+  {
+    "key": "./Uniques/Helmets/Steelshade.d2i",
+    "value": "EAiAAAUQBF4b0unNqsJHSgAFBoaAIMgHQgn8aPEf"
+  },
+  {
+    "key": "./Uniques/Helmets/Tarnhelm.d2i",
+    "value": "EAiAAAUghKQZ5mqudccHEqiAhIR48gqK5Z/8Bw=="
+  },
+  {
+    "key": "./Uniques/Helmets/The Face of Horror.d2i",
+    "value": "EAiAAAWgxJIUgqvZor+HE+AABYUAQPNhBCekpZC2QloLaXB+eoz8Bw=="
+  },
+  {
+    "key": "./Uniques/Helmets/Undead Crown.d2i",
+    "value": "EAiAAAUAVBw2SGgybo+PJoADGRkBgccHGbTQx6Owpsjs1GOEDzn/AQ=="
+  },
+  {
+    "key": "./Uniques/Helmets/Valkiry Wing.d2i",
+    "value": "EAiAAAUYhGMbYtmf+bxHM2gDCoqAgGwKBAY1BqWI8B8="
+  },
+  {
+    "key": "./Uniques/Helmets/Vampiregaze.d2i",
+    "value": "EAiAAAWYhGMXuuHlh8cHNEAECoqAQGYEReKaDQMLZDwQPhCaRv8B"
+  },
+  {
+    "key": "./Uniques/Helmets/Veil of Steel.d2i",
+    "value": "ECiAAAQYBGIbLqr8MLVHPlAFCo84oS+FvhX6WuiDwAPAy4BXFkhC8cES/wE="
+  },
+  {
+    "key": "./Uniques/Helmets/Wormskull.d2i",
+    "value": "EAiAAAUIVLENzsvH++NjCbAABUUkUGkRLocZZiDjUZii/Ac="
+  },
+  {
+    "key": "./Uniques/Jewels/Rainbow Facet (Fire) (Die).d2i",
+    "value": "EACAAAVIFd0AghGR0vH4kmKAEdGi2IcDOemNpgX/AQ=="
+  },
+  {
+    "key": "./Uniques/Jewels/Rainbow Facet (Fire) (Lvl).d2i",
+    "value": "EACAAAUQBN0AAqmRl17hgmOAEdHiWOcCOemNpgX/AQ=="
+  },
+  {
+    "key": "./Uniques/Jewels/Rainbow Facet (Cold) (Die).d2i",
+    "value": "EACAAAUQFN0AAkhGiZDgVmKwgWFioFi5A3npjacF/wE="
+  },
+  {
+    "key": "./Uniques/Jewels/Rainbow Facet (Cold) (Lvl).d2i",
+    "value": "EACAAAVQBN0AAv/gnZfgQmOwgWFi4NjKAnnpjacF/wE="
+  },
+  {
+    "key": "./Uniques/Jewels/Rainbow Facet (Lightning) (Die).d2i",
+    "value": "EACAAAVUFN0AAibUJJ/gFmKQEShR7K2BrPSG04L/"
+  },
+  {
+    "key": "./Uniques/Jewels/Rainbow Facet (Lightning) (Lvl).d2i",
+    "value": "EACAAAUUBN0AgswA41jgAmOQEShxLIWBrPSG04L/"
+  },
+  {
+    "key": "./Uniques/Jewels/Rainbow Facet (Poison) (Die).d2i",
+    "value": "EACAAAUcBN0AAjH47azg0mLIscsuMorNXJCZ3oBa8B8="
+  },
+  {
+    "key": "./Uniques/Jewels/Rainbow Facet (Poison) (Lvl).d2i",
+    "value": "EACAAAVUBN0AArRoBeD4wmPIscsuMo5dFpGZ3oBa8B8="
+  },
+  {
+    "key": "./Uniques/Rings/Bul Katho's Wedding Band.d2i",
+    "value": "EACAAAUI9fzYcN4XpB++xBAWSPEo/Ak24j8="
+  },
+  {
+    "key": "./Uniques/Rings/Carrion Wind.d2i",
+    "value": "EACAAAXI9PzYgBH+EfS9oBdAgGrxj0dCjmKsgQeRTOFCwazy5uHhPw=="
+  },
+  {
+    "key": "./Uniques/Rings/Dwarf Star.d2i",
+    "value": "EACAAAUA5PzYoHtILja+JBEOIFmAxOFhxPMEmaPHfw=="
+  },
+  {
+    "key": "./Uniques/Rings/Manald Heal.d2i",
+    "value": "EACAAAWA5PzYQMNNJSO+kgcO0NhA4eOgxPwP"
+  },
+  {
+    "key": "./Uniques/Rings/Nagelring.d2i",
+    "value": "EACAAAVA5PzYABLsZTy+gAcmLDFicDKAIvgf"
+  },
+  {
+    "key": "./Uniques/Rings/Nature's Peace.d2i",
+    "value": "EACAAAWI9PzYoPYB9/K9xBJELC3MsVknwKwQZ2PjPw=="
+  },
+  {
+    "key": "./Uniques/Rings/Raven Frost.d2i",
+    "value": "EACAAAVI9PzY8PjDHgW+MhEE0BIgTdDHxkMLMkqUTP8D"
+  },
+  {
+    "key": "./Uniques/Rings/Stone of Jordan.d2i",
+    "value": "EACAAM0d4PzYINVmPDW+ogcS0MgIGGgy/sl/"
+  },
+  {
+    "key": "./Uniques/Rings/Wisp Projector.d2i",
+    "value": "EACAAAUI9PzYwBKMXvW98ROg4EGiGINiUDATxHl4YFaw09DA7LBnYeE/"
+  },
+  {
+    "key": "./Uniques/Shields/Blackoak Shield.d2i",
+    "value": "EAiAAAWABNob/JNO0L8HPzAElYuAgCxJixmjnckKJAjYlG6EuuI/"
+  },
+  {
+    "key": "./Uniques/Shields/Bverrit Keep.d2i",
+    "value": "EAiAAAUAxPxBMBcbuA8fZIAEPDwCQAkEPBSUDygYUZyYmITsPw=="
+  },
+  {
+    "key": "./Uniques/Shields/Headhunter's Glory.d2i",
+    "value": "EAiAAAUQBBIO5rGB8uLDMLBCqcR8cA0IryfMtYBn5fAf"
+  },
+  {
+    "key": "./Uniques/Shields/Kerke's Sanctuary.d2i",
+    "value": "EAiAAAUAhP9BkJBr4Bwf5CALSEgCAjwKnghohHTCXApzK8y1MJeETEn7Hw=="
+  },
+  {
+    "key": "./Uniques/Shields/Lance Guard.d2i",
+    "value": "EAiAAAUIhE8ppGQgHo+Pc5CFmxtxQAoEPE5eY2RynkaU/w=="
+  },
+  {
+    "key": "./Uniques/Shields/Lidless Wall.d2i",
+    "value": "EAiAAAVAlRMO4/RNleHDHITCKEgEUEEQ1ITKUmlQf6Ko8B8="
+  },
+  {
+    "key": "./Uniques/Shields/Medusa's Gaze.d2i",
+    "value": "EAiAAAUYBP5BCDBbUfAeXYEVXDUCAq0VGHkkLFGKsTCQkx1bKP4D"
+  },
+  {
+    "key": "./Uniques/Shields/Mosers Blessed Circle.d2i",
+    "value": "EAiAAAUYhNsbYIEK8sNHOBACEBCBwI1CdiJcinArwrUIZ0b2Hw=="
+  },
+  {
+    "key": "./Uniques/Shields/Pelta Lunata.d2i",
+    "value": "EAiAAAUIRKEI5mlP7+DDC0SAgUEAEAmgGqCCgIIC9QEFSRjM8P4D"
+  },
+  {
+    "key": "./Uniques/Shields/Radimant's Sphere.d2i",
+    "value": "EAiAAAUghBsKaiQ7DOGjHKABikxAQEaBajExBzPMkElCYQaVrOCiwMyYAgXlPw=="
+  },
+  {
+    "key": "./Uniques/Shields/Spike Thorn.d2i",
+    "value": "EAiAAAUYBE4pnHR1Qo6PteCKqSkBwRIJbkn0x8jcrf8="
+  },
+  {
+    "key": "./Uniques/Shields/Spirit Ward.d2i",
+    "value": "EAiAAAUgBBoKcvnSMOODLNSCjExAoEXBOwEvBbwV8FrAM9OqtEiGLFT4Dw=="
+  },
+  {
+    "key": "./Uniques/Shields/Steelclash.d2i",
+    "value": "EAiAAAUMRPqZoPc8COc9xkAHPDwEBDIUsg8eEDGcuJbi2oprLa4loZiyZDkzqP8="
+  },
+  {
+    "key": "./Uniques/Shields/Stormchaser.d2i",
+    "value": "EAiAAAUAlJ8VHtp2rceHOECCj4+AwG2CJRSoFPpkBDyY8diZzNiBkKyoh/Af"
+  },
+  {
+    "key": "./Uniques/Shields/Stormguild.d2i",
+    "value": "EAiAAAUQ5J4VFtB7gcYHGMgABoaAwIOC9wEFI4IU4WQEBiR5ADT+Aw=="
+  },
+  {
+    "key": "./Uniques/Shields/Stormshield.d2i",
+    "value": "EAiAAAUgBP5MEFE59xUf/YASVkECgA+FjMS6FOFWEDRzA6Qwteb9Bw=="
+  },
+  {
+    "key": "./Uniques/Shields/Swordback Hold.d2i",
+    "value": "EAiAAAUYhKYUQEoSP8WHGCABCoqAwIMC9YECThSHZIwI/wE="
+  },
+  {
+    "key": "./Uniques/Shields/The Ward.d2i",
+    "value": "EAiAAAUgZBkKuhCjG+OjDLgABUUAUIFAhoLyQQYjhBP6Uuhboa+Fvv8="
+  },
+  {
+    "key": "./Uniques/Shields/Tiamat's Rebuke.d2i",
+    "value": "EAiAAAUIlP9MGPvN+Pwe48AJTEwCArIT6VKkW5GuRToYI19kBHjY2KhhmQQlWcJCIdkBQyGZ4cPgPw=="
+  },
+  {
+    "key": "./Uniques/Shields/Umbral Disk.d2i",
+    "value": "EAiAAAUAlOwNMxY1yeHjC1QAAkIIUB2gAUEGBe8DCpI8ZJE4gf8="
+  },
+  {
+    "key": "./Uniques/Shields/Visceratuant.d2i",
+    "value": "EAiAAAWYhEMROmebSMAHOOABEZGAYImCNyUxIwOk/gM="
+  },
+  {
+    "key": "./Uniques/Shields/Wall of the Eyeless.d2i",
+    "value": "EAiAAAUIVAmHbh686/ARBlKAgiIgoPhAgRbcfAzSoBQV/gM="
+  },
+  {
+    "key": "./Uniques/Weapons/Axe/Elite/Cranebeak.d2i",
+    "value": "EAiAAAUA1NsZbDpNysXHX9DQEBFYspQRxATFsguPToYZ0s3Dw38="
+  },
+  {
+    "key": "./Uniques/Weapons/Axe/Elite/Deathcleaver.d2i",
+    "value": "EAiAAAUI1IMX2FBXnMeHTtDQEBEwYrSS6MKjE2ok/A8="
+  },
+  {
+    "key": "./Uniques/Weapons/Axe/Elite/Ethereal Edge.d2i",
+    "value": "EAiAAAUQ1OsLe1+hlOODKIyMiAi0aE3wqksrD7dFikcMTP8D"
+  },
+  {
+    "key": "./Uniques/Weapons/Axe/Elite/Executioner's Justice.d2i",
+    "value": "EAiAAAXA1K9fQJN7pvAeO0FGRkQQKbKLjE4IUYaYcYXsPw=="
+  },
+  {
+    "key": "./Uniques/Weapons/Axe/Elite/Hellslayer.d2i",
+    "value": "EAiAAAXI1KsJsGY7mOHDH6CgiAM5IpAhA8NS3zDqBcU2jBvxjfgP"
+  },
+  {
+    "key": "./Uniques/Weapons/Axe/Elite/Messerschmidt's Reaver.d2i",
+    "value": "EAiAAAXQ1K8XeuHZXsbHP5CREQBeArwEvAa8IiBDBoMCXpKMO3i2Uf8B"
+  },
+  {
+    "key": "./Uniques/Weapons/Axe/Elite/Razoredge.d2i",
+    "value": "EAiAAAUAxOMXbnQNWbyHSeDgEBHChevCoxM6JGsk+w8="
+  },
+  {
+    "key": "./Uniques/Weapons/Axe/Elite/Runemaster.d2i",
+    "value": "EAiAAAUQxDMvyLmBBY6PnIDBoCI4dMiiZPof"
+  },
+  {
+    "key": "./Uniques/Weapons/Axe/Exceptional/Boneslayer Blade.d2i",
+    "value": "EAiAAAUAxK0XjEWVAMdHIpCREQBQInDj1gV150YyqgwZM6oMZGR6lD3lPw=="
+  },
+  {
+    "key": "./Uniques/Weapons/Axe/Exceptional/Butcher's Pupil.d2i",
+    "value": "EAiAAAUIxD0epGhGt72HIMDAEBGQIavgWZB1kR3KNBph+h8="
+  },
+  {
+    "key": "./Uniques/Weapons/Axe/Exceptional/Coldkill.d2i",
+    "value": "EAiAAAUQxOEXSpEvVMFHIODgEBF8+VpxjcWzgYJCpovMmNKCIlnBguI/"
+  },
+  {
+    "key": "./Uniques/Weapons/Axe/Exceptional/Guardian Naga.d2i",
+    "value": "EAiAAAUcxIEXrrB9e8FHIdDQEBFo0bJAaWEuB0AA6XPyMIZwUfgP"
+  },
+  {
+    "key": "./Uniques/Weapons/Axe/Exceptional/Islestrike.d2i",
+    "value": "EAiAAAUUxDEv0J5Z5nyPQYCBIQCoBFAJUA1QRfDlC4SMKdWadFmDL4gy/wE="
+  },
+  {
+    "key": "./Uniques/Weapons/Axe/Exceptional/Pompe's Wrath.d2i",
+    "value": "EAiAAAUA1NkZ4Kt4tr0HIdDQEBFUqYIxYilKwJLMGEIP4T8="
+  },
+  {
+    "key": "./Uniques/Weapons/Axe/Exceptional/Spellsteel.d2i",
+    "value": "EAiAAAUI1OkLzF2QdOPjEIyMiASEEUqV2pAx4tmCksbDLLCBgoLZcIWHBzOlDDIyZkw4PDz/AQ=="
+  },
+  {
+    "key": "./Uniques/Weapons/Axe/Exceptional/Stormrider.d2i",
+    "value": "EAiAAAUQ1KkJkprhieIDEaCgiAhkyFwYMSxlBMgkkQH0jFEmKIwpNRSSFSY8/gM="
+  },
+  {
+    "key": "./Uniques/Weapons/Axe/Exceptional/The Minataur.d2i",
+    "value": "EAiAAAXA1K1fsGpBoBgfikBGRgCgiYAM2QUKgyeOwE5EHkuy/w=="
+  },
+  {
+    "key": "./Uniques/Weapons/Axe/Exceptional/Warlord's Trust.d2i",
+    "value": "EAiAAAXI1N0XlHqzH8aHIfDwEBFevfpQhRPSUkhbIa2FNCXyN4Jf9h8="
+  },
+  {
+    "key": "./Uniques/Weapons/Axe/Normal/Axe of Fechmar.d2i",
+    "value": "EAiAAAUA5D4eMGbeyb1HAfDwEBG0aFmhL4sZGv8B"
+  },
+  {
+    "key": "./Uniques/Weapons/Axe/Normal/Bladebone.d2i",
+    "value": "EAiAAAUIhHk8fFRGwI8PAYCBISLIkPHBAzAQGHRB6cHDB5X/"
+  },
+  {
+    "key": "./Uniques/Weapons/Axe/Normal/Brainhew.d2i",
+    "value": "EAiAAAUQZD0eGKMI18cHApCREQlyIkCBcsGB8TDCRyML/gc="
+  },
+  {
+    "key": "./Uniques/Weapons/Axe/Normal/Deathspade.d2i",
+    "value": "EAiAAAUY5PEhAAhBqnqPAIDhICIYMVIBiRO4M0IR4T8="
+  },
+  {
+    "key": "./Uniques/Weapons/Axe/Normal/Goreshovel.d2i",
+    "value": "EAiAAAUgRB8Pw7HBV+PDAIyMCAA5EWTIwJDoIjvE+w8="
+  },
+  {
+    "key": "./Uniques/Weapons/Axe/Normal/Humongous.d2i",
+    "value": "EAiAAAUAdP14KIL11RsfCUBGRgDwiYAHzwUEQ2YLHqLQfw=="
+  },
+  {
+    "key": "./Uniques/Weapons/Axe/Normal/Rakescar.d2i",
+    "value": "EAiAAAUIFDweNBEwNMcHAdDQEBEsWZogQwt9OQABZEkX2X8="
+  },
+  {
+    "key": "./Uniques/Weapons/Axe/Normal/Skull Splitter.d2i",
+    "value": "EAiAAAUQ1M5fmExKRQ8fA0DDQUQgQ2YCGRsoZAQMxBEcevwH"
+  },
+  {
+    "key": "./Uniques/Weapons/Axe/Normal/The Chieftan.d2i",
+    "value": "EAiAAAXAVA0P55jwK+DjAKCgiAhkyJzgloLbCm4tuMkIUOiCUmT4Dw=="
+  },
+  {
+    "key": "./Uniques/Weapons/Axe/Normal/The Gnasher.d2i",
+    "value": "EAiAAAXIFD8eIuXL6sYHAODgEABQIhgxckiGiPIf"
+  },
+  {
+    "key": "./Uniques/Weapons/Bow/Elite/Windforce.d2i",
+    "value": "EAiAAAUIZH9BuOXr4h4fCuGGRABQEVCKoE8fBw8fiCiBLiht2X8="
+  },
+  {
+    "key": "./Uniques/Weapons/Bow/Exceptional/Cliffkiller.d2i",
+    "value": "EAiAAAUIBLlISH0u7h4fwYCFRRyQEsGcuQsKBg8IKFECU6D/"
+  },
+  {
+    "key": "./Uniques/Weapons/Bow/Exceptional/Endlesshail.d2i",
+    "value": "EAiAAAUYBBEagO3EKcbHLyAhEQmQInDjBkLGinU2HjwsrdHQ/w=="
+  },
+  {
+    "key": "./Uniques/Weapons/Bow/Exceptional/Godstrike Arch.d2i",
+    "value": "EAiAAAUgBLkgHBed6YuPYXBzIyLo06dE7WK8oyoPNz3cjB15FP4D"
+  },
+  {
+    "key": "./Uniques/Weapons/Bow/Exceptional/Kuko Shakaku.d2i",
+    "value": "EAiAAAUAFLkaRL3AXsaHL+DgEBFo0YKBQmvNhnGSeTrwAgDYfw=="
+  },
+  {
+    "key": "./Uniques/Weapons/Bow/Exceptional/Magewrath.d2i",
+    "value": "EAiAAAUQFCEQaM37+8eHMIAxEQJUESxZmqDPhQyDbETj4zEFWWNhcQL/AQ=="
+  },
+  {
+    "key": "./Uniques/Weapons/Bow/Exceptional/Riphook.d2i",
+    "value": "EAiAAAUIFcEaCLgkbMdHLwABEQmGInDjxkPRRXbIY8nzHw=="
+  },
+  {
+    "key": "./Uniques/Weapons/Bow/Exceptional/Skystrike.d2i",
+    "value": "EAiAAAUQFSENvQjN/+KDF1BQiACqCMiQTSBDRqDPFKSLzJiBg+A/"
+  },
+  {
+    "key": "./Uniques/Weapons/Bow/Exceptional/Whichwild String.d2i",
+    "value": "EAiAAAUQFSEkdFYMC44PYICCQiKoUnUCXgp4K+C1gNeJYqwQQqAP+Q8="
+  },
+  {
+    "key": "./Uniques/Weapons/Bow/Normal/Blastbark.d2i",
+    "value": "EAiAAAUA5AINKKhW3uNDCNzcCAAlEQQJ8jGYgqyBoP8="
+  },
+  {
+    "key": "./Uniques/Weapons/Bow/Normal/Hellclap.d2i",
+    "value": "EAiAAAUIhIAGcs9Pe+8RBGBghABWBC1aJixxAh6MBxldPH6S/w=="
+  },
+  {
+    "key": "./Uniques/Weapons/Bow/Normal/Pluckeye.d2i",
+    "value": "EAiAAAUQhBQE+lRX7PGxAygoxAEVEciQmcCBj0EWUyT4Dw=="
+  },
+  {
+    "key": "./Uniques/Weapons/Bow/Normal/Raven Claw.d2i",
+    "value": "EAiAAAUY5CoI4D/9s+OjB3BwCAAjAkYRjBi5Y8TT4D8="
+  },
+  {
+    "key": "./Uniques/Weapons/Bow/Normal/Rogue's Bow.d2i",
+    "value": "EAiAAAUgRCgIjE1O7+PDB5CQiAg8eEzg4YS0FNJWSGshrYtRD55Gnv8="
+  },
+  {
+    "key": "./Uniques/Weapons/Bow/Normal/Stormstrike.d2i",
+    "value": "EAiAAAUAlFSDkuqP5/j4ASgoAgBKBC1aJnCQIpyMwANOmf8="
+  },
+  {
+    "key": "./Uniques/Weapons/Bow/Normal/Witherstring.d2i",
+    "value": "EAiAAAUIFCsI1ulcJ+GDB4CAiAgyZEyQ4UKAYdBF1mnwHw=="
+  },
+  {
+    "key": "./Uniques/Weapons/Bow/Normal/Wizendraw.d2i",
+    "value": "EAiAAAUQ9KqG8dXvTfABBFhYRIBXAp8IUKBMIGOFuC6oToGnI/8B"
+  },
+  {
+    "key": "./Uniques/Weapons/Crossbow/Elite/Gutsiphon.d2i",
+    "value": "EAiAAAUAZH940PZawx0fJQEFRUTgxo2H5FDIUoZT6D8="
+  },
+  {
+    "key": "./Uniques/Weapons/Crossbow/Elite/Hellrack.d2i",
+    "value": "EAiAAAUIZI95YPq7jfAeSEFGhkQwZw7GD1EZP1E2foiGdEHdUcVM2sDS8j8="
+  },
+  {
+    "key": "./Uniques/Weapons/Crossbow/Exceptional/Buriza-Do Kyanon.d2i",
+    "value": "EAiAAAUABME8dHJqBX0PYyAjIwQMIyBD9gEUNkCIIXchGxqcyNqo/w=="
+  },
+  {
+    "key": "./Uniques/Weapons/Crossbow/Exceptional/Demon Machine.d2i",
+    "value": "EAiAAAUQBDk8EOEQr4uPY4CCIhIQRdizZwKeGIQflsJJ6MnwHw=="
+  },
+  {
+    "key": "./Uniques/Weapons/Crossbow/Exceptional/Langer Briser.d2i",
+    "value": "EAiAAAUIFLk8kLcylY4PYuDhIQ74iIAMGQaPjIAaKKBRAodC/wE="
+  },
+  {
+    "key": "./Uniques/Weapons/Crossbow/Exceptional/Pus Spiter.d2i",
+    "value": "EAiAAAQAFbE8pIs8HWmPYoCCIiJw45YDGGCQTZG2oHTxGAu2ICQzuEiAU/4D"
+  },
+  {
+    "key": "./Uniques/Weapons/Crossbow/Normal/Doomslayer.d2i",
+    "value": "EAiAAAUA5HANjgK/Q+PDCKCgiAMvIpAhMwXpIuM0+g8="
+  },
+  {
+    "key": "./Uniques/Weapons/Crossbow/Normal/Hellcast.d2i",
+    "value": "EAiAAAUIBHMNqHpUGN6jCMjIiAhQoEww4sQ1FA/Gw4guKE+B/w=="
+  },
+  {
+    "key": "./Uniques/Weapons/Crossbow/Normal/Ichorsting.d2i",
+    "value": "EAiAAAUQxHINFo24eOODCKCgCAG0CDJkTJAhhxlmLOmC4iT7Dw=="
+  },
+  {
+    "key": "./Uniques/Weapons/Crossbow/Normal/Leadcrow.d2i",
+    "value": "EAiAAAUY5HINzXFKoONjCHh4CAGqAyoiGDEyAYUW5hpl/gM="
+  },
+  {
+    "key": "./Uniques/Weapons/Dagger/Elite/Fleshripper.d2i",
+    "value": "EAiAAAUAxEsnQLd2cYUPmEBCIiKwZElHVidwSIYo0yhkifIf"
+  },
+  {
+    "key": "./Uniques/Weapons/Dagger/Elite/Ghostflame.d2i",
+    "value": "EAiAAAUExOsNXfCEpN+jKby8iAjw4NFgY+PjkcXmxPQ/"
+  },
+  {
+    "key": "./Uniques/Weapons/Dagger/Elite/Wizardspike.d2i",
+    "value": "EAiAAAUU1I8rqGWT54wPg6ABITY8nJiYYuKKiS0mNsnSGDHNBv0H"
+  },
+  {
+    "key": "./Uniques/Weapons/Dagger/Exceptional/Blackbog's Sharp.d2i",
+    "value": "EAiAAAUAxEknLNVdw4UPVYDRICo8FlofeJCDPvr0dZGtSdI1U7iGCy3J/gM="
+  },
+  {
+    "key": "./Uniques/Weapons/Dagger/Exceptional/Heart Carver.d2i",
+    "value": "EAiAAAUExI2/sMbjODM+UgEFhYgAD16Fx8JozSCuccQ1ljhno9F/"
+  },
+  {
+    "key": "./Uniques/Weapons/Dagger/Exceptional/Spineripper.d2i",
+    "value": "EAiAAAUIxI0r+J31eI8PVAABIQSoIsCDV+GxsOGBmKJ0Gc1ZJ/Af"
+  },
+  {
+    "key": "./Uniques/Weapons/Dagger/Exceptional/Stormspike.d2i",
+    "value": "EAiAAAUMxOkNSrthQt9jFWBgiAiWLMkI8ABEkw0mZNAh/wE="
+  },
+  {
+    "key": "./Uniques/Weapons/Dagger/Normal/Gull.d2i",
+    "value": "EAiAAAUAZFwnaCfG+YSPEwABIRJsVAgsPKAg/wc="
+  },
+  {
+    "key": "./Uniques/Weapons/Dagger/Normal/Spectral Shard.d2i",
+    "value": "EEiAAAUIRO8YEGjeDMeHCsDAEAmkJtxwQloKaSuktZCWxvgf"
+  },
+  {
+    "key": "./Uniques/Weapons/Dagger/Normal/The Diggler.d2i",
+    "value": "EAiAAAWAZPyd4GBgLzE+UAAFhRCgiiBDxolwK8J1kc35Hw=="
+  },
+  {
+    "key": "./Uniques/Weapons/Dagger/Normal/The Jade Tan Do.d2i",
+    "value": "EAiAAAUERDq/UOxV+Tw+UgAGhphgSYuTLmgO5pgjk+l/"
+  },
+  {
+    "key": "./Uniques/Weapons/Mace/Elite/Baranar's Star.d2i",
+    "value": "EAiAAAUI1FsTkhyxhgoHQEBCEgBeBLwiIEMGIwCZjAAZGwHIJpOQdTHe4fYf"
+  },
+  {
+    "key": "./Uniques/Weapons/Mace/Elite/Demonlimb.d2i",
+    "value": "EAiAAAUA1NMMcPjuteMDJQQFiQjmzJ3gBsO7KY9GnkfMLhooKPgV/wE="
+  },
+  {
+    "key": "./Uniques/Weapons/Mace/Elite/Earthshifter.d2i",
+    "value": "ECiAAAQA1C8bNggmZbRHYODhERFYshzmqJNBFOriYebQ4+HBSwXgaTz/AQ=="
+  },
+  {
+    "key": "./Uniques/Weapons/Mace/Elite/Horizon's Tornado Scourge.d2i",
+    "value": "EAiAAAUA1Ms3uMlCJXsPmRAUJCJgxLgFqovREsXYUw/lPw=="
+  },
+  {
+    "key": "./Uniques/Weapons/Mace/Elite/Nord's Tenderizer.d2i",
+    "value": "EAiAAAUM1IsbRDr6FsYHYLi5ERGUKrXRfLyvS+sOMkOC0oMZtAMDw38="
+  },
+  {
+    "key": "./Uniques/Weapons/Mace/Elite/Schaefer's Hammer.d2i",
+    "value": "EAiAAAQYxAMcAtAyM7RHQACIA1IiCBKUYqIMGZks1QVlTFGBog0CB/0H"
+  },
+  {
+    "key": "./Uniques/Weapons/Mace/Elite/Stone Crusher.d2i",
+    "value": "EAiAAAUQ1AMcTOIKrcbHTAgKEgB8IgAF+kYGnQweDiLUfw=="
+  },
+  {
+    "key": "./Uniques/Weapons/Mace/Elite/Stormlash.d2i",
+    "value": "EAiAAAQYxMs3GKA9MmgPtBAUJCKwZCkjyK6LDJBHFIqUGKao8Bgm1UP5Dw=="
+  },
+  {
+    "key": "./Uniques/Weapons/Mace/Elite/The Cranium Basher.d2i",
+    "value": "EAiAAAXA1C8bDIOV+MaHQODhEQByIsCDd4HCQDkRLkW4FeFahOuCQrTE1FggBOE/"
+  },
+  {
+    "key": "./Uniques/Weapons/Mace/Elite/Windhammer.d2i",
+    "value": "EAiAAAUgxFsf2skTAcZHVOB5ERHMmesCRSQzZsET+g8="
+  },
+  {
+    "key": "./Uniques/Weapons/Mace/Exceptional/Baezil's Vortex.d2i",
+    "value": "EAiAAAUA1Mk3cMV+aIwPS+DhIRIQRkCGLEU4GYElXVDGEBgKzB4YoKD+Aw=="
+  },
+  {
+    "key": "./Uniques/Weapons/Mace/Exceptional/Bloodtree Stump.d2i",
+    "value": "EAiAAAUI1FkXJPdPf8IHJuDxEAByInDjdoJbCm4ruLXglgRlTaAhkvEKAdB/"
+  },
+  {
+    "key": "./Uniques/Weapons/Mace/Exceptional/Dark Clan Crusher.d2i",
+    "value": "EAiAAAUQ1Ikb5Bmjl8bHI8DAEBGGDZtS3WmRh9sepBY9/gM="
+  },
+  {
+    "key": "./Uniques/Weapons/Mace/Exceptional/Earthshaker.d2i",
+    "value": "EAiAAAXA1AEcdHL/88fHJbi5ERFo0UoiEyXQRRYnwEsFYMYOdQr/AQ=="
+  },
+  {
+    "key": "./Uniques/Weapons/Mace/Exceptional/Fleshrender.d2i",
+    "value": "EAiAAAUU1NEMXtTJqN5jEpCQiAjIkFUYLciSUExp6gQOZRBRGlF4pQDoPw=="
+  },
+  {
+    "key": "./Uniques/Weapons/Mace/Exceptional/Moonfall.d2i",
+    "value": "EAiAAAUM1VkTBnUPIL9HJUBCEhEsWaqgWHiMWGDczMlixgwcCswWHHh4/gM="
+  },
+  {
+    "key": "./Uniques/Weapons/Mace/Exceptional/Sureshrill Frost.d2i",
+    "value": "EAiAAAUI1dkXuEjRzL8HJeDhERFo0apQWFDY+IHTZ2hkyiwBQkbmPw=="
+  },
+  {
+    "key": "./Uniques/Weapons/Mace/Exceptional/The Gavel of Pain.d2i",
+    "value": "EAiAAAXQ1C0bgMfGIcZHJuDhERFAgbrAYPA40WBqLBCikCxgosAMEWJg4D8="
+  },
+  {
+    "key": "./Uniques/Weapons/Mace/Normal/Bloodrise.d2i",
+    "value": "EAiAAAUAxJIJKxp0sOODAiAhiQh48PAoZLEunjVgdsfIocx/"
+  },
+  {
+    "key": "./Uniques/Weapons/Mace/Normal/Bonesnap.d2i",
+    "value": "EAiAAAUExD4YnI8VUMbHBeDhERFYsjxhboU5PUYQof4D"
+  },
+  {
+    "key": "./Uniques/Weapons/Mace/Normal/Crushflange.d2i",
+    "value": "EAiAAAUMxD4RVtXQL8fHBODhEQBeIvDgcUJflEAWQxT6Dw=="
+  },
+  {
+    "key": "./Uniques/Weapons/Mace/Normal/Felloak.d2i",
+    "value": "EAiAAAUQRFwNeaCp2d/DAWBgiAhQoJzgloIgDAMEUQL/AQ=="
+  },
+  {
+    "key": "./Uniques/Weapons/Mace/Normal/Ironstone.d2i",
+    "value": "EAiAAAUUBGAbbqSFp8eHBbi5EQBUIliyNMESGYEC/wE="
+  },
+  {
+    "key": "./Uniques/Weapons/Mace/Normal/Steeldriver.d2i",
+    "value": "EAiAAAUcZNkXTsEXe8AHBuDhERH06eOQsUWmC+8/"
+  },
+  {
+    "key": "./Uniques/Weapons/Mace/Normal/Stoutnail.d2i",
+    "value": "EAiAAAUkhKYIdrI3HONDApCQiAGnCGTIjBCcKP4D"
+  },
+  {
+    "key": "./Uniques/Weapons/Mace/Normal/The Generals Tan Do Li Ga.d2i",
+    "value": "EAiAAAUAVL4vULU9FY+PCuDhISLw4FEhsED5MAIfhS4oS7L/"
+  },
+  {
+    "key": "./Uniques/Weapons/Polearm/Elite/Bonehew.d2i",
+    "value": "EAiAAAUIxP99yPUrKhofg0FGhkQACrSLrE7AGESFjJmjhIfHfw=="
+  },
+  {
+    "key": "./Uniques/Weapons/Polearm/Elite/Stormspire.d2i",
+    "value": "EAiAAAUAxAMRzAWKHcMHQri5EQBUIujTl0KfjKCdLjJAG9NklAmCZEUNhf8="
+  },
+  {
+    "key": "./Uniques/Weapons/Polearm/Elite/The Reaper's Troll.d2i",
+    "value": "EAiAAAUIxBMSsCeV6sOHUQgKEhHgwbNBwOKAx2PL0pyNQsaCK0L/AQ=="
+  },
+  {
+    "key": "./Uniques/Weapons/Polearm/Elite/Tomb Reaver.d2i",
+    "value": "ECiAAAQAxM8XgAyw07WHSggKMl2gWTACRox69EGhPaEvhb4V+lro4+PdJgAUVhz/AQ=="
+  },
+  {
+    "key": "./Uniques/Weapons/Polearm/Exceptional/Athena's Wrath.d2i",
+    "value": "EAiAAAUAxBESzF0rn8fHLAgKEgJeEWjRmtJ1kWFDtCH/AQ=="
+  },
+  {
+    "key": "./Uniques/Weapons/Polearm/Exceptional/Blackleach Blade.d2i",
+    "value": "EAiAAAUIxO3+wTZjpWR8yAIZGRGBESMeiCyyZclYgURBm/If"
+  },
+  {
+    "key": "./Uniques/Weapons/Polearm/Exceptional/Grim's Burning Dead.d2i",
+    "value": "EAiAAAUQxAER7nbAssKHLbi5ERAoRKBFa4I+J+rBGETnBDFF2yJDR/Yf"
+  },
+  {
+    "key": "./Uniques/Weapons/Polearm/Exceptional/Husoldal Evo.d2i",
+    "value": "EAiAAAUYxGEXBsMvFsdHLbi5ERGQIZugzwUKA0iJ3AVVJ/Af"
+  },
+  {
+    "key": "./Uniques/Weapons/Polearm/Exceptional/Pierre Tombale Couant.d2i",
+    "value": "ECiAAAQIxM0Xthpo6LUHLQgKEo1uU7gxMh+GCwwGSgRu3CYg8x8="
+  },
+  {
+    "key": "./Uniques/Weapons/Polearm/Exceptional/The Meat Scraper.d2i",
+    "value": "ECiAAAQAxKkPT33ThNojFsjIiAjIkHWR8VAckkHp4xUCsP8="
+  },
+  {
+    "key": "./Uniques/Weapons/Polearm/Normal/Dimoaks Hew.d2i",
+    "value": "EAiAAAUIRN8JoAKISeMDBsjICAGvCGTIfBBAF9R/"
+  },
+  {
+    "key": "./Uniques/Weapons/Polearm/Normal/Soul Harvest.d2i",
+    "value": "EACAAAUAhAQqyP5yoIgPGRBEI0ApQo8eE1o4wS0FtxXcWnDzoTjk+Q8="
+  },
+  {
+    "key": "./Uniques/Weapons/Polearm/Normal/Steelgoad.d2i",
+    "value": "EACAAAUAdPeHYV4cx2l8xAAZERGMGJngwYlmKZqtaNaiWZIOON9Gnv8="
+  },
+  {
+    "key": "./Uniques/Weapons/Polearm/Normal/The Battlebranch.d2i",
+    "value": "EAiAAAUYZD4eJhG9s8bHDAgKEgJUEYwYmUAGj0MX2X8="
+  },
+  {
+    "key": "./Uniques/Weapons/Polearm/Normal/The Grim Reaper.d2i",
+    "value": "EACAAAUAFZAISWhrR+CjBtywiECBwoXHR6FOoBH5Pw=="
+  },
+  {
+    "key": "./Uniques/Weapons/Polearm/Normal/Woestave.d2i",
+    "value": "EAiAAAUgBL8b/vRTD8YHDbi5ERFQoMgScQZ1AnichsIhmSXZfw=="
+  },
+  {
+    "key": "./Uniques/Weapons/Scepter/Elite/Heaven's Light.d2i",
+    "value": "EAiAAAUAxJMIrXd+wt5jLsjIkAgsWU7ZslwXFJ0QotAiyn8="
+  },
+  {
+    "key": "./Uniques/Weapons/Scepter/Elite/Ironward.d2i",
+    "value": "EAiAAAUExAMKeA57nuODLxgZiQgiRYo4aEDB6+J5k+YON0QhSxleGAD8Dw=="
+  },
+  {
+    "key": "./Uniques/Weapons/Scepter/Elite/The Reedeemer.d2i",
+    "value": "EAiAAAUMxJMILxCaCeCjMMjIiAgsWU6ZstwWlDVluIYP3zCiE8rj8D8="
+  },
+  {
+    "key": "./Uniques/Weapons/Scepter/Exceptional/Hand of Blessed Light.d2i",
+    "value": "EAiAAAQAxAEKZ6EAv8RDEhgZiQigQFWgLLQ2PHzgwZQpC64pwzV5dAePMSKPwn8="
+  },
+  {
+    "key": "./Uniques/Weapons/Scepter/Exceptional/The Fetid Sprinkler.d2i",
+    "value": "EAiAAAUIxG1S2JYV3hUfkYCHR0Tw5WsCMhUeC5kcmWVGZspkLIhCYSy4ovAf"
+  },
+  {
+    "key": "./Uniques/Weapons/Scepter/Exceptional/Zakarum's Hand.d2i",
+    "value": "EAiAAAUMxJEIo6hr4+MDEsjIiAjcuG1Q4PDgA9FFtkaO1tjRnMaKHQz/AQ=="
+  },
+  {
+    "key": "./Uniques/Weapons/Scepter/Normal/Knell Striker.d2i",
+    "value": "EAiAAAUAhMQMIhFb5uPjAcjIiAQvEaBAmTDCCW4tuCHK/Ac="
+  },
+  {
+    "key": "./Uniques/Weapons/Scepter/Normal/Rusthandle.d2i",
+    "value": "EAiAAAUEZJEIM6LrH94DAvDwiAg8eFQYLBxGBDwQU5Y1Z7bmzfRA+Q8="
+  },
+  {
+    "key": "./Uniques/Weapons/Scepter/Normal/Stormeye.d2i",
+    "value": "EAiAAAUIBNAMhu6fhYIjAhgZiQh48MgIDLAxUGBJCbrGTdfY2Zo8+Q8="
+  },
+  {
+    "key": "./Uniques/Weapons/Spear/Elite/Arioc's Needle.d2i",
+    "value": "EAiAAAUYxNMJehTON+PDL3h4iAjmzOWYbDJ9XWRz/mEj2X8="
+  },
+  {
+    "key": "./Uniques/Weapons/Spear/Elite/Steelpillar.d2i",
+    "value": "EAiAAAUAxE8flLyti8eHVcjIEBCgRCBIsEuLDgVRBtP/"
+  },
+  {
+    "key": "./Uniques/Weapons/Spear/Elite/Viperfork.d2i",
+    "value": "EAiAAAUIxOsJtyhe9uNjKHBwiAjw4E3Qp4W+HE01pa+L0VgyxeM/"
+  },
+  {
+    "key": "./Uniques/Weapons/Spear/Exceptional/Hone Sundan.d2i",
+    "value": "EAiAAAUAxJEJaRtrteLjFXBwmAjIkF2gMKAQtfgp/wE="
+  },
+  {
+    "key": "./Uniques/Weapons/Spear/Exceptional/Kelpie Snare.d2i",
+    "value": "EAiAAAUIxJkTPJ64fMZHKxgZEQBUItCidcHDIDuhz9ISm/If"
+  },
+  {
+    "key": "./Uniques/Weapons/Spear/Exceptional/Soulfeast Tine.d2i",
+    "value": "EAiAAAUgxOkJZ6553+PDFXBwiAi+fE3Qh8fBxyHJwxYoTaj/"
+  },
+  {
+    "key": "./Uniques/Weapons/Spear/Exceptional/Spire of Honor.d2i",
+    "value": "EAiAAAUYxE0XuFEiescHLMjIEBAyRECG7AKFAaVEznJjUHda8MIA2DzmPw=="
+  },
+  {
+    "key": "./Uniques/Weapons/Spear/Exceptional/The Impaler.d2i",
+    "value": "EAiAAAUA1NEJr9nQnuODFXh4iAiqVE2wpAtqjYOtmdA56wQOof4D"
+  },
+  {
+    "key": "./Uniques/Weapons/Spear/Normal/Bloodthief.d2i",
+    "value": "EACAAAUIVQ8biKtHvsBHC+BwAEDlgI4IMmTwSBwa/Qc="
+  },
+  {
+    "key": "./Uniques/Weapons/Spear/Normal/Lance of Yaggai.d2i",
+    "value": "EAiAAAUAlKYJpUIXlOPDBXBwiBPXUlxbca3FNRkBD04QXXj/AQ=="
+  },
+  {
+    "key": "./Uniques/Weapons/Spear/Normal/Razortine.d2i",
+    "value": "EAiAAAUQxJxfkP3hqhwfLGBkRAB4EYCKIENGFxkdmaXMfw=="
+  },
+  {
+    "key": "./Uniques/Weapons/Spear/Normal/The Dragon Chang.d2i",
+    "value": "EAiAAAUAleYJJkKrK+NjBXh4iAkjXFBgDBjIYnrw/Ac="
+  },
+  {
+    "key": "./Uniques/Weapons/Spear/Normal/The Tannr Gorerod.d2i",
+    "value": "EAiAAAUQdf6koGlE3jA+XkBGhjjgIwIZMhN4OHENxYNxYSPL/Qc="
+  },
+  {
+    "key": "./Uniques/Weapons/Staff/Elite/Mang Song's Lesson.d2i",
+    "value": "EAiAAAUAZA8ooFibiY4PoaChITYopJH9adMHpw9PH/4D"
+  },
+  {
+    "key": "./Uniques/Weapons/Staff/Elite/Ondal's Wisdom.d2i",
+    "value": "EAiAAAQYZC8o0OelD2gPwjAyIgJIP8BoBFLlRprgH/4H"
+  },
+  {
+    "key": "./Uniques/Weapons/Staff/Exceptional/Chromatic Ire.d2i",
+    "value": "EAiAAAUABBEUdOwQo8RHLhgZESe4peC2glsLbkzCKVka1JoeWfMja4IEEP0P"
+  },
+  {
+    "key": "./Uniques/Weapons/Staff/Exceptional/Razorswitch.d2i",
+    "value": "EAiAAAUEBCEKJhnnbOHjFlBQiANwEjyPeE7oS6Fvhb4W+pw80sj+5D8="
+  },
+  {
+    "key": "./Uniques/Weapons/Staff/Exceptional/Ribcracker.d2i",
+    "value": "EAiAAAUIBLkU6M2j0rwHLvDwEAJeEMhEoEjxgoch+MENSci6GMcYEcn+Aw=="
+  },
+  {
+    "key": "./Uniques/Weapons/Staff/Exceptional/Skullcollector.d2i",
+    "value": "EAiAAAUMBAEU0Dx9+sfHLpCREU28P1JEgYf8Bw=="
+  },
+  {
+    "key": "./Uniques/Weapons/Staff/Exceptional/Warpspear.d2i",
+    "value": "EAiAAAUUBFEKHyonauNDF6CgCBD6pmRrVmyNja3RsTn/Aw=="
+  },
+  {
+    "key": "./Uniques/Weapons/Staff/Normal/Bane Ash Short Staff.d2i",
+    "value": "EAiAAAUAhMgEOanPlPBhAygoRAKfCDx4nNAHg8BAF9QaEl1TQv8B"
+  },
+  {
+    "key": "./Uniques/Weapons/Staff/Normal/Serpent Lord Long Staff.d2i",
+    "value": "EAiAAAUE5JIJ06FVkuPjBnh4iAQqEVCgaKEvBwooLPFBzjJ0ZP8B"
+  },
+  {
+    "key": "./Uniques/Weapons/Staff/Normal/Spire of Lazarus Gnarled Staff.d2i",
+    "value": "EAiAAAUIRJAJqDNUYeADB4yMiACvDSsiihQTZQQcTEnWqNiaGFpTI/8B"
+  },
+  {
+    "key": "./Uniques/Weapons/Staff/Normal/The Iron Jang Bong War Staff.d2i",
+    "value": "EAiAAAUMBJAJpZyALd5DB8jIiAhkyHxAwZQoDWoNi61xoTUwdMfIfw=="
+  },
+  {
+    "key": "./Uniques/Weapons/Staff/Normal/The Salamander Battle Staff.d2i",
+    "value": "EAiAAAUURMkEHjoGve+RA1BQxAlzMB5ArCmxNS+0Zkb8RP8B"
+  },
+  {
+    "key": "./Uniques/Weapons/Sword/Elite/Azurewrath.d2i",
+    "value": "EAiAAATQ1IsTml0xCrRHBwAIACoBVAJUA1QRHDqkoU/fhj79vizXRfYnl+60/w=="
+  },
+  {
+    "key": "./Uniques/Weapons/Sword/Elite/Bloodmoon.d2i",
+    "value": "EAiAAAUA1JMGhRCwy/EREkBARASCBHk8rDQOyZg9VSQk/Ac="
+  },
+  {
+    "key": "./Uniques/Weapons/Sword/Elite/Djinnslayer.d2i",
+    "value": "EAiAAAUE1JMNYHgwhd9DJFhYkAjw4MHQp+/DkEfVHtYiHf4D"
+  },
+  {
+    "key": "./Uniques/Weapons/Sword/Elite/Doombringer.d2i",
+    "value": "EAiAAAUI1KsPpCvjXOODIKCgiAj69FXwLJAveBjIPA5MvDs8MDU2IIH4Dw=="
+  },
+  {
+    "key": "./Uniques/Weapons/Sword/Elite/Flamebellow.d2i",
+    "value": "EAiAAAUM1C8KSN++aN8jLMjICAA0A1QR4MGDkS4+TArJT+bIYwwKh/Ef"
+  },
+  {
+    "key": "./Uniques/Weapons/Sword/Elite/Frostwind.d2i",
+    "value": "EAiAAAUQ1F8Knlvrmd6jLbCwiAjmzNloN2/ZpRXGnGOnIULp8R8="
+  },
+  {
+    "key": "./Uniques/Weapons/Sword/Elite/Lightsabre.d2i",
+    "value": "EAiAAAXA1IsTwK5isMfHQACICMiQVVAseGQEyNDgwePjkGW7oOaElBlG1VD4Dw=="
+  },
+  {
+    "key": "./Uniques/Weapons/Sword/Elite/The Grandfather.d2i",
+    "value": "EAiAAAUIxK8xiJfkuY6PgiADIwDQBKAJoA2gHYATQZ++O0Yw1Ub9Bw=="
+  },
+  {
+    "key": "./Uniques/Weapons/Sword/Exceptional/Bing Sz Wang.d2i",
+    "value": "EAiAAAUIxAkbXkkqYMbHKJCREQBoIoACZUOG0dIWI0PC2ABE4T8="
+  },
+  {
+    "key": "./Uniques/Weapons/Sword/Exceptional/Blade of Ali Baba.d2i",
+    "value": "EAiAAAUMxMki3O9J8oePTgACQgS8ErxEwIPnHQUP+Q8="
+  },
+  {
+    "key": "./Uniques/Weapons/Sword/Exceptional/Bloodletter.d2i",
+    "value": "EAiAAAUQxBEF+G8ne/GhCTBsRARGjCZoUYGx0OKBSOLRBbXmD9dcmibPfw=="
+  },
+  {
+    "key": "./Uniques/Weapons/Sword/Exceptional/Cloudcrack.d2i",
+    "value": "EAiAAAUUxKkLo2ByUOOjFKCgiAjIkH1AgQolI4AniwF6vDIAxEsDQMaOPAz/AQ=="
+  },
+  {
+    "key": "./Uniques/Weapons/Sword/Exceptional/Coldsteel Eye.d2i",
+    "value": "EAiAAAUYxJENPO0d1+NjE1ggiQj69PkwJJHpgooTaCSz5PkP"
+  },
+  {
+    "key": "./Uniques/Weapons/Sword/Exceptional/Crainte Vomir.d2i",
+    "value": "EAiAAAUcxDE47CpRuI0PUcDCIiIgQ0ZCWhcjGBQenaXRfw=="
+  },
+  {
+    "key": "./Uniques/Weapons/Sword/Exceptional/Ginther's Rift.d2i",
+    "value": "EAiAAAUgxIkTYKutocKHJ6DgEREsWRrB0JDBkwSli4wf9R8="
+  },
+  {
+    "key": "./Uniques/Weapons/Sword/Exceptional/Headstriker.d2i",
+    "value": "EAiAAAUA1CmFxcmovPHxCUBABICXCJYs1QloQ/Qx/wE="
+  },
+  {
+    "key": "./Uniques/Weapons/Sword/Exceptional/Hexfire.d2i",
+    "value": "EAiAAAUI1JEGskolrvHBCUBARARQoCqMFlAnwqFQc/rJmBk+kJD8Bw=="
+  },
+  {
+    "key": "./Uniques/Weapons/Sword/Exceptional/Plague Bearer.d2i",
+    "value": "EAiAAAUM1F0KcCoFU94DFLCwiAiWLFVQLLRa1MsBGGDI1rirMYKLwn8="
+  },
+  {
+    "key": "./Uniques/Weapons/Sword/Exceptional/Swordguard.d2i",
+    "value": "EEiAAAXA1K0xhM38tIyPUyAjIyLQokWBAkEmBPIJbim4reDWgtsWmTEoOZ419D8="
+  },
+  {
+    "key": "./Uniques/Weapons/Sword/Exceptional/The Atlantian.d2i",
+    "value": "EAiAAAXI1IExBBrNe3yPUMACKQDACGANQEXQp+9DFZKQTZnuGPkP"
+  },
+  {
+    "key": "./Uniques/Weapons/Sword/Exceptional/The Vile Husk.d2i",
+    "value": "EAiAAAXM1C0KjcKWEeKDFMjIiAjIkLXQl0M11SwZC4Qw0OPtUf8B"
+  },
+  {
+    "key": "./Uniques/Weapons/Sword/Exceptional/Todesfaelle Flamme.d2i",
+    "value": "EAiAAAXQ1MkakLc048OHKZCRERFAgToBD4YMskeKYcYLCmbKDBQUzBQaWlr+Aw=="
+  },
+  {
+    "key": "./Uniques/Weapons/Sword/Normal/Blacktongue.d2i",
+    "value": "EAiAAAUARAkEDIFzLfFBAlBQRAQePCbI0EJfDmCAsVQn8B8="
+  },
+  {
+    "key": "./Uniques/Weapons/Sword/Normal/Blood Crescent.d2i",
+    "value": "EAiAAAUEhIQNSUvBS95DA1hYiAMvIkCBcuJaimsrrrW4xuORBbuMDoX+Aw=="
+  },
+  {
+    "key": "./Uniques/Weapons/Sword/Normal/Culwens Point.d2i",
+    "value": "EAiAAAUIBNAY1lydTscHCGBhERGgQJnAQxfUGJQboz/5Dw=="
+  },
+  {
+    "key": "./Uniques/Weapons/Sword/Normal/Gleamscythe.d2i",
+    "value": "EAiAAAUMRL4iKCD+JYYPDgACIhL4RCBD5oMHbAwUkMlyXVD/AQ=="
+  },
+  {
+    "key": "./Uniques/Weapons/Sword/Normal/Griswold's Edge.d2i",
+    "value": "EAiAAAUQRGkMfDRAb+LDA4CACAAsEfDgmUAGDIYMUQJdPP8B"
+  },
+  {
+    "key": "./Uniques/Weapons/Sword/Normal/Hellplague.d2i",
+    "value": "EAiAAAUY5NIY0JzRDr/HB2BhERGgQIGRsSQHDGBY4lHwUfAT/Qc="
+  },
+  {
+    "key": "./Uniques/Weapons/Sword/Normal/Kinemils Awl.d2i",
+    "value": "EAiAAAUgZP0owJqP9H+PESAjIxLQRCBDZoIlMAxQrDHj/w=="
+  },
+  {
+    "key": "./Uniques/Weapons/Sword/Normal/Ripsaw.d2i",
+    "value": "EAiAAAUAVL4aNmus1sZHCZCRERHIkLHwwPDwYTgE/Q8="
+  },
+  {
+    "key": "./Uniques/Weapons/Sword/Normal/Rixot's Keen.d2i",
+    "value": "EAiAAAUkhGgMUHclbOAjA2BgiAhkyFQoPowgi91BgSjzHw=="
+  },
+  {
+    "key": "./Uniques/Weapons/Sword/Normal/Shadowfang.d2i",
+    "value": "EAiAAAUIlMEU7OixYsZHCGBhERHIkFnBzYaCB0seCR+JLPIf"
+  },
+  {
+    "key": "./Uniques/Weapons/Sword/Normal/Skewer of Krintiz.d2i",
+    "value": "EAiAAAUMlPQEg/7WivCxAUBABAAVAaoIMmRUGCwcfBzm/A8="
+  },
+  {
+    "key": "./Uniques/Weapons/Sword/Normal/Soulflay.d2i",
+    "value": "EAiAAAUQVFwbTDmL68eHCJCRERHIkDnRLEWzFc1aNONB8KHo4vkP"
+  },
+  {
+    "key": "./Uniques/Weapons/Sword/Normal/The Patriarch.d2i",
+    "value": "EAiAAAUAddEYVuYK58GHCZCREQBUIuDBI2IYMTxBFifwHw=="
+  },
+  {
+    "key": "./Uniques/Weapons/Throw/Elite/Demon's Arch.d2i",
+    "value": "ECCAAAQAxJMPMNg3fNqDKjg4UBBBmjQY6EN5MPopXWQyrqb+Aw=="
+  },
+  {
+    "key": "./Uniques/Weapons/Throw/Elite/Gargoyle's Bite.d2i",
+    "value": "EACAAAUAxBsKT5Ak4+IDKEhIgBLBnLkcLLGkj8eD2ZIBD08/7z8="
+  },
+  {
+    "key": "./Uniques/Weapons/Throw/Elite/Gimmershred.d2i",
+    "value": "EACAAAUExJsX2OxZlcfHU3h4AC+CNGkwtMfL6OqzAduYrIvMH89/"
+  },
+  {
+    "key": "./Uniques/Weapons/Throw/Elite/Lacerator.d2i",
+    "value": "EACAAAUIxCsSwJAvX8dHUICAsCaCNGldZHB+dQKHQsYGIUL9sv8="
+  },
+  {
+    "key": "./Uniques/Weapons/Throw/Elite/Warshrike.d2i",
+    "value": "EACAAAUQxKsUppTDvr4HSaCggCyCPn1dZI1knGTGEhgy/bz/"
+  },
+  {
+    "key": "./Uniques/Weapons/Throw/Elite/Wraithflight.d2i",
+    "value": "EADAAAUUxK8bGEBPe8aHYICAsCSCL188Gooe/dD/"
+  },
+  {
+    "key": "./Uniques/Weapons/Throw/Exceptional/Deathbit.d2i",
+    "value": "EACAAAUAxBkpuFZRd4mPkWBgAFQEWrQmCMcj4cPQCNUv+w8="
+  },
+  {
+    "key": "./Uniques/Weapons/Throw/Exceptional/The Scalper.d2i",
+    "value": "EACAAAUExJkXpIN36sIHSHh4ICgCMmQ8DF1Qd1ocCiki9PP+Aw=="
+  },
+  {
+    "key": "./Magic/Armor/Shield/Jeweler's Monarch of Deflecting.d2i",
+    "value": "EAiAAAUABP5MSBdZqIUSpmkFT1ghIQqUGdl/"
+  }
 ];
