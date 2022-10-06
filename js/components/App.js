@@ -247,7 +247,7 @@ const mainContent = html`
             <button type="button" @click="maxGold" class="btn btn-primary">Max Gold</button>
             <br /><br />
             <button type="button" id="d2" class="btn btn-primary" @click="saveFile(0x60)">Save D2</button>
-            <button type="button" id="d2r" class="btn btn-primary" @click="saveFile(0x63)">Save D2R</button>
+            <button type="button" id="d2r" class="btn btn-primary" @click="saveFile(0x61)">Save D2R</button>
           </div>
         </form>
       </div>
