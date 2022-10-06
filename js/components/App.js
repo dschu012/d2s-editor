@@ -323,25 +323,15 @@ export default {
       this.grid = JSON.parse(localStorage.getItem('grid'));
     }
 
-    let newItems = []
-    for (const item of Object.entries(window.constants.constants.weapon_items)) {
-      if (item[1].n) {
-        let newItem = utils.constantToItem(item)
-        newItems.push(newItem)
-      }
-    }
-    d2s.enhanceItems(newItems, window.constants.constants);
-    for (const item of newItems) {
-      let bytes = await d2s.writeItem(item, 0x63, window.constants.constants);
-      let base64 = utils.arrayBufferToBase64(bytes);
-      let category = item.categories[0]
-      this.itempack.push({
-        key: "./Bases/Weapons/" + category + "/" + item.type_name + '.d2i',
-        value: base64
-      })
-    }
-    this.addItemsPackBases(window.constants.constants.weapon_items, "Weapons");
-    this.addItemsPackBases(window.constants.constants.armor_items, "Armor");
+
+    d2s.setConstantData(96, window.constants_96.constants);
+    d2s.setConstantData(97, window.constants_96.constants);
+    d2s.setConstantData(98, window.constants_96.constants);
+    d2s.setConstantData(99, window.constants_99.constants);
+
+    window.constants = window.constants_99;
+    this.addItemsPackBases(window.constants_99.constants.weapon_items, "Weapons");
+    this.addItemsPackBases(window.constants_99.constants.armor_items, "Armor");
   },
   filters: {
   },
@@ -449,7 +439,7 @@ export default {
       this.location = null;
     },
     async shareItem(item) {
-      let bytes = await d2s.writeItem(item, 0x63, window.constants.constants);
+      let bytes = await d2s.writeItem(item, 0x63);
       let base64 = utils.arrayBufferToBase64(bytes);
       navigator.clipboard.writeText(base64);
       this.notifications.push({ alert: "alert alert-info", message: `Item data copied to clipboard. Use load from string to share it with someone.` });
@@ -534,7 +524,7 @@ export default {
       return true;
     },
     async readItem(bytes, version) {
-      this.preview = await d2s.readItem(bytes, version, window.constants.constants);
+      this.preview = await d2s.readItem(bytes, version);
       await this.setPropertiesOnItem(this.preview);
       utils.removeMaxDurabilityFromRunwords(this.preview);
     },
@@ -678,7 +668,7 @@ export default {
       let that = this;
       this.save = null;
       this.selected = null;
-      d2s.read(bytes, constants.constants).then(response => {
+      d2s.read(bytes).then(response => {
         that.save = response;
         if(filename) {
           that.save.header.name = filename.split('.')[0];
@@ -771,7 +761,7 @@ export default {
       let that = this;
       link.style.display = 'none';
       document.body.appendChild(link);
-      d2s.write(this.save, constants.constants).then(function (response) {
+      d2s.write(this.save).then(function (response) {
         let blob = new Blob([response], { type: "octet/stream" });
         link.href = window.URL.createObjectURL(blob);
         link.download = that.save.header.name + '.d2s';
