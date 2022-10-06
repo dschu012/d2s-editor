@@ -21,7 +21,6 @@ export default {
           </select>
         </div>
       </div>
-      <!-- <label :for="'Stat' + statIdx">Stat</label> -->
     </div>
     <div class="col-md-2" v-for="i in numValues(s.id)">
       <!-- <label :for="'Stat' + statIdx + 'Value'+ i">Value</label> -->
@@ -52,9 +51,9 @@ props: {
 },
 data() {
   return {
-    stats: window.constants.constants.magical_properties,
-    skills: window.constants.constants.skills.map((e,i)=> { return { i:i, v:e }}).filter(e => e.v != null && e.v.s != null),
-    classes: window.constants.constants.classes,
+    stats: window.constants_99.constants.magical_properties.filter(s => s != null && s.s != null),
+    skills: window.constants_99.constants.skills.map((e,i)=> { return { i:i, v:e }}).filter(e => e.v != null && e.v.s != null),
+    classes: window.constants_99.constants.classes,
   }
 },
 methods: {

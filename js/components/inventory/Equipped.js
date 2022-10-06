@@ -6,7 +6,7 @@ export default {
   template: html`
 <div class="inventory">
   <span class="head" v-on:drop="drop($event, 1)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 1)" v-on:dragleave="dragleave($event, 1)"><div class="layer" :id="id + '-1'"></div>
-    <Item v-if="head" :item.sync="head" @click.native="onSelect(head)" @contextmenu.prevent.stop="itemRC($event, head)"></span>
+    <Item v-if="head" :item.sync="head" @click.native="onSelect(head)" @contextmenu.prevent.stop="itemRC($event, head)"/></span>
   <span class="neck" v-on:drop="drop($event, 2)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 2)" v-on:dragleave="dragleave($event, 2)"><div class="layer" :id="id + '-2'"></div>
     <Item v-if="neck" :item.sync="neck" @click.native="onSelect(neck)" @contextmenu.prevent.stop="itemRC($event, neck)"/></span>
   <span class="torso" v-on:drop="drop($event, 3)"  v-on:dragover="dragover" v-on:dragenter="dragenter($event, 3)" v-on:dragleave="dragleave($event, 3)"><div class="layer" :id="id + '-3'"></div>
