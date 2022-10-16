@@ -668,19 +668,19 @@ export default [
     "value": "EACgAAQg5Gy3AQ=="
   },
   {
-    "key": "./Runewords/Armor/Class Specific/Bone (AP).d2i",
+    "key": "./Runewords/Armor/Class-Items/Bone (AP).d2i",
     "value": "EAiABARQFZrZGkfF+7VDRKBYiIfHQHiwZPQ/ge0UyZhCxSOZQsTjPxAAoAA0AOB8mAAQAKAANATgMEwAEACgADQI4DBMAA=="
   },
   {
-    "key": "./Runewords/Armor/Class Specific/Enlightenment (AP).d2i",
+    "key": "./Runewords/Armor/Class-Items/Enlightenment (AP).d2i",
     "value": "EAiABARAFZrZyDSv5LRDeKBYiIfHQHiwZPR/ShSmRGDseaGQ7HGh8B8QAKAANADgMJ8AEACgADQE4HwjARAAoAA0COB8mAA="
   },
   {
-    "key": "./Runewords/Armor/Class Specific/Myth (AP).d2i",
+    "key": "./Runewords/Armor/Class-Items/Myth (AP).d2i",
     "value": "EAiABAQQFJrZ9ht+U7RD4KBYiIfHQHiwZPRfCTqFMhYkokgWCDL4DxAAoAA0AOB80AIQAKAANATgfD4BEACgADQI4Hx/BQ=="
   },
   {
-    "key": "./Runewords/Armor/Class Specific/Peace (AP).d2i",
+    "key": "./Runewords/Armor/Class-Items/Peace (AP).d2i",
     "value": "EAiABARIFZrZiB4DF7RD9qBYiIfHQHiwZPR/ChQmgWDsAUGQrIiA8B8QAKAANADgfLYBEACgADQE4Hy+AxAAoAA0COB8PgE="
   },
   {
@@ -688,11 +688,11 @@ export default [
     "value": "EAiABAQIFJrZXlcmLrVDDqFYiIfHQHiwZPR/ymSsKIOsx8gBW/8BEACgADQA4HwjARAAoAA0BOAwaAEQAKAANAjgfDMB"
   },
   {
-    "key": "./Runewords/Armor/Class Specific/Rain (AP).d2i",
+    "key": "./Runewords/Armor/Class-Itemsc/Rain (AP).d2i",
     "value": "EAiABAQIBJrZPCse67RDHKFYiIfHQHiwZPQ/ge2UytgDTyHZs07hPxAAoAA0AOB8uwAQAKAANATgMNsAEACgADQI4HzvAw=="
   },
   {
-    "key": "./Runewords/Armor/Class Specific/Treachery (AP).d2i",
+    "key": "./Runewords/Armor/Class-Items/Treachery (AP).d2i",
     "value": "EAiABAQAFJrZfvp8abRDWqFYiIfHQHiwZPR/itUlaOyxKJPsWajwHxAAoAA0AOB8tgEQAKAANATgfL4DEACgADQI4DDfAQ=="
   },
   {
@@ -736,6 +736,14 @@ export default [
     "value": "EAiABASABB62nSbQJGuHNEKhgIyM+R9ANUCVIAjCkhFDlvwPEACgADQA4Hx/BRAAoAA0BOB8mAAQAKAANAjgfO8D"
   },
   {
+    "key": "./Runewords/Helmet/Flickering Flame (Diadem).d2i",
+    "value": "EAiABEwEQPy27SPyQU87XAiKESgoDIQHS0b/E6y5MbLTT3aJDGr68B8QAKAANADgfH8FEACgADQE4DCfABAAoAA0COAw+wA="
+  },
+  {
+    "key": "./Runewords/Helmet/Flickering Flame (Earth).d2i",
+    "value": "EAiABE0EYDxjAwAAABgPF4IiCgoKA+HBktEaeluTb/8TrLkxstNPdokMavrwHxAAoAA1AOB8fwUQAKAANQTgMJ8AEACgADQI4DD7AA=="
+  },
+  {
     "key": "./Runewords/Merc/Destruction (CA, Eth).d2i",
     "value": "EAjABAQQ1M9XPVrBDrVDZqAEBakIDx4sGf2P4NUrDTJadQLDLBgexVocyMaucgrGGHou/wEQAKAANADgMPsAEACgADQE4DBIABAAoAA0COBsvwMQAKAANAzgbD8BEACgADQQ4HyQAA=="
   },
@@ -744,12 +752,12 @@ export default [
     "value": "EAjABAQQ1c9X79n157RDaKAEBakIKFA8dfgfASPGLsE6gT+6JIcZk+gpPHX5DxAAoAA0AOB80AIQAKAANATgMD4QAKAANAjgMEwAEACgADQM4DBIABAAoAA0EOBsmQA="
   },
   {
-    "key": "./Runewords/Merc/Infinity (Thresher, Eth).d2i",
-    "value": "EAjABAQAxBMS9/nGS7RDrKCAgKAIDx78j1C0KJjbpT2MGFWDjFm1jofHN8LpzX8QAKAANADgbL8DEACgADQE4DDbABAAoAA0COBsvwMQAKAANAzgMF8B"
-  },
-  {
     "key": "./Runewords/Merc/Infinity (Giant Thresher, Eth).d2i",
     "value": "EAjABAQAxAMR9/nGS7RDrKBwcKAIDx78j1C0KJjbpT2MGFWDjFm1jofHN8LpzX8QAKAANADgbL8DEACgADQE4DDbABAAoAA0COBsvwMQAKAANAzgMF8B"
+  },
+  {
+    "key": "./Runewords/Merc/Infinity (Mancacher, Eth).d2i",
+    "value": "EAjABAUI1OuJAAAAACnBCsrDA4rw4MH/CEWLgrld2sOIUTXImFXreHh8I5ze/AcQAKAANADgbL8DEACgADQE4DDbABAAoAA0COBsvwMQAKAANAzgMF8B"
   },
   {
     "key": "./Runewords/Merc/Insight (CA, Eth).d2i",
@@ -926,6 +934,14 @@ export default [
   {
     "key": "./Runewords/Weapon/Swords/Voice of Reason (PB).d2i",
     "value": "EAiABAQQxIsTra0+1rRD+KAAUIQHD5aM/tsg47abR66eepkao1qQGGuAeDzF+A8QAKAANADgMN8BEACgADQE4HyQABAAoAA0COB8fwIQAKAANAzgfDMB"
+  },
+  {
+    "key": "./Runewords/Weapon/Class-Items/Obsession (Fire).d2i",
+    "value": "EAiABA0RYA8oAwAAAGiFOygaGmzNi63BsTU99n+DxAmCKQiuINiCIBNtDDRN9Q+TKUhg/gMQAKAANADgbLcBEACgADQE4DBfARAAoAA0COAw3wEQAKAANAzgfHwAEACgADQQ4Hz2ARAAoAA0FOB8fwU="
+  },
+  {
+    "key": "./Runewords/Weapon/Crescent Moon (CS).d2i",
+    "value": "EAiABAUgVBxqAAAAAClhBQoFhfkfgRu3OSctjDUqHIxFNSiYSeN4eDgd+Q8QAKAANADgfLYBEACgADQE4DBMABAAoAA0COB8bwM="
   },
   {
     "key": "./Sets/Aldur's Watchtower/Armor.d2i",
@@ -1741,27 +1757,27 @@ export default [
   },
   {
     "key": "./Uniques/Charms/Sunder/Bone Break.d2i",
-    "value": "EACAAAUAVNhtmFzy/7heqQwkXgFj6T8="
+    "value": "EACAAAUIRNhtmFzy/7heqQwkfAFj6T8="
   },
   {
     "key": "./Uniques/Charms/Sunder/Black Cleft.d2i",
-    "value": "EACAAAUEVNht8JNXcrtesAwlLAVj6T8="
+    "value": "EACAAAXAVNht8JNXcrtesAwlNgVj6T8="
   },
   {
     "key": "./Uniques/Charms/Sunder/Crack of the Heavens.d2i",
-    "value": "EACAAAUIVNht+BfgLr5emQwp+vhi6T8="
+    "value": "EACAAAWAVdht+BfgLr5emQwpBPli6T8="
   },
   {
     "key": "./Uniques/Charms/Sunder/Cold Rupture.d2i",
-    "value": "EACAAAUMVNhtaJnZQLleiAwr+uxi6T8="
+    "value": "EACAAAUEVNhtaJnZQLleiAwrBO1i6T8="
   },
   {
     "key": "./Uniques/Charms/Sunder/Flame Rift.d2i",
-    "value": "EACAAAUQVNht2GQFj71ekQwn+vRi6T8="
+    "value": "EACAAAUMRNht2GQFj71ekQwnBPVi6T8="
   },
   {
     "key": "./Uniques/Charms/Sunder/Rotting Fissure.d2i",
-    "value": "EACAAAUUVNhtWIZaQ7heoAwt+vxi6T8="
+    "value": "EACAAAXEVNhtWIZaQ7heoAwtBP1i6T8="
   },
   {
     "key": "./Uniques/Class-Items/Ama/Amazon Torch.d2i",
@@ -1900,15 +1916,15 @@ export default [
     "value": "EAiAAAXAFMJf2OM7IQ0fZgE7FBRiw8MHD6RBrdmxpEGUBlka5D8="
   },
   {
-    "key": "./Uniques/Class-Items/Sorc/Ormus' Robes (CL).d2i",
+    "key": "./Uniques/Class-Items/Sorc/Ormus' Robes (Chain Ligthing).d2i",
     "value": "EAiAAAUAFMJf2OM7IQ0fZgE7FBRiw8MHD6RBramxpEGUBlka5D8="
   },
   {
-    "key": "./Uniques/Class-Items/Sorc/Ormus' Robes (FB).d2i",
+    "key": "./Uniques/Class-Items/Sorc/Ormus' Robes (Fire Ball).d2i",
     "value": "EAiAAAUIFMJf2OM7IQ0fZgE7FBRiw8MHD6RBrXmxpEGUBlka5D8="
   },
   {
-    "key": "./Uniques/Class-Items/Sorc/Ormus' Robes (Fire Mast).d2i",
+    "key": "./Uniques/Class-Items/Sorc/Ormus' Robes (Fire Mastery).d2i",
     "value": "EAiAAAUQFMJf2OM7IQ0fZgE7FBRiw8MHD6RBremxpEGUBlka5D8="
   },
   {
@@ -1920,7 +1936,7 @@ export default [
     "value": "EAiAAAXIFMJf2OM7IQ0fZgE7FBRiw8MHD6RBrcGxpEGUBlka5D8="
   },
   {
-    "key": "./Uniques/Class-Items/Sorc/Ormus' Robes (Orb).d2i",
+    "key": "./Uniques/Class-Items/Sorc/Ormus' Robes (Frozen Orb).d2i",
     "value": "EAiAAAXQFMJf2OM7IQ0fZgE7FBRiw8MHD6RBrQGypEGUBlka5D8="
   },
   {
@@ -2978,6 +2994,10 @@ export default [
   {
     "key": "./Uniques/Weapons/Throw/Exceptional/The Scalper.d2i",
     "value": "EACAAAUExJkXpIN36sIHSHh4ICgCMmQ8DF1Qd1ocCiki9PP+Aw=="
+  },
+  {
+    "key": "./Base/Armor/Shield/Class-Items/Sacred Targe (All Res).d2i",
+    "value": "EACAAAUgdD4Npu7CnlUxA1DR0uJEvRT1VtRrUe8/"
   },
   {
     "key": "./Magic/Armor/Shield/Jeweler's Monarch of Deflecting.d2i",
