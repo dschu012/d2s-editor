@@ -85,7 +85,7 @@ const mainContent = html`
             <div class="form-group">
               <div class="input-group">
                 <div class="custom-file">
-                  <input type="file" name="d2sFile" @change="onFileChange" id="d2sFile">
+                  <input type="file" name="d2sFile" @change="onFileChange" id="d2sFile" accept=".d2s">
                   <label class="custom-file-label" for="d2sFile">*.d2s</label>
                 </div>
                 <div>
