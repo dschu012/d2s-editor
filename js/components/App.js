@@ -152,8 +152,6 @@ const mainContent = html`
                     <div class="btn-group overflow-auto offset-md-3 col-md-6" role="group">
                       <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 1 }"
                         @click="changeTab(1)">Equipped</button>
-                      <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 2 }"
-                        @click="changeTab(2)">Inventory</button>
                       <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 3 }"
                         @click="changeTab(3)">Stash</button>
                       <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 4 }"
@@ -221,7 +219,7 @@ const mainContent = html`
                   </div>
                   <Equipped v-if="activeTab == 1 || activeTab == 6" :items.sync="equipped" @item-selected="onSelect" @item-event="onEvent" :id="'Equipped'" :contextMenu="$refs.contextMenu">
                   </Equipped>
-                  <Grid v-if="activeTab == 2 || activeTab == 6" :width="grid.inv.w" :height="grid.inv.h" :page="1"
+                  <Grid v-if="activeTab == 1 || activeTab == 6" :width="grid.inv.w" :height="grid.inv.h" :page="1"
                     :items.sync="inventory" @item-selected="onSelect" @item-event="onEvent" :id="'InventoryGrid'" :contextMenu="$refs.contextMenu"></Grid>
                   <Grid v-if="activeTab == 3 || activeTab == 6" :width="grid.stash.w" :height="grid.stash.h" :page="5"
                     :items.sync="stash" @item-selected="onSelect" @item-event="onEvent" :id="'StashGrid'" :contextMenu="$refs.contextMenu"></Grid>
