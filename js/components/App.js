@@ -531,7 +531,7 @@ export default {
       this.readItem(bytes, 0x63);
     },
     async onItemFileLoad(event) {
-      this.readItem(event.target.result, 0x63);
+      this.readItem(event.target.result, 0x60);
     },
     onItemFileChange(event) {
       let reader = new FileReader();
