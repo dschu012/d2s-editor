@@ -80,13 +80,13 @@ methods: {
     } else if (values[idx] < minValue) {
       values[idx] = minValue;
     }
-    if (this.stats[id].s == "item_maxdamage_percent" || this.stats[id].s == "item_addskill_tab") {
+    if (this.stats[id].s == "item_maxdamage_percent") {
       values[idx+1] = values[idx];
     }
     this.onChange();
   },
   add() {
-    this.itemStats.push({ id: 0, values: [] });
+    this.itemStats.push({ id: 0, values: [0, 0, 0] });
   },
   remove(idx) {
     this.itemStats.splice(idx, 1);
