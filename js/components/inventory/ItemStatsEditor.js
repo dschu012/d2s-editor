@@ -80,7 +80,7 @@ methods: {
     } else if (values[idx] < minValue) {
       values[idx] = minValue;
     }
-    if (this.stats[id].s === "item_maxdamage_percent") {
+    if (this.stats[id].s == "item_maxdamage_percent" || this.stats[id].s == "item_addskill_tab") {
       values[idx+1] = values[idx];
     }
     this.onChange();
