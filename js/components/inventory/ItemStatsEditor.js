@@ -10,34 +10,33 @@ export default {
     <div class="col-md-2">Value</div>
   </div>
 
-  <div class="form-row" v-for="(s, statIdx) in itemStats" :key="statIdx">
+  <div class="form-row" v-for="(stat, statIdx) in itemStats" :key="statIdx">
     <div class="col-md-4">
       <div class="form-row">
         <div class="col-md-1"><button type="button" class="btn btn-link red" @click="remove(statIdx)">&times;</button>
         </div>
         <div class="col-md-11">
-          <select class="form-control" :id="id + 'Stat' + statIdx" v-model.number="s.id" @change="onChange">
-            <option v-for="(stat, idx) in stats" :value="idx" :key="idx">{{idx}} - {{stat.s}}</option>
+          <select class="form-control" :id="id + 'Stat' + statIdx" v-model.number="stat.id" @change="onChange">
+            <option v-for="(it, i) in stats" :value="i" :key="i">{{i}} - {{it.s}}</option>
           </select>
         </div>
       </div>
     </div>
-    <div class="col-md-2" v-for="i in numValues(s.id)">
-      <!-- <label :for="'Stat' + statIdx + 'Value'+ i">Value</label> -->
-      <select class="form-control" :id="id + 'Stat' + statIdx + 'Value'+ i" v-model.number="s.values[i-1]"
-        v-if="isClass(s.id, i)" @change="onChange">
-        <option v-for="(c, idx) in classes" :value="idx" :key="idx">{{c.co}}</option>
+    <div class="col-md-2" v-for="idx in numValues(stat.id)">
+      <select class="form-control" :id="id + 'Stat' + statIdx + 'Index'+ idx" v-model.number="stat.values[idx-1]"
+        v-if="isClass(stat.id, idx)" @change="onChange">
+        <option v-for="(it, i) in classes" :value="i" :key="i">{{it.co}}</option>
       </select>
-      <select class="form-control" :id="id + 'Stat' + statIdx + 'Value'+ i" v-model.number="s.values[i-1]"
-        v-else-if="isClassSkill(s.id, i)" @change="onChange">
-        <option v-for="(t, idx) in classes[s.values[i]].ts" :value="idx" :key="idx">{{t}}</option>
+      <select class="form-control" :id="id + 'Stat' + statIdx + 'Index'+ idx" v-model.number="stat.values[idx-1]"
+        v-else-if="isClassSkill(stat.id, idx)" @change="onChange">
+        <option v-for="(it, i) in classes[stat.values[idx]].ts" :value="i" :key="i">{{it}}</option>
       </select>
-      <select class="form-control" :id="id + 'Stat' + statIdx + 'Value'+ i" v-model.number="s.values[i-1]"
-        v-else-if="isSkill(s.id, i)" @change="onChange">
-        <option v-for="s in skills" :value="s.i" :key="s.i">{{s.v.s}}</option>
+      <select class="form-control" :id="id + 'Stat' + statIdx + 'Index'+ idx" v-model.number="stat.values[idx-1]"
+        v-else-if="isSkill(stat.id, idx)" @change="onChange">
+        <option v-for="it in skills" :value="it.i" :key="it.i">{{it.v.s}}</option>
       </select>
-      <input type="number" class="form-control" :min="min(s.id)" :max="max(s.id)" @input="change(s.id, s.values, i-1)"
-        :id="id + 'Stat' + statIdx + 'Value'+ i" v-model.number="s.values[i-1]" v-else>
+      <input type="number" class="form-control" :min="min(stat.id)" :max="max(stat.id)" @input="change(stat.id, stat.values, idx-1)"
+        :id="id + 'Stat' + statIdx + 'Index'+ idx" v-model.number="stat.values[idx-1]" v-else>
     </div>
   </div>
   <div class="form-row">
@@ -52,7 +51,7 @@ props: {
 data() {
   return {
     stats: window.constants_99.constants.magical_properties.filter(s => s != null && s.s != null),
-    skills: window.constants_99.constants.skills.map((e,i) => { return {i:i, v:e} }).filter(e => e.v != null && e.v.s != null)
+    skills: window.constants_99.constants.skills.map((e, i) => { return {i:i, v:e} }).filter(e => e.v != null && e.v.s != null)
             .sort((a, b) => { return a.v.s.localeCompare(b.v.s) }),
     classes: window.constants_99.constants.classes,
   }
@@ -80,13 +79,13 @@ methods: {
     } else if (values[idx] < minValue) {
       values[idx] = minValue;
     }
-    if (this.stats[id].s == "item_maxdamage_percent" || this.stats[id].s == "item_addskill_tab") {
+    if (this.stats[id].s == "item_maxdamage_percent") {
       values[idx+1] = values[idx];
     }
     this.onChange();
   },
   add() {
-    this.itemStats.push({ id: 0, values: [] });
+    this.itemStats.push({ id: 0, values: [0, 0, 0] });
   },
   remove(idx) {
     this.itemStats.splice(idx, 1);
