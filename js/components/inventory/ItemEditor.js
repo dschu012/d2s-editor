@@ -112,26 +112,26 @@ export default {
     </div>  
 
     <span v-if="!item.simple_item">
-    <div v-if="item.magic_attributes">
-      <div>Item Stats</div>
-      <ItemStatsEditor :item-stats.sync="item.magic_attributes" :id="id + 'Magic'" @stat-change="onEvent('update')"></ItemStatsEditor>
-    </div>
-    <div v-if="item.runeword_attributes">
-      <div>Runeword Stats</div>
-      <ItemStatsEditor :item-stats.sync="item.runeword_attributes" :id="id + 'Runeword'" @stat-change="onEvent('update')"></ItemStatsEditor>
-    </div>
-    <div v-if="item.set_attributes">
-      <div v-for="(set_attribute, index) in item.set_attributes">
-        <div>Set Stats List {{index}}</div>
-        <ItemStatsEditor :item-stats.sync="set_attribute" :id="id + 'Set' + index" @stat-change="onEvent('update')"></ItemStatsEditor>
+      <div v-if="item.magic_attributes">
+        <div>Item Stats</div>
+        <ItemStatsEditor :item-stats.sync="item.magic_attributes" :id="id + 'Magic'" @stat-change="onEvent('update')"></ItemStatsEditor>
       </div>
-    </div>
-    <div v-if="item.socketed_items">
-      <div v-for="(socketed_item, index) in item.socketed_items">
-        <ItemEditor ref="itemEditor" :item.sync="socketed_item" :id="id + 'Socketed' + index" @item-event="onChildEvent"></ItemEditor>
+      <div v-if="item.runeword_attributes">
+        <div>Runeword Stats</div>
+        <ItemStatsEditor :item-stats.sync="item.runeword_attributes" :id="id + 'Runeword'" @stat-change="onEvent('update')"></ItemStatsEditor>
       </div>
-    </div>
-  </span>
+      <div v-if="item.set_attributes">
+        <div v-for="(set_attribute, index) in item.set_attributes">
+          <div>Set Stats List {{index}}</div>
+          <ItemStatsEditor :item-stats.sync="set_attribute" :id="id + 'Set' + index" @stat-change="onEvent('update')"></ItemStatsEditor>
+        </div>
+      </div>
+      <div v-if="item.socketed_items">
+        <div v-for="(socketed_item, index) in item.socketed_items">
+          <ItemEditor ref="itemEditor" :item.sync="socketed_item" :id="id + 'Socketed' + index" @item-event="onChildEvent"></ItemEditor>
+        </div>
+      </div>
+    </span>
 </div>
 `,
 name: 'ItemEditor',
