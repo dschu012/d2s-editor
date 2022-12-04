@@ -1288,19 +1288,19 @@ export default [
     "value": "EAiAAAUQ1G+eQI5M1hEofgARkQARkCGDwRDBhowMsi68OfNw08PtPw=="
   },
   {
-    "key": "./Sets/Orphan's Call/Belt.d2i",
+    "key": "./Sets/Orphan's Call/Wilhelm's Pride.d2i",
     "value": "EACAAAQYZMNoSM1np8IUaaAGEhIAhCUrpPEo+Cj8Bw=="
   },
   {
-    "key": "./Sets/Orphan's Call/Goves.d2i",
+    "key": "./Sets/Orphan's Call/Magnus' Skin.d2i",
     "value": "EACAAAQIhO9WiEgq8sAUakAGDg4ABBkTyDhxLct1Qf0H"
   },
   {
-    "key": "./Sets/Orphan's Call/Helmet.d2i",
+    "key": "./Sets/Orphan's Call/Guillaume's Face.d2i",
     "value": "EAiAAAQAhGMb0uj5RzAFGmgDCooAAF4g4BkjQzRq9PgP"
   },
   {
-    "key": "./Sets/Orphan's Call/Shield.d2i",
+    "key": "./Sets/Orphan's Call/Whitstan's Guard.d2i",
     "value": "EAiAAAQQhNsbyubStjDFGhACEJAAEF5RuLOkGZ6d/wE="
   },
   {
