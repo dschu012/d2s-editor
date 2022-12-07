@@ -107,6 +107,18 @@ export default {
                 v-model.number="item.ethereal" :true-value="1" :false-value="0" @change="onEvent('update')">Ethereal</label>
             </div>
           </li>
+          <li>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label"><input class="form-check-input" type="checkbox"
+                v-model.number="item.personalized" :true-value="1" :false-value="0" @change="onEvent('update')">Personalized</label>
+            </div>
+          </li>
+          <li>
+            <div v-if="item.personalized">
+              <label :for="id + 'PersonalName'">Personalized Name</label>
+              <input type="text" class="form-control" :id="id + 'PersonalName'" v-model="item.personalized_name" @input="onEvent('update')">
+            </div>
+          </li>
         </span>
       </ul>    
     </div>  
