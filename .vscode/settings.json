@@ -1,5 +1,6 @@
 {
   "editor.insertSpaces": true,
   "editor.tabSize": 2,
-  "files.eol": "\n"
+  "files.eol": "\n",
+  "liveServer.settings.port": 5502
 }
