@@ -53,7 +53,7 @@ export default {
     return window.btoa(binary);
   },
   async b64PNGFromDC6(item) {
-    const response = await fetch(`data/global/items/${item.inv_file}.dc6`);
+    const response = await fetch(`data/global/items/${item.inv_file}.dc6`, { signal: AbortSignal.timeout(500) });
     if (response.status !== 200) {
       return null;
     }
@@ -115,7 +115,7 @@ export default {
     context.putImageData(data, 0, 0);
   
     // output image
-    var img = new Image();
+    //var img = new Image();
     var src = canvas.toDataURL('image/png');
     canvas.remove();
     return src;
