@@ -13,11 +13,10 @@ import postcss from "rollup-plugin-postcss";
 
 export default {
   process: {},
-  input: "index.html",
+  input: "",
   plugins: [
-    WATCH && serve({ contentBase: "dist", open: true }),
   ],
   output: {
-    dir: "dist",
+    dir: "",
   }
 };
