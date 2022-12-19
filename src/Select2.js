@@ -1,5 +1,6 @@
 export default {
-  mounted: function (el, binding) {
+  mounted: 
+  function (el, binding) {
     $(el).select2({
       width: 'auto',
       dropdownParent: binding.value ? $(binding.value) : null
