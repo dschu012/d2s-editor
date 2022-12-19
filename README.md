@@ -16,6 +16,8 @@ This is a basic Diablo 2 save editor for D2 and D2R. The parser uses the TXT dat
 1. Clone this repo or download a zip.
 2. Extract your MPQ data to a public/data folder in the same directory as the repo. (the tool needs TXTs, strings, pallettes, and item dc6s to work properly)
 3. Run 
-   npm install
-   npm run serve
+```
+npm install 
+npm run serve
+```
 4. Go to http://localhost:${PORT}/ verify everything works.
