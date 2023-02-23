@@ -73,7 +73,7 @@
           <li>
             <div v-if="item.defense_rating">
               <label>Defense:</label>
-              <input type="number" v-model.number="item.defense_rating" @input="onEvent('update')">
+              <input type="number" v-model.number="item.defense_rating" @input="onEvent('update')" min="1" max="9999" style="width:4em">
             </div>
           </li>
           <li>
