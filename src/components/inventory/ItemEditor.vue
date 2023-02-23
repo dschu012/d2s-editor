@@ -19,77 +19,67 @@
       <ul className="ItemOptions">
         <span v-if="!item.simple_item">
           <li>
-            <label>Quality:
-              <select v-model.number="item.quality" @change="onEvent('update')">
-                <option v-for="rarity in rarities" :value="rarity.key" :key="rarity.key">{{ rarity.value }}</option>
-              </select>
-            </label>
+            <label>Quality:</label>
+            <select v-model.number="item.quality" @change="onEvent('update')">
+              <option v-for="rarity in rarities" :value="rarity.key" :key="rarity.key">{{ rarity.value }}</option>
+            </select>
           </li>
           <li>
             <div v-if="item.quality == 4">
-              <label>Prefix:
-                <select v-model.number="item.magic_prefix_name" @change="onEvent('update')">
-                  <option value="0">None</option>
-                  <option v-for="s in prefixes" :value="s.v.n" :key="s.i">{{ s.v.n }}</option>
-                </select>
-              </label>
-              <label>Suffix:
-                <select v-model.number="item.magic_suffix_name" @change="onEvent('update')">
-                  <option value="0">None</option>
-                  <option v-for="s in suffixes" :value="s.v.n" :key="s.i">{{ s.v.n }}</option>
-                </select>
-              </label>
+              <label>Prefix:</label>
+              <select v-model.number="item.magic_prefix_name" @change="onEvent('update')">
+                <option value="0">None</option>
+                <option v-for="s in prefixes" :value="s.v.n" :key="s.i">{{ s.v.n }}</option>
+              </select>
+              <label>Suffix:</label>
+              <select v-model.number="item.magic_suffix_name" @change="onEvent('update')">
+                <option value="0">None</option>
+                <option v-for="s in suffixes" :value="s.v.n" :key="s.i">{{ s.v.n }}</option>
+              </select>
             </div>
             <div v-if="item.quality == 6 || item.quality == 8">
-              <label>Rare Name 1:
-                <select v-model.number="item.rare_name" @change="onEvent('update')">
-                  <option v-for="s in rare_names" :value="s.v.n" :key="s.i">{{ s.v.n }}</option>
-                </select>
-              </label>
-              <label>Rare Name 2:
-                <select v-model.number="item.rare_name2" @change="onEvent('update')">
-                  <option v-for="s in rare_names" :value="s.v.n" :key="s.i">{{ s.v.n }}</option>
-                </select>
-              </label>
+              <label>Rare Name 1:</label>
+              <select v-model.number="item.rare_name" @change="onEvent('update')">
+                <option v-for="s in rare_names" :value="s.v.n" :key="s.i">{{ s.v.n }}</option>
+              </select>
+              <label>Rare Name 2:</label>
+              <select v-model.number="item.rare_name2" @change="onEvent('update')">
+                <option v-for="s in rare_names" :value="s.v.n" :key="s.i">{{ s.v.n }}</option>
+              </select>
             </div>
           </li>
           <li>
             <div v-if="item.quality == 5">
-              <label>Set Name:
-                <select v-model.number="item.set_id" @change="onEvent('update')">
-                  <option v-for="s in set_items" :value="s.i" :key="s.i">{{ s.v.n }}</option>
-                </select>
-              </label>
+              <label>Set Name:</label>
+              <select v-model.number="item.set_id" @change="onEvent('update')">
+                <option v-for="s in set_items" :value="s.i" :key="s.i">{{ s.v.n }}</option>
+              </select>
             </div>
           </li>
           <li>
-            <label>Item Level:
-              <input type="number" v-model.number="item.level" @input="onEvent('update')">
-            </label>
+            <label>Item Level:</label>
+            <input type="number" v-model.number="item.level" @input="onEvent('update')" min="1" max="99" style="width:3em">
           </li>
         </span>
 
         <li>
-          <label>Base:
-            <select v-model="item.type" @change="onEvent('update')">
-              <option v-for="s in basesByType(item.type)" :value="s[0]" :key="s[0]">{{ s[1].n }}</option>
-            </select>
-          </label>
+          <label>Base:</label>
+          <select v-model="item.type" @change="onEvent('update')">
+            <option v-for="s in basesByType(item.type)" :value="s[0]" :key="s[0]">{{ s[1].n }}</option>
+          </select>
         </li>
 
         <span v-if="!item.simple_item">
           <li>
             <div v-if="item.defense_rating">
-              <label>Defense:
-                <input type="number" v-model.number="item.defense_rating" @input="onEvent('update')">
-              </label>
+              <label>Defense:</label>
+              <input type="number" v-model.number="item.defense_rating" @input="onEvent('update')">
             </div>
           </li>
           <li>
             <div v-if="item.socketed">
-              <label>Sockets:
-                <input type="number" v-model.number="item.total_nr_of_sockets" @input="onEvent('update')">
-              </label>
+              <label>Sockets:</label>
+              <input type="number" v-model.number="item.total_nr_of_sockets" @input="onEvent('update')" min="1" max="6" style="width:3em">
             </div>
           </li>
           <li>
