@@ -80,13 +80,15 @@ export default {
       } else if (values[idx] < minValue) {
         values[idx] = minValue;
       }
-      if (this.stats[id].s == "item_maxdamage_percent") {
+      //"item_maxdamage_percent"
+      if (id == 17)
         values[idx + 1] = values[idx];
-      }
+
       this.onChange();
     },
     add() {
-      this.itemStats.push({ id: 0, values: [0, 0, 0] });
+      //this.itemStats.push({ id: 0, values: [0, 0, 0] });
+      this.itemStats.push({ id: 0, values: [0, 0] });
     },
     remove(idx) {
       this.itemStats.splice(idx, 1);
