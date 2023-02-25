@@ -272,12 +272,38 @@ ul {
   font-size: 14px;
 }
 
+.edit-box {
+  color: white;
+  background-color: rgba(37, 37, 37, 0.98);
+  border-style: none;
+  width: fit-content;
+}
 .select2 {
   width: 100% !important;
 }
 
-.select2-container {
-  color: black !important;
+.select2-container .select2-dropdown {
+  color: white;
+  background: rgba(37, 37, 37, 0.98);
+  border-style: none;
+}
+
+.select2.select2-container .select2-selection .select2-selection__rendered {
+  color: white;
+}
+
+.select2-container .select2-selection {
+  color: white;
+  background: rgba(37, 37, 37, 0.98);
+  border-style: none;
+}
+
+.select2-container .select2-search input {
+  color: white;
+  background: rgba(37, 37, 37, 0.98);
+  border-style: none;
+  border-bottom: none;
+  outline: none;
 }
 
 .dgrey {

@@ -4,7 +4,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/constants.html"
   },
   {
-    "revision": "c24ac746950ea7ef424fe54bdf74a416",
+    "revision": "dd426993a4ae842d0d6e34923c958cbb",
     "url": "/css/app.css"
   },
   {
@@ -7320,12 +7320,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/data/local/font/cyr/fontridiculous.txt"
   },
   {
-    "revision": "bd599a670a6e6180d40cc93a442285a4",
+    "revision": "9418867373dd9bc654b0afc8528d0fe3",
     "url": "/index.html"
   },
   {
-    "revision": "1c31c2363d418df6a1ce",
-    "url": "/js/app.46434310.js"
+    "revision": "c6f52a06056c586d63c5",
+    "url": "/js/app.6c3ae767.js"
   },
   {
     "revision": "468965bb7f12d8a03482",
