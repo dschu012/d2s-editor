@@ -20,30 +20,30 @@
         <span v-if="!item.simple_item">
           <li>
             <label>Quality:</label>
-            <select v-model.number="item.quality" @change="onEvent('update')">
+            <select class="edit-box" v-model.number="item.quality" @change="onEvent('update')">
               <option v-for="rarity in rarities" :value="rarity.key" :key="rarity.key">{{ rarity.value }}</option>
             </select>
           </li>
           <li>
             <div v-if="item.quality == 4">
               <label>Prefix:</label>
-              <select v-model.number="item.magic_prefix_name" @change="onEvent('update')">
+              <select class="edit-box" v-model.number="item.magic_prefix_name" @change="onEvent('update')">
                 <option value="0">None</option>
                 <option v-for="s in prefixes" :value="s.v.n" :key="s.i">{{ s.v.n }}</option>
               </select>
               <label>Suffix:</label>
-              <select v-model.number="item.magic_suffix_name" @change="onEvent('update')">
+              <select class="edit-box" v-model.number="item.magic_suffix_name" @change="onEvent('update')">
                 <option value="0">None</option>
                 <option v-for="s in suffixes" :value="s.v.n" :key="s.i">{{ s.v.n }}</option>
               </select>
             </div>
             <div v-if="item.quality == 6 || item.quality == 8">
               <label>Rare Name 1:</label>
-              <select v-model.number="item.rare_name" @change="onEvent('update')">
+              <select class="edit-box"  v-model.number="item.rare_name" @change="onEvent('update')">
                 <option v-for="s in rare_names" :value="s.v.n" :key="s.i">{{ s.v.n }}</option>
               </select>
               <label>Rare Name 2:</label>
-              <select v-model.number="item.rare_name2" @change="onEvent('update')">
+              <select class="edit-box"  v-model.number="item.rare_name2" @change="onEvent('update')">
                 <option v-for="s in rare_names" :value="s.v.n" :key="s.i">{{ s.v.n }}</option>
               </select>
             </div>
@@ -51,21 +51,21 @@
           <li>
             <div v-if="item.quality == 5">
               <label>Set Name:</label>
-              <select v-model.number="item.set_id" @change="onEvent('update')">
+              <select class="edit-box" v-model.number="item.set_id" @change="onEvent('update')">
                 <option v-for="s in set_items" :value="s.i" :key="s.i">{{ s.v.n }}</option>
               </select>
             </div>
           </li>
           <li>
             <label>Item Level:</label>
-            <input type="number" v-model.number="item.level" @input="onEvent('update')" min="1" max="99" style="width:3em">
+            <input class="edit-box" type="number" v-model.number="item.level" @input="onEvent('update')" min="1" max="99">
           </li>
         </span>
 
         <li>
           <label>Base:</label>
-          <select v-model="item.type" @change="onEvent('update')">
-            <option v-for="s in basesByType(item.type)" :value="s[0]" :key="s[0]">{{ s[1].n }}</option>
+          <select class="edit-box" v-model="item.type" @change="onEvent('update')">
+            <option v-for="s in getBases(item.type)" :value="s[0]" :key="s[0]">{{ s[1].n }}</option>
           </select>
         </li>
 
@@ -73,13 +73,13 @@
           <li>
             <div v-if="item.defense_rating">
               <label>Defense:</label>
-              <input type="number" v-model.number="item.defense_rating" @input="onEvent('update')" min="1" max="9999" style="width:4em">
+              <input class="edit-box" type="number" v-model.number="item.defense_rating" @input="onEvent('update')" min="1" max="9999">
             </div>
           </li>
           <li>
             <div v-if="item.socketed">
               <label>Sockets:</label>
-              <input type="number" v-model.number="item.total_nr_of_sockets" @input="onEvent('update')" min="1" max="6" style="width:3em">
+              <input class="edit-box" type="number" v-model.number="item.total_nr_of_sockets" @input="onEvent('update')" min="1" max="6">
             </div>
           </li>
           <li>
@@ -163,11 +163,13 @@ export default {
     onMove() {
       this.$emit('item-event', { item: this.item, location: this.location, type: 'move' });
     },
-    basesByType(type) {
+    getBases(code) {
       if (this.item.type_id == 3) {
-        return this.weapon_items.filter(e => e[1].nc == type || e[1].exc == type || e[1].elc == type)
+        return this.weapon_items.filter(e => e[1].nc == code || e[1].exc == code || e[1].elc == code)
       } else if (this.item.type_id == 1) {
-        return this.armor_items.filter(e => e[1].nc == type || e[1].exc == type || e[1].elc == type)
+        //const uniqBase = window.constants.constants.armor_items[code];
+        //const bases = [uniqBase.nc, uniqBase.exc, uniqBase.exc].filter(id => window.constants.constants.armor_items[id])
+        return this.armor_items.filter(e => e[1].nc == code || e[1].exc == code || e[1].elc == code)
       } else if (this.item.type_id == 4) {
         return this.other_items
       } else {

@@ -11,7 +11,7 @@
           <div class="col-md-1"><button type="button" class="btn btn-link red" @click="remove(statIdx)">&times;</button>
           </div>
           <div class="col-md-11">
-            <select2 class="form-control" :id="id + 'Stat' + statIdx" v-model.number="stat.id" @change="onChange">
+            <select2 :id="id + 'Stat' + statIdx" v-model.number="stat.id" @change="onChange">
               <option v-for="(it, i) in stats" :value="i" :key="i">{{ i }} - {{ it.s }}</option>
               <!-- <option v-for="(it, i) in stats" :value="i" :key="i">{{i}} - {{it.s}} - [{{it.dP}}]</option> -->
             </select2>
@@ -19,19 +19,19 @@
         </div>
       </div>
       <div class="col-md-2" v-for="idx in numValues(stat.id)">
-        <select2 class="form-control" :id="id + 'Stat' + statIdx + 'Index'+ idx" v-model.number="stat.values[idx-1]"
+        <select2 class="edit-box" :id="id + 'Stat' + statIdx + 'Index'+ idx" v-model.number="stat.values[idx-1]"
           v-if="isClass(stat.id, idx)" @change="onChange">
           <option v-for="(it, i) in classes" :value="i" :key="i">{{it.co}}</option>
         </select2>
-        <select2 class="form-control" :id="id + 'Stat' + statIdx + 'Index'+ idx" v-model.number="stat.values[idx-1]"
+        <select2 class="edit-box" :id="id + 'Stat' + statIdx + 'Index'+ idx" v-model.number="stat.values[idx-1]"
           v-else-if="isClassSkill(stat.id, idx)" @change="onChange">
           <option v-for="(it, i) in classes[stat.values[idx]].ts" :value="i" :key="i">{{it}}</option>
         </select2>
-        <select2 class="form-control" :id="id + 'Stat' + statIdx + 'Index'+ idx" v-model.number="stat.values[idx-1]"
+        <select2 class="edit-box" :id="id + 'Stat' + statIdx + 'Index'+ idx" v-model.number="stat.values[idx-1]"
           v-else-if="isSkill(stat.id, idx)" @change="onChange">
           <option v-for="it in skills" :value="it.i" :key="it.i">{{it.v.s}}</option>
         </select2>
-        <input type="number" class="form-control" :min="min(stat.id)" :max="max(stat.id)" @input="change(stat.id, stat.values, idx-1)"
+        <input type="number" class= "edit-box" :min="min(stat.id)" :max="max(stat.id)" @input="change(stat.id, stat.values, idx-1)"
           :id="id + 'Stat' + statIdx + 'Index'+ idx" v-model.number="stat.values[idx-1]" v-else>
       </div>
     </div>
