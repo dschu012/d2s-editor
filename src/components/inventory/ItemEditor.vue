@@ -19,10 +19,12 @@
       <ul className="ItemOptions">
         <span v-if="!item.simple_item">
           <li>
-            <label>Quality:</label>
-            <select class="edit-box" v-model.number="item.quality" @change="onEvent('update')">
-              <option v-for="rarity in rarities" :value="rarity.key" :key="rarity.key">{{ rarity.value }}</option>
-            </select>
+            <div class="settings">
+              <label>Quality:</label>
+              <select class="edit-box" v-model.number="item.quality" @change="onEvent('update')" v-select>
+                <option v-for="rarity in rarities" :value="rarity.key" :key="rarity.key">{{ rarity.value }}</option>
+              </select>
+            </div>
           </li>
           <li>
             <div v-if="item.quality == 4">
@@ -63,10 +65,12 @@
         </span>
 
         <li>
-          <label>Base:</label>
-          <select class="edit-box" v-model="item.type" @change="onEvent('update')">
-            <option v-for="s in getBases(item.type)" :value="s[0]" :key="s[0]">{{ s[1].n }}</option>
-          </select>
+          <div class="settings">
+            <label>Base:</label>
+            <select class="edit-box" v-model="item.type" @change="onEvent('update')" v-select>
+              <option v-for="s in getBases(item.type)" :value="s[0]" :key="s[0]">{{ s[1].n }}</option>
+            </select>
+          </div>
         </li>
 
         <span v-if="!item.simple_item">

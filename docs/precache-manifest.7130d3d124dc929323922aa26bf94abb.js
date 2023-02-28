@@ -4,7 +4,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/constants.html"
   },
   {
-    "revision": "dd426993a4ae842d0d6e34923c958cbb",
+    "revision": "1d0ad442df5f9618fe2bc3e82657f131",
     "url": "/css/app.css"
   },
   {
@@ -18,22 +18,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "1ba8f0772346aaf9f9880a86f60403d3",
     "url": "/d2/constants_99.bundle.min.js"
-  },
-  {
-    "revision": "9bfa4a8ea144a52df0cada5c4fb091ac",
-    "url": "/data/constants.bundle.js"
-  },
-  {
-    "revision": "e6279fc3f139d2f7d640e1a9ce5cfa33",
-    "url": "/data/constants.bundle.min.js"
-  },
-  {
-    "revision": "82e18f4141a8dc0d4473c2ea53924b66",
-    "url": "/data/d2s.bundle.js"
-  },
-  {
-    "revision": "e6a30c8f7e920b65bc7ddc2640f402e7",
-    "url": "/data/d2s.bundle.min.js"
   },
   {
     "revision": "bcf9cb5d17ed698c92a9daf19aaac457",
@@ -484,7 +468,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/data/global/excel/misc.bin"
   },
   {
-    "revision": "72cd47252b55ccb6a2c6ac63eba0c617",
+    "revision": "e24201c9ec14ee9fa767366b724fe273",
     "url": "/data/global/excel/misc.txt"
   },
   {
@@ -774,38 +758,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "a3b596f394d582ef26d6adcdd744bd86",
     "url": "/data/global/excel/weapons.txt"
-  },
-  {
-    "revision": "b87dbc394bf341a771926194632d0a09",
-    "url": "/data/global/items/Palette/brown.dat"
-  },
-  {
-    "revision": "b87dbc394bf341a771926194632d0a09",
-    "url": "/data/global/items/Palette/gold.dat"
-  },
-  {
-    "revision": "b87dbc394bf341a771926194632d0a09",
-    "url": "/data/global/items/Palette/grey.dat"
-  },
-  {
-    "revision": "36cf8abb44b62ae932e08207531f6107",
-    "url": "/data/global/items/Palette/grey2.dat"
-  },
-  {
-    "revision": "50dee272ee49f3dfffb4a1681f11e8c9",
-    "url": "/data/global/items/Palette/greybrown.dat"
-  },
-  {
-    "revision": "f49e2a79bd07741dd917c87dc0f0a01d",
-    "url": "/data/global/items/Palette/invgrey.dat"
-  },
-  {
-    "revision": "d39bb771da59d5014e18f27d8a616daf",
-    "url": "/data/global/items/Palette/invgrey2.dat"
-  },
-  {
-    "revision": "daf1a7ed47b3ee5377c7de472d4e97eb",
-    "url": "/data/global/items/Palette/invgreybrown.dat"
   },
   {
     "revision": "c6d46e02823637a5761ac9aa595ee0a8",
@@ -3185,139 +3137,47 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   },
   {
     "revision": "0d2b7b537e014e31735ea945c9fd631b",
-    "url": "/data/global/items/invrAmn.dc6"
+    "url": "/data/global/items/invramn.dc6"
   },
   {
     "revision": "17b7b0f4d40740f0137fad222a76bd09",
-    "url": "/data/global/items/invrBer.dc6"
-  },
-  {
-    "revision": "55392e944593fd97a73ecc5dbce26c45",
-    "url": "/data/global/items/invrCham.dc6"
-  },
-  {
-    "revision": "1a3a8fd4bf44316e19abd4c90f3adb7f",
-    "url": "/data/global/items/invrDol.dc6"
-  },
-  {
-    "revision": "5b18cc3f38093e609f92c9c75b37cb65",
-    "url": "/data/global/items/invrEl.dc6"
-  },
-  {
-    "revision": "7fd845219f65c52b80ef8a6003547535",
-    "url": "/data/global/items/invrEld.dc6"
-  },
-  {
-    "revision": "7c2f3abd6090d883102c20c9c9a9e05a",
-    "url": "/data/global/items/invrEth.dc6"
-  },
-  {
-    "revision": "f65fab5230aa533e78b870855bcd36bf",
-    "url": "/data/global/items/invrFal.dc6"
-  },
-  {
-    "revision": "e896b8b8c29380db8701663d33f0944f",
-    "url": "/data/global/items/invrGul.dc6"
-  },
-  {
-    "revision": "302eca519e4a428d60e71978705314ed",
-    "url": "/data/global/items/invrHel.dc6"
-  },
-  {
-    "revision": "12e7baf30a6f5e3638666b8eeed87c4b",
-    "url": "/data/global/items/invrIo.dc6"
-  },
-  {
-    "revision": "4a274bf8cd853c2cf1856cd2f602d2e4",
-    "url": "/data/global/items/invrIst.dc6"
-  },
-  {
-    "revision": "951f339fad6587e8c6e5a039c4cb837a",
-    "url": "/data/global/items/invrIth.dc6"
-  },
-  {
-    "revision": "4da2c117e3596a4bb0be42b1da10f465",
-    "url": "/data/global/items/invrJo.dc6"
-  },
-  {
-    "revision": "72a7c879e158578754e5446c4106b972",
-    "url": "/data/global/items/invrKo.dc6"
-  },
-  {
-    "revision": "c8bccdf7b3fbff92af922bcc96a0ca61",
-    "url": "/data/global/items/invrLem.dc6"
-  },
-  {
-    "revision": "f0ea8cdc65948df638e16214c6120551",
-    "url": "/data/global/items/invrLo.dc6"
-  },
-  {
-    "revision": "e2f6bc5bbcae63aa6bb95b710f436602",
-    "url": "/data/global/items/invrLum.dc6"
-  },
-  {
-    "revision": "640defdd4d258506d59dda11a91a8dcc",
-    "url": "/data/global/items/invrMal.dc6"
-  },
-  {
-    "revision": "d9f3576a8ab8ae996e7ec35080717829",
-    "url": "/data/global/items/invrNef.dc6"
-  },
-  {
-    "revision": "bff10441a6c17472f56a1bb2347ca119",
-    "url": "/data/global/items/invrOhm.dc6"
-  },
-  {
-    "revision": "a11698bc52d9683779f09f6196a10bcc",
-    "url": "/data/global/items/invrOrt.dc6"
-  },
-  {
-    "revision": "61b56350f3e5a838114039f853f3ba1a",
-    "url": "/data/global/items/invrPul.dc6"
-  },
-  {
-    "revision": "109b0152761b829dbb23b421509d9475",
-    "url": "/data/global/items/invrRal.dc6"
-  },
-  {
-    "revision": "e8b07dd929ea7f03df8201d800721b9a",
-    "url": "/data/global/items/invrShae.dc6"
-  },
-  {
-    "revision": "e2d29bb0e98e5043f193525ede4c41cd",
-    "url": "/data/global/items/invrSol.dc6"
-  },
-  {
-    "revision": "c18fb4536f8233e3c71d87bfd7cafe02",
-    "url": "/data/global/items/invrSur.dc6"
-  },
-  {
-    "revision": "8ee2207699fb478e918450acea3c5091",
-    "url": "/data/global/items/invrTal.dc6"
-  },
-  {
-    "revision": "c99ba5a00964b4a66ef898d7446ebcd2",
-    "url": "/data/global/items/invrThul.dc6"
-  },
-  {
-    "revision": "3c0ad117f9a4d1deb7fdf54052d26c24",
-    "url": "/data/global/items/invrTir.dc6"
-  },
-  {
-    "revision": "23540fabf126f2207a44a63348c37647",
-    "url": "/data/global/items/invrUm.dc6"
-  },
-  {
-    "revision": "ecad8d589a8ea81cf4e2da7fb08b3631",
-    "url": "/data/global/items/invrVex.dc6"
-  },
-  {
-    "revision": "5e77cd22541e1294c9a0f23ed6c4ee88",
-    "url": "/data/global/items/invrZod.dc6"
+    "url": "/data/global/items/invrber.dc6"
   },
   {
     "revision": "fce91f2094dc1b0dff1055b33f2a53ee",
     "url": "/data/global/items/invrbk.dc6"
+  },
+  {
+    "revision": "55392e944593fd97a73ecc5dbce26c45",
+    "url": "/data/global/items/invrcham.dc6"
+  },
+  {
+    "revision": "1a3a8fd4bf44316e19abd4c90f3adb7f",
+    "url": "/data/global/items/invrdol.dc6"
+  },
+  {
+    "revision": "5b18cc3f38093e609f92c9c75b37cb65",
+    "url": "/data/global/items/invrel.dc6"
+  },
+  {
+    "revision": "7fd845219f65c52b80ef8a6003547535",
+    "url": "/data/global/items/invreld.dc6"
+  },
+  {
+    "revision": "7c2f3abd6090d883102c20c9c9a9e05a",
+    "url": "/data/global/items/invreth.dc6"
+  },
+  {
+    "revision": "f65fab5230aa533e78b870855bcd36bf",
+    "url": "/data/global/items/invrfal.dc6"
+  },
+  {
+    "revision": "e896b8b8c29380db8701663d33f0944f",
+    "url": "/data/global/items/invrgul.dc6"
+  },
+  {
+    "revision": "302eca519e4a428d60e71978705314ed",
+    "url": "/data/global/items/invrhel.dc6"
   },
   {
     "revision": "02eb39ca9533fae415632c06e54cee69",
@@ -3344,8 +3204,56 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/data/global/items/invrin5.dc6"
   },
   {
+    "revision": "12e7baf30a6f5e3638666b8eeed87c4b",
+    "url": "/data/global/items/invrio.dc6"
+  },
+  {
+    "revision": "4a274bf8cd853c2cf1856cd2f602d2e4",
+    "url": "/data/global/items/invrist.dc6"
+  },
+  {
+    "revision": "951f339fad6587e8c6e5a039c4cb837a",
+    "url": "/data/global/items/invrith.dc6"
+  },
+  {
+    "revision": "4da2c117e3596a4bb0be42b1da10f465",
+    "url": "/data/global/items/invrjo.dc6"
+  },
+  {
+    "revision": "72a7c879e158578754e5446c4106b972",
+    "url": "/data/global/items/invrko.dc6"
+  },
+  {
+    "revision": "c8bccdf7b3fbff92af922bcc96a0ca61",
+    "url": "/data/global/items/invrlem.dc6"
+  },
+  {
+    "revision": "f0ea8cdc65948df638e16214c6120551",
+    "url": "/data/global/items/invrlo.dc6"
+  },
+  {
+    "revision": "e2f6bc5bbcae63aa6bb95b710f436602",
+    "url": "/data/global/items/invrlum.dc6"
+  },
+  {
+    "revision": "640defdd4d258506d59dda11a91a8dcc",
+    "url": "/data/global/items/invrmal.dc6"
+  },
+  {
+    "revision": "d9f3576a8ab8ae996e7ec35080717829",
+    "url": "/data/global/items/invrnef.dc6"
+  },
+  {
     "revision": "d3f6839a45acf383b682c9a03e868577",
     "url": "/data/global/items/invrng.dc6"
+  },
+  {
+    "revision": "bff10441a6c17472f56a1bb2347ca119",
+    "url": "/data/global/items/invrohm.dc6"
+  },
+  {
+    "revision": "a11698bc52d9683779f09f6196a10bcc",
+    "url": "/data/global/items/invrort.dc6"
   },
   {
     "revision": "30db64cd29d69202c2448d398645482c",
@@ -3356,12 +3264,52 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/data/global/items/invrps.dc6"
   },
   {
+    "revision": "61b56350f3e5a838114039f853f3ba1a",
+    "url": "/data/global/items/invrpul.dc6"
+  },
+  {
+    "revision": "109b0152761b829dbb23b421509d9475",
+    "url": "/data/global/items/invrral.dc6"
+  },
+  {
     "revision": "981d37952be68b92d0c31022ed451da0",
     "url": "/data/global/items/invrsc.dc6"
   },
   {
+    "revision": "e8b07dd929ea7f03df8201d800721b9a",
+    "url": "/data/global/items/invrshae.dc6"
+  },
+  {
+    "revision": "e2d29bb0e98e5043f193525ede4c41cd",
+    "url": "/data/global/items/invrsol.dc6"
+  },
+  {
+    "revision": "c18fb4536f8233e3c71d87bfd7cafe02",
+    "url": "/data/global/items/invrsur.dc6"
+  },
+  {
+    "revision": "8ee2207699fb478e918450acea3c5091",
+    "url": "/data/global/items/invrtal.dc6"
+  },
+  {
+    "revision": "c99ba5a00964b4a66ef898d7446ebcd2",
+    "url": "/data/global/items/invrthul.dc6"
+  },
+  {
+    "revision": "3c0ad117f9a4d1deb7fdf54052d26c24",
+    "url": "/data/global/items/invrtir.dc6"
+  },
+  {
+    "revision": "23540fabf126f2207a44a63348c37647",
+    "url": "/data/global/items/invrum.dc6"
+  },
+  {
     "revision": "d272b3bf94403bff604b0834eb8f2124",
     "url": "/data/global/items/invrun.dc6"
+  },
+  {
+    "revision": "ecad8d589a8ea81cf4e2da7fb08b3631",
+    "url": "/data/global/items/invrvex.dc6"
   },
   {
     "revision": "e4939b6a805df8607b5ad844ed3578a7",
@@ -3370,6 +3318,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "f6ae503744bc1ea9c3c749a0d6009aa3",
     "url": "/data/global/items/invrxbu.dc6"
+  },
+  {
+    "revision": "5e77cd22541e1294c9a0f23ed6c4ee88",
+    "url": "/data/global/items/invrzod.dc6"
   },
   {
     "revision": "4e027523abb6245641b8f8d8ef32d34b",
@@ -3728,6 +3680,38 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/data/global/items/mana1.dc6"
   },
   {
+    "revision": "b87dbc394bf341a771926194632d0a09",
+    "url": "/data/global/items/palette/brown.dat"
+  },
+  {
+    "revision": "b87dbc394bf341a771926194632d0a09",
+    "url": "/data/global/items/palette/gold.dat"
+  },
+  {
+    "revision": "b87dbc394bf341a771926194632d0a09",
+    "url": "/data/global/items/palette/grey.dat"
+  },
+  {
+    "revision": "36cf8abb44b62ae932e08207531f6107",
+    "url": "/data/global/items/palette/grey2.dat"
+  },
+  {
+    "revision": "50dee272ee49f3dfffb4a1681f11e8c9",
+    "url": "/data/global/items/palette/greybrown.dat"
+  },
+  {
+    "revision": "f49e2a79bd07741dd917c87dc0f0a01d",
+    "url": "/data/global/items/palette/invgrey.dat"
+  },
+  {
+    "revision": "d39bb771da59d5014e18f27d8a616daf",
+    "url": "/data/global/items/palette/invgrey2.dat"
+  },
+  {
+    "revision": "daf1a7ed47b3ee5377c7de472d4e97eb",
+    "url": "/data/global/items/palette/invgreybrown.dat"
+  },
+  {
     "revision": "28ce7442ead9c6959134f7d451f7be99",
     "url": "/data/global/items/potblu.dc6"
   },
@@ -3916,96 +3900,88 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/data/local/DOCS/ENG/a5npc.txt"
   },
   {
-    "revision": "e9d7600647e889993d8955bcfec9a57c",
-    "url": "/data/local/LNG/CHI/Demo/chinese.txt"
-  },
-  {
-    "revision": "ec580012252e65d9be4def8052c78614",
-    "url": "/data/local/LNG/CHI/Guildinput.txt"
-  },
-  {
-    "revision": "1a92abb2343c06407acd6a72f8360b8c",
-    "url": "/data/local/LNG/CHI/bnetd2helpinput.txt"
-  },
-  {
-    "revision": "73d85fb0b6a6c39dcb56495e45407852",
-    "url": "/data/local/LNG/CHI/chinese.txt"
-  },
-  {
-    "revision": "4007a621a1bbb92df03b6a8aa27ff5cf",
-    "url": "/data/local/LNG/CHI/expansioninput.txt"
-  },
-  {
-    "revision": "368806d84d0ad8c291c321d4d0fa19d9",
-    "url": "/data/local/LNG/CHI/otheractinput.txt"
-  },
-  {
-    "revision": "c6140d3318a339a2622976d8fece141b",
-    "url": "/data/local/LNG/CHI/patch.txt"
-  },
-  {
-    "revision": "e7b80e2a49219862e2d4bb317c6c79dd",
-    "url": "/data/local/LNG/CHI/patchstring.tbl"
-  },
-  {
-    "revision": "41887a078f2e7a773f27803de26ccae2",
-    "url": "/data/local/LNG/CHI/string.tbl"
-  },
-  {
-    "revision": "769c49070d65cc1124a2466fc26d78ae",
-    "url": "/data/local/LNG/DEU/Demo/GERMAN.TXT"
-  },
-  {
-    "revision": "fc8515948dc0ba0ceb1176c119cc0426",
-    "url": "/data/local/LNG/DEU/GERMAN.TXT"
-  },
-  {
-    "revision": "a8ee98a97edf9d1ede487c9013975d8e",
-    "url": "/data/local/LNG/DEU/Guildinput.txt"
-  },
-  {
-    "revision": "a972b59da87577fc3bfa13e635adfd00",
-    "url": "/data/local/LNG/DEU/bnetd2helpinput.txt"
-  },
-  {
-    "revision": "8d2397e0f67dddf19ca35198d6380b62",
-    "url": "/data/local/LNG/DEU/expansioninput.txt"
-  },
-  {
-    "revision": "8df99c62071a1c2b115abdb6debd9648",
-    "url": "/data/local/LNG/DEU/otheractinput.txt"
-  },
-  {
-    "revision": "18db6696a7491d944cea4468d4aa2636",
-    "url": "/data/local/LNG/DEU/patch.txt"
-  },
-  {
-    "revision": "cd2932f1ddb588c02a3c88bab510509e",
-    "url": "/data/local/LNG/DEU/patchstring.tbl"
-  },
-  {
-    "revision": "afd1742f90b65c1ec1b9b13520830723",
-    "url": "/data/local/LNG/DEU/string.tbl"
+    "revision": "c381d2c8d1b692308391a50c5a4ba072",
+    "url": "/data/local/LNG.zip"
   },
   {
     "revision": "9c4ab056e216f85c796c7ffcab34c0af",
-    "url": "/data/local/LNG/ENG/BETA/string.tbl"
+    "url": "/data/local/LNG/ENG/0/BETA/string.tbl"
+  },
+  {
+    "revision": "3ede888661300c4237fdc425c62a4729",
+    "url": "/data/local/LNG/ENG/0/English.txt"
+  },
+  {
+    "revision": "ec580012252e65d9be4def8052c78614",
+    "url": "/data/local/LNG/ENG/0/Guildinput.txt"
+  },
+  {
+    "revision": "0bfb5e74c7f8780dc124b0fefbff36d6",
+    "url": "/data/local/LNG/ENG/0/bnetd2helpinput.txt"
+  },
+  {
+    "revision": "4007a621a1bbb92df03b6a8aa27ff5cf",
+    "url": "/data/local/LNG/ENG/0/expansioninput.txt"
+  },
+  {
+    "revision": "1e074cd5f76debfcbadd1d60eb629c44",
+    "url": "/data/local/LNG/ENG/0/expansionstring.tbl"
+  },
+  {
+    "revision": "918bba90682b0d4183ce24289df2064f",
+    "url": "/data/local/LNG/ENG/0/expansionstring.txt"
+  },
+  {
+    "revision": "a79785dcc05c4402ed8217e60404f90d",
+    "url": "/data/local/LNG/ENG/0/otheractinput.txt"
+  },
+  {
+    "revision": "d500c0bb43ac5233be809f51b4448b4d",
+    "url": "/data/local/LNG/ENG/0/patchstring.tbl"
+  },
+  {
+    "revision": "aea09c6b453082d57addcd8866093372",
+    "url": "/data/local/LNG/ENG/0/patchstring.txt"
+  },
+  {
+    "revision": "306ae2c98d123e876d826e1c519d33f7",
+    "url": "/data/local/LNG/ENG/0/string.tbl"
+  },
+  {
+    "revision": "ac20dd4e799fbd9089a7061b2d402317",
+    "url": "/data/local/LNG/ENG/0/string.txt"
   },
   {
     "revision": "3ede888661300c4237fdc425c62a4729",
     "url": "/data/local/LNG/ENG/English.txt"
   },
   {
-    "revision": "ec580012252e65d9be4def8052c78614",
-    "url": "/data/local/LNG/ENG/Guildinput.txt"
+    "revision": "1e074cd5f76debfcbadd1d60eb629c44",
+    "url": "/data/local/LNG/ENG/d2r/expansionstring.tbl"
   },
   {
-    "revision": "0bfb5e74c7f8780dc124b0fefbff36d6",
-    "url": "/data/local/LNG/ENG/bnetd2helpinput.txt"
+    "revision": "918bba90682b0d4183ce24289df2064f",
+    "url": "/data/local/LNG/ENG/d2r/expansionstring.txt"
   },
   {
-    "revision": "4007a621a1bbb92df03b6a8aa27ff5cf",
-    "url": "/data/local/LNG/ENG/expansioninput.txt"
+    "revision": "2847dfd4e31a4e49034500b4036127ea",
+    "url": "/data/local/LNG/ENG/d2r/patchstring.tbl"
+  },
+  {
+    "revision": "ca747fe09ce329092d970955512fd653",
+    "url": "/data/local/LNG/ENG/d2r/patchstring.txt"
+  },
+  {
+    "revision": "306ae2c98d123e876d826e1c519d33f7",
+    "url": "/data/local/LNG/ENG/d2r/string.tbl"
+  },
+  {
+    "revision": "ac20dd4e799fbd9089a7061b2d402317",
+    "url": "/data/local/LNG/ENG/d2r/string.txt"
+  },
+  {
+    "revision": "cdc331e56a0885f2678bf4e59700322f",
+    "url": "/data/local/LNG/ENG/d2r/termsofservice.txt"
   },
   {
     "revision": "1e074cd5f76debfcbadd1d60eb629c44",
@@ -4016,11 +3992,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/data/local/LNG/ENG/expansionstring.txt"
   },
   {
-    "revision": "a79785dcc05c4402ed8217e60404f90d",
-    "url": "/data/local/LNG/ENG/otheractinput.txt"
-  },
-  {
-    "revision": "d500c0bb43ac5233be809f51b4448b4d",
+    "revision": "2847dfd4e31a4e49034500b4036127ea",
     "url": "/data/local/LNG/ENG/patchstring.tbl"
   },
   {
@@ -4038,246 +4010,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "cdc331e56a0885f2678bf4e59700322f",
     "url": "/data/local/LNG/ENG/termsofservice.txt"
-  },
-  {
-    "revision": "23ba22a97dee1825b96ce54fe548c1e3",
-    "url": "/data/local/LNG/ESP/Demo/spanish.txt"
-  },
-  {
-    "revision": "ec580012252e65d9be4def8052c78614",
-    "url": "/data/local/LNG/ESP/Guildinput.txt"
-  },
-  {
-    "revision": "4a1b8c21ed1e37a2e9a11ca9f1e8e291",
-    "url": "/data/local/LNG/ESP/bnetd2helpinput.txt"
-  },
-  {
-    "revision": "4007a621a1bbb92df03b6a8aa27ff5cf",
-    "url": "/data/local/LNG/ESP/expansioninput.txt"
-  },
-  {
-    "revision": "b6ee6e7401e24c29d2652b15f9b23f12",
-    "url": "/data/local/LNG/ESP/otheractinput.txt"
-  },
-  {
-    "revision": "b27fc747cad9f6f48e840bbfcbb1f019",
-    "url": "/data/local/LNG/ESP/patch.txt"
-  },
-  {
-    "revision": "b5d410a671adb318d34be06a1bb8413e",
-    "url": "/data/local/LNG/ESP/patchstring.tbl"
-  },
-  {
-    "revision": "692610179f6bbd5c8a58f2a2fa0509bc",
-    "url": "/data/local/LNG/ESP/spanish.txt"
-  },
-  {
-    "revision": "3d269834e44ef66168c32f76cb18d591",
-    "url": "/data/local/LNG/ESP/string.tbl"
-  },
-  {
-    "revision": "e38ea1930fd8c241922f50f06d0387ef",
-    "url": "/data/local/LNG/FRA/Demo/french.txt"
-  },
-  {
-    "revision": "a8ee98a97edf9d1ede487c9013975d8e",
-    "url": "/data/local/LNG/FRA/Guildinput.txt"
-  },
-  {
-    "revision": "a12d17d7af47e5b388adf81392fd00c0",
-    "url": "/data/local/LNG/FRA/bnetd2helpinput.txt"
-  },
-  {
-    "revision": "8d2397e0f67dddf19ca35198d6380b62",
-    "url": "/data/local/LNG/FRA/expansioninput.txt"
-  },
-  {
-    "revision": "90bb798c4a6f60085117cfcc4d8705a4",
-    "url": "/data/local/LNG/FRA/french.txt"
-  },
-  {
-    "revision": "dfd9dd48f2e60777f8dbda45c3657be7",
-    "url": "/data/local/LNG/FRA/otheractinput.txt"
-  },
-  {
-    "revision": "46052c8bf2af491ba9f58ff7dfd8c73c",
-    "url": "/data/local/LNG/FRA/patch.txt"
-  },
-  {
-    "revision": "c6b0673a482092555d8332330bb32873",
-    "url": "/data/local/LNG/FRA/patchstring.tbl"
-  },
-  {
-    "revision": "ac54c3ea9cc211da73e4d65661c6149e",
-    "url": "/data/local/LNG/FRA/string.tbl"
-  },
-  {
-    "revision": "cb34c42d3b84c27f54c48f9ff1c89944",
-    "url": "/data/local/LNG/ITA/Demo/italian.txt"
-  },
-  {
-    "revision": "a8ee98a97edf9d1ede487c9013975d8e",
-    "url": "/data/local/LNG/ITA/Guildinput.txt"
-  },
-  {
-    "revision": "a972b59da87577fc3bfa13e635adfd00",
-    "url": "/data/local/LNG/ITA/bnetd2helpinput.txt"
-  },
-  {
-    "revision": "8d2397e0f67dddf19ca35198d6380b62",
-    "url": "/data/local/LNG/ITA/expansioninput.txt"
-  },
-  {
-    "revision": "42eb4194f2c05200435f1edfaf409adc",
-    "url": "/data/local/LNG/ITA/italian.txt"
-  },
-  {
-    "revision": "f4c22d80f2aa3b03ec19acde0bccf3e4",
-    "url": "/data/local/LNG/ITA/otheractinput.txt"
-  },
-  {
-    "revision": "e4c3561a7e25e048ad2efcd0aa3b13d7",
-    "url": "/data/local/LNG/ITA/patch.txt"
-  },
-  {
-    "revision": "a68d5cf84266e109bc76c5f96545313d",
-    "url": "/data/local/LNG/ITA/patchstring.tbl"
-  },
-  {
-    "revision": "80e34c2213aeb15c67d274557d68a067",
-    "url": "/data/local/LNG/ITA/string.tbl"
-  },
-  {
-    "revision": "da7b0d8e64c50d01fe575e705cabdec1",
-    "url": "/data/local/LNG/JPN/Demo/Japanese.txt"
-  },
-  {
-    "revision": "ec580012252e65d9be4def8052c78614",
-    "url": "/data/local/LNG/JPN/Guildinput.txt"
-  },
-  {
-    "revision": "0bfb5e74c7f8780dc124b0fefbff36d6",
-    "url": "/data/local/LNG/JPN/bnetd2helpinput.txt"
-  },
-  {
-    "revision": "777a42d37ace065417f20b6caade2429",
-    "url": "/data/local/LNG/JPN/english.txt"
-  },
-  {
-    "revision": "4007a621a1bbb92df03b6a8aa27ff5cf",
-    "url": "/data/local/LNG/JPN/expansioninput.txt"
-  },
-  {
-    "revision": "a79785dcc05c4402ed8217e60404f90d",
-    "url": "/data/local/LNG/JPN/otheractinput.txt"
-  },
-  {
-    "revision": "7855f355235012b9ad938fd68eb3c985",
-    "url": "/data/local/LNG/JPN/patch.txt"
-  },
-  {
-    "revision": "5db3b552c05f8b5523fc9e3447d0cb5f",
-    "url": "/data/local/LNG/JPN/patchstring.tbl"
-  },
-  {
-    "revision": "3424ac9ea439861afdbab34a6830b522",
-    "url": "/data/local/LNG/JPN/string.tbl"
-  },
-  {
-    "revision": "417e2347715e61bcb90f92eb850b663c",
-    "url": "/data/local/LNG/KOR/Demo/korean.txt"
-  },
-  {
-    "revision": "ec580012252e65d9be4def8052c78614",
-    "url": "/data/local/LNG/KOR/Guildinput.txt"
-  },
-  {
-    "revision": "de1e5b6ca36fc020bf119ef56b07c7c6",
-    "url": "/data/local/LNG/KOR/bnetd2helpinput.txt"
-  },
-  {
-    "revision": "4007a621a1bbb92df03b6a8aa27ff5cf",
-    "url": "/data/local/LNG/KOR/expansioninput.txt"
-  },
-  {
-    "revision": "9b4c1a0ae4b19c963e7c26847bc42dd5",
-    "url": "/data/local/LNG/KOR/korean.txt"
-  },
-  {
-    "revision": "5e9ee3965d4e13a1914a1c2ec035a089",
-    "url": "/data/local/LNG/KOR/otheractinput.txt"
-  },
-  {
-    "revision": "69bab9311ff786d98d57b05c1c216e8e",
-    "url": "/data/local/LNG/KOR/patch.txt"
-  },
-  {
-    "revision": "6ba9bc5cbab82d940a8696e2565fbeac",
-    "url": "/data/local/LNG/KOR/patchstring.tbl"
-  },
-  {
-    "revision": "e50cbd4482c9786002c50d23e744196e",
-    "url": "/data/local/LNG/KOR/string.tbl"
-  },
-  {
-    "revision": "efa4f52e81a6187575565507bda9b594",
-    "url": "/data/local/LNG/POL/Demo/polish.txt"
-  },
-  {
-    "revision": "ec580012252e65d9be4def8052c78614",
-    "url": "/data/local/LNG/POL/Guildinput.txt"
-  },
-  {
-    "revision": "0bfb5e74c7f8780dc124b0fefbff36d6",
-    "url": "/data/local/LNG/POL/bnetd2helpinput.txt"
-  },
-  {
-    "revision": "4007a621a1bbb92df03b6a8aa27ff5cf",
-    "url": "/data/local/LNG/POL/expansioninput.txt"
-  },
-  {
-    "revision": "a79785dcc05c4402ed8217e60404f90d",
-    "url": "/data/local/LNG/POL/otheractinput.txt"
-  },
-  {
-    "revision": "82e08eb929e2f43c5fd8e7b375ac8825",
-    "url": "/data/local/LNG/POL/patch.txt"
-  },
-  {
-    "revision": "433afec1e81f9eb9d725fd1a005ec4da",
-    "url": "/data/local/LNG/POL/patchstring.tbl"
-  },
-  {
-    "revision": "078c8d8dc5ab78017f7d749cf4a93d99",
-    "url": "/data/local/LNG/POL/polish.txt"
-  },
-  {
-    "revision": "a8ee98a97edf9d1ede487c9013975d8e",
-    "url": "/data/local/LNG/POR/Guildinput.txt"
-  },
-  {
-    "revision": "a972b59da87577fc3bfa13e635adfd00",
-    "url": "/data/local/LNG/POR/bnetd2helpinput.txt"
-  },
-  {
-    "revision": "8d2397e0f67dddf19ca35198d6380b62",
-    "url": "/data/local/LNG/POR/expansioninput.txt"
-  },
-  {
-    "revision": "8726c3f0b82c68159bf4c2d0f5c2b145",
-    "url": "/data/local/LNG/POR/otheractinput.txt"
-  },
-  {
-    "revision": "10b459edf849413a1e4e6c4d797867b6",
-    "url": "/data/local/LNG/POR/patch.txt"
-  },
-  {
-    "revision": "1da17f29ad463c7bec92457b39293ee2",
-    "url": "/data/local/LNG/POR/patchstring.tbl"
-  },
-  {
-    "revision": "73d85fb0b6a6c39dcb56495e45407852",
-    "url": "/data/local/LNG/POR/portuguese.txt"
   },
   {
     "revision": "a8ee98a97edf9d1ede487c9013975d8e",
@@ -7320,16 +7052,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/data/local/font/cyr/fontridiculous.txt"
   },
   {
-    "revision": "9418867373dd9bc654b0afc8528d0fe3",
+    "revision": "a1413cc6cf1b6850b7127866825002bf",
     "url": "/index.html"
   },
   {
-    "revision": "c6f52a06056c586d63c5",
-    "url": "/js/app.6c3ae767.js"
+    "revision": "b6f46c8af806e33fd461",
+    "url": "/js/app.c785ecfc.js"
   },
   {
-    "revision": "468965bb7f12d8a03482",
-    "url": "/js/chunk-vendors.2997a483.js"
+    "revision": "07cfb8c1fcd083d16fdb",
+    "url": "/js/chunk-vendors.923a18cc.js"
   },
   {
     "revision": "e1535f69f7261a5bd4250d8bf06df461",
