@@ -5,6 +5,10 @@
 * {
   border-radius: 0 !important;
 }
+div.settings {
+  display: grid;
+  grid-template-columns: min-content max-content;
+}
 
 div ul.context-menu {
   top: 0;
