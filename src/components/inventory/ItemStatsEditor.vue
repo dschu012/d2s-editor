@@ -12,12 +12,13 @@
           </div>
           <div class="col-md-11">
             <select2 :id="id + 'Stat' + statIdx" v-model.number="stat.id" @change="onChange">
-              <option v-for="it in stats_map" :value="it.i" :key="it.i">{{ it.i }} - {{ it.v.s }}</option>
+              <option v-for="it in stats_map" :value="it.i" :key="it.i">{{ it.v.s }}</option>
               <!-- <option v-for="it in stats_map" :value="it.i" :key="it.i">{{it.i}} - {{it.v.s}} - [{{it.v.dP}}]</option> -->
             </select2>
           </div>
         </div>
       </div>
+
       <div class="col-md-2" v-for="idx in numValues(stat.id)">
         <select2 class="edit-box" :id="id + 'Stat' + statIdx + 'Index'+ idx" v-model.number="stat.values[idx-1]"
           v-if="isClass(stat.id, idx)" @change="onChange">
@@ -35,6 +36,7 @@
           :id="id + 'Stat' + statIdx + 'Index'+ idx" v-model.number="stat.values[idx-1]" v-else>
       </div>
     </div>
+    
     <div class="form-row">
       <button type="button" class="btn btn-link" @click="add">Add Stat</button>
     </div>
@@ -53,8 +55,7 @@ export default {
     return {
       stats: window.constants_99.constants.magical_properties,
       stats_map: window.constants_99.constants.magical_properties.map((e, i) => { return { i: i, v: e } }).filter(e => e.v != null && e.v.s != null),
-      skills: window.constants_99.constants.skills.map((e, i) => { return { i: i, v: e } }).filter(e => e.v != null && e.v.s != null)
-        .sort((a, b) => { return a.v.s.localeCompare(b.v.s) }),
+      skills: window.constants_99.constants.skills.map((e, i) => { return { i: i, v: e } }).filter(e => e.v != null && e.v.s != null).sort((a, b) => { return a.v.s.localeCompare(b.v.s) }),
       classes: window.constants_99.constants.classes,
     }
   },
@@ -88,8 +89,8 @@ export default {
       this.onChange();
     },
     add() {
-      //this.itemStats.push({ id: 0, values: [0, 0, 0] });
-      this.itemStats.push({ id: 0, values: [0, 0] });
+      //this.itemStats.push({ id: 0, values: [0, 0] });
+      this.itemStats.push({ id: 0, values: [1, 0, 1] });
     },
     remove(idx) {
       this.itemStats.splice(idx, 1);

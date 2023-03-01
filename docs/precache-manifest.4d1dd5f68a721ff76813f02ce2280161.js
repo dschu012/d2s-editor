@@ -4,7 +4,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/constants.html"
   },
   {
-    "revision": "1d0ad442df5f9618fe2bc3e82657f131",
+    "revision": "0a666582b6a7f689227dcf160c906b89",
     "url": "/css/app.css"
   },
   {
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/d2/constants_96.bundle.min.js"
   },
   {
-    "revision": "1ba8f0772346aaf9f9880a86f60403d3",
+    "revision": "0c131183727aac43d37e683a5ea239ff",
     "url": "/d2/constants_99.bundle.min.js"
   },
   {
@@ -7052,12 +7052,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/data/local/font/cyr/fontridiculous.txt"
   },
   {
-    "revision": "a1413cc6cf1b6850b7127866825002bf",
+    "revision": "df04266090770dfc3fe40a9d701037a4",
     "url": "/index.html"
   },
   {
-    "revision": "b6f46c8af806e33fd461",
-    "url": "/js/app.c785ecfc.js"
+    "revision": "baf9480b406a07212d1a",
+    "url": "/js/app.4f1711c6.js"
   },
   {
     "revision": "07cfb8c1fcd083d16fdb",

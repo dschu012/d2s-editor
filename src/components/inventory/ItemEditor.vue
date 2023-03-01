@@ -21,7 +21,7 @@
           <li>
             <div class="settings">
               <label>Quality:</label>
-              <select class="edit-box" v-model.number="item.quality" @change="onEvent('update')" v-select>
+              <select class="edit-box" v-model.number="item.quality" @change="onEvent('update')">
                 <option v-for="rarity in rarities" :value="rarity.key" :key="rarity.key">{{ rarity.value }}</option>
               </select>
             </div>
@@ -40,11 +40,11 @@
               </select>
             </div>
             <div v-if="item.quality == 6 || item.quality == 8">
-              <label>Rare Name 1:</label>
+              <label>Prefix:</label>
               <select class="edit-box"  v-model.number="item.rare_name" @change="onEvent('update')">
                 <option v-for="s in rare_names" :value="s.v.n" :key="s.i">{{ s.v.n }}</option>
               </select>
-              <label>Rare Name 2:</label>
+              <label>Suffix:</label>
               <select class="edit-box"  v-model.number="item.rare_name2" @change="onEvent('update')">
                 <option v-for="s in rare_names" :value="s.v.n" :key="s.i">{{ s.v.n }}</option>
               </select>
@@ -99,6 +99,7 @@
             </div>
           </li>
         </span>
+        
       </ul>
     </div>
 
@@ -167,19 +168,34 @@ export default {
     onMove() {
       this.$emit('item-event', { item: this.item, location: this.location, type: 'move' });
     },
+    findBasesInConstants(code, items) {
+      const base = items[code];
+      let bases = [];
+      //NORMAL SET UNIQUE CRAFTED
+      if (this.item.quality == 5 || this.item.quality == 6 || this.item.quality == 7 || this.item.quality == 8) {
+        bases = [base.nc, base.exc, base.elc].filter(id => items[id]);
+        //items.filter(e => e[1].nc == code || e[1].exc == code || e[1].elc == code)
+      }
+      else {
+        bases = Object.keys(items).filter(id => {
+          const item = items[id];
+          if (this.item.given_runeword == 1 && item.gemsockets < this.item.total_nr_of_sockets) return false;
+          return item.type === base.type;
+        }).sort((a, b) => items[a].level < items[b].level);
+      }
+      return Object.entries(items).filter(item => bases.includes(item[0]));
+    },
     getBases(code) {
       if (this.item.type_id == 3) {
-        return this.weapon_items.filter(e => e[1].nc == code || e[1].exc == code || e[1].elc == code)
+        return this.findBasesInConstants(code, window.constants.constants.weapon_items);
       } else if (this.item.type_id == 1) {
-        //const uniqBase = window.constants.constants.armor_items[code];
-        //const bases = [uniqBase.nc, uniqBase.exc, uniqBase.exc].filter(id => window.constants.constants.armor_items[id])
-        return this.armor_items.filter(e => e[1].nc == code || e[1].exc == code || e[1].elc == code)
+        return this.findBasesInConstants(code, window.constants.constants.armor_items);
       } else if (this.item.type_id == 4) {
         return this.other_items
       } else {
         return []
       }
-    }
+    },
   }
 };  
 </script>
