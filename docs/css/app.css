@@ -310,6 +310,12 @@ ul {
   outline: none;
 }
 
+div.settings {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-gap: 5px;
+}
+
 .dgrey {
   color: rgb(105, 105, 105);
 }
