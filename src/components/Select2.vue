@@ -7,6 +7,7 @@
 <script>
   export default {
     props: ['options', 'modelValue'],
+    template: '#select2-template',
     mounted() {
       const vm = this
       $(this.$el)
@@ -15,9 +16,10 @@
         .val(this.modelValue)
         .trigger('change')
         // emit event on change.
-        .on('change', function() {
+        .on('change', function () {
+          vm.$emit('change', this.value)
           vm.$emit('update:modelValue', this.value)
-        })
+        });
     },
     watch: {
       modelValue(value) {
@@ -28,15 +30,11 @@
       },
       options(options) {
         // update options
-        $(this.$el)
-          .empty()
-          .select2({ data: options })
+        $(this.$el).empty().select2({ data: options })
       }
     },
     unmounted() {
-      $(this.$el)
-        .off()
-        .select2('destroy')
+      $(this.$el).off().select2('destroy')
     }
   };
 </script>
