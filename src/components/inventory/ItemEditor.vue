@@ -69,9 +69,6 @@
             <label>Base:</label>
             <select class="edit-box" v-model="item.type" @change="onEvent('update')" v-select>
               <option v-for="s in getBases(item.type)" :value="s[0]" :key="s[0]">{{ s[1].n }}</option>
-                <!-- <option v-for="s in armor_items" :value="s[0]" :key="s[0]">{{ s[1].n }}</option>
-                <option v-for="s in weapon_items" :value="s[0]" :key="s[0]">{{ s[1].n }}</option>
-                <option v-for="s in other_items" :value="s[0]" :key="s[0]">{{ s[1].n }}</option> -->
             </select>
           </div>
         </li>
@@ -177,7 +174,7 @@ export default {
       //NORMAL SET UNIQUE CRAFTED
       if (this.item.quality == 5 || this.item.quality == 6 || this.item.quality == 7 || this.item.quality == 8) {
         bases = [base.nc, base.exc, base.elc].filter(id => items[id]);
-        //this.armor_items.filter(e => e[1].nc == code || e[1].exc == code || e[1].elc == code)
+        //items.filter(e => e[1].nc == code || e[1].exc == code || e[1].elc == code)
       }
       else {
         bases = Object.keys(items).filter(id => {
