@@ -645,8 +645,10 @@
         if (!item.socketed_items) {
           return;
         }
+        item.socketed_attributes = [];
         for(let i = 0; i < item.socketed_items.length; i++) {
           item.socketed_items[i].src = await utils.b64PNGFromDC6(item.socketed_items[i]);
+          item.socketed_items[i].magic_attributes.forEach((it, idx) => { if (item.socketed_attributes.findIndex(x => x.id == it.id) == -1) item.socketed_attributes.push(it) });
         }
       },
       newChar(index) {
