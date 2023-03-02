@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.1e7c4ec943cfbe139b744e040a941989.js"
+  "/precache-manifest.f0159025e66ec99cc4035cdd1fdc4f5d.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "ds2-editor"});

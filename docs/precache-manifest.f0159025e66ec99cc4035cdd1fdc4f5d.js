@@ -7320,12 +7320,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/data/local/font/cyr/fontridiculous.txt"
   },
   {
-    "revision": "cffabfa88f313b73d68275026c6ec7c4",
+    "revision": "ca116cef516e1efb9e86560fc3daf3c0",
     "url": "/index.html"
   },
   {
-    "revision": "01b1dcf98d5deede27aa",
-    "url": "/js/app.db267b6f.js"
+    "revision": "73ded8b27322787f58ca",
+    "url": "/js/app.2081136e.js"
   },
   {
     "revision": "468965bb7f12d8a03482",
