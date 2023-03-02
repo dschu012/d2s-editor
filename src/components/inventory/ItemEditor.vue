@@ -119,7 +119,7 @@
         </div>
       </div>
       <div v-if="item.socketed_items">
-        <div>Socketed Stats</div>
+        <div>Sockets Stats</div>
         <ItemStatsEditor :item-stats.sync="item.socketed_attributes" :id="id + 'Socketed stats'" @stat-change="onEvent('update')"></ItemStatsEditor>
       </div>
       <div v-if="item.socketed_items">
