@@ -1,10 +1,5 @@
 <template>
   <div>
-    <div class="form-row">
-      <div class="col-md-2">Stat</div>
-      <div class="col-md-2">Value</div>
-    </div>
-
     <div class="form-row" v-for="(stat, statIdx) in itemStats" :key="statIdx">
       <div class="col-md-4">
         <div class="form-row">

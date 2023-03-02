@@ -114,9 +114,13 @@
       </div>
       <div v-if="item.set_attributes">
         <div v-for="(set_attribute, index) in item.set_attributes">
-          <div>Set Stats List {{index}}</div>
+          <div>Set Stats {{index}}</div>
           <ItemStatsEditor :item-stats.sync="set_attribute" :id="id + 'Set' + index" @stat-change="onEvent('update')"></ItemStatsEditor>
         </div>
+      </div>
+      <div v-if="item.socketed_items">
+        <div>Socketed Stats</div>
+        <ItemStatsEditor :item-stats.sync="item.socketed_attributes" :id="id + 'Socketed stats'" @stat-change="onEvent('update')"></ItemStatsEditor>
       </div>
       <div v-if="item.socketed_items">
         <div v-for="(socketed_item, index) in item.socketed_items">
