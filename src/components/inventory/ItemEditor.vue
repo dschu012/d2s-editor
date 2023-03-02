@@ -184,7 +184,10 @@ export default {
         bases = Object.keys(items).filter(id => {
           const item = items[id];
           if (this.item.given_runeword == 1 && item.gemsockets < this.item.total_nr_of_sockets) return false;
-          return item.type === base.type;
+          if (base.c.length > 2) 
+            return item.eq1n == base.eq1n 
+          else 
+            return item.type === base.type
         }).sort((a, b) => items[a].level < items[b].level);
       }
       return Object.entries(items).filter(item => bases.includes(item[0]));
