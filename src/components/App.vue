@@ -18,12 +18,12 @@
           <li class="nav-item active">
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item" v-if="theme !== 'd2'">
+          <!-- <li class="nav-item" v-if="theme !== 'd2'">
             <a class="nav-link" href="#" @click="setTheme('d2')">Change Theme</a>
           </li>
           <li class="nav-item" v-if="theme === 'd2'">
             <a class="nav-link" href="#" @click="setTheme('dark')">Change Theme</a>
-          </li>
+          </li> -->
         </ul>
       </div>
     </nav>

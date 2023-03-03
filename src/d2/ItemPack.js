@@ -1,86 +1,86 @@
 export default [
   {
-    "key": "./Misc/Charms/Skiller/Ama/Bow-Sk Life.d2i",
+    "key": "./Misc/Charms/Grand Charm/Skiller/Amazon/Bow and Crossbow + Life.d2i",
     "value": "EACAAAQIVNhtYPmXxBtTcI1UHEDCCwAg/wE="
   },
   {
-    "key": "./Misc/Charms/Skiller/Ama/Java-Sk Life.d2i",
+    "key": "./Misc/Charms/Grand Charm/Skiller/Amazon/Javelin and Spear + Life.d2i",
     "value": "EACAAAQEVNhtEEr3yB7TgI1UHEDCSwAg/wE="
   },
   {
-    "key": "./Misc/Charms/Skiller/Ama/Passiv-Sk Life.d2i",
+    "key": "./Misc/Charms/Grand Charm/Skiller/Amazon/Passive and Magic + Life.d2i",
     "value": "EACAAAQAVNhtcMfPpBhTeY1UHEDCKwAg/wE="
   },
   {
-    "key": "./Misc/Charms/Skiller/Assa/Martial Arts-Sk Life.d2i",
+    "key": "./Misc/Charms/Grand Charm/Skiller/Assassin/Martial Arts + Life.d2i",
     "value": "EACAAAQUVNhtKOePlh1TwI9UHEDCSwYg/wE="
   },
   {
-    "key": "./Misc/Charms/Skiller/Assa/Shadow-Sk Life.d2i",
+    "key": "./Misc/Charms/Grand Charm/Skiller/Assassin/Shadow Disciplines + Life.d2i",
     "value": "EACAAAQQVNhtcHGb1h5TuI9UHEDCKwYg/wE="
   },
   {
-    "key": "./Misc/Charms/Skiller/Assa/Trap-Sk Life.d2i",
+    "key": "./Misc/Charms/Grand Charm/Skiller/Assassin/Traps + Life.d2i",
     "value": "EACAAAQMVNhtYHSrZhnTsI9UHEDCCwYg/wE="
   },
   {
-    "key": "./Misc/Charms/Skiller/Barb/Combat-Sk Life.d2i",
+    "key": "./Misc/Charms/Grand Charm/Skiller/Barbarian/Combat + Life.d2i",
     "value": "EACAAARAVdht2OjLkRvT8I5UHEDCCwQg/wE="
   },
   {
-    "key": "./Misc/Charms/Skiller/Barb/Cry-Sk Life.d2i",
+    "key": "./Misc/Charms/Grand Charm/Skiller/Barbarian/Warcries + Life.d2i",
     "value": "EACAAARIVdhtEEoXFRjTAI9UHEDCSwQg/wE="
   },
   {
-    "key": "./Misc/Charms/Skiller/Barb/Mastery-Sk Life.d2i",
+    "key": "./Misc/Charms/Grand Charm/Skiller/Barbarian/Masteries + Life.d2i",
     "value": "EACAAAREVdhtmK7YdBxT+Y5UHEDCKwQg/wE="
   },
   {
-    "key": "./Misc/Charms/Skiller/Dru/Elemental-Sk Life.d2i",
+    "key": "./Misc/Charms/Grand Charm/Skiller/Druid/Elemental + Life.d2i",
     "value": "EACAAARUVdhtIPe2xR5TYY9UHEDCSwUg/wE="
   },
   {
-    "key": "./Misc/Charms/Skiller/Dru/Shape-Sk Life.d2i",
+    "key": "./Misc/Charms/Grand Charm/Skiller/Druid/Shapeshifting + Life.d2i",
     "value": "EACAAARQVdhtACNGzRjTWI9UHEDCKwUg/wE="
   },
   {
-    "key": "./Misc/Charms/Skiller/Dru/Summon-Sk.d2i",
+    "key": "./Misc/Charms/Grand Charm/Skiller/Druid/Summoning + Life.d2i",
     "value": "EACAAARMVdhteBvD4RpTUY9UHEDCCwUg/wE="
   },
   {
-    "key": "./Misc/Charms/Skiller/Necro/Bone-PSN-Sk Life.d2i",
+    "key": "./Misc/Charms/Grand Charm/Skiller/Necromancer/Poison and Bone + Life.d2i",
     "value": "EACAAAQERNhtCOGCHhhTOY5UHEDCKwIg/wE="
   },
   {
-    "key": "./Misc/Charms/Skiller/Necro/Curse-Sk Life.d2i",
+    "key": "./Misc/Charms/Grand Charm/Skiller/Necromancer/Curses + Life.d2i",
     "value": "EACAAAQARNht6IenohpTMY5UHEDCCwIg/wE="
   },
   {
-    "key": "./Misc/Charms/Skiller/Necro/Summon-Sk Life.d2i",
+    "key": "./Misc/Charms/Grand Charm/Skiller/Necromancer/Summoning + Life.d2i",
     "value": "EACAAAQIRNht+CCP+RnTQI5UHEDCSwIg/wE="
   },
   {
-    "key": "./Misc/Charms/Skiller/Pala/Combat-Sk Life.d2i",
+    "key": "./Misc/Charms/Grand Charm/Skiller/Paladin/Combat + Life.d2i",
     "value": "EACAAAQMRNhtEPs+jx9TkI5UHEDCCwMg/wE="
   },
   {
-    "key": "./Misc/Charms/Skiller/Pala/Defensive-Sk Life.d2i",
+    "key": "./Misc/Charms/Grand Charm/Skiller/Paladin/Defensive Auras + Life.d2i",
     "value": "EACAAAQURNhtAHTfTRhToY5UHEDCSwMg/wE="
   },
   {
-    "key": "./Misc/Charms/Skiller/Pala/Offensive-Sk Life.d2i",
+    "key": "./Misc/Charms/Grand Charm/Skiller/Paladin/Offensive Auras + Life.d2i",
     "value": "EACAAAQQRNhtQNniPhlTmI5UHEDCKwMg/wE="
   },
   {
-    "key": "./Misc/Charms/Skiller/Sorc/Cold-Sk.d2i",
+    "key": "./Misc/Charms/Grand Charm/Skiller/Sorceress/Cold + Life.d2i",
     "value": "EACAAAQgRNhtqCloJR5T4I1UHEDCSwEg/wE="
   },
   {
-    "key": "./Misc/Charms/Skiller/Sorc/Fire-Sk Life.d2i",
+    "key": "./Misc/Charms/Grand Charm/Skiller/Sorceress/Fire + Life.d2i",
     "value": "EACAAAQYRNhtAC405x9T0I1UHEDCCwEg/wE="
   },
   {
-    "key": "./Misc/Charms/Skiller/Sorc/Light-Sk Life.d2i",
+    "key": "./Misc/Charms/Grand Charm/Skiller/Sorceress/Lightning + Life.d2i",
     "value": "EACAAAQcRNhtmJRFGRhT2Y1UHEDCKwEg/wE="
   },
   {
@@ -88,31 +88,31 @@ export default [
     "value": "EACAAARARNhP4OGZAR7TAEhXHKAxgQILAwwDUIP/"
   },
   {
-    "key": "./Misc/Charms/Small Charms/Cold DMG Sc.d2i",
+    "key": "./Misc/Charms/Small Charms/Cold dmg.d2i",
     "value": "EACAAATIRNhPOK3bahpTiVOw2HjoIPMf"
   },
   {
-    "key": "./Misc/Charms/Small Charms/Fire DMG Sc.d2i",
+    "key": "./Misc/Charms/Small Charms/Fire dmg.d2i",
     "value": "EACAAASIRNhP0LmkXhpT6FOzwNBQ8R8="
   },
   {
-    "key": "./Misc/Charms/Small Charms/Life Mana Sc.d2i",
+    "key": "./Misc/Charms/Small Charms/Life Mana.d2i",
     "value": "EACAAASARNhPINdJXR/TeElXHKCRIOY/"
   },
   {
-    "key": "./Misc/Charms/Small Charms/Life Resis Sc.d2i",
+    "key": "./Misc/Charms/Small Charms/Life Res.d2i",
     "value": "EACAAARQRNhPGO4hiR5TeUpWHKBxolmKZiuatWj2Hw=="
   },
   {
-    "key": "./Misc/Charms/Small Charms/Light DMG Sc.d2i",
+    "key": "./Misc/Charms/Small Charms/Light dmg.d2i",
     "value": "EACAAAQIRNhPoJARyx1TSVS2yBDG+A8="
   },
   {
-    "key": "./Misc/Charms/Small Charms/MF Resis Sc.d2i",
+    "key": "./Misc/Charms/Small Charms/MF Res.d2i",
     "value": "EACAAAQERNhPoPFzThxTEMpInGiWotmKZi2aQVn7Dw=="
   },
   {
-    "key": "./Misc/Charms/Small Charms/Psn DMG Sc.d2i",
+    "key": "./Misc/Charms/Small Charms/Poison dmg.d2i",
     "value": "EACAAAQARNhPyJCp6htTqVSt5BhppH//AQ=="
   },
   {
@@ -224,7 +224,7 @@ export default [
     "value": "EACAAAQcBN0AAv0NjdaYkjFIIgIKFFDc/gM="
   },
   {
-    "key": "./Misc/Jewels/10 Min 15 Resis (red).d2i",
+    "key": "./Misc/Jewels/10 Min 15 Res (red).d2i",
     "value": "EACAAARYBN0AgtomGuSYUlTSoYJyQTlxLcW1FddaXPuk/Ac="
   },
   {
@@ -236,23 +236,23 @@ export default [
     "value": "EACAAARIBN0AgvbeoNSYUi7SoYJi4XFBwfD4pIB6/Ac="
   },
   {
-    "key": "./Misc/Jewels/15 Ias (green).d2i",
+    "key": "./Misc/Jewels/15 IAS (green).d2i",
     "value": "EACAAAXIEN0Awilg+ACODgBWocvoPw=="
   },
   {
-    "key": "./Misc/Jewels/15 Ias 15 Res (blue).d2i",
+    "key": "./Misc/Jewels/15 IAS 15 Res (blue).d2i",
     "value": "EACAAAQYBN0AwuxN4vCYRlRW4cS1FNdWXGtxrcvoPw=="
   },
   {
-    "key": "./Misc/Jewels/15 Ias 30 Fire Res (red).d2i",
+    "key": "./Misc/Jewels/15 IAS 30 Fire Res (red).d2i",
     "value": "EACAAATEBN0AgnMV8tOY0ilWocvohLn/"
   },
   {
-    "key": "./Misc/Jewels/15 Ias 40 Ed (green).d2i",
+    "key": "./Misc/Jewels/15 IAS 40 Ed (green).d2i",
     "value": "EACAAAUABN0Awilg+ACODgBWocsoAgoU/wE="
   },
   {
-    "key": "./Misc/Jewels/15 Ias 8 Min (red).d2i",
+    "key": "./Misc/Jewels/15 IAS 8 Min (red).d2i",
     "value": "EACAAASIBN0AgnMV8tOY0ilWoQJyAeky+oT8Bw=="
   },
   {
@@ -756,10 +756,6 @@ export default [
     "value": "EAjABAQAxAMR9/nGS7RDrKBwcKAIDx78j1C0KJjbpT2MGFWDjFm1jofHN8LpzX8QAKAANADgbL8DEACgADQE4DDbABAAoAA0COBsvwMQAKAANAzgMF8B"
   },
   {
-    "key": "./Runewords/Merc/Infinity (Mancacher, Eth).d2i",
-    "value": "EAjABAUI1OuJAAAAACnBCsrDA4rw4MH/CEWLgrld2sOIUTXImFXreHh8I5ze/AcQAKAANADgbL8DEACgADQE4DDbABAAoAA0COBsvwMQAKAANAzgMF8B"
-  },
-  {
     "key": "./Runewords/Merc/Insight (CA, Eth).d2i",
     "value": "EAjABAQA1M8XTR8U2bRDsKAEBaH/AEoClASUBpQiECQIZS9MAiPN7Y7DS3jifxAAoAA0AOB8IwEQAKAANATgfG8DEACgADQI4Hz7ABAAoAA0DOB8mAA="
   },
@@ -852,10 +848,6 @@ export default [
     "value": "EAiABAQgZH9BK2EIFNQOyYECMBEePFgy+g9AJYBKgGqA6sqjy61OIA9kPSwvnXn/ARAAoAA0AOB8bwMQAKAANATgfPsAEACgADQI4Hw+AQ=="
   },
   {
-    "key": "./Runewords/Weapon/Bows/Faith (MB).d2i",
-    "value": "EAiABAUA5FmNAAAAACkBCAoMDIrw4AEvAID9j4AR44lrKa6tuNbiGgw8PHeA/tElPW9TAIr/EACgADQA4DA+EACgADQE4Gw/ARAAoAA0COAw3wEQAKAANAzgfDMB"
-  },
-  {
     "key": "./Runewords/Weapon/Bows/Faith (GMB).d2i",
     "value": "EAiABAUU5FkRAQAAAFICEJSbGxThwQNeAAD7HwEjxhPXUlxbca3FNRh4eO4A/aNLet6mABT/ARAAoAA0AOAwPhAAoAA0BOBsPwEQAKAANAjgMN8BEACgADQM4HwzAQ=="
   },
@@ -904,7 +896,7 @@ export default [
     "value": "EAiABAQQ1YtTwRbdBLRDZqAAVIQHD5aM/kfw6pUGGa06gWEWDI9iLQ5kY1c5BWMMPZf/EACgADQA4DD7ABAAoAA0BOAwSAAQAKAANAjgbL8DEACgADQM4Gw/ARAAoAA0EOB8kAA="
   },
   {
-    "key": "./Runewords/Weapon/Swords/Fortitude(PB).d2i",
+    "key": "./Runewords/Weapon/Swords/Fortitude (PB).d2i",
     "value": "EAiABAQAxIsTcYM2kLRDhqAAUIQHD5aM/kNAFoElyxPmUphbYa6FuTQtOUyyhwcKNuY/EACgADQA4Hx/AhAAoAA0BOB8mAAQAKAANAjgfL4CEACgADQM4DBIAA=="
   },
   {
