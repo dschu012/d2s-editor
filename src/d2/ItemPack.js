@@ -756,8 +756,8 @@ export default [
     "value": "EAjABAQAxAMR9/nGS7RDrKBwcKAIDx78j1C0KJjbpT2MGFWDjFm1jofHN8LpzX8QAKAANADgbL8DEACgADQE4DDbABAAoAA0COBsvwMQAKAANAzgMF8B"
   },
   {
-    "key": "./Runewords/Merc/Insight (CA, Eth).d2i",
-    "value": "EAjABAQA1M8XTR8U2bRDsKAEBaH/AEoClASUBpQiECQIZS9MAiPN7Y7DS3jifxAAoAA0AOB8IwEQAKAANATgfG8DEACgADQI4Hz7ABAAoAA0DOB8mAA="
+    "key": "./Runewords/Merc/Insight (Thresher, Eth).d2i",
+    "value": "EAjABAQAxBMSTR8U2bRDsKCEhKD/AEoClASUBpQiECQIZS9MAiPN7Y7DS3jifxAAoAA0AOB8IwEQAKAANATgfG8DEACgADQI4Hz7ABAAoAA0DOB8mAA="
   },
   {
     "key": "./Runewords/Merc/Obedience (CA, Eth).d2i",
