@@ -744,36 +744,20 @@ export default [
     "value": "EAiABE0EYDxjAwAAABgPF4IiCgoKA+HBktEaeluTb/8TrLkxstNPdokMavrwHxAAoAA1AOB8fwUQAKAANQTgMJ8AEACgADQI4DD7AA=="
   },
   {
-    "key": "./Runewords/Merc/Destruction (CA, Eth).d2i",
-    "value": "EAjABAQQ1M9XPVrBDrVDZqAEBakIDx4sGf2P4NUrDTJadQLDLBgexVocyMaucgrGGHou/wEQAKAANADgMPsAEACgADQE4DBIABAAoAA0COBsvwMQAKAANAzgbD8BEACgADQQ4HyQAA=="
-  },
-  {
-    "key": "./Runewords/Merc/Doom (CA, Eth).d2i",
-    "value": "EAjABAQQ1c9X79n157RDaKAEBakIKFA8dfgfASPGLsE6gT+6JIcZk+gpPHX5DxAAoAA0AOB80AIQAKAANATgMD4QAKAANAjgMEwAEACgADQM4DBIABAAoAA0EOBsmQA="
-  },
-  {
     "key": "./Runewords/Merc/Infinity (Giant Thresher, Eth).d2i",
     "value": "EAjABAQAxAMR9/nGS7RDrKBwcKAIDx78j1C0KJjbpT2MGFWDjFm1jofHN8LpzX8QAKAANADgbL8DEACgADQE4DDbABAAoAA0COBsvwMQAKAANAzgMF8B"
   },
   {
-    "key": "./Runewords/Merc/Insight (CA, Eth).d2i",
-    "value": "EAjABAQA1M8XTR8U2bRDsKAEBaH/AEoClASUBpQiECQIZS9MAiPN7Y7DS3jifxAAoAA0AOB8IwEQAKAANATgfG8DEACgADQI4Hz7ABAAoAA0DOB8mAA="
+    "key": "./Runewords/Merc/Insight (Thresher, Eth).d2i",
+    "value": "EAjABAQAxBMSTR8U2bRDsKCEhKD/AEoClASUBpQiECQIZS9MAiPN7Y7DS3jifxAAoAA0AOB8IwEQAKAANATgfG8DEACgADQI4Hz7ABAAoAA0DOB8mAA="
   },
   {
-    "key": "./Runewords/Merc/Obedience (CA, Eth).d2i",
-    "value": "EAjABAQIxM9XI8Ni3LRD6qAAVIQHD5aM/keQK/eDTU6YS2FuhbkW5sbwEKGIVTR4mmb8BxAAoAA0AOB80AIQAKAANATgfJAAEACgADQI4Hy+AxAAoAA0DOB8owUQAKAANBDgfFwA"
+    "key": "./Runewords/Merc/Obedience (Thresher, Eth).d2i",
+    "value": "EAjABAQYxBNSI8Ni3LRD6qCEhKgIDx78jyBX7gebnDCXwtwKcy3MjeEhQhGraPA0zfgPEACgADQA4HzQAhAAoAA0BOB8kAAQAKAANAjgfL4DEACgADQM4HyjBRAAoAA0EOB8XAA="
   },
   {
-    "key": "./Runewords/Merc/Phoenix (CA, Eth).d2i",
-    "value": "EAjABAwRwM8X8R3M+7RDAKEEBaEIDx4sGf2PABkyCMiPKpf4NGNWOKhjqAvkphz/ARAAoAA0AOAw+wAQAKAANATgMPsAEACgADQI4DBIABAAoAA0DOBsPwE="
-  },
-  {
-    "key": "./Runewords/Merc/Pride (CA, Eth).d2i",
-    "value": "EAjABAQIxM8XvQDXH7RDDKEEBaEIDx4sGf2XIWOkxLwD9FIcmiyaIfPumYf8BxAAoAA0AOBsmQAQAKAANATgMC4QAKAANAjgfPYBEACgADQM4DBIAA=="
-  },
-  {
-    "key": "./Runewords/Merc/Rift (CA, Eth).d2i",
-    "value": "EAjABAQYxM8XMXJWObVDJKEEBaEIDx4sGf0HoBJAJUA1QAWDhxYNUH1yzGEVEBBjUD0UZg8TKCj/ARAAoAA0AOB80AIQAKAANATgfJAAEACgADQI4DDfARAAoAA0DOAwaAE="
+    "key": "./Runewords/Merc/Pride (Thresher, Eth).d2i",
+    "value": "EAjABAQAxBMSvQDXH7RDDKGEhKAIDx78lyFjpMS8A/RSHJosmiHz7pmH/AcQAKAANADgbJkAEACgADQE4DAuEACgADQI4Hz2ARAAoAA0DOAwSAA="
   },
   {
     "key": "./Runewords/Shield/Dragon (Monarch).d2i",
