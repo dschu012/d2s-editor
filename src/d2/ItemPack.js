@@ -792,6 +792,10 @@ export default [
     "value": "EAiABAQAdL4hQknhw2uHbEJZRlAQgvAgwoMHFJ4T9VLUW1GvRb0lIzOj/wNsCSBB6BuzTHP7o0mI/xAAoAA0AOB8+wAQAKAANATgfL4DEACgADQI4Hy7ABAAoAA0DOB8PgE="
   },
   {
+    "key": "./Runewords/Shield/Spirit (Sacred Targe).d2i",
+    "value": "EAiABEwVYD6NUFL48Nohm1BQ0dKCKPAn6qWot6Jei3r/B9gSQILQN2aZ5vZHkxD/ARAAoAA0AOB8+wAQAKAANATgfL4DEACgADQI4Hy7ABAAoAA0DOB8PgE="
+  },
+  {
     "key": "./Runewords/Shield/Splendor (BS).d2i",
     "value": "EAiABAQghB3klPuzDa8dwgnFExQUBMKDJaM1XbSGiv5DIPPEEhS8LGcGlcbzJ/8BEACgADQA4HyjBRAAoAA0BOB8fAA="
   },
