@@ -20,12 +20,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/d2/constants_99.bundle.min.js"
   },
   {
-    "revision": "882078f145e26ec1cf26f846531bc304",
+    "revision": "07e3a45a117760c9147dae5517493c97",
     "url": "/index.html"
   },
   {
-    "revision": "d90d8068c56eefbecf41",
-    "url": "/js/app.6ccb8810.js"
+    "revision": "a8dc09c9f5a4dc38eaf2",
+    "url": "/js/app.1b68a799.js"
   },
   {
     "revision": "07cfb8c1fcd083d16fdb",
