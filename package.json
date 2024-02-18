@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@dschu012/d2s": "^2.0.36",
     "@popperjs/core": "^2.11.6",
     "core-js": "^3.6.5",
     "select2": "^4.1.0-rc.0",
