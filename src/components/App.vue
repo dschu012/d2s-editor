@@ -73,8 +73,8 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" name="d2sFile" @change="onFileChange" id="d2sFile" accept=".d2s">
-                        <label class="custom-file-label" for="d2sFile">*.d2s</label>
+                        <input type="file" name="d2sFile" multiple @change="onFileChange" id="d2sFile" accept=".d2s,.d2i">
+                        <label class="custom-file-label" for="d2sFile">*.d2s,*.d2i</label>
                       </div>
                       <!-- <div>    
                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">Create New</button>
@@ -243,17 +243,17 @@
                           </button>
                         </div>
                         <div class="row mt-3">
-                          <div class="btn-group overflow-auto offset-md-3 col-md-6" role="group">
+                          <div class="btn-group offset-md-3 col-md-6" role="group">
                             <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 1 }"
                               @click="changeTab(1)">Equipped</button>
                             <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 3 }"
-                              @click="changeTab(3)">Stash</button>
-                            <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 4 }"
-                              @click="changeTab(4)">Cube</button>
-                            <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 5 }"
-                              @click="changeTab(5)">Mercenary</button>
-                            <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 6 }"
-                              @click="changeTab(6)">All</button>
+                              @click="changeTab(3)">Stash</button>     
+                            <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 8 }"
+                              @click="changeTab(8)">Cube</button>
+                            <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 9 }"
+                              @click="changeTab(9)">Mercenary</button>
+                            <button type="button" class="btn btn-secondary" :class="{ active: activeTab == 10 }"
+                              @click="changeTab(10)">All</button>
                           </div>
                           <div class="col-md-3">
                             <div class="float-right">
@@ -311,16 +311,28 @@
                             </div>
                           </div>
                         </div>
-                        <Equipped v-if="activeTab == 1 || activeTab == 6" :items.sync="equipped" @item-selected="onSelect" @item-event="onEvent" :id="'Equipped'" :contextMenu="$refs.contextMenu">
+
+                        <Equipped v-if="activeTab == 1 || activeTab == 10" :items.sync="equipped" @item-selected="onSelect" @item-event="onEvent" :id="'Equipped'" :contextMenu="$refs.contextMenu">
                         </Equipped>
-                        <Grid v-if="activeTab == 1 || activeTab == 6" :width="grid.inv.w" :height="grid.inv.h" :page="1"
-                          :items.sync="inventory" @item-selected="onSelect" @item-event="onEvent" :id="'InventoryGrid'" :contextMenu="$refs.contextMenu"></Grid>
-                        <Grid v-if="activeTab == 3 || activeTab == 6" :width="grid.stash.w" :height="grid.stash.h" :page="5"
-                          :items.sync="stash" @item-selected="onSelect" @item-event="onEvent" :id="'StashGrid'" :contextMenu="$refs.contextMenu"></Grid>
-                        <Grid v-if="activeTab == 4 || activeTab == 6" :width="grid.cube.w" :height="grid.cube.h" :page="4"
+                        <Grid v-if="activeTab == 1 || activeTab == 10" :width="grid.inv.w" :height="grid.inv.h" :page="1"
+                          :items.sync="inventory" @item-selected="onSelect" @item-event="onEvent" :id="'InventoryGrid'" :contextMenu="$refs.contextMenu">
+                        </Grid>
+                        <Stash v-if="activeTab == 3 || activeTab == 10" :items.sync="stash" @item-selected="onSelect" @item-event="onEvent" :id="'Stash'" :contextMenu="$refs.contextMenu">
+                        </Stash>
+                        <!-- 
+                        <Grid v-if="activeTab == 4 || activeTab == 10" :width="grid.stash.w" :height="grid.stash.h" :page="4"
+                          :items.sync="stash(0)" @item-selected="onSelect" @item-event="onEvent" :id="'StashSharedGrid'" :contextMenu="$refs.contextMenu"></Grid>  
+                        <Grid v-if="activeTab == 5 || activeTab == 10" :width="grid.stash.w" :height="grid.stash.h" :page="5"
+                          :items.sync="stash(1)" @item-selected="onSelect" @item-event="onEvent" :id="'StashSharedGrid'" :contextMenu="$refs.contextMenu"></Grid>  
+                        <Grid v-if="activeTab == 6 || activeTab == 10" :width="grid.stash.w" :height="grid.stash.h" :page="6"
+                          :items.sync="stash(2)" @item-selected="onSelect" @item-event="onEvent" :id="'StashSharedGrid'" :contextMenu="$refs.contextMenu"></Grid>   
+                        <Grid v-if="activeTab == 7 || activeTab == 10" :width="grid.stash.w" :height="grid.stash.h" :page="7"
+                          :items.sync="stash(3)" @item-selected="onSelect" @item-event="onEvent" :id="'StashSharedGrid'" :contextMenu="$refs.contextMenu"></Grid>    
+                        -->
+                        <Grid v-if="activeTab == 8 || activeTab == 10" :width="grid.cube.w" :height="grid.cube.h" :page="8"
                           :items.sync="cube" @item-selected="onSelect" @item-event="onEvent" :id="'CubeGrid'" :contextMenu="$refs.contextMenu">
                         </Grid>
-                        <Mercenary v-if="activeTab == 5 || activeTab == 6" :items.sync="mercenary" @item-selected="onSelect" :contextMenu="$refs.contextMenu">
+                        <Mercenary v-if="activeTab == 9 || activeTab == 10" :items.sync="mercenary" @item-selected="onSelect" :contextMenu="$refs.contextMenu">
                         </Mercenary>
                         <ItemEditor v-if="selected" :id="'Selected'" :item.sync="selected" :location="location" ref="editor" @item-event="onEvent"></ItemEditor>
                       </div>
@@ -348,10 +360,6 @@
           </div>
         </div>
       </div>
-
-    </div>
-    <div v-if="theme == 'd2'" class="text-center mt-3">
-      Credits to Dimka-DJZLO at <a href="https://discord.gg/NvfftHY">Phrozen Keep</a> for the theme!
     </div>
   </div>
 </template>
@@ -367,10 +375,14 @@
   import Grid from './inventory/Grid.vue';
   import Mercenary from './Mercenary.vue';
   import ItemEditor from './inventory/ItemEditor.vue';
+  import Stash from './inventory/Stash.vue';
 
   import ItemPack from '../d2/ItemPack.js';
   import CharPack from '../d2/CharPack.js';
   import utils from '../utils.js';
+
+  import * as d2s from '@dschu012/d2s';
+  import * as d2stash from '@dschu012/d2s/lib/d2/stash';
   
   export default {
     components: {
@@ -380,6 +392,7 @@
       Quests,
       Skills,
       Equipped,
+      Stash,
       Grid,
       Mercenary,
       ItemEditor,
@@ -388,6 +401,7 @@
     data() {
       return {
         save: null,
+        stashData: null,
         activeTab: 1,
         selected: null,
         itempack: ItemPack,
@@ -448,9 +462,18 @@
         );
       },
       stash() {
-        return this.save.items.filter(
-          item => item.location_id === 0 && item.alt_position_id === 5,
-        );
+        let stash = Object();
+        stash.pages = [];
+        stash.pages.push([]);
+        stash.pages[0].items = [];
+        stash.pages[0].items = this.save.items.filter(item => item.location_id === 0 && item.alt_position_id === 5);
+
+        if (this.stashData != null) {
+          stash.pages.push(this.stashData.pages[0]);
+          stash.pages.push(this.stashData.pages[1]);
+          stash.pages.push(this.stashData.pages[2]);
+        }
+        return stash;
       },
       cube() {
         return this.save.items.filter(
@@ -462,10 +485,13 @@
       },
     },
     methods: {
-      setTheme(theme) {
-        localStorage.setItem('theme', theme);
-        this.theme = theme;
-        return;
+      stash(i) {
+        if (i == 0) {
+          return this.save.items.filter(item => item.location_id === 0 && item.alt_position_id === 5,);
+        } else {
+          if (this.stashData == null) return [];
+          return this.stashData.pages[i-1].items || [];
+        }
       },
       rootClick() {
         this.$refs.contextMenu.close();
@@ -590,7 +616,7 @@
           const location_id = this.activeTab === 1 ? 1 : 0; // Equipped
           const storage_page = this.activeTab === 1 ? 1 :  // Equipped
               this.activeTab === 3 ? 5 : // Stash
-              this.activeTab === 4 ? 4 : // Cube
+              this.activeTab === 8 ? 8 : // Cube
                   1; // Inventory
           if(this.canPlaceItem(e.item, storage_page, e.grid[0], e.grid[1])) {
             this.paste(e.item, [location_id, this.location?.equipped_location, e.grid[0], e.grid[1], storage_page]);
@@ -769,23 +795,50 @@
         this.readBuffer(event.target.result, event.target.filename);
       },
       readBuffer(bytes, filename) {
-        let that = this;
-        this.save = null;
-        this.selected = null;
-        d2s.read(bytes).then(response => {
-          that.save = response;
-          if(filename) {
-            that.save.header.name = filename.split('.')[0];
-          }
-          that.setPropertiesOnSave();
-        });
+        if (filename.includes(".d2s")) {
+          d2s.read(bytes).then(response => {
+            this.save = response;
+            this.setPropertiesOnSave();
+          });
+        } else if (filename.includes("SharedStash")) {
+          d2stash.read(bytes).then(response => {   
+            this.stashData = response;
+            for (var i = 0; i < this.stashData.pageCount; i++) {
+              [... this.stashData.pages[i].items].forEach(item => {
+                this.setPropertiesOnItem(item);
+              });
+            }
+          });
+        }
+      },
+      saveFileStash() {
+        if (this.stashData != null) {
+          let link = document.createElement('a');
+          link.style.display = 'none';
+          document.body.appendChild(link);
+          d2stash.write(this.stashData).then(function (response) {
+            let blob = new Blob([response], { type: "octet/stream" });
+            link.href = window.URL.createObjectURL(blob);
+            link.download = 'SharedStashSoftCoreV2.d2i';
+            link.click();
+            link.remove();
+          });
+        }
       },
       onFileChange(event) {
-        let reader = new FileReader();
-        reader.filename = event.target.files[0].name;
-        reader.onload = this.onFileLoad;
-        reader.readAsArrayBuffer(event.target.files[0]);
-        event.target.value = null;
+        this.save = null;
+        this.stashData = null;
+        this.selected = null;
+        const files = event.currentTarget.files;
+        Object.keys(files).forEach(i => {
+          if (i < 2) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+              this.readBuffer(e.target.result, files[i].name);
+            }
+            reader.readAsArrayBuffer(files[i]);
+          }
+        });
       },
       maxGold() {
         this.save.attributes.gold = this.save.header.level * 10000;
