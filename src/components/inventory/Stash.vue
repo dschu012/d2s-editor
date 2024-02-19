@@ -54,7 +54,10 @@
       onSelect(item) {
         this.$emit('item-selected', item);
       },
-      stash(i) { return this.items.pages[i].items || [] },
+      stash(i) { 
+        if (this.items.pages[i] == null) return [];
+        return this.items.pages[i].items || [] 
+      },
       changeTab(i) {
         this.activeTab = i;
       },

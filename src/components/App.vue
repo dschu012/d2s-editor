@@ -73,7 +73,7 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" multiple="multiple" name="d2sFile" @change="onFileChange" id="d2sFile" accept=".d2s,.d2i">
+                        <input type="file" name="d2sFile" multiple @change="onFileChange" id="d2sFile" accept=".d2s,.d2i">
                         <label class="custom-file-label" for="d2sFile">*.d2s,*.d2i</label>
                       </div>
                       <!-- <div>    
@@ -831,12 +831,14 @@
         this.selected = null;
         const files = event.currentTarget.files;
         Object.keys(files).forEach(i => {
+          if (i < 2) {
             const reader = new FileReader();
             reader.onload = (e) => {
               this.readBuffer(e.target.result, files[i].name);
             }
             reader.readAsArrayBuffer(files[i]);
-          });
+          }
+        });
       },
       maxGold() {
         this.save.attributes.gold = this.save.header.level * 10000;
