@@ -795,21 +795,38 @@
         this.readBuffer(event.target.result, event.target.filename);
       },
       readBuffer(bytes, filename) {
-        if (filename.includes(".d2s")) {
-          d2s.read(bytes).then(response => {
-            this.save = response;
-            this.setPropertiesOnSave();
-          });
-        } else if (filename.includes("SharedStash")) {
-          d2stash.read(bytes).then(response => {   
-            this.stashData = response;
-            for (var i = 0; i < this.stashData.pageCount; i++) {
-              [... this.stashData.pages[i].items].forEach(item => {
-                this.setPropertiesOnItem(item);
-              });
+        let that = this;
+        this.save = null;
+        this.selected = null;
+        //this.stashData = null;
+
+        if (filename) {
+          if (filename.includes(".d2s")) {
+            d2s.read(bytes).then(response => {
+              that.save = response;
+              that.save.header.name = filename.split('.')[0];
+              that.setPropertiesOnSave();
+            });
             }
+          else if (filename.includes("SharedStash")) {
+            that.stashData = null;
+            d2stash.read(bytes).then(response => {   
+              that.stashData = response;
+              for (var i = 0; i < that.stashData.pageCount; i++) {
+                [... that.stashData.pages[i].items].forEach(item => {
+                  that.setPropertiesOnItem(item);
+                });
+              }
+            });
+          }
+        } else {
+          that.stashData = null;
+          d2s.read(bytes).then(response => {
+            that.save = response;
+            that.setPropertiesOnSave();
           });
         }
+
       },
       saveFileStash() {
         if (this.stashData != null) {
