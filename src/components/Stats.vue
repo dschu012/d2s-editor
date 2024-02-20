@@ -134,7 +134,7 @@
     },
     data() {
       return {
-        stats: window.constants.constants.magical_properties,
+        stats: window.constants.magical_properties,
       }
     },
     watch: {
@@ -145,8 +145,8 @@
         const newLevel = level - s;
         this.save.attributes.unused_stats = (this.save.attributes.unused_stats ?? 0) + (newLevel * 5);
         this.save.attributes.unused_skill_points = (this.save.attributes.unused_skill_points ?? 0) + newLevel;
-        for(const cCode in constants.constants.classes) {
-          const stat = constants.constants.classes[cCode];
+        for(const cCode in window.constants.classes) {
+          const stat = window.constants.classes[cCode];
           if(stat.n === this.save.header.class) {
             this.save.attributes.max_hp += newLevel * stat.s.lpl / 4;
             this.save.attributes.current_hp += newLevel * stat.s.lpl / 4;
@@ -162,8 +162,8 @@
       },
       "save.attributes.vitality": function(val, old) {
         const change = val-old;
-        for (const cCode in window.constants.constants.classes) {
-          const stat = window.constants.constants.classes[cCode];
+        for (const cCode in window.constants.classes) {
+          const stat = window.constants.classes[cCode];
           if (window.stat.n === this.save.header.class) {
             this.save.attributes.max_hp += change * stat.s.lpv / 4;
             this.save.attributes.current_hp += change * stat.s.lpv / 4;
@@ -176,8 +176,8 @@
       },
       "save.attributes.energy": function(val, old) {
         const change = val-old;
-        for (const cCode in window.constants.constants.classes) {
-          const stat = window.constants.constants.classes[cCode];
+        for (const cCode in window.constants.classes) {
+          const stat = window.constants.classes[cCode];
           if (window.stat.n === this.save.header.class) {
             this.save.attributes.max_mana += change * stat.s.mpe / 4;
             this.save.attributes.current_mana += change * stat.s.mpe / 4;

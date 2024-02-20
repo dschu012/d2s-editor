@@ -383,6 +383,8 @@
 
   import * as d2s from '@dschu012/d2s';
   import * as d2stash from '@dschu012/d2s/lib/d2/stash';
+  import { constants as constants96 } from '@dschu012/d2s/lib/data/versions/96_constant_data';
+  import { constants as constants99 } from '@dschu012/d2s/lib/data/versions/99_constant_data';
   
   export default {
     components: {
@@ -438,15 +440,14 @@
         this.grid = JSON.parse(localStorage.getItem('grid'));
       }
 
+      d2s.setConstantData(96, constants96);
+      d2s.setConstantData(97, constants96);
+      d2s.setConstantData(98, constants96);
+      d2s.setConstantData(99, constants99);
 
-      d2s.setConstantData(96, window.constants_96.constants);
-      d2s.setConstantData(97, window.constants_96.constants);
-      d2s.setConstantData(98, window.constants_96.constants);
-      d2s.setConstantData(99, window.constants_99.constants);
-
-      window.constants = window.constants_99;
-      this.addItemsPackBases(window.constants_99.constants.weapon_items, "Weapons");
-      this.addItemsPackBases(window.constants_99.constants.armor_items, "Armor");
+      window.constants = constants99;
+      this.addItemsPackBases(window.constants.weapon_items, "Weapons");
+      this.addItemsPackBases(window.constants.armor_items, "Armor");
     },
     filters: {
     },
@@ -578,7 +579,7 @@
           this.clipboard = JSON.parse(JSON.stringify(e.item));
           navigator.clipboard.writeText(JSON.stringify(e.item));
         } else if(e.type == 'update') {
-          d2s.enhanceItems([e.item], window.constants.constants);
+          d2s.enhanceItems([e.item], window.constants);
           this.setPropertiesOnItem(e.item);
         } else if(e.type == 'delete') {
           let idx = this.findIndex(this.save.items, e.item);
@@ -795,7 +796,8 @@
         this.readBuffer(event.target.result, event.target.filename);
       },
       readBuffer(bytes, filename) {
-        let that = this;
+        //console.log(filename);
+        //let that = this;
         this.save = null;
         this.selected = null;
         //this.stashData = null;
@@ -803,27 +805,26 @@
         if (filename) {
           if (filename.includes(".d2s")) {
             d2s.read(bytes).then(response => {
-              that.save = response;
-              that.save.header.name = filename.split('.')[0];
-              that.setPropertiesOnSave();
+              this.save = response;
+              this.save.header.name = filename.split('.')[0];
+              this.setPropertiesOnSave();
             });
-            }
-          else if (filename.includes("SharedStash")) {
-            that.stashData = null;
+          } else if (filename.includes("SharedStash")) {
+            this.stashData = null;
             d2stash.read(bytes).then(response => {   
-              that.stashData = response;
-              for (var i = 0; i < that.stashData.pageCount; i++) {
-                [... that.stashData.pages[i].items].forEach(item => {
-                  that.setPropertiesOnItem(item);
+              this.stashData = response;
+              for (var i = 0; i < this.stashData.pageCount; i++) {
+                [... this.stashData.pages[i].items].forEach(item => {
+                  this.setPropertiesOnItem(item);
                 });
               }
             });
           }
         } else {
-          that.stashData = null;
+          this.stashData = null;
           d2s.read(bytes).then(response => {
-            that.save = response;
-            that.setPropertiesOnSave();
+            this.save = response;
+            this.setPropertiesOnSave();
           });
         }
 
@@ -972,9 +973,9 @@
             newItems.push(newItem);
           }
         }
-        d2s.enhanceItems(newItems, window.constants.constants);
+        d2s.enhanceItems(newItems, window.constants);
         for (const item of newItems) {      
-          let bytes = await d2s.writeItem(item, 0x63, window.constants.constants);
+          let bytes = await d2s.writeItem(item, 0x63, window.constants);
           let base64 = utils.arrayBufferToBase64(bytes);
           let category = item.categories[0];
           this.itempack.push({
