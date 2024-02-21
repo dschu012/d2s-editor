@@ -152,14 +152,14 @@ export default {
       locations: [{ key: 0, value: 'Stored' }, { key: 1, value: 'Equipped' }, { key: 4, value: 'Cursor' }],
       equipped_locations: [{ key: 1, value: 'Head' }, { key: 2, value: 'Neck' }, { key: 3, value: 'Torso' }, { key: 4, value: 'Right Hand' }, { key: 5, value: 'Left Hand' }, { key: 6, value: 'Right Finger' }, { key: 7, value: 'Left Finger' }, { key: 8, value: 'Waist' }, { key: 9, value: 'Boots' }, { key: 10, value: 'Gloves' }, { key: 11, value: 'Alternate Right Hand' }, { key: 12, value: 'Alternate Left Hand' }],
       storage_pages: [{ key: 1, value: 'Inventory' }, { key: 4, value: 'Cube' }, { key: 5, value: 'Stash' }],
-      prefixes: window.constants.constants.magic_prefixes.map((e,i)=> { return { i:i, v:e }}).filter(e => e.v != null && e.v.n != null),
-      suffixes: window.constants.constants.magic_suffixes.map((e,i)=> { return { i:i, v:e }}).filter(e => e.v != null && e.v.n != null),
-      rare_names: window.constants.constants.rare_names.map((e,i)=> { return { i:i, v:e }}).filter(e => e.v != null && e.v.n != null),
-      unq_items: window.constants.constants.unq_items.map((e,i)=> { return { i:i, v:e }}).filter(e => e.v != null && e.v.n != null),
-      set_items: window.constants.constants.set_items.map((e,i)=> { return { i:i, v:e }}).filter(e => e.v != null && e.v.n != null),
-      armor_items: Object.entries(window.constants.constants.armor_items).filter(e => e[1].n != null),
-      weapon_items: Object.entries(window.constants.constants.weapon_items).filter(e => e[1].n != null),
-      other_items: Object.entries(window.constants.constants.other_items).filter(e => e[1].n != null),
+      prefixes: window.constants.magic_prefixes.map((e,i)=> { return { i:i, v:e }}).filter(e => e.v != null && e.v.n != null),
+      suffixes: window.constants.magic_suffixes.map((e,i)=> { return { i:i, v:e }}).filter(e => e.v != null && e.v.n != null),
+      rare_names: window.constants.rare_names.map((e,i)=> { return { i:i, v:e }}).filter(e => e.v != null && e.v.n != null),
+      unq_items: window.constants.unq_items.map((e,i)=> { return { i:i, v:e }}).filter(e => e.v != null && e.v.n != null),
+      set_items: window.constants.set_items.map((e,i)=> { return { i:i, v:e }}).filter(e => e.v != null && e.v.n != null),
+      armor_items: Object.entries(window.constants.armor_items).filter(e => e[1].n != null),
+      weapon_items: Object.entries(window.constants.weapon_items).filter(e => e[1].n != null),
+      other_items: Object.entries(window.constants.other_items).filter(e => e[1].n != null),
     };
   },
   methods: {
@@ -194,9 +194,9 @@ export default {
     },
     getBases(code) {
       if (this.item.type_id == 3) {
-        return this.findBasesInConstants(code, window.constants.constants.weapon_items);
+        return this.findBasesInConstants(code, window.constants.weapon_items);
       } else if (this.item.type_id == 1) {
-        return this.findBasesInConstants(code, window.constants.constants.armor_items);
+        return this.findBasesInConstants(code, window.constants.armor_items);
       } else if (this.item.type_id == 4) {
         return this.other_items
       } else {
