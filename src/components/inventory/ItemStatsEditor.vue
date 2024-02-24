@@ -48,10 +48,10 @@ export default {
   },
   data() {
     return {
-      stats: window.constants_99.constants.magical_properties,
-      stats_map: window.constants_99.constants.magical_properties.map((e, i) => { return { i: i, v: e } }).filter(e => e.v != null && e.v.s != null),
-      skills: window.constants_99.constants.skills.map((e, i) => { return { i: i, v: e } }).filter(e => e.v != null && e.v.s != null).sort((a, b) => { return a.v.s.localeCompare(b.v.s) }),
-      classes: window.constants_99.constants.classes,
+      stats: window.constants.magical_properties,
+      stats_map: window.constants.magical_properties.map((e, i) => { return { i: i, v: e } }).filter(e => e.v != null && e.v.s != null),
+      skills: window.constants.skills.map((e, i) => { return { i: i, v: e } }).filter(e => e.v != null && e.v.s != null).sort((a, b) => { return a.v.s.localeCompare(b.v.s) }),
+      classes: window.constants.classes,
     }
   },
   methods: {
