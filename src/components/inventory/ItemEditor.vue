@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="form-row">
+  <div class="item-editor">
+    <div class="form-row item-action-bar">
       <div class="col-md-12">
         <button type="button" class="btn btn-primary" @click="onEvent('share')">Share</button>
         <button type="button" class="btn btn-primary" @click="onEvent('copy')">Copy</button>
@@ -10,114 +10,89 @@
       </div>
     </div>
 
-    <div></div>
-    <div class="form-row">
-      <div>
-        <Item :item.sync="item" clazz="item-edit"></Item>
+    <div class="form-row header">
+      <div class="item-preview">
+        <!-- <Item :item.sync="item" clazz="item-edit"></Item> -->
+        <Item :item="item" clazz="item-edit" @update:item="item = $event" />
       </div>
 
-      <ul className="ItemOptions">
+      <ul className="item-options">
         <span v-if="!item.simple_item">
           <li>
-            <div class="settings">
-              <label>Quality:</label>
-              <select class="edit-box" v-model.number="item.quality" @change="onEvent('update')">
-                <option v-for="rarity in rarities" :value="rarity.key" :key="rarity.key">{{ rarity.value }}</option>
-              </select>
-            </div>
+            Item Level: 
+            <input class="edit-box" type="number" v-model.number="item.level" min="1" max="99" @input="onEvent('update')"/>
+          </li>
+          <li>
+            <label>Quality:</label>
+            <multiselect v-model.number="item.quality" :options="rarities_options" :searchable="true" :canDeselect="false" :canClear="false" :required="true" @update:model-value="onEvent('update')"/>
           </li>
           <li>
             <div v-if="item.quality == 4">
               <label>Prefix:</label>
-              <select class="edit-box" v-model.number="item.magic_prefix_name" @change="onEvent('update')">
-                <option value="0">None</option>
-                <option v-for="s in prefixes" :value="s.v.n" :key="s.i">{{ s.v.n }}</option>
-              </select>
+              <multiselect v-model.number="item.magic_prefix" :options="magic_prefixes_options" :searchable="true" :canDeselect="false" :canClear="false" :required="true" @update:model-value="onEvent('update')"/>
               <label>Suffix:</label>
-              <select class="edit-box" v-model.number="item.magic_suffix_name" @change="onEvent('update')">
-                <option value="0">None</option>
-                <option v-for="s in suffixes" :value="s.v.n" :key="s.i">{{ s.v.n }}</option>
-              </select>
+              <multiselect v-model.number="item.magic_suffix" :options="magic_suffixes_options" :searchable="true" :canDeselect="false" :canClear="false" :required="true" @update:model-value="onEvent('update')"/>
             </div>
             <div v-if="item.quality == 6 || item.quality == 8">
               <label>Prefix:</label>
-              <select class="edit-box"  v-model.number="item.rare_name" @change="onEvent('update')">
-                <option v-for="s in rare_names" :value="s.v.n" :key="s.i">{{ s.v.n }}</option>
-              </select>
+              <multiselect v-model.number="item.rare_name_id" :options="rare_names_options" :searchable="true" :canDeselect="false" :canClear="false" :required="true" @update:model-value="onEvent('update')"/>
               <label>Suffix:</label>
-              <select class="edit-box"  v-model.number="item.rare_name2" @change="onEvent('update')">
-                <option v-for="s in rare_names" :value="s.v.n" :key="s.i">{{ s.v.n }}</option>
-              </select>
+              <multiselect v-model.number="item.rare_name_id2" :options="rare_names_options" :searchable="true" :canDeselect="false" :canClear="false" :required="true" @update:model-value="onEvent('update')"/>
             </div>
           </li>
           <li>
             <div v-if="item.quality == 5">
               <label>Set Name:</label>
-              <select class="edit-box" v-model.number="item.set_id" @change="onEvent('update')">
-                <option v-for="s in set_items" :value="s.i" :key="s.i">{{ s.v.n }}</option>
-              </select>
+              <multiselect v-model.number="item.set_id" :options="set_items_options" :searchable="true" :canDeselect="false" :canClear="false" :required="true" @update:model-value="onEvent('update')"/>
             </div>
-          </li>
-          <li>
-            <label>Item Level:</label>
-            <input class="edit-box" type="number" v-model.number="item.level" @input="onEvent('update')" min="1" max="99">
           </li>
         </span>
 
         <li>
-          <div class="settings">
-            <label>Base:</label>
-            <select class="edit-box" v-model="item.type" @change="onEvent('update')" v-select>
-              <option v-for="s in getBases(item.type)" :value="s[0]" :key="s[0]">{{ s[1].n }}</option>
-            </select>
+          <div v-if="!item.is_ear">
+            Base:
+              <multiselect v-model="item.type" :options="getBasesOptions(item.type)" :searchable="true" :can-deselect="false" :can-clear="false" :required="true" @update:model-value="onEvent('update')" />
           </div>
         </li>
-
-        <span v-if="!item.simple_item">
-          <li>
-            <div v-if="item.defense_rating">
-              <label>Defense:</label>
-              <input class="edit-box" type="number" v-model.number="item.defense_rating" @input="onEvent('update')" min="1" max="9999">
-            </div>
-          </li>
-          <li>
-            <div v-if="item.socketed">
-              <label>Sockets:</label>
-              <input class="edit-box" type="number" v-model.number="item.total_nr_of_sockets" @input="onEvent('update')" min="1" max="6">
-            </div>
-          </li>
-          <li>
-            <div class="form-check form-check-inline">
-              <label class="form-check-label"><input class="form-check-input" type="checkbox"
-                  v-model.number="item.socketed" :true-value="1" :false-value="0">Socketed</label>
-            </div>
-          </li>
-          <li>
-            <div class="form-check form-check-inline">
-              <label class="form-check-label"><input class="form-check-input" type="checkbox"
-                v-model.number="item.ethereal" :true-value="1" :false-value="0" @change="onEvent('update')">Ethereal</label>
-            </div>
-          </li>
-        </span>
-        
+        <li>
+          <div v-if="item.defense_rating">
+            <label>Defense:</label>
+            <input class="edit-box" type="number" v-model.number="item.defense_rating" @input="onEvent('update')" min="1" max="9999">
+          </div>
+        </li>
+        <li>
+          <!-- <div v-if="maxSockets > 0 && !item.given_runeword && !item.total_nr_of_sockets"> -->
+            <label>Sockets:</label>
+            <input class="edit-box" type="number" v-model.number="item.total_nr_of_sockets" @input="onEvent('update')" min="0" max="6">
+        </li>
+        <li>
+          <!-- <div v-if="itemCanEthereal(item.type)"> -->
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" v-model.number="item.ethereal" :true-value="1" :false-value="0" @change="onEvent('update')">
+              Ethereal
+            </label>
+          </div> 
+        </li>
       </ul>
     </div>
-
-    <span v-if="!item.simple_item">
-      <div v-if="item.magic_attributes">
+    
+    <div v-if="!item.simple_item" class="item-stats">
+      <div v-if="item.magic_attributes" class="item-magic-stats">
         <div>Item Stats</div>
-        <ItemStatsEditor :item-stats.sync="item.magic_attributes" :id="id + 'Magic'" @stat-change="onEvent('update')"></ItemStatsEditor>
+        <ItemStatsEditor :id="id + 'Magic'" v-model:item-stats="item.magic_attributes" @stat-change="onEvent('update')"></ItemStatsEditor>
       </div>
       <div v-if="item.runeword_attributes">
         <div>Runeword Stats</div>
-        <ItemStatsEditor :item-stats.sync="item.runeword_attributes" :id="id + 'Runeword'" @stat-change="onEvent('update')"></ItemStatsEditor>
+        <ItemStatsEditor :id="id + 'Runeword'" v-model:item-stats="item.runeword_attributes" @stat-change="onEvent('update')"></ItemStatsEditor>
       </div>
       <div v-if="item.set_attributes">
-        <div v-for="(set_attribute, index) in item.set_attributes">
-          <div>Set Stats {{index}}</div>
-          <ItemStatsEditor :item-stats.sync="set_attribute" :id="id + 'Set' + index" @stat-change="onEvent('update')"></ItemStatsEditor>
+        <div v-for="(set_attribute, idx) in item.set_attributes">
+          <div>Set Stats {{idx}}</div>
+          <ItemStatsEditor :id="id + 'Set' + idx" v-model:item-stats="item.set_attribute[idx]" @stat-change="onEvent('update')"></ItemStatsEditor>
         </div>
       </div>
+      <!-- 
       <div v-if="item.socketed_items">
         <div>Sockets Stats</div>
         <ItemStatsEditor :item-stats.sync="item.socketed_attributes" :id="id + 'Socketed stats'" @stat-change="onEvent('update')"></ItemStatsEditor>
@@ -126,8 +101,10 @@
         <div v-for="(socketed_item, index) in item.socketed_items">
           <ItemEditor ref="itemEditor" :item.sync="socketed_item" :id="id + 'Socketed' + index" @item-event="onChildEvent"></ItemEditor>
         </div>
-      </div>
-    </span>
+      </div> 
+      -->
+    </div>
+    
   </div>
 </template>
 
@@ -148,15 +125,28 @@ export default {
   },
   data() {
     return {
-      rarities: [{ key: 1, value: 'Low' }, { key: 2, value: 'Normal' }, { key: 3, value: 'Superior' }, { key: 4, value: 'Magic' }, { key: 5, value: 'Set' }, { key: 6, value: 'Rare' }, { key: 7, value: 'Unique' }, { key: 8, value: 'Crafted' }],
+      rarities_options: [{ value: 1, label: 'Low' }, { value: 2, label: 'Normal' }, { value: 3, label: 'Superior' }, { value: 4, label: 'Magic' }, { value: 5, label: 'Set' }, { value: 6, label: 'Rare' }, { value: 7, label: 'Unique' }, { value: 8, label: 'Crafted' }],
       locations: [{ key: 0, value: 'Stored' }, { key: 1, value: 'Equipped' }, { key: 4, value: 'Cursor' }],
       equipped_locations: [{ key: 1, value: 'Head' }, { key: 2, value: 'Neck' }, { key: 3, value: 'Torso' }, { key: 4, value: 'Right Hand' }, { key: 5, value: 'Left Hand' }, { key: 6, value: 'Right Finger' }, { key: 7, value: 'Left Finger' }, { key: 8, value: 'Waist' }, { key: 9, value: 'Boots' }, { key: 10, value: 'Gloves' }, { key: 11, value: 'Alternate Right Hand' }, { key: 12, value: 'Alternate Left Hand' }],
       storage_pages: [{ key: 1, value: 'Inventory' }, { key: 4, value: 'Cube' }, { key: 5, value: 'Stash' }],
-      prefixes: window.constants.magic_prefixes.map((e,i)=> { return { i:i, v:e }}).filter(e => e.v != null && e.v.n != null),
-      suffixes: window.constants.magic_suffixes.map((e,i)=> { return { i:i, v:e }}).filter(e => e.v != null && e.v.n != null),
-      rare_names: window.constants.rare_names.map((e,i)=> { return { i:i, v:e }}).filter(e => e.v != null && e.v.n != null),
-      unq_items: window.constants.unq_items.map((e,i)=> { return { i:i, v:e }}).filter(e => e.v != null && e.v.n != null),
-      set_items: window.constants.set_items.map((e,i)=> { return { i:i, v:e }}).filter(e => e.v != null && e.v.n != null),
+      magic_prefixes_options: window.constants.magic_prefixes
+        .fill({id: 0, n: "None"}, 0, 1)
+        .filter(entry => entry && entry.n)
+        //.map((entry, i) => { return {value: i, label: entry.n} }),
+        .map(entry => ({value: entry.id, label: entry.n})),
+      magic_suffixes_options: window.constants.magic_suffixes
+        .fill({id: 0, n: "None"}, 0, 1)
+        .filter(entry => entry && entry.n)
+        .map(entry => ({value: entry.id, label: entry.n})),
+      rare_names_options: window.constants.rare_names
+        .fill({id: 0, n: "None"}, 0, 1)
+        .filter(entry => entry && entry.n)
+        .map(entry => ({value: entry.id, label: entry.n})),
+      unq_items: window.constants.unq_items
+        .map((e,i)=> { return { i:i, v:e }}).filter(e => e.v != null && e.v.n != null),
+      set_items_options: window.constants.set_items
+        .filter(entry => entry && entry.n)
+        .map(entry => ({value: entry.id, label: entry.n})),
       armor_items: Object.entries(window.constants.armor_items).filter(e => e[1].n != null),
       weapon_items: Object.entries(window.constants.weapon_items).filter(e => e[1].n != null),
       other_items: Object.entries(window.constants.other_items).filter(e => e[1].n != null),
@@ -173,36 +163,89 @@ export default {
       this.$emit('item-event', { item: this.item, location: this.location, type: 'move' });
     },
     findBasesInConstants(code, items) {
-      const base = items[code];
       let bases = [];
-      //NORMAL SET UNIQUE CRAFTED
-      if (this.item.quality == 5 || this.item.quality == 6 || this.item.quality == 7 || this.item.quality == 8) {
-        bases = [base.nc, base.exc, base.elc].filter(id => items[id]);
-        //items.filter(e => e[1].nc == code || e[1].exc == code || e[1].elc == code)
-      }
-      else {
-        bases = Object.keys(items).filter(id => {
-          const item = items[id];
-          if (this.item.given_runeword == 1 && item.gemsockets < this.item.total_nr_of_sockets) return false;
-          if (base.c.length > 2) 
-            return item.eq1n == base.eq1n 
-          else 
-            return item.type === base.type
-        }).sort((a, b) => items[a].level < items[b].level);
-      }
-      return Object.entries(items).filter(item => bases.includes(item[0]));
+      const orig = items[code];
+      if (orig) {
+        //NORMAL SET UNIQUE CRAFTED
+        if (this.item.quality == 5 || this.item.quality == 6 || this.item.quality == 7 || this.item.quality == 8) {
+          bases = [orig.nc, orig.exc, orig.elc]
+            .filter(id => items[id])
+        }
+        else {
+          bases = Object.keys(items).filter(id => {
+            const item = items[id];
+            if (this.item.given_runeword == 1 && item.gemsockets < this.item.total_nr_of_sockets) return false;
+            //return item.spawnable && item.type === orig.type && item.handed2 == orig.handed2 && item.handed1or2 == orig.handed1or2;
+            if (orig.c.length > 2) 
+              return item.eq1n == orig.eq1n 
+            else 
+              return item.type === orig.type;
+          }).sort((a, b) => items[a].level < items[b].level);
+        }
+        bases = Object.entries(items)
+          .filter((entry) => bases.includes(entry[0]))
+          .map((entry) => ({ value: entry[0], label: entry[1].n }))
+      }  
+      return bases;
     },
-    getBases(code) {
+    getBasesOptions(code) {
+      const constants = window.constants;
       if (this.item.type_id == 3) {
-        return this.findBasesInConstants(code, window.constants.weapon_items);
+        return this.findBasesInConstants(code, constants.weapon_items);
       } else if (this.item.type_id == 1) {
-        return this.findBasesInConstants(code, window.constants.armor_items);
+        return this.findBasesInConstants(code, constants.armor_items);
       } else if (this.item.type_id == 4) {
-        return this.other_items
+        return Object.entries(constants.other_items)
+          .filter((entry) => entry[1].n)
+          .map((entry) => ({ value: entry[0], label: entry[1].n }))
       } else {
         return []
       }
     },
+    itemMaxSockets(base, quality) {
+      // if (!base || !base.hasinv) return 0;
+
+      // let boxSockets = 0;
+      // if (Data.info.pd2) {
+      //   const types = itemGetTypes(base.code);
+      //   if (types.has('2han')) boxSockets = 4;
+      //   else if (types.has('tors') || types.has('shld') || types.has('helm') || types.has('weap')) boxSockets = 2;
+      // }
+      
+      // const type = Data.itemTypes[base.type];
+      // const maxsockets = Math.min(base.gemsockets, type.maxsock40, base.invwidth * base.invheight);
+      // switch (quality) {
+      // case Quality.MAGIC:
+      //   return Math.min(Math.max(boxSockets, 2), maxsockets);
+      // case Quality.RARE:
+      // case Quality.SET:
+      // case Quality.UNIQUE:
+      // case Quality.CRAFTED:
+      //   return Math.min(Math.max(boxSockets, 1), maxsockets);
+      // default:
+      //   return maxsockets; // we ignore ilvl requirements here because users aren't expected to set correct ilvl
+      // }
+    },  
+    itemCanEthereal(code) {
+      //const base = items[code];
+      //SET
+      if (this.item.quality == 6) return false;
+      //if (this.item.given_runeword == 1 && this.item.indesctructible) return false;
+      //CRAFTED
+      //if (this.item.quality == 8 && !Data.info.pd2) return false;
+      //if (baseNoDurability(base, item.quality)) return false;
+      return true;
+    },
+    baseNoDurability(code, quality) {
+      //const base = items[code];
+      // if (!base.nodurability) return false;
+      // if (quality !== Quality.RARE && quality !== Quality.UNIQUE && (quality !== Quality.SET || !Data.info.options.setUpgrade)) return true;
+      // const prev = [base.normcode, base.ubercode, base.ultracode].filter(Boolean);
+      // if (!prev.length) return true;
+      // const curIndex = prev.indexOf(base.code);
+      // if (curIndex >= 0) prev.length = curIndex;
+      // return !prev.some(id => !Data.items[id]?.nodurability);
+    }
   }
 };  
 </script>

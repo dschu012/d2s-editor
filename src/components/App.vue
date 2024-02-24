@@ -42,9 +42,7 @@
               <Item v-if="preview" :item="preview" clazz="item-edit"></Item>
             </div>
             <label for="Item">Item</label>
-            <select class="form-control" v-model="previewModel" @change="previewItem" v-select="'#LoadItem'">
-              <option v-for="item in itempack" :value="item" :key="item.key">{{item.key}}</option>
-            </select>
+            <multiselect v-model="previewModel" :options="itempack" label="key" valueProp="value" :searchable="true" @update:model-value="previewItem"/>
           </div>
           <div class="modal-footer">
             <input style="display:none;" type="file" name="d2iFile" @change="onItemFileChange" id="d2iFile">
@@ -440,12 +438,18 @@
         this.grid = JSON.parse(localStorage.getItem('grid'));
       }
 
-      d2s.setConstantData(96, constants96);
-      d2s.setConstantData(97, constants96);
-      d2s.setConstantData(98, constants96);
-      d2s.setConstantData(99, constants99);
+      // d2s.setConstantData(96, constants96);
+      // d2s.setConstantData(97, constants96);
+      // d2s.setConstantData(98, constants96);
+      // d2s.setConstantData(99, constants99);
+      // window.constants = constants99;
 
-      window.constants = constants99;
+      d2s.setConstantData(96, window.constants_96.constants);
+      d2s.setConstantData(97, window.constants_96.constants);
+      d2s.setConstantData(98, window.constants_96.constants);
+      d2s.setConstantData(99, window.constants_99.constants);
+      window.constants = window.constants_99.constants;
+
       this.addItemsPackBases(window.constants.weapon_items, "Weapons");
       this.addItemsPackBases(window.constants.armor_items, "Armor");
     },
@@ -658,8 +662,10 @@
         utils.removeMaxDurabilityFromRunwords(this.preview);
       },
       async previewItem(e) {
-        let bytes = utils.b64ToArrayBuffer(this.previewModel.value);
-        this.readItem(bytes, 0x63);
+         if (this.previewModel) {
+          let bytes = utils.b64ToArrayBuffer(this.previewModel.base64);
+          this.readItem(bytes, 0x63);
+        }
       },
       async onItemFileLoad(event) {
         this.readItem(event.target.result, 0x60);
@@ -980,7 +986,9 @@
           let category = item.categories[0];
           this.itempack.push({
             key: "./Bases/"+ categoryName +"/" + category + "/" + item.type_name + '.d2i',
-            value: base64
+            value: { 
+              base64: base64
+            }
           });
         }
       },

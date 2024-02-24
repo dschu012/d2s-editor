@@ -9,15 +9,23 @@ This is a basic Diablo 2 save editor for D2 and D2R. The parser uses the TXT dat
 * Modify waypoints
 * Import items (~1000 different items to import)
 * Modify basic stats on items
-* Copy item between chars (drag between browser windows)
+* Copy item between chars
 
 ### How to use on your own mod
 
-1. Clone this repo or download a zip.
-2. Extract your MPQ data to a public/data folder in the same directory as the repo. (the tool needs TXTs, strings, pallettes, and item dc6s to work properly)
-3. Run 
+1. Install Node
+2. Clone this repo or download a zip.
+3. Extract your MPQ data to a public/data folder in the same directory as the repo. (the tool needs TXTs, strings, pallettes, and item dc6s to work properly)
+4. On first install or version updates, in the command prompt, run the following commands to install the editor:
+
 ```
 npm install 
+```
+
+5. Run the command below to start the editor
+
+```
 npm run serve
 ```
-4. Go to http://localhost:${PORT}/ verify everything works.
+
+6. Go to http://localhost:8080/ with your web browser to access the editor.
