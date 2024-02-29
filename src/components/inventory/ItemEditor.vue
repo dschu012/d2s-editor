@@ -82,21 +82,21 @@
         <div>Item Stats</div>
         <ItemStatsEditor :id="id + 'Magic'" v-model:item-stats="item.magic_attributes" @stat-change="onEvent('update')"></ItemStatsEditor>
       </div>
-      <div v-if="item.runeword_attributes">
+      <div v-if="item.runeword_attributes" class="item-runeword-stats">
         <div>Runeword Stats</div>
         <ItemStatsEditor :id="id + 'Runeword'" v-model:item-stats="item.runeword_attributes" @stat-change="onEvent('update')"></ItemStatsEditor>
       </div>
-      <div v-if="item.set_attributes">
+      <div v-if="item.set_attributes" class="item-set-stats">
         <div v-for="(set_attribute, idx) in item.set_attributes">
           <div>Set Stats {{idx}}</div>
-          <ItemStatsEditor :id="id + 'Set' + idx" v-model:item-stats="item.set_attribute[idx]" @stat-change="onEvent('update')"></ItemStatsEditor>
+          <ItemStatsEditor :id="id + 'Set' + idx" v-model:item-stats="item.set_attributes[idx]" @stat-change="onEvent('update')"></ItemStatsEditor>
         </div>
       </div>
-      <!-- 
-      <div v-if="item.socketed_items">
+      <div v-if="item.socketed_items" class="item-socketed-stats">
         <div>Sockets Stats</div>
-        <ItemStatsEditor :item-stats.sync="item.socketed_attributes" :id="id + 'Socketed stats'" @stat-change="onEvent('update')"></ItemStatsEditor>
+        <ItemStatsEditor :id="id + 'Socketed stats'" v-model:item-stats.sync="item.socketed_attributes" @stat-change="onEvent('update')"></ItemStatsEditor>
       </div>
+      <!-- 
       <div v-if="item.socketed_items">
         <div v-for="(socketed_item, index) in item.socketed_items">
           <ItemEditor ref="itemEditor" :item.sync="socketed_item" :id="id + 'Socketed' + index" @item-event="onChildEvent"></ItemEditor>

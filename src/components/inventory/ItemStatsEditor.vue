@@ -52,8 +52,6 @@ export default {
         .filter((skill) => skill && skill.s)
         .map((skill) => ({ value: skill.id, label: `${skill.s}${skill.id > 5 && !skill.c ? " (item)" : ""}` }))
         .sort((a, b) => { return a.label.localeCompare(b.label) }),
-      stats_map: window.constants.magical_properties.map((e, i) => { return { i: i, v: e } }).filter(e => e.v != null && e.v.s != null),
-      skills: window.constants.skills.map((e, i) => { return { i: i, v: e } }).filter(e => e.v != null && e.v.s != null).sort((a, b) => { return a.v.s.localeCompare(b.v.s) }),
       classes: window.constants.classes,
     }
   },
