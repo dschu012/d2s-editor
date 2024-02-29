@@ -802,38 +802,32 @@
         this.readBuffer(event.target.result, event.target.filename);
       },
       readBuffer(bytes, filename) {
-        //console.log(filename);
-        //let that = this;
-        this.save = null;
-        this.selected = null;
-        //this.stashData = null;
-
         if (filename) {
           if (filename.includes(".d2s")) {
+            this.save = null;
             d2s.read(bytes).then(response => {
               this.save = response;
               this.save.header.name = filename.split('.')[0];
               this.setPropertiesOnSave();
             });
-          } else if (filename.includes("SharedStash")) {
+          } else if (filename.includes("")) {
             this.stashData = null;
             d2stash.read(bytes).then(response => {   
               this.stashData = response;
               for (var i = 0; i < this.stashData.pageCount; i++) {
-                [... this.stashData.pages[i].items].forEach(item => {
-                  this.setPropertiesOnItem(item);
-                });
-              }
-            });
+                [... this.stashData.pages[i].items].forEach(item => { this.setPropertiesOnItem(item)})}
+            })
           }
         } else {
+          let that = this;
+          this.save = null;
+          this.selected = null;
           this.stashData = null;
           d2s.read(bytes).then(response => {
-            this.save = response;
+            that.save = response;
             this.setPropertiesOnSave();
-          });
+          })
         }
-
       },
       saveFileStash() {
         if (this.stashData != null) {
