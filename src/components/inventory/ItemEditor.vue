@@ -57,22 +57,25 @@
         <li>
           <div v-if="item.defense_rating">
             <label>Defense:</label>
-            <input class="edit-box" type="number" v-model.number="item.defense_rating" @input="onEvent('update')" min="1" max="9999">
+            <input class="edit-box" type="number" v-model.number="item.defense_rating" min="1" max="999" @input="onEvent('update')"/>
           </div>
         </li>
         <li>
-          <!-- <div v-if="maxSockets > 0 && !item.given_runeword && !item.total_nr_of_sockets"> -->
+          <!-- <div>{{getItemMaxSockets()}}</div> -->
+          <div v-if="getItemMaxSockets() > 0 &&!item.given_runeword">
             <label>Sockets:</label>
-            <input class="edit-box" type="number" v-model.number="item.total_nr_of_sockets" @input="onEvent('update')" min="0" max="6">
+            <input class="edit-box" type="number" v-model.number="item.total_nr_of_sockets" min="0" :max="getItemMaxSockets()" @input="onEvent('update')"/>
+          </div>
         </li>
         <li>
-          <!-- <div v-if="itemCanEthereal(item.type)"> -->
-          <div class="form-check form-check-inline">
-            <label class="form-check-label">
-              <input class="form-check-input" type="checkbox" v-model.number="item.ethereal" :true-value="1" :false-value="0" @change="onEvent('update')">
-              Ethereal
-            </label>
-          </div> 
+          <div v-if="itemCanEthereal(item.type)">
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" v-model.number="item.ethereal" :true-value="1" :false-value="0" @change="onEvent('update')">
+                Ethereal
+              </label>
+            </div>
+          </div>  
         </li>
       </ul>
     </div>
@@ -80,26 +83,26 @@
     <div v-if="!item.simple_item" class="item-stats">
       <div v-if="item.magic_attributes" class="item-magic-stats">
         <div>Item Stats</div>
-        <ItemStatsEditor :id="id + 'Magic'" v-model:item-stats="item.magic_attributes" @stat-change="onEvent('update')"></ItemStatsEditor>
+        <ItemStatsEditor :id="id + 'Magic'" v-model:item-stats="item.magic_attributes" @stat-change="onEvent('update')"/>
       </div>
       <div v-if="item.runeword_attributes" class="item-runeword-stats">
         <div>Runeword Stats</div>
-        <ItemStatsEditor :id="id + 'Runeword'" v-model:item-stats="item.runeword_attributes" @stat-change="onEvent('update')"></ItemStatsEditor>
+        <ItemStatsEditor :id="id + 'Runeword'" v-model:item-stats="item.runeword_attributes" @stat-change="onEvent('update')"/>
       </div>
       <div v-if="item.set_attributes" class="item-set-stats">
         <div v-for="(set_attribute, idx) in item.set_attributes">
           <div>Set Stats {{idx}}</div>
-          <ItemStatsEditor :id="id + 'Set' + idx" v-model:item-stats="item.set_attributes[idx]" @stat-change="onEvent('update')"></ItemStatsEditor>
+          <ItemStatsEditor :id="id + 'Set' + idx" v-model:item-stats="item.set_attributes[idx]" @stat-change="onEvent('update')"/>
         </div>
       </div>
       <div v-if="item.socketed_items" class="item-socketed-stats">
         <div>Sockets Stats</div>
-        <ItemStatsEditor :id="id + 'Socketed stats'" v-model:item-stats.sync="item.socketed_attributes" @stat-change="onEvent('update')"></ItemStatsEditor>
+        <ItemStatsEditor :id="id + 'Socketed stats'" v-model:item-stats.sync="item.socketed_attributes" @stat-change="onEvent('update')"/>
       </div>
       <!-- 
       <div v-if="item.socketed_items">
         <div v-for="(socketed_item, index) in item.socketed_items">
-          <ItemEditor ref="itemEditor" :item.sync="socketed_item" :id="id + 'Socketed' + index" @item-event="onChildEvent"></ItemEditor>
+          <ItemEditor ref="itemEditor" :item.sync="socketed_item" :id="id + 'Socketed' + index" @item-event="onChildEvent"></>
         </div>
       </div> 
       -->
@@ -125,6 +128,7 @@ export default {
   },
   data() {
     return {
+      max_sockets : 0,
       rarities_options: [{ value: 1, label: 'Low' }, { value: 2, label: 'Normal' }, { value: 3, label: 'Superior' }, { value: 4, label: 'Magic' }, { value: 5, label: 'Set' }, { value: 6, label: 'Rare' }, { value: 7, label: 'Unique' }, { value: 8, label: 'Crafted' }],
       locations: [{ key: 0, value: 'Stored' }, { key: 1, value: 'Equipped' }, { key: 4, value: 'Cursor' }],
       equipped_locations: [{ key: 1, value: 'Head' }, { key: 2, value: 'Neck' }, { key: 3, value: 'Torso' }, { key: 4, value: 'Right Hand' }, { key: 5, value: 'Left Hand' }, { key: 6, value: 'Right Finger' }, { key: 7, value: 'Left Finger' }, { key: 8, value: 'Waist' }, { key: 9, value: 'Boots' }, { key: 10, value: 'Gloves' }, { key: 11, value: 'Alternate Right Hand' }, { key: 12, value: 'Alternate Left Hand' }],
@@ -162,6 +166,20 @@ export default {
     onMove() {
       this.$emit('item-event', { item: this.item, location: this.location, type: 'move' });
     },
+    getBasesOptions(code) {
+      const constants = window.constants;
+      if (this.item.type_id == 3) {
+        return this.findBasesInConstants(code, constants.weapon_items)
+      } else if (this.item.type_id == 1) {
+        return this.findBasesInConstants(code, constants.armor_items)
+      } else if (this.item.type_id == 4) {
+        return Object.entries(constants.other_items)
+          .filter((entry) => entry[1].n)
+          .map((entry) => ({ value: entry[0], label: entry[1].n }))
+      } else {
+        return []
+      }
+    },
     findBasesInConstants(code, items) {
       let bases = [];
       const orig = items[code];
@@ -188,64 +206,73 @@ export default {
       }  
       return bases;
     },
-    getBasesOptions(code) {
+    getItemMaxSockets() {
+      let code = this.item.type;
       const constants = window.constants;
       if (this.item.type_id == 3) {
-        return this.findBasesInConstants(code, constants.weapon_items);
+        return this.itemMaxSockets(constants.weapon_items[code])
       } else if (this.item.type_id == 1) {
-        return this.findBasesInConstants(code, constants.armor_items);
-      } else if (this.item.type_id == 4) {
-        return Object.entries(constants.other_items)
-          .filter((entry) => entry[1].n)
-          .map((entry) => ({ value: entry[0], label: entry[1].n }))
-      } else {
-        return []
-      }
+        return this.itemMaxSockets(constants.armor_items[code])
+      } 
+      return 0; 
     },
-    itemMaxSockets(base, quality) {
-      // if (!base || !base.hasinv) return 0;
-
-      // let boxSockets = 0;
-      // if (Data.info.pd2) {
-      //   const types = itemGetTypes(base.code);
-      //   if (types.has('2han')) boxSockets = 4;
-      //   else if (types.has('tors') || types.has('shld') || types.has('helm') || types.has('weap')) boxSockets = 2;
-      // }
-      
-      // const type = Data.itemTypes[base.type];
-      // const maxsockets = Math.min(base.gemsockets, type.maxsock40, base.invwidth * base.invheight);
-      // switch (quality) {
-      // case Quality.MAGIC:
-      //   return Math.min(Math.max(boxSockets, 2), maxsockets);
-      // case Quality.RARE:
-      // case Quality.SET:
-      // case Quality.UNIQUE:
-      // case Quality.CRAFTED:
-      //   return Math.min(Math.max(boxSockets, 1), maxsockets);
-      // default:
-      //   return maxsockets; // we ignore ilvl requirements here because users aren't expected to set correct ilvl
-      // }
+    itemMaxSockets(item) {
+      if (!item) return 0;
+      let boxSockets = 0;
+      //const type = Data.itemTypes[base.type];
+      //type.maxsock40
+      const maxsockets = Math.min(item.gemsockets, item.iw * item.ih);
+      switch (this.item.quality) {
+        //Quality.MAGIC:
+        case 4:
+          return Math.min(Math.max(boxSockets, 2), maxsockets);
+       //Quality.RARE:
+        case 6:
+          return Math.min(Math.max(boxSockets, 1), maxsockets);
+        //Quality.SET:
+        case 5:
+          return Math.min(Math.max(boxSockets, 1), maxsockets);
+        //Quality.UNIQUE:
+        case 7:
+          return Math.min(Math.max(boxSockets, 1), maxsockets);
+        //Quality.CRAFTED
+        case 8:
+          return Math.min(Math.max(boxSockets, 1), maxsockets);
+        default:
+          return maxsockets;
+      }
     },  
-    itemCanEthereal(code) {
-      //const base = items[code];
+    itemCanEthereal() {
       //SET
-      if (this.item.quality == 6) return false;
-      //if (this.item.given_runeword == 1 && this.item.indesctructible) return false;
+      if (this.item.quality == 5) return false;
+      if (this.item.given_runeword == 1 && this.item.indesctructible) return false;
       //CRAFTED
-      //if (this.item.quality == 8 && !Data.info.pd2) return false;
-      //if (baseNoDurability(base, item.quality)) return false;
+      if (this.item.quality == 8) return false;
+
+      //if (this.baseNoDurability(base)) return false;
+      let code = this.item.type;
+      const constants = window.constants;
+      if (this.item.type_id == 3) {
+        return !this.baseNoDurability(constants.weapon_items[code])
+      } else if (this.item.type_id == 1) {
+        return !this.baseNoDurability(constants.armor_items[code])
+      } else if (this.item.type_id == 4) { 
+        return false;
+      }   
       return true;
     },
-    baseNoDurability(code, quality) {
-      //const base = items[code];
-      // if (!base.nodurability) return false;
-      // if (quality !== Quality.RARE && quality !== Quality.UNIQUE && (quality !== Quality.SET || !Data.info.options.setUpgrade)) return true;
-      // const prev = [base.normcode, base.ubercode, base.ultracode].filter(Boolean);
+    baseNoDurability(base) {
+      if (!base.nodurability) return false;
+      //not RARE UNIQUE SET
+      if (this.item.quality !== 6 && this.item.quality !== 7 && (this.item.quality !== 5)) return true;
+      // const prev = [base.nc, base.exc, base.elc].filter(Boolean);
       // if (!prev.length) return true;
       // const curIndex = prev.indexOf(base.code);
       // if (curIndex >= 0) prev.length = curIndex;
-      // return !prev.some(id => !Data.items[id]?.nodurability);
+      // return !prev.some(id => !items[id]?.nodurability);
     }
+  },
+  computed: {
   }
 };  
 </script>

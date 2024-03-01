@@ -979,7 +979,7 @@
           let base64 = utils.arrayBufferToBase64(bytes);
           let category = item.categories[0];
           this.itempack.push({
-            key: "./Bases/"+ categoryName +"/" + category + "/" + item.type_name + '.d2i',
+            key: "[Bases]/"+ categoryName +"/" + category + "/" + item.type_name,
             value: { 
               base64: base64
             }

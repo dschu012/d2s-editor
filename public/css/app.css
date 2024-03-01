@@ -336,7 +336,7 @@ ul {
   color: white;
   background-color: rgba(37, 37, 37, 0.98);
   border-style: none;
-  width: 100%; /* fit-content doesn't work well with input numbers */
+  width: fit-content; /* fit-content doesn't work well with input numbers */
 }
 
 #skills-content label {
