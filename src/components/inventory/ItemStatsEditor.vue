@@ -57,6 +57,12 @@ export default {
   },
   methods: {
     onItemModified() {
+      for (let i = 0; i < this.itemStats.length; i++) {
+        let numVal = this.numValues(this.itemStats[i].id)
+        if (numVal != this.itemStats[i].values.length) {
+          this.itemStats[i].values = [1, 0, 1].slice(0, numVal)
+        }
+      }
       this.$emit('stat-change', this.itemStats)
     },
     getMaxValue(id) {

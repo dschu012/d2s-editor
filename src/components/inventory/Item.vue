@@ -1,12 +1,14 @@
 <template>
   <div>
     <div ref="itemRef" tabindex="0" :class="itemClass" v-on:dragstart="dragStart">
-      <img :src="item.src" :class="{ ethereal: item.ethereal}" />
-      <div v-if="item.total_nr_of_sockets && tooltipShown" class="sockets">
-        <div :style="socketStyle(idx)" class="socket"
-          :class="{ 'empty-socket': !item.socketed_items || !item.socketed_items[idx-1]}"
-          v-for="idx in item.total_nr_of_sockets" :key="idx">
-          <img v-if="item.socketed_items && item.socketed_items[idx-1]" :src="item.socketed_items[idx-1].src" />
+      <div :class="innerClass">
+        <img :src="item.src" :class="{ ethereal: item.ethereal}" />
+        <div v-if="item.total_nr_of_sockets && tooltipShown" class="sockets">
+          <div :style="socketStyle(idx)" class="socket"
+            :class="{ 'empty-socket': !item.socketed_items || !item.socketed_items[idx-1]}"
+            v-for="idx in item.total_nr_of_sockets" :key="idx">
+            <img v-if="item.socketed_items && item.socketed_items[idx-1]" :src="item.socketed_items[idx-1].src" />
+          </div>
         </div>
       </div>
     </div>
@@ -66,7 +68,11 @@
           clazz += ` x-${this.item.position_x} y-${this.item.position_y}`;
         }
         return clazz;
-      }
+      },
+      innerClass() {
+        let clazz = `${this.clazz ? this.clazz : 'inner'} w-${this.item.inv_width} h-${this.item.inv_height}`
+        return clazz
+      },
     },
     unmounted() {
       if (this.tooltip) {
@@ -75,72 +81,82 @@
     },
     methods: {
       socketStyle(idx) {
-        const y = [[50], [25, 75], [5, 50, 95]];
-        const x = [[50], [10, 90]];
-        const i = idx - 1;
-        switch (this.item.total_nr_of_sockets) {
-          case 1:
-          case 2:
-          case 3: {
-            const j = this.item.total_nr_of_sockets - 1;
-            if (this.item.inv_height > 2 || this.item.total_nr_of_sockets < 3) {
-              return {
-                transform: `translateX(-${x[0][0]}%) translateY(-${y[j][i]}%)`,
-                top: `${y[j][i]}%`,
-                left: `${x[0][0]}%`,
-              };
+        const cellSize = 32
+        const countX = Math.max(1, Math.ceil(this.item.total_nr_of_sockets / this.item.inv_height))
+        const countY = Math.ceil(this.item.total_nr_of_sockets / countX)
+        let i = 0
+        let j = 0
+        if (this.item.total_nr_of_sockets == 5) {
+          // Exception, draw like the 5 of a dice
+          if (idx < 3) {
+            i = (idx - 1) % countX
+            j = Math.floor((idx - 1) / countX)
+          } else if (idx == 3) {
+            i = 1 / (this.item.inv_height - 1)
+            j = 1 / (this.item.inv_width - 1)
+          } else {
+            i = idx % countX
+            j = Math.floor(idx / countX)
+          }
+        } else {
+          // Columns & rows
+          i = (idx - 1) % countX
+          j = Math.floor((idx - 1) / countX)
+
+          // Special case when the last row is incomplete
+          if (countX > 1 && this.item.total_nr_of_sockets % countX) {
+            if (idx > countX * (countY - 1)) {
+              // Center the last row
+              let lineCount = this.item.total_nr_of_sockets % countX
+              i += (countX - lineCount) / 2
             }
-            const k = [y[2][0], y[2][2], y[2][2]];
-            const l = [x[0][0], x[1][0], x[1][1]];
-            return {
-              transform: `translateX(-${l[i]}%) translateY(-${k[i]}%)`,
-              top: `${k[i]}%`,
-              left: `${l[i]}%`,
-            };
           }
-          case 4:
-          case 6: {
-            const j = (this.item.total_nr_of_sockets / 2) - 1;
-            return {
-              transform: `translateX(-${x[1][i % 2]}%) translateY(-${y[j][Math.floor(i / 2)]}%)`,
-              top: `${y[j][Math.floor(i / 2)]}%`,
-              left: `${x[1][i % 2]}%`,
-            };
-          }
-          case 5: {
-            const k = [y[2][0], y[2][0], y[2][2], y[2][2], y[2][1]];
-            const l = [x[1][0], x[1][1], x[1][0], x[1][1], x[0][0]];
-            return {
-              transform: `translateX(-${l[i]}%) translateY(-${k[i]}%)`,
-              top: `${k[i]}%`,
-              left: `${l[i]}%`,
-            };
-          }
-          default: {
-            return {};
-          }
+        }
+        return {
+          transform: `translateX(${cellSize * (((i + 0.5) * this.item.inv_width) / countX - 0.5)}px) 
+            translateY(${cellSize * (((j + 0.5) * this.item.inv_height) / countY - 0.5)}px)`,
+          top: `0`,
+          left: `0`,
         }
       },
       itemName(item) {
         let name = item.type_name;
-        if (item.magic_prefix_name) {
-          name = `${item.magic_prefix_name} ${name}`;
+        if (item.magic_prefix) {
+          let magic_prefix_name = constants.magic_prefixes[item.magic_prefix]
+          ? constants.magic_prefixes[item.magic_prefix].n
+          : null
+          name = `${magic_prefix_name} ${name}`;
         }
-        if (item.magic_suffix_name) {
-          name = `${name} ${item.magic_suffix_name}`;
+        if (item.magic_suffix) {
+          let magic_suffix_name = constants.magic_suffixes[item.magic_suffix]
+          ? constants.magic_suffixes[item.magic_suffix].n
+          : null
+          name = `${name} ${magic_suffix_name}`;
         }
-        if (item.rare_name) {
-          name = `${item.rare_name} ${name}`;
+        if (item.rare_name_id) {
+          let rare_name = constants.rare_names[item.rare_name_id]
+          ? constants.rare_names[item.rare_name_id].n
+          : null
+          name = `${rare_name} ${name}`;
         }
-        if (item.rare_name2) {
-          name = `${name} ${item.rare_name2}`;
+        if (item.rare_name_id2) {
+          let rare_name2 = constants.rare_names[item.rare_name_id2]
+          ? constants.rare_names[item.rare_name_id2].n
+          : null
+          name = `${name} ${rare_name2}`;
         }
         const personalizedName = item.personalized_name ? `${item.personalized_name}'s ` : '';
-        if (item.set_name) {
-          name = `${name}\\n${personalizedName}${item.set_name}`;
+        if (item.set_id) {
+          let set_name = constants.set_items[item.set_id]
+          ? constants.set_items[item.set_id].n
+          : null
+          name = `${name}\\n${personalizedName}${set_name}`;
         }
-        if (item.unique_name) {
-          name = `${name}\\n${personalizedName}${item.unique_name}`;
+        if (item.unique_id) {
+          let unique_name = constants.unq_items[item.unique_id]
+          ? constants.unq_items[item.unique_id].n
+          : null
+          name = `${name}\\n${personalizedName}${unique_name}`;
         }
         if (item.runeword_name) {
           const runes = item.socketed_items.map(e => e.type_name.split(' ')[0]).join('');

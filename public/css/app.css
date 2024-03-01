@@ -1,7 +1,7 @@
 :root {
   --grid-size: 32px;
 
-  --ms-font-size: 1rem;
+  --ms-font-size: 16px;
   --ms-line-height: 1.15;
   --ms-bg: rgba(37, 37, 37, 0.98);
   --ms-bg-disabled: rgba(55, 55, 55, 0.98);
@@ -19,7 +19,7 @@
   --ms-clear-color-hover: #fff;
   --ms-dropdown-bg: rgba(37, 37, 37, 0.98);
   --ms-dropdown-border-color: rgba(80, 80, 80, 0.98);
-  --ms-option-font-size: 1rem;
+  --ms-option-font-size: 16px;
   --ms-option-line-height: 1.15;
   --ms-option-bg-pointed: #0d3e6d;
   --ms-option-color-pointed: #fff;
@@ -44,22 +44,16 @@
   border: 1px solid red;
 }
 
-.item-stats .btn.red {
+.item-options .btn.red {
   padding: 0px;
   margin-right: -5px; /* To reduce the space between the button and the rest of the line */
 }
 
-.item-stats .form-row {
+.item-options .form-row {
   padding: 1px;
 }
-
-.multiselect {
-  width: fit-content;
-}
-
-.multiselect-search {
-  color: #FFF;
-  width: fit-content;
+.item-options{
+  font-size: 16px;
 }
 
 div ul.context-menu {
@@ -116,9 +110,7 @@ ul {
   color: #fff;
   border-radius: 1px;
   font-size: 16px;
-  /* line-height: 1; */
-  outline: 0;
-  opacity: 0.98;
+  line-height: 1;
   transition-property: transform, visibility, opasity;
 }
 
@@ -263,6 +255,15 @@ ul {
   background: none;
   width: 100%;
   height: 100%;
+
+  position: absolute;
+  margin: auto;
+  /* Center the element vertically */
+  top: 0;
+  bottom: 0;
+  /* Center the element horizontally */
+  left: 0;
+  right: 0;
 }
 
 .item {
@@ -288,8 +289,9 @@ ul {
 }
 
 
-.item img,
-.socket img {
+.item .inner,
+.socket .inner {
+  /* Center Horizontally & vertically */
   position: absolute;
   top: 50%;
   left: 50%;
@@ -324,7 +326,7 @@ ul {
   background: rgba(0, 0, 0, 0.8);
   color: white;
   padding: 8px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .edit-box {

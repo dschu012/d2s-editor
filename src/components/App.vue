@@ -438,20 +438,22 @@
         this.grid = JSON.parse(localStorage.getItem('grid'));
       }
 
-      // d2s.setConstantData(96, constants96);
-      // d2s.setConstantData(97, constants96);
-      // d2s.setConstantData(98, constants96);
-      // d2s.setConstantData(99, constants99);
-      // window.constants = constants99;
-
       d2s.setConstantData(96, window.constants_96.constants);
       d2s.setConstantData(97, window.constants_96.constants);
       d2s.setConstantData(98, window.constants_96.constants);
       d2s.setConstantData(99, window.constants_99.constants);
       window.constants = window.constants_99.constants;
 
-      this.addItemsPackBases(window.constants.weapon_items, "Weapons");
-      this.addItemsPackBases(window.constants.armor_items, "Armor");
+      //TODO: requreid additional fields in constants 
+      // https://github.com/dschu012/d2s/pull/77
+      // d2s.setConstantData(96, constants96);
+      // d2s.setConstantData(97, constants96);
+      // d2s.setConstantData(98, constants96);
+      // d2s.setConstantData(99, constants99);
+      // window.constants = constants99;
+
+      this.addBasesToItemPack(window.constants.weapon_items, "Weapons");
+      this.addBasesToItemPack(window.constants.armor_items, "Armor");
     },
     filters: {
     },
@@ -944,9 +946,9 @@
           link.remove();
         });
       },
-      async addItemsPackBases(constCategory, categoryName) {
+      async addBasesToItemPack(items, category) {
         let newItems = [];
-        for (const item of Object.entries(constCategory)) {
+        for (const item of Object.entries(items)) {
           if (item[1].n) {
             const newItem = Object();
             const value = item[1];
@@ -979,7 +981,7 @@
           let base64 = utils.arrayBufferToBase64(bytes);
           let category = item.categories[0];
           this.itempack.push({
-            key: "[Bases]/"+ categoryName +"/" + category + "/" + item.type_name,
+            key: "[Bases]/"+ category +"/" + category + "/" + item.type_name,
             value: { 
               base64: base64
             }

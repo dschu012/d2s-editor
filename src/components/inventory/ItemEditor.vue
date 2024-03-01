@@ -12,8 +12,8 @@
 
     <div class="form-row header">
       <div class="item-preview">
-        <!-- <Item :item.sync="item" clazz="item-edit"></Item> -->
-        <Item :item="item" clazz="item-edit" @update:item="item = $event" />
+        <Item :item.sync="item" clazz="item-edit"></Item>
+        <!-- <Item :item="item" clazz="item-edit" @update:item="item = $event" /> -->
       </div>
 
       <ul className="item-options">
@@ -62,7 +62,7 @@
         </li>
         <li>
           <!-- <div>{{getItemMaxSockets()}}</div> -->
-          <div v-if="getItemMaxSockets() > 0 &&!item.given_runeword">
+          <div v-if="getItemMaxSockets() > 0 && !item.given_runeword">
             <label>Sockets:</label>
             <input class="edit-box" type="number" v-model.number="item.total_nr_of_sockets" min="0" :max="getItemMaxSockets()" @input="onEvent('update')"/>
           </div>
