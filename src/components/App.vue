@@ -795,6 +795,11 @@
           item.socketed_items[i].src = await utils.b64PNGFromDC6(item.socketed_items[i]);
           item.socketed_items[i].magic_attributes.forEach((it, idx) => { if (item.socketed_attributes.findIndex(x => x.id == it.id) == -1) item.socketed_attributes.push(it) });
         }
+        if (item.runeword_id == 2718) {
+          item.runeword_id = 48;
+        } else if (item.runeword_id > 2783) {
+          item.runeword_id -= 2588;
+        } 
       },
       newChar(index) {
         let bytes = utils.b64ToArrayBuffer(CharPack[index]);
