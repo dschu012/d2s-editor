@@ -158,9 +158,12 @@
           : null
           name = `${name}\\n${personalizedName}${unique_name}`;
         }
-        if (item.runeword_name) {
+        if (item.runeword_id) {
+          let runeword_name = constants.runewords[item.runeword_id]
+          ? constants.runewords[item.runeword_id].n
+          : null
           const runes = item.socketed_items.map(e => e.type_name.split(' ')[0]).join('');
-          name = `\\gold;'${runes}'\\n${name}\\n\\gold;${personalizedName}${item.runeword_name}`;
+          name = `\\gold;'${runes}'\\n${name}\\n\\gold;${personalizedName}${runeword_name}`;
         }
         return name.split('\\n').map((d) => {
           const s = d.replace(/\\(.*?);/gi, (result, match) => `</div><div class="${match}">`);
