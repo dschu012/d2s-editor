@@ -16,13 +16,13 @@ createApp(App)
     VueTippy,
     // optional
     {
-      directive: 'tippy', // => v-tippy
-      component: 'tippy', // => <tippy/>
-      componentSingleton: 'tippy-singleton', // => <tippy-singleton/>,
+      directive: 'tippy', 
+      component: 'tippy',
+      componentSingleton: 'tippy-singleton',
       defaultProps: {
         placement: 'auto-end',
         allowHTML: true,
-      }, // => Global default options * see all props
+      },
     }
   )
   .mount('#app');
