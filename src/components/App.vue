@@ -785,6 +785,13 @@
         if (!item) {
           return;
         }
+        //TODO remove after https://github.com/dschu012/d2s/pull/77
+        if (item.total_nr_of_sockets > 0) {
+          item.socketed = 1;
+        } else {
+          item.socketed = 0;
+        }
+
         if (!item.magic_attributes) item.magic_attributes = [];    
         item.src = await utils.b64PNGFromDC6(item);
         if (!item.socketed_items) {
@@ -984,9 +991,8 @@
         for (const item of newItems) {      
           let bytes = await d2s.writeItem(item, 0x63, window.constants);
           let base64 = utils.arrayBufferToBase64(bytes);
-          let category = item.categories[0];
           this.itempack.push({
-            key: "[Bases]/"+ category +"/" + category + "/" + item.type_name,
+            key: "[Bases]/" + category + "/" + item.type_name,
             value: { 
               base64: base64
             }
