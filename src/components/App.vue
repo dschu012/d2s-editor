@@ -51,8 +51,8 @@
           <div class="modal-footer">
             <input style="display:none;" type="file" name="d2iFile" @change="onItemFileChange" id="d2iFile">
             <label for="d2iFile" class="mb-0 btn btn-primary">Load From File</label>
-            <button type="button" class="btn btn-primary" @click="loadBase64Item" data-dismiss="modal">Load From String</button>
-            <button type="button" class="btn btn-primary" @click="loadItem" data-dismiss="modal">Load</button>
+            <button type="button" class="btn btn-primary" @click="loadBase64Item">Load From String</button>
+            <button type="button" class="btn btn-primary" @click="loadItem">Load</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
         </div>
@@ -714,9 +714,11 @@
       async loadBase64Item() {
         try {
           let b64 = prompt("Please enter your base64 string for item.");
-          let bytes = utils.b64ToArrayBuffer(b64);
-          await this.readItem(bytes, 0x63);
-          this.paste(this.preview);
+          if (b64 && this.preview) {
+            let bytes = utils.b64ToArrayBuffer(b64);
+            await this.readItem(bytes, 0x63);
+            this.paste(this.preview);
+          }
         } catch(e) {
           alert("Failed to read item.");
         }
