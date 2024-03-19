@@ -672,7 +672,6 @@
       async readItem(bytes, version) {
         this.preview = await d2s.readItem(bytes, version);
         await this.setPropertiesOnItem(this.preview);
-        utils.removeMaxDurabilityFromRunwords(this.preview);
       },
       async setPreviewItem(e) {
         this.baseOptions = null;
@@ -694,11 +693,7 @@
       async setBase(e) {
         if (this.baseModel) {
           this.preview.type = this.baseModel;
-          //reload stats for runes
-          if (this.preview.socketed_items && this.preview.socketed_items.length) {
-            await d2s.enhanceItems(this.preview.socketed_items, window.constants, 1, {}, this.preview);
-          }
-          await d2s.enhanceItem(this.preview, window.constants);
+          await d2s.enhanceItems([this.preview], window.constants);
           await this.setPropertiesOnItem(this.preview);
         }
       },
@@ -832,7 +827,7 @@
         if (!item.socketed_items) {
           return;
         }
-        item.socketed_attributes = [];
+        if (!item.socketed_attributes) item.socketed_attributes = [];
         for(let i = 0; i < item.socketed_items.length; i++) {
           item.socketed_items[i].src = await utils.b64PNGFromDC6(item.socketed_items[i]);
           item.socketed_items[i].magic_attributes.forEach((it, idx) => { if (item.socketed_attributes.findIndex(x => x.id == it.id) == -1) item.socketed_attributes.push(it) });
