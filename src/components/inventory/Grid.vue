@@ -32,9 +32,6 @@
       },
     },
     methods: {
-      test($evt) {
-        console.log($evt);
-      },
       onSelect(item) {
         this.$emit('item-selected', item);
       },

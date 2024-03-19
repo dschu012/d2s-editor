@@ -167,44 +167,43 @@ export default {
       this.$emit('item-event', { item: this.item, location: this.location, type: 'move' });
     },
     getBasesOptions(code) {
-      const constants = window.constants;
-      if (this.item.type_id == 3) {
-        return this.findBasesInConstants(code, constants.weapon_items)
-      } else if (this.item.type_id == 1) {
-        return this.findBasesInConstants(code, constants.armor_items)
-      } else if (this.item.type_id == 4) {
-        return Object.entries(constants.other_items)
-          .filter((entry) => entry[1].n)
-          .map((entry) => ({ value: entry[0], label: entry[1].n }))
-      } else {
-        return []
-      }
-    },
-    findBasesInConstants(code, items) {
+      //console.log(this.item)
       let bases = [];
-      const orig = items[code];
+      let constants = {};
+      if (this.item.type_id == 3) {
+        constants = window.constants.weapon_items;
+        bases = this.findBasesInConstants(code, constants)
+      } else if (this.item.type_id == 1) {
+        constants = window.constants.armor_items;
+        bases = this.findBasesInConstants(code, constants)
+      } else if (this.item.type_id == 4) {
+        constants = window.constants.other_items;
+        bases = Object.keys(constants);
+      }
+      return Object.entries(constants)
+          .filter((entry) => bases.includes(entry[0]))
+          .map((entry) => ({ value: entry[0], label: entry[1].n }));
+    },
+    findBasesInConstants(code, constants) {
+      let bases = [];
+      const orig = constants[code];
       if (orig) {
         //NORMAL SET UNIQUE CRAFTED
-        if (this.item.quality == 5 || this.item.quality == 6 || this.item.quality == 7 || this.item.quality == 8) {
-          bases = [orig.nc, orig.exc, orig.elc]
-            .filter(id => items[id])
-        }
-        else {
-          bases = Object.keys(items).filter(id => {
-            const item = items[id];
-            if (this.item.given_runeword == 1 && item.gemsockets < this.item.total_nr_of_sockets) return false;
-            //return item.spawnable && item.type === orig.type && item.handed2 == orig.handed2 && item.handed1or2 == orig.handed1or2;
+        if ((this.item.quality == 2 && !this.item.given_runeword) || this.item.quality == 5 || this.item.quality == 7 || this.item.quality == 8) {
+          bases = [orig.nc, orig.exc, orig.elc].filter(id => constants[id])
+        } else {
+          bases = Object.keys(constants).filter(id => {
+            const c = constants[id];
+            if (this.item.given_runeword && c.gemsockets < this.item.total_nr_of_sockets) return false;
+            //return c.spawnable && c.type === orig.type && c.handed2 == orig.handed2 && c.handed1or2 == orig.handed1or2;
             if (orig.c.length > 2) 
-              return item.eq1n == orig.eq1n 
+              return c.eq1n == orig.eq1n 
             else 
-              return item.type === orig.type;
-          }).sort((a, b) => items[a].level < items[b].level);
+              return c.type === orig.type;
+          }).sort((a, b) => constants[a].level < constants[b].level);
         }
-        bases = Object.entries(items)
-          .filter((entry) => bases.includes(entry[0]))
-          .map((entry) => ({ value: entry[0], label: entry[1].n }))
+        return bases;
       }  
-      return bases;
     },
     getItemMaxSockets() {
       let code = this.item.type;

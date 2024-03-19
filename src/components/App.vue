@@ -39,10 +39,14 @@
           </div>
           <div class="modal-body">
             <div class="row d-flex justify-content-center mt-3 pl-5 pr-5">
-              <Item v-if="preview" :item="preview" clazz="item-edit"></Item>
+              <Item v-if="preview?.type" :item="preview" clazz="item-edit"></Item>
             </div>
             <label for="Item">Item</label>
-            <multiselect v-model="previewModel" :options="itempack" label="key" valueProp="value" :searchable="true" @update:model-value="previewItem"/>
+            <multiselect v-model="previewModel" :options="itempack" label="key" valueProp="value" :searchable="true" @update:model-value="setPreviewItem"/>
+            <div v-if="baseOptions">
+              <label>Base</label>
+              <multiselect v-model="baseModel" :options="baseOptions" label="label" valueProp="value" :searchable="true" @update:model-value="setBase"/>
+            </div>  
           </div>
           <div class="modal-footer">
             <input style="display:none;" type="file" name="d2iFile" @change="onItemFileChange" id="d2iFile">
@@ -378,12 +382,14 @@
   import ItemPack from '../d2/ItemPack.js';
   import CharPack from '../d2/CharPack.js';
   import utils from '../utils.js';
+  import {itemGroups as itemGroups} from '../items.js';
 
-  import * as d2s from '@dschu012/d2s';
+  // TODO https://github.com/dschu012/d2s/pull/77
+  // import * as d2s from '@dschu012/d2s';
+  // import { constants as constants96 } from '@dschu012/d2s/lib/data/versions/96_constant_data';
+  // import { constants as constants99 } from '@dschu012/d2s/lib/data/versions/99_constant_data';
   import * as d2stash from '@dschu012/d2s/lib/d2/stash';
-  import { constants as constants96 } from '@dschu012/d2s/lib/data/versions/96_constant_data';
-  import { constants as constants99 } from '@dschu012/d2s/lib/data/versions/99_constant_data';
-  
+ 
   export default {
     components: {
       Item,
@@ -406,8 +412,9 @@
         selected: null,
         itempack: ItemPack,
         previewModel: null,
-        previewModelBase64: null,
         preview: null,
+        baseModel: null,
+        baseOptions: null,
         clipboard: null,
         load: null,
         notifications: [],
@@ -438,22 +445,26 @@
         this.grid = JSON.parse(localStorage.getItem('grid'));
       }
 
-      d2s.setConstantData(96, window.constants_96.constants);
-      d2s.setConstantData(97, window.constants_96.constants);
-      d2s.setConstantData(98, window.constants_96.constants);
-      d2s.setConstantData(99, window.constants_99.constants);
-      window.constants = window.constants_99.constants;
-
       //TODO: requreid additional fields in constants 
       // https://github.com/dschu012/d2s/pull/77
-      // d2s.setConstantData(96, constants96);
-      // d2s.setConstantData(97, constants96);
-      // d2s.setConstantData(98, constants96);
-      // d2s.setConstantData(99, constants99);
+      // d2s.setConstantData(96, constants96); //1.10-1.14d
+      // d2s.setConstantData(97, constants96); //alpha? (D2R)
+      // d2s.setConstantData(98, constants96); //2.4 (D2R)
+      // d2s.setConstantData(99, constants99); //2.5+ (D2R)
       // window.constants = constants99;
 
-      this.addBasesToItemPack(window.constants.weapon_items, "Weapons");
+      d2s.setConstantData(96, window.constants_96.constants); //1.10-1.14d
+      d2s.setConstantData(97, window.constants_96.constants); //alpha? (D2R)
+      d2s.setConstantData(98, window.constants_96.constants); //2.4 (D2R)
+      d2s.setConstantData(99, window.constants_99.constants); //2.5+ (D2R)
+      window.constants = window.constants_99.constants;
+
+      this.addRunewordToItemPack(window.constants.runewords, "Runewords");
+      this.addUniqToItemPack(window.constants.unq_items, "Uniques");
+      this.addSetToItemPack(window.constants.set_items, "Sets");
       this.addBasesToItemPack(window.constants.armor_items, "Armor");
+      this.addBasesToItemPack(window.constants.weapon_items, "Weapons");
+      this.addOtherToItemPack(window.constants.other_items, "Misc");
     },
     filters: {
     },
@@ -663,10 +674,32 @@
         await this.setPropertiesOnItem(this.preview);
         utils.removeMaxDurabilityFromRunwords(this.preview);
       },
-      async previewItem(e) {
-         if (this.previewModel) {
-          let bytes = utils.b64ToArrayBuffer(this.previewModel.base64);
-          this.readItem(bytes, 0x63);
+      async setPreviewItem(e) {
+        this.baseOptions = null;
+        this.baseModel = null;
+        if (this.previewModel) {
+          if (this.previewModel.base64) {
+            let bytes = utils.b64ToArrayBuffer(this.previewModel.base64);
+            this.preview = await d2s.readItem(bytes, 0x63);
+          } else if (this.previewModel.item) {
+            this.preview = this.previewModel.item;
+            if (this.preview?.given_runeword) {
+              this.baseOptions = this.getBasesOptions(this.preview);
+              return;
+            }
+        }
+          await this.setPropertiesOnItem(this.preview);
+        }
+      },
+      async setBase(e) {
+        if (this.baseModel) {
+          this.preview.type = this.baseModel;
+          //reload stats for runes
+          if (this.preview.socketed_items && this.preview.socketed_items.length) {
+            await d2s.enhanceItems(this.preview.socketed_items, window.constants, 1, {}, this.preview);
+          }
+          await d2s.enhanceItem(this.preview, window.constants);
+          await this.setPropertiesOnItem(this.preview);
         }
       },
       async onItemFileLoad(event) {
@@ -961,43 +994,152 @@
       async addBasesToItemPack(items, category) {
         let newItems = [];
         for (const item of Object.entries(items)) {
-          if (item[1].n) {
-            const newItem = Object();
-            const value = item[1];
-            newItem.type = item[0];
-            newItem.quality = 2;
-            newItem.level = 41;
-            newItem.inv_width = value.iw;
-            newItem.inv_height = value.ih;
-            newItem.categories = value.c;
-            newItem.identified = 1;
-            if (newItem.categories.indexOf('Weapon') > -1) {
-              newItem.base_damage = {
-                'mindam': value.mind,
-                'maxdam': value.maxd,
-                'twohandmindam': value.min2d,
-                'twohandmaxdam': value.max2d
-              }
-            }
-            if (newItem.categories.indexOf('Any Armor') > -1) {
-              newItem.defense_rating = value.maxac;
-            }
-            newItem.current_durability = value.durability;
-            newItem.max_durability = value.durability;
-            newItems.push(newItem);
-          }
+          const value = item[1];
+          newItems.push({
+            //code
+            type: item[0],
+            quality: 2,
+            level: 41,
+            inv_width: value.iw,
+            inv_height: value.ih,
+            categories: value.c,
+            ethereal: 0,
+            identified: 1
+          });
         }
         d2s.enhanceItems(newItems, window.constants);
-        for (const item of newItems) {      
-          let bytes = await d2s.writeItem(item, 0x63, window.constants);
-          let base64 = utils.arrayBufferToBase64(bytes);
+        for (const item of newItems) {  
+          //let bytes = await d2s.writeItem(item, 0x63, window.constants);
+          //let base64 = utils.arrayBufferToBase64(bytes);
           this.itempack.push({
-            key: "[Bases]/" + category + "/" + item.type_name,
-            value: { 
-              base64: base64
+            key: `[Bases]/${category}/${item.categories[0]}/${item.type_name}`,
+            value: {item: item
+              //base64: base64
             }
           });
         }
+      },
+      async addRunewordToItemPack(constants, category) {
+        let newItems = [];
+        for (const c of constants.filter(i => i !== null)) {
+          let socketedItems = [];
+          for (const r of c.r) {
+            socketedItems.push({type: r, simple_item: 1, identified: 1, location_id: 6})
+          }
+          newItems.push({
+            runeword_id: c.id,
+            runeword_name: c.n,
+            given_runeword: 1,
+            quality: 3,
+            level: 90,
+            ethereal: 0,
+            socketed: 1,
+            identified: 1,
+            types: c.types,
+            total_nr_of_sockets: socketedItems.length,
+            nr_of_items_in_sockets: socketedItems.length,
+            simple_item: 0,
+            socketed_items: socketedItems,
+            runeword_attributes: d2s.compactAttributes(c.m, window.constants),
+          });
+        }
+        //d2s.enhanceItems(newItems, window.constants);
+        for (const item of newItems) {  
+          this.itempack.push({
+            key: `[${category}]/${item.runeword_name}`,
+            value: {item: item}
+          });
+        }
+      },
+      async addSetToItemPack(items, category) {
+        let newItems = [];
+        for (const item of items) {
+          if (item.c) {
+            newItems.push({
+              //code
+              type: item.c,
+              level: item.lvl,
+              inv_file: item.i,
+              quality: 5,
+              set_id: item.id,
+              set_name: item.n,
+              ethereal: 0,
+              identified: 1,
+              magic_attributes: d2s.compactAttributes(item.m, window.constants)
+            });
+          }
+        }
+        d2s.enhanceItems(newItems, window.constants);
+        for (const item of newItems) {     
+          this.itempack.push({
+            key: `[${category}]/${item.set_name}`,
+            value: {item: item}
+          });
+        }
+      },
+      async addUniqToItemPack(items, category) {
+        let newItems = [];
+        for (const item of items) {
+          if (item.c) {
+            newItems.push({
+              //code
+              type: item.c,
+              level: item.lvl,
+              inv_file: item.i,
+              quality: 7,
+              unique_id: item.id,
+              unique_name: item.n,
+              ethereal: 0,
+              identified: 1,
+              magic_attributes: d2s.compactAttributes(item.m, window.constants)
+            });
+          }
+        }
+        d2s.enhanceItems(newItems, window.constants);
+        for (const item of newItems) {     
+          this.itempack.push({
+            key: `[${category}]/${item.unique_name}`,
+            value: {item: item}
+          });
+        }
+      },
+      async addOtherToItemPack(items, category) {
+        let newItems = [];
+        for (const item of Object.entries(items)) {
+          const value = item[1];
+          newItems.push({
+            //code
+            type: item[0],
+            simple_item: 1,
+            categories: value.c,
+            ethereal: 0,
+            identified: 1
+          });
+        }
+        d2s.enhanceItems(newItems, window.constants);
+        for (const item of newItems) {  
+          this.itempack.push({
+            key: `[${category}]/${item.categories[0]}/${item.type_name}`,
+            value: {item: item}
+          });
+        }
+      },
+      getBasesOptions(item) {
+        let bases = [];
+        const constants = {...window.constants.armor_items, ...window.constants.weapon_items};
+        bases = this.findBasesInConstants(item, constants);
+        return Object.entries(constants)
+            .filter((entry) => bases.includes(entry[0]))
+            .map((entry) => ({ value: entry[0], label: entry[1].n }));;
+      },
+      findBasesInConstants(item, constants) {
+        let bases = [];
+        bases = Object.keys(constants).filter(id => {
+          const c = constants[id];
+          if (item.given_runeword == 1 && c.gemsockets < item.total_nr_of_sockets) return false;
+          return c.spawnable && itemGroups[item.types[0]].concat(itemGroups[item.types[1]]).concat(itemGroups[item.types[2]]).includes(c.type)
+        }).sort((a, b) => constants[a].level < constants[b].level);
+        return bases;
       },
     },
   };

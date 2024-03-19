@@ -1,468 +1,469 @@
 export default [
+/*   
   {
-    key: '[Runewords]/Armor/Class-Items/Bone (AP)',
+    key: '[Runewords]/Armor/Class-Items/Bone(AP)',
     value: {
       base64:
         'EAiABARQFZrZGkfF+7VDRKBYiIfHQHiwZPQ/ge0UyZhCxSOZQsTjPxAAoAA0AOB8mAAQAKAANATgMEwAEACgADQI4DBMAA==',
     },
   },
   {
-    key: '[Runewords]/Armor/Class-Items/Enlightenment (AP)',
+    key: '[Runewords]/Armor/Class-Items/Enlightenment(AP)',
     value: {
       base64:
         'EAiABARAFZrZyDSv5LRDeKBYiIfHQHiwZPR/ShSmRGDseaGQ7HGh8B8QAKAANADgMJ8AEACgADQE4HwjARAAoAA0COB8mAA=',
     },
   },
   {
-    key: '[Runewords]/Armor/Class-Items/Myth (AP)',
+    key: '[Runewords]/Armor/Class-Items/Myth(AP)',
     value: {
       base64:
         'EAiABAQQFJrZ9ht+U7RD4KBYiIfHQHiwZPRfCTqFMhYkokgWCDL4DxAAoAA0AOB80AIQAKAANATgfD4BEACgADQI4Hx/BQ==',
     },
   },
   {
-    key: '[Runewords]/Armor/Class-Items/Peace (AP)',
+    key: '[Runewords]/Armor/Class-Items/Peace(AP)',
     value: {
       base64:
         'EAiABARIFZrZiB4DF7RD9qBYiIfHQHiwZPR/ChQmgWDsAUGQrIiA8B8QAKAANADgfLYBEACgADQE4Hy+AxAAoAA0COB8PgE=',
     },
   },
   {
-    key: '[Runewords]/Armor/Class Specific/Principle (AP)',
+    key: '[Runewords]/Armor/Class Specific/Principle(AP)',
     value: {
       base64:
         'EAiABAQIFJrZXlcmLrVDDqFYiIfHQHiwZPR/ymSsKIOsx8gBW/8BEACgADQA4HwjARAAoAA0BOAwaAEQAKAANAjgfDMB',
     },
   },
   {
-    key: '[Runewords]/Armor/Class-Itemsc/Rain (AP)',
+    key: '[Runewords]/Armor/Class-Itemsc/Rain(AP)',
     value: {
       base64:
         'EAiABAQIBJrZPCse67RDHKFYiIfHQHiwZPQ/ge2UytgDTyHZs07hPxAAoAA0AOB8uwAQAKAANATgMNsAEACgADQI4HzvAw==',
     },
   },
   {
-    key: '[Runewords]/Armor/Class-Items/Treachery (AP)',
+    key: '[Runewords]/Armor/Class-Items/Treachery(AP)',
     value: {
       base64:
         'EAiABAQAFJrZfvp8abRDWqFYiIfHQHiwZPR/itUlaOyxKJPsWajwHxAAoAA0AOB8tgEQAKAANATgfL4DEACgADQI4DDfAQ==',
     },
   },
   {
-    key: '[Runewords]/Armor/Chains of Honor (CoH) (AP)',
+    key: '[Runewords]/Armor/Chains of Honor(CoH)(AP)',
     value: {
       base64:
         'EAiABATMFJoZKfXB07RDUKBYiIcHQXiwZPQfAA0EIyf0pdC3Ql8LfTwQebjpwfNH/wEQAKAANADgfL4CEACgADQE4DBMABAAoAA0COBsvwMQAKAANAzgMF8B',
     },
   },
   {
-    key: '[Runewords]/Armor/Duress (AP)',
+    key: '[Runewords]/Armor/Duress(AP)',
     value: {
       base64:
         'EAiABAQABJrZsJmv67VDcKBYiIfHQHiwZPQfArIIFCjYKCkkMwZ1KITooQnwHxAAoAA0AOB8tgEQAKAANATgMEwAEACgADQI4Hy+Aw==',
     },
   },
   {
-    key: '[Runewords]/Armor/Enigma (AP)',
+    key: '[Runewords]/Armor/Enigma(AP)',
     value: {
       base64:
         'EAiABMwMAJrZ6G9zurVDdqBYiGfHQHjw4QL/PxDMigNMMIyN4I+4GfCQ/xAAoAA0AOBsPwEQAKAANATgfO8DEACgADQI4Gy/Aw==',
     },
   },
   {
-    key: '[Runewords]/Armor/Fortitude (AP)',
+    key: '[Runewords]/Armor/Fortitude(AP)',
     value: {
       base64:
         'EAiABAQYBJoZGyNS2rRDhqBYiIcHQXiwZPQfArIILFmeMJfC3ApzLcylaclhkj08ULAx/wEQAKAANADgfH8CEACgADQE4HyYABAAoAA0COB8vgIQAKAANAzgMEgA',
     },
   },
   {
-    key: '[Runewords]/Armor/Wealth (DS)',
+    key: '[Runewords]/Armor/Wealth(DS)',
     value: {
       base64:
         'EAiABAQABMJfs8HHMdcOyYVCAQoK8/+JVyjI/wEQAKAANADgMN8BEACgADQE4HyQABAAoAA0COB8bwM=',
     },
   },
   {
-    key: '[Runewords]/Helmet/Delirium (Corona)',
+    key: '[Runewords]/Helmet/Delirium(Corona)',
     value: {
       base64:
         'EAiABAQABB62pa4pwGqHwEChgAyA+f/hIX9kTIpikaxpwpHMiciQTPYqwCyygofnPxAAoAA0AOAw3wEQAKAANATgMF8BEACgADQI4Hz2AQ==',
     },
   },
   {
-    key: '[Runewords]/Helmet/Dream (Corona)',
+    key: '[Runewords]/Helmet/Dream(Corona)',
     value: {
       base64:
         'EAiABAQABB62LdMv0GqHFEB5hYyMWTKC8OD/JTtvjOyDObIVJ7il4LaCWwtuUPqSPVEo/gMQAKAANADgfPYBEACgADQE4Gw/ARAAoAA0COAwnwA=',
     },
   },
   {
-    key: '[Runewords]/Helmet/Lore (Corona)',
+    key: '[Runewords]/Helmet/Lore(Corona)',
     value: {
       base64:
         'EAiABASQBB427XeTMWuHlEGhgIwM+R9AlcX+RJHgPxAAoAA0AOB8uwAQAKAANATgfJgA',
     },
   },
   {
-    key: '[Runewords]/Helmet/Nadir (Corona)',
+    key: '[Runewords]/Helmet/Nadir(Corona)',
     value: {
       base64:
         'EAiABASIBB42uT8NF2mHxEGhgIwM+Q+gBIKMDxR4MiRLMGsQSkj4DxAAoAA0AOB8fwUQAKAANATgfG8D',
     },
   },
   {
-    key: '[Runewords]/Helmet/Radiance (Corona)',
+    key: '[Runewords]/Helmet/Radiance(Corona)',
     value: {
       base64:
         'EAiABASABB62nSbQJGuHNEKhgIyM+R9ANUCVIAjCkhFDlvwPEACgADQA4Hx/BRAAoAA0BOB8mAAQAKAANAjgfO8D',
     },
   },
   {
-    key: '[Runewords]/Helmet/Flickering Flame (Diadem)',
+    key: '[Runewords]/Helmet/Flickering Flame(Diadem)',
     value: {
       base64:
         'EAiABEwEQPy27SPyQU87XAiKESgoDIQHS0b/E6y5MbLTT3aJDGr68B8QAKAANADgfH8FEACgADQE4DCfABAAoAA0COAw+wA=',
     },
   },
   {
-    key: '[Runewords]/Helmet/Flickering Flame (Earth)',
+    key: '[Runewords]/Helmet/Flickering Flame(Earth)',
     value: {
       base64:
         'EAiABE0EYDxjAwAAABgPF4IiCgoKA+HBktEaeluTb/8TrLkxstNPdokMavrwHxAAoAA1AOB8fwUQAKAANQTgMJ8AEACgADQI4DD7AA==',
     },
   },
   {
-    key: '[Runewords]/Merc/Destruction (CA, Eth)',
+    key: '[Runewords]/Merc/Destruction(CA, Eth)',
     value: {
       base64:
         'EAjABAQQ1M9XPVrBDrVDZqAEBakIDx4sGf2P4NUrDTJadQLDLBgexVocyMaucgrGGHou/wEQAKAANADgMPsAEACgADQE4DBIABAAoAA0COBsvwMQAKAANAzgbD8BEACgADQQ4HyQAA==',
     },
   },
   {
-    key: '[Runewords]/Merc/Doom (CA, Eth)',
+    key: '[Runewords]/Merc/Doom(CA, Eth)',
     value: {
       base64:
         'EAjABAQQ1c9X79n157RDaKAEBakIKFA8dfgfASPGLsE6gT+6JIcZk+gpPHX5DxAAoAA0AOB80AIQAKAANATgMD4QAKAANAjgMEwAEACgADQM4DBIABAAoAA0EOBsmQA=',
     },
   },
   {
-    key: '[Runewords]/Merc/Infinity (Giant Thresher, Eth)',
+    key: '[Runewords]/Merc/Infinity(Giant Thresher, Eth)',
     value: {
       base64:
         'EAjABAQAxAMR9/nGS7RDrKBwcKAIDx78j1C0KJjbpT2MGFWDjFm1jofHN8LpzX8QAKAANADgbL8DEACgADQE4DDbABAAoAA0COBsvwMQAKAANAzgMF8B',
     },
   },
   {
-    key: '[Runewords]/Merc/Insight (CA, Eth)',
+    key: '[Runewords]/Merc/Insight(CA, Eth)',
     value: {
       base64:
         'EAjABAQA1M8XTR8U2bRDsKAEBaH/AEoClASUBpQiECQIZS9MAiPN7Y7DS3jifxAAoAA0AOB8IwEQAKAANATgfG8DEACgADQI4Hz7ABAAoAA0DOB8mAA=',
     },
   },
   {
-    key: '[Runewords]/Merc/Obedience (CA, Eth)',
+    key: '[Runewords]/Merc/Obedience(CA, Eth)',
     value: {
       base64:
         'EAjABAQIxM9XI8Ni3LRD6qAAVIQHD5aM/keQK/eDTU6YS2FuhbkW5sbwEKGIVTR4mmb8BxAAoAA0AOB80AIQAKAANATgfJAAEACgADQI4Hy+AxAAoAA0DOB8owUQAKAANBDgfFwA',
     },
   },
   {
-    key: '[Runewords]/Merc/Phoenix (CA, Eth)',
+    key: '[Runewords]/Merc/Phoenix(CA, Eth)',
     value: {
       base64:
         'EAjABAwRwM8X8R3M+7RDAKEEBaEIDx4sGf2PABkyCMiPKpf4NGNWOKhjqAvkphz/ARAAoAA0AOAw+wAQAKAANATgMPsAEACgADQI4DBIABAAoAA0DOBsPwE=',
     },
   },
   {
-    key: '[Runewords]/Merc/Pride (CA, Eth)',
+    key: '[Runewords]/Merc/Pride(CA, Eth)',
     value: {
       base64:
         'EAjABAQIxM8XvQDXH7RDDKEEBaEIDx4sGf2XIWOkxLwD9FIcmiyaIfPumYf8BxAAoAA0AOBsmQAQAKAANATgMC4QAKAANAjgfPYBEACgADQM4DBIAA==',
     },
   },
   {
-    key: '[Runewords]/Merc/Rift (CA, Eth)',
+    key: '[Runewords]/Merc/Rift(CA, Eth)',
     value: {
       base64:
         'EAjABAQYxM8XMXJWObVDJKEEBaEIDx4sGf0HoBJAJUA1QAWDhxYNUH1yzGEVEBBjUD0UZg8TKCj/ARAAoAA0AOB80AIQAKAANATgfJAAEACgADQI4DDfARAAoAA0DOAwaAE=',
     },
   },
   {
-    key: '[Runewords]/Shield/Dragon (Monarch)',
+    key: '[Runewords]/Shield/Dragon(Monarch)',
     value: {
       base64:
         'EAiABAQIFP5MS50HwtQOqYHiCSsrA+EBhWfJyMzoP4CSACUBpQGlD3IBYe6SGWfs8YGRTLKIwm34DxAAoAA0AOAwLhAAoAA0BOAwSAAQAKAANAjgfJgA',
     },
   },
   {
-    key: '[Runewords]/Shield/Dragon (Zaka)',
+    key: '[Runewords]/Shield/Dragon(Zaka)',
     value: {
       base64:
         'EAiABATIdL6hMfzNK2mH1EBZRlCQgfAgwoMHFJ4T9VLUW1GvRb0lIzOj/wBKApQElAaUPsgFhLlLZpyxxwdGMskiCrfhPxAAoAA0AOAwLhAAoAA0BOAwSAAQAKAANAjgfJgA',
     },
   },
   {
-    key: '[Runewords]/Shield/Dream (Monarch)',
+    key: '[Runewords]/Shield/Dream(Monarch)',
     value: {
       base64:
         'EAiABAQQFf5MY47+OtcOuYHiCSsrA+EBhWfJyMzo/wdznOCWgtsKbi24QekbI7tk5yV7olBkK/4DEACgADQA4Hz2ARAAoAA0BOBsPwEQAKAANAjgMJ8A',
     },
   },
   {
-    key: '[Runewords]/Shield/Dream (Zaka)',
+    key: '[Runewords]/Shield/Dream(Zaka)',
     value: {
       base64:
         'EAiABAQQdL6hcXA0JWqH3EBZRlCQgfAgwoMHFJ4T9VLUW1GvRb0lIzOj/x/McYJbCm4ruLXgBqVvjOySnZfsiUKRrfgPEACgADQA4Hz2ARAAoAA0BOBsPwEQAKAANAjgMJ8A',
     },
   },
   {
-    key: '[Runewords]/Shield/Exil (Vortex)',
+    key: '[Runewords]/Shield/Exil(Vortex)',
     value: {
       base64:
         'EAiABAQUZD450rixHGiH/EBZh5YWgvAgwoMHFJ4T9VLUW1GvRT0znv8QCJqRGQqX0DheGQAyVkjx4Jf9BxAAoAA0AOAw+wAQAKAANATgMD4QAKAANAjgMF8BEACgADQM4Hy+Ag==',
     },
   },
   {
-    key: '[Runewords]/Shield/Phoenix (Monarch)',
+    key: '[Runewords]/Shield/Phoenix(Monarch)',
     value: {
       base64:
         'EAiABAQIBP5M5NbLQdIOAYTiCSkppKIckIKi/D+GukA2ZoWDusTngYAcATJkmU6PKv8BEACgADQA4DD7ABAAoAA0AOAw+wAQAKAANADgMEgAEACgADQA4Gw/AQ==',
     },
   },
   {
-    key: '[Runewords]/Shield/Spirit (Monarch)',
+    key: '[Runewords]/Shield/Spirit(Monarch)',
     value: {
       base64:
         'EAiABAQAFf5MDCe4FNUO2YTiCSsrBOEBhWfJyMzo/wBbAkgQ+sYs09z+aBLiPxAAoAA0AOB8+wAQAKAANATgfL4DEACgADQI4Hy7ABAAoAA0DOB8PgE=',
     },
   },
   {
-    key: '[Runewords]/Shield/Spirit (Zaka)',
+    key: '[Runewords]/Shield/Spirit(Zaka)',
     value: {
       base64:
         'EAiABAQAdL4hQknhw2uHbEJZRlAQgvAgwoMHFJ4T9VLUW1GvRb0lIzOj/wNsCSBB6BuzTHP7o0mI/xAAoAA0AOB8+wAQAKAANATgfL4DEACgADQI4Hy7ABAAoAA0DOB8PgE=',
     },
   },
   {
-    key: '[Runewords]/Shield/Splendor (BS)',
+    key: '[Runewords]/Shield/Splendor(BS)',
     value: {
       base64:
         'EAiABAQghB3klPuzDa8dwgnFExQUBMKDJaM1XbSGiv5DIPPEEhS8LGcGlcbzJ/8BEACgADQA4HyjBRAAoAA0BOB8fAA=',
     },
   },
   {
-    key: '[Runewords]/Shield/Splendor (Monarch)',
+    key: '[Runewords]/Shield/Splendor(Monarch)',
     value: {
       base64:
         'EAiABAQAFP5MGnYiZ9MO4YTiCSsrAuHBktF/CGSeWIKCl+XMoNJ4/uQ/EACgADQA4HyjBRAAoAA0BOB8fAA=',
     },
   },
   {
-    key: '[Runewords]/Shield/Splendor (Zaka)',
+    key: '[Runewords]/Shield/Splendor(Zaka)',
     value: {
       base64:
         'EAiABAQYZL4hgQT8E2uHcEJZRlAQgfBgyehEvRT1VtRrUe8/BDJPLEHBy3JmUGk8f/IfEACgADQA4HyjBRAAoAA0BOB8fAA=',
     },
   },
   {
-    key: '[Runewords]/Weapon/Axe/Beast (BA)',
+    key: '[Runewords]/Weapon/Axe/Beast(BA)',
     value: {
       base64:
         'EAiABARI1YNXY6Z+2LVDPKBoaKgIDx4sGf0HgBTBocMuvDDghjDkhkt6ErPmnoKC/xAAoAA0AOBsvwMQAKAANATgfG8DEACgADQI4DBMABAAoAA0DOAw2wAQAKAANBDgfHwA',
     },
   },
   {
-    key: '[Runewords]/Weapon/Axe/Doom (BA)',
+    key: '[Runewords]/Weapon/Axe/Doom(BA)',
     value: {
       base64:
         'EAiABAQQ1INXHcIsz7RDaKBoaKgIDx78jwAUaJdgncAfXZLDjEn0FJ7y/AcQAKAANADgfNACEACgADQE4DA+EACgADQI4DBMABAAoAA0DOAwSAAQAKAANBDgbJkA',
     },
   },
   {
-    key: '[Runewords]/Weapon/Axe/Eternity (BA)',
+    key: '[Runewords]/Weapon/Axe/Eternity(BA)',
     value: {
       base64:
         'EAiABAQcxINX5QhAs7RDfKBoaKgIDx78j2DT5gYIJa6lEKaZMkO+wML6DxAAoAA0AOB8PgEQAKAANATgbL8DEACgADQI4DBfARAAoAA0DOB8mAAQAKAANBDgMC4=',
     },
   },
   {
-    key: '[Runewords]/Weapon/Bows/Brand (GMB)',
+    key: '[Runewords]/Weapon/Bows/Brand(GMB)',
     value: {
       base64:
         'EAiABAQA5FkR+WI3o7VDSKAAUIQHD5aMeAEA6H8EqlSjBOoE8nj1FDAmUUFO5ggx+g8QAKAANADgbD8BEACgADQE4DBIABAAoAA0COAw2wAQAKAANAzgMGgB',
     },
   },
   {
-    key: '[Runewords]/Weapon/Bows/Brand (HB)',
+    key: '[Runewords]/Weapon/Bows/Brand(HB)',
     value: {
       base64:
         'EAiABARQdH9BTCkyltAOIYECQBEePFgy+h+BKtUogTqBPF49BYxJVJCTOUKM/gMQAKAANADgbD8BEACgADQE4DBIABAAoAA0COAw2wAQAKAANAzgMGgB',
     },
   },
   {
-    key: '[Runewords]/Weapon/Bows/Edge (GMB)',
+    key: '[Runewords]/Weapon/Bows/Edge(GMB)',
     value: {
       base64:
         'EAiABAQY5FnRZCdDTrVDcqAATIQHD5aMeAEA6D8AlQAqAaoBqiuPLrc6gTyQ9bC8dOb9BxAAoAA0AOB8bwMQAKAANATgfPsAEACgADQI4Hw+AQ==',
     },
   },
   {
-    key: '[Runewords]/Weapon/Bows/Edge (HB)',
+    key: '[Runewords]/Weapon/Bows/Edge(HB)',
     value: {
       base64:
         'EAiABAQgZH9BK2EIFNQOyYECMBEePFgy+g9AJYBKgGqA6sqjy61OIA9kPSwvnXn/ARAAoAA0AOB8bwMQAKAANATgfPsAEACgADQI4Hw+AQ==',
     },
   },
   {
-    key: '[Runewords]/Weapon/Bows/Faith (GMB)',
+    key: '[Runewords]/Weapon/Bows/Faith(GMB)',
     value: {
       base64:
         'EAiABAUU5FkRAQAAAFICEJSbGxThwQNeAAD7HwEjxhPXUlxbca3FNRh4eO4A/aNLet6mABT/ARAAoAA0AOAwPhAAoAA0BOBsPwEQAKAANAjgMN8BEACgADQM4HwzAQ==',
     },
   },
   {
-    key: '[Runewords]/Weapon/Bows/Faith (HB)',
+    key: '[Runewords]/Weapon/Bows/Faith(HB)',
     value: {
       base64:
         'EAiABAQAdH9BdBUyQtcOAYICQBEePFgy+h8BI8YT11JcW3GtxbU7QP/okp63KQDFfxAAoAA0AOAwPhAAoAA0BOBsPwEQAKAANAjgMN8BEACgADQM4HwzAQ==',
     },
   },
   {
-    key: '[Runewords]/Weapon/Bows/Harmony (GMB)',
+    key: '[Runewords]/Weapon/Bows/Harmony(GMB)',
     value: {
       base64:
         'EAiABAQA9VkR713AFbVDlqAAUIQHD5aMeAEA6H+EiRM3UMC4ASXjBsXGDSijLBYGhHFpjmJGfZGR8R8QAKAANADgfG8DEACgADQE4HzvAxAAoAA0COB8mAAQAKAANAzgfJAA',
     },
   },
   {
-    key: '[Runewords]/Weapon/Bows/Harmony (HB)',
+    key: '[Runewords]/Weapon/Bows/Harmony(HB)',
     value: {
       base64:
         'EAiABAQIdH9B1M+wf9AOWYICQBEePFgy+h9h4sQNFDBuQMm4QbFxAyoqi4UBYVyao5hRX2Rk/AcQAKAANADgfG8DEACgADQE4HzvAxAAoAA0COB8mAAQAKAANAzgfJAA',
     },
   },
   {
-    key: '[Runewords]/Weapon/Bows/Ice (GMB)',
+    key: '[Runewords]/Weapon/Bows/Ice(GMB)',
     value: {
       base64:
         'EAiABAQI9VkRKRb5D7RDqqAAUIQHD5aMeAEA6H8EadIuyZHGLBYyx9AdyO+ypVCeUvwHEACgADQA4Hw+ARAAoAA0BOB8tgEQAKAANAjgbD8BEACgADQM4DBIAA==',
     },
   },
   {
-    key: '[Runewords]/Weapon/Bows/Ice (HB)',
+    key: '[Runewords]/Weapon/Bows/Ice(HB)',
     value: {
       base64:
         'EAiABAQAdX9BNEusT9QOqYICQBEePFgy+h9BmrRLcqQxi4XMMXQH8rtsKZSnFP8BEACgADQA4Hw+ARAAoAA0BOB8tgEQAKAANAjgbD8BEACgADQM4DBIAA==',
     },
   },
   {
-    key: '[Runewords]/Weapon/Bows/Wrath (GMB)',
+    key: '[Runewords]/Weapon/Bows/Wrath(GMB)',
     value: {
       base64:
         'EAiABAQA9FkRB+ECq7VDgqEAUIQHD5aMeAEA6L+MFB4aVXjyANVjMlNjihQFY8EVnv8QAKAANADgMJ8AEACgADQE4Hx8ABAAoAA0COBsvwMQAKAANAzgMNsA',
     },
   },
   {
-    key: '[Runewords]/Weapon/Bows/Wrath (HB)',
+    key: '[Runewords]/Weapon/Bows/Wrath(HB)',
     value: {
       base64:
         'EAiABAQQdH9BvO5p0NEOCYYCQBEePFgy+i8jhYdGFZ48QPW0zNSYIkXBWHCF5z8QAKAANADgMJ8AEACgADQE4Hx8ABAAoAA0COBsvwMQAKAANAzgMNsA',
     },
   },
   {
-    key: '[Runewords]/Weapon/Flail/Call to Arms (CTA) (Flail)',
+    key: '[Runewords]/Weapon/Flail/Call to Arms(CTA)(Flail)',
     value: {
       base64:
         'EAiABMwuQL6vphe/tmqHnEDx8FARAgQIU4kIs2n4H+HdOyVqF14YSUSYSkKYTcOf/AcQAKAANADgfD4BEACgADQE4HwjARAAoAA0COAw2wAQAKAANAzgMF8BEACgADQQ4DA+',
     },
   },
   {
-    key: '[Runewords]/Weapon/Flail/Heart of the Oak (HOTO) (Flail)',
+    key: '[Runewords]/Weapon/Flail/Heart of the Oak(HOTO)(Flail)',
     value: {
       base64:
         'EAiABARAVb4v6kA27GuHNEHx8ED/T8BLAW8FvBbwlMhNsjS8P2PmdMPDw4wQJyPjPxAAoAA0AOB8kAAQAKAANATgMPsAEACgADQI4DCfABAAoAA0DOB8vgM=',
     },
   },
   {
-    key: '[Runewords]/Weapon/Swords/Death (PB)',
+    key: '[Runewords]/Weapon/Swords/Death(PB)',
     value: {
       base64:
         'EAiABAQIxItTkbEjErVDXKAAVIQHD5aM/kcIHBiRDNNh0g2ZYmwNZGZWFQ8P+oj/EACgADQA4HzQAhAAoAA0BOB8fwIQAKAANAjgMPsAEACgADQM4Hy7ABAAoAA0EOAwaAE=',
     },
   },
   {
-    key: '[Runewords]/Weapon/Swords/Destruction (PB)',
+    key: '[Runewords]/Weapon/Swords/Destruction(PB)',
     value: {
       base64:
         'EAiABAQQ1YtTwRbdBLRDZqAAVIQHD5aM/kfw6pUGGa06gWEWDI9iLQ5kY1c5BWMMPZf/EACgADQA4DD7ABAAoAA0BOAwSAAQAKAANAjgbL8DEACgADQM4Gw/ARAAoAA0EOB8kAA=',
     },
   },
   {
-    key: '[Runewords]/Weapon/Swords/Fortitude (PB)',
+    key: '[Runewords]/Weapon/Swords/Fortitude(PB)',
     value: {
       base64:
         'EAiABAQAxIsTcYM2kLRDhqAAUIQHD5aM/kNAFoElyxPmUphbYa6FuTQtOUyyhwcKNuY/EACgADQA4Hx/AhAAoAA0BOB8mAAQAKAANAjgfL4CEACgADQM4DBIAA==',
     },
   },
   {
-    key: '[Runewords]/Weapon/Swords/Grief (PB)',
+    key: '[Runewords]/Weapon/Swords/Grief(PB)',
     value: {
       base64:
         'EAiABAQAxItTZ0MUlbVDkqAAVIQHD5aM/lt5dOG9IT2nscei0bwHasZ/EACgADQA4HyjBRAAoAA0BOB8bwMQAKAANAjgMEgAEACgADQM4DDbABAAoAA0EOB8IwE=',
     },
   },
   {
-    key: '[Runewords]/Weapon/Swords/Last Wish (PB)',
+    key: '[Runewords]/Weapon/Swords/Last Wish(PB)',
     value: {
       base64:
         'EAiABAQQ1IuTW+69vrVDvqAAWIQHD5aM/ke4exeR7JKYOIwygWJMkkKRbFnIAI/4DxAAoAA0AOBsPwEQAKAANATgMNsAEACgADQI4Gw/ARAAoAA0DOAwLhAAoAA0EOBsPwEQAKAANBTgbL8D',
     },
   },
   {
-    key: '[Runewords]/Weapon/Swords/Lawbringer (PB)',
+    key: '[Runewords]/Weapon/Swords/Lawbringer(PB)',
     value: {
       base64:
         'EAiABAQAxIvTSpKxG7VDwqAATIQHD5aM/oPQB8NSmg1BWrRs0pFduiONPVdQ/gMQAKAANADgfD4BEACgADQE4DDfARAAoAA0COB8kAA=',
     },
   },
   {
-    key: '[Runewords]/Weapon/Swords/Oath (PB)',
+    key: '[Runewords]/Weapon/Swords/Oath(PB)',
     value: {
       base64:
         'EAiABAQQxIsTl0M5B7RD6KAAUIQHD5aM/kegSrWLbNIDU2NUFx5mkRYODswgdigo/gMQAKAANADgfLYBEACgADQE4DCfABAAoAA0COAw2wAQAKAANAzgfHwA',
     },
   },
   {
-    key: '[Runewords]/Weapon/Swords/Phoenix (PB)',
+    key: '[Runewords]/Weapon/Swords/Phoenix(PB)',
     value: {
       base64:
         'EAiABAQQxIsTPWgdDrRDAKEAUIQHD5aM/keADBkE5EeVS3yaMSsc1DHUBXJTjv8QAKAANADgMPsAEACgADQE4DD7ABAAoAA0COAwSAAQAKAANAzgbD8B',
     },
   },
   {
-    key: '[Runewords]/Weapon/Swords/Spirit (PB)',
+    key: '[Runewords]/Weapon/Swords/Spirit(PB)',
     value: {
       base64:
         'EAiABARI1YsT5bI/0LVDNqEAUIQHD5aM/g+wJYAEoW/MMs3tjyYh/gMQAKAANADgfPsAEACgADQE4Hy+AxAAoAA0COB8uwAQAKAANAzgfD4B',
     },
   },
   {
-    key: '[Runewords]/Weapon/Swords/Voice of Reason (PB)',
+    key: '[Runewords]/Weapon/Swords/Voice of Reason(PB)',
     value: {
       base64:
         'EAiABAQQxIsTra0+1rRD+KAAUIQHD5aM/tsg47abR66eepkao1qQGGuAeDzF+A8QAKAANADgMN8BEACgADQE4HyQABAAoAA0COB8fwIQAKAANAzgfDMB',
     },
   },
   {
-    key: '[Runewords]/Weapon/Class-Items/Obsession (Fire)',
+    key: '[Runewords]/Weapon/Class-Items/Obsession(Fire)',
     value: {
       base64:
         'EAiABA0RYA8oAwAAAGiFOygaGmzNi63BsTU99n+DxAmCKQiuINiCIBNtDDRN9Q+TKUhg/gMQAKAANADgbLcBEACgADQE4DBfARAAoAA0COAw3wEQAKAANAzgfHwAEACgADQQ4Hz2ARAAoAA0FOB8fwU=',
     },
   },
   {
-    key: '[Runewords]/Weapon/Crescent Moon (CS)',
+    key: '[Runewords]/Weapon/Crescent Moon(CS)',
     value: {
       base64:
         'EAiABAUgVBxqAAAAAClhBQoFhfkfgRu3OSctjDUqHIxFNSiYSeN4eDgd+Q8QAKAANADgfLYBEACgADQE4DBMABAAoAA0COB8bwM=',
@@ -1949,43 +1950,43 @@ export default [
     },
   },
   {
-    key: "[Uniques]/Class-Items/Sorc/Ormus' Robes (Blizzard)",
+    key: "[Uniques]/Class-Items/Sorc/Ormus' Robes(Blizzard)",
     value: {
       base64: 'EAiAAAXAFMJf2OM7IQ0fZgE7FBRiw8MHD6RBrdmxpEGUBlka5D8=',
     },
   },
   {
-    key: "[Uniques]/Class-Items/Sorc/Ormus' Robes (Chain Ligthing)",
+    key: "[Uniques]/Class-Items/Sorc/Ormus' Robes(Chain Ligthing)",
     value: {
       base64: 'EAiAAAUAFMJf2OM7IQ0fZgE7FBRiw8MHD6RBramxpEGUBlka5D8=',
     },
   },
   {
-    key: "[Uniques]/Class-Items/Sorc/Ormus' Robes (Fire Ball)",
+    key: "[Uniques]/Class-Items/Sorc/Ormus' Robes(Fire Ball)",
     value: {
       base64: 'EAiAAAUIFMJf2OM7IQ0fZgE7FBRiw8MHD6RBrXmxpEGUBlka5D8=',
     },
   },
   {
-    key: "[Uniques]/Class-Items/Sorc/Ormus' Robes (Fire Mastery)",
+    key: "[Uniques]/Class-Items/Sorc/Ormus' Robes(Fire Mastery)",
     value: {
       base64: 'EAiAAAUQFMJf2OM7IQ0fZgE7FBRiw8MHD6RBremxpEGUBlka5D8=',
     },
   },
   {
-    key: "[Uniques]/Class-Items/Sorc/Ormus' Robes (Lightning)",
+    key: "[Uniques]/Class-Items/Sorc/Ormus' Robes(Lightning)",
     value: {
       base64: 'EAiAAAUAFMJf2OM7IQ0fZgE7FBRiw8MHD6RBrYmxpEGUBlka5D8=',
     },
   },
   {
-    key: "[Uniques]/Class-Items/Sorc/Ormus' Robes (Meteor)",
+    key: "[Uniques]/Class-Items/Sorc/Ormus' Robes(Meteor)",
     value: {
       base64: 'EAiAAAXIFMJf2OM7IQ0fZgE7FBRiw8MHD6RBrcGxpEGUBlka5D8=',
     },
   },
   {
-    key: "[Uniques]/Class-Items/Sorc/Ormus' Robes (Frozen Orb)",
+    key: "[Uniques]/Class-Items/Sorc/Ormus' Robes(Frozen Orb)",
     value: {
       base64: 'EAiAAAXQFMJf2OM7IQ0fZgE7FBRiw8MHD6RBrQGypEGUBlka5D8=',
     },
@@ -2144,7 +2145,7 @@ export default [
     },
   },
   {
-    key: '[Uniques]/Helmets/Harlequin Crest (Shako)',
+    key: '[Uniques]/Helmets/Harlequin Crest(Shako)',
     value: {
       base64: 'EAiAAAUEBL4ZhKd5GMYHPrgEA4MAIBJAJEA0QERCGhTLP8LGZGP+Aw==',
     },
@@ -2234,49 +2235,49 @@ export default [
     },
   },
   {
-    key: '[Uniques]/Jewels/Rainbow Facet (Fire) (Die)',
+    key: '[Uniques]/Jewels/Rainbow Facet(Fire)(Die)',
     value: {
       base64: 'EACAAAVIFd0AghGR0vH4kmKAEdGi2IcDOemNpgX/AQ==',
     },
   },
   {
-    key: '[Uniques]/Jewels/Rainbow Facet (Fire) (Lvl)',
+    key: '[Uniques]/Jewels/Rainbow Facet(Fire)(Lvl)',
     value: {
       base64: 'EACAAAUQBN0AAqmRl17hgmOAEdHiWOcCOemNpgX/AQ==',
     },
   },
   {
-    key: '[Uniques]/Jewels/Rainbow Facet (Cold) (Die)',
+    key: '[Uniques]/Jewels/Rainbow Facet(Cold)(Die)',
     value: {
       base64: 'EACAAAUQFN0AAkhGiZDgVmKwgWFioFi5A3npjacF/wE=',
     },
   },
   {
-    key: '[Uniques]/Jewels/Rainbow Facet (Cold) (Lvl)',
+    key: '[Uniques]/Jewels/Rainbow Facet(Cold)(Lvl)',
     value: {
       base64: 'EACAAAVQBN0AAv/gnZfgQmOwgWFi4NjKAnnpjacF/wE=',
     },
   },
   {
-    key: '[Uniques]/Jewels/Rainbow Facet (Lightning) (Die)',
+    key: '[Uniques]/Jewels/Rainbow Facet(Lightning)(Die)',
     value: {
       base64: 'EACAAAVUFN0AAibUJJ/gFmKQEShR7K2BrPSG04L/',
     },
   },
   {
-    key: '[Uniques]/Jewels/Rainbow Facet (Lightning) (Lvl)',
+    key: '[Uniques]/Jewels/Rainbow Facet(Lightning)(Lvl)',
     value: {
       base64: 'EACAAAUUBN0AgswA41jgAmOQEShxLIWBrPSG04L/',
     },
   },
   {
-    key: '[Uniques]/Jewels/Rainbow Facet (Poison) (Die)',
+    key: '[Uniques]/Jewels/Rainbow Facet(Poison)(Die)',
     value: {
       base64: 'EACAAAUcBN0AAjH47azg0mLIscsuMorNXJCZ3oBa8B8=',
     },
   },
   {
-    key: '[Uniques]/Jewels/Rainbow Facet (Poison) (Lvl)',
+    key: '[Uniques]/Jewels/Rainbow Facet(Poison)(Lvl)',
     value: {
       base64: 'EACAAAVUBN0AArRoBeD4wmPIscsuMo5dFpGZ3oBa8B8=',
     },
@@ -3590,447 +3591,449 @@ export default [
       base64: 'EACAAAUExJkXpIN36sIHSHh4ICgCMmQ8DF1Qd1ocCiki9PP+Aw==',
     },
   },
+  */
   {
-    key: '[Misc]/Charms/Grand Charm/Skiller/Amazon/Bow and Crossbow + Life',
+    key: '[Charms]/Grand Charm/Amazon/Bow and Crossbow+Life',
     value: {
       base64: 'EACAAAQIVNhtYPmXxBtTcI1UHEDCCwAg/wE=',
     },
   },
   {
-    key: '[Misc]/Charms/Grand Charm/Skiller/Amazon/Javelin and Spear + Life',
+    key: '[Charms]/Grand Charm/Amazon/Javelin and Spear+Life',
     value: { 
       base64: 'EACAAAQEVNhtEEr3yB7TgI1UHEDCSwAg/wE=',
     },
   },
   {
-    key: '[Misc]/Charms/Grand Charm/Skiller/Amazon/Passive and Magic + Life',
+    key: '[Charms]/Grand Charm/Amazon/Passive and Magic+Life',
     value: {
       base64: 'EACAAAQAVNhtcMfPpBhTeY1UHEDCKwAg/wE=',
     },
   },
   {
-    key: '[Misc]/Charms/Grand Charm/Skiller/Assassin/Martial Arts + Life',
+    key: '[Charms]/Grand Charm/Assassin/Martial Arts+Life',
     value: {
       base64: 'EACAAAQUVNhtKOePlh1TwI9UHEDCSwYg/wE=',
     },
   },
   {
-    key: '[Misc]/Charms/Grand Charm/Skiller/Assassin/Shadow Disciplines + Life',
+    key: '[Charms]/Grand Charm/Assassin/Shadow Disciplines+Life',
     value: {
       base64: 'EACAAAQQVNhtcHGb1h5TuI9UHEDCKwYg/wE=',
     },
   },
   {
-    key: '[Misc]/Charms/Grand Charm/Skiller/Assassin/Traps + Life',
+    key: '[Charms]/Grand Charm/Assassin/Traps+Life',
     value: {
       base64: 'EACAAAQMVNhtYHSrZhnTsI9UHEDCCwYg/wE=',
     },
   },
   {
-    key: '[Misc]/Charms/Grand Charm/Skiller/Barbarian/Combat + Life',
+    key: '[Charms]/Grand Charm/Barbarian/Combat+Life',
     value: {
       base64: 'EACAAARAVdht2OjLkRvT8I5UHEDCCwQg/wE=',
     },
   },
   {
-    key: '[Misc]/Charms/Grand Charm/Skiller/Barbarian/Warcries + Life',
+    key: '[Charms]/Grand Charm/Barbarian/Warcries+Life',
     value: {
       base64: 'EACAAARIVdhtEEoXFRjTAI9UHEDCSwQg/wE=',
     },
   },
   {
-    key: '[Misc]/Charms/Grand Charm/Skiller/Barbarian/Masteries + Life',
+    key: '[Charms]/Grand Charm/Barbarian/Masteries+Life',
     value: {
       base64: 'EACAAAREVdhtmK7YdBxT+Y5UHEDCKwQg/wE=',
     },
   },
   {
-    key: '[Misc]/Charms/Grand Charm/Skiller/Druid/Elemental + Life',
+    key: '[Charms]/Grand Charm/Druid/Elemental+Life',
     value: {
       base64: 'EACAAARUVdhtIPe2xR5TYY9UHEDCSwUg/wE=',
     },
   },
   {
-    key: '[Misc]/Charms/Grand Charm/Skiller/Druid/Shapeshifting + Life',
+    key: '[Charms]/Grand Charm/Druid/Shapeshifting+Life',
     value: {
       base64: 'EACAAARQVdhtACNGzRjTWI9UHEDCKwUg/wE=',
     },
   },
   {
-    key: '[Misc]/Charms/Grand Charm/Skiller/Druid/Summoning + Life',
+    key: '[Charms]/Grand Charm/Druid/Summoning+Life',
     value: {
       base64: 'EACAAARMVdhteBvD4RpTUY9UHEDCCwUg/wE=',
     },
   },
   {
-    key: '[Misc]/Charms/Grand Charm/Skiller/Necromancer/Poison and Bone + Life',
+    key: '[Charms]/Grand Charm/Necromancer/Poison and Bone+Life',
     value: {
       base64: 'EACAAAQERNhtCOGCHhhTOY5UHEDCKwIg/wE=',
     },
   },
   {
-    key: '[Misc]/Charms/Grand Charm/Skiller/Necromancer/Curses + Life',
+    key: '[Charms]/Grand Charm/Necromancer/Curses+Life',
     value: {
       base64: 'EACAAAQARNht6IenohpTMY5UHEDCCwIg/wE=',
     },
   },
   {
-    key: '[Misc]/Charms/Grand Charm/Skiller/Necromancer/Summoning + Life',
+    key: '[Charms]/Grand Charm/Necromancer/Summoning+Life',
     value: {
       base64: 'EACAAAQIRNht+CCP+RnTQI5UHEDCSwIg/wE=',
     },
   },
   {
-    key: '[Misc]/Charms/Grand Charm/Skiller/Paladin/Combat + Life',
+    key: '[Charms]/Grand Charm/Paladin/Combat+Life',
     value: {
       base64: 'EACAAAQMRNhtEPs+jx9TkI5UHEDCCwMg/wE=',
     },
   },
   {
-    key: '[Misc]/Charms/Grand Charm/Skiller/Paladin/Defensive Auras + Life',
+    key: '[Charms]/Grand Charm/Paladin/Defensive Auras+Life',
     value: {
       base64: 'EACAAAQURNhtAHTfTRhToY5UHEDCSwMg/wE=',
     },
   },
   {
-    key: '[Misc]/Charms/Grand Charm/Skiller/Paladin/Offensive Auras + Life',
+    key: '[Charms]/Grand Charm/Paladin/Offensive Auras+Life',
     value: {
       base64: 'EACAAAQQRNhtQNniPhlTmI5UHEDCKwMg/wE=',
     },
   },
   {
-    key: '[Misc]/Charms/Grand Charm/Skiller/Sorceress/Cold + Life',
+    key: '[Charms]/Grand Charm/Sorceress/Cold+Life',
     value: {
       base64: 'EACAAAQgRNhtqCloJR5T4I1UHEDCSwEg/wE=',
     },
   },
   {
-    key: '[Misc]/Charms/Grand Charm/Skiller/Sorceress/Fire + Life',
+    key: '[Charms]/Grand Charm/Sorceress/Fire+Life',
     value: {
       base64: 'EACAAAQYRNhtAC405x9T0I1UHEDCCwEg/wE=',
     },
   },
   {
-    key: '[Misc]/Charms/Grand Charm/Skiller/Sorceress/Lightning + Life',
+    key: '[Charms]/Grand Charm/Sorceress/Lightning+Life',
     value: {
       base64: 'EACAAAQcRNhtmJRFGRhT2Y1UHEDCKwEg/wE=',
     },
   },
   {
-    key: '[Misc]/Charms/Small Charms/3 20 20 Charm',
+    key: '[Charms]/Small Charms/3 20 20 Charm',
     value: {
       base64: 'EACAAARARNhP4OGZAR7TAEhXHKAxgQILAwwDUIP/',
     },
   },
   {
-    key: '[Misc]/Charms/Small Charms/Cold dmg',
+    key: '[Charms]/Small Charms/Cold dmg',
     value: {
       base64: 'EACAAATIRNhPOK3bahpTiVOw2HjoIPMf',
     },
   },
   {
-    key: '[Misc]/Charms/Small Charms/Fire dmg',
+    key: '[Charms]/Small Charms/Fire dmg',
     value: {
       base64: 'EACAAASIRNhP0LmkXhpT6FOzwNBQ8R8=',
     },
   },
   {
-    key: '[Misc]/Charms/Small Charms/Life Mana',
+    key: '[Charms]/Small Charms/Life Mana',
     value: {
       base64: 'EACAAASARNhPINdJXR/TeElXHKCRIOY/',
     },
   },
   {
-    key: '[Misc]/Charms/Small Charms/Life Res',
+    key: '[Charms]/Small Charms/Life Res',
     value: {
       base64: 'EACAAARQRNhPGO4hiR5TeUpWHKBxolmKZiuatWj2Hw==',
     },
   },
   {
-    key: '[Misc]/Charms/Small Charms/Light dmg',
+    key: '[Charms]/Small Charms/Light dmg',
     value: {
       base64: 'EACAAAQIRNhPoJARyx1TSVS2yBDG+A8=',
     },
   },
   {
-    key: '[Misc]/Charms/Small Charms/MF Res',
+    key: '[Charms]/Small Charms/MF Res',
     value: {
       base64: 'EACAAAQERNhPoPFzThxTEMpInGiWotmKZi2aQVn7Dw==',
     },
   },
   {
-    key: '[Misc]/Charms/Small Charms/Poison dmg',
+    key: '[Charms]/Small Charms/Poison dmg',
     value: {
       base64: 'EACAAAQARNhPyJCp6htTqVSt5BhppH//AQ==',
     },
   },
   {
-    key: '[Misc]/Craft/Amulet/Armageddon Slippers',
+    key: '[Craft]/Amulet/Armageddon Slippers',
     value: {
       base64: 'ECCAAAQY5FkY2Hrb0LQYgN0AUyYANAJiB7Yk0DrBLQW3FdxacOMy+g8=',
     },
   },
   {
-    key: '[Misc]/Craft/Amulet/Gale Shell',
+    key: '[Craft]/Amulet/Gale Shell',
     value: {
       base64: 'ECCAAAQk5FkY3G3dbrQYdC8BU6gBNB4HH4cT3FJwW8GtBbcU+bjM/gM=',
     },
   },
   {
-    key: '[Misc]/Craft/Amulet/Shadow Wing II',
+    key: '[Craft]/Amulet/Shadow Wing II',
     value: {
       base64: 'EACAAAUI9FkYli0JY8Q4UK+6ox30iLRwgMaECUQQNgIKyPAQQHEDw/kP',
     },
   },
   {
-    key: '[Misc]/Craft/Amulet/Shadow Wing',
+    key: '[Craft]/Amulet/Shadow Wing',
     value: {
       base64: 'EACAAAUE9FkYYNgj0MUYUK/+Jz1+pR8gQHYgxohhxTQeAjAaXjIA+Q8=',
     },
   },
   {
-    key: '[Misc]/Craft/Amulet/Storm Circlet',
+    key: '[Craft]/Amulet/Storm Circlet',
     value: {
       base64: 'ECCAAASY5FkYgnti/bQYUn0AUyIAMmlQB64k2DrxbcW3FN+mSFww/wE=',
     },
   },
   {
-    key: '[Misc]/Craft/Amulet/Storm Hide',
+    key: '[Craft]/Amulet/Storm Hide',
     value: {
       base64: 'ECCAAATY5FkYWHAu3bQYUo0AUywANAJiB7Yk0DrBLQW3FdxacONi/A8=',
     },
   },
   {
-    key: '[Misc]/Craft/Boots/Bitter Brogues Leather Boots',
+    key: '[Craft]/Boots/Bitter Brogues Leather Boots',
     value: {
       base64: 'ECCAAASQ5KoJ3Bfyz1pDmA3QAAYGYGQAZAS0VrBLMe+EOC6t/w==',
     },
   },
   {
-    key: '[Misc]/Craft/Boots/Grim Spur Chain Boots',
+    key: '[Craft]/Boots/Grim Spur Chain Boots',
     value: {
       base64: 'ECCAAAQAxKoJmS6pc1qjtAwwAQgIYGRjUABmVtRL4a1FNy6p/w==',
     },
   },
   {
-    key: '[Misc]/Craft/Boots/Rune Slippers Plate Boots',
+    key: '[Craft]/Boots/Rune Slippers Plate Boots',
     value: {
       base64: 'ECCAAASIBKsJXjoHNlpD1Q2QAQwMYGQAWAScVsBLAe/EPC6u/w==',
     },
   },
   {
-    key: '[Misc]/Craft/Boots/Soul Shank Plate Boots',
+    key: '[Craft]/Boots/Soul Shank Plate Boots',
     value: {
       base64: 'ECCAAAQIBKsJgcPAb1qDlwyQAQwMYGQAYgSQVtxLUe9EPi6W/w==',
     },
   },
   {
-    key: '[Misc]/Craft/Boots/Soul Spur Heavy Boots',
+    key: '[Craft]/Boots/Soul Spur Heavy Boots',
     value: {
       base64: 'ECCAAASAZKcmjFr0v2oN3jIABBwcgJFByABgRoBrBbkU97i0/gM=',
     },
   },
   {
-    key: '[Misc]/Craft/Boots/Viper Trample Chain Boots',
+    key: '[Craft]/Boots/Viper Trample Chain Boots',
     value: {
       base64: 'ECCAAAQQxKoJ0cMVx1rjcw0wAQgIYGRjUAJaK96dcNfiGpfWfw==',
     },
   },
   {
-    key: '[Misc]/Craft/Glove/Bow Blood Touch',
+    key: '[Craft]/Glove/Bow Blood Touch',
     value: {
       base64: 'ECCAAAUAlO9W0M9rxSEiomE5c0ZlUxVogYODA0hamONh6IJCpOAFACAAL/8B',
     },
   },
   {
-    key: '[Misc]/Craft/Glove/Java Blood Touch',
+    key: '[Craft]/Glove/Java Blood Touch',
     value: {
       base64: 'ECCAAAUIlO9WoEB8siUiomE5c0ZlUxVogYODA0hamONh6IJCpOAlACAAL/8B',
     },
   },
   {
-    key: '[Misc]/Craft/Glove/Martial Arts Blood Touch',
+    key: '[Craft]/Glove/Martial Arts Blood Touch',
     value: {
       base64: 'ECCAAAUQlO9WaObAjSYiomE5c0ZlUxVogYODA0hamONh6IJCpOAlAyAAL/8B',
     },
   },
   {
-    key: '[Misc]/Craft/Glove/Passive Gale Grasp',
+    key: '[Craft]/Glove/Passive Gale Grasp',
     value: {
       base64: 'ECCAAARAFNoVrqFbkrWI7hegCRAQuFiMESwUuqB4DHwMogScHHgFAOg/',
     },
   },
   {
-    key: '[Misc]/Craft/Glove/Soul Touch',
+    key: '[Craft]/Glove/Soul Touch',
     value: {
       base64: 'ECCAAAQIFO5WyFY5WtAivGGAJTg44MLoguIx8DFAVACQcqBFim7/AQ==',
     },
   },
   {
-    key: '[Misc]/Craft/Ring/Beast Master',
+    key: '[Craft]/Ring/Beast Master',
     value: {
       base64:
         'EACAAAUA9PzYgLbFqyXGxCnZHU+zKcoEACMHXiSgmUDBCWYpmK1g1oIZj0GywgTHfw==',
     },
   },
   {
-    key: '[Misc]/Craft/Ring/Bone Gyre',
+    key: '[Craft]/Ring/Bone Gyre',
     value: {
       base64: 'EACAAAVA9PzYUM1IQCPGYAp4HvvSMJUCADIHjkw4IwU2HoL/',
     },
   },
   {
-    key: '[Misc]/Craft/Ring/Death Knot',
+    key: '[Craft]/Ring/Death Knot',
     value: {
       base64:
         'EACAAAWM9PzYUPtSySfGcJpXLsnhaVwJACIBQgdmVBAuCCe48RB8EpIVJjj+Aw==',
     },
   },
   {
-    key: '[Misc]/Craft/Ring/Doom Loop',
+    key: '[Craft]/Ring/Doom Loop',
     value: {
       base64: 'ECCAAAXA9PzYUMrgNy/GQLrXKxuyMCoEACQHXqSAtqIZj4CSMUv9Bw==',
     },
   },
   {
-    key: '[Misc]/Craft/Ring/Havoc Band',
+    key: '[Craft]/Ring/Havoc Band',
     value: {
       base64: 'EACAAIwZ4PzYoE5EqCnGEBzYAMXQAJFQCJ8AwIsA2oEwJ6SluNYiHA+FD8N/',
     },
   },
   {
-    key: '[Misc]/Craft/Ring/Shadow Circle',
+    key: '[Craft]/Ring/Shadow Circle',
     value: {
       base64: 'EACAAAVE9PzYwMQoKizGgKoXJsfiupwDACIHZCQgERHwOPgw/Ac=',
     },
   },
   {
-    key: '[Misc]/Craft/Ring/Skull Whorl',
+    key: '[Craft]/Ring/Skull Whorl',
     value: {
       base64: 'ECCAAAWQ9PzYAAPJ2SbGEyoYMecQJm0BACIHZCQYERGk8MZDYOd/',
     },
   },
   {
-    key: '[Misc]/Craft/Ring/Storm Eye',
+    key: '[Craft]/Ring/Storm Eye',
     value: {
       base64: 'EACAAAWA9PzY8MPubCXGkcrXMF1hPiQLACMCXAdYpMjG45DG8x8=',
     },
   },
   {
-    key: '[Misc]/Craft/Ring/Storm Master',
+    key: '[Craft]/Ring/Storm Master',
     value: {
       base64:
         'EACAAAUM9PzY8Lm9viXGkCr5HYchOfQLADMHVEzAoMJgIXBhwBDgEfg0gAr8Bw==',
     },
   },
   {
-    key: '[Misc]/Jewels/10 MF 40 Ed (red)',
+    key: '[Jewels]/10 MF 40 Ed(red)',
     value: {
       base64: 'EACAAAQcBN0AAv0NjdaYkjFIIgIKFFDc/gM=',
     },
   },
   {
-    key: '[Misc]/Jewels/10 Min 15 Res (red)',
+    key: '[Jewels]/10 Min 15 AllRes(red)',
     value: {
       base64: 'EACAAARYBN0AgtomGuSYUlTSoYJyQTlxLcW1FddaXPuk/Ac=',
     },
   },
   {
-    key: '[Misc]/Jewels/10 Min 40 Ed (orange)',
+    key: '[Jewels]/10 Min 40 Ed(orange)',
     value: {
       base64: 'EACAAASkBN0AAgcBw/6YijHSIQIKFBWUC8on5T8=',
     },
   },
   {
-    key: '[Misc]/Jewels/10-15 Dmg (red)',
+    key: '[Jewels]/10-15 Dmg(red)',
     value: {
       base64: 'EACAAARIBN0AgvbeoNSYUi7SoYJi4XFBwfD4pIB6/Ac=',
     },
   },
   {
-    key: '[Misc]/Jewels/15 IAS (green)',
+    key: '[Jewels]/15 IAS(green)',
     value: {
       base64: 'EACAAAXIEN0Awilg+ACODgBWocvoPw==',
     },
   },
   {
-    key: '[Misc]/Jewels/15 IAS 15 Res (blue)',
+    key: '[Jewels]/15 IAS 15 AllRes(blue)',
     value: {
       base64: 'EACAAAQYBN0AwuxN4vCYRlRW4cS1FNdWXGtxrcvoPw==',
     },
   },
   {
-    key: '[Misc]/Jewels/15 IAS 30 Fire Res (red)',
+    key: '[Jewels]/15 IAS 30 Fire AllRes(red)',
     value: {
       base64: 'EACAAATEBN0AgnMV8tOY0ilWocvohLn/',
     },
   },
   {
-    key: '[Misc]/Jewels/15 IAS 40 Ed (green)',
+    key: '[Jewels]/15 IAS 40 Ed(green)',
     value: {
       base64: 'EACAAAUABN0Awilg+ACODgBWocsoAgoU/wE=',
     },
   },
   {
-    key: '[Misc]/Jewels/15 IAS 8 Min (red)',
+    key: '[Jewels]/15 IAS 8 Min(red)',
     value: {
       base64: 'EACAAASIBN0AgnMV8tOY0ilWoQJyAeky+oT8Bw==',
     },
   },
   {
-    key: '[Misc]/Jewels/15 Max 40 Ed (green)',
+    key: '[Jewels]/15 Max 40 Ed(green)',
     value: {
       base64: 'EACAAARkBN0AwtQlCcqYjjG8IQIKFBYeGB6gHv8B',
     },
   },
   {
-    key: '[Misc]/Jewels/15 Req 15 Res (orange)',
+    key: '[Jewels]/15 Req 15 AllRes(orange)',
     value: {
       base64: 'EACAAATUBN0AAomY1dCYSlTm4sS1FNdWXGtxbUvVfw==',
     },
   },
   {
-    key: '[Misc]/Jewels/15 Req 40 Ed (orange)',
+    key: '[Jewels]/15 Req 40 Ed(orange)',
     value: {
       base64: 'EACAAATgBN0AAk/VwPyYijHmIgIKFFuq/gM=',
     },
   },
   {
-    key: '[Misc]/Jewels/15 Res 1-100 Light (pink)',
+    key: '[Jewels]/15 AllRes 1-100 Light(pink)',
     value: {
       base64: 'EACAAASYBN0AArB2AMiYQlQ45cS1FNdWXGtxTUZAxn8=',
     },
   },
   {
-    key: '[Misc]/Jewels/15 Res 10 MF (red)',
+    key: '[Jewels]/15 AllRes 10 MF(red)',
     value: {
       base64: 'EACAAAQQBN0AgmMncu2YUlRI4sS1FNdWXGtxDYrbfw==',
     },
   },
   {
-    key: '[Misc]/Jewels/20 Life 40 Ed (yellow)',
+    key: '[Jewels]/20 Life 40 Ed(yellow)',
     value: {
       base64: 'EACAAARgBN0AwqL6pdCYljG+4gCNCChQ/Ac=',
     },
   },
   {
-    key: '[Misc]/Jewels/40 Ed 1-100 Light (orange)',
+    key: '[Jewels]/40 Ed 1-100 Light(orange)',
     value: {
       base64: 'EACAAATkBN0AAreG29qYijE4JQIKFDICMv4D',
     },
   },
   {
-    key: '[Misc]/Jewels/Fire Dmg 15 Res (green)',
+    key: '[Jewels]/Fire Dmg 15 AllRes(green)',
     value: {
       base64: 'EACAAATYBN0AQt+IjuaYTlQ05cS1FNdWXGtxDUaGjP8=',
     },
   },
   {
-    key: '[Misc]/Jewels/Fire Dmg 40 Ed (pink)',
+    key: '[Jewels]/Fire Dmg 40 Ed(pink)',
     value: {
       base64: 'EACAAAQgBN0AAqz9zN6YgjE0JQIKFDAyZPwH',
     },
   },
+  /*
   {
     key: '[Misc]/Misc/Arrows',
     value: {
@@ -4201,15 +4204,15 @@ export default [
     },
   },
   {
-    key: '[Misc]/Quest/Essences & Token/Burning Essence of Terror (Red)',
+    key: '[Misc]/Quest/Essences & Token/Burning Essence of Terror(Red)',
     value: {  base64: 'ECCgAATARAcTAA==' },
   },
   {
-    key: '[Misc]/Quest/Essences & Token/Charged Essence of Hatred (Yellow)',
+    key: '[Misc]/Quest/Essences & Token/Charged Essence of Hatred(Yellow)',
     value: {  base64: 'ECCgAASARAw4AA==' },
   },
   {
-    key: '[Misc]/Quest/Essences & Token/Festering Essence of Destruction (Green)',
+    key: '[Misc]/Quest/Essences & Token/Festering Essence of Destruction(Green)',
     value: {  base64: 'ECCgAAQERB7GAA==' },
   },
   {
@@ -4217,7 +4220,7 @@ export default [
     value: {  base64: 'ECCgAAQAxPxfAA==' },
   },
   {
-    key: '[Misc]/Quest/Essences & Token/Twisted Essence of Suffering (Blue)',
+    key: '[Misc]/Quest/Essences & Token/Twisted Essence of Suffering(Blue)',
     value: {  base64: 'ECCgAARAxAwUAA==' },
   },
   {
@@ -4262,228 +4265,231 @@ export default [
       base64: 'ECiAAAQUxL8TAJCjbbRDwMAYXjAAW/Nw/wE=',
     },
   },
+  */
   {
-    key: '[Misc]/Rares/Amulet/Armageddon Fletch',
+    key: '[Rares]/Amulet/Armageddon Fletch',
     value: {
       base64: 'ECCAAARY5FkYNE1GMLUWgFkAUyIAMmlQB64k2DrxLcW3Fd9afOOS+g8=',
     },
   },
   {
-    key: '[Misc]/Rares/Amulet/Fiendra Sunder',
+    key: '[Rares]/Amulet/Fiendra Sunder',
     value: {
       base64: 'ECCAAARk5FkY3BdqprQWcB0AUygAM2A8B7YkyBJA49L6Dw==',
     },
   },
   {
-    key: '[Misc]/Rares/Amulet/Grim Necklace',
+    key: '[Rares]/Amulet/Grim Necklace',
     value: {
       base64: 'ECCAAASk5FkYxLBoPLQWSg0BUyYAMQJmCa7sXOGNy/BEthTfWlz7Dw==',
     },
   },
   {
-    key: '[Misc]/Rares/Amulet/Imp Brow',
+    key: '[Rares]/Amulet/Imp Brow',
     value: {
       base64: 'ECCAAATk5FkY3kcE1rQWboUAUygAMzwOPg5ToBPdUnRb0a1FNy6T/w==',
     },
   },
   {
-    key: '[Misc]/Rares/Amulet/Order Noose',
+    key: '[Rares]/Amulet/Order Noose',
     value: {
       base64: 'ECCAAAQc5FkY8pwUfrUWigsBUyAAMwJaCXJWYOMyPAEuhbcW3v4D',
     },
   },
   {
-    key: '[Misc]/Rares/Ring/Beast Circle',
+    key: '[Rares]/Ring/Beast Circle',
     value: {
       base64: 'ECCAAASc5PzYMMl4Za21wKkH4EHwcViRL8U0KINcJP8B',
     },
   },
   {
-    key: '[Misc]/Rares/Ring/Bitter Turn',
+    key: '[Rares]/Ring/Bitter Turn',
     value: {
       base64: 'ECCAAATc5PzYAJX3EKi1INwH4FGYMIiAVopxAFq4uBKw/Ac=',
     },
   },
   {
-    key: '[Misc]/Rares/Ring/Blood Whorl',
+    key: '[Rares]/Ring/Blood Whorl',
     value: {
       base64: 'ECCAAARc5PzYUCqIyqa1ICoI4GHwUVgx7oQ2KIRcGv8B',
     },
   },
   {
-    key: '[Misc]/Rares/Ring/Bone Master',
+    key: '[Rares]/Ring/Bone Master',
     value: {
       base64: 'ECCAAAQA9PzYMIhelaS1YCoJSONJEHfiWoprK661uJaC3YiAi+s/',
     },
   },
   {
-    key: '[Misc]/Rares/Ring/Corruption Grip',
+    key: '[Rares]/Ring/Corruption Grip',
     value: {
       base64: 'ECCAAATg5PzYIFl8R6u1kOwF4GGYUImPw4lrKa6tuNbi2gl3XFxPPP0H',
     },
   },
   {
-    key: '[Misc]/Rares/Ring/Eagle Circle',
+    key: '[Rares]/Ring/Eagle Circle',
     value: {
       base64: 'ECCAAASg5PzYAI3cJ6u10KkH4FGYMISPw4lrKa6tuNbi2gp/XFz/AQ==',
     },
   },
   {
-    key: '[Misc]/Rares/Ring/Shadow Spiral',
+    key: '[Rares]/Ring/Shadow Spiral',
     value: {
       base64: 'ECCAAARg5PzY8OD90qq1gOoH4FEA4OLjkCIfFDguriz2Hw==',
     },
   },
   {
-    key: '[Misc]/Rares/Ring/Viper Whorl',
+    key: '[Rares]/Ring/Viper Whorl',
     value: {
       base64: 'ECCAAAQg5PzYoLi/U6218CkI4GGYYMGBIyeupbi24lqLawmAuLh8HP4D',
     },
   },
+  /*
   {
-    key: '[Misc]/Runes/Amn Rune',
+    key: '[Runes]/Amn Rune',
     value: {  base64: 'EACgAAQA5Hw+AQ==' },
   },
   {
-    key: '[Misc]/Runes/Ber Rune',
+    key: '[Runes]/Ber Rune',
     value: {  base64: 'EACgAAQE5Gy/Aw==' },
   },
   {
-    key: '[Misc]/Runes/Cham Rune',
+    key: '[Runes]/Cham Rune',
     value: {  base64: 'EACgAAQI5GyZAA==' },
   },
   {
-    key: '[Misc]/Runes/Dol Rune',
+    key: '[Runes]/Dol Rune',
     value: {  base64: 'EACgAAQM5Hy+Ag==' },
   },
   {
-    key: '[Misc]/Runes/El Rune',
+    key: '[Runes]/El Rune',
     value: {  base64: 'EACgAAQQ5Hx/Ag==' },
   },
   {
-    key: '[Misc]/Runes/Eld Rune',
+    key: '[Runes]/Eld Rune',
     value: {  base64: 'EACgAAQU5HwzAQ==' },
   },
   {
-    key: '[Misc]/Runes/Eth Rune',
+    key: '[Runes]/Eth Rune',
     value: {  base64: 'EACgAAQY5HyjBQ==' },
   },
   {
-    key: '[Misc]/Runes/Fal Rune',
+    key: '[Runes]/Fal Rune',
     value: {  base64: 'EACgAAQc5HxcAA==' },
   },
   {
-    key: '[Misc]/Runes/Gul Rune',
+    key: '[Runes]/Gul Rune',
     value: {  base64: 'EACgAARA5DBoAQ==' },
   },
   {
-    key: '[Misc]/Runes/Hel Rune',
+    key: '[Runes]/Hel Rune',
     value: {  base64: 'EACgAARE5HzQAg==' },
   },
   {
-    key: '[Misc]/Runes/Io Rune',
+    key: '[Runes]/Io Rune',
     value: {  base64: 'ECCgAASA5Hz2AQ==' },
   },
   {
-    key: '[Misc]/Runes/Ist Rune',
+    key: '[Runes]/Ist Rune',
     value: {  base64: 'EACgAARI5DBfAQ==' },
   },
   {
-    key: '[Misc]/Runes/Ith Rune',
+    key: '[Runes]/Ith Rune',
     value: {  base64: 'EACgAARM5HzvAw==' },
   },
   {
-    key: '[Misc]/Runes/Jah Rune',
+    key: '[Runes]/Jah Rune',
     value: {  base64: 'EACgAARQ5Gw/AQ==' },
   },
   {
-    key: '[Misc]/Runes/Ko Rune',
+    key: '[Runes]/Ko Rune',
     value: {  base64: 'EACgAARU5HyQAA==' },
   },
   {
-    key: '[Misc]/Runes/Lem Rune',
+    key: '[Runes]/Lem Rune',
     value: {  base64: 'EACgAARY5DDfAQ==' },
   },
   {
-    key: '[Misc]/Runes/Lo Rune',
+    key: '[Runes]/Lo Rune',
     value: {  base64: 'EACgAARc5DBIAA==' },
   },
   {
-    key: '[Misc]/Runes/Lum Rune',
+    key: '[Runes]/Lum Rune',
     value: {  base64: 'EACgAASA5Hx8AA==' },
   },
   {
-    key: '[Misc]/Runes/Mal Rune',
+    key: '[Runes]/Mal Rune',
     value: {  base64: 'EACgAASE5DDbAA==' },
   },
   {
-    key: '[Misc]/Runes/Nef Rune',
+    key: '[Runes]/Nef Rune',
     value: {  base64: 'EACgAASI5Hx/BQ==' },
   },
   {
-    key: '[Misc]/Runes/Ohm Rune',
+    key: '[Runes]/Ohm Rune',
     value: {  base64: 'EACgAASM5DA+' },
   },
   {
-    key: '[Misc]/Runes/Ort Rune',
+    key: '[Runes]/Ort Rune',
     value: {  base64: 'EACgAASQ5Hy7AA==' },
   },
   {
-    key: '[Misc]/Runes/Po Rune',
+    key: '[Runes]/Po Rune',
     value: {  base64: 'EACgAASU5Hz2AQ==' },
   },
   {
-    key: '[Misc]/Runes/Pul Rune',
+    key: '[Runes]/Pul Rune',
     value: {  base64: 'EACgAASY5DCfAA==' },
   },
   {
-    key: '[Misc]/Runes/Ral Rune',
+    key: '[Runes]/Ral Rune',
     value: {  base64: 'EACgAASc5HwjAQ==' },
   },
   {
-    key: '[Misc]/Runes/Shael Rune',
+    key: '[Runes]/Shael Rune',
     value: {  base64: 'EACgAATA5Hy2AQ==' },
   },
   {
-    key: '[Misc]/Runes/Sol Rune',
+    key: '[Runes]/Sol Rune',
     value: {  base64: 'EACgAATE5HyYAA==' },
   },
   {
-    key: '[Misc]/Runes/Sur Rune',
+    key: '[Runes]/Sur Rune',
     value: {  base64: 'EACgAATI5DAu' },
   },
   {
-    key: '[Misc]/Runes/Tal Rune',
+    key: '[Runes]/Tal Rune',
     value: {  base64: 'EACgAATM5Hz7AA==' },
   },
   {
-    key: '[Misc]/Runes/Thul Rune',
+    key: '[Runes]/Thul Rune',
     value: {  base64: 'EACgAATQ5Hy+Aw==' },
   },
   {
-    key: '[Misc]/Runes/Tir Rune',
+    key: '[Runes]/Tir Rune',
     value: {  base64: 'EACgAATU5HxvAw==' },
   },
   {
-    key: '[Misc]/Runes/Um Rune',
+    key: '[Runes]/Um Rune',
     value: {  base64: 'EACgAATY5DBMAA==' },
   },
   {
-    key: '[Misc]/Runes/Vex Rune',
+    key: '[Runes]/Vex Rune',
     value: {  base64: 'EACgAATc5DD7AA==' },
   },
   {
-    key: '[Misc]/Runes/Zod Rune',
+    key: '[Runes]/Zod Rune',
     value: {  base64: 'EACgAAQg5Gy3AQ==' },
   },
+  */
   {
-    key: '[Base]/Armor/Shield/Class-Items/Sacred Targe (All Res)',
+    key: '[Base]/Shield/Class-Items/Sacred Targe(AllRes)',
     value: {
       base64: 'EACAAAUgdD4Npu7CnlUxA1DR0uJEvRT1VtRrUe8/',
     },
   },
   {
-    key: "[Magic]/Armor/Shield/Jeweler's Monarch of Deflecting",
+    key: "[Magic]/Shield/Jeweler's Monarch of Deflecting",
     value: {
       base64: 'EAiAAAUABP5MSBdZqIUSpmkFT1ghIQqUGdl/',
     },
