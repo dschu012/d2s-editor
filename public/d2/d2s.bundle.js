@@ -423,9 +423,13 @@ var __spreadArrays = (this && this.__spreadArrays) || function () {
             r[k] = a[j];
     return r;
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.compactAttributes = exports.enhanceItem = exports.enhanceItems = exports.enhancePlayerAttributes = exports.enhanceAttributes = void 0;
 var types = __importStar(__webpack_require__(/*! ./types */ "./src/d2/types.ts"));
+var ItemStatGroups_json_1 = __importDefault(__webpack_require__(/*! ../data/ItemStatGroups.json */ "./src/data/ItemStatGroups.json"));
 //do nice stuff
 //combine group properties (all resists/all stats) and build friendly strings for a ui
 //enhanced def/durability/weapon damage.
@@ -454,7 +458,7 @@ function enhancePlayerAttributes(char, constants, config) {
             char.item_bonuses = [].concat
                 .apply([], items.map(function (item) { return _allAttributes(item, constants); }))
                 .filter(function (attribute) { return attribute != null; });
-            char.item_bonuses = _groupAttributes(char.item_bonuses, constants);
+            //char.item_bonuses = _groupAttributes(char.item_bonuses, constants);
             _enhanceAttributeDescription(char.item_bonuses, constants, char.attributes.level, config);
             return [2 /*return*/];
         });
@@ -668,124 +672,17 @@ function enhanceItem(item, constants, level, config, parent) {
     if (item.magic_attributes || item.runeword_attributes || item.socketed_items) {
         item.displayed_magic_attributes = _enhanceAttributeDescription(item.magic_attributes, constants, level, config);
         item.displayed_runeword_attributes = _enhanceAttributeDescription(item.runeword_attributes, constants, level, config);
-        item.combined_magic_attributes = _groupAttributes(_allAttributes(item, constants), constants);
+        item.combined_magic_attributes = _allAttributes(item, constants);
         item.displayed_combined_magic_attributes = _enhanceAttributeDescription(item.combined_magic_attributes, constants, level, config);
     }
 }
 exports.enhanceItem = enhanceItem;
-function _enhanceAttributeDescription(_magic_attributes, constants, level, config) {
-    var _a, _b;
-    if (level === void 0) { level = 1; }
-    if (!_magic_attributes)
-        return [];
-    var magic_attributes = __spreadArrays(_magic_attributes.map(function (attr) { return (__assign({}, attr)); }));
-    var dgrps = [0, 0, 0];
-    var dgrpsVal = [0, 0, 0];
-    for (var _i = 0, magic_attributes_1 = magic_attributes; _i < magic_attributes_1.length; _i++) {
-        var property = magic_attributes_1[_i];
-        var prop = constants.magical_properties[property.id];
-        var v = property.values[((_a = property.values) === null || _a === void 0 ? void 0 : _a.length) - 1];
-        if (prop.dg) {
-            if (dgrpsVal[prop.dg - 1] === 0) {
-                dgrpsVal[prop.dg - 1] = v;
-            }
-            if (dgrpsVal[prop.dg - 1] - v === 0) {
-                dgrps[prop.dg - 1]++;
-            }
-        }
-    }
-    var _loop_1 = function (property) {
-        var prop = constants.magical_properties[property.id];
-        if (prop == null) {
-            throw new Error("Cannot find Magical Property for id: " + property.id);
-        }
-        var v = property.values[((_b = property.values) === null || _b === void 0 ? void 0 : _b.length) - 1];
-        if (prop.ob === "level") {
-            switch (prop.o) {
-                case 1: {
-                    v = Math.floor((level * v) / 100);
-                    break;
-                }
-                case 2:
-                case 3:
-                case 4:
-                case 5: {
-                    v = Math.floor((level * v) / Math.pow(2, prop.op));
-                    break;
-                }
-                default: {
-                    break;
-                }
-            }
-            property.op_stats = prop.os;
-            property.op_value = v;
-        }
-        var descFunc = prop.dF;
-        var descString = v >= 0 ? prop.dP : prop.dN;
-        //hack for d2r...?
-        if (property.id == 39 || property.id == 41 || property.id == 43 || property.id == 45) {
-            descString = prop.dP;
-        }
-        var descVal = prop.dV;
-        var desc2 = prop.d2;
-        if (prop.dg && dgrps[prop.dg - 1] === 4) {
-            v = dgrpsVal[prop.dg - 1];
-            descString = v >= 0 ? prop.dgP : prop.dgN ? prop.dgN : prop.dgP;
-            descVal = prop.dgV;
-            descFunc = prop.dgF;
-            desc2 = prop.dg2;
-        }
-        if (prop.np) {
-            //damage range or enhanced damage.
-            var count_1 = 0;
-            descString = prop.dR;
-            if (prop.s === "poisonmindam") {
-                //poisonmindam see https://user.xmission.com/~trevin/DiabloIIv1.09_Magic_Properties.shtml for reference
-                var min = Math.floor((property.values[0] * property.values[2]) / 256);
-                var max = Math.floor((property.values[1] * property.values[2]) / 256);
-                var seconds = Math.floor(property.values[2] / 25);
-                property.values = [min, max, seconds];
-            }
-            if (property.values[0] === property.values[1]) {
-                count_1++;
-                descString = prop.dE;
-                //TODO. why???
-                if (prop.s === "item_maxdamage_percent") {
-                    descString = "+%d% " + descString.replace(/}/gi, "").replace(/%\+?d%%/gi, "");
-                }
-            }
-            property.description = descString.replace(/%d/gi, function () {
-                var v = property.values[count_1++];
-                return v;
-            });
-        }
-        else {
-            _descFunc(property, constants, v, descFunc, descVal, descString, desc2);
-        }
-    };
-    for (var _c = 0, magic_attributes_2 = magic_attributes; _c < magic_attributes_2.length; _c++) {
-        var property = magic_attributes_2[_c];
-        _loop_1(property);
-    }
-    if (config === null || config === void 0 ? void 0 : config.sortProperties) {
-        //sort using sort order from game.
-        magic_attributes.sort(function (a, b) { return constants.magical_properties[b.id].so - constants.magical_properties[a.id].so; });
-    }
-    for (var i = magic_attributes.length - 1; i >= 1; i--) {
-        for (var j = i - 1; j >= 0; j--) {
-            if (magic_attributes[i].description === magic_attributes[j].description) {
-                magic_attributes[j].visible = false;
-            }
-        }
-    }
-    return magic_attributes;
-}
 function compactAttributes(mods, constants) {
     var _a;
     var magic_attributes = [];
     for (var _i = 0, mods_1 = mods; _i < mods_1.length; _i++) {
         var mod = mods_1[_i];
-        var _loop_2 = function (stat) {
+        var _loop_1 = function (stat) {
             var statId = constants.magical_properties.findIndex(function (e) { return e.s === stat.s; });
             var prop = constants.magical_properties[statId];
             if (prop) {
@@ -794,7 +691,7 @@ function compactAttributes(mods, constants) {
                 switch (prop.dF) {
                     //item_addclassskills
                     case 13: {
-                        v = [stat.val, mod.min];
+                        v = [stat.val, mod.max];
                         break;
                     }
                     //item_addskill_tab
@@ -811,7 +708,7 @@ function compactAttributes(mods, constants) {
                     }
                     //item_aura
                     case 16: {
-                        v = [mod.p, mod.min];
+                        v = [mod.p, mod.max];
                         break;
                     }
                     //charged_skill
@@ -821,7 +718,7 @@ function compactAttributes(mods, constants) {
                     }
                     //item_singleskill
                     case 27: {
-                        v = [mod.p, mod.min];
+                        v = [mod.p, mod.max];
                         if (mod.prop == "skill-rand") {
                             var rnd = Math.floor(Math.random() * (mod.max - mod.min) + mod.min);
                             v = [(_a = constants.skills[rnd]) === null || _a === void 0 ? void 0 : _a.id, mod.p];
@@ -830,201 +727,287 @@ function compactAttributes(mods, constants) {
                     }
                     //item_nonclassskill
                     case 28: {
-                        v = [mod.p, mod.min];
+                        v = [mod.p, mod.max];
                         break;
                     }
                     default:
+                        break;
+                }
+                if (prop.s == "poisonmindam" || prop.s == "poisonmaxdam" || prop.s == "poisonlength") {
+                    v = [mod.min, mod.max, mod.p];
                 }
                 magic_attributes.push({
                     id: statId,
-                    values: v,
                     name: prop.s,
+                    values: v,
+                    param: mod.p,
+                    value: mod.max,
+                    df: prop.dF,
                 });
             }
         };
         for (var _b = 0, _c = constants.properties[mod.prop] || []; _b < _c.length; _b++) {
             var stat = _c[_b];
-            _loop_2(stat);
+            _loop_1(stat);
         }
     }
     return magic_attributes;
 }
 exports.compactAttributes = compactAttributes;
-function _descFunc(property, constants, v, descFunc, descVal, descString, desc2) {
-    var _a, _b;
-    if (!descFunc) {
-        return;
+function _enhanceAttributeDescription(_magic_attributes, constants, level, config) {
+    var _a;
+    if (level === void 0) { level = 1; }
+    if (!_magic_attributes)
+        return [];
+    var mods = __spreadArrays(_magic_attributes.map(function (attr) { return (__assign({}, attr)); }));
+    for (var _i = 0, mods_2 = mods; _i < mods_2.length; _i++) {
+        var mod = mods_2[_i];
+        var prop = constants.magical_properties[mod.id];
+        mod.value = mod.values[((_a = mod.values) === null || _a === void 0 ? void 0 : _a.length) - 1];
+        mod.param = mod.values[0];
+        //mod.so = prop.so;
     }
-    var sign = v >= 0 ? "+" : "";
-    var value = null;
-    var desc2Present = descFunc >= 6 && descFunc <= 10;
-    switch (descFunc) {
+    consolidateMods(mods);
+    for (var _b = 0, mods_3 = mods; _b < mods_3.length; _b++) {
+        var mod = mods_3[_b];
+        var prop = constants.magical_properties[mod.id];
+        mod.description = describeSingleMod(mod, prop, constants);
+    }
+    addModGroups(mods, constants);
+    if (config === null || config === void 0 ? void 0 : config.sortProperties) {
+        mods.sort(function (a, b) { var _a, _b; return ((_a = constants.magical_properties[b.id]) === null || _a === void 0 ? void 0 : _a.so) - ((_b = constants.magical_properties[a.id]) === null || _b === void 0 ? void 0 : _b.so); });
+    }
+    return mods;
+}
+function describeSingleMod(mod, prop, constants) {
+    var _a, _b, _c, _d, _e, _f, _g, _h;
+    if (!prop)
+        return;
+    var val = mod.value;
+    if (prop.s.endsWith("perlevel")) {
+        // Per-level mod, we show it for character level 99 for the flair
+        if (prop.s.includes("tohit")) {
+            val = val / 2;
+        }
+        else {
+            val = val / 8;
+        }
+        val = Math.floor(99 * val);
+    }
+    var modDesc = (val !== null && val !== void 0 ? val : 0) < 0 ? prop.dN : prop.dP;
+    if (prop.id == 39 || prop.id == 41 || prop.id == 43 || prop.id == 45) {
+        modDesc = prop.dP;
+    }
+    var valueDesc;
+    switch (prop.dF) {
         case 1:
         case 6:
-        case 12: {
-            value = "" + sign + v;
+        case 12:
+            valueDesc = (val !== null && val !== void 0 ? val : 0) < 0 ? "" + val : "+" + val;
             break;
-        }
         case 2:
-        case 7: {
-            value = v + "%";
+        case 7:
+            valueDesc = val + "%";
             break;
-        }
         case 3:
-        case 9: {
-            value = "" + v;
+        case 9:
+            valueDesc = "" + val;
             break;
-        }
         case 4:
-        case 8: {
-            value = "" + sign + v + "%";
+        case 8:
+            valueDesc = (val !== null && val !== void 0 ? val : 0) < 0 ? val + "%" : "+" + val + "%";
             break;
-        }
         case 5:
-        case 10: {
-            if (descString.indexOf("%%") < 0) {
-                value = (v * 100) / 128 + "%";
+        case 10:
+            valueDesc = Math.floor((val * 100) / 128) + "%";
+            break;
+        case 11:
+            modDesc = modDesc.replace("%d", "" + 100 / val);
+            break;
+        case 13: // +[value] to [class] Skill Levels
+            modDesc = formatStr(constants.classes[mod.values[0]].as, val);
+            break;
+        case 14: // +[value] to [skilltab] Skill Levels ([class] Only)
+            var skillTab = constants.classes[mod.values[1]].ts[mod.values[0]];
+            if (skillTab) {
+                modDesc = "+" + val + " to " + skillTab + " " + constants.classes[mod.values[1]].co;
+                modDesc = formatStr(skillTab, val) + " " + constants.classes[mod.values[1]].co;
+            }
+            break;
+        case 15: // [chance]% to cast [slvl] [skill] on [event]
+            modDesc = modDesc
+                // Extra % because the actual one is doubled to escape it
+                .replace("%d%", "" + mod.values[2])
+                .replace("%d", "" + mod.values[0])
+                .replace("%s", "" + constants.skills[mod.values[1]].n);
+            break;
+        case 16: // Level [sLvl] [skill] Aura When Equipped
+            modDesc = modDesc
+                .replace("%d", "" + val)
+                .replace("%s", "" + constants.skills[mod.values[0]].n);
+            break;
+        case 19: //main
+            modDesc = formatStr(modDesc, val);
+            break;
+        case 20:
+            valueDesc = -val + "%";
+            break;
+        case 21:
+            valueDesc = "" + -val;
+            break;
+        case 22: // [value]% / [montype]
+            valueDesc = val + "%";
+            break;
+        case 23: // [value]% / [montype]
+            valueDesc = val + "%";
+            modDesc = formatStr(modDesc, val);
+            break;
+        case 24: // charges
+            modDesc = formatStr(modDesc, mod.values[0], constants.skills[mod.values[1]].n, mod.values[2], mod.values[3]);
+            break;
+        case 27: // +[value] to [skill] ([class] Only)
+            var skill_1 = constants.skills[mod.values[0]];
+            modDesc = formatStr(modDesc, val, skill_1 === null || skill_1 === void 0 ? void 0 : skill_1.n, (_a = constants.classes.filter(function (e) { return (e === null || e === void 0 ? void 0 : e.c) === (skill_1 === null || skill_1 === void 0 ? void 0 : skill_1.c); })[0]) === null || _a === void 0 ? void 0 : _a.co);
+            break;
+        case 28: // +[value] to [skill]
+            modDesc = formatStr(modDesc, val, (_b = constants.skills[mod.values[0]]) === null || _b === void 0 ? void 0 : _b.n);
+            break;
+        // Custom describe functions to handle groups
+        case 100:
+            // Non-poison elemental or magic damage.
+            if (((_c = mod.values) === null || _c === void 0 ? void 0 : _c[0]) !== ((_d = mod.values) === null || _d === void 0 ? void 0 : _d[1])) {
+                modDesc = prop.dN;
+            }
+            modDesc = modDesc
+                .replace("%d", "" + ((_e = mod.values) === null || _e === void 0 ? void 0 : _e[0]))
+                .replace("%d", "" + ((_f = mod.values) === null || _f === void 0 ? void 0 : _f[1]));
+            break;
+        case 101: // Poison damage
+            if (((_g = mod.values) === null || _g === void 0 ? void 0 : _g[0]) === ((_h = mod.values) === null || _h === void 0 ? void 0 : _h[1])) {
+                modDesc = modDesc
+                    .replace("%d", "" + Math.round((mod.values[0] * mod.values[2]) / 256))
+                    .replace("%d", "" + Math.round(mod.values[2] / 25));
             }
             else {
-                value = (v * 100) / 128;
+                modDesc = prop.dN
+                    .replace("%d", "" + Math.round((mod.values[0] * mod.values[2]) / 256))
+                    .replace("%d", "" + Math.round((mod.values[1] * mod.values[2]) / 256))
+                    .replace("%d", "" + Math.round(mod.values[2] / 25));
             }
             break;
-        }
-        case 11: {
-            property.description = descString.replace(/%d/, (v / 100).toString());
-            break;
-        }
-        case 13: {
-            var clazz = constants.classes[property.values[0]];
-            property.description = "" + sign + v + " " + clazz.as;
-            break;
-        }
-        case 14: {
-            var clazz = constants.classes[property.values[1]];
-            var skillTabStr = clazz === null || clazz === void 0 ? void 0 : clazz.ts[property.values[0]];
-            descString = _sprintf(skillTabStr, v);
-            property.description = descString + " " + (clazz === null || clazz === void 0 ? void 0 : clazz.co);
-            break;
-        }
-        case 15: {
-            descString = _sprintf(descString, property.values[2], property.values[0], (_a = constants.skills[property.values[1]]) === null || _a === void 0 ? void 0 : _a.n);
-            property.description = "" + descString;
-            break;
-        }
-        case 16: {
-            property.description = descString.replace(/%d/, v.toString());
-            property.description = property.description.replace(/%s/, constants.skills[property.values[0]].n);
-            break;
-        }
-        case 17: {
-            //todo
-            property.description = v + " " + descString + " (Increases near [time])";
-            break;
-        }
-        case 18: {
-            //todo
-            property.description = v + "% " + descString + " (Increases near [time])";
-            break;
-        }
-        case 19: {
-            property.description = _sprintf(descString, v === null || v === void 0 ? void 0 : v.toString());
-            break;
-        }
-        case 20: {
-            value = v * -1 + "%";
-            break;
-        }
-        case 21: {
-            value = "" + v * -1;
-            break;
-        }
-        case 22: {
-            //todo
-            property.description = v + "% " + descString + " [montype]";
-            break;
-        }
-        case 23: {
-            //todo
-            property.description = v + "% " + descString + " [monster]]";
-            break;
-        }
-        case 24: {
-            //charges
-            //legacy desc string
-            if (descString.indexOf("(") == 0) {
-                var count_2 = 0;
-                descString = descString.replace(/%d/gi, function () {
-                    return property.values[2 + count_2++].toString();
-                });
-                property.description = "Level " + property.values[0] + " " + constants.skills[property.values[1]].n + " " + descString;
-            }
-            else {
-                property.description = _sprintf(descString, property.values[0], (_b = constants.skills[property.values[1]]) === null || _b === void 0 ? void 0 : _b.n, property.values[2], property.values[3]);
-            }
-            break;
-        }
-        case 27: {
-            var skill = constants.skills[property.values[0]];
-            var clazz = _classFromCode(skill === null || skill === void 0 ? void 0 : skill.c, constants);
-            if (descString) {
-                property.description = _sprintf(descString, v, skill === null || skill === void 0 ? void 0 : skill.n, clazz === null || clazz === void 0 ? void 0 : clazz.co);
-            }
-            else {
-                property.description = "" + sign + v + " to " + (skill === null || skill === void 0 ? void 0 : skill.s) + " " + (clazz === null || clazz === void 0 ? void 0 : clazz.co);
-            }
-            break;
-        }
-        case 28: {
-            var skill = constants.skills[property.values[0]];
-            property.description = "" + sign + v + " to " + (skill === null || skill === void 0 ? void 0 : skill.n);
-            break;
-        }
-        case 29: {
-            property.description = _sprintf(descString, v.toString());
-            break;
-        }
-        default: {
-            throw new Error("No handler for descFunc: " + descFunc);
-        }
     }
-    if (value) {
-        descVal = descVal ? descVal : 0;
-        switch (descVal) {
-            case 0: {
-                property.description = _sprintf(descString, value);
+    if (modDesc) {
+        var fullDesc = "";
+        switch (prop.dV) {
+            case 1:
+                fullDesc = valueDesc + " " + modDesc;
                 break;
-            }
-            case 1: {
-                property.description = value + " " + descString;
+            case 2:
+                fullDesc = modDesc + " " + valueDesc;
                 break;
-            }
-            case 2: {
-                property.description = descString + " " + value;
-                break;
-            }
-            default: {
-                throw new Error("No handler for descVal: " + descVal);
-            }
+            default:
+                fullDesc = modDesc;
         }
-    }
-    if (desc2Present) {
-        property.description += " " + desc2;
+        if (6 <= prop.dF && prop.dF <= 9) {
+            fullDesc += " " + prop.d2;
+        }
+        return fullDesc;
     }
 }
-function _sprintf(str) {
-    var args = [];
+function addModGroups(modifiers, constants) {
+    var _a, _b, _c;
+    var _loop_2 = function (group) {
+        var mods = (_a = modifiers === null || modifiers === void 0 ? void 0 : modifiers.filter(function (_a) {
+            var id = _a.id;
+            return group.statsInGroup.includes(id);
+        })) !== null && _a !== void 0 ? _a : [];
+        // We assume a mods have been merged so we cannot have duplicates
+        if (mods.length !== group.statsInGroup.length) {
+            return "continue";
+        }
+        if (group.allEqual && mods.some(function (_a) {
+            var value = _a.value;
+            return value !== mods[0].value;
+        })) {
+            return "continue";
+        }
+        // On some rare items we can get increase in min damage that's larger than the increase in max damage.
+        // The game solves this by displaying them separately.
+        if (group.isRange && ((_b = mods[0].value) !== null && _b !== void 0 ? _b : 0) > ((_c = mods[1].value) !== null && _c !== void 0 ? _c : 0)) {
+            return "continue";
+        }
+        // Damage increase on non-weapons is awkward, it has all 4 mods that apply in the multiple groups.
+        if (group.s === "group:secondary-dmg" ||
+            group.s === "group:min-dmg" ||
+            group.s === "group:max-dmg") {
+            // We already described the range, ignore these "duplicate" groups
+            if (modifiers === null || modifiers === void 0 ? void 0 : modifiers.find(function (mod) { return mod.name === "group:primary-dmg"; })) {
+                // We still have to remember to delete the description from the mods,
+                // primary-dmg only contains 2, not all 4.
+                for (var _i = 0, mods_4 = mods; _i < mods_4.length; _i++) {
+                    var mod = mods_4[_i];
+                    delete mod.description;
+                }
+                return "continue";
+            }
+        }
+        var extraMod = {
+            id: -1,
+            name: group.s,
+            so: group.so,
+            df: group.dF,
+            value: mods[0].value,
+            //value: group.allEqual ? mods[0].value : undefined,
+            values: mods.map(function (_a) {
+                var value = _a.value;
+                return value !== null && value !== void 0 ? value : 0;
+            }),
+        };
+        extraMod.description = describeSingleMod(extraMod, group, constants);
+        modifiers === null || modifiers === void 0 ? void 0 : modifiers.push(extraMod);
+        // Clear descriptions of items in group so they are not displayed
+        for (var _a = 0, mods_5 = mods; _a < mods_5.length; _a++) {
+            var mod = mods_5[_a];
+            delete mod.description;
+        }
+    };
+    for (var _i = 0, statGroups_1 = ItemStatGroups_json_1.default; _i < statGroups_1.length; _i++) {
+        var group = statGroups_1[_i];
+        _loop_2(group);
+    }
+}
+function formatStr(str) {
+    var values = [];
     for (var _i = 1; _i < arguments.length; _i++) {
-        args[_i - 1] = arguments[_i];
+        values[_i - 1] = arguments[_i];
     }
     var i = 0;
-    return str === null || str === void 0 ? void 0 : str.replace(/%\+?d|%\+?s/gi, function (m) {
-        var _a;
-        var v = (_a = args[i++]) === null || _a === void 0 ? void 0 : _a.toString();
-        if (m.indexOf("+") >= 0) {
-            v = "+" + v;
+    return str === null || str === void 0 ? void 0 : str.replace(/%(\+)?([ids%\d])/g, function (m, plus, chr) {
+        if (chr === '%') {
+            return chr;
         }
-        return v;
-    }).replace("%%", "%");
+        else {
+            var value = (chr === 'd' || chr === 's' || chr === 'i' ? values[i++] : values[chr]);
+            if (plus && !isNaN(value) && parseInt(value) > 0)
+                value = '+' + value;
+            return value;
+        }
+    });
+}
+function consolidateMods(mods) {
+    var _a, _b;
+    var _loop_3 = function (mod) {
+        var duplicateIndex = void 0;
+        while ((duplicateIndex = mods.findIndex(function (other) { return mod !== other &&
+            (mod.id === other.id && "value" in mod && mod.param === other.param); })) >= 0) {
+            var duplicate = mods.splice(duplicateIndex, 1)[0];
+            mod.value = ((_a = mod.value) !== null && _a !== void 0 ? _a : 0) + ((_b = duplicate.value) !== null && _b !== void 0 ? _b : 0);
+        }
+    };
+    for (var _i = 0, mods_6 = mods; _i < mods_6.length; _i++) {
+        var mod = mods_6[_i];
+        _loop_3(mod);
+    }
 }
 function boundValue(v, min, max) {
     return Math.min(max, Math.max(min, v));
@@ -1048,77 +1031,6 @@ function _allAttributes(item, constants) {
     var magic_attributes = item.magic_attributes || [];
     var runeword_attributes = item.runeword_attributes || [];
     return __spreadArrays([], JSON.parse(JSON.stringify(magic_attributes)), JSON.parse(JSON.stringify(runeword_attributes)), JSON.parse(JSON.stringify(socketed_attributes))).filter(function (attribute) { return attribute != null; });
-}
-function _groupAttributes(all_attributes, constants) {
-    var combined_magic_attributes = [];
-    var _loop_3 = function (magic_attribute) {
-        var prop = constants.magical_properties[magic_attribute.id];
-        var properties = combined_magic_attributes.filter(function (e) {
-            //encoded skills need to look at those params too.
-            if (prop.e === 3) {
-                return e.id === magic_attribute.id && e.values[0] === magic_attribute.values[0] && e.values[1] === magic_attribute.values[1];
-            }
-            if (prop.dF === 15) {
-                return (e.id === magic_attribute.id &&
-                    e.values[0] === magic_attribute.values[0] &&
-                    e.values[1] === magic_attribute.values[1] &&
-                    e.values[2] === magic_attribute.values[2]);
-            }
-            if (prop.dF === 16 || prop.dF === 23) {
-                return e.id === magic_attribute.id && e.values[0] === magic_attribute.values[0] && e.values[1] === magic_attribute.values[1];
-            }
-            if (prop.s === "state" || prop.s === "item_nonclassskill") {
-                //state
-                return e.id === magic_attribute.id && e.values[0] === magic_attribute.values[0] && e.values[1] === magic_attribute.values[1];
-            }
-            return e.id === magic_attribute.id;
-        });
-        if (properties && properties.length) {
-            for (var i = 0; i < properties.length; i++) {
-                var property = properties[i];
-                if (prop.np) {
-                    //damage props
-                    property.values[0] += magic_attribute.values[0];
-                    property.values[1] += magic_attribute.values[1];
-                    break;
-                }
-                //only combine attributes if the params for the descFunc are the same.
-                var sameParams = true;
-                var numValues = prop.e === 3 ? 2 : 1;
-                for (var j = 0; j < property.values.length - numValues; j++) {
-                    sameParams = property.values[j] === magic_attribute.values[j];
-                    if (!sameParams) {
-                        break;
-                    }
-                }
-                if (sameParams) {
-                    for (var j = 1; j <= numValues; j++) {
-                        var idx = property.values.length - j;
-                        property.values[idx] += magic_attribute.values[idx];
-                    }
-                }
-                else {
-                    combined_magic_attributes.push({
-                        id: magic_attribute.id,
-                        values: magic_attribute.values,
-                        name: magic_attribute.name,
-                    });
-                }
-            }
-        }
-        else {
-            combined_magic_attributes.push({
-                id: magic_attribute.id,
-                values: magic_attribute.values,
-                name: magic_attribute.name,
-            });
-        }
-    };
-    for (var _i = 0, all_attributes_1 = all_attributes; _i < all_attributes_1.length; _i++) {
-        var magic_attribute = all_attributes_1[_i];
-        _loop_3(magic_attribute);
-    }
-    return combined_magic_attributes;
 }
 
 
@@ -3548,6 +3460,17 @@ function _writeNPCData(npcs) {
     return writer.ToArray();
 }
 
+
+/***/ }),
+
+/***/ "./src/data/ItemStatGroups.json":
+/*!**************************************!*\
+  !*** ./src/data/ItemStatGroups.json ***!
+  \**************************************/
+/*! exports provided: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("[{\"s\":\"group:all-attr\",\"statsInGroup\":[0,1,2,3],\"allEqual\":true,\"dP\":\"to all Attributes\",\"dN\":\"to all Attributes\",\"dF\":1,\"dV\":1,\"so\":67},{\"s\":\"group:all-res\",\"statsInGroup\":[39,41,43,45],\"allEqual\":true,\"dP\":\"All Resistances +%d\",\"dN\":\"All Resistances +%d\",\"dF\":19,\"so\":40},{\"s\":\"group:enhanced-dmg\",\"statsInGroup\":[17,18],\"allEqual\":true,\"dP\":\"Enhanced damage\",\"dN\":\"Enhanced damage\",\"dF\":4,\"dV\":1,\"so\":130},{\"s\":\"group:primary-dmg\",\"statsInGroup\":[21,22],\"isRange\":true,\"dP\":\"+%d damage\",\"dN\":\"Adds %d-%d damage\",\"dF\":100,\"so\":127},{\"s\":\"group:secondary-dmg\",\"statsInGroup\":[23,24],\"isRange\":true,\"dP\":\"+%d damage\",\"dN\":\"Adds %d-%d damage\",\"dF\":100,\"so\":124},{\"s\":\"group:fire-dmg\",\"statsInGroup\":[48,49],\"isRange\":true,\"dP\":\"+%d fire damage\",\"dN\":\"Adds %d-%d fire damage\",\"dF\":100,\"so\":102},{\"s\":\"group:light-dmg\",\"statsInGroup\":[50,51],\"isRange\":true,\"dP\":\"+%d lightning damage\",\"dN\":\"Adds %d-%d lightning damage\",\"dF\":100,\"so\":99},{\"s\":\"group:magic-dmg\",\"statsInGroup\":[52,53],\"isRange\":true,\"dP\":\"+%d magic damage\",\"dN\":\"Adds %d-%d magic damage\",\"dF\":100,\"so\":104},{\"s\":\"group:cold-dmg\",\"statsInGroup\":[54,55,56],\"isRange\":true,\"dP\":\"+%d cold damage\",\"dN\":\"Adds %d-%d cold damage\",\"dF\":100,\"so\":96},{\"s\":\"group:poison-dmg\",\"statsInGroup\":[57,58,59],\"isRange\":true,\"dP\":\"+%d poison damage over %d seconds\",\"dN\":\"Adds %d-%d poison damage over %d seconds\",\"dF\":101,\"so\":92},{\"s\":\"group:min-dmg\",\"statsInGroup\":[21,23],\"allEqual\":true,\"dP\":\"to Minimum Damage\",\"dN\":\"to Minimum Damage\",\"dF\":1,\"dV\":1,\"so\":127},{\"s\":\"group:max-dmg\",\"statsInGroup\":[22,24],\"allEqual\":true,\"dP\":\"to Maximum Damage\",\"dN\":\"to Maximum Damage\",\"dF\":1,\"dV\":1,\"so\":126}]");
 
 /***/ }),
 
