@@ -764,7 +764,8 @@ function _enhanceAttributeDescription(_magic_attributes, constants, level, confi
         var mod = mods_2[_i];
         var prop = constants.magical_properties[mod.id];
         mod.value = mod.values[((_a = mod.values) === null || _a === void 0 ? void 0 : _a.length) - 1];
-        mod.param = mod.values[0];
+        mod.param = prop.dF !== 19 ? mod.values[0] : undefined;
+        mod.df = prop.dF;
         //mod.so = prop.so;
     }
     consolidateMods(mods);
@@ -3815,6 +3816,24 @@ function _readProperties(tsv, strings) {
         }
     }
     return arr;
+}
+function propertyTypeFromFunc(func) {
+    switch (func) {
+        case "11":
+            return "proc";
+        case "19":
+            return "charges";
+        case "3":
+            return "all";
+        case "15":
+            return "min";
+        case "16":
+            return "max";
+        case "17":
+            return "param";
+        default:
+            return "other";
+    }
 }
 function _readRunewords(tsv, strings, skills) {
     var _a;
