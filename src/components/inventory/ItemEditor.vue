@@ -215,28 +215,25 @@ export default {
       } 
       return 0; 
     },
-    itemMaxSockets(item) {
-      if (!item) return 0;
+    itemMaxSockets(base) {
+      if (!base) return 0;
       let boxSockets = 0;
       //const type = Data.itemTypes[base.type];
       //type.maxsock40
-      const maxsockets = Math.min(item.gemsockets, item.iw * item.ih);
+      const maxsockets = Math.min(base.gemsockets, base.iw * base.ih);
       switch (this.item.quality) {
         //Quality.MAGIC:
         case 4:
           return Math.min(Math.max(boxSockets, 2), maxsockets);
        //Quality.RARE:
         case 6:
-          return Math.min(Math.max(boxSockets, 1), maxsockets);
         //Quality.SET:
         case 5:
-          return Math.min(Math.max(boxSockets, 1), maxsockets);
         //Quality.UNIQUE:
         case 7:
-          return Math.min(Math.max(boxSockets, 1), maxsockets);
         //Quality.CRAFTED
         case 8:
-          return Math.min(Math.max(boxSockets, 1), maxsockets);
+          return maxsockets - 1;
         default:
           return maxsockets;
       }
