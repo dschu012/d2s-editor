@@ -785,7 +785,7 @@ function _enhanceAttributeDescription(_magic_attributes, constants, level, confi
     return mods;
 }
 function describeSingleMod(mod, prop, constants) {
-    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
     if (!prop)
         return;
     var val = mod.value;
@@ -844,12 +844,12 @@ function describeSingleMod(mod, prop, constants) {
                 // Extra % because the actual one is doubled to escape it
                 .replace("%d%", "" + mod.values[2])
                 .replace("%d", "" + mod.values[0])
-                .replace("%s", "" + constants.skills[mod.values[1]].n);
+                .replace("%s", "" + ((_b = constants.skills[mod.values[1]]) === null || _b === void 0 ? void 0 : _b.n));
             break;
         case 16: // Level [sLvl] [skill] Aura When Equipped
             modDesc = modDesc
                 .replace("%d", "" + val)
-                .replace("%s", "" + ((_b = constants.skills[mod.values[0]]) === null || _b === void 0 ? void 0 : _b.n));
+                .replace("%s", "" + ((_c = constants.skills[mod.values[0]]) === null || _c === void 0 ? void 0 : _c.n));
             break;
         case 19: //main
             modDesc = formatStr(modDesc, val);
@@ -872,23 +872,23 @@ function describeSingleMod(mod, prop, constants) {
             break;
         case 27: // +[value] to [skill] ([class] Only)
             var skill_1 = constants.skills[mod.values[0]];
-            modDesc = formatStr(modDesc, val, skill_1 === null || skill_1 === void 0 ? void 0 : skill_1.n, (_c = constants.classes.filter(function (e) { return (e === null || e === void 0 ? void 0 : e.c) === (skill_1 === null || skill_1 === void 0 ? void 0 : skill_1.c); })[0]) === null || _c === void 0 ? void 0 : _c.co);
+            modDesc = formatStr(modDesc, val, skill_1 === null || skill_1 === void 0 ? void 0 : skill_1.n, (_d = constants.classes.filter(function (e) { return (e === null || e === void 0 ? void 0 : e.c) === (skill_1 === null || skill_1 === void 0 ? void 0 : skill_1.c); })[0]) === null || _d === void 0 ? void 0 : _d.co);
             break;
         case 28: // +[value] to [skill]
-            modDesc = formatStr(modDesc, val, (_d = constants.skills[mod.values[0]]) === null || _d === void 0 ? void 0 : _d.n);
+            modDesc = formatStr(modDesc, val, (_e = constants.skills[mod.values[0]]) === null || _e === void 0 ? void 0 : _e.n);
             break;
         // Custom describe functions to handle groups
         case 100:
             // Non-poison elemental or magic damage.
-            if (((_e = mod.values) === null || _e === void 0 ? void 0 : _e[0]) !== ((_f = mod.values) === null || _f === void 0 ? void 0 : _f[1])) {
+            if (((_f = mod.values) === null || _f === void 0 ? void 0 : _f[0]) !== ((_g = mod.values) === null || _g === void 0 ? void 0 : _g[1])) {
                 modDesc = prop.dN;
             }
             modDesc = modDesc
-                .replace("%d", "" + ((_g = mod.values) === null || _g === void 0 ? void 0 : _g[0]))
-                .replace("%d", "" + ((_h = mod.values) === null || _h === void 0 ? void 0 : _h[1]));
+                .replace("%d", "" + ((_h = mod.values) === null || _h === void 0 ? void 0 : _h[0]))
+                .replace("%d", "" + ((_j = mod.values) === null || _j === void 0 ? void 0 : _j[1]));
             break;
         case 101: // Poison damage
-            if (((_j = mod.values) === null || _j === void 0 ? void 0 : _j[0]) === ((_k = mod.values) === null || _k === void 0 ? void 0 : _k[1])) {
+            if (((_k = mod.values) === null || _k === void 0 ? void 0 : _k[0]) === ((_l = mod.values) === null || _l === void 0 ? void 0 : _l[1])) {
                 modDesc = modDesc
                     .replace("%d", "" + Math.round((mod.values[0] * mod.values[2]) / 256))
                     .replace("%d", "" + Math.round(mod.values[2] / 25));
@@ -3927,7 +3927,7 @@ function _readRunewords(tsv, strings, skills) {
                 var param = Number(+tsv.lines[i][modifiers[j].cParam]);
                 //string value
                 if (Number.isNaN(param)) {
-                    param = (_a = s.find(function (s) { return s.s == tsv.lines[i][modifiers[j].cParam]; })) === null || _a === void 0 ? void 0 : _a.id;
+                    param = (_a = s.find(function (s) { return s.s.trim().toLocaleLowerCase() == tsv.lines[i][modifiers[j].cParam].trim().toLocaleLowerCase(); })) === null || _a === void 0 ? void 0 : _a.id;
                 }
                 if (tsv.lines[i][modifiers[j].cParam])
                     m.p = param;
