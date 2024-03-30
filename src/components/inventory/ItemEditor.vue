@@ -49,7 +49,7 @@
         </span>
 
         <li>
-          <div v-if="!item.is_ear">
+          <div v-if="!item.simple_item">
             Base:
               <multiselect v-model="item.type" :options="getBasesOptions(item.type)" :searchable="true" :can-deselect="false" :can-clear="false" :required="true" @update:model-value="onEvent('update')" />
           </div>

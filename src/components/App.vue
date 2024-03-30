@@ -1067,7 +1067,12 @@
           }
         }
         d2s.enhanceItems(newItems, window.constants);
-        for (const item of newItems) {     
+        for (const item of newItems) {   
+          let socketIndex = item.magic_attributes.findIndex(i => i.name == "item_numsockets");
+          if (socketIndex > 0) {
+            item.socketed =  true;
+            item.total_nr_of_sockets = item.magic_attributes[socketIndex].value;
+          }
           this.itempack.push({
             key: `[${category}]/${item.set_name}`,
             value: {item: item}
@@ -1093,7 +1098,12 @@
           }
         }
         d2s.enhanceItems(newItems, window.constants);
-        for (const item of newItems) {     
+        for (const item of newItems) {    
+          let socketIndex = item.magic_attributes.findIndex(i => i.name == "item_numsockets");
+          if (socketIndex > 0) {
+            item.socketed =  true;
+            item.total_nr_of_sockets = item.magic_attributes[socketIndex].value;
+          } 
           this.itempack.push({
             key: `[${category}]/${item.unique_name}`,
             value: {item: item}
