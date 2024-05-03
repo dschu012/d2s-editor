@@ -1144,7 +1144,10 @@
         bases = Object.keys(constants).filter(id => {
           const c = constants[id];
           if (item.given_runeword == 1 && c.gemsockets < item.total_nr_of_sockets) return false;
-          return c.spawnable && itemGroups[item.types[0]].concat(itemGroups[item.types[1]]).concat(itemGroups[item.types[2]]).includes(c.type)
+          return c.spawnable && [...itemGroups[item.types[0]] || [],
+                                ...itemGroups[item.types[1]] || [],
+                                ...itemGroups[item.types[2]] || []]
+                                .includes(c.type)
         }).sort((a, b) => constants[a].level < constants[b].level);
         return bases;
       },
