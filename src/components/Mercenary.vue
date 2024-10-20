@@ -1,12 +1,12 @@
 <template>
-  <div class="inventory">
-    <span class="head">
+  <div class="mercenary">
+    <span class="mercenary-head">
       <Item v-if="head" :item.sync="head" @click.native="onSelect(head)" @contextmenu.prevent.stop="itemRC($event, head)"/></span>
-    <span class="torso">
+    <span class="mercenary-torso">
       <Item v-if="torso" :item.sync="torso" @click.native="onSelect(torso)" @contextmenu.prevent.stop="itemRC($event, torso)"/></span>
-    <span class="right-hand weapon">
+    <span class="mercenary-right-hand weapon">
       <Item v-if="right_hand" :item.sync="right_hand" @click.native="onSelect(right_hand)" @contextmenu.prevent.stop="itemRC($event, right_hand)"/></span>
-    <span class="left-hand weapon">
+    <span class="mercenary-left-hand weapon">
       <Item v-if="left_hand" :item.sync="left_hand" @click.native="onSelect(left_hand)" @contextmenu.prevent.stop="itemRC($event, left_hand)"/></span>
   </div>
 </template>
