@@ -1,0 +1,411 @@
+Name	Token	Beta
+Not Used	NU0	0
+Casket #5	C5	1
+Outdoor Shrine	SF	1
+Casket #6	C6	1
+Urn #1	U1	0
+Large Chest R	L1	1
+Large Chest L	L2	1
+Barrel	B1	1
+Tower Tome	TT	1
+Urn #2	U2	0
+Bench	BE	1
+Barrel Exploding	BX	1
+Fountain	FN	1
+Door Gate Left	D1	1
+Door Gate Right	D2	1
+Door Wooden Left	D3	1
+Door Wooden Right	D4	1
+Stone 1	S1	1
+Stone 2	S2	1
+Stone 3	S3	1
+Stone 4	S4	1
+Stone 5	S5	1
+Stone 6	S6	1
+Door Courtyard Left	D5	1
+Door Courtyard Right	D6	1
+Door Cathedral	D7	1
+Gibbet	GI	1
+Door Monastery	D8	1
+Hole in Ground	HI	1
+Brazier	BR	1
+Inifuss Tree	IT	1
+Blood Fountain	BF	1
+Crucifix Large	CL	1
+Candles 1	A1	1
+Candles 2	A2	1
+Standard 1	N1	1
+Standard 2	N2	1
+Tiki Torch	TO	1
+Wall Torch	WT	1
+Rogue Bonfire	RB	1
+River 1	R1	1
+River 2	R2	1
+River 3	R3	1
+River 4	R4	1
+River 5	R5	1
+Town 1 Ambient	SS	1
+Crate	CT	1
+Andariel Door	AD	1
+Rogue Torch 1	T1	1
+Rogue Torch 2	T2	1
+Casket 1	C1	1
+Casket 2	C2	1
+Urn #3	U3	0
+Casket Raised	C4	1
+Rogue Corpse	Z1	1
+Rogue Corpse	Z2	1
+Rogue Rolling Corpse	Z5	1
+Rogue Staked 1	Z3	1
+Rogue Staked 2	Z4	1
+Town Portal	TP	1
+Portal Permanent	PP	1
+Stone Sound	SS	1
+Door Small Cathedral	D9	1
+Door Small Cathedral	DA	1
+Wooden Door	DB	1
+River Sound Only 1	X1	1
+River Sound Only 1	X2	1
+Ripple 1	1R	1
+Ripple 2	2R	1
+Ripple 3	3R	1
+Ripple 4	4R	1
+Forest Night 1	F1	1
+Forest Night 2	F2	1
+Yeti Dung	YD	1
+Trap Door	TD	0
+Dock Door 	DD	0
+Sewer Drip	SZ	1
+ShrineHealth	SH	1
+Town Ambient	SS	1
+Casket 3	C3	1
+Obelisk 1	OB	1
+Forest Altar	AF	1
+Bubbling pool of blood	B2	1
+Horn Shrine	HS	1
+Healing Well	HW	1
+Bull Shrine	BC	0
+stele	SG	0
+tomb chest 1	CA	0
+tomb chest 2	CB	0
+mummy coffin	MC	0
+desert obelisk	DO	0
+tomb door left	TL	0
+tomb door right	TR	0
+innerhellmana	iz	0
+urn #4	U4	0
+urn #5	U5	0
+innerhellhealth	iy	0
+innershrine1	ix	0
+tomb door left 2	TS	0
+tomb door right 2	TU	0
+secret door #1	SJ	1
+Brazier	B3	1
+Floor brazier	FB	1
+flies	FL	1
+Armor Stand 1	A3	1
+Armor Stand 2	A4	1
+Weapon Rack 1	W1	1
+Weapon Rack 2	W2	1
+Malus	HM	1
+palace shrine	P2	0
+not used	n5	0
+Fountain 1	F3	1
+not used	n6	0
+Fountain 2	F4	0
+not used	n7	0
+Fountain 3	F5	1
+Snake woman	SN	0
+jungle torch	JT	0
+Fountain 4	F6	1
+waypoint portal	wp	1
+dungeonhealwell	dj	0
+jerhyn	ss	0
+jerhyn 	ss	0
+innerhellshrine2	iw	0
+innerhellshrine3	iv	0
+innerhellobject3	iu	0
+innerhellobject4	is	0
+innerhellobject5	ir	0
+hellobject4	hg	0
+hidden door 2	h2	0
+well	zw	1
+zzz	9b	0
+cwell	zc	1
+arcane shrine	az	1
+dshrine2	zs	0
+shrine3	zr	0
+dshrine1	zd	0
+dwell	zl	0
+cavwell	zy	1
+chest2	q1	1
+chest3	q2	1
+chest1	q3	1
+jug1	q4	0
+jug2	q5	0
+Lchest1	q6	1
+waypointinnerhell	wi	0
+dchest2	q9	0
+dchestr	q7	0
+dchestl	q8	0
+sptomb	za	0
+templeshrine	zv	0
+dshrine4	ze	0
+seven tomb receptacle	HA	0
+duriels door	DX	0
+guard corpse	GC	1
+rock	c7	1
+waypoint	wm	0
+waypoint	wn	1
+corpse	cp	1
+rockb	cq	1
+fire small	FX	1
+fire medium	FY	1
+fire large	FZ	1
+cliff	cf	1
+mana well1	MB	1
+mana well2	MD	1
+mana well3	MF	0
+mana well4	MH	0
+mana well5	MJ	0
+log	cz	1
+jungle healwell	JH	0
+corpseb	sx	1
+mana well6	Mk	0
+mana well7	Mi	0
+rockc	RY	1
+rockd	RZ	1
+chesst	c8	1
+chest	c9	1
+guardonastick	GS	0
+bookshelf1	b4	1
+bookshelf2	b5	1
+jungle chest	JC	0
+coffin	tm	0
+jchest	jz	0
+jshrine	jy	0
+jobject1	jx	0
+jobject3	jw	0
+jobject4	jv	0
+jobject5	ju	0
+cain portal	tp	1
+jshrine3	js	0
+jshrine4	jr	0
+teleport pad	7h	0
+lam esen's tome	ab	0
+dstairL	9c	1
+dstairr	sv	1
+test object trap melee	a5	1
+jshrinewood	jq	0
+chest	c0	1
+mafistoshrine1	mz	0
+mafistoshrine2	my	0
+mafistoshrine3	mx	0
+mafistomana	mw	0
+mobject1	mv	0
+mobject2	mu	0
+mobject3	mt	0
+mafistohealth	mr	1
+wrok	rw	0
+basket 1	bd	0
+basket 2	bj	0
+logw	lw	0
+wrob	wb	0
+bubbles	yb	0
+logx	wd	0
+rokb	wc	0
+watc	we	0
+waty	wy	0
+logz	lx	0
+webtree1	w3	0
+webtree2	w4	0
+webtree3	w5	0
+webtree4	w6	0
+hobject1	70	0
+cacoon	CN	0
+cacoon 2	CC	0
+hobject3	ib	0
+hshrine1	ia	0
+blgb	QX	0
+blga	qw	0
+slimedoor1	SQ	0
+slimedoor2	SY	0
+hshrine2	ht	0
+hshrine3	hq	0
+hobject2	hv	0
+blgc	Qy	0
+blgd	Qz	0
+hhealthwell	ho	0
+waypointj	wz	0
+waypointh	wv	0
+burningbody	bz	1
+gchest1	cy	1
+gchest2	cx	1
+gchest3	cu	1
+glchest3	cd	1
+rnest	rn	1
+burningbody2	by	1
+ratchest	ra	1
+beda	qa	1
+bedb	qb	1
+hell mana shrine	hn	0
+cowa	ew	1
+gidbinn altar	ga	0
+gidbinn decoy	gd	0
+right light	11	0
+left light	12	0
+diablo start	ss	0
+stol	s9	1
+wdda	wg	1
+wddb	wh	1
+skla	QS	0
+holyshrine	HL	1
+tombspikes	A7	0
+cshrine1	s0	1
+jashrine1	jb	1
+jahshrine	jd	1
+jamshrine	jf	1
+goopile	GP	0
+bank	b6	1
+wirt's corpse	BP	1
+gold placement 	1g	1
+guardcorpse2	GF	0
+dead villager 1	dg	0
+dead villager 2	df	0
+flame1	f8	1
+wumpus	f9	1
+caveheal shrine	ce	1
+cavemana shrine	cg	1
+caveshrine	cj	1
+dungeonmanawell	de	0
+magicshrine	wj	0
+sewerhealwell	wk	0
+sewermanawell	wl	0
+sewershrine2	ws	0
+brazier	bi	0
+anubiscoffin	QC	0
+brazier	bm	0
+brazier	bo	0
+brazier	bq	0
+waypoint	w7	0
+ubed	ub	0
+iron grate door left	dv	0
+iron grate door right	dn	0
+wooden grate door left	dp	0
+wooden grate door right	dt	0
+wooden door left	dk	0
+wooden door right	dl	0
+tombwalltorchL	qd	0
+tombwalltorchR	qe	0
+arcane sanctuary portal	ay	0
+haramshrine1	hb	0
+haramshrine2	hc	0
+maggotwellheal	qf	0
+maggotwellmana	qg	0
+arcanesantuaryshrine	hd	0
+teleportpad	7h	0
+teleportpad	aa	0
+teleportpad	aa	0
+arcane rune #1	7a	0
+arcane rune #2	7b	0
+arcane rune #3	7c	0
+arcane rune #4	7d	0
+arcane rune #5	7e	0
+arcane rune #6	7f	0
+arcane rune #7	7g	0
+harem guard 1	qh	0
+harem guard 2	qi	0
+harem guard 3	qj	0
+harem guard 4	qk	0
+eunuch	ss	0
+ahshrine	ax	0
+amshrine	au	0
+Not Used	pp	0
+twell	hu	0
+swaypoint	qm	0
+twaypoint	ql	0
+s3shrine	qn	0
+ddbody	qo	0
+stra	V1	0
+strb	V2	0
+mchest1L	xb	0
+mchest1R	xc	0
+mchest2L	xd	0
+mchest2R	xe	0
+schest1L	xf	0
+schest3L	xg	0
+schest2r	xh	0
+schest3r	xi	0
+steeg stone	y6	0
+guild vault	y4	0
+trophy case	y2	0
+message board	y3	0
+mbridge	xj	0
+hellgate	1y	0
+kmshrine	xl	0
+khshrine	xm	0
+hellfire1	e3	0
+hellfire2	e4	0
+hellfire3	e5	0
+helllava1	e6	0
+helllava2	e7	0
+helllava3	e8	0
+helllightsource1	ss	0
+helllightsource2	ss	0
+helllightsource3	ss	0
+chest	xk	0
+chest	xk	0
+chest	xk	0
+tome	tt	0
+hell brazier	e1	0
+hell brazier	e2	0
+rockpile	xn	0
+dshrine2	xo	0
+dbasket	xp	0
+hhobject4	xq	0
+duda	ea	0
+dungncasket	vb	0
+sewerstairs	ve	0
+sewerlever	vf	0
+darkwandererstart	ss	0
+trapped placeholder	ss	0
+jungletorch2	vg	0
+forgottentowerchest	L1	1
+innerhellbone	y1	0
+skla	Qt	0
+rfga	ud	0
+hellbridge	xx	0
+fora	ux	0
+Guild portal	pp	1
+hratli start	ss	0
+hratli end	ss	0
+guyq	uy	0
+guyq	15	0
+Natalya Start	ss	0
+damnedsoul	18	0
+damnedsoul	19	0
+cain start	ss	0
+reallythelastobject	sv	0
+chest	y7	0
+casket	y8	0
+chest	y9	0
+chest	ya	0
+chest	yc	0
+diablo seal	30	0
+diablo seal	31	0
+diablo seal	32	0
+diablo seal	33	0
+diablo seal	34	0
+sparklechest	yf	0
+pfwaypoint	yg	0
+fissure	fh	0
+hellbrazier	he	0
+hellsmoke	35	0
+waypoint	yi	0
+hellbrazier	9f	0
+compelling orb	55	0
+chest	xk	0
+chest	xk	0
+chest	xk	0
+fortress brazier #1	98	0
+fortress brazier #2	99	0

@@ -1,0 +1,14 @@
+event	*desc
+hitbymissile	hit by a missile
+damagedinmelee	damaged in melee
+damagedbymissile	damaged by missile
+attackedinmelee	melee attack atttempt
+doactive	do active state skill
+domeleedamage	do damage in melee
+domissiledamage	do missile damage
+domeleeattack	do melee attack
+domissileattack	do missile attack
+kill	killed something
+killed	killed by something
+absorbdamage	dealt damage
+levelup	gain a level

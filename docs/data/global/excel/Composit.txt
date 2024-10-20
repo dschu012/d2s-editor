@@ -1,0 +1,17 @@
+Name	Token
+Head	HD
+Torso	TR
+Legs	LG
+RightArm	RA
+LeftArm	LA
+RightHand	RH
+LeftHand	LH
+Shield	SH
+Special1	S1
+Special2	S2
+Special3	S3
+Special4	S4
+Special5	S5
+Special6	S6
+Special7	S7
+Special8	S8

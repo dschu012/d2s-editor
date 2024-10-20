@@ -1,0 +1,44 @@
+code	*desc
+par1	param1
+par2	param2
+par3	param3
+par4	param4
+par5	param5
+cpa1	cltparam1
+cpa2	cltparam2
+cpa3	cltparam3
+cpa4	cltparam4
+cpa5	cltparam5
+hpa1	hitparam1
+hpa2	hitparam2
+hpa3	hitparam3
+chp1	clthitpar1
+chp2	clthitpar2
+chp3	clthitpar3
+dpa1	dmgparam1
+dpa2	dmgparam2
+lvl	missile level
+edmn	elemental damage min
+edmx	elemental damage max
+edln	elemental damage len
+edns	"elemental damage min, 256ths"
+edxs	"elemental damage max, 256ths"
+damn	damage min
+damx	damage max
+dmns	"damage min, 256ths"
+dmxs	"damage max, 256ths"
+rang	range
+sl12	par1 + (lvl-1) * par2
+sd12	((110*lvl) * (par2-par1))/(100 * (lvl+6)) + par1
+sl34	par3 + (lvl-1) * par4
+sd34	((110*lvl) * (par4-par3))/(100 * (lvl+6)) + par3
+cl12	cpa1 + (lvl-1) * cpa2
+cd12	((110*lvl) * (cpa2-cpa1))/(100 * (lvl+6)) + cpa1
+cl34	cpa3 + (lvl-1) * cpa4
+cd34	((110*lvl) * (cpa4-cpa3))/(100 * (lvl+6)) + cpa3
+shl1	hpa1 + (lvl-1) * hpa2
+shd1	((110*lvl) * (hpa2-hpa1))/(100 * (lvl+6)) + hpa1
+chl1	chp1 + (lvl-1) * chp2
+chd1	((110*lvl) * (chp2-chp1))/(100 * (lvl+6)) + chp1
+dl12	dpa1 + (lvl-1) * dpa2
+dd12	((110*lvl) * (dpa2-dpa1))/(100 * (lvl+6)) + dpa1

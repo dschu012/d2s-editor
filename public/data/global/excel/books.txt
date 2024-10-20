@@ -1,0 +1,4 @@
+Name	Namco	Completed	ScrollSpellCode	BookSpellCode	pSpell	SpellIcon	ScrollSkill	BookSkill	BaseCost	CostPerCharge
+unused	of Town Portal	1	tsc	tbk	2	-1	Scroll of Townportal	Book of Townportal	250	50
+unused	of Identify	1	isc	ibk	1	0	Scroll of Identify	Book of Identify	200	40
+unused	of Ressurect	0				-1			500	100

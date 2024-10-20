@@ -1,0 +1,149 @@
+AI	*aip1	*aip2	*aip3	*aip4	*aip5	*aip6	*aip7	*aip8	*eol
+None									0
+Idle									0
+Skeleton	approach?	stall time	attack?	att1/att2?					0
+Zombie	approach?	aware dist		att1/att2?					0
+Bighead	hurt%	circle?	fire while healthy?	fire while hurt?					0
+BloodHawk	charge?	wander?	attack?	run vel	charge vel				0
+Fallen	cmd:attack?		attack?	att1/att2?					0
+Brute		circle?	attack?	att1/att2?					0
+SandRaider	hurt%	circle?	attack?	approach?	charge time	charge color	att1/att2?		0
+Wraith	approach?	stall time	attack?						0
+CorruptRogue	approach?	stall time	attack?	run vel	run?				0
+Baboon	hurt%	circle?	attack?	att1/att2?	regen bonus				0
+Goatman	approach?	stall time	attack?						0
+FallenShaman	rez?/cmd?	shoot?	melee?/circle?	rez dist	shoot dist				0
+QuillRat	activate dist	shoot?		walk dist					0
+SandMaggot	lay?	spit?	#of eggs	melee?	min down/up time				0
+ClawViper	charge?	charge dist	attack?	att1/att2?	stall time	charge color			0
+SandLeaper	leap?	attack?	approach?	circle?					0
+PantherWoman	approach?	attack?	pack dist	stall time	regroup from melee				0
+Swarm	approach?	stall time	attack?						0
+Scarab	attack?	att1/att2?	stall time	jab?	cmd?				0
+Mummy	awakedist	approach?	attack?	att1/att2?	stall time				0
+GreaterMummy	melee/breathe?	raise?	heal?	shoot?	raise range				0
+Vulture	attack?	stall time	wounded%	circle?	move?				0
+Mosquito	min suck loop	suck loop rng	attack?	suck or att?	max ambient loop				0
+WillOWisp	cast?	melee?	approach?						0
+Arach	attack?	circle in melee?	engage?	run dist	hurt%				0
+ThornHulk	attack?	att1/att2?	melee circle?	frenzy?	frenzy speed	consec. A2			0
+Vampire	melee?	cast?	active dist	upgrade cast?	spell flags				0
+BatDemon	hurt%	disengage on hit?	attack?	att1/ltng?	regen roosted				0
+Fetish	attack?	stall time	attack loop	weak%					0
+NpcOutOfTown									0
+Npc									0
+HellMeteor	attack?	stall time	range						0
+Andariel	spray in melee?	stall?	fire or engage?	spray from dist?					0
+CorruptArcher	approach?	shoot?	stall time	run?	always run dist	use skill 2	use skill 3	walk tow dist	0
+CorruptLancer	approach?	attack?	stall time	run?	always run dist				0
+SkeletonBow	shoot?	stall time	approach?	walk steps	tgt dist				0
+MaggotLarva	attack?	att recovery	approach?	idle stall time	circle?				0
+PinHead	attack?	att stall time	approach?	idle stall time	smite?				0
+MaggotEgg	stall	hatch?							0
+Towner									0
+Vendor									0
+FoulCrowNest	spawn interval		num to spawn						0
+Duriel	holy freeze level	smite?	jab?	att2?	charge?				0
+Sarcophagus	spawn interval		num to spawn						0
+ElementalBeast	approach?	activation dist	idle stall						0
+FlyingScimitar	approach?	attack?	stall time	circle?					0
+ZakarumZealot	attack?	att2?	hurt%	run?					0
+ZakarumPriest	attack?	blizzard?	ltng?	cast?	spell timer	heal range			0
+Mephisto									0
+Diablo									0
+FrogDemon	attack melee?	shoot melee?	circle melee?	circle ranged?	shoot?	shoot dist	stall time	emerge dist	0
+Summoner	cast?	weaken?	pref element?	nova timer	firewall timer	walk away?	nova dist	missile dist	0
+NpcStationary									0
+Izual	attack?	engage?	nova at range?	nova in melee?	post nova doldrums	num swings			0
+Tentacle	attack?	submerge?	submerge secs	emerge secs	stall time	active dist			0
+TentacleHead	shoot?	submerge?	submerge secs	emerge secs	stall time	active dist			0
+Navi									0
+BloodRaven									0
+GoodNpcRanged									0
+Hireable									0
+TownRogue									0
+GargoyleTrap	shoot dist	shoot?	fire recovery	stall time					0
+SkeletonMage	shoot?	approach dist	approach?	too close dist	walk away?	fire dist	circle?	stall time	0
+FetishShaman	heal?	heal capability	heal range	circle?	heal search range				0
+SandMaggotQueen	max spawn	delay							0
+NecroPet									0
+VileMother	max spawn	max at once	spawn?	attack?	approach?	circle?	stall time		0
+VileDog	attack?	melee stall	approach?						0
+FingerMage	attack/circle?	cast?	healthy%	hurt%	cast range	max run tries	out of range	melee stall	0
+Regurgitator	attack?	eat in melee?	approach?	look for food?	look in melee?	smell dist			0
+DoomKnight	attack?	melee stall	approach?	regular stall					0
+AbyssKnight	bone armor hp%	bonearmor?	attack?	melee stall	no fire dist	fire recovery	approach?	active dist	0
+OblivionKnight	flee range	engage range	curse timer	curse?	shoot?	bonespirit?	approach?	approach dist	0
+QuillMother	attack?	approach?	melee stall	regular stall					0
+EvilHole	num to spawn	spawn delay							0
+Trap-Missile	distance	num to shoot	delay						0
+Trap-RightArrow	min dist	max dist	delay	delay2					0
+Trap-LeftArrow	min dist	max dist	delay	delay2					0
+Trap-Poison	range	num times	delay						0
+JarJar									0
+InvisoSpawner	num to spawn	activation dist	delay						0
+MosquitoNest	num to spawn	activation dist	delay						0
+BoneWall									0
+HighPriest	engage?	heal at range?	heal/hydra timer	hydra at range?	ltng at range?	disengage?	ltng engaged?	range	0
+Hydra									0
+Trap-Melee									0
+7TIllusion									0
+Megademon	inferno ranged?	inferno melee?	swing melee?	approach?	circle melee?	inferno timer			0
+Griswold									0
+DarkWanderer									0
+Trap-Nova	range	num times	delay						0
+ArcaneTower	num sk1	sk1 stall	sk1 long delay	num sk2	sk2 stall	sk2 long delay			0
+DesertTurret	short delay	num shots	long delay	range	spread				0
+PantherJavelin	approach?	throw?	group dist	walk away?	stall time	throw dist			0
+FetishBlowgun	stay in range	run away?							0
+Spirit									0
+Smith									0
+TrappedSoul									0
+Buffy									0
+AssassinSentry									0
+BladeCreeper									0
+InvisoPet									0
+DeathSentry									0
+ShadowWarrior	max target dist	max boss dist	attack chance	skill decrement				summoning skill/min to use skill/max to use skill	0
+ShadowMaster	approach dist/melee bonus/progressive bonus	random pick/ignore range/boss leash	attack chance					summoning skill	0
+Raven									0
+DruidWolf									0
+Totem									0
+Vines									0
+CycleOfLife									0
+DruidBear									0
+SiegeTower	stall time								0
+ReanimatedHorde	attack?	melee stall	charge range	charge?	follow?	walk forward?	ranged stall	reanimate	0
+SiegeBeast	call imp dist	attack?	stamp in melee?	melee stall	stomp ranged?	charge?	charge vel		0
+Minion	attack?	melee stall	approach?	ranged stall	att1/att2?				0
+SuicideMinion	blow up delay	stall time	approach?						0
+Succubus	attack?	approach?	curse?	curse range	melee stall	ranged stall	curse level		0
+SuccubusWitch	attack?	approach?	walk away?	comfort dist	shoot?	stall	amp dam tgt hp%	weaken my hp%	0
+Overseer	rally spell timer	heal?	whip?	comfort dist	comfort zone	attack?	att1/att2?		0
+MinionSpawner	num to spawn	stall time	spawn delay	activation range	max in area				0
+Imp	refer to source								0
+Catapult	attack?								0
+FrozenHorror	attack?	approach?	arctic blast?	stall time					0
+BloodLord	attack?	approach?	frenzy/att1?	stall time					0
+CatapultSpotter	attack?	delay	range	random range	shots per skill				0
+NpcBarb									0
+Nihlathak									0
+GenericSpawner									0
+DeathMauler	attack?	approach?	shoot range	shoot?					0
+Wussie									0
+AncientStatue									0
+Ancient									0
+BaalThrone									0
+BaalCrab									0
+BaalTaunt									0
+PutridDefiler									0
+BaalToStairs									0
+BaalTentacle									0
+BaalCrabClone									0
+BaalMinion									0
+ClawViperEx	charge?	charge dist	attack?	shoot?	stall time	charge color	shoot dist	shoot timer	0
+ShadowMasterNoInit	approach dist/melee bonus/progressive bonus	random pick/ignore range	attack chance					summoning skill	0
+UberIzual	attack?	engage?	nova at range?	nova in melee?	post nova doldrums	num swings			0
+UberBaal									0
+UberMephisto									0
+UberDiablo									0

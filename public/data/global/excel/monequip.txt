@@ -1,0 +1,46 @@
+monster	oninit	level	item1	loc1	mod1	item2	loc2	mod2	item3	loc3	mod3	eol
+bloodraven	1	0	sbw	rarm	6							0
+flyingscimitar	1	0	scm	rarm	6							0
+valkyrie		27	ci2	head	6							0
+valkyrie		25	amu	neck	6							0
+valkyrie		23	uhc	belt	6							0
+valkyrie		21	uhb	feet	6							0
+valkyrie		19	utg	glov	6							0
+valkyrie		17	7p7	rarm	6							0
+valkyrie		16	uar	tors	6							0
+valkyrie		14	ci0	head	4							0
+valkyrie		13	amu	neck	4							0
+valkyrie		12	zhb	belt	4							0
+valkyrie		11	xhb	feet	4							0
+valkyrie		10	xhg	glov	4							0
+valkyrie		8	9p9	rarm	6							0
+valkyrie		7	xul	tors	6							0
+valkyrie		5	hbl	belt	4							0
+valkyrie		4	hbt	feet	4							0
+valkyrie		2	hgl	glov	4							0
+valkyrie		0	spr	rarm	6							0
+valkyrie		0	ful	tors	6							0
+shadowwarrior		0	ces	rarm	4							0
+shadowwarrior		0	btl	larm	4							0
+shadowwarrior		0		tors	4							0
+shadowwarrior		0		head	4							0
+shadowmaster		17	amu	neck	6							0
+shadowmaster		13	rin	lrin	6							0
+shadowmaster		11	7ar	rarm	6	7xf	rarm	6	7qr	rarm	6	0
+shadowmaster		11	7cs	larm	6	7tw	larm	6	7qr	larm	6	0
+shadowmaster		11	ulg	glov	6	umg	glov	6	uhg	glov	6	0
+shadowmaster		11	rin	rrin	6							0
+shadowmaster		11		tors	6							0
+shadowmaster		11		head	6							0
+shadowmaster		9	rin	rrin	4							0
+shadowmaster		6	7ar	rarm	4	7xf	rarm	4	7qr	rarm	4	0
+shadowmaster		6	7cs	larm	4	7tw	larm	4	7qr	larm	4	0
+shadowmaster		6	ulg	glov	4	umg	glov	4	uhg	glov	4	0
+shadowmaster		6		tors	4							0
+shadowmaster		6		head	4							0
+shadowmaster		5	ulg	glov	3	umg	glov	3	uhg	glov	3	0
+shadowmaster		0	7ar	rarm	3	7xf	rarm	3	7qr	rarm	3	0
+shadowmaster		0	7cs	larm	3	7tw	larm	3	7qr	larm	3	0
+shadowmaster		0		tors	3							0
+shadowmaster		0		head	3							0
+*end*  do not remove												0

@@ -1,0 +1,44 @@
+uniquemod	id	enabled	version	xfer	champion	fPick	exclude1	exclude2	cpick	cpick (N)	cpick (H)	upick	upick (N)	upick (H)	fInit	constants	*constant desc	*eol
+none	0	0	0	1												20	champion chance	0
+rndname	1	1	0	0												100	minion +hp%	0
+hpmultiply	2	1	0	0												75	minion +hp% (N)	0
+light	3	1	0	0												50	minion +hp% (H)	0
+leveladd	4	1	0	0												200	champion +hp%	0
+strong	5	1	0	1								6	6	6		150	champion +hp% (N)	0
+fast	6	1	0	1		3						6	6	6		100	champion +hp% (H)	0
+curse	7	1	0	1								6	6	6		300	unique +hp%	0
+resist	8	1	0	1									6	6		200	unique +hp% (N)	0
+fire	9	1	0	1								6	6	6		100	unique +hp% (H)	0
+poisondead	10	1	0	0												75	champion +tohit%	0
+durieldead	11	1	0	0												100	champion +dmg%	0
+bloodraven	12	1	0	0												50	minion +tohit%	0
+rage	13	1	0	0												100	unique +tohit%	0
+spcdamage	14	1	0	0												75	minion +dmg% (strong)	0
+partydead	15	1	0	0												150	unique +dmg% (strong)	0
+champion	16	1	0	1	1				1	1	1					0	minion +elem min dmg%	0
+lightning	17	1	0	1			sandleaper					6	6	6		33	minion +elem min dmg% (N)	0
+cold	18	1	0	1								6	6	6		33	minion +elem min dmg% (H)	0
+hireable	19	1	0	0												0	minion +elem max dmg%	0
+scarab	20	1	0	0												50	minion +elem max dmg% (N)	0
+killself	21	1	0	0												50	minion +elem max dmg% (H)	0
+questcomplete	22	1	0	0												33	champion +elem min dmg%	0
+poisonhit	23	1	0	0												33	champion +elem min dmg% (N)	0
+thief	24	0	0	1												33	champion +elem min dmg% (H)	0
+manahit	25	1	0	1								6	6	6		50	champion +elem max dmg%	0
+teleport	26	1	0	1		1						6	6	6		50	champion +elem max dmg% (N)	0
+spectralhit	27	1	0	1								6	6	6		50	champion +elem max dmg% (H)	0
+stoneskin	28	1	0	1								6	6	6		66	unique +elem min dmg%	0
+multishot	29	1	0	1		2						6	6	6		66	unique +elem min dmg% (N)	0
+aura	30	1	0	0								6	6	6		66	unique +elem min dmg% (H)	0
+goboom	31	1	0	0												100	unique +elem max dmg%	0
+firespike_explode	32	1	100	0												100	unique +elem max dmg% (N)	0
+suicideminion_explode	33	1	100	0												100	unique +elem max dmg% (H)	0
+ai_after_death	34	1	100	0														0
+shatter_on_death	35	1	100	0														0
+ghostly	36	1	100	1	1				1	1	1							0
+fanatic	37	1	100	1	1				1	1	1							0
+possessed	38	1	100	1	1				1	1	1							0
+berserk	39	1	100	1	1				1	1	1							0
+worms_on_death	40	1	100	0														0
+always_run_ai	41	1	100	0														0
+lightningdeath	42	1	100	0														0

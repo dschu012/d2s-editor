@@ -1,0 +1,116 @@
+component	code
+nil	nil
+light	lit
+medium	med
+heavy	hev
+heavy	hvy
+skarmor	des
+roguearmor/brhead	brv
+axe	axe
+flail	fla
+handaxe	hax
+mace	mac
+scimitar	scm
+buckler	buc
+large shield	lrg
+kite shield	kit
+small shield	sml
+long sword	lsd
+wand	wnd
+short sword	ssd
+club	clb
+torch	tch
+battleaxe	btx
+halberd	hal
+large axe	lax
+maul	mau
+scythe	scy
+war hammer	whm
+whip	whp
+javelin	jav
+exploding pot	opl
+gas potion	gpl
+short bow	sbw
+long bow	lbw
+long battle bow	lbb
+short battle bow	sbb
+pike	pik
+spear	spr
+trident	tri
+falchion	flc
+saber	sbr
+glaive	glv
+poleaxe	pax
+broad sword	bsd
+flamberge	flb
+waraxe	wax
+warscythe	wsc
+warsword	wsd
+claymore	clm
+dk weapon	smc
+skmage fire	fir
+skmage ltng	lht
+skmage cold	cld
+skmage pois	pos
+dk rh spell	rsp
+dk lh spell	lsp
+dk unholy	unh
+dk part	rsg
+misc part 1	bld
+misc part 2	shr
+misc part 3	lhr
+misc part 4	hbd
+misc part 5	tkt
+headress1	bab
+headress2	pha
+headress3	fan
+headress4	pon
+zealot head 1	hd1
+zealot head 2	hd2
+zealot head 3	hd3
+zealot head 4	hd4
+zealot torso 1	zz1
+zealot torso 2	zz2
+zealot torso 3	zz3
+zealot torso 4	zz4
+zealot torso 5	zz5
+zealot torso 6	zz6
+zealot torso 7	zz7
+flying scim	red
+thornhulkhead2	th2
+thornhulkhead3	th3
+thornhulkhead4	th4
+thornhulkhead5	th5
+fetish weap 1	fbl
+fetish weap 2	fsp
+young npc head	yng
+old npc head	old
+bearded npc head	brd
+goatee npc head	got
+npc part 1	fez
+npc part 2	rol
+npc part 3	bsk
+npc part 4	buk
+npc part 5	sak
+npc part 6	ban
+npc part 7	fsh
+npc part 8	snk
+fem brown hair	brn
+fem black hair	blk
+fem npc leg 1	srt
+fem npc leg 2	lng
+fem npc leg 3	dln
+fem npc tor 1	btp
+fem npc tor 2	mtp
+fem npc tor 3	stp
+fem npc tor 4	svt
+dk head 1	col
+dk head 2	hod
+dk head 3	hrn
+siege beast tr	lnk
+siege beast s1	tur
+siege beast s3	mlk
+full helm	fhm
+great helm	ghm
+pow hand	bhn
+pow head	hed

@@ -1,0 +1,17 @@
+Name	Namco
+unused	Judge
+unused	Magistrate
+unused	Count
+unused	Earl
+unused	Baron
+unused	Duke
+unused	Lord
+unused	Overlord
+unused	Warlord
+unused	Chief
+unused	Prince
+unused	King
+unused	Mistress
+unused	Countess
+unused	Duchess
+unused	Lady

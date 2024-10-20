@@ -1,0 +1,5 @@
+Store Page	Code
+Armor Page	armo
+Weapons Page	weap
+Magic Page	mag
+Misc Page	misc

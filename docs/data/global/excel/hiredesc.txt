@@ -1,0 +1,10 @@
+Hireling Description	Code
+None	
+Fire Arrow	farw
+Cold Arrow	carw
+Combat	comb
+Defensive Auras	def
+Offensive Auras	off
+Fire Spells	fire
+Cold Spells	cold
+Lightning Spells	ltng

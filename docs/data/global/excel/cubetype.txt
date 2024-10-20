@@ -1,0 +1,16 @@
+cube item class	Code
+None	
+Health Potion	hpt
+Mana Potion	mpt
+Item	itm
+Axe	axe
+Sword	swr
+Spear	spr
+Gem	gem
+Staff	stf
+Belt	blt
+Dagger	dag
+Weapon	wep
+Armor	arm
+Ring	rin
+Amulet	amu

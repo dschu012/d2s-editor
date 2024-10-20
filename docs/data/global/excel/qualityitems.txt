@@ -1,0 +1,9 @@
+nummods	mod1code	mod1offset	mod1min	mod1max	mod2code	mod2offset	mod2min	mod2max	ToHitMin	ToHitMax	Dam%Min	Dam%Max	AC%Min	AC%Max	Dur%Min	Dur%Max	effect1	effect2	armor	weapon	shield	thrown	scepter	wand	staff	bow	boots	gloves	belt	level	multiply	add
+1	ht00	0	1	3		0			1	3	0	0	0	0	0	0	improved to hit		0	1	0	1	1	1	1	1	0	0	0	1	2	100
+1	dm02	0	5	15		0			0	0	5	15	0	0	0	0	improved damage		0	1	0	1	1	1	1	1	0	0	0	1	3	250
+1	ar02	0	5	15		0			0	0	0	0	5	15	0	0	improved armor class		1	0	1	0	0	0	0	0	1	1	1	1	2	200
+2	ht00	0	1	3	dm02	0	5	15	1	3	5	15	0	0	0	0	improved to hit	improved damage	0	1	0	1	1	1	1	1	0	0	0	3	5	350
+1	du01	0	10	15					0	0	0	0	0	0	5	15	improved durability		1	1	1	1	1	1	1	1	1	1	1	1	2	100
+2	ht00	0	1	3	du01	0	10	15	1	3	0	0	0	0	5	15	improved to hit	improved durability	0	1	0	1	1	1	1	1	0	0	0	3	5	350
+2	dm02	0	5	15	du01	0	10	15	0	0	5	15	0	0	5	15	improved damage	improved durability	0	1	0	1	1	1	1	1	0	0	0	3	5	350
+2	ar02	0	5	15	du01	0	10	15	0	0	0	0	5	15	5	15	improved armor class	improved durability	1	0	1	0	0	0	0	0	1	1	1	3	5	350
