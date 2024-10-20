@@ -1,4 +1,0 @@
-Name	Token
-Lite	lit
-Medium	med
-Heavy	hvy
