@@ -1,2 +1,0 @@
-Arena	Suicide	PlayerKill	PlayerKillPercent	MonsterKill	PlayerDeath	PlayerDeathPercent	MonsterDeath
-Deathmatch	-6	2	10	1	-2	-10	-1

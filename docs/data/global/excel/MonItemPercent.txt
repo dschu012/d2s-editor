@@ -1,3 +1,0 @@
-Name	HeartPercent	BodyPartPercent	TreasureClassPercent	ComponentPercent
-Composited	0	0	20	0
-NonComposited	0	0	20	0
