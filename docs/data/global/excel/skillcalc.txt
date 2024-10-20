@@ -1,0 +1,74 @@
+code	*desc
+ln12	a+lvl*b
+dm12	((110*lvl) * (b-a))/(100 * (lvl+6)) + a
+ln34	a+lvl*b
+dm34	((110*lvl) * (b-a))/(100 * (lvl+6)) + a
+ln56	a+lvl*b
+dm56	((110*lvl) * (b-a))/(100 * (lvl+6)) + a
+ln78	a+lvl*b
+dm78	((110*lvl) * (b-a))/(100 * (lvl+6)) + a
+par1	a
+par2	a
+par3	a
+par4	a
+par5	a
+par6	a
+par7	a
+par8	a
+lvl	skill level
+edmn	elemental damage min
+edmx	elemental damage max
+edln	elemental damage len
+toht	to hit
+mana	mana cost
+mps	mana per second calc
+math	mastery: to hit
+madm	mastery: damage
+macr	mastery: critical
+m1en	"desc missile 1, min elemental dmg"
+m1ex	"desc missile 1, max elemental dmg"
+m1el	"desc missile 1, elemental length"
+m2en	"desc missile 2, min elemental dmg"
+m2ex	"desc missile 2, max elemental dmg"
+m2el	"desc missile 2, elemental length"
+m3en	"desc missile 3, min elemental dmg"
+m3ex	"desc missile 3, max elemental dmg"
+m3el	"desc missile 3, elemental length"
+m1rn	"desc missile 1, range"
+m2rn	"desc missile 2, range"
+m3rn	"desc missile 3, range"
+edns	"elemental damage min, 256ths"
+edxs	"elemental damage max, 256ths"
+ulvl	unit level
+blvl	base skill level
+usmc	"mana cost, 256ths"
+m1eo	"desc missile 1, min elem dmg, 256ths"
+m1ey	"desc missile 1, max elem dmg, 256ths"
+m2eo	"desc missile 2, min elem dmg, 256ths"
+m2ey	"desc missile 2, max elem dmg, 256ths"
+me3o	"desc missile 3, min elem dmg, 256ths"
+me3y	"desc missile 3, max elem dmg, 256ths"
+enma	elemental damage min + mastery
+exma	elemental damage max + mastery
+edma	elemental duration + mastery
+enms	"elemental damage min, 256ths + mastery"
+exms	"elemental damage max, 256ths + mastery"
+len	auralen field
+clc1	calc1 field
+clc2	calc2 field
+clc3	calc3 field
+clc4	calc4 field
+rng	aurarange field
+ast1	aurastat field
+ast2	aurastat field
+ast3	aurastat field
+ast4	aurastat field
+ast5	aurastat field
+ast6	aurastat field
+pst1	passivestat field
+pst2	passivestat field
+pst3	passivestat field
+pst4	passivestat field
+pst5	passivestat field
+pets	petmax field
+skpt	skill points field

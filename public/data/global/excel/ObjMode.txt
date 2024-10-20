@@ -1,0 +1,9 @@
+Name	Token
+Neutral	NU
+Operating	OP
+Opened	ON
+Special1	S1
+Special2	S2
+Special3	S3
+Special4	S4
+Special5	S5

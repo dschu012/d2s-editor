@@ -1,0 +1,16 @@
+Weapon Class	Code
+None	
+Hand To Hand	hth
+Bow	bow
+1 Hand Swing	1hs
+1 Hand Thrust	1ht
+Staff	stf
+2 Hand Swing	2hs
+2 Hand Thrust	2ht
+Crossbow	xbw
+Left Jab Right Swing	1js
+Left Jab Right Thrust	1jt
+Left Swing Right Swing	1ss
+Left Swing Right Thrust	1st
+One Hand-to-Hand	ht1
+Two Hand-to-Hand	ht2

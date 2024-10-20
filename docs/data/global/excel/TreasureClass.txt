@@ -1,0 +1,96 @@
+TreasureClass	Beta	NumCodes	Code1	Code2	Code3	Code4	Code5	Code6	Code7	Code8	Code9	Code10	Code11	Code12	Code13	Code14	Code15	Code16	Code17	Code18	Code19	Code20	Code21	Code22	Code23	Code24	Code25	Code26	Code27	Code28	Code29	Code30	Comment
+Null	1	0																															x
+Gold	1	1	gld																														x
+Jewelry	1	12	rin	amu	rvs	ibk	key	hp3	mp3	hp1	hp2	mp1	mp2	tbk																			x
+Clothes	1	6	cap	qui	qui	lea	hla	stu																									x
+ArmorA	1	16	qui	lea	hla	stu	rng	scl	chn	aar	brs	spl	aar	ltp	fld	plt	gth	ful															x
+ArmorB	1	16	qui	lea	hla	stu	rng	scl	chn	aar	brs	spl	aar	ltp	fld	plt	gth	ful															x
+ArmorC	1	16	qui	lea	hla	stu	rng	scl	chn	aar	brs	spl	aar	ltp	fld	plt	gth	ful															x
+ArmorD	1	16	qui	lea	hla	stu	rng	scl	chn	aar	brs	spl	aar	ltp	fld	plt	gth	ful															x
+HatsA	1	7	cap	skp	hlm	fhl	ghm	crn	msk																								x
+HatsB	1	7	cap	skp	hlm	fhl	ghm	crn	msk																								x
+ShieldsA	1	6	buc	sml	lrg	kit	tow	gts																									x
+ShieldsB	1	6	buc	sml	lrg	kit	tow	gts																									x
+AccessoriesA	1	11	lgl	lbt	lbl	mgl	mbt	mbl	vgl	vbt	vbl	tsc	isc																				x
+AccessoriesB	1	11	lgl	lbt	lbl	mgl	mbt	mbl	vgl	vbt	vbl	tsc	isc																				x
+AccessoriesC	1	11	lgl	lbt	lbl	mgl	mbt	mbl	vgl	vbt	vbl	tsc	isc																				x
+Junk	1	6	rvs	ibk	key	hp5	mp5	tbk																									x
+Potion	1	4	hp1	hp2	mp1	mp2																											x
+SmallBlunt	1	7	clb	spc	fla	mac	mst	mau	whm																								x
+LargeBlunt	1	7	clb	spc	fla	mac	mst	mau	whm																								x
+SmallStab	1	11	dgr	dir	bld	tkf	pil	jav	glv	spr	tri	pik	brn																				x
+MIddleStab	1	11	dgr	dir	bld	tkf	pil	jav	glv	spr	tri	pik	brn																				x
+LargeStab	1	11	dgr	dir	bld	tkf	pil	jav	glv	spr	tri	pik	brn																				x
+SmallSword	1	10	ssd	scm	sbr	flc	lsd	bsd	bsw	clm	2hs	gsd																					x
+MiddleSword	1	10	ssd	scm	sbr	flc	lsd	bsd	bsw	clm	2hs	gsd																					x
+LargeSword	1	10	ssd	scm	sbr	flc	lsd	bsd	bsw	clm	2hs	gsd																					x
+SmallChop	1	10	tax	hax	axe	lax	bax	btx	bar	gax	pax	hal																					x
+MiddleChop	1	10	tax	hax	axe	lax	bax	btx	bar	gax	pax	hal																					x
+LargeChop	1	10	tax	hax	axe	lax	bax	btx	bar	gax	pax	hal																					x
+SmallStave	1	7	wnd	scp	sst	lst	cst	bst	wst																								x
+LargeStave	1	7	wnd	scp	sst	lst	cst	bst	wst																								x
+SmallBow	1	8	sbw	hbw	lbw	cbw	sbb	lbb	swb	lwb																							x
+LargeBow	1	8	sbw	hbw	lbw	cbw	sbb	lbb	swb	lwb																							x
+SmallXBow	1	4	rxb	lxb	mxb	hxb																											x
+LargeXBow	1	4	rxb	lxb	mxb	hxb																											x
+Book	1	6	rvs	ibk	key	hp5	mp5	tbk																									x
+Arrows	1	2	aqv	cqv																													x
+Magic Weapons (Act 1)	1	22	hax	axe	lax	wnd	clb	scp	spc	mac	ssd	scm	sbr	2hs	dgr	dir	spr	tri	bar	sst	sbw	hbw	lbw	lxb									x
+Magic Armor (Act 1)	1	16	cap	skp	hlm	qui	lea	hla	stu	buc	sml	lrg	lgl	vgl	lbt	vbt	lbl	vbl															x
+Magic Misc (Act 1)	1	12	rin	amu	rvs	ibk	key	hp3	mp3	hp1	hp2	mp1	mp2	tbk																			x
+Magic Weapons (Act 2)	1	24	2ax	bax	btx	ywn	mst	flc	crs	bsd	2hs	clm	dir	kri	tax	bkf	pil	ssp	tri	brn	vou	scy	lst	cbw	sbb	mxb							x
+Magic Armor (Act 2)	1	19	hlm	fhl	msk	stu	rng	scl	chn	brs	spl	lrg	kit	vgl	mgl	vbt	mbt	vbl	mbl	bsh	spk												x
+Magic Misc (Act 2)	1	10	rin	amu	rvs	ibk	key	hp4	mp4	tbk	crs	rvs																					x
+Magic Weapons (Act 3)	1	10	flc	fla	clm	sbb	bst	bax	mxb	gax	whm	2hs																					x
+Magic Armor (Act 3)	1	10	fhl	msk	chn	brs	spl	kit	hgl	hbt	hbl	plt																					x
+Magic Misc (Act 3)	1	10	rin	amu	rvl	ibk	key	hp5	mp5	hp4	mp4	tbk																					x
+Magic Weapons (Act 4)	1	10	fla	2hs	gsd	pik	lbb	lwb	wst	mau	rxb	hal																					x
+Magic Armor (Act 4)	1	10	ghm	crn	fld	ful	gts	tow	hgl	hbt	hbl	ltp																					x
+Magic Misc (Act 4)	1	6	rin	amu	rvl	key	hp5	mp5																									x
+Chests-act1A	1	30	gld	gld	gld	gld	gld	gld	gld	gld	opl	aqv	aqv	hp1	hp2	hp1	vps	mp1	isc	tsc	cap	lbl	buc	qui	qui	sbw	clb	ssd	hax	tkf	dgr	gld	x
+Chests-act1B	1	30	gld	gld	gld	gld	gld	gld	gld	lxb	gpl	aqv	bqv	hp1	hp2	hp1	vps	mp1	isc	tsc	skp	lgl	sml	lea	hla	hbw	spc	scm	spr	jav	lax	sbr	x
+Chests-act1C	1	30	gld	gld	gld	gld	gld	gld	gld	gld	opl	aqv	bqv	hp2	hp3	hp1	vps	mp2	isc	tsc	skp	lbt	lrg	stu	tri	lbw	mac	flc	bar	2hs	axe	pil	x
+Chests-act2A	1	29	gld	gld	gld	gld	gld	gld	gld	scm	opm	aqv	bqv	hp2	hp3	hp2	rvs	mp2	isc	tsc	hlm	mbl	lrg	rvs	cbw	vou	2ax	mst	flc	tax	pil		x
+Chests-act2B	1	28	gld	gld	gld	gld	gld	gld	gld	gpm	aqv	bqv	hp2	hp2	hp3	rvs	mp2	isc	tsc	fhl	mgl	spk	bal	mxb	scy	btx	bsd	clm	brn	bkf			x
+Chests-act2C	1	28	gld	gld	gld	gld	gld	gld	gld	opm	aqv	bqv	hp2	hp3	hp4	rvs	mp3	isc	tsc	msk	mbt	kit	rvs	sbb	kri	mpi	fla	tax	spt	ssp			x
+Chests-act3A	1	26	gld	gld	gld	gld	gld	gld	gld	ops	aqv	bqv	hp3	hp3	hp4	vps	mp3	isc	tsc	ghm	hbl	tow	lbb	lsd	glv	mau	pax	bal					x
+Chests-act3B	1	26	gld	gld	gld	gld	gld	gld	gld	gps	aqv	bqv	hp3	hp3	hp4	rvs	mp3	isc	tsc	crn	hgl	tow	swb	whm	pik	bsw	gax	mpi					x
+Chests-act3C	1	27	gld	gld	gld	gld	gld	gld	gld	ops	aqv	bqv	hp3	hp4	hp5	vps	mp4	rvs	tsc	msk	hbt	gts	lwb	gix	hal	flb	lsd	whm	wax				x
+Chests-act4	1	28	gld	gld	gld	gld	gld	tsp	gma	rxb	ops	aqv	bqv	hp4	hp5	hp5	vps	mp5	rvs	tsc	crn	hbt	gts	lwb	wax	hal	flb	wsd	whm	pik			x
+Andariel	1	22	hlm	stu	rng	lrg	mgl	mbt	mbl	rin	skc	lst	hbw	lxb	lax	mac	sbr	2hs	dir	tri	bar	ywn	scp	amu									x
+BloodRaven	1	22	skp	hlm	hla	stu	rng	sml	lrg	vgl	vbt	vbl	rin	lst	hbw	lxb	axe	lax	mac	sbr	2hs	dir	tri	bar									x
+Summoner	1	22	ghm	bhm	spl	plt	fld	tow	bsh	tgl	tbt	tbl	rin	bst	lbb	hxb	mpi	gax	fla	mau	lsd	bsw	spt	pax									x
+Duriel	1	22	ghm	bhm	spl	plt	fld	tow	bsh	tgl	tbt	tbl	rin	bst	lbb	hxb	mpi	gax	fla	mau	lsd	bsw	spt	pax									x
+Mephisto	1	22	crn	bhm	gth	ful	ltp	gts	bsh	hgl	hbt	hbl	rin	wst	swb	rxb	wax	gix	whm	gma	wsd	flb	pik	wsc									x
+Izual	1	22	crn	bhm	gth	ful	ltp	gts	bsh	hgl	hbt	hbl	rin	wst	swb	rxb	wax	gix	whm	gma	wsd	flb	pik	wsc									x
+Diablo	1	22	crn	bhm	ful	aar	ltp	gts	msk	hgl	hbt	hbl	rin	wst	lwb	rxb	wax	gix	whm	gma	wsd	gsd	pik	wsc									x
+MonsterGood-act1	1	30	skp	hlm	hla	stu	rng	sml	lrg	vgl	vbt	vbl	rin	skc	lst	hbw	lxb	axe	lax	mac	sbr	2hs	dir	rvs	tri	bar	gcw	gcr	gcg	gcb	gcy	gcv	x
+MonsterGood-act2	1	30	fhl	msk	scl	chn	brs	kit	spk	mgl	mbt	mbl	rin	skc	cst	sbb	mxb	2ax	btx	mst	crs	clm	kri	rvs	brn	scy	gcw	gcr	gcg	gcb	gcy	gcv	x
+MonsterGood-act3	1	30	ghm	bhm	spl	plt	fld	tow	bsh	tgl	tbt	tbl	rin	skf	bst	lbb	hxb	mpi	gax	fla	mau	lsd	bsw	rvl	spt	pax	gfw	gfr	gfg	gfb	gfy	gfv	x
+MonsterGood-act4	1	30	crn	bhm	gth	ful	ltp	gts	bsh	hgl	hbt	hbl	rin	skf	wst	swb	rxb	wax	gix	whm	gma	wsd	flb	rvl	pik	wsc	gfw	gfr	gfg	gfb	gfy	gfv	x
+MonsterGood-difficulty levels	1	30	crn	bhm	ful	aar	ltp	gts	msk	hgl	hbt	hbl	rin	sku	wst	lwb	rxb	wax	gix	whm	gma	wsd	gsd	rvl	pik	wsc	gsw	gsr	gsg	gsb	gsy	gsv	x
+Act1A-HtH	1	14	clb	ssd	jav	sbw	tkf	hax	spc	cap	qui	buc	lea	lgl	lbt	lbl																	x
+Act1B-HtH	1	18	scm	spr	bar	hbw	lax	lxb	axe	tax	mac	sbr	lbw	skp	hla	sml	vgl	vbt	vbl	stu													x
+Act1C-HtH	1	27	tri	2hs	pil	flc	vou	hlm	rng	lrg	spk	mgl	mbt	mbl	scm	spr	bar	hbw	lax	lxb	axe	tax	mac	sbr	lbw	skp	hla	sml	vgl				x
+Act2A-HtH	1	26	bax	cbw	2ax	mst	bkf	bsd	ssp	scy	mxb	scl	fhl	chn	kit	tri	2hs	pil	flc	vou	hlm	rng	lrg	spk	mgl	mbt	mbl	mp2					x
+Act2B-HtH	1	23	bal	brn	btx	clm	kri	sbb	brs	msk	bsh	bax	cbw	2ax	mst	bkf	bsd	ssp	scy	mxb	scl	fhl	chn	kit	mp3								x
+Act2C-HtH	1	23	mpi	fla	lsd	spt	mau	gis	pax	spl	tgl	tbt	tbl	tow	bhm	bal	brn	btx	clm	kri	sbb	brs	msk	bsh	mp3								x
+Act3A-HtH	1	21	gax	glv	lbb	bsw	pik	hxb	ghm	plt	mpi	fla	lsd	spt	mau	gis	pax	spl	tgl	tbt	tbl	tow	bhm										x
+Act3B-HtH	1	18	wax	whm	gix	wsd	flb	swb	hgl	hbt	hbl	fld	gax	glv	lbb	bsw	pik	hxb	ghm	plt													x
+Act3C-HtH	1	17	tsp	hal	lwb	gma	crn	gts	gth	wax	whm	gix	wsd	flb	swb	hgl	hbt	hbl	fld														x
+Act4-HtH	1	23	gsd	rxb	wsc	ltp	ful	aar	tsp	hal	lwb	gma	crn	gts	gth	wax	whm	gix	wsd	flb	swb	hgl	hbt	hbl	fld								x
+Act1A-Caster	1	12	sst	wnd	scp	mp1	mp2	mp5	tsc	tsc	isc	isc	rin	amu																			x
+Act1B-Caster	1	12	sst	wnd	scp	mp1	mp2	mp5	tsc	tsc	isc	isc	rin	amu																			x
+Act1C-Caster	1	12	lst	ywn	scp	mp1	mp2	mp5	tsc	tsc	isc	isc	rin	amu																			x
+Act2A-Caster	1	13	lst	ywn	gsc	mp2	mp3	mp5	tsc	tsc	isc	isc	rin	amu	yps																		x
+Act2B-Caster	1	13	cst	bwn	gsc	mp2	mp3	mp5	tsc	tsc	isc	isc	rin	amu	yps																		x
+Act2C-Caster	1	13	cst	bwn	gsc	mp2	mp3	mp5	tsc	tsc	isc	isc	rin	amu	yps																		x
+Act3A-Caster	1	13	bst	bwn	wsp	mp3	mp4	mp5	tsc	tsc	isc	isc	rin	amu	yps																		x
+Act3B-Caster	1	13	bst	gwn	wsp	mp3	mp4	mp5	tsc	tsc	isc	isc	rin	amu	yps																		x
+Act3C-Caster	1	13	wst	gwn	wsp	mp3	mp4	mp5	tsc	tsc	isc	isc	rin	amu	yps																		x
+Act4-Caster	1	13	wst	gwn	wsp	mp4	mp5	mp5	tsc	tsc	isc	isc	rin	amu	yps																		x
+Act1-junk	1	17	vps	hp1	hp1	hp1	mp1	hp2	mp2	aqv	aqv	cqv	cqv	key	opl	gpl	rvs	tsc	isc														x
+Act2-junk	1	20	vps	hp1	hp2	hp2	mp2	hp3	mp3	aqv	aqv	cqv	cqv	key	opm	gpm	yps	yps	wms	rvs	tsc	isc											x
+Act3-junk	1	19	vps	hp2	hp2	hp3	mp3	hp4	mp4	aqv	aqv	cqv	cqv	key	ops	gps	yps	wms	rvs	tsc	isc												x
+Act4-junk	1	19	vps	hp3	hp3	hp4	mp4	hp5	mp5	aqv	aqv	cqv	cqv	key	ops	gps	yps	wms	rvs	tsc	isc												x
+Act4-junk	1	19	vps	hp3	hp4	hp5	mp5	hp5	mp5	aqv	aqv	cqv	cqv	key	ops	gps	yps	wms	rvs	tsc	isc												x

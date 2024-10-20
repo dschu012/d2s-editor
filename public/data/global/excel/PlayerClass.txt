@@ -1,0 +1,9 @@
+Player Class	Code
+Amazon	ama
+Sorceress	sor
+Necromancer	nec
+Paladin	pal
+Barbarian	bar
+Expansion	
+Druid	dru
+Assassin	ass

@@ -1,0 +1,13 @@
+cube modifier type	Code
+None	
+amethyst	ame
+ruby	rub
+sapphire	sap
+topaz	top
+emerald	eme
+diamond	dim
+skull	sku
+magic	mag
+rare	rar
+unique	unq
+crafted	crf

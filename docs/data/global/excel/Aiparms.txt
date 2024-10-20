@@ -1,0 +1,235 @@
+Description of Ai Parameters
+
+/* ================================================================ */
+"Brute" Ai
+Yeti
+Thorn Hulk
+Baboon Demon
+
+This Ai always walks towards the player & engages in melee
+if the monster is in range but decides not to strike it will circle
+left or right
+----------------------------------------------------------------------
+P1	Pct chance to strike - set this to affect attack speed
+P2	Pct chance to do Attack2 - the more powerful one
+P3	-
+P4	-
+
+Missiles:	None
+Skills:		None
+
+
+/* ================================================================ */
+"Conservative" Ai
+Evil Spider
+
+This Ai may not intially attack, though it will do so if it is struck
+It will flee if it is hurt beyond a certain threshold
+----------------------------------------------------------------------
+P1	Pct chance to strike - set this to affect attack speed
+P2	Pct chance to do Attack2 - the more powerful attack
+P3	Chance to decide to engage in to attack
+P4	Pct health to flee
+
+
+/* ================================================================ */
+Corrupt Rogue
+----------------------------------------------------------------------
+P1	Not melee - pct chance of walking towards/circle enemy else
+	delay
+P2	Melee - pct chance of doing attack else delay
+P3	Delay time
+P4	-
+
+Missiles:	None
+Skills:		None
+
+Spike Fiend
+----------------------------------------------------------------------
+P1	Not melee - distance where missile is considered
+P2	Missile considered - pct chance of attack else runaway
+P3	Missile considered - amt of extra missiles to fire
+P4	Not melee/melee - amt to move once wandering or runaway is
+	done
+
+Missiles:	Spike1, Spike2, Spike3, Spike4, Spike5
+Skills:		None
+
+Big Head
+----------------------------------------------------------------------
+P1	Pct health left before go into run and shoot mode
+P2	-
+P3	-
+P4	-
+
+Missiles:	BigHead1, BigHead2, BigHead3, BigHead4, BigHead5
+Skills:		None
+
+Zombie
+----------------------------------------------------------------------
+P1	Distance before they realize person
+P2	If person not realize, the chance they'll walk randomly else
+	delay
+P3	Pct chance to do Attack1 else Attack2
+P4	-
+
+Missiles:	None
+Skills:		None
+
+Fallen
+----------------------------------------------------------------------
+P1	Pct that special anim will run all in group will attack
+P2	Pct Attack1 (forehand) will be run over Attack2
+P3	Distance away from player that they are still in wandering
+	mode
+P4	When melee distance from player - pct that I will attack
+
+Missiles:	None
+Skills:		None
+
+Fallen Shaman
+----------------------------------------------------------------------
+P1	If there are dead, pct chance I'll raise them
+P2	If I have a ranged enemy, pct chance I'll shoot
+P3	If I don't shoot or raise, pct chance I'll move
+P4	-
+
+Missiles:	ShaFire1, ShaFire2, ShaFire3, ShaFire4, ShaFire5
+Skills:		None
+
+Andariel
+----------------------------------------------------------------------
+P1	Pct chance to shoot else attack
+P2	-
+P3	-
+P4	-
+
+Missiles:	Andrial
+Skills:		None
+
+Skeleton
+----------------------------------------------------------------------
+P1	If not attack distance, pct chance I'll walk to enemy else
+	delay
+P2	If in attack distance, pct chance I'll swing else delay
+P3	Delay amt
+P4	If attacking, pct chance I'll do Attack1 else Attack2
+
+Missiles:	None
+Skills:		None
+
+Pin Head
+----------------------------------------------------------------------
+P1	If attack distance, pct chance to attack
+P2	If attack distance, and I don't attack, the amount of frames
+	I'll delay
+P3	If not attack distance, pct chance I'll walk to nearest player
+P4	If not attack distance, and I don't walk, the amount of frames
+	I'll delay
+P5	If attacking, pct chance I'll do Smite
+
+Missiles:	None
+Skills:		Smite: Damage, (1 - 4) * SkillLvl
+
+Serpent Demon
+----------------------------------------------------------------------
+P1	If attack distance, pct chance to attack
+P2	If attacking, pct chance I'll do attack1 (tail poke) else
+	attack2 (claw swipe)
+P3	If attack distance, and I don't attack, the amount of frames
+	I'll delay
+P4	If not attack distance, pct chance I'll Zeal towards players
+	else I'll just walk
+
+Missiles:	None
+Skills:		Zeal: Damage,
+		(40 * (amount of time through run cycle)) / SkillLvl
+
+Scarab
+----------------------------------------------------------------------
+P1	If attack distance, pct chance to attack
+P2	If attacking, and not Jab skilling, pct chance I'll do attack1
+	(ax looking thing) else attack2 (leg poke)
+P3	If attack distance, and I don't attack, the amount of frames
+	I'll delay
+P4	If attacking, pct chance I'll do Jab Skill else I'll do
+	regular attack stuff
+
+Missiles:	None
+Skills:		Jab: DamageMin, 5 * SkillLevel; DamageMax,
+		DamageMin + 15; ToHit, 15 + (SkillLevel * 5)
+
+Sand Raider
+----------------------------------------------------------------------
+P1	Pct health left so that I will start looking for other
+	monsters to retreat to
+P2	If not in attack distance, pct chance I'll circle around
+P3	If attack distance, pct chance I'll attack
+P4	If attack distance, and I don't attack, number of frames I'll
+	delay
+
+Missiles:	None
+Skills:		FireHit: FireDamMin, 5 * SkillLevel; FireDamMax,
+		FireDamMin + 15; ToHit, 15 + (SkillLevel * 5)
+
+Sand Maggot
+----------------------------------------------------------------------
+P1	If not damaged (< 30%), and I'm underground, I'll come up when
+	the player is in this distance
+P2	If damaged, player farther than 7 and, I don't lay an egg, pct
+	chance I'll shoot else walk
+P3	Max Eggs to lay.
+P4	If attack distance, pct chance I'll attack else pause
+P5	Time I'm going to stay up or down minimum
+
+Missiles:	GooSpit1, GooSpit2, GooSpit3, GooSpit4, GooSpit5
+Skills:		None
+Note: Maggots now lay eggs up to their max if they haven't decided
+to do anything else of interest.
+
+Sand Maggot Baby
+----------------------------------------------------------------------
+P1	If attack distance, pct chance I'll attack
+P2	If attack distance, and I don't attack, number of frames I'll
+	delay
+P3	If not attack distance, pct chance I'll walk towards player
+P4	If not attack distance, and I don't walk towards, number of
+	frames I'll delay
+
+Missiles:	None
+Skills:		None
+
+Sand Maggot Egg
+----------------------------------------------------------------------
+P1	Frames delay before spawning
+P2	Amount of maggots to spawn
+P3	-
+P4	-
+
+Missiles:	None
+Skills:		None
+
+Greater Mummy
+----------------------------------------------------------------------
+P1	If player is next to me or in gas range, pct chance I'll
+	attack
+P2	If I don't swipe or gas, pct chance if there's dead I'll
+	resurrect
+P3	If I don't swipe, gas, or res, pct chance if there's hurt I'll
+	heal'em
+P4	If I don't swipe, gas, res, or heal,  pct chance I'll try to
+	shoot
+
+Missiles:	UnHolyBolt1, UnHolyBolt2, UnHolyBolt3, UnHolyBolt4,
+		Mummy1, Mummy2, Mummy3, Mummy4
+Skills:		Resurrect: none
+		Heal: HealMin, 5 * SkillLevel; HealMax,
+		HealMin + 15
+
+Mummy
+----------------------------------------------------------------------
+P1	Distance before they realize person
+P2	If person not realize, the chance they'll walk randomly else
+	delay
+P3	Pct chance to do Attack1 else Attack2
+P4	-

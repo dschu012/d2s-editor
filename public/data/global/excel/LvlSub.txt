@@ -1,0 +1,36 @@
+Name	Type	File	Expansion	CheckAll	BordType	GridSize	Dt1Mask	Prob0	Trials0	Max0	Prob1	Trials1	Max1	Prob2	Trials2	Max2	Prob3	Trials3	Max3	Prob4	Trials4	Max4	Beta
+Border - Cliffs	0	Act1/Outdoors/BorderCliffs.ds1	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+Border - Middle	1	Act1/Outdoors/BorderMiddle.ds1	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+Border - Corner	2	Act1/Outdoors/BorderCorner.ds1	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+Border - Border	3	Act1/Outdoors/BorderBorder.ds1	0	0	2	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1
+Act 1 Waypoint L	4	Act1/Outdoors/Waypoint.ds1	0	0	-1	1	1	100	-1	1	100	-1	1	100	-1	1	100	-1	1	100	-1	1	1
+Act 1 Waypoint S	4	Act1/Outdoors/WaySmall.ds1	0	0	-1	1	1	100	-1	1	100	-1	1	100	-1	1	100	-1	1	100	-1	1	1
+Healing Well	5	Act1/Outdoors/ShrineW.ds1	0	0	-1	1	1	100	-1	1	100	-1	1	100	-1	1	100	-1	1	100	-1	1	1
+Deer Shrine	5	Act1/Outdoors/ShrineD.ds1	0	0	-1	1	1	100	-1	1	100	-1	1	100	-1	1	100	-1	1	100	-1	1	1
+Forest Shrine	5	Act1/Outdoors/ShrineF.ds1	0	0	-1	1	1	100	-1	1	100	-1	1	100	-1	1	100	-1	1	100	-1	1	1
+Horn Shrine	5	Act1/Outdoors/ShrineH.ds1	0	0	-1	1	1	100	-1	1	100	-1	1	100	-1	1	100	-1	1	100	-1	1	1
+Stone	6	Act1/Outdoors/Stone.ds1	0	0	-1	1	16385	30	5	2	30	5	2	100	20	12	30	5	2	0	0	0	1
+Trees	6	Act1/Outdoors/Trees.ds1	0	0	-1	1	3	50	5	2	30	5	2	50	5	2	100	20	12	50	5	2	1
+Puddles	6	Act1/Outdoors/Pud.ds1	0	0	-1	1	262145	90	20	8	30	5	2	20	5	2	20	5	2	50	20	8	1
+Swamp Big	6	Act1/Outdoors/Swamp2.ds1	0	0	-1	1	4194305	0	0	0	0	0	0	0	0	0	0	0	0	90	5	2	1
+Swamp Small	6	Act1/Outdoors/Swamp.ds1	0	0	-1	1	4194305	50	5	2	0	0	0	0	0	0	20	5	2	90	10	6	1
+Wild Objects	6	Act1/Outdoors/Object.ds1	0	0	-1	1	257	20	5	2	20	5	2	20	5	2	20	5	2	20	5	2	1
+Act 2 Waypoint	7	Act2/Outdoors/Waypoint.ds1	0	0	-1	1	1	100	-1	1	100	-1	1	100	-1	1	100	-1	1	100	-1	1	0
+Healing Well	8	Act2/Outdoors/ShrineW.ds1	0	0	-1	1	1	100	-1	1	100	-1	1	100	-1	1	100	-1	1	100	-1	1	0
+Health Shrine	8	Act2/Outdoors/ShrineH.ds1	0	0	-1	1	1	100	-1	1	100	-1	1	100	-1	1	100	-1	1	100	-1	1	0
+Mana Shrine	8	Act2/Outdoors/ShrineM.ds1	0	0	-1	1	1	100	-1	1	100	-1	1	100	-1	1	100	-1	1	100	-1	1	0
+Effect Shrine	8	Act2/Outdoors/ShrineE.ds1	0	0	-1	1	1	100	-1	1	100	-1	1	100	-1	1	100	-1	1	100	-1	1	0
+Dune	9	Act2/Outdoors/Dune.ds1	0	0	-1	1	4	70	10	1	10	5	1	10	5	1	10	5	1	10	5	1	0
+Rock Big	9	Act2/Outdoors/Rock2.ds1	0	0	-1	1	2	80	10	4	80	10	2	10	5	1	10	5	1	10	5	1	0
+Rock Small	9	Act2/Outdoors/Rock.ds1	0	0	-1	1	2	80	10	8	80	10	4	10	5	2	10	5	2	10	5	2	0
+Bone	9	Act2/Outdoors/Bone.ds1	0	0	-1	1	128	80	10	2	10	5	2	10	5	2	10	5	2	10	5	2	0
+Palm	9	Act2/Outdoors/Palm.ds1	0	0	-1	1	262144	10	5	2	100	10	4	100	10	4	100	10	4	90	10	4	0
+Prickly	9	Act2/Outdoors/Prickly.ds1	0	0	-1	1	524288	10	5	2	10	5	4	90	10	4	10	5	2	90	10	4	0
+Scrub	9	Act2/Outdoors/Scrub.ds1	0	0	-1	1	1048576	10	5	2	10	5	2	90	10	4	90	10	4	10	5	2	0
+Expansion																							
+Snow Large	10	Expansion/Siege/Snowpatchlg.ds1	1	0	-1	1	524305	25	2	1	25	2	1	25	2	1	25	2	1	25	2	1	0
+Trees and Rocks	10	Expansion/Siege/treesandrocks.ds1	1	0	-1	1	3671091	75	15	5	75	15	5	75	15	5	75	15	5	75	15	5	0
+Small stuff	10	Expansion/Siege/treesandrocksSmall.ds1	1	0	-1	1	1572865	100	20	6	100	20	6	100	20	6	100	20	6	100	20	6	0
+Dirt patches	11	Expansion/Siege/snowpatchlg_inv.ds1	1	0	-1	1	524305	50	2	1	50	2	1	50	2	1	50	2	1	50	2	1	0
+snowy objects	11	Expansion/Siege/treesandrocksSnow.ds1	1	0	-1	1	3671091	100	10	6	100	20	6	100	10	6	100	10	6	100	10	6	0
+Barricade	12	Expansion/Siege/4x3barricade_rules.ds1	1	0	2	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0

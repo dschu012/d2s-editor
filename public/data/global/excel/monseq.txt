@@ -1,0 +1,1011 @@
+sequence	mode	frame	dir	event	eol
+	NU	0			0
+seq_pinheadsmite	A1	0			0
+seq_pinheadsmite	A1	1			0
+seq_pinheadsmite	A1	2			0
+seq_pinheadsmite	A1	3			0
+seq_pinheadsmite	A1	4			0
+seq_pinheadsmite	A1	5			0
+seq_pinheadsmite	A1	6			0
+seq_pinheadsmite	A1	7			0
+seq_pinheadsmite	A1	8		1	0
+seq_pinheadsmite	A1	9			0
+seq_pinheadsmite	A1	10			0
+seq_pinheadsmite	A1	11			0
+seq_pinheadsmite	A1	12			0
+seq_pinheadsmite	A1	13			0
+seq_pinheadsmite	A1	14			0
+seq_serpentcharge	WL	0		1	0
+seq_serpentcharge	WL	2		1	0
+seq_serpentcharge	WL	4		1	0
+seq_serpentcharge	WL	6		1	0
+seq_serpentcharge	WL	8		1	0
+seq_serpentcharge	WL	10		1	0
+seq_serpentcharge	WL	12		1	0
+seq_serpentcharge	WL	14		1	0
+seq_serpentcharge	A2	3			0
+seq_serpentcharge	A2	7		1	0
+seq_serpentcharge	A2	8			0
+seq_serpentcharge	A2	9			0
+seq_serpentcharge	A2	10			0
+seq_serpentcharge	A2	11			0
+seq_summonerskill	S1	0			0
+seq_summonerskill	S1	1			0
+seq_summonerskill	S1	2			0
+seq_summonerskill	S1	3			0
+seq_summonerskill	S1	4			0
+seq_summonerskill	S1	5			0
+seq_summonerskill	S1	6			0
+seq_summonerskill	S1	7		4	0
+seq_firehit	A1	0			0
+seq_firehit	A1	1			0
+seq_firehit	A1	2			0
+seq_firehit	A1	3			0
+seq_firehit	A1	4			0
+seq_firehit	A1	5		1	0
+seq_firehit	A1	6			0
+seq_firehit	A1	7			0
+seq_firehit	A1	8			0
+seq_firehit	A1	9			0
+seq_scarabjab	A1	2			0
+seq_scarabjab	A1	4			0
+seq_scarabjab	A1	6			0
+seq_scarabjab	A1	8		1	0
+seq_scarabjab	A1	9			0
+seq_scarabjab	A1	15			0
+seq_scarabjab	A2	4			0
+seq_scarabjab	A2	6			0
+seq_scarabjab	A2	7			0
+seq_scarabjab	A2	9		1	0
+seq_scarabjab	A2	10			0
+seq_scarabjab	A2	12			0
+seq_scarabjab	A2	13			0
+seq_mummyres	SC	0			0
+seq_mummyres	SC	1			0
+seq_mummyres	SC	2			0
+seq_mummyres	SC	3			0
+seq_mummyres	SC	4			0
+seq_mummyres	SC	5			0
+seq_mummyres	SC	6			0
+seq_mummyres	SC	7			0
+seq_mummyres	SC	8			0
+seq_mummyres	SC	9			0
+seq_mummyres	SC	10			0
+seq_mummyres	SC	11			0
+seq_mummyres	SC	12			0
+seq_mummyres	SC	13		2	0
+seq_mummyres	SC	14			0
+seq_mummyres	SC	15			0
+seq_vileres	S1	0			0
+seq_vileres	S1	1			0
+seq_vileres	S1	2			0
+seq_vileres	S1	3			0
+seq_vileres	S1	4			0
+seq_vileres	S1	5			0
+seq_vileres	S1	6			0
+seq_vileres	S1	7			0
+seq_vileres	S1	8			0
+seq_vileres	S1	9			0
+seq_vileres	S1	10		2	0
+seq_vileres	S1	11			0
+seq_vileres	S1	12			0
+seq_vileres	S1	13			0
+seq_vileres	S1	14			0
+seq_vileres	S1	15			0
+seq_vileres	S1	16			0
+seq_skeletonraise	DT	10			0
+seq_skeletonraise	DT	9			0
+seq_skeletonraise	DT	8			0
+seq_skeletonraise	DT	7			0
+seq_skeletonraise	DT	6			0
+seq_skeletonraise	DT	5			0
+seq_skeletonraise	DT	4			0
+seq_skeletonraise	DT	3			0
+seq_skeletonraise	DT	2			0
+seq_skeletonraise	DT	1			0
+seq_skeletonraise	DT	0			0
+seq_fetishres	SC	0			0
+seq_fetishres	SC	1			0
+seq_fetishres	SC	2			0
+seq_fetishres	SC	3			0
+seq_fetishres	SC	4			0
+seq_fetishres	SC	5			0
+seq_fetishres	SC	6			0
+seq_fetishres	SC	7			0
+seq_fetishres	SC	8			0
+seq_fetishres	SC	9			0
+seq_fetishres	SC	10			0
+seq_fetishres	SC	11			0
+seq_fetishres	SC	12			0
+seq_fetishres	SC	13		2	0
+seq_fetishres	SC	14			0
+seq_fetishres	SC	15			0
+seq_fetishres	SC	16			0
+seq_fethisraise	DT	17			0
+seq_fethisraise	DT	16			0
+seq_fethisraise	DT	15			0
+seq_fethisraise	DT	14			0
+seq_fethisraise	DT	13			0
+seq_fethisraise	DT	12			0
+seq_fethisraise	DT	11			0
+seq_fethisraise	DT	10			0
+seq_fethisraise	DT	9			0
+seq_fethisraise	DT	8			0
+seq_fethisraise	DT	7			0
+seq_fethisraise	DT	6			0
+seq_fethisraise	DT	5			0
+seq_fethisraise	DT	4			0
+seq_fethisraise	DT	3			0
+seq_fethisraise	DT	2			0
+seq_fethisraise	DT	1			0
+seq_fethisraise	DT	0			0
+seq_maggotegg	DT	0			0
+seq_maggotegg	DT	1			0
+seq_maggotegg	DT	2			0
+seq_maggotegg	DT	3			0
+seq_maggotegg	DT	4			0
+seq_maggotegg	DT	5			0
+seq_maggotegg	DT	6			0
+seq_maggotegg	DT	7			0
+seq_maggotegg	DT	8			0
+seq_maggotegg	DT	9		4	0
+seq_maggotegg	DT	10			0
+seq_maggotegg	DT	11			0
+seq_maggotegg	DT	12			0
+seq_maggotegg	DT	13			0
+seq_shamanresurrect	A2	0			0
+seq_shamanresurrect	A2	1			0
+seq_shamanresurrect	A2	2			0
+seq_shamanresurrect	A2	3			0
+seq_shamanresurrect	A2	4			0
+seq_shamanresurrect	A2	5			0
+seq_shamanresurrect	A2	6			0
+seq_shamanresurrect	A2	7			0
+seq_shamanresurrect	A2	8			0
+seq_shamanresurrect	A2	9			0
+seq_shamanresurrect	A2	10			0
+seq_shamanresurrect	A2	11			0
+seq_shamanresurrect	A2	12		2	0
+seq_shamanresurrect	A2	13			0
+seq_shamanresurrect	A2	14			0
+seq_shamanresurrect	A2	15			0
+seq_shamanresurrect	A2	16			0
+seq_maggotup	S1	0			0
+seq_maggotup	S1	1			0
+seq_maggotup	S1	2			0
+seq_maggotup	S1	3			0
+seq_maggotup	S1	4			0
+seq_maggotup	S1	5			0
+seq_maggotup	S1	6			0
+seq_maggotup	S1	7			0
+seq_maggotup	S1	8			0
+seq_maggotup	S1	9			0
+seq_maggotup	S1	10			0
+seq_maggotup	S1	11		4	0
+seq_maggotdown	S1	11			0
+seq_maggotdown	S1	10			0
+seq_maggotdown	S1	9			0
+seq_maggotdown	S1	8			0
+seq_maggotdown	S1	7			0
+seq_maggotdown	S1	6			0
+seq_maggotdown	S1	5			0
+seq_maggotdown	S1	4			0
+seq_maggotdown	S1	3			0
+seq_maggotdown	S1	2			0
+seq_maggotdown	S1	1			0
+seq_maggotdown	S1	0		1	0
+seq_maggotlay	S1	11			0
+seq_maggotlay	S1	11			0
+seq_maggotlay	S1	11			0
+seq_maggotlay	S1	10			0
+seq_maggotlay	S1	10			0
+seq_maggotlay	S1	10			0
+seq_maggotlay	S1	9		1	0
+seq_maggotlay	S1	9			0
+seq_maggotlay	S1	10			0
+seq_maggotlay	S1	10			0
+seq_maggotlay	S1	11			0
+seq_maggotlay	S1	11			0
+seq_maggotlay	S1	11			0
+seq_andarielspray	SC	0			0
+seq_andarielspray	SC	1			0
+seq_andarielspray	SC	2			0
+seq_andarielspray	SC	3			0
+seq_andarielspray	SC	4		2	0
+seq_andarielspray	SC	5		2	0
+seq_andarielspray	SC	6		2	0
+seq_andarielspray	SC	7		2	0
+seq_andarielspray	SC	8		2	0
+seq_andarielspray	SC	9		2	0
+seq_andarielspray	SC	10		2	0
+seq_andarielspray	SC	11		2	0
+seq_andarielspray	SC	12		2	0
+seq_andarielspray	SC	13			0
+seq_andarielspray	SC	14			0
+seq_andarielspray	SC	15			0
+seq_andarielspray	SC	16			0
+seq_andarielspray	SC	17			0
+seq_leaperleap	A1	0			0
+seq_leaperleap	A1	1		1	0
+seq_leaperleap	A1	2			0
+seq_leaperleap	A1	3			0
+seq_leaperleap	A1	4			0
+seq_leaperleap	A1	5			0
+seq_leaperleap	A1	6			0
+seq_leaperleap	A1	7		2	0
+seq_leaperleap	A1	8			0
+seq_leaperleap	A1	9		1	0
+seq_leaperleap	A1	10			0
+seq_leaperleap	A1	11		1	0
+seq_leaperleap	A1	12			0
+seq_leaperleap	A1	13			0
+seq_leaperleap	A1	14			0
+seq_leaperleap	A1	15			0
+seq_leaperleap	A1	16			0
+seq_leaperleap	A1	17			0
+seq_leaperleap	A1	18			0
+seq_leaperleap	A1	19			0
+seq_swarmmove	WL	0			0
+seq_swarmmove	WL	1			0
+seq_swarmmove	WL	2			0
+seq_swarmmove	WL	3			0
+seq_swarmmove	WL	4			0
+seq_swarmmove	WL	5			0
+seq_swarmmove	WL	6			0
+seq_swarmmove	WL	7		4	0
+seq_nestlay	S1	0			0
+seq_nestlay	S1	1			0
+seq_nestlay	S1	2			0
+seq_nestlay	S1	3			0
+seq_nestlay	S1	4			0
+seq_nestlay	S1	5			0
+seq_nestlay	S1	6			0
+seq_nestlay	S1	7			0
+seq_nestlay	S1	8			0
+seq_nestlay	S1	9			0
+seq_nestlay	S1	10			0
+seq_nestlay	S1	11			0
+seq_nestlay	S1	12			0
+seq_nestlay	S1	13			0
+seq_nestlay	S1	14			0
+seq_nestlay	S1	15			0
+seq_nestlay	S1	16			0
+seq_nestlay	S1	17			0
+seq_nestlay	S1	18			0
+seq_nestlay	S1	19			0
+seq_nestlay	S1	20			0
+seq_nestlay	S1	21			0
+seq_nestlay	S1	22			0
+seq_nestlay	S1	23			0
+seq_nestlay	S1	24			0
+seq_nestlay	S1	25		4	0
+seq_nestlay	S1	26			0
+seq_nestlay	S1	27			0
+seq_nestlay	S1	28			0
+seq_nestlay	S1	29			0
+seq_nestlay	S1	30			0
+seq_bloodravencast	S1	0			0
+seq_bloodravencast	S1	1			0
+seq_bloodravencast	S1	2			0
+seq_bloodravencast	S1	3			0
+seq_bloodravencast	S1	4			0
+seq_bloodravencast	S1	5			0
+seq_bloodravencast	S1	6			0
+seq_bloodravencast	S1	7			0
+seq_bloodravencast	S1	8			0
+seq_bloodravencast	S1	9			0
+seq_bloodravencast	S1	10			0
+seq_bloodravencast	S1	11			0
+seq_bloodravencast	S1	12			0
+seq_bloodravencast	S1	13			0
+seq_bloodravencast	S1	14			0
+seq_bloodravencast	S1	15		4	0
+seq_bloodravencast	S1	16			0
+seq_bloodravencast	S1	17			0
+seq_bloodravencast	S1	18			0
+seq_bloodravencast	S1	19			0
+seq_brquickstrike	A1	0			0
+seq_brquickstrike	A1	1			0
+seq_brquickstrike	A1	2			0
+seq_brquickstrike	A1	3			0
+seq_brquickstrike	A1	4			0
+seq_brquickstrike	A1	5			0
+seq_brquickstrike	A1	6		2	0
+seq_gargoyletrap	A1	0		4	0
+seq_gargoyletrap	A1	1			0
+seq_gargoyletrap	A1	2			0
+seq_gargoyletrap	A1	3			0
+seq_gargoyletrap	A1	4			0
+seq_desertturret	A1	0			0
+seq_desertturret	A1	1		4	0
+seq_desertturret	A1	2			0
+seq_desertturret	A1	3			0
+seq_desertturret	A1	4			0
+seq_desertturret	A1	5			0
+seq_desertturret	A1	6			0
+seq_desertturret	A1	7			0
+seq_desertturret	A1	8			0
+seq_arcanetower	A1	0			0
+seq_arcanetower	A1	1			0
+seq_arcanetower	A1	2			0
+seq_arcanetower	A1	3			0
+seq_arcanetower	A1	4			0
+seq_arcanetower	A1	5			0
+seq_arcanetower	A1	6			0
+seq_arcanetower	A1	7			0
+seq_arcanetower	A1	8			0
+seq_arcanetower	A1	9		4	0
+seq_arcanetower	A1	10			0
+seq_arcanetower	A1	11			0
+seq_arcanetower	A1	12			0
+seq_arcanetower	A1	13			0
+seq_arcanetower	A1	14			0
+seq_arcanetower	A1	15			0
+seq_arcanetower	A1	16			0
+seq_tentaclesubmerge	S1	12		1	0
+seq_tentaclesubmerge	S1	11		1	0
+seq_tentaclesubmerge	S1	10		1	0
+seq_tentaclesubmerge	S1	9		1	0
+seq_tentaclesubmerge	S1	8			0
+seq_tentaclesubmerge	S1	7			0
+seq_tentaclesubmerge	S1	6			0
+seq_tentaclesubmerge	S1	5			0
+seq_tentaclesubmerge	S1	4			0
+seq_tentaclesubmerge	S1	3		1	0
+seq_tentaclesubmerge	S1	2		1	0
+seq_tentaclesubmerge	S1	1		1	0
+seq_tentaclesubmerge	S1	0		1	0
+seq_tentheadsubmerge	S1	20		1	0
+seq_tentheadsubmerge	S1	19		1	0
+seq_tentheadsubmerge	S1	18		1	0
+seq_tentheadsubmerge	S1	17		1	0
+seq_tentheadsubmerge	S1	16			0
+seq_tentheadsubmerge	S1	15			0
+seq_tentheadsubmerge	S1	14			0
+seq_tentheadsubmerge	S1	13			0
+seq_tentheadsubmerge	S1	12			0
+seq_tentheadsubmerge	S1	11			0
+seq_tentheadsubmerge	S1	10			0
+seq_tentheadsubmerge	S1	9			0
+seq_tentheadsubmerge	S1	8			0
+seq_tentheadsubmerge	S1	7			0
+seq_tentheadsubmerge	S1	6			0
+seq_tentheadsubmerge	S1	5			0
+seq_tentheadsubmerge	S1	4			0
+seq_tentheadsubmerge	S1	3			0
+seq_tentheadsubmerge	S1	2		1	0
+seq_tentheadsubmerge	S1	1		1	0
+seq_tentheadsubmerge	S1	0		1	0
+seq_froghidden	S1	0			0
+seq_froghidden	S1	1			0
+seq_froghidden	S1	2			0
+seq_diablorun	RN	0			0
+seq_diablorun	RN	1			0
+seq_diablorun	RN	2			0
+seq_diablorun	RN	3			0
+seq_diablorun	RN	4			0
+seq_diablorun	RN	5		2	0
+seq_diablorun	RN	6		2	0
+seq_diablorun	RN	7		2	0
+seq_diablorun	RN	8		2	0
+seq_diablorun	RN	9		2	0
+seq_diablorun	RN	10		2	0
+seq_diablorun	RN	11		2	0
+seq_diablorun	RN	12		2	0
+seq_diablorun	RN	13		2	0
+seq_diablorun	RN	14			0
+seq_diablorun	RN	15			0
+seq_diablorun	RN	16			0
+seq_diablorun	RN	17			0
+seq_diablorun	RN	18		1	0
+seq_diablorun	RN	19			0
+seq_diablorun	RN	20			0
+seq_diablorun	RN	21			0
+seq_diablofirewall	S1	17			0
+seq_diablofirewall	S1	16			0
+seq_diablofirewall	S1	15			0
+seq_diablofirewall	S1	14			0
+seq_diablofirewall	S1	13			0
+seq_diablofirewall	S1	12			0
+seq_diablofirewall	S1	11			0
+seq_diablofirewall	S1	10			0
+seq_diablofirewall	S1	9			0
+seq_diablofirewall	S1	8		1	0
+seq_diablofirewall	S1	7			0
+seq_diablofirewall	S1	6			0
+seq_diablofirewall	S1	5			0
+seq_diablofirewall	S1	4			0
+seq_diablofirewall	S1	3			0
+seq_diablofirewall	S1	2			0
+seq_diablofirewall	S1	1			0
+seq_diablofirewall	S1	0			0
+seq_tightspotguard	S1	0		4	0
+seq_act2guardjab	A1	2			0
+seq_act2guardjab	A1	4			0
+seq_act2guardjab	A1	6			0
+seq_act2guardjab	A1	8			0
+seq_act2guardjab	A1	10			0
+seq_act2guardjab	A1	11		1	0
+seq_act2guardjab	A1	10			0
+seq_act2guardjab	A1	9			0
+seq_act2guardjab	A1	10			0
+seq_act2guardjab	A1	11		1	0
+seq_act2guardjab	A1	12			0
+seq_act2guardjab	A1	13			0
+seq_act2guardjab	A1	14			0
+seq_act2guardjab	A1	15			0
+seq_mummyspawn	S1	0			0
+seq_mummyspawn	S1	1			0
+seq_mummyspawn	S1	2			0
+seq_mummyspawn	S1	3			0
+seq_mummyspawn	S1	4			0
+seq_mummyspawn	S1	5			0
+seq_mummyspawn	S1	6			0
+seq_mummyspawn	S1	7			0
+seq_mummyspawn	S1	8			0
+seq_mummyspawn	S1	9			0
+seq_mummyspawn	S1	10			0
+seq_mummyspawn	S1	11			0
+seq_mummyspawn	S1	12			0
+seq_mummyspawn	S1	13			0
+seq_mummyspawn	S1	14			0
+seq_mummyspawn	S1	15			0
+seq_mummyspawn	S1	16			0
+seq_mummyspawn	S1	17			0
+seq_mummyspawn	S1	18			0
+seq_mummyspawn	S1	19		4	0
+seq_mosquitoskill	A2	0			0
+seq_mosquitoskill	A2	1			0
+seq_mosquitoskill	A2	2			0
+seq_mosquitoskill	A2	3			0
+seq_mosquitoskill	A2	4			0
+seq_mosquitoskill	A2	5			0
+seq_mosquitoskill	A2	6			0
+seq_mosquitoskill	A2	7			0
+seq_mosquitoskill	A2	8			0
+seq_mosquitoskill	A2	9			0
+seq_mosquitoskill	A2	10			0
+seq_mosquitoskill	A2	11			0
+seq_mosquitoskill	A2	12			0
+seq_mosquitoskill	A2	13			0
+seq_mosquitoskill	A2	14			0
+seq_mosquitoskill	A2	15			0
+seq_mosquitoskill	A2	16			0
+seq_mosquitoskill	A2	17		1	0
+seq_mosquitoskill	A2	18			0
+seq_mosquitoskill	A2	19			0
+seq_mosquitoskill	A2	20			0
+seq_mosquitoskill	A2	21			0
+seq_mosquitoskill	A2	22			0
+seq_mosquitoskill	A2	23			0
+seq_mosquitoskill	A2	24			0
+seq_mosquitoskill	A2	25			0
+seq_mosquitonest	S1	0			0
+seq_mosquitonest	S1	1			0
+seq_mosquitonest	S1	2			0
+seq_mosquitonest	S1	3			0
+seq_mosquitonest	S1	4			0
+seq_mosquitonest	S1	5			0
+seq_mosquitonest	S1	6			0
+seq_mosquitonest	S1	7			0
+seq_mosquitonest	S1	8			0
+seq_mosquitonest	S1	9			0
+seq_mosquitonest	S1	10			0
+seq_mosquitonest	S1	11			0
+seq_mosquitonest	S1	12		1	0
+seq_mosquitonest	S1	13			0
+seq_mosquitonest	S1	14			0
+seq_mosquitonest	S1	15			0
+seq_mosquitonest	S1	16			0
+seq_durielcharge	WL	0		1	0
+seq_durielcharge	WL	1		1	0
+seq_durielcharge	WL	2		1	0
+seq_durielcharge	WL	3		1	0
+seq_durielcharge	WL	4		1	0
+seq_durielcharge	WL	5		3	0
+seq_durielcharge	WL	6		1	0
+seq_durielcharge	WL	7		1	0
+seq_durielcharge	WL	8		1	0
+seq_durielcharge	WL	9		1	0
+seq_durielcharge	WL	10		1	0
+seq_durielcharge	WL	11		1	0
+seq_durielcharge	WL	12		1	0
+seq_durielcharge	WL	13		1	0
+seq_durielcharge	WL	14		1	0
+seq_durielcharge	WL	15		1	0
+seq_durielcharge	A2	0			0
+seq_durielcharge	A2	1			0
+seq_durielcharge	A2	2			0
+seq_durielcharge	A2	3			0
+seq_durielcharge	A2	4			0
+seq_durielcharge	A2	5			0
+seq_durielcharge	A2	6			0
+seq_durielcharge	A2	7			0
+seq_durielcharge	A2	8			0
+seq_durielcharge	A2	9		1	0
+seq_durielcharge	A2	10			0
+seq_durielcharge	A2	11			0
+seq_durielcharge	A2	12			0
+seq_durielcharge	A2	13			0
+seq_durielcharge	A2	14			0
+seq_durieljab	A1	2			0
+seq_durieljab	A1	4		3	0
+seq_durieljab	A1	6			0
+seq_durieljab	A1	7		1	0
+seq_durieljab	A1	8			0
+seq_durieljab	A1	9			0
+seq_durieljab	A2	4			0
+seq_durieljab	A2	6		3	0
+seq_durieljab	A2	7			0
+seq_durieljab	A2	9		1	0
+seq_durieljab	A2	10			0
+seq_durieljab	A2	12			0
+seq_durieljab	A2	14		1	0
+seq_durielsmite	A2	0			0
+seq_durielsmite	A2	1			0
+seq_durielsmite	A2	2			0
+seq_durielsmite	A2	3			0
+seq_durielsmite	A2	4			0
+seq_durielsmite	A2	5			0
+seq_durielsmite	A2	6			0
+seq_durielsmite	A2	7		1	0
+seq_durielsmite	A2	8			0
+seq_durielsmite	A2	9			0
+seq_undeadbestow	S2	0			0
+seq_undeadbestow	S2	1			0
+seq_undeadbestow	S2	2			0
+seq_undeadbestow	S2	3			0
+seq_undeadbestow	S2	4			0
+seq_undeadbestow	S2	5			0
+seq_undeadbestow	S2	6			0
+seq_undeadbestow	S2	7			0
+seq_undeadbestow	S2	8			0
+seq_undeadbestow	S2	9			0
+seq_undeadbestow	S2	10			0
+seq_undeadbestow	S2	11		1	0
+seq_undeadbestow	S2	12			0
+seq_undeadbestow	S2	13			0
+seq_undeadbestow	S2	14			0
+seq_undeadbestow	S2	15			0
+seq_queendeath	DT	0			0
+seq_queendeath	DT	1			0
+seq_queendeath	DT	2			0
+seq_queendeath	DT	3			0
+seq_queendeath	DT	4			0
+seq_queendeath	DT	5			0
+seq_queendeath	DT	6			0
+seq_queendeath	DT	7			0
+seq_queendeath	DT	8			0
+seq_queendeath	DT	9			0
+seq_queendeath	DT	10			0
+seq_queendeath	DT	11			0
+seq_queendeath	DT	12			0
+seq_queendeath	DT	13			0
+seq_queendeath	DT	14			0
+seq_queendeath	DT	15			0
+seq_queendeath	DT	16			0
+seq_queendeath	DT	17			0
+seq_queendeath	DT	18			0
+seq_queendeath	DT	19			0
+seq_queendeath	DT	20			0
+seq_queendeath	DT	21			0
+seq_queendeath	DT	22		1	0
+seq_queendeath	DT	21			0
+seq_queendeath	DT	20			0
+seq_queendeath	DT	19			0
+seq_queendeath	DT	18			0
+seq_queendeath	DT	17			0
+seq_queendeath	DT	16			0
+seq_queendeath	DT	15			0
+seq_queendeath	DT	14			0
+seq_queendeath	DT	13			0
+seq_queendeath	DT	12			0
+seq_queendeath	DT	11			0
+seq_queendeath	DT	10			0
+seq_queendeath	DT	9			0
+seq_queendeath	DT	8			0
+seq_queendeath	DT	7			0
+seq_queendeath	DT	6		1	0
+seq_queendeath	DT	23			0
+seq_queendeath	DT	23			0
+seq_queendeath	DT	24			0
+seq_queendeath	DT	24			0
+seq_queendeath	DT	25			0
+seq_queendeath	DT	25			0
+seq_queendeath	DT	26			0
+seq_queendeath	DT	26			0
+seq_queendeath	DT	27			0
+seq_queendeath	DT	27			0
+seq_queendeath	DT	28			0
+seq_queendeath	DT	28			0
+seq_queendeath	DT	29			0
+seq_queendeath	DT	29			0
+seq_queendeath	DT	30		1	0
+seq_chargesentry	S2	0			0
+seq_chargesentry	S2	1			0
+seq_chargesentry	S2	2		1	0
+seq_chargesentry	S2	3			0
+seq_chargesentry	S2	4			0
+seq_chargesentry	S2	5			0
+seq_chargesentry	S2	6			0
+seq_chargesentry	S2	7			0
+seq_chargesentry	S2	8			0
+seq_chargesentry	S2	9			0
+seq_chargesentry	S2	10			0
+seq_chargesentry	S2	11			0
+seq_chargesentry	S2	12			0
+seq_chargesentry	S2	13			0
+seq_chargesentry	S2	14			0
+seq_reanimatedcharge	RN	0		1	0
+seq_reanimatedcharge	RN	1		1	0
+seq_reanimatedcharge	RN	2		1	0
+seq_reanimatedcharge	RN	3		1	0
+seq_reanimatedcharge	RN	4		1	0
+seq_reanimatedcharge	RN	5		1	0
+seq_reanimatedcharge	RN	6		1	0
+seq_reanimatedcharge	RN	7		1	0
+seq_reanimatedcharge	RN	8		1	0
+seq_reanimatedcharge	RN	9		1	0
+seq_reanimatedcharge	RN	10		1	0
+seq_reanimatedcharge	A2	0			0
+seq_reanimatedcharge	A2	0			0
+seq_reanimatedcharge	A2	1			0
+seq_reanimatedcharge	A2	1			0
+seq_reanimatedcharge	A2	2			0
+seq_reanimatedcharge	A2	2			0
+seq_reanimatedcharge	A2	3			0
+seq_reanimatedcharge	A2	4		1	0
+seq_reanimatedcharge	A2	4			0
+seq_reanimatedcharge	A2	5			0
+seq_reanimatedcharge	A2	6			0
+seq_reanimatedcharge	A2	7			0
+seq_reanimatedcharge	A2	7			0
+seq_reanimatedcharge	A2	8			0
+seq_reanimatedcharge	A2	9			0
+seq_reanimatedcharge	A2	9			0
+seq_reanimatedcharge	A2	10			0
+seq_bearsmite	A2	0			0
+seq_bearsmite	A2	1			0
+seq_bearsmite	A2	2			0
+seq_bearsmite	A2	3			0
+seq_bearsmite	A2	4			0
+seq_bearsmite	A2	5			0
+seq_bearsmite	A2	6			0
+seq_bearsmite	A2	7			0
+seq_bearsmite	A2	8		1	0
+seq_bearsmite	A2	9			0
+seq_bearsmite	A2	10			0
+seq_bearsmite	A2	11			0
+seq_bearsmite	A2	12			0
+seq_bearsmite	A2	13			0
+seq_bearsmite	A2	14			0
+seq_bearsmite	A2	15			0
+seq_bearsmite	A2	16			0
+seq_horrorarcticblast	A2	0			0
+seq_horrorarcticblast	A2	1			0
+seq_horrorarcticblast	A2	2			0
+seq_horrorarcticblast	A2	3			0
+seq_horrorarcticblast	A2	4			0
+seq_horrorarcticblast	A2	5			0
+seq_horrorarcticblast	A2	6			0
+seq_horrorarcticblast	A2	7			0
+seq_horrorarcticblast	A2	8			0
+seq_horrorarcticblast	A2	9		1	0
+seq_horrorarcticblast	A2	10			0
+seq_horrorarcticblast	A2	11			0
+seq_horrorarcticblast	A2	12			0
+seq_horrorarcticblast	A2	13			0
+seq_deathmaulerdig	A2	0			0
+seq_deathmaulerdig	A2	0			0
+seq_deathmaulerdig	A2	1			0
+seq_deathmaulerdig	A2	1			0
+seq_deathmaulerdig	A2	2			0
+seq_deathmaulerdig	A2	2			0
+seq_deathmaulerdig	A2	3			0
+seq_deathmaulerdig	A2	3			0
+seq_deathmaulerdig	A2	4			0
+seq_deathmaulerdig	A2	4			0
+seq_deathmaulerdig	A2	5			0
+seq_deathmaulerdig	A2	6			0
+seq_deathmaulerdig	A2	7			0
+seq_deathmaulerdig	A2	7		1	0
+seq_deathmaulerdig	A2	7			0
+seq_deathmaulerdig	A2	7			0
+seq_deathmaulerdig	A2	8			0
+seq_deathmaulerdig	A2	8			0
+seq_deathmaulerdig	A2	8			0
+seq_deathmaulerdig	A2	8			0
+seq_deathmaulerdig	A2	9			0
+seq_deathmaulerdig	A2	9			0
+seq_deathmaulerdig	A2	9			0
+seq_deathmaulerdig	A2	9			0
+seq_deathmaulerdig	A2	9			0
+seq_deathmaulerdig	A2	10			0
+seq_deathmaulerdig	A2	10			0
+seq_deathmaulerdig	A2	10			0
+seq_deathmaulerdig	A2	10			0
+seq_deathmaulerdig	A2	11			0
+seq_deathmaulerdig	A2	11			0
+seq_deathmaulerdig	A2	11			0
+seq_deathmaulerdig	A2	11			0
+seq_deathmaulerdig	A2	12			0
+seq_deathmaulerdig	A2	13			0
+seq_genericspawner	S1	0			0
+seq_genericspawner	S1	0			0
+seq_genericspawner	S1	1			0
+seq_genericspawner	S1	2			0
+seq_genericspawner	S1	2			0
+seq_genericspawner	S1	3			0
+seq_genericspawner	S1	4			0
+seq_genericspawner	S1	4			0
+seq_genericspawner	S1	5			0
+seq_genericspawner	S1	6			0
+seq_genericspawner	S1	6			0
+seq_genericspawner	S1	7			0
+seq_genericspawner	S1	8			0
+seq_genericspawner	S1	8			0
+seq_genericspawner	S1	9			0
+seq_genericspawner	S1	10		4	0
+seq_genericspawner	S1	10			0
+seq_genericspawner	S1	11			0
+seq_genericspawner	S1	12			0
+seq_genericspawner	S1	13			0
+seq_genericspawner	S1	14			0
+seq_genericspawner	S1	15			0
+seq_genericspawner	S1	16			0
+seq_genericspawner	S1	17			0
+seq_genericspawner	S1	17			0
+seq_genericspawner	S1	18			0
+seq_genericspawner	S1	18			0
+seq_genericspawner	S1	19			0
+seq_genericspawner	S1	19			0
+seq_genericspawner	S1	20			0
+seq_genericspawner	S1	20			0
+seq_genericspawner	S1	21			0
+seq_genericspawner	S1	21			0
+seq_nihlathakarctic	A1	0			0
+seq_nihlathakarctic	A1	1			0
+seq_nihlathakarctic	A1	2			0
+seq_nihlathakarctic	A1	3			0
+seq_nihlathakarctic	A1	4			0
+seq_nihlathakarctic	A1	5			0
+seq_nihlathakarctic	A1	6			0
+seq_nihlathakarctic	A1	6			0
+seq_nihlathakarctic	A1	7			0
+seq_nihlathakarctic	A1	7			0
+seq_nihlathakarctic	A1	7		1	0
+seq_nihlathakarctic	A1	9			0
+seq_nihlathakarctic	A1	11			0
+seq_nihlathakarctic	A1	12			0
+seq_nihlathakarctic	A1	13			0
+seq_ancientwhirlwind	A1	0			0
+seq_ancientwhirlwind	A1	1			0
+seq_ancientwhirlwind	A1	2			0
+seq_ancientwhirlwind	A1	3		1	0
+seq_ancientwhirlwind	A1	4			0
+seq_ancientwhirlwind	A1	5			0
+seq_ancientwhirlwind	A1	6			0
+seq_ancientwhirlwind	A1	7		1	0
+seq_infernosentry	S2	0			0
+seq_infernosentry	S2	0			0
+seq_infernosentry	S2	0			0
+seq_infernosentry	S2	0			0
+seq_infernosentry	S2	0			0
+seq_infernosentry	S2	0			0
+seq_infernosentry	S2	0			0
+seq_infernosentry	S2	0			0
+seq_infernosentry	S2	0			0
+seq_infernosentry	S2	1		1	0
+seq_infernosentry	S2	0			0
+seq_infernosentry	S2	0			0
+seq_infernosentry	S2	0			0
+seq_infernosentry	S2	0			0
+seq_swtigerfist	A2	0			0
+seq_swtigerfist	A2	1			0
+seq_swtigerfist	A2	2			0
+seq_swtigerfist	A2	3			0
+seq_swtigerfist	A2	4			0
+seq_swtigerfist	A2	5			0
+seq_swtigerfist	A2	6		1	0
+seq_swtigerfist	S4	3			0
+seq_swtigerfist	S4	4			0
+seq_swtigerfist	S4	5			0
+seq_swtigerfist	S4	6		1	0
+seq_swtigerfist	S4	7			0
+seq_swtigerfist	S4	8			0
+seq_swtigerfist	S4	9			0
+seq_swtigerfist	S4	10			0
+seq_swtigerfist	S4	11			0
+seq_swdragonbreath	S1	0			0
+seq_swdragonbreath	S1	1			0
+seq_swdragonbreath	S1	2			0
+seq_swdragonbreath	S1	3			0
+seq_swdragonbreath	S1	4			0
+seq_swdragonbreath	S1	5			0
+seq_swdragonbreath	S1	6			0
+seq_swdragonbreath	S1	7			0
+seq_swdragonbreath	S1	8		1	0
+seq_swdragonbreath	S1	9			0
+seq_swdragonbreath	S1	10		1	0
+seq_swdragonbreath	S1	11			0
+seq_swdragonbreath	S1	12		1	0
+seq_swdragonbreath	S1	12			0
+seq_swdragonbreath	S1	13		1	0
+seq_swdragonbreath	S1	13			0
+seq_swdragonbreath	S1	14			0
+seq_ancientleap	S1	0			0
+seq_ancientleap	S1	1			0
+seq_ancientleap	S1	2			0
+seq_ancientleap	S1	3			0
+seq_ancientleap	S1	4			0
+seq_ancientleap	S1	5		1	0
+seq_ancientleap	S1	6			0
+seq_ancientleap	S1	7			0
+seq_ancientleap	S1	8			0
+seq_ancientleap	S1	9			0
+seq_ancientleap	S1	10			0
+seq_ancientleap	S1	11		1	0
+seq_ancientleap	S1	12			0
+seq_ancientleap	S1	13		1	0
+seq_ancientleap	S1	14		1	0
+seq_ancientleap	S1	15			0
+seq_ancientleap	S1	16			0
+seq_impinferno	SC	0			0
+seq_impinferno	SC	1			0
+seq_impinferno	SC	2			0
+seq_impinferno	SC	3			0
+seq_impinferno	SC	4			0
+seq_impinferno	SC	5			0
+seq_impinferno	SC	6			0
+seq_impinferno	SC	7			0
+seq_impinferno	SC	8			0
+seq_impinferno	SC	9			0
+seq_impinferno	SC	10			0
+seq_impinferno	SC	11			0
+seq_impinferno	SC	12		4	0
+seq_impinferno	SC	13			0
+seq_swdragonflight	SC	0			0
+seq_swdragonflight	SC	1			0
+seq_swdragonflight	SC	2			0
+seq_swdragonflight	SC	3			0
+seq_swdragonflight	SC	4			0
+seq_swdragonflight	SC	5			0
+seq_swdragonflight	SC	6			0
+seq_swdragonflight	SC	7			0
+seq_swdragonflight	SC	8			0
+seq_swdragonflight	SC	9		1	0
+seq_swdragonflight	A1	0			0
+seq_swdragonflight	A1	1			0
+seq_swdragonflight	A1	2			0
+seq_swdragonflight	A1	3			0
+seq_swdragonflight	A1	4		1	0
+seq_swdragonflight	A1	5			0
+seq_swdragonflight	A1	6			0
+seq_swdragonflight	A1	7			0
+seq_swdragonflight	A1	8			0
+seq_swdragonflight	A1	9			0
+seq_swdragonflight	A1	10			0
+seq_swdragonflight	A1	11			0
+seq_swdragonflight	A1	12			0
+seq_siegebeastcharge	WL	0		1	0
+seq_siegebeastcharge	WL	0		1	0
+seq_siegebeastcharge	WL	1		1	0
+seq_siegebeastcharge	WL	1		1	0
+seq_siegebeastcharge	WL	2		1	0
+seq_siegebeastcharge	WL	2		1	0
+seq_siegebeastcharge	WL	3		1	0
+seq_siegebeastcharge	WL	4		1	0
+seq_siegebeastcharge	WL	4		1	0
+seq_siegebeastcharge	WL	5		1	0
+seq_siegebeastcharge	WL	5		1	0
+seq_siegebeastcharge	WL	6		1	0
+seq_siegebeastcharge	WL	6		1	0
+seq_siegebeastcharge	WL	7		1	0
+seq_siegebeastcharge	A2	0			0
+seq_siegebeastcharge	A2	1			0
+seq_siegebeastcharge	A2	2		3	0
+seq_siegebeastcharge	A2	3			0
+seq_siegebeastcharge	A2	4		1	0
+seq_siegebeastcharge	A2	5			0
+seq_siegebeastcharge	A2	6			0
+seq_siegebeastcharge	A2	7			0
+seq_baalinferno	S1	1			0
+seq_baalinferno	S1	2			0
+seq_baalinferno	S1	4			0
+seq_baalinferno	S1	5			0
+seq_baalinferno	S1	6			0
+seq_baalinferno	S1	7			0
+seq_baalinferno	S1	8			0
+seq_baalinferno	S1	9			0
+seq_baalinferno	S1	10			0
+seq_baalinferno	S1	11			0
+seq_baalinferno	S1	11			0
+seq_baalinferno	S1	11		4	0
+seq_baalinferno	S1	12			0
+seq_baalinferno	S1	13			0
+seq_baalinferno	S1	14			0
+seq_baalinferno	S1	15			0
+seq_swbladefury	SC	0			0
+seq_swbladefury	SC	1			0
+seq_swbladefury	SC	2			0
+seq_swbladefury	SC	3			0
+seq_swbladefury	SC	4			0
+seq_swbladefury	SC	5			0
+seq_swbladefury	SC	6			0
+seq_swbladefury	SC	7			0
+seq_swbladefury	SC	8			0
+seq_swbladefury	SC	9		1	0
+seq_swbladefury	SC	10			0
+seq_swbladefury	SC	11			0
+seq_swbladefury	SC	12			0
+seq_swbladefury	SC	13			0
+seq_swbladefury	SC	14			0
+seq_swbladefury	SC	15			0
+seq_swbladefury	SC	16			0
+seq_wakeofinferno	S2	0			0
+seq_wakeofinferno	S2	0			0
+seq_wakeofinferno	S2	0			0
+seq_wakeofinferno	S2	0			0
+seq_wakeofinferno	S2	0			0
+seq_wakeofinferno	S2	0			0
+seq_wakeofinferno	S2	0			0
+seq_wakeofinferno	S2	0			0
+seq_wakeofinferno	S2	0			0
+seq_wakeofinferno	S2	0			0
+seq_wakeofinferno	S2	1		1	0
+seq_wakeofinferno	S2	0			0
+seq_sandraiderflurry	A1	1			0
+seq_sandraiderflurry	A1	3			0
+seq_sandraiderflurry	A1	5			0
+seq_sandraiderflurry	A1	7			0
+seq_sandraiderflurry	A1	9			0
+seq_sandraiderflurry	A1	10		1	0
+seq_sandraiderflurry	A1	11			0
+seq_sandraiderflurry	A1	12			0
+seq_sandraiderflurry	A1	13			0
+seq_sandraiderflurry	A1	14			0
+seq_sandraiderflurry	A1	13			0
+seq_sandraiderflurry	A1	12			0
+seq_sandraiderflurry	A1	11			0
+seq_sandraiderflurry	A1	10		1	0
+seq_sandraiderflurry	A1	9			0
+seq_sandraiderflurry	A1	7			0
+seq_sandraiderflurry	A1	9			0
+seq_sandraiderflurry	A1	11			0
+seq_sandraiderflurry	A1	12			0
+seq_sandraiderflurry	A1	13			0
+seq_sandraiderflurry	A1	14			0
+seq_sandraiderflurry	A1	13			0
+seq_sandraiderflurry	A1	12			0
+seq_sandraiderflurry	A1	11			0
+seq_sandraiderflurry	A1	10		1	0
+seq_sandraiderflurry	A1	9			0
+seq_sandraiderflurry	A1	7			0
+seq_sandraiderflurry	A1	9			0
+seq_sandraiderflurry	A1	11			0
+seq_sandraiderflurry	A1	12			0
+seq_sandraiderflurry	A1	13			0
+seq_sandraiderflurry	A1	14			0
+seq_crlancerjab	A1	0			0
+seq_crlancerjab	A1	1			0
+seq_crlancerjab	A1	2			0
+seq_crlancerjab	A1	3			0
+seq_crlancerjab	A1	5			0
+seq_crlancerjab	A1	7			0
+seq_crlancerjab	A1	9			0
+seq_crlancerjab	A1	11		1	0
+seq_crlancerjab	A1	9			0
+seq_crlancerjab	A1	7			0
+seq_crlancerjab	A1	9			0
+seq_crlancerjab	A1	11		1	0
+seq_crlancerjab	A1	9			0
+seq_crlancerjab	A1	7			0
+seq_crlancerjab	A1	9			0
+seq_crlancerjab	A1	11		1	0
+seq_crlancerjab	A1	10			0
+seq_crlancerjab	A1	12			0
+seq_crlancerjab	A1	13			0
+seq_crlancerjab	A1	14			0
+seq_crlancerjab	A1	15			0
+seq_crlancerjab	A1	16			0
+seq_crlancerjab	A1	17			0
