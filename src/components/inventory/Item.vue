@@ -41,7 +41,6 @@
 </template>
 
 <script>
-  import { createPopper } from '@popperjs/core';
   import tippy from 'tippy.js';
 
   export default {
@@ -86,6 +85,7 @@
         const countY = Math.ceil(this.item.total_nr_of_sockets / countX)
         let i = 0
         let j = 0
+        let offsetY1 = 0;
         if (this.item.total_nr_of_sockets == 5) {
           // Exception, draw like the 5 of a dice
           if (idx < 3) {
@@ -112,6 +112,14 @@
             }
           }
         }
+
+        // switch(this.item.total_nr_of_sockets ) {
+        //   case 1: offsetY1 = 0; break;
+        //   case 3: offsetY1 = -1; break;
+        //   case 4: offsetY1 = -0.5; break;
+        //   case 5: offsetY1 = -1; break;
+        // }
+
         return {
           transform: `translateX(${cellSize * (((i + 0.5) * this.item.inv_width) / countX - 0.5)}px) 
             translateY(${cellSize * (((j + 0.5) * this.item.inv_height) / countY - 0.5)}px)`,
@@ -120,6 +128,7 @@
         }
       },
       itemName(item) {
+        if (!item.type) return;
         let name = item.type_name;
         if (item.magic_prefix) {
           let magic_prefix_name = constants.magic_prefixes[item.magic_prefix]
