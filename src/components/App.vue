@@ -325,7 +325,7 @@
   // import * as d2s from '@dschu012/d2s';
   // import { constants as constants96 } from '@dschu012/d2s/lib/data/versions/96_constant_data';
   // import { constants as constants99 } from '@dschu012/d2s/lib/data/versions/99_constant_data';
-  import * as d2stash from '@dschu012/d2s/lib/d2/stash';
+  //import * as d2stash from '@dschu012/d2s/lib/d2/stash';
 
   export default {
     components: {
@@ -793,7 +793,7 @@
             });
           } else if (filename.includes("")) {
             this.stashData = null;
-            d2stash.read(bytes).then(response => {
+            d2s.readStash(bytes).then(response => {
               this.stashData = response;
               for (var i = 0; i < this.stashData.pageCount; i++) {
                 [... this.stashData.pages[i].items].forEach(item => { this.setPropertiesOnItem(item)})}
@@ -815,7 +815,7 @@
           let link = document.createElement('a');
           link.style.display = 'none';
           document.body.appendChild(link);
-          d2stash.write(this.stashData).then(function (response) {
+          d2s.writeStash(this.stashData).then(function (response) {
             let blob = new Blob([response], { type: "octet/stream" });
             link.href = window.URL.createObjectURL(blob);
             link.download = 'SharedStashSoftCoreV2.d2i';
