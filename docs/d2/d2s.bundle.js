@@ -683,9 +683,6 @@ function compactAttributes(mods, constants) {
     var modifiers = [];
     for (var _i = 0, mods_1 = mods; _i < mods_1.length; _i++) {
         var mod = mods_1[_i];
-        if (mod.prop.includes("sock")) {
-            continue;
-        }
         var _loop_1 = function (stat) {
             var statId = constants.magical_properties.findIndex(function (e) { return e.s === stat.s; });
             var prop = constants.magical_properties[statId];
@@ -722,11 +719,7 @@ function compactAttributes(mods, constants) {
                         }
                         break;
                     case "other":
-                        param = mod.p
-                            ? prop.s == "item_addskill_tab"
-                                ? SkillTabs_json_1.default[Number(mod.p)].id
-                                : mod.p
-                            : stat.val;
+                        param = mod.p ? (prop.s == "item_addskill_tab" ? SkillTabs_json_1.default[Number(mod.p)].id : mod.p) : stat.val;
                         if (param && prop.s == "item_addskill_tab") {
                             values = [param & 0x7, (param >> 3) & 0x1fff, mod.max];
                         }
@@ -749,7 +742,7 @@ function compactAttributes(mods, constants) {
                     values: values,
                     value: v,
                     param: param,
-                    type: stat.type
+                    type: stat.type,
                 });
             }
         };
@@ -850,9 +843,7 @@ function describeSingleMod(mod, prop, constants) {
                 .replace("%s", "" + ((_b = constants.skills[mod.values[1]]) === null || _b === void 0 ? void 0 : _b.n));
             break;
         case 16: // Level [sLvl] [skill] Aura When Equipped
-            modDesc = modDesc
-                .replace("%d", "" + val)
-                .replace("%s", "" + ((_c = constants.skills[mod.values[0]]) === null || _c === void 0 ? void 0 : _c.n));
+            modDesc = modDesc.replace("%d", "" + val).replace("%s", "" + ((_c = constants.skills[mod.values[0]]) === null || _c === void 0 ? void 0 : _c.n));
             break;
         case 19: //main
             modDesc = formatStr(modDesc, val);
@@ -886,9 +877,7 @@ function describeSingleMod(mod, prop, constants) {
             if (((_f = mod.values) === null || _f === void 0 ? void 0 : _f[0]) !== ((_g = mod.values) === null || _g === void 0 ? void 0 : _g[1])) {
                 modDesc = prop.dN;
             }
-            modDesc = modDesc
-                .replace("%d", "" + ((_h = mod.values) === null || _h === void 0 ? void 0 : _h[0]))
-                .replace("%d", "" + ((_j = mod.values) === null || _j === void 0 ? void 0 : _j[1]));
+            modDesc = modDesc.replace("%d", "" + ((_h = mod.values) === null || _h === void 0 ? void 0 : _h[0])).replace("%d", "" + ((_j = mod.values) === null || _j === void 0 ? void 0 : _j[1]));
             break;
         case 101: // Poison damage
             if (((_k = mod.values) === null || _k === void 0 ? void 0 : _k[0]) === ((_l = mod.values) === null || _l === void 0 ? void 0 : _l[1])) {
@@ -945,9 +934,7 @@ function addModGroups(modifiers, constants) {
             return "continue";
         }
         // Damage increase on non-weapons is awkward, it has all 4 mods that apply in the multiple groups.
-        if (group.s === "group:secondary-dmg" ||
-            group.s === "group:min-dmg" ||
-            group.s === "group:max-dmg") {
+        if (group.s === "group:secondary-dmg" || group.s === "group:min-dmg" || group.s === "group:max-dmg") {
             // We already described the range, ignore these "duplicate" groups
             if (modifiers === null || modifiers === void 0 ? void 0 : modifiers.find(function (mod) { return mod.name === "group:primary-dmg"; })) {
                 // We still have to remember to delete the description from the mods,
@@ -991,13 +978,13 @@ function formatStr(str) {
     }
     var i = 0;
     return str === null || str === void 0 ? void 0 : str.replace(/%(\+)?([ids%\d])/g, function (m, plus, chr) {
-        if (chr === '%') {
+        if (chr === "%") {
             return chr;
         }
         else {
-            var value = (chr === 'd' || chr === 's' || chr === 'i' ? values[i++] : values[chr]);
+            var value = chr === "d" || chr === "s" || chr === "i" ? values[i++] : values[chr];
             if (plus && !isNaN(value) && parseInt(value) > 0)
-                value = '+' + value;
+                value = "+" + value;
             return value;
         }
     });
@@ -1006,8 +993,7 @@ function consolidateMods(mods) {
     var _a, _b;
     var _loop_3 = function (mod) {
         var duplicateIndex = void 0;
-        while ((duplicateIndex = mods.findIndex(function (other) { return mod !== other &&
-            (mod.id === other.id && "value" in mod && mod.param === other.param); })) >= 0) {
+        while ((duplicateIndex = mods.findIndex(function (other) { return mod !== other && mod.id === other.id && "value" in mod && mod.param === other.param; })) >= 0) {
             var duplicate = mods.splice(duplicateIndex, 1)[0];
             mod.value = ((_a = mod.value) !== null && _a !== void 0 ? _a : 0) + ((_b = duplicate.value) !== null && _b !== void 0 ? _b : 0);
         }
@@ -4471,7 +4457,6 @@ function _readItems(tsv, itemtypes, strings) {
             else {
                 item.gemsockets = 0;
             }
-            ;
             if (tsv.lines[i][cSpawnable])
                 item.spawnable = +tsv.lines[i][cSpawnable];
             if (tsv.lines[i][cOneOrTwoHadned])
@@ -4588,9 +4573,7 @@ function _readSetOrUnqItems(tsv, strings, skills) {
                 m.prop = mod;
                 var param = Number(+tsv.lines[i][modifiers[j].cParam]);
                 if (Number.isNaN(param)) {
-                    param = (_a = skills
-                        .filter(function (s) { return s && s.s; })
-                        .find(function (s) { return s.s == tsv.lines[i][modifiers[j].cParam]; })) === null || _a === void 0 ? void 0 : _a.id;
+                    param = (_a = skills.filter(function (s) { return s && s.s; }).find(function (s) { return s.s == tsv.lines[i][modifiers[j].cParam]; })) === null || _a === void 0 ? void 0 : _a.id;
                 }
                 if (tsv.lines[i][modifiers[j].cParam])
                     m.p = param;
