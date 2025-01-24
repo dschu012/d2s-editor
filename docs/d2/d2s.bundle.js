@@ -427,7 +427,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.compactAttributes = exports.enhanceItem = exports.enhanceItems = exports.enhancePlayerAttributes = exports.enhanceAttributes = void 0;
+exports.generateFixedMods = exports.enhanceItems = exports.enhancePlayerAttributes = exports.enhanceAttributes = void 0;
 var types = __importStar(__webpack_require__(/*! ./types */ "./src/d2/types.ts"));
 var ItemStatGroups_json_1 = __importDefault(__webpack_require__(/*! ../data/ItemStatGroups.json */ "./src/data/ItemStatGroups.json"));
 var SkillTabs_json_1 = __importDefault(__webpack_require__(/*! ../data/SkillTabs.json */ "./src/data/SkillTabs.json"));
@@ -436,20 +436,20 @@ var SkillTabs_json_1 = __importDefault(__webpack_require__(/*! ../data/SkillTabs
 //enhanced def/durability/weapon damage.
 //lookup socketed compact items (runes/gems) properties for the slot they are in
 //compute attributes like str/resists/etc..
-function enhanceAttributes(char, constants, config) {
+function enhanceAttributes(char, constants) {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
-            enhanceItems(char.items, constants, char.attributes.level, config);
-            enhanceItems([char.golem_item], constants, char.attributes.level, config);
-            enhanceItems(char.merc_items, constants, char.attributes.level, config);
-            enhanceItems(char.corpse_items, constants, char.attributes.level, config);
-            enhancePlayerAttributes(char, constants, config);
+            enhanceItems(char.items, constants);
+            enhanceItems([char.golem_item], constants);
+            enhanceItems(char.merc_items, constants);
+            enhanceItems(char.corpse_items, constants);
+            enhancePlayerAttributes(char, constants);
             return [2 /*return*/];
         });
     });
 }
 exports.enhanceAttributes = enhanceAttributes;
-function enhancePlayerAttributes(char, constants, config) {
+function enhancePlayerAttributes(char, constants) {
     return __awaiter(this, void 0, void 0, function () {
         var items;
         return __generator(this, function (_a) {
@@ -457,17 +457,16 @@ function enhancePlayerAttributes(char, constants, config) {
                 return item.location_id === 1 && item.equipped_id !== 13 && item.equipped_id !== 14;
             });
             char.item_bonuses = [].concat
-                .apply([], items.map(function (item) { return _allAttributes(item, constants); }))
+                .apply([], items.map(function (item) { return allAttributes(item, constants); }))
                 .filter(function (attribute) { return attribute != null; });
             //char.item_bonuses = _groupAttributes(char.item_bonuses, constants);
-            _enhanceAttributeDescription(char.item_bonuses, constants, char.attributes.level, config);
+            describeMods(char.item_bonuses, constants);
             return [2 /*return*/];
         });
     });
 }
 exports.enhancePlayerAttributes = enhancePlayerAttributes;
-function enhanceItems(items, constants, level, config, parent) {
-    if (level === void 0) { level = 1; }
+function enhanceItems(items, constants) {
     return __awaiter(this, void 0, void 0, function () {
         var _i, items_1, item;
         return __generator(this, function (_a) {
@@ -479,27 +478,35 @@ function enhanceItems(items, constants, level, config, parent) {
                 if (!item) {
                     continue;
                 }
-                if (item.socketed_items && item.socketed_items.length) {
-                    enhanceItems(item.socketed_items, constants, level, config, item);
-                }
-                enhanceItem(item, constants, level, config, parent);
+                postProcessItem(item, constants);
             }
             return [2 /*return*/];
         });
     });
 }
 exports.enhanceItems = enhanceItems;
-function enhanceItem(item, constants, level, config, parent) {
-    var _a, _b, _c, _d;
-    if (level === void 0) { level = 1; }
-    if (parent) {
-        //socket item.
-        var pt = constants.armor_items[parent.type] || constants.weapon_items[parent.type] || constants.other_items[item.type];
-        var t = constants.other_items[item.type];
-        if (t.m) {
-            item.magic_attributes = compactAttributes(t.m[pt.gt], constants);
+function postProcessItem(item, constants) {
+    if (item.socketed_items && item.socketed_items.length) {
+        for (var _i = 0, _a = item.socketed_items; _i < _a.length; _i++) {
+            var socketed = _a[_i];
+            var pt = constants.armor_items[item.type] || constants.weapon_items[item.type] || constants.other_items[socketed.type];
+            var gem = constants.other_items[socketed.type];
+            if (gem.m) {
+                socketed.magic_attributes = generateFixedMods(gem.m[pt.gt], constants);
+                enhanceItem(socketed, constants);
+            }
         }
     }
+    enhanceItem(item, constants);
+    if (item.magic_attributes || item.runeword_attributes || item.socketed_items) {
+        item.displayed_magic_attributes = describeMods(item.magic_attributes, constants);
+        item.displayed_runeword_attributes = describeMods(item.runeword_attributes, constants);
+        item.combined_magic_attributes = allAttributes(item, constants);
+        item.displayed_combined_magic_attributes = describeMods(item.combined_magic_attributes, constants);
+    }
+}
+function enhanceItem(item, constants) {
+    var _a, _b, _c, _d;
     item.level = boundValue(item.level, 1, 99);
     // Ensure coherence of other attributes with quality
     if (item.given_runeword) {
@@ -670,15 +677,8 @@ function enhanceItem(item, constants, level, config, parent) {
                 item.transform_color = set.tc;
         }
     }
-    if (item.magic_attributes || item.runeword_attributes || item.socketed_items) {
-        item.displayed_magic_attributes = _enhanceAttributeDescription(item.magic_attributes, constants, level, config);
-        item.displayed_runeword_attributes = _enhanceAttributeDescription(item.runeword_attributes, constants, level, config);
-        item.combined_magic_attributes = _allAttributes(item, constants);
-        item.displayed_combined_magic_attributes = _enhanceAttributeDescription(item.combined_magic_attributes, constants, level, config);
-    }
 }
-exports.enhanceItem = enhanceItem;
-function compactAttributes(mods, constants) {
+function generateFixedMods(mods, constants) {
     var _a;
     var modifiers = [];
     for (var _i = 0, mods_1 = mods; _i < mods_1.length; _i++) {
@@ -719,11 +719,7 @@ function compactAttributes(mods, constants) {
                         }
                         break;
                     case "other":
-                        param = mod.p
-                            ? prop.s == "item_addskill_tab"
-                                ? SkillTabs_json_1.default[Number(mod.p)].id
-                                : mod.p
-                            : stat.val;
+                        param = mod.p ? (prop.s == "item_addskill_tab" ? SkillTabs_json_1.default[Number(mod.p)].id : mod.p) : stat.val;
                         if (param && prop.s == "item_addskill_tab") {
                             values = [param & 0x7, (param >> 3) & 0x1fff, mod.max];
                         }
@@ -746,7 +742,7 @@ function compactAttributes(mods, constants) {
                     values: values,
                     value: v,
                     param: param,
-                    type: stat.type
+                    type: stat.type,
                 });
             }
         };
@@ -757,13 +753,12 @@ function compactAttributes(mods, constants) {
     }
     return modifiers;
 }
-exports.compactAttributes = compactAttributes;
-function _enhanceAttributeDescription(_magic_attributes, constants, level, config) {
+exports.generateFixedMods = generateFixedMods;
+function describeMods(magic_attributes, constants) {
     var _a;
-    if (level === void 0) { level = 1; }
-    if (!_magic_attributes)
+    if (!magic_attributes)
         return [];
-    var mods = __spreadArrays(_magic_attributes.map(function (attr) { return (__assign({}, attr)); }));
+    var mods = __spreadArrays(magic_attributes.map(function (attr) { return (__assign({}, attr)); }));
     for (var _i = 0, mods_2 = mods; _i < mods_2.length; _i++) {
         var mod = mods_2[_i];
         var prop = constants.magical_properties[mod.id];
@@ -779,9 +774,7 @@ function _enhanceAttributeDescription(_magic_attributes, constants, level, confi
         mod.description = describeSingleMod(mod, prop, constants);
     }
     addModGroups(mods, constants);
-    if (config === null || config === void 0 ? void 0 : config.sortProperties) {
-        mods.sort(function (a, b) { var _a, _b; return ((_a = constants.magical_properties[b.id]) === null || _a === void 0 ? void 0 : _a.so) - ((_b = constants.magical_properties[a.id]) === null || _b === void 0 ? void 0 : _b.so); });
-    }
+    mods.sort(function (a, b) { var _a, _b; return ((_a = constants.magical_properties[b.id]) === null || _a === void 0 ? void 0 : _a.so) - ((_b = constants.magical_properties[a.id]) === null || _b === void 0 ? void 0 : _b.so); });
     return mods;
 }
 function describeSingleMod(mod, prop, constants) {
@@ -847,9 +840,7 @@ function describeSingleMod(mod, prop, constants) {
                 .replace("%s", "" + ((_b = constants.skills[mod.values[1]]) === null || _b === void 0 ? void 0 : _b.n));
             break;
         case 16: // Level [sLvl] [skill] Aura When Equipped
-            modDesc = modDesc
-                .replace("%d", "" + val)
-                .replace("%s", "" + ((_c = constants.skills[mod.values[0]]) === null || _c === void 0 ? void 0 : _c.n));
+            modDesc = modDesc.replace("%d", "" + val).replace("%s", "" + ((_c = constants.skills[mod.values[0]]) === null || _c === void 0 ? void 0 : _c.n));
             break;
         case 19: //main
             modDesc = formatStr(modDesc, val);
@@ -883,9 +874,7 @@ function describeSingleMod(mod, prop, constants) {
             if (((_f = mod.values) === null || _f === void 0 ? void 0 : _f[0]) !== ((_g = mod.values) === null || _g === void 0 ? void 0 : _g[1])) {
                 modDesc = prop.dN;
             }
-            modDesc = modDesc
-                .replace("%d", "" + ((_h = mod.values) === null || _h === void 0 ? void 0 : _h[0]))
-                .replace("%d", "" + ((_j = mod.values) === null || _j === void 0 ? void 0 : _j[1]));
+            modDesc = modDesc.replace("%d", "" + ((_h = mod.values) === null || _h === void 0 ? void 0 : _h[0])).replace("%d", "" + ((_j = mod.values) === null || _j === void 0 ? void 0 : _j[1]));
             break;
         case 101: // Poison damage
             if (((_k = mod.values) === null || _k === void 0 ? void 0 : _k[0]) === ((_l = mod.values) === null || _l === void 0 ? void 0 : _l[1])) {
@@ -942,9 +931,7 @@ function addModGroups(modifiers, constants) {
             return "continue";
         }
         // Damage increase on non-weapons is awkward, it has all 4 mods that apply in the multiple groups.
-        if (group.s === "group:secondary-dmg" ||
-            group.s === "group:min-dmg" ||
-            group.s === "group:max-dmg") {
+        if (group.s === "group:secondary-dmg" || group.s === "group:min-dmg" || group.s === "group:max-dmg") {
             // We already described the range, ignore these "duplicate" groups
             if (modifiers === null || modifiers === void 0 ? void 0 : modifiers.find(function (mod) { return mod.name === "group:primary-dmg"; })) {
                 // We still have to remember to delete the description from the mods,
@@ -988,13 +975,13 @@ function formatStr(str) {
     }
     var i = 0;
     return str === null || str === void 0 ? void 0 : str.replace(/%(\+)?([ids%\d])/g, function (m, plus, chr) {
-        if (chr === '%') {
+        if (chr === "%") {
             return chr;
         }
         else {
-            var value = (chr === 'd' || chr === 's' || chr === 'i' ? values[i++] : values[chr]);
+            var value = chr === "d" || chr === "s" || chr === "i" ? values[i++] : values[chr];
             if (plus && !isNaN(value) && parseInt(value) > 0)
-                value = '+' + value;
+                value = "+" + value;
             return value;
         }
     });
@@ -1003,8 +990,7 @@ function consolidateMods(mods) {
     var _a, _b;
     var _loop_3 = function (mod) {
         var duplicateIndex = void 0;
-        while ((duplicateIndex = mods.findIndex(function (other) { return mod !== other &&
-            (mod.id === other.id && "value" in mod && mod.param === other.param); })) >= 0) {
+        while ((duplicateIndex = mods.findIndex(function (other) { return mod !== other && mod.id === other.id && "value" in mod && mod.param === other.param; })) >= 0) {
             var duplicate = mods.splice(duplicateIndex, 1)[0];
             mod.value = ((_a = mod.value) !== null && _a !== void 0 ? _a : 0) + ((_b = duplicate.value) !== null && _b !== void 0 ? _b : 0);
         }
@@ -1023,7 +1009,7 @@ function _itemStatCostFromStat(stat, constants) {
 function _classFromCode(code, constants) {
     return constants.classes.filter(function (e) { return e.c === code; })[0];
 }
-function _allAttributes(item, constants) {
+function allAttributes(item, constants) {
     var socketed_attributes = [];
     if (item.socketed_items) {
         for (var _i = 0, _a = item.socketed_items; _i < _a.length; _i++) {
@@ -1035,6 +1021,7 @@ function _allAttributes(item, constants) {
     }
     var magic_attributes = item.magic_attributes || [];
     var runeword_attributes = item.runeword_attributes || [];
+    //const set_attributes = item.set_attributes || [];
     return __spreadArrays([], JSON.parse(JSON.stringify(magic_attributes)), JSON.parse(JSON.stringify(runeword_attributes)), JSON.parse(JSON.stringify(socketed_attributes))).filter(function (attribute) { return attribute != null; });
 }
 
@@ -1346,7 +1333,7 @@ function read(buffer, constants, userConfig) {
                 case 8:
                     _a.sent();
                     _a.label = 9;
-                case 9: return [4 /*yield*/, attribute_enhancer_1.enhanceAttributes(char, constants, config)];
+                case 9: return [4 /*yield*/, attribute_enhancer_1.enhanceAttributes(char, constants)];
                 case 10:
                     _a.sent();
                     return [2 /*return*/, char];
@@ -2686,6 +2673,382 @@ var SkillOffset = {
     Druid: 221,
     Assassin: 251,
 };
+
+
+/***/ }),
+
+/***/ "./src/d2/stash.ts":
+/*!*************************!*\
+  !*** ./src/d2/stash.ts ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.writeStash = exports.readStash = void 0;
+var types = __importStar(__webpack_require__(/*! ./types */ "./src/d2/types.ts"));
+var bitwriter_1 = __webpack_require__(/*! ../binary/bitwriter */ "./src/binary/bitwriter.ts");
+var items = __importStar(__webpack_require__(/*! ./items */ "./src/d2/items.ts"));
+var attribute_enhancer_1 = __webpack_require__(/*! ./attribute_enhancer */ "./src/d2/attribute_enhancer.ts");
+var bitreader_1 = __webpack_require__(/*! ../binary/bitreader */ "./src/binary/bitreader.ts");
+var constants_1 = __webpack_require__(/*! ./constants */ "./src/d2/constants.ts");
+var defaultConfig = {
+    extendedStash: false,
+};
+function readStash(buffer, constants, version, userConfig) {
+    return __awaiter(this, void 0, void 0, function () {
+        var stash, reader, config, firstHeader, pageCount, saveVersion, saveVersion;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    stash = {};
+                    reader = new bitreader_1.BitReader(buffer);
+                    config = Object.assign(defaultConfig, userConfig);
+                    firstHeader = reader.ReadUInt32();
+                    reader.SeekByte(0);
+                    if (!(firstHeader == 0xaa55aa55)) return [3 /*break*/, 5];
+                    stash.pages = [];
+                    pageCount = 0;
+                    _a.label = 1;
+                case 1:
+                    if (!(reader.offset < reader.bits.length)) return [3 /*break*/, 4];
+                    pageCount++;
+                    return [4 /*yield*/, readStashHeader(stash, reader)];
+                case 2:
+                    _a.sent();
+                    saveVersion = version || parseInt(stash.version);
+                    if (!constants) {
+                        constants = constants_1.getConstantData(saveVersion);
+                    }
+                    return [4 /*yield*/, readStashPart(stash, reader, saveVersion, constants)];
+                case 3:
+                    _a.sent();
+                    return [3 /*break*/, 1];
+                case 4:
+                    stash.pageCount = pageCount;
+                    return [3 /*break*/, 8];
+                case 5: return [4 /*yield*/, readStashHeader(stash, reader)];
+                case 6:
+                    _a.sent();
+                    saveVersion = version || parseInt(stash.version);
+                    if (!constants) {
+                        constants = constants_1.getConstantData(saveVersion);
+                    }
+                    return [4 /*yield*/, readStashPages(stash, reader, saveVersion, constants)];
+                case 7:
+                    _a.sent();
+                    _a.label = 8;
+                case 8: return [2 /*return*/, stash];
+            }
+        });
+    });
+}
+exports.readStash = readStash;
+function readStashHeader(stash, reader) {
+    return __awaiter(this, void 0, void 0, function () {
+        var header;
+        return __generator(this, function (_a) {
+            header = reader.ReadUInt32();
+            switch (header) {
+                // Resurrected
+                case 0xaa55aa55:
+                    stash.type = types.EStashType.shared;
+                    stash.hardcore = reader.ReadUInt32() == 0;
+                    stash.version = reader.ReadUInt32().toString();
+                    stash.sharedGold = reader.ReadUInt32();
+                    reader.ReadUInt32(); // size of the sector
+                    reader.SkipBytes(44); // empty
+                    break;
+                // LoD
+                case 0x535353: // SSS
+                case 0x4d545343: // CSTM
+                    stash.version = reader.ReadString(2);
+                    if (stash.version !== "01" && stash.version !== "02") {
+                        throw new Error("unkown stash version " + stash.version + " at position " + (reader.offset - 2 * 8));
+                    }
+                    stash.type = header === 0x535353 ? types.EStashType.shared : types.EStashType.private;
+                    if (stash.type === types.EStashType.shared && stash.version == "02") {
+                        stash.sharedGold = reader.ReadUInt32();
+                    }
+                    if (stash.type === types.EStashType.private) {
+                        reader.ReadUInt32();
+                        stash.sharedGold = 0;
+                    }
+                    stash.pageCount = reader.ReadUInt32();
+                    break;
+                default:
+                    debugger;
+                    throw new Error("shared stash header 'SSS' / 0xAA55AA55 / private stash header 'CSTM' not found at position " + (reader.offset - 3 * 8));
+            }
+            return [2 /*return*/];
+        });
+    });
+}
+function readStashPages(stash, reader, version, constants) {
+    return __awaiter(this, void 0, void 0, function () {
+        var i;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    stash.pages = [];
+                    i = 0;
+                    _a.label = 1;
+                case 1:
+                    if (!(i < stash.pageCount)) return [3 /*break*/, 4];
+                    return [4 /*yield*/, readStashPage(stash, reader, version, constants)];
+                case 2:
+                    _a.sent();
+                    _a.label = 3;
+                case 3:
+                    i++;
+                    return [3 /*break*/, 1];
+                case 4: return [2 /*return*/];
+            }
+        });
+    });
+}
+function readStashPage(stash, reader, version, constants) {
+    return __awaiter(this, void 0, void 0, function () {
+        var page, header, _a;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
+                case 0:
+                    page = {
+                        items: [],
+                        name: "",
+                        type: 0,
+                    };
+                    header = reader.ReadString(2);
+                    if (header !== "ST") {
+                        throw new Error("can not read stash page header ST at position " + (reader.offset - 2 * 8));
+                    }
+                    page.type = reader.ReadUInt32();
+                    page.name = reader.ReadNullTerminatedString();
+                    _a = page;
+                    return [4 /*yield*/, items.readItems(reader, version, constants, defaultConfig)];
+                case 1:
+                    _a.items = _b.sent();
+                    attribute_enhancer_1.enhanceItems(page.items, constants);
+                    stash.pages.push(page);
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
+function readStashPart(stash, reader, version, constants) {
+    return __awaiter(this, void 0, void 0, function () {
+        var page, _a;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
+                case 0:
+                    page = {
+                        items: [],
+                        name: "",
+                        type: 0,
+                    };
+                    _a = page;
+                    return [4 /*yield*/, items.readItems(reader, version, constants, defaultConfig)];
+                case 1:
+                    _a.items = _b.sent();
+                    attribute_enhancer_1.enhanceItems(page.items, constants);
+                    stash.pages.push(page);
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
+function writeStash(data, constants, version, userConfig) {
+    return __awaiter(this, void 0, void 0, function () {
+        var config, writer, _i, _a, page, _b, _c, _d, _e, _f, _g;
+        return __generator(this, function (_h) {
+            switch (_h.label) {
+                case 0:
+                    config = Object.assign(defaultConfig, userConfig);
+                    writer = new bitwriter_1.BitWriter();
+                    if (!constants) {
+                        constants = constants_1.getConstantData(version);
+                    }
+                    if (!(version > 0x61)) return [3 /*break*/, 5];
+                    _i = 0, _a = data.pages;
+                    _h.label = 1;
+                case 1:
+                    if (!(_i < _a.length)) return [3 /*break*/, 4];
+                    page = _a[_i];
+                    _c = (_b = writer).WriteArray;
+                    return [4 /*yield*/, writeStashSection(data, page, constants, config)];
+                case 2:
+                    _c.apply(_b, [_h.sent()]);
+                    _h.label = 3;
+                case 3:
+                    _i++;
+                    return [3 /*break*/, 1];
+                case 4: return [3 /*break*/, 8];
+                case 5:
+                    _e = (_d = writer).WriteArray;
+                    return [4 /*yield*/, writeStashHeader(data)];
+                case 6:
+                    _e.apply(_d, [_h.sent()]);
+                    _g = (_f = writer).WriteArray;
+                    return [4 /*yield*/, writeStashPages(data, version, constants, config)];
+                case 7:
+                    _g.apply(_f, [_h.sent()]);
+                    _h.label = 8;
+                case 8: return [2 /*return*/, writer.ToArray()];
+            }
+        });
+    });
+}
+exports.writeStash = writeStash;
+function writeStashHeader(data) {
+    return __awaiter(this, void 0, void 0, function () {
+        var writer;
+        return __generator(this, function (_a) {
+            writer = new bitwriter_1.BitWriter();
+            if (data.type === types.EStashType.private) {
+                writer.WriteString("CSTM", 4);
+            }
+            else {
+                writer.WriteString("SSS", 4);
+            }
+            writer.WriteString(data.version, data.version.length);
+            if (data.type === types.EStashType.private) {
+                writer.WriteString("", 4);
+            }
+            else {
+                if (data.version == "02") {
+                    writer.WriteUInt32(data.sharedGold);
+                }
+            }
+            writer.WriteUInt32(data.pages.length);
+            return [2 /*return*/, writer.ToArray()];
+        });
+    });
+}
+function writeStashSection(data, page, constants, userConfig) {
+    return __awaiter(this, void 0, void 0, function () {
+        var writer, _a, _b, size;
+        return __generator(this, function (_c) {
+            switch (_c.label) {
+                case 0:
+                    writer = new bitwriter_1.BitWriter();
+                    writer.WriteUInt32(0xaa55aa55);
+                    writer.WriteUInt32(data.hardcore ? 0 : 1);
+                    writer.WriteUInt32(0x62);
+                    writer.WriteUInt32(data.sharedGold);
+                    writer.WriteUInt32(0); // size of the sector, to be fixed later
+                    writer.WriteBytes(new Uint8Array(44).fill(0)); // empty
+                    _b = (_a = writer).WriteArray;
+                    return [4 /*yield*/, items.writeItems(page.items, 0x62, constants, userConfig)];
+                case 1:
+                    _b.apply(_a, [_c.sent()]);
+                    size = writer.offset;
+                    writer.SeekByte(16);
+                    writer.WriteUInt32(Math.ceil(size / 8));
+                    return [2 /*return*/, writer.ToArray()];
+            }
+        });
+    });
+}
+function writeStashPages(data, version, constants, config) {
+    return __awaiter(this, void 0, void 0, function () {
+        var writer, i, _a, _b;
+        return __generator(this, function (_c) {
+            switch (_c.label) {
+                case 0:
+                    writer = new bitwriter_1.BitWriter();
+                    i = 0;
+                    _c.label = 1;
+                case 1:
+                    if (!(i < data.pages.length)) return [3 /*break*/, 4];
+                    _b = (_a = writer).WriteArray;
+                    return [4 /*yield*/, writeStashPage(data.pages[i], version, constants, config)];
+                case 2:
+                    _b.apply(_a, [_c.sent()]);
+                    _c.label = 3;
+                case 3:
+                    i++;
+                    return [3 /*break*/, 1];
+                case 4: return [2 /*return*/, writer.ToArray()];
+            }
+        });
+    });
+}
+function writeStashPage(data, version, constants, config) {
+    return __awaiter(this, void 0, void 0, function () {
+        var writer, _a, _b;
+        return __generator(this, function (_c) {
+            switch (_c.label) {
+                case 0:
+                    writer = new bitwriter_1.BitWriter();
+                    writer.WriteString("ST", 2);
+                    writer.WriteUInt32(data.type);
+                    writer.WriteString(data.name, data.name.length + 1);
+                    _b = (_a = writer).WriteArray;
+                    return [4 /*yield*/, items.writeItems(data.items, version, constants, config)];
+                case 1:
+                    _b.apply(_a, [_c.sent()]);
+                    return [2 /*return*/, writer.ToArray()];
+            }
+        });
+    });
+}
 
 
 /***/ }),
@@ -4092,7 +4455,6 @@ function _readItems(tsv, itemtypes, strings) {
             else {
                 item.gemsockets = 0;
             }
-            ;
             if (tsv.lines[i][cSpawnable])
                 item.spawnable = +tsv.lines[i][cSpawnable];
             if (tsv.lines[i][cOneOrTwoHadned])
@@ -4209,9 +4571,7 @@ function _readSetOrUnqItems(tsv, strings, skills) {
                 m.prop = mod;
                 var param = Number(+tsv.lines[i][modifiers[j].cParam]);
                 if (Number.isNaN(param)) {
-                    param = (_a = skills
-                        .filter(function (s) { return s && s.s; })
-                        .find(function (s) { return s.s == tsv.lines[i][modifiers[j].cParam]; })) === null || _a === void 0 ? void 0 : _a.id;
+                    param = (_a = skills.filter(function (s) { return s && s.s; }).find(function (s) { return s.s == tsv.lines[i][modifiers[j].cParam]; })) === null || _a === void 0 ? void 0 : _a.id;
                 }
                 if (tsv.lines[i][modifiers[j].cParam])
                     m.p = param;
@@ -4395,14 +4755,16 @@ Object.defineProperty(exports, "writeSkills", { enumerable: true, get: function 
 var attribute_enhancer_1 = __webpack_require__(/*! ./d2/attribute_enhancer */ "./src/d2/attribute_enhancer.ts");
 Object.defineProperty(exports, "enhanceAttributes", { enumerable: true, get: function () { return attribute_enhancer_1.enhanceAttributes; } });
 Object.defineProperty(exports, "enhanceItems", { enumerable: true, get: function () { return attribute_enhancer_1.enhanceItems; } });
-Object.defineProperty(exports, "enhanceItem", { enumerable: true, get: function () { return attribute_enhancer_1.enhanceItem; } });
 Object.defineProperty(exports, "enhancePlayerAttributes", { enumerable: true, get: function () { return attribute_enhancer_1.enhancePlayerAttributes; } });
-Object.defineProperty(exports, "compactAttributes", { enumerable: true, get: function () { return attribute_enhancer_1.compactAttributes; } });
+Object.defineProperty(exports, "generateFixedMods", { enumerable: true, get: function () { return attribute_enhancer_1.generateFixedMods; } });
 var constants_1 = __webpack_require__(/*! ./d2/constants */ "./src/d2/constants.ts");
 Object.defineProperty(exports, "getConstantData", { enumerable: true, get: function () { return constants_1.getConstantData; } });
 Object.defineProperty(exports, "setConstantData", { enumerable: true, get: function () { return constants_1.setConstantData; } });
 __exportStar(__webpack_require__(/*! ./data/parser */ "./src/data/parser.ts"), exports);
 exports.types = __importStar(__webpack_require__(/*! ./d2/types */ "./src/d2/types.ts"));
+var stash_1 = __webpack_require__(/*! ./d2/stash */ "./src/d2/stash.ts");
+Object.defineProperty(exports, "readStash", { enumerable: true, get: function () { return stash_1.readStash; } });
+Object.defineProperty(exports, "writeStash", { enumerable: true, get: function () { return stash_1.writeStash; } });
 
 
 /***/ })

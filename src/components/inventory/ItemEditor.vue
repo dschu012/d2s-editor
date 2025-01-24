@@ -20,60 +20,56 @@
         <span v-if="!item.simple_item">
           <li>
             <label>Item Level:</label>
-            <input class="edit-box" type="number" v-model.number="item.level" min="1" max="99" @input="onEvent('update')"/>
+            <input class="edit-box" type="number" v-model.number="item.level" min="1" max="99"
+              @input="onEvent('update')" />
           </li>
           <li>
             <label>Quality:</label>
-            <multiselect v-model.number="item.quality" :options="rarities_options" :searchable="true" :canDeselect="false" :canClear="false" :required="true" @update:model-value="onEvent('update')"/>
+            <multiselect v-model.number="item.quality" :options="rarities_options" :searchable="true"
+              :canDeselect="false" :canClear="false" :required="true" @update:model-value="onEvent('update')" />
           </li>
           <li v-if="item.quality == 4">
-              <label>Prefix:</label>
-              <multiselect v-model.number="item.magic_prefix" :options="magic_prefixes_options" :searchable="true" :canDeselect="false" :canClear="false" :required="true" @update:model-value="onEvent('update')"/>
-              <label>Suffix:</label>
-              <multiselect v-model.number="item.magic_suffix" :options="magic_suffixes_options" :searchable="true" :canDeselect="false" :canClear="false" :required="true" @update:model-value="onEvent('update')"/>
+            <label>Prefix:</label>
+            <multiselect v-model.number="item.magic_prefix" :options="magic_prefixes_options" :searchable="true"
+              :canDeselect="false" :canClear="false" :required="true" @update:model-value="onEvent('update')" />
+            <label>Suffix:</label>
+            <multiselect v-model.number="item.magic_suffix" :options="magic_suffixes_options" :searchable="true"
+              :canDeselect="false" :canClear="false" :required="true" @update:model-value="onEvent('update')" />
           </li>
           <li v-if="item.quality == 6 || item.quality == 8">
-              <label>Prefix:</label>
-              <multiselect v-model.number="item.rare_name_id" :options="rare_names_options" :searchable="true" :canDeselect="false" :canClear="false" :required="true" @update:model-value="onEvent('update')"/>
-              <label>Suffix:</label>
-              <multiselect v-model.number="item.rare_name_id2" :options="rare_names_options" :searchable="true" :canDeselect="false" :canClear="false" :required="true" @update:model-value="onEvent('update')"/>
-          </li>
-          <li v-if="item.quality == 5">
-
-              <label>Set Name:</label>
-              <multiselect v-model.number="item.set_id" :options="set_items_options" :searchable="true" :canDeselect="false" :canClear="false" :required="true" @update:model-value="onEvent('update')"/>
-
+            <label>Prefix:</label>
+            <multiselect v-model.number="item.rare_name_id" :options="rare_names_options" :searchable="true"
+              :canDeselect="false" :canClear="false" :required="true" @update:model-value="onEvent('update')" />
+            <label>Suffix:</label>
+            <multiselect v-model.number="item.rare_name_id2" :options="rare_names_options" :searchable="true"
+              :canDeselect="false" :canClear="false" :required="true" @update:model-value="onEvent('update')" />
           </li>
         </span>
 
         <li v-if="!item.simple_item">
-
-           <label> Base:</label>
-              <multiselect v-model="item.type" :options="getBasesOptions(item.type)" :searchable="true" :can-deselect="false" :can-clear="false" :required="true" @update:model-value="onEvent('update')" />
-
+          <label> Base:</label>
+          <multiselect v-model="item.type" :options="getBasesOptions(item.type)" :searchable="true"
+            :can-deselect="false" :can-clear="false" :required="true" @update:model-value="onEvent('update')" />
         </li>
-        <li  v-if="item.defense_rating">
-
-            <label>Defense:</label>
-            <input class="edit-box" type="number" v-model.number="item.defense_rating" min="1" max="999" @input="onEvent('update')"/>
-
+        <li v-if="item.defense_rating">
+          <label>Defense:</label>
+          <input class="edit-box" type="number" v-model.number="item.defense_rating" min="1" max="999"
+            @input="onEvent('update')" />
         </li>
         <li v-if="getItemMaxSockets() > 0 && !item.given_runeword">
           <!-- <div>{{getItemMaxSockets()}}</div> -->
-
-            <label>Sockets:</label>
-            <input class="edit-box" type="number" v-model.number="item.total_nr_of_sockets" min="0" :max="getItemMaxSockets()" @input="onEvent('update')"/>
-
+          <label>Sockets:</label>
+          <input class="edit-box" type="number" v-model.number="item.total_nr_of_sockets" min="0"
+            :max="getItemMaxSockets()" @input="onEvent('update')" />
         </li>
-        <li  v-if="itemCanEthereal(item.type)">
-
-            <div class="form-check form-check-inline">
-              <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" v-model.number="item.ethereal" :true-value="1" :false-value="0" @change="onEvent('update')">
-                Ethereal
-              </label>
-            </div>
-
+        <li v-if="itemCanEthereal(item.type)">
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" v-model.number="item.ethereal" :true-value="1"
+                :false-value="0" @change="onEvent('update')">
+              Ethereal
+            </label>
+          </div>
         </li>
       </ul>
     </div>
@@ -81,21 +77,27 @@
     <div v-if="!item.simple_item" class="item-stats">
       <div v-if="item.magic_attributes" class="item-magic-stats">
         <div>Item Stats</div>
-        <ItemStatsEditor :id="id + 'Magic'" v-model:item-stats="item.magic_attributes" @stat-change="onEvent('update')"/>
+        <ItemStatsEditor :id="id + 'Magic'" v-model:item-stats="item.magic_attributes"
+          @stat-change="onEvent('update')" />
       </div>
       <div v-if="item.runeword_attributes" class="item-runeword-stats">
         <div>Runeword Stats</div>
-        <ItemStatsEditor :id="id + 'Runeword'" v-model:item-stats="item.runeword_attributes" @stat-change="onEvent('update')"/>
+        <ItemStatsEditor :id="id + 'Runeword'" v-model:item-stats="item.runeword_attributes"
+          @stat-change="onEvent('update')" />
       </div>
+      <!-- 
       <div v-if="item.set_attributes" class="item-set-stats">
+        <div>Set Stats</div>
         <div v-for="(set_attribute, idx) in item.set_attributes">
-          <div>Set Stats {{idx}}</div>
-          <ItemStatsEditor :id="id + 'Set' + idx" v-model:item-stats="item.set_attributes[idx]" @stat-change="onEvent('update')"/>
+          <ItemStatsEditor :id="id + 'Set'" v-model:item-stats="item.set_attributes[idx]"
+            @stat-change="onEvent('update')" />
         </div>
-      </div>
+      </div> 
+      -->
       <div v-if="item.socketed_items" class="item-socketed-stats">
         <div>Sockets Stats</div>
-        <ItemStatsEditor :id="id + 'Socketed stats'" v-model:item-stats.sync="item.socketed_attributes" @stat-change="onEvent('update')"/>
+        <ItemStatsEditor :id="id + 'Socketed stats'" v-model:item-stats.sync="item.socketed_attributes"
+          @stat-change="onEvent('update')" />
       </div>
       <!--
       <div v-if="item.socketed_items">

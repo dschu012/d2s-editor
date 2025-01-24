@@ -353,7 +353,7 @@ ul {
 }
 
 .d2p-slot-head {
-  /* Такой себе фикс положения камней для шапки */
+  /* fix */
   .sockets{
     translate: 0 -78px;
   }
@@ -422,7 +422,7 @@ ul {
   left: calc((var(--grid-size) * 5) - (var(--grid-size) * 4.5));
 }
 
-.mercenary-right-hand{
+.mercenary-left-hand{
   position: absolute;
   top: calc(var(--grid-size) * 1.75);
   left: calc((var(--grid-size) * 7.625));
@@ -436,7 +436,7 @@ ul {
   left: calc((var(--grid-size) * 5) + (var(--grid-size) * 2.5));
 }
 
-.mercenary-left-hand{
+.mercenary-right-hand{
   position: absolute;
   top: calc(var(--grid-size) * 1.75);
   left: calc((var(--grid-size) * .5));
