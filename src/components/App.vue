@@ -325,7 +325,7 @@
   // import * as d2s from '@dschu012/d2s';
   // import { constants as constants96 } from '@dschu012/d2s/lib/data/versions/96_constant_data';
   // import { constants as constants99 } from '@dschu012/d2s/lib/data/versions/99_constant_data';
-  //import * as d2stash from '@dschu012/d2s/lib/d2/stash';
+  import * as d2stash from '@dschu012/d2s/lib/d2/stash';
 
   export default {
     components: {
@@ -793,7 +793,7 @@
             });
           } else if (filename.includes("")) {
             this.stashData = null;
-            d2s.readStash(bytes).then(response => {
+            d2stash.read(bytes).then(response => {
               this.stashData = response;
               for (var i = 0; i < this.stashData.pageCount; i++) {
                 [... this.stashData.pages[i].items].forEach(item => { this.setPropertiesOnItem(item)})}
@@ -815,7 +815,7 @@
           let link = document.createElement('a');
           link.style.display = 'none';
           document.body.appendChild(link);
-          d2s.writeStash(this.stashData).then(function (response) {
+          d2stash.write(this.stashData).then(function (response) {
             let blob = new Blob([response], { type: "octet/stream" });
             link.href = window.URL.createObjectURL(blob);
             link.download = 'SharedStashSoftCoreV2.d2i';
@@ -925,9 +925,9 @@
           link.remove();
         });
       },
-      async addBasesToItemPack(items, category) {
+      async addBasesToItemPack(constants, category) {
         let newItems = [];
-        for (const item of Object.entries(items)) {
+        for (const item of Object.entries(constants)) {
           const value = item[1];
           newItems.push({
             //code
@@ -955,29 +955,29 @@
       },
       async addRunewordToItemPack(constants, category) {
         let newItems = [];
-        for (const c of constants.filter(i => i !== null)) {
+        for (const item of constants.filter(i => i !== null)) {
           let socketedItems = [];
-          for (const r of c.r) {
+          for (const r of item.r) {
             socketedItems.push({type: r, simple_item: 1, identified: 1, location_id: 6})
           }
           newItems.push({
-            runeword_id: c.id,
-            runeword_name: c.n,
+            runeword_id: item.id,
+            runeword_name: item.n,
             given_runeword: 1,
             quality: 3,
             level: 90,
             ethereal: 0,
             socketed: 1,
             identified: 1,
-            types: c.types,
+            types: item.types,
             total_nr_of_sockets: socketedItems.length,
             nr_of_items_in_sockets: socketedItems.length,
             simple_item: 0,
             socketed_items: socketedItems,
-            runeword_attributes: d2s.compactAttributes(c.m, window.constants),
+            runeword_attributes: d2s.generateFixedMods(item.m, window.constants),
           });
         }
-        //d2s.enhanceItems(newItems, window.constants);
+        d2s.enhanceItems(newItems, window.constants);
         for (const item of newItems) {
           this.itempack.push({
             key: `[${category}]/${item.runeword_name}`,
@@ -985,9 +985,9 @@
           });
         }
       },
-      async addSetToItemPack(items, category) {
+      async addSetToItemPack(constants, category) {
         let newItems = [];
-        for (const item of items) {
+        for (const item of constants) {
           if (item.c) {
             newItems.push({
               //code
@@ -999,7 +999,8 @@
               set_name: item.n,
               ethereal: 0,
               identified: 1,
-              magic_attributes: d2s.compactAttributes(item.m, window.constants)
+              //set_attributes: 
+              magic_attributes: d2s.generateFixedMods(item.m, window.constants)
             });
           }
         }
@@ -1016,9 +1017,9 @@
           });
         }
       },
-      async addUniqToItemPack(items, category) {
+      async addUniqToItemPack(constants, category) {
         let newItems = [];
-        for (const item of items) {
+        for (const item of constants) {
           if (item.c) {
             newItems.push({
               //code
@@ -1030,7 +1031,7 @@
               unique_name: item.n,
               ethereal: 0,
               identified: 1,
-              magic_attributes: d2s.compactAttributes(item.m, window.constants)
+              magic_attributes: d2s.generateFixedMods(item.m, window.constants)
             });
           }
         }
@@ -1047,9 +1048,9 @@
           });
         }
       },
-      async addOtherToItemPack(items, category) {
+      async addOtherToItemPack(constants, category) {
         let newItems = [];
-        for (const item of Object.entries(items)) {
+        for (const item of Object.entries(constants)) {
           const value = item[1];
           newItems.push({
             //code

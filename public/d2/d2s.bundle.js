@@ -427,7 +427,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.compactAttributes = exports.enhanceItem = exports.enhanceItems = exports.enhancePlayerAttributes = exports.enhanceAttributes = void 0;
+exports.generateFixedMods = exports.enhanceItems = exports.enhancePlayerAttributes = exports.enhanceAttributes = void 0;
 var types = __importStar(__webpack_require__(/*! ./types */ "./src/d2/types.ts"));
 var ItemStatGroups_json_1 = __importDefault(__webpack_require__(/*! ../data/ItemStatGroups.json */ "./src/data/ItemStatGroups.json"));
 var SkillTabs_json_1 = __importDefault(__webpack_require__(/*! ../data/SkillTabs.json */ "./src/data/SkillTabs.json"));
@@ -436,20 +436,20 @@ var SkillTabs_json_1 = __importDefault(__webpack_require__(/*! ../data/SkillTabs
 //enhanced def/durability/weapon damage.
 //lookup socketed compact items (runes/gems) properties for the slot they are in
 //compute attributes like str/resists/etc..
-function enhanceAttributes(char, constants, config) {
+function enhanceAttributes(char, constants) {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
-            enhanceItems(char.items, constants, char.attributes.level, config);
-            enhanceItems([char.golem_item], constants, char.attributes.level, config);
-            enhanceItems(char.merc_items, constants, char.attributes.level, config);
-            enhanceItems(char.corpse_items, constants, char.attributes.level, config);
-            enhancePlayerAttributes(char, constants, config);
+            enhanceItems(char.items, constants);
+            enhanceItems([char.golem_item], constants);
+            enhanceItems(char.merc_items, constants);
+            enhanceItems(char.corpse_items, constants);
+            enhancePlayerAttributes(char, constants);
             return [2 /*return*/];
         });
     });
 }
 exports.enhanceAttributes = enhanceAttributes;
-function enhancePlayerAttributes(char, constants, config) {
+function enhancePlayerAttributes(char, constants) {
     return __awaiter(this, void 0, void 0, function () {
         var items;
         return __generator(this, function (_a) {
@@ -457,17 +457,16 @@ function enhancePlayerAttributes(char, constants, config) {
                 return item.location_id === 1 && item.equipped_id !== 13 && item.equipped_id !== 14;
             });
             char.item_bonuses = [].concat
-                .apply([], items.map(function (item) { return _allAttributes(item, constants); }))
+                .apply([], items.map(function (item) { return allAttributes(item, constants); }))
                 .filter(function (attribute) { return attribute != null; });
             //char.item_bonuses = _groupAttributes(char.item_bonuses, constants);
-            _enhanceAttributeDescription(char.item_bonuses, constants, char.attributes.level, config);
+            describeMods(char.item_bonuses, constants);
             return [2 /*return*/];
         });
     });
 }
 exports.enhancePlayerAttributes = enhancePlayerAttributes;
-function enhanceItems(items, constants, level, config, parent) {
-    if (level === void 0) { level = 1; }
+function enhanceItems(items, constants) {
     return __awaiter(this, void 0, void 0, function () {
         var _i, items_1, item;
         return __generator(this, function (_a) {
@@ -479,27 +478,35 @@ function enhanceItems(items, constants, level, config, parent) {
                 if (!item) {
                     continue;
                 }
-                if (item.socketed_items && item.socketed_items.length) {
-                    enhanceItems(item.socketed_items, constants, level, config, item);
-                }
-                enhanceItem(item, constants, level, config, parent);
+                postProcessItem(item, constants);
             }
             return [2 /*return*/];
         });
     });
 }
 exports.enhanceItems = enhanceItems;
-function enhanceItem(item, constants, level, config, parent) {
-    var _a, _b, _c, _d;
-    if (level === void 0) { level = 1; }
-    if (parent) {
-        //socket item.
-        var pt = constants.armor_items[parent.type] || constants.weapon_items[parent.type] || constants.other_items[item.type];
-        var t = constants.other_items[item.type];
-        if (t.m) {
-            item.magic_attributes = compactAttributes(t.m[pt.gt], constants);
+function postProcessItem(item, constants) {
+    if (item.socketed_items && item.socketed_items.length) {
+        for (var _i = 0, _a = item.socketed_items; _i < _a.length; _i++) {
+            var socketed = _a[_i];
+            var pt = constants.armor_items[item.type] || constants.weapon_items[item.type] || constants.other_items[socketed.type];
+            var gem = constants.other_items[socketed.type];
+            if (gem.m) {
+                socketed.magic_attributes = generateFixedMods(gem.m[pt.gt], constants);
+                enhanceItem(socketed, constants);
+            }
         }
     }
+    enhanceItem(item, constants);
+    if (item.magic_attributes || item.runeword_attributes || item.socketed_items) {
+        item.displayed_magic_attributes = describeMods(item.magic_attributes, constants);
+        item.displayed_runeword_attributes = describeMods(item.runeword_attributes, constants);
+        item.combined_magic_attributes = allAttributes(item, constants);
+        item.displayed_combined_magic_attributes = describeMods(item.combined_magic_attributes, constants);
+    }
+}
+function enhanceItem(item, constants) {
+    var _a, _b, _c, _d;
     item.level = boundValue(item.level, 1, 99);
     // Ensure coherence of other attributes with quality
     if (item.given_runeword) {
@@ -670,15 +677,8 @@ function enhanceItem(item, constants, level, config, parent) {
                 item.transform_color = set.tc;
         }
     }
-    if (item.magic_attributes || item.runeword_attributes || item.socketed_items) {
-        item.displayed_magic_attributes = _enhanceAttributeDescription(item.magic_attributes, constants, level, config);
-        item.displayed_runeword_attributes = _enhanceAttributeDescription(item.runeword_attributes, constants, level, config);
-        item.combined_magic_attributes = _allAttributes(item, constants);
-        item.displayed_combined_magic_attributes = _enhanceAttributeDescription(item.combined_magic_attributes, constants, level, config);
-    }
 }
-exports.enhanceItem = enhanceItem;
-function compactAttributes(mods, constants) {
+function generateFixedMods(mods, constants) {
     var _a;
     var modifiers = [];
     for (var _i = 0, mods_1 = mods; _i < mods_1.length; _i++) {
@@ -753,13 +753,12 @@ function compactAttributes(mods, constants) {
     }
     return modifiers;
 }
-exports.compactAttributes = compactAttributes;
-function _enhanceAttributeDescription(_magic_attributes, constants, level, config) {
+exports.generateFixedMods = generateFixedMods;
+function describeMods(magic_attributes, constants) {
     var _a;
-    if (level === void 0) { level = 1; }
-    if (!_magic_attributes)
+    if (!magic_attributes)
         return [];
-    var mods = __spreadArrays(_magic_attributes.map(function (attr) { return (__assign({}, attr)); }));
+    var mods = __spreadArrays(magic_attributes.map(function (attr) { return (__assign({}, attr)); }));
     for (var _i = 0, mods_2 = mods; _i < mods_2.length; _i++) {
         var mod = mods_2[_i];
         var prop = constants.magical_properties[mod.id];
@@ -775,9 +774,7 @@ function _enhanceAttributeDescription(_magic_attributes, constants, level, confi
         mod.description = describeSingleMod(mod, prop, constants);
     }
     addModGroups(mods, constants);
-    if (config === null || config === void 0 ? void 0 : config.sortProperties) {
-        mods.sort(function (a, b) { var _a, _b; return ((_a = constants.magical_properties[b.id]) === null || _a === void 0 ? void 0 : _a.so) - ((_b = constants.magical_properties[a.id]) === null || _b === void 0 ? void 0 : _b.so); });
-    }
+    mods.sort(function (a, b) { var _a, _b; return ((_a = constants.magical_properties[b.id]) === null || _a === void 0 ? void 0 : _a.so) - ((_b = constants.magical_properties[a.id]) === null || _b === void 0 ? void 0 : _b.so); });
     return mods;
 }
 function describeSingleMod(mod, prop, constants) {
@@ -1012,7 +1009,7 @@ function _itemStatCostFromStat(stat, constants) {
 function _classFromCode(code, constants) {
     return constants.classes.filter(function (e) { return e.c === code; })[0];
 }
-function _allAttributes(item, constants) {
+function allAttributes(item, constants) {
     var socketed_attributes = [];
     if (item.socketed_items) {
         for (var _i = 0, _a = item.socketed_items; _i < _a.length; _i++) {
@@ -1024,6 +1021,7 @@ function _allAttributes(item, constants) {
     }
     var magic_attributes = item.magic_attributes || [];
     var runeword_attributes = item.runeword_attributes || [];
+    //const set_attributes = item.set_attributes || [];
     return __spreadArrays([], JSON.parse(JSON.stringify(magic_attributes)), JSON.parse(JSON.stringify(runeword_attributes)), JSON.parse(JSON.stringify(socketed_attributes))).filter(function (attribute) { return attribute != null; });
 }
 
@@ -1335,7 +1333,7 @@ function read(buffer, constants, userConfig) {
                 case 8:
                     _a.sent();
                     _a.label = 9;
-                case 9: return [4 /*yield*/, attribute_enhancer_1.enhanceAttributes(char, constants, config)];
+                case 9: return [4 /*yield*/, attribute_enhancer_1.enhanceAttributes(char, constants)];
                 case 10:
                     _a.sent();
                     return [2 /*return*/, char];
@@ -2887,7 +2885,7 @@ function readStashPage(stash, reader, version, constants) {
                     return [4 /*yield*/, items.readItems(reader, version, constants, defaultConfig)];
                 case 1:
                     _a.items = _b.sent();
-                    attribute_enhancer_1.enhanceItems(page.items, constants, 1);
+                    attribute_enhancer_1.enhanceItems(page.items, constants);
                     stash.pages.push(page);
                     return [2 /*return*/];
             }
@@ -2909,7 +2907,7 @@ function readStashPart(stash, reader, version, constants) {
                     return [4 /*yield*/, items.readItems(reader, version, constants, defaultConfig)];
                 case 1:
                     _a.items = _b.sent();
-                    attribute_enhancer_1.enhanceItems(page.items, constants, 1);
+                    attribute_enhancer_1.enhanceItems(page.items, constants);
                     stash.pages.push(page);
                     return [2 /*return*/];
             }
@@ -4757,9 +4755,8 @@ Object.defineProperty(exports, "writeSkills", { enumerable: true, get: function 
 var attribute_enhancer_1 = __webpack_require__(/*! ./d2/attribute_enhancer */ "./src/d2/attribute_enhancer.ts");
 Object.defineProperty(exports, "enhanceAttributes", { enumerable: true, get: function () { return attribute_enhancer_1.enhanceAttributes; } });
 Object.defineProperty(exports, "enhanceItems", { enumerable: true, get: function () { return attribute_enhancer_1.enhanceItems; } });
-Object.defineProperty(exports, "enhanceItem", { enumerable: true, get: function () { return attribute_enhancer_1.enhanceItem; } });
 Object.defineProperty(exports, "enhancePlayerAttributes", { enumerable: true, get: function () { return attribute_enhancer_1.enhancePlayerAttributes; } });
-Object.defineProperty(exports, "compactAttributes", { enumerable: true, get: function () { return attribute_enhancer_1.compactAttributes; } });
+Object.defineProperty(exports, "generateFixedMods", { enumerable: true, get: function () { return attribute_enhancer_1.generateFixedMods; } });
 var constants_1 = __webpack_require__(/*! ./d2/constants */ "./src/d2/constants.ts");
 Object.defineProperty(exports, "getConstantData", { enumerable: true, get: function () { return constants_1.getConstantData; } });
 Object.defineProperty(exports, "setConstantData", { enumerable: true, get: function () { return constants_1.setConstantData; } });

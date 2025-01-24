@@ -361,25 +361,6 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -423,14 +404,15 @@ var __spreadArrays = (this && this.__spreadArrays) || function () {
             r[k] = a[j];
     return r;
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.compactAttributes = exports.enhanceItem = exports.enhanceItems = exports.enhancePlayerAttributes = exports.enhanceAttributes = void 0;
-var types = __importStar(__webpack_require__(/*! ./types */ "./src/d2/types.ts"));
-var ItemStatGroups_json_1 = __importDefault(__webpack_require__(/*! ../data/ItemStatGroups.json */ "./src/data/ItemStatGroups.json"));
-var SkillTabs_json_1 = __importDefault(__webpack_require__(/*! ../data/SkillTabs.json */ "./src/data/SkillTabs.json"));
+exports.enhanceItem = exports.enhanceItems = exports.enhancePlayerAttributes = exports.enhanceAttributes = void 0;
+var ItemType;
+(function (ItemType) {
+    ItemType[ItemType["Armor"] = 1] = "Armor";
+    ItemType[ItemType["Shield"] = 2] = "Shield";
+    ItemType[ItemType["Weapon"] = 3] = "Weapon";
+    ItemType[ItemType["Other"] = 4] = "Other";
+})(ItemType || (ItemType = {}));
 //do nice stuff
 //combine group properties (all resists/all stats) and build friendly strings for a ui
 //enhanced def/durability/weapon damage.
@@ -459,7 +441,7 @@ function enhancePlayerAttributes(char, constants, config) {
             char.item_bonuses = [].concat
                 .apply([], items.map(function (item) { return _allAttributes(item, constants); }))
                 .filter(function (attribute) { return attribute != null; });
-            //char.item_bonuses = _groupAttributes(char.item_bonuses, constants);
+            char.item_bonuses = _groupAttributes(char.item_bonuses, constants);
             _enhanceAttributeDescription(char.item_bonuses, constants, char.attributes.level, config);
             return [2 /*return*/];
         });
@@ -497,96 +479,30 @@ function enhanceItem(item, constants, level, config, parent) {
         var pt = constants.armor_items[parent.type] || constants.weapon_items[parent.type] || constants.other_items[item.type];
         var t = constants.other_items[item.type];
         if (t.m) {
-            item.magic_attributes = compactAttributes(t.m[pt.gt], constants);
+            item.magic_attributes = _compactAttributes(t.m[pt.gt], constants);
         }
-    }
-    item.level = boundValue(item.level, 1, 99);
-    // Ensure coherence of other attributes with quality
-    if (item.given_runeword) {
-        item.runeword_name = constants.runewords[item.runeword_id] ? constants.runewords[item.runeword_id].n : "";
-        if (item.quality > types.Quality.Superior) {
-            // Cannot be a runeword
-            item.given_runeword = 0;
-            item.runeword_id = 0;
-            item.runeword_name = "";
-            item.runeword_attributes = [];
-        }
-    }
-    if (item.quality !== types.Quality.Magic) {
-        item.magic_prefix = 0;
-        item.magic_suffix = 0;
-    }
-    if (item.quality === types.Quality.Rare || item.quality === types.Quality.Crafted) {
-        item.rare_name = constants.rare_names[item.rare_name_id] ? constants.rare_names[item.rare_name_id].n : "";
-        item.rare_name2 = constants.rare_names[item.rare_name_id2] ? constants.rare_names[item.rare_name_id2].n : "";
-    }
-    else {
-        item.rare_name_id = 0;
-        item.rare_name = "";
-        item.rare_name_id2 = 0;
-        item.rare_name2 = "";
-        item.magical_name_ids = [0, 0, 0, 0, 0, 0];
-    }
-    if (item.quality === types.Quality.Set) {
-        item.set_name = constants.set_items[item.set_id] ? constants.set_items[item.set_id].n : "";
-    }
-    else {
-        item.set_id = 0;
-        item.set_name = "";
-        item.set_attributes = [];
-    }
-    if (item.quality === types.Quality.Unique) {
-        item.unique_name = constants.unq_items[item.unique_id] ? constants.unq_items[item.unique_id].n : "";
-    }
-    else {
-        item.unique_id = 0;
-        item.unique_name = "";
-    }
-    if (item.quality !== types.Quality.Magic && item.quality !== types.Quality.Unique) {
-        item.personalized = 0;
-        item.personalized_name = "";
     }
     var details = null;
     if (constants.armor_items[item.type]) {
         details = constants.armor_items[item.type];
-        item.type_id = types.ItemType.Armor;
-        if (details.maxac) {
-            if (item.ethereal == 0) {
-                item.defense_rating = details.maxac;
-            }
-            else if (item.ethereal == 1) {
-                item.defense_rating = Math.floor(details.maxac * 1.5);
-            }
-        }
+        item.type_id = ItemType.Armor;
     }
     else if (constants.weapon_items[item.type]) {
         details = constants.weapon_items[item.type];
-        item.type_id = types.ItemType.Weapon;
+        item.type_id = ItemType.Weapon;
         var base_damage = {};
-        if (item.ethereal == 0) {
-            if (details.mind)
-                base_damage.mindam = details.mind;
-            if (details.maxd)
-                base_damage.maxdam = details.maxd;
-            if (details.min2d)
-                base_damage.twohandmindam = details.min2d;
-            if (details.max2d)
-                base_damage.twohandmaxdam = details.max2d;
-        }
-        else if (item.ethereal == 1) {
-            if (details.mind)
-                base_damage.mindam = Math.floor(details.mind * 1.5);
-            if (details.maxd)
-                base_damage.maxdam = Math.floor(details.maxd * 1.5);
-            if (details.min2d)
-                base_damage.twohandmindam = Math.floor(details.min2d * 1.5);
-            if (details.max2d)
-                base_damage.twohandmaxdam = Math.floor(details.max2d * 1.5);
-        }
+        if (details.mind)
+            base_damage.mindam = details.mind;
+        if (details.maxd)
+            base_damage.maxdam = details.maxd;
+        if (details.min2d)
+            base_damage.twohandmindam = details.min2d;
+        if (details.max2d)
+            base_damage.twohandmaxdam = details.max2d;
         item.base_damage = base_damage;
     }
     else if (constants.other_items[item.type]) {
-        item.type_id = types.ItemType.Other;
+        item.type_id = ItemType.Other;
         details = constants.other_items[item.type];
     }
     if (details) {
@@ -608,23 +524,6 @@ function enhanceItem(item, constants, level, config, parent) {
             item.item_quality = details.iq;
         if (details.c)
             item.categories = details.c;
-        if (details.durability) {
-            if (item.ethereal == 0) {
-                item.current_durability = details.durability;
-                item.max_durability = details.durability;
-            }
-            else if (item.ethereal == 1) {
-                item.current_durability = details.durability - Math.ceil(details.durability / 2) + 1;
-                item.max_durability = details.durability - Math.ceil(details.durability / 2) + 1;
-            }
-        }
-        // Enforce coherence between total_nr_of_sockets & socketed
-        if (item.total_nr_of_sockets > 0) {
-            item.socketed = 1;
-        }
-        else {
-            item.socketed = 0;
-        }
         if (item.multiple_pictures) {
             item.inv_file = details.ig[item.picture_id];
         }
@@ -673,338 +572,307 @@ function enhanceItem(item, constants, level, config, parent) {
     if (item.magic_attributes || item.runeword_attributes || item.socketed_items) {
         item.displayed_magic_attributes = _enhanceAttributeDescription(item.magic_attributes, constants, level, config);
         item.displayed_runeword_attributes = _enhanceAttributeDescription(item.runeword_attributes, constants, level, config);
-        item.combined_magic_attributes = _allAttributes(item, constants);
+        item.combined_magic_attributes = _groupAttributes(_allAttributes(item, constants), constants);
         item.displayed_combined_magic_attributes = _enhanceAttributeDescription(item.combined_magic_attributes, constants, level, config);
     }
 }
 exports.enhanceItem = enhanceItem;
-function compactAttributes(mods, constants) {
-    var _a;
-    var modifiers = [];
-    for (var _i = 0, mods_1 = mods; _i < mods_1.length; _i++) {
-        var mod = mods_1[_i];
-        var _loop_1 = function (stat) {
-            var statId = constants.magical_properties.findIndex(function (e) { return e.s === stat.s; });
-            var prop = constants.magical_properties[statId];
-            if (prop) {
-                var values = [];
-                var v = void 0;
-                var param = void 0;
-                switch (stat.type) {
-                    case "proc":
-                        values = [mod.max, mod.p, mod.min];
-                        v = mod.max;
-                        break;
-                    case "charges":
-                        values = [mod.max, mod.p, mod.min, mod.min];
-                        v = mod.max;
-                        break;
-                    case "all":
-                        values = [mod.min, mod.max];
-                        v = mod.max;
-                        param = mod.p;
-                        break;
-                    case "min":
-                        values = [mod.min];
-                        v = mod.min;
-                        break;
-                    case "max":
-                        values = [mod.max];
-                        v = mod.max;
-                    case "param":
-                        values = mod.p ? [mod.p, mod.max] : [mod.max];
-                        v = Number(mod.p);
-                        if (prop.s == "poisonlength") {
-                            values = [mod.min, mod.max, mod.p];
-                        }
-                        break;
-                    case "other":
-                        param = mod.p ? (prop.s == "item_addskill_tab" ? SkillTabs_json_1.default[Number(mod.p)].id : mod.p) : stat.val;
-                        if (param && prop.s == "item_addskill_tab") {
-                            values = [param & 0x7, (param >> 3) & 0x1fff, mod.max];
-                        }
-                        else if (param) {
-                            values = [param, mod.max];
-                        }
-                        else {
-                            values = [mod.max];
-                        }
-                        v = mod.max;
-                        if (mod.prop == "skill-rand") {
-                            var rnd = Math.floor(Math.random() * (mod.max - mod.min) + mod.min);
-                            values = [(_a = constants.skills[rnd]) === null || _a === void 0 ? void 0 : _a.id, mod.p];
-                        }
-                        break;
-                }
-                modifiers.push({
-                    id: statId,
-                    name: prop.s,
-                    values: values,
-                    value: v,
-                    param: param,
-                    type: stat.type,
-                });
-            }
-        };
-        for (var _b = 0, _c = constants.properties[mod.prop] || []; _b < _c.length; _b++) {
-            var stat = _c[_b];
-            _loop_1(stat);
-        }
-    }
-    return modifiers;
-}
-exports.compactAttributes = compactAttributes;
 function _enhanceAttributeDescription(_magic_attributes, constants, level, config) {
-    var _a;
     if (level === void 0) { level = 1; }
     if (!_magic_attributes)
         return [];
-    var mods = __spreadArrays(_magic_attributes.map(function (attr) { return (__assign({}, attr)); }));
-    for (var _i = 0, mods_2 = mods; _i < mods_2.length; _i++) {
-        var mod = mods_2[_i];
-        var prop = constants.magical_properties[mod.id];
-        mod.value = mod.values[((_a = mod.values) === null || _a === void 0 ? void 0 : _a.length) - 1];
-        mod.param = prop.dF !== 19 ? mod.values[0] : undefined;
-        //mod.df =  prop.dF;
-        //mod.so = prop.so;
+    var magic_attributes = __spreadArrays(_magic_attributes.map(function (attr) { return (__assign({}, attr)); }));
+    var dgrps = [0, 0, 0];
+    var dgrpsVal = [0, 0, 0];
+    for (var _i = 0, magic_attributes_1 = magic_attributes; _i < magic_attributes_1.length; _i++) {
+        var property = magic_attributes_1[_i];
+        var prop = constants.magical_properties[property.id];
+        var v = property.values[property.values.length - 1];
+        if (prop.dg) {
+            if (dgrpsVal[prop.dg - 1] === 0) {
+                dgrpsVal[prop.dg - 1] = v;
+            }
+            if (dgrpsVal[prop.dg - 1] - v === 0) {
+                dgrps[prop.dg - 1]++;
+            }
+        }
     }
-    consolidateMods(mods);
-    for (var _b = 0, mods_3 = mods; _b < mods_3.length; _b++) {
-        var mod = mods_3[_b];
-        var prop = constants.magical_properties[mod.id];
-        mod.description = describeSingleMod(mod, prop, constants);
-    }
-    addModGroups(mods, constants);
-    if (config === null || config === void 0 ? void 0 : config.sortProperties) {
-        mods.sort(function (a, b) { var _a, _b; return ((_a = constants.magical_properties[b.id]) === null || _a === void 0 ? void 0 : _a.so) - ((_b = constants.magical_properties[a.id]) === null || _b === void 0 ? void 0 : _b.so); });
-    }
-    return mods;
-}
-function describeSingleMod(mod, prop, constants) {
-    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-    if (!prop)
-        return;
-    var val = mod.value;
-    if (prop.s.endsWith("perlevel")) {
-        // Per-level mod, we show it for character level 99 for the flair
-        if (prop.s.includes("tohit")) {
-            val = val / 2;
+    var _loop_1 = function (property) {
+        var prop = constants.magical_properties[property.id];
+        if (prop == null) {
+            throw new Error("Cannot find Magical Property for id: " + property.id);
+        }
+        var v = property.values[property.values.length - 1];
+        if (prop.ob === "level") {
+            switch (prop.o) {
+                case 1: {
+                    v = Math.floor((level * v) / 100);
+                    break;
+                }
+                case 2:
+                case 3:
+                case 4:
+                case 5: {
+                    v = Math.floor((level * v) / Math.pow(2, prop.op));
+                    break;
+                }
+                default: {
+                    break;
+                }
+            }
+            property.op_stats = prop.os;
+            property.op_value = v;
+        }
+        var descFunc = prop.dF;
+        var descString = v >= 0 ? prop.dP : prop.dN;
+        var descVal = prop.dV;
+        var desc2 = prop.d2;
+        if (prop.dg && dgrps[prop.dg - 1] === 4) {
+            v = dgrpsVal[prop.dg - 1];
+            descString = v >= 0 ? prop.dgP : prop.dgN ? prop.dgN : prop.dgP;
+            descVal = prop.dgV;
+            descFunc = prop.dgF;
+            desc2 = prop.dg2;
+        }
+        if (prop.np) {
+            //damage range or enhanced damage.
+            var count_1 = 0;
+            descString = prop.dR;
+            if (prop.s === "poisonmindam") {
+                //poisonmindam see https://user.xmission.com/~trevin/DiabloIIv1.09_Magic_Properties.shtml for reference
+                var min = Math.floor((property.values[0] * property.values[2]) / 256);
+                var max = Math.floor((property.values[1] * property.values[2]) / 256);
+                var seconds = Math.floor(property.values[2] / 25);
+                property.values = [min, max, seconds];
+            }
+            if (property.values[0] === property.values[1]) {
+                count_1++;
+                descString = prop.dE;
+                //TODO. why???
+                if (prop.s === "item_maxdamage_percent") {
+                    descString = "+%d% " + descString.replace(/}/gi, "");
+                }
+            }
+            property.description = descString.replace(/%d/gi, function () {
+                var v = property.values[count_1++];
+                return v;
+            });
         }
         else {
-            val = val / 8;
+            _descFunc(property, constants, v, descFunc, descVal, descString, desc2);
         }
-        val = Math.floor(99 * val);
+    };
+    for (var _a = 0, magic_attributes_2 = magic_attributes; _a < magic_attributes_2.length; _a++) {
+        var property = magic_attributes_2[_a];
+        _loop_1(property);
     }
-    var modDesc = (val !== null && val !== void 0 ? val : 0) < 0 ? prop.dN : prop.dP;
-    if (prop.id == 39 || prop.id == 41 || prop.id == 43 || prop.id == 45) {
-        modDesc = prop.dP;
+    if (config === null || config === void 0 ? void 0 : config.sortProperties) {
+        //sort using sort order from game.
+        magic_attributes.sort(function (a, b) { return constants.magical_properties[b.id].so - constants.magical_properties[a.id].so; });
     }
-    var valueDesc;
-    switch (prop.dF) {
+    for (var i = magic_attributes.length - 1; i >= 1; i--) {
+        for (var j = i - 1; j >= 0; j--) {
+            if (magic_attributes[i].description === magic_attributes[j].description) {
+                magic_attributes[j].visible = false;
+            }
+        }
+    }
+    return magic_attributes;
+}
+function _compactAttributes(mods, constants) {
+    var magic_attributes = [];
+    for (var _i = 0, mods_1 = mods; _i < mods_1.length; _i++) {
+        var mod = mods_1[_i];
+        var properties = constants.properties[mod.m] || [];
+        for (var i = 0; i < properties.length; i++) {
+            var property = properties[i];
+            var stat = property.s;
+            switch (property.f) {
+                case 5: {
+                    stat = "mindamage";
+                    break;
+                }
+                case 6: {
+                    stat = "maxdamage";
+                    break;
+                }
+                case 7: {
+                    stat = "item_maxdamage_percent";
+                    break;
+                }
+                case 20: {
+                    stat = "item_indesctructible";
+                    break;
+                }
+                default: {
+                    break;
+                }
+            }
+            var id = _itemStatCostFromStat(stat, constants);
+            var prop = constants.magical_properties[id];
+            if (prop.np)
+                i += prop.np;
+            var v = [mod.min, mod.max];
+            if (mod.p) {
+                v.push(mod.p);
+            }
+            magic_attributes.push({
+                id: id,
+                values: v,
+                name: prop.s,
+            });
+        }
+    }
+    return magic_attributes;
+}
+function _descFunc(property, constants, v, descFunc, descVal, descString, desc2) {
+    if (!descFunc) {
+        return;
+    }
+    var sign = v >= 0 ? "+" : "";
+    var value = null;
+    var desc2Present = descFunc >= 6 && descFunc <= 10;
+    switch (descFunc) {
         case 1:
         case 6:
-        case 12:
-            valueDesc = (val !== null && val !== void 0 ? val : 0) < 0 ? "" + val : "+" + val;
+        case 12: {
+            value = "" + sign + v;
             break;
+        }
         case 2:
-        case 7:
-            valueDesc = val + "%";
+        case 7: {
+            value = v + "%";
             break;
+        }
         case 3:
-        case 9:
-            valueDesc = "" + val;
+        case 9: {
+            value = "" + v;
             break;
+        }
         case 4:
-        case 8:
-            valueDesc = (val !== null && val !== void 0 ? val : 0) < 0 ? val + "%" : "+" + val + "%";
+        case 8: {
+            value = "" + sign + v + "%";
             break;
+        }
         case 5:
-        case 10:
-            valueDesc = Math.floor((val * 100) / 128) + "%";
+        case 10: {
+            value = (v * 100) / 128 + "%";
             break;
-        case 11:
-            modDesc = modDesc.replace("%d", "" + 100 / val);
-            break;
-        case 13: // +[value] to [class] Skill Levels
-            modDesc = formatStr(constants.classes[mod.values[0]].as, val);
-            break;
-        case 14: // +[value] to [skilltab] Skill Levels ([class] Only)
-            var skillTab = (_a = constants.classes[mod.values[1]]) === null || _a === void 0 ? void 0 : _a.ts[mod.values[0]];
-            if (skillTab) {
-                modDesc = "+" + val + " to " + skillTab + " " + constants.classes[mod.values[1]].co;
-                modDesc = formatStr(skillTab, val) + " " + constants.classes[mod.values[1]].co;
-            }
-            break;
-        case 15: // [chance]% to cast [slvl] [skill] on [event]
-            modDesc = modDesc
-                // Extra % because the actual one is doubled to escape it
-                .replace("%d%", "" + mod.values[2])
-                .replace("%d", "" + mod.values[0])
-                .replace("%s", "" + ((_b = constants.skills[mod.values[1]]) === null || _b === void 0 ? void 0 : _b.n));
-            break;
-        case 16: // Level [sLvl] [skill] Aura When Equipped
-            modDesc = modDesc.replace("%d", "" + val).replace("%s", "" + ((_c = constants.skills[mod.values[0]]) === null || _c === void 0 ? void 0 : _c.n));
-            break;
-        case 19: //main
-            modDesc = formatStr(modDesc, val);
-            break;
-        case 20:
-            valueDesc = -val + "%";
-            break;
-        case 21:
-            valueDesc = "" + -val;
-            break;
-        case 22: // [value]% / [montype]
-            valueDesc = val + "%";
-            break;
-        case 23: // [value]% / [montype]
-            valueDesc = val + "%";
-            modDesc = formatStr(modDesc, val);
-            break;
-        case 24: // charges
-            modDesc = formatStr(modDesc, mod.values[0], constants.skills[mod.values[1]].n, mod.values[2], mod.values[3]);
-            break;
-        case 27: // +[value] to [skill] ([class] Only)
-            var skill_1 = constants.skills[mod.values[0]];
-            modDesc = formatStr(modDesc, val, skill_1 === null || skill_1 === void 0 ? void 0 : skill_1.n, (_d = constants.classes.filter(function (e) { return (e === null || e === void 0 ? void 0 : e.c) === (skill_1 === null || skill_1 === void 0 ? void 0 : skill_1.c); })[0]) === null || _d === void 0 ? void 0 : _d.co);
-            break;
-        case 28: // +[value] to [skill]
-            modDesc = formatStr(modDesc, val, (_e = constants.skills[mod.values[0]]) === null || _e === void 0 ? void 0 : _e.n);
-            break;
-        // Custom describe functions to handle groups
-        case 100:
-            // Non-poison elemental or magic damage.
-            if (((_f = mod.values) === null || _f === void 0 ? void 0 : _f[0]) !== ((_g = mod.values) === null || _g === void 0 ? void 0 : _g[1])) {
-                modDesc = prop.dN;
-            }
-            modDesc = modDesc.replace("%d", "" + ((_h = mod.values) === null || _h === void 0 ? void 0 : _h[0])).replace("%d", "" + ((_j = mod.values) === null || _j === void 0 ? void 0 : _j[1]));
-            break;
-        case 101: // Poison damage
-            if (((_k = mod.values) === null || _k === void 0 ? void 0 : _k[0]) === ((_l = mod.values) === null || _l === void 0 ? void 0 : _l[1])) {
-                modDesc = modDesc
-                    .replace("%d", "" + Math.round((mod.values[0] * mod.values[2]) / 256))
-                    .replace("%d", "" + Math.round(mod.values[2] / 25));
-            }
-            else {
-                modDesc = prop.dN
-                    .replace("%d", "" + Math.round((mod.values[0] * mod.values[2]) / 256))
-                    .replace("%d", "" + Math.round((mod.values[1] * mod.values[2]) / 256))
-                    .replace("%d", "" + Math.round(mod.values[2] / 25));
-            }
-            break;
-    }
-    if (modDesc) {
-        var fullDesc = "";
-        switch (prop.dV) {
-            case 1:
-                fullDesc = valueDesc + " " + modDesc;
-                break;
-            case 2:
-                fullDesc = modDesc + " " + valueDesc;
-                break;
-            default:
-                fullDesc = modDesc;
         }
-        if (6 <= prop.dF && prop.dF <= 9) {
-            fullDesc += " " + prop.d2;
+        case 11: {
+            property.description = descString.replace(/%d/, (v / 100).toString());
+            break;
         }
-        return fullDesc;
-    }
-}
-function addModGroups(modifiers, constants) {
-    var _a, _b, _c;
-    var _loop_2 = function (group) {
-        var mods = (_a = modifiers === null || modifiers === void 0 ? void 0 : modifiers.filter(function (_a) {
-            var id = _a.id;
-            return group.statsInGroup.includes(id);
-        })) !== null && _a !== void 0 ? _a : [];
-        // We assume a mods have been merged so we cannot have duplicates
-        if (mods.length !== group.statsInGroup.length) {
-            return "continue";
+        case 13: {
+            var clazz = constants.classes[property.values[0]];
+            property.description = "" + sign + v + " " + clazz.as;
+            break;
         }
-        if (group.allEqual && mods.some(function (_a) {
-            var value = _a.value;
-            return value !== mods[0].value;
-        })) {
-            return "continue";
+        case 14: {
+            var clazz = constants.classes[property.values[1]];
+            var skillTabStr = clazz.ts[property.values[0]];
+            descString = skillTabStr.replace(/%d/gi, v);
+            property.description = descString + " " + clazz.co;
+            break;
         }
-        // On some rare items we can get increase in min damage that's larger than the increase in max damage.
-        // The game solves this by displaying them separately.
-        if (group.isRange && ((_b = mods[0].value) !== null && _b !== void 0 ? _b : 0) > ((_c = mods[1].value) !== null && _c !== void 0 ? _c : 0)) {
-            return "continue";
-        }
-        // Damage increase on non-weapons is awkward, it has all 4 mods that apply in the multiple groups.
-        if (group.s === "group:secondary-dmg" || group.s === "group:min-dmg" || group.s === "group:max-dmg") {
-            // We already described the range, ignore these "duplicate" groups
-            if (modifiers === null || modifiers === void 0 ? void 0 : modifiers.find(function (mod) { return mod.name === "group:primary-dmg"; })) {
-                // We still have to remember to delete the description from the mods,
-                // primary-dmg only contains 2, not all 4.
-                for (var _i = 0, mods_4 = mods; _i < mods_4.length; _i++) {
-                    var mod = mods_4[_i];
-                    delete mod.description;
+        case 15: {
+            //todo... not right % chance?
+            var count_2 = 2;
+            descString = descString
+                .replace(/%d%|%s/gi, function () {
+                var v = property.values[count_2--];
+                if (count_2 == 0) {
+                    return constants.skills[v].s;
                 }
-                return "continue";
+                return v;
+            })
+                .replace(/%d/, property.values[count_2--].toString());
+            property.description = "" + descString;
+            break;
+        }
+        case 16: {
+            property.description = descString.replace(/%d/, v.toString());
+            property.description = property.description.replace(/%s/, constants.skills[property.values[0]].s);
+            break;
+        }
+        case 17: {
+            //todo
+            property.description = v + " " + descString + " (Increases near [time])";
+            break;
+        }
+        case 18: {
+            //todo
+            property.description = v + "% " + descString + " (Increases near [time])";
+            break;
+        }
+        case 19: {
+            property.description = descString.replace(/%d/, v.toString());
+            break;
+        }
+        case 20: {
+            value = v * -1 + "%";
+            break;
+        }
+        case 21: {
+            value = "" + v * -1;
+            break;
+        }
+        case 22: {
+            //todo
+            property.description = v + "% " + descString + " [montype]";
+            break;
+        }
+        case 23: {
+            //todo
+            property.description = v + "% " + descString + " [monster]]";
+            break;
+        }
+        case 24: {
+            //charges
+            var count_3 = 0;
+            descString = descString.replace(/%d/gi, function () {
+                return property.values[2 + count_3++].toString();
+            });
+            property.description = "Level " + property.values[0] + " " + constants.skills[property.values[1]].s + " " + descString;
+            break;
+        }
+        case 27: {
+            var skill = constants.skills[property.values[0]];
+            var clazz = _classFromCode(skill.c, constants);
+            property.description = "" + sign + v + " to " + (skill === null || skill === void 0 ? void 0 : skill.s) + " " + (clazz === null || clazz === void 0 ? void 0 : clazz.co);
+            break;
+        }
+        case 28: {
+            var skill = constants.skills[property.values[0]];
+            property.description = "" + sign + v + " to " + (skill === null || skill === void 0 ? void 0 : skill.s);
+            break;
+        }
+        default: {
+            throw new Error("No handler for descFunc: " + descFunc);
+        }
+    }
+    if (value) {
+        switch (descVal) {
+            case 0: {
+                property.description = "" + descString;
+                break;
+            }
+            case 1: {
+                property.description = value + " " + descString;
+                break;
+            }
+            case 2: {
+                property.description = descString + " " + value;
+                break;
+            }
+            default: {
+                throw new Error("No handler for descVal: " + descVal);
             }
         }
-        var extraMod = {
-            id: -1,
-            name: group.s,
-            so: group.so,
-            df: group.dF,
-            value: mods[0].value,
-            //value: group.allEqual ? mods[0].value : undefined,
-            values: mods.map(function (_a) {
-                var value = _a.value;
-                return value !== null && value !== void 0 ? value : 0;
-            }),
-        };
-        extraMod.description = describeSingleMod(extraMod, group, constants);
-        modifiers === null || modifiers === void 0 ? void 0 : modifiers.push(extraMod);
-        // Clear descriptions of items in group so they are not displayed
-        for (var _a = 0, mods_5 = mods; _a < mods_5.length; _a++) {
-            var mod = mods_5[_a];
-            delete mod.description;
-        }
-    };
-    for (var _i = 0, statGroups_1 = ItemStatGroups_json_1.default; _i < statGroups_1.length; _i++) {
-        var group = statGroups_1[_i];
-        _loop_2(group);
     }
-}
-function formatStr(str) {
-    var values = [];
-    for (var _i = 1; _i < arguments.length; _i++) {
-        values[_i - 1] = arguments[_i];
+    if (desc2Present) {
+        property.description += " " + desc2;
     }
-    var i = 0;
-    return str === null || str === void 0 ? void 0 : str.replace(/%(\+)?([ids%\d])/g, function (m, plus, chr) {
-        if (chr === "%") {
-            return chr;
-        }
-        else {
-            var value = chr === "d" || chr === "s" || chr === "i" ? values[i++] : values[chr];
-            if (plus && !isNaN(value) && parseInt(value) > 0)
-                value = "+" + value;
-            return value;
-        }
-    });
-}
-function consolidateMods(mods) {
-    var _a, _b;
-    var _loop_3 = function (mod) {
-        var duplicateIndex = void 0;
-        while ((duplicateIndex = mods.findIndex(function (other) { return mod !== other && mod.id === other.id && "value" in mod && mod.param === other.param; })) >= 0) {
-            var duplicate = mods.splice(duplicateIndex, 1)[0];
-            mod.value = ((_a = mod.value) !== null && _a !== void 0 ? _a : 0) + ((_b = duplicate.value) !== null && _b !== void 0 ? _b : 0);
-        }
-    };
-    for (var _i = 0, mods_6 = mods; _i < mods_6.length; _i++) {
-        var mod = mods_6[_i];
-        _loop_3(mod);
-    }
-}
-function boundValue(v, min, max) {
-    return Math.min(max, Math.max(min, v));
 }
 function _itemStatCostFromStat(stat, constants) {
     return constants.magical_properties.findIndex(function (e) { return e.s === stat; });
@@ -1025,6 +893,77 @@ function _allAttributes(item, constants) {
     var magic_attributes = item.magic_attributes || [];
     var runeword_attributes = item.runeword_attributes || [];
     return __spreadArrays([], JSON.parse(JSON.stringify(magic_attributes)), JSON.parse(JSON.stringify(runeword_attributes)), JSON.parse(JSON.stringify(socketed_attributes))).filter(function (attribute) { return attribute != null; });
+}
+function _groupAttributes(all_attributes, constants) {
+    var combined_magic_attributes = [];
+    var _loop_2 = function (magic_attribute) {
+        var prop = constants.magical_properties[magic_attribute.id];
+        var properties = combined_magic_attributes.filter(function (e) {
+            //encoded skills need to look at those params too.
+            if (prop.e === 3) {
+                return e.id === magic_attribute.id && e.values[0] === magic_attribute.values[0] && e.values[1] === magic_attribute.values[1];
+            }
+            if (prop.dF === 15) {
+                return (e.id === magic_attribute.id &&
+                    e.values[0] === magic_attribute.values[0] &&
+                    e.values[1] === magic_attribute.values[1] &&
+                    e.values[2] === magic_attribute.values[2]);
+            }
+            if (prop.dF === 16 || prop.dF === 23) {
+                return e.id === magic_attribute.id && e.values[0] === magic_attribute.values[0] && e.values[1] === magic_attribute.values[1];
+            }
+            if (prop.s === "state" || prop.s === "item_nonclassskill") {
+                //state
+                return e.id === magic_attribute.id && e.values[0] === magic_attribute.values[0] && e.values[1] === magic_attribute.values[1];
+            }
+            return e.id === magic_attribute.id;
+        });
+        if (properties && properties.length) {
+            for (var i = 0; i < properties.length; i++) {
+                var property = properties[i];
+                if (prop.np) {
+                    //damage props
+                    property.values[0] += magic_attribute.values[0];
+                    property.values[1] += magic_attribute.values[1];
+                    break;
+                }
+                //only combine attributes if the params for the descFunc are the same.
+                var sameParams = true;
+                var numValues = prop.e === 3 ? 2 : 1;
+                for (var j = 0; j < property.values.length - numValues; j++) {
+                    sameParams = property.values[j] === magic_attribute.values[j];
+                    if (!sameParams) {
+                        break;
+                    }
+                }
+                if (sameParams) {
+                    for (var j = 1; j <= numValues; j++) {
+                        var idx = property.values.length - j;
+                        property.values[idx] += magic_attribute.values[idx];
+                    }
+                }
+                else {
+                    combined_magic_attributes.push({
+                        id: magic_attribute.id,
+                        values: magic_attribute.values,
+                        name: magic_attribute.name,
+                    });
+                }
+            }
+        }
+        else {
+            combined_magic_attributes.push({
+                id: magic_attribute.id,
+                values: magic_attribute.values,
+                name: magic_attribute.name,
+            });
+        }
+    };
+    for (var _i = 0, all_attributes_1 = all_attributes; _i < all_attributes_1.length; _i++) {
+        var magic_attribute = all_attributes_1[_i];
+        _loop_2(magic_attribute);
+    }
+    return combined_magic_attributes;
 }
 
 
@@ -1081,34 +1020,11 @@ var bitwriter_1 = __webpack_require__(/*! ../binary/bitwriter */ "./src/binary/b
 //todo use constants.magical_properties and csvBits
 function readAttributes(char, reader, constants) {
     return __awaiter(this, void 0, void 0, function () {
-        var header, classData, bitoffset, id, field, size;
+        var header, bitoffset, id, field, size;
         return __generator(this, function (_a) {
             char.attributes = {};
             header = reader.ReadString(2);
             if (header != "gf") {
-                // header is not present in first save after char is created
-                if (char.header.level === 1) {
-                    classData = constants.classes.find(function (c) { return c.n === char.header.class; }).a;
-                    char.attributes = {
-                        strength: +classData.str,
-                        energy: +classData.int,
-                        dexterity: +classData.dex,
-                        vitality: +classData.vit,
-                        unused_stats: 0,
-                        unused_skill_points: 0,
-                        current_hp: +classData.vit + +classData.hpadd,
-                        max_hp: +classData.vit + +classData.hpadd,
-                        current_mana: +classData.int,
-                        max_mana: +classData.int,
-                        current_stamina: +classData.stam,
-                        max_stamina: +classData.stam,
-                        level: 1,
-                        experience: 0,
-                        gold: 0,
-                        stashed_gold: 0,
-                    };
-                    return [2 /*return*/];
-                }
                 throw new Error("Attribute header 'gf' not found at position " + (reader.offset - 2 * 8));
             }
             bitoffset = 0;
@@ -1187,33 +1103,6 @@ var Attributes = {
 
 /***/ }),
 
-/***/ "./src/d2/constants.ts":
-/*!*****************************!*\
-  !*** ./src/d2/constants.ts ***!
-  \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.setConstantData = exports.getConstantData = void 0;
-var versionedConstants = new Map();
-function getConstantData(version) {
-    if (!(version in versionedConstants)) {
-        throw new Error("No constant data found for this version " + version);
-    }
-    return versionedConstants[version];
-}
-exports.getConstantData = getConstantData;
-function setConstantData(version, data) {
-    versionedConstants[version] = data;
-}
-exports.setConstantData = setConstantData;
-
-
-/***/ }),
-
 /***/ "./src/d2/d2s.ts":
 /*!***********************!*\
   !*** ./src/d2/d2s.ts ***!
@@ -1286,7 +1175,6 @@ var bitreader_1 = __webpack_require__(/*! ../binary/bitreader */ "./src/binary/b
 var bitwriter_1 = __webpack_require__(/*! ../binary/bitwriter */ "./src/binary/bitwriter.ts");
 var skills_1 = __webpack_require__(/*! ./skills */ "./src/d2/skills.ts");
 var items = __importStar(__webpack_require__(/*! ./items */ "./src/d2/items.ts"));
-var constants_1 = __webpack_require__(/*! ./constants */ "./src/d2/constants.ts");
 var attribute_enhancer_1 = __webpack_require__(/*! ./attribute_enhancer */ "./src/d2/attribute_enhancer.ts");
 var defaultConfig = {
     extendedStash: false,
@@ -1309,11 +1197,9 @@ function read(buffer, constants, userConfig) {
                 case 1:
                     _a.sent();
                     //could load constants based on version here
-                    if (!constants) {
-                        constants = constants_1.getConstantData(char.header.version);
-                    }
                     return [4 /*yield*/, header_1.readHeaderData(char, reader, constants)];
                 case 2:
+                    //could load constants based on version here
                     _a.sent();
                     return [4 /*yield*/, attributes_1.readAttributes(char, reader, constants)];
                 case 3:
@@ -1352,9 +1238,6 @@ function readItem(buffer, version, constants, userConfig) {
                 case 0:
                     reader = new bitreader_1.BitReader(buffer);
                     config = Object.assign(defaultConfig, userConfig);
-                    if (!constants) {
-                        constants = constants_1.getConstantData(version);
-                    }
                     return [4 /*yield*/, items.readItem(reader, version, constants, config)];
                 case 1:
                     item = _a.sent();
@@ -1383,12 +1266,11 @@ function write(data, constants, userConfig) {
                     return [4 /*yield*/, header_1.writeHeader(data)];
                 case 1:
                     _b.apply(_a, [_s.sent()]);
-                    if (!constants) {
-                        constants = constants_1.getConstantData(data.header.version);
-                    }
+                    //could load constants based on version here
                     _d = (_c = writer).WriteArray;
                     return [4 /*yield*/, header_1.writeHeaderData(data, constants)];
                 case 2:
+                    //could load constants based on version here
                     _d.apply(_c, [_s.sent()]);
                     _f = (_e = writer).WriteArray;
                     return [4 /*yield*/, attributes_1.writeAttributes(data, constants)];
@@ -1433,9 +1315,6 @@ function writeItem(item, version, constants, userConfig) {
                 case 0:
                     config = Object.assign(defaultConfig, userConfig);
                     writer = new bitwriter_1.BitWriter();
-                    if (!constants) {
-                        constants = constants_1.getConstantData(version);
-                    }
                     _b = (_a = writer).WriteArray;
                     return [4 /*yield*/, items.writeItem(item, version, constants, config)];
                 case 1:
@@ -1646,25 +1525,6 @@ function _versionSpecificHeader(version) {
 
 "use strict";
 
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -1703,9 +1563,26 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports._writeMagicProperties = exports._readMagicProperties = exports.writeItem = exports.readItem = exports.writeItems = exports.readItems = exports.writeCorpseItem = exports.readCorpseItems = exports.writeGolemItems = exports.readGolemItems = exports.writeMercItems = exports.readMercItems = exports.writeCharItems = exports.readCharItems = void 0;
-var types = __importStar(__webpack_require__(/*! ./types */ "./src/d2/types.ts"));
 var bitreader_1 = __webpack_require__(/*! ../binary/bitreader */ "./src/binary/bitreader.ts");
 var bitwriter_1 = __webpack_require__(/*! ../binary/bitwriter */ "./src/binary/bitwriter.ts");
+var ItemType;
+(function (ItemType) {
+    ItemType[ItemType["Armor"] = 1] = "Armor";
+    ItemType[ItemType["Shield"] = 2] = "Shield";
+    ItemType[ItemType["Weapon"] = 3] = "Weapon";
+    ItemType[ItemType["Other"] = 4] = "Other";
+})(ItemType || (ItemType = {}));
+var Quality;
+(function (Quality) {
+    Quality[Quality["Low"] = 1] = "Low";
+    Quality[Quality["Normal"] = 2] = "Normal";
+    Quality[Quality["Superior"] = 3] = "Superior";
+    Quality[Quality["Magic"] = 4] = "Magic";
+    Quality[Quality["Set"] = 5] = "Set";
+    Quality[Quality["Rare"] = 6] = "Rare";
+    Quality[Quality["Unique"] = 7] = "Unique";
+    Quality[Quality["Crafted"] = 8] = "Crafted";
+})(Quality || (Quality = {}));
 // prettier-ignore
 //huffman tree
 var HUFFMAN = [[[[["w", "u"], [["8", ["y", ["5", ["j", []]]]], "h"]], ["s", [["2", "n"], "x"]]], [[["c", ["k", "f"]], "b"], [["t", "m"], ["9", "7"]]]], [" ", [[[["e", "d"], "p"], ["g", [[["z", "q"], "3"], ["v", "6"]]]], [["r", "l"], ["a", [["1", ["4", "0"]], ["i", "o"]]]]]]];
@@ -1718,7 +1595,7 @@ function readCharItems(char, reader, constants, config) {
             switch (_b.label) {
                 case 0:
                     _a = char;
-                    return [4 /*yield*/, readItems(reader, char.header.version, constants, config, char)];
+                    return [4 /*yield*/, readItems(reader, char.header.version, constants, config)];
                 case 1:
                     _a.items = _b.sent();
                     return [2 /*return*/];
@@ -1753,15 +1630,11 @@ function readMercItems(char, reader, constants, config) {
                     char.merc_items = [];
                     header = reader.ReadString(2);
                     if (header !== "jf") {
-                        // header is not present in first save after char is created
-                        if ((char === null || char === void 0 ? void 0 : char.header.level) === 1) {
-                            return [2 /*return*/];
-                        }
                         throw new Error("Mercenary header 'jf' not found at position " + (reader.offset - 2 * 8));
                     }
                     if (!(char.header.merc_id && parseInt(char.header.merc_id, 16) !== 0)) return [3 /*break*/, 2];
                     _a = char;
-                    return [4 /*yield*/, readItems(reader, char.header.version, constants, config, char)];
+                    return [4 /*yield*/, readItems(reader, char.header.version, constants, config)];
                 case 1:
                     _a.merc_items = _b.sent();
                     _b.label = 2;
@@ -1800,10 +1673,6 @@ function readGolemItems(char, reader, constants, config) {
                 case 0:
                     header = reader.ReadString(2);
                     if (header !== "kf") {
-                        // header is not present in first save after char is created
-                        if ((char === null || char === void 0 ? void 0 : char.header.level) === 1) {
-                            return [2 /*return*/];
-                        }
                         throw new Error("Golem header 'kf' not found at position " + (reader.offset - 2 * 8));
                     }
                     has_golem = reader.ReadUInt8();
@@ -1852,11 +1721,6 @@ function readCorpseItems(char, reader, constants, config) {
                     char.corpse_items = [];
                     header = reader.ReadString(2);
                     if (header !== "JM") {
-                        // header is not present in first save after char is created
-                        if (char.header.level === 1) {
-                            char.is_dead = 0;
-                            return [2 /*return*/];
-                        }
                         throw new Error("Corpse header 'JM' not found at position " + (reader.offset - 2 * 8));
                     }
                     char.is_dead = reader.ReadUInt16(); //0x0002 [corpse count]
@@ -1867,7 +1731,7 @@ function readCorpseItems(char, reader, constants, config) {
                     reader.SkipBytes(12); //0x0004 [unk4, x_pos, y_pos]
                     _a = char;
                     _c = (_b = char.corpse_items).concat;
-                    return [4 /*yield*/, readItems(reader, char.header.version, constants, config, char)];
+                    return [4 /*yield*/, readItems(reader, char.header.version, constants, config)];
                 case 2:
                     _a.corpse_items = _c.apply(_b, [_d.sent()]);
                     _d.label = 3;
@@ -1903,7 +1767,7 @@ function writeCorpseItem(char, constants, config) {
     });
 }
 exports.writeCorpseItem = writeCorpseItem;
-function readItems(reader, version, constants, config, char) {
+function readItems(reader, version, constants, config) {
     return __awaiter(this, void 0, void 0, function () {
         var items, header, count, i, _a, _b;
         return __generator(this, function (_c) {
@@ -1912,10 +1776,6 @@ function readItems(reader, version, constants, config, char) {
                     items = [];
                     header = reader.ReadString(2);
                     if (header !== "JM") {
-                        // header is not present in first save after char is created
-                        if ((char === null || char === void 0 ? void 0 : char.header.level) === 1) {
-                            return [2 /*return*/, []]; // TODO: return starter items based on class
-                        }
                         throw new Error("Item list header 'JM' not found at position " + (reader.offset - 2 * 8));
                     }
                     count = reader.ReadUInt16();
@@ -1964,9 +1824,9 @@ function writeItems(items, version, constants, config) {
     });
 }
 exports.writeItems = writeItems;
-function readItem(reader, version, originalConstants, config, parent) {
+function readItem(reader, version, constants, config, parent) {
     return __awaiter(this, void 0, void 0, function () {
-        var header, constants, item, i, prefix, arr, i, plist_flag, magic_attributes, i, _a, _b;
+        var header, item, i, prefix, arr, i, plist_flag, magic_attributes, i, _a, _b;
         return __generator(this, function (_c) {
             switch (_c.label) {
                 case 0:
@@ -1976,7 +1836,6 @@ function readItem(reader, version, originalConstants, config, parent) {
                             throw new Error("Item header 'JM' not found at position " + (reader.offset - 2 * 8));
                         }
                     }
-                    constants = originalConstants;
                     item = {};
                     _readSimpleBits(item, reader, version, constants, config);
                     if (!item.simple_item) {
@@ -1992,15 +1851,15 @@ function readItem(reader, version, originalConstants, config, parent) {
                             item.auto_affix_id = reader.ReadUInt16(11);
                         }
                         switch (item.quality) {
-                            case types.Quality.Low:
+                            case Quality.Low:
                                 item.low_quality_id = reader.ReadUInt8(3);
                                 break;
-                            case types.Quality.Normal:
+                            case Quality.Normal:
                                 break;
-                            case types.Quality.Superior:
+                            case Quality.Superior:
                                 item.file_index = reader.ReadUInt8(3);
                                 break;
-                            case types.Quality.Magic:
+                            case Quality.Magic:
                                 item.magic_prefix = reader.ReadUInt16(11);
                                 if (item.magic_prefix)
                                     item.magic_prefix_name = constants.magic_prefixes[item.magic_prefix] ? constants.magic_prefixes[item.magic_prefix].n : null;
@@ -2008,16 +1867,16 @@ function readItem(reader, version, originalConstants, config, parent) {
                                 if (item.magic_suffix)
                                     item.magic_suffix_name = constants.magic_suffixes[item.magic_suffix] ? constants.magic_suffixes[item.magic_suffix].n : null;
                                 break;
-                            case types.Quality.Set:
+                            case Quality.Set:
                                 item.set_id = reader.ReadUInt16(12);
                                 item.set_name = constants.set_items[item.set_id] ? constants.set_items[item.set_id].n : null;
                                 break;
-                            case types.Quality.Unique:
+                            case Quality.Unique:
                                 item.unique_id = reader.ReadUInt16(12);
                                 item.unique_name = constants.unq_items[item.unique_id] ? constants.unq_items[item.unique_id].n : null;
                                 break;
-                            case types.Quality.Rare:
-                            case types.Quality.Crafted:
+                            case Quality.Rare:
+                            case Quality.Crafted:
                                 item.rare_name_id = reader.ReadUInt8(8);
                                 if (item.rare_name_id)
                                     item.rare_name = constants.rare_names[item.rare_name_id] ? constants.rare_names[item.rare_name_id].n : null;
@@ -2044,9 +1903,6 @@ function readItem(reader, version, originalConstants, config, parent) {
                             if (item.runeword_id == 2718) {
                                 item.runeword_id = 48;
                             }
-                            else if (item.runeword_id > 2783) {
-                                item.runeword_id -= 2588;
-                            }
                             if (constants.runewords[item.runeword_id]) {
                                 item.runeword_name = constants.runewords[item.runeword_id].n;
                             }
@@ -2055,7 +1911,7 @@ function readItem(reader, version, originalConstants, config, parent) {
                         if (item.personalized) {
                             arr = new Uint8Array(16);
                             for (i = 0; i < arr.length; i++) {
-                                if (version > 0x61) {
+                                if (version == 0x62) {
                                     arr[i] = reader.ReadUInt8(8);
                                 }
                                 else {
@@ -2073,10 +1929,10 @@ function readItem(reader, version, originalConstants, config, parent) {
                         }
                         //realm data
                         item.timestamp = reader.ReadUInt8(1);
-                        if (item.type_id === types.ItemType.Armor) {
+                        if (item.type_id === ItemType.Armor) {
                             item.defense_rating = reader.ReadUInt16(constants.magical_properties[31].sB) - constants.magical_properties[31].sA;
                         }
-                        if (item.type_id === types.ItemType.Armor || item.type_id === types.ItemType.Weapon) {
+                        if (item.type_id === ItemType.Armor || item.type_id === ItemType.Weapon) {
                             item.max_durability = reader.ReadUInt16(constants.magical_properties[73].sB) - constants.magical_properties[73].sA;
                             if (item.max_durability > 0) {
                                 item.current_durability = reader.ReadUInt16(constants.magical_properties[72].sB) - constants.magical_properties[72].sA;
@@ -2089,7 +1945,7 @@ function readItem(reader, version, originalConstants, config, parent) {
                             item.total_nr_of_sockets = reader.ReadUInt8(4);
                         }
                         plist_flag = 0;
-                        if (item.quality === types.Quality.Set) {
+                        if (item.quality === Quality.Set) {
                             plist_flag = reader.ReadUInt8(5);
                             item.set_list_count = 0;
                             item._unknown_data.plist_flag = plist_flag;
@@ -2170,26 +2026,26 @@ function writeItem(item, version, constants, config) {
                             writer.WriteUInt16(item.auto_affix_id || 0, 11);
                         }
                         switch (item.quality) {
-                            case types.Quality.Low:
+                            case Quality.Low:
                                 writer.WriteUInt8(item.low_quality_id, 3);
                                 break;
-                            case types.Quality.Normal:
+                            case Quality.Normal:
                                 break;
-                            case types.Quality.Superior:
+                            case Quality.Superior:
                                 writer.WriteUInt8(item.file_index || 0, 3);
                                 break;
-                            case types.Quality.Magic:
+                            case Quality.Magic:
                                 writer.WriteUInt16(item.magic_prefix, 11);
                                 writer.WriteUInt16(item.magic_suffix, 11);
                                 break;
-                            case types.Quality.Set:
+                            case Quality.Set:
                                 writer.WriteUInt16(item.set_id, 12);
                                 break;
-                            case types.Quality.Unique:
+                            case Quality.Unique:
                                 writer.WriteUInt16(item.unique_id, 12);
                                 break;
-                            case types.Quality.Rare:
-                            case types.Quality.Crafted:
+                            case Quality.Rare:
+                            case Quality.Crafted:
                                 writer.WriteUInt8(item.rare_name_id !== undefined ? item.rare_name_id : _lookupRareId(item.rare_name, constants), 8);
                                 writer.WriteUInt8(item.rare_name_id2 !== undefined ? item.rare_name_id2 : _lookupRareId(item.rare_name2, constants), 8);
                                 for (i = 0; i < 6; i++) {
@@ -2217,14 +2073,14 @@ function writeItem(item, version, constants, config) {
                         if (item.personalized) {
                             name_1 = item.personalized_name.substring(0, 16);
                             for (i = 0; i < name_1.length; i++) {
-                                if (version > 0x61) {
+                                if (version == 0x62) {
                                     writer.WriteUInt8(name_1.charCodeAt(i), 8);
                                 }
                                 else {
                                     writer.WriteUInt8(name_1.charCodeAt(i) & 0x7f, 7);
                                 }
                             }
-                            writer.WriteUInt8(0x00, version > 0x61 ? 8 : 7);
+                            writer.WriteUInt8(0x00, version == 0x62 ? 8 : 7);
                         }
                         if (item.type === "tbk") {
                             writer.WriteUInt8(0, 5);
@@ -2233,10 +2089,10 @@ function writeItem(item, version, constants, config) {
                             writer.WriteUInt8(1, 5);
                         }
                         writer.WriteUInt8(item.timestamp, 1);
-                        if (item.type_id === types.ItemType.Armor || item.type_id === types.ItemType.Shield) {
+                        if (item.type_id === ItemType.Armor || item.type_id === ItemType.Shield) {
                             writer.WriteUInt16(item.defense_rating + constants.magical_properties[31].sA, constants.magical_properties[31].sB);
                         }
-                        if (item.type_id === types.ItemType.Armor || item.type_id === types.ItemType.Shield || item.type_id === types.ItemType.Weapon) {
+                        if (item.type_id === ItemType.Armor || item.type_id === ItemType.Shield || item.type_id === ItemType.Weapon) {
                             writer.WriteUInt16(item.max_durability || 0, constants.magical_properties[73].sB);
                             if (item.max_durability > 0) {
                                 writer.WriteUInt16(item.current_durability, constants.magical_properties[72].sB);
@@ -2248,7 +2104,7 @@ function writeItem(item, version, constants, config) {
                         if (item.socketed === 1) {
                             writer.WriteUInt8(item.total_nr_of_sockets, 4);
                         }
-                        if (item.quality === types.Quality.Set) {
+                        if (item.quality === Quality.Set) {
                             set_attribute_count = item.set_attributes != null ? item.set_attributes.length : 0;
                             plist_flag = (1 << set_attribute_count) - 1;
                             writer.WriteUInt8(item._unknown_data.plist_flag || plist_flag, 5);
@@ -2356,14 +2212,14 @@ function _readSimpleBits(item, reader, version, constants, config) {
         var details = _GetItemTXT(item, constants);
         item.categories = details === null || details === void 0 ? void 0 : details.c;
         if (item === null || item === void 0 ? void 0 : item.categories.includes("Any Armor")) {
-            item.type_id = types.ItemType.Armor;
+            item.type_id = ItemType.Armor;
         }
         else if (item === null || item === void 0 ? void 0 : item.categories.includes("Weapon")) {
-            item.type_id = types.ItemType.Weapon;
+            item.type_id = ItemType.Weapon;
             details = constants.weapon_items[item.type];
         }
         else {
-            item.type_id = types.ItemType.Other;
+            item.type_id = ItemType.Other;
         }
         var bits = item.simple_item ? 1 : 3;
         if ((_a = item.categories) === null || _a === void 0 ? void 0 : _a.includes("Quest")) {
@@ -2456,7 +2312,7 @@ function _readMagicProperties(reader, constants) {
             if (prop.sP) {
                 var param = reader.ReadUInt16(prop.sP);
                 switch (prop.dF) {
-                    case 14: //TODO +skill to skilltab
+                    case 14: //+skill to skilltab
                         values.push(param & 0x7);
                         param = (param >> 3) & 0x1fff;
                         break;
@@ -2632,10 +2488,6 @@ function readSkills(char, reader, constants) {
             offset = SkillOffset[char.header.class];
             header = reader.ReadString(2);
             if (header !== "if") {
-                // header is not present in first save after char is created
-                if (char.header.level === 1) {
-                    return [2 /*return*/]; // TODO: return starter skills based on class
-                }
                 throw new Error("Skills header 'if' not found at position " + (reader.offset - 2 * 8));
             }
             for (i = 0; i < 30; i++) {
@@ -2750,13 +2602,12 @@ var bitwriter_1 = __webpack_require__(/*! ../binary/bitwriter */ "./src/binary/b
 var items = __importStar(__webpack_require__(/*! ./items */ "./src/d2/items.ts"));
 var attribute_enhancer_1 = __webpack_require__(/*! ./attribute_enhancer */ "./src/d2/attribute_enhancer.ts");
 var bitreader_1 = __webpack_require__(/*! ../binary/bitreader */ "./src/binary/bitreader.ts");
-var constants_1 = __webpack_require__(/*! ./constants */ "./src/d2/constants.ts");
 var defaultConfig = {
     extendedStash: false,
 };
 function readStash(buffer, constants, version, userConfig) {
     return __awaiter(this, void 0, void 0, function () {
-        var stash, reader, config, firstHeader, pageCount, saveVersion, saveVersion;
+        var stash, reader, config, firstHeader, pageCount;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -2775,11 +2626,7 @@ function readStash(buffer, constants, version, userConfig) {
                     return [4 /*yield*/, readStashHeader(stash, reader)];
                 case 2:
                     _a.sent();
-                    saveVersion = version || parseInt(stash.version);
-                    if (!constants) {
-                        constants = constants_1.getConstantData(saveVersion);
-                    }
-                    return [4 /*yield*/, readStashPart(stash, reader, saveVersion, constants)];
+                    return [4 /*yield*/, readStashPart(stash, reader, version, constants)];
                 case 3:
                     _a.sent();
                     return [3 /*break*/, 1];
@@ -2789,11 +2636,7 @@ function readStash(buffer, constants, version, userConfig) {
                 case 5: return [4 /*yield*/, readStashHeader(stash, reader)];
                 case 6:
                     _a.sent();
-                    saveVersion = version || parseInt(stash.version);
-                    if (!constants) {
-                        constants = constants_1.getConstantData(saveVersion);
-                    }
-                    return [4 /*yield*/, readStashPages(stash, reader, saveVersion, constants)];
+                    return [4 /*yield*/, readStashPages(stash, reader, version, constants)];
                 case 7:
                     _a.sent();
                     _a.label = 8;
@@ -2924,10 +2767,7 @@ function writeStash(data, constants, version, userConfig) {
                 case 0:
                     config = Object.assign(defaultConfig, userConfig);
                     writer = new bitwriter_1.BitWriter();
-                    if (!constants) {
-                        constants = constants_1.getConstantData(version);
-                    }
-                    if (!(version > 0x61)) return [3 /*break*/, 5];
+                    if (!(version == 0x62)) return [3 /*break*/, 5];
                     _i = 0, _a = data.pages;
                     _h.label = 1;
                 case 1:
@@ -3065,7 +2905,7 @@ function writeStashPage(data, version, constants, config) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ItemType = exports.Quality = exports.EItemQuality = exports.EStashType = void 0;
+exports.EItemQuality = exports.EStashType = void 0;
 var EStashType;
 (function (EStashType) {
     EStashType[EStashType["shared"] = 0] = "shared";
@@ -3077,24 +2917,6 @@ var EItemQuality;
     EItemQuality[EItemQuality["exceptional"] = 1] = "exceptional";
     EItemQuality[EItemQuality["elite"] = 2] = "elite";
 })(EItemQuality = exports.EItemQuality || (exports.EItemQuality = {}));
-var Quality;
-(function (Quality) {
-    Quality[Quality["Low"] = 1] = "Low";
-    Quality[Quality["Normal"] = 2] = "Normal";
-    Quality[Quality["Superior"] = 3] = "Superior";
-    Quality[Quality["Magic"] = 4] = "Magic";
-    Quality[Quality["Set"] = 5] = "Set";
-    Quality[Quality["Rare"] = 6] = "Rare";
-    Quality[Quality["Unique"] = 7] = "Unique";
-    Quality[Quality["Crafted"] = 8] = "Crafted";
-})(Quality = exports.Quality || (exports.Quality = {}));
-var ItemType;
-(function (ItemType) {
-    ItemType[ItemType["Armor"] = 1] = "Armor";
-    ItemType[ItemType["Shield"] = 2] = "Shield";
-    ItemType[ItemType["Weapon"] = 3] = "Weapon";
-    ItemType[ItemType["Other"] = 4] = "Other";
-})(ItemType = exports.ItemType || (exports.ItemType = {}));
 
 
 /***/ }),
@@ -3118,11 +2940,11 @@ function readHeader(char, reader, constants) {
     char.header.filesize = reader.ReadUInt32(); //0x0008
     char.header.checksum = reader.ReadUInt32().toString(16).padStart(8, "0"); //0x000c
     reader.SkipBytes(4); //0x0010
-    if (char.header.version > 0x61) {
+    if (char.header.version == 0x62) {
         reader.SeekByte(267);
     }
     char.header.name = reader.ReadString(16).replace(/\0/g, ""); //0x0014
-    if (char.header.version > 0x61) {
+    if (char.header.version == 0x62) {
         reader.SeekByte(36);
     }
     char.header.status = _readStatus(reader.ReadUInt8()); //0x0024
@@ -3168,7 +2990,7 @@ function writeHeader(char, writer, constants) {
     writer
         .WriteUInt32(0x0) //0x0008 (filesize. needs to be writen after all data)
         .WriteUInt32(0x0); //0x000c (checksum. needs to be calculated after all data writer)
-    if (char.header.version > 0x61) {
+    if (char.header.version == 0x62) {
         writer.WriteArray(new Uint8Array(Array(20).fill(0))); // 0x0010
     }
     else {
@@ -3200,7 +3022,7 @@ function writeHeader(char, writer, constants) {
         .WriteUInt16(char.header.merc_name_id) //0x00b7
         .WriteUInt16(char.header.merc_type) //0x00b9
         .WriteUInt32(char.header.merc_experience); //0x00bb
-    if (char.header.version > 0x61) {
+    if (char.header.version == 0x62) {
         writer
             .WriteArray(new Uint8Array(76)) //0x00bf [unk]
             .WriteString(char.header.name, 16) //0x010b
@@ -3833,28 +3655,6 @@ function _writeNPCData(npcs) {
 
 /***/ }),
 
-/***/ "./src/data/ItemStatGroups.json":
-/*!**************************************!*\
-  !*** ./src/data/ItemStatGroups.json ***!
-  \**************************************/
-/*! exports provided: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("[{\"s\":\"group:all-attr\",\"statsInGroup\":[0,1,2,3],\"allEqual\":true,\"dP\":\"to all Attributes\",\"dN\":\"to all Attributes\",\"dF\":1,\"dV\":1,\"so\":67},{\"s\":\"group:all-res\",\"statsInGroup\":[39,41,43,45],\"allEqual\":true,\"dP\":\"All Resistances +%d\",\"dN\":\"All Resistances +%d\",\"dF\":19,\"so\":40},{\"s\":\"group:enhanced-dmg\",\"statsInGroup\":[17,18],\"allEqual\":true,\"dP\":\"Enhanced damage\",\"dN\":\"Enhanced damage\",\"dF\":4,\"dV\":1,\"so\":130},{\"s\":\"group:primary-dmg\",\"statsInGroup\":[21,22],\"isRange\":true,\"dP\":\"+%d damage\",\"dN\":\"Adds %d-%d damage\",\"dF\":100,\"so\":127},{\"s\":\"group:secondary-dmg\",\"statsInGroup\":[23,24],\"isRange\":true,\"dP\":\"+%d damage\",\"dN\":\"Adds %d-%d damage\",\"dF\":100,\"so\":124},{\"s\":\"group:fire-dmg\",\"statsInGroup\":[48,49],\"isRange\":true,\"dP\":\"+%d fire damage\",\"dN\":\"Adds %d-%d fire damage\",\"dF\":100,\"so\":102},{\"s\":\"group:light-dmg\",\"statsInGroup\":[50,51],\"isRange\":true,\"dP\":\"+%d lightning damage\",\"dN\":\"Adds %d-%d lightning damage\",\"dF\":100,\"so\":99},{\"s\":\"group:magic-dmg\",\"statsInGroup\":[52,53],\"isRange\":true,\"dP\":\"+%d magic damage\",\"dN\":\"Adds %d-%d magic damage\",\"dF\":100,\"so\":104},{\"s\":\"group:cold-dmg\",\"statsInGroup\":[54,55,56],\"isRange\":true,\"dP\":\"+%d cold damage\",\"dN\":\"Adds %d-%d cold damage\",\"dF\":100,\"so\":96},{\"s\":\"group:poison-dmg\",\"statsInGroup\":[57,58,59],\"isRange\":true,\"dP\":\"+%d poison damage over %d seconds\",\"dN\":\"Adds %d-%d poison damage over %d seconds\",\"dF\":101,\"so\":92},{\"s\":\"group:min-dmg\",\"statsInGroup\":[21,23],\"allEqual\":true,\"dP\":\"to Minimum Damage\",\"dN\":\"to Minimum Damage\",\"dF\":1,\"dV\":1,\"so\":127},{\"s\":\"group:max-dmg\",\"statsInGroup\":[22,24],\"allEqual\":true,\"dP\":\"to Maximum Damage\",\"dN\":\"to Maximum Damage\",\"dF\":1,\"dV\":1,\"so\":126}]");
-
-/***/ }),
-
-/***/ "./src/data/SkillTabs.json":
-/*!*********************************!*\
-  !*** ./src/data/SkillTabs.json ***!
-  \*********************************/
-/*! exports provided: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("[{\"id\":0,\"name\":\"Bow and Crossbow Skills\",\"charClass\":0},{\"id\":1,\"name\":\"Passive and Magic Skills\",\"charClass\":0},{\"id\":2,\"name\":\"Javelin and Spear Skills\",\"charClass\":0},{\"id\":8,\"name\":\"Fire Skills\",\"charClass\":1},{\"id\":9,\"name\":\"Lightning Skills\",\"charClass\":1},{\"id\":10,\"name\":\"Cold Skills\",\"charClass\":1},{\"id\":16,\"name\":\"Curses Skills\",\"charClass\":2},{\"id\":17,\"name\":\"Poison and Bone Skills\",\"charClass\":2},{\"id\":18,\"name\":\"Necromancer Summoning Skills\",\"charClass\":2},{\"id\":24,\"name\":\"Paladin Combat Skills\",\"charClass\":3},{\"id\":25,\"name\":\"Offensive Auras Skills\",\"charClass\":3},{\"id\":26,\"name\":\"Defensive Auras Skills\",\"charClass\":3},{\"id\":32,\"name\":\"Barbarian Combat Skills\",\"charClass\":4},{\"id\":33,\"name\":\"Masteries Skills\",\"charClass\":4},{\"id\":34,\"name\":\"Warcries Skills\",\"charClass\":4},{\"id\":40,\"name\":\"Druid Summoning Skills\",\"charClass\":5},{\"id\":41,\"name\":\"Shape Shifting Skills\",\"charClass\":5},{\"id\":42,\"name\":\"Elemental Skills\",\"charClass\":5},{\"id\":48,\"name\":\"Traps Skills\",\"charClass\":6},{\"id\":49,\"name\":\"Shadow Disciplines Skills\",\"charClass\":6},{\"id\":50,\"name\":\"Martial Arts Skills\",\"charClass\":6}]");
-
-/***/ }),
-
 /***/ "./src/data/parser.ts":
 /*!****************************!*\
   !*** ./src/data/parser.ts ***!
@@ -3906,20 +3706,9 @@ var item_property_stat_count = {
 //TODO use smaller field names to minimize size of file.
 function readConstantData(buffers) {
     var constants = {};
-    var strings = {};
-    if (_hasKey(buffers, "strings.txt")) {
-        strings = _readStrings(_getKey(buffers, "string.txt"));
-        strings = Object.assign(strings, _readStrings(_getKey(buffers, "expansionstring.txt")));
-        strings = Object.assign(strings, _readStrings(_getKey(buffers, "patchstring.txt")));
-    }
-    else {
-        strings = _readJSONStrings(_getKey(buffers, "item-gems.json"));
-        strings = Object.assign(strings, _readJSONStrings(_getKey(buffers, "item-modifiers.json")));
-        strings = Object.assign(strings, _readJSONStrings(_getKey(buffers, "item-nameaffixes.json")));
-        strings = Object.assign(strings, _readJSONStrings(_getKey(buffers, "item-names.json")));
-        strings = Object.assign(strings, _readJSONStrings(_getKey(buffers, "item-runes.json")));
-        strings = Object.assign(strings, _readJSONStrings(_getKey(buffers, "skills.json")));
-    }
+    var strings = _readStrings(_getKey(buffers, "string.txt"));
+    strings = Object.assign(strings, _readStrings(_getKey(buffers, "expansionstring.txt")));
+    strings = Object.assign(strings, _readStrings(_getKey(buffers, "patchstring.txt")));
     constants.classes = _readClasses(_getArray(buffers, "CharStats.txt"), _getArray(buffers, "PlayerClass.txt"), strings);
     var skillDescs = _readSkillDesc(_getArray(buffers, "SkillDesc.txt"), strings);
     constants.skills = _readSkills(_getArray(buffers, "skills.txt"), skillDescs, strings);
@@ -3929,9 +3718,9 @@ function readConstantData(buffers) {
     constants.magic_suffixes = _readMagicNames(_getArray(buffers, "MagicSuffix.txt"), strings);
     constants.properties = _readProperties(_getArray(buffers, "Properties.txt"), strings);
     constants.magical_properties = _readItemStatCosts(_getArray(buffers, "ItemStatCost.txt"), strings);
-    constants.runewords = _readRunewords(_getArray(buffers, "Runes.txt"), strings, constants.skills);
-    constants.set_items = _readSetOrUnqItems(_getArray(buffers, "SetItems.txt"), strings, constants.skills);
-    constants.unq_items = _readSetOrUnqItems(_getArray(buffers, "UniqueItems.txt"), strings, constants.skills);
+    constants.runewords = _readRunewords(_getArray(buffers, "Runes.txt"), strings);
+    constants.set_items = _readSetOrUnqItems(_getArray(buffers, "SetItems.txt"), strings);
+    constants.unq_items = _readSetOrUnqItems(_getArray(buffers, "UniqueItems.txt"), strings);
     var item_types = _readTypes(_getArray(buffers, "ItemTypes.txt"), strings);
     var armor_items = _readItems(_getArray(buffers, "Armor.txt"), item_types, strings);
     var weapon_items = _readItems(_getArray(buffers, "Weapons.txt"), item_types, strings);
@@ -3968,9 +3757,6 @@ function _getKey(files, find) {
     }
     return files[key];
 }
-function _hasKey(files, find) {
-    return Object.keys(files).find(function (key) { return key.toLowerCase() === find.toLowerCase(); }) != null;
-}
 function _readTsv(file) {
     var lines = file.split(/\r?\n/).map(function (line) { return line.split(/\t/); });
     var header = lines[0];
@@ -3991,29 +3777,9 @@ function _readStrings(file) {
     });
     return result;
 }
-function _readJSONStrings(file) {
-    var result = {};
-    //remove BOM
-    if (file.charCodeAt(0) === 0xfeff) {
-        file = file.slice(1);
-    }
-    var data = JSON.parse(file);
-    for (var _i = 0, data_1 = data; _i < data_1.length; _i++) {
-        var str = data_1[_i];
-        result[str.Key] = str.enUS;
-    }
-    return result;
-}
 function _readClasses(tsv, tsv2, strings) {
     var arr = [];
     var cClass = tsv.header.indexOf("class");
-    // str	dex	int	vit	tot	stamina
-    var cStr = tsv.header.indexOf("str");
-    var cDex = tsv.header.indexOf("dex");
-    var cInt = tsv.header.indexOf("int");
-    var cVit = tsv.header.indexOf("vit");
-    var cStam = tsv.header.indexOf("stamina");
-    var cHpadd = tsv.header.indexOf("hpadd");
     var cLifePerLvl = tsv.header.indexOf("LifePerLevel");
     var cStamPerLvl = tsv.header.indexOf("StaminaPerLevel");
     var cManaPerLvl = tsv.header.indexOf("ManaPerLevel");
@@ -4031,7 +3797,6 @@ function _readClasses(tsv, tsv2, strings) {
         var clazz = tsv.lines[i][cClass];
         if (clazz && clazz != "Expansion") {
             arr[id] = {
-                id: id,
                 n: clazz,
                 c: tsv2.lines[i][cCode],
                 as: strings[tsv.lines[i][cAllSkills]],
@@ -4044,14 +3809,6 @@ function _readClasses(tsv, tsv2, strings) {
                     lpv: +tsv.lines[i][cLifePerVit],
                     spv: +tsv.lines[i][cStamPerVit],
                     mpe: +tsv.lines[i][cManaPerMag],
-                },
-                a: {
-                    str: +tsv.lines[i][cStr],
-                    dex: +tsv.lines[i][cDex],
-                    int: +tsv.lines[i][cInt],
-                    vit: +tsv.lines[i][cVit],
-                    stam: +tsv.lines[i][cStam],
-                    hpadd: tsv.lines[i][cHpadd],
                 },
             };
             id++;
@@ -4074,23 +3831,16 @@ function _readSkillDesc(tsv, strings) {
 }
 function _readSkills(tsv, skillDescs, strings) {
     var arr = [];
-    var cSkill = tsv.header.indexOf("skill");
     var cSkillDesc = tsv.header.indexOf("skilldesc");
     var cId = tsv.header.indexOf("Id");
-    if (cId < 0) {
-        cId = tsv.header.indexOf("*Id");
-    }
     var cCharclass = tsv.header.indexOf("charclass");
     for (var i = 1; i < tsv.lines.length; i++) {
         var id = +tsv.lines[i][cId];
         var skillDesc = tsv.lines[i][cSkillDesc];
         if (skillDesc) {
             var o = {};
-            o.id = id;
-            if (tsv.lines[i][cSkillDesc])
-                o.s = tsv.lines[i][cSkill];
             if (skillDescs[skillDesc])
-                o.n = skillDescs[skillDesc];
+                o.s = skillDescs[skillDesc];
             if (tsv.lines[i][cCharclass])
                 o.c = tsv.lines[i][cCharclass];
             arr[id] = o;
@@ -4106,7 +3856,6 @@ function _readRareNames(tsv, idx, strings) {
         var name_1 = tsv.lines[i][cName];
         if (name_1) {
             arr[id - idx] = {
-                id: id,
                 n: strings[name_1],
             };
             id++;
@@ -4123,7 +3872,6 @@ function _readMagicNames(tsv, strings) {
         var name_2 = tsv.lines[i][cName];
         if (name_2 != "Expansion") {
             var o = {};
-            o.id = id;
             o.n = strings[name_2];
             if (tsv.lines[i][cTransformcolor])
                 o.tc = tsv.lines[i][cTransformcolor];
@@ -4141,117 +3889,38 @@ function _readProperties(tsv, strings) {
         cStats[j] = {};
         cStats[j].cStat = tsv.header.indexOf("stat" + j);
         cStats[j].cFunc = tsv.header.indexOf("func" + j);
-        cStats[j].cVal = tsv.header.indexOf("val" + j);
     }
     for (var i = 1; i < tsv.lines.length; i++) {
-        var propId = tsv.lines[i][cCode];
-        if (propId != "Expansion") {
-            var stats = [];
+        var code = tsv.lines[i][cCode];
+        if (code != "Expansion") {
+            var prop = [];
             //prop.code = code;
             for (var j = 1; j <= 7; j++) {
-                var stat = void 0;
-                var type = void 0;
+                var stat = tsv.lines[i][cStats[j].cStat];
                 var func = tsv.lines[i][cStats[j].cFunc];
-                stat = tsv.lines[i][cStats[j].cStat];
-                type = propertyTypeFromFunc(func);
-                var val = tsv.lines[i][cStats[j].cVal];
                 if (!stat && !func) {
                     break;
-                }
-                switch (func) {
-                    case "5": {
-                        stat = "mindamage";
-                        type = "other";
-                        break;
-                    }
-                    case "6": {
-                        stat = "maxdamage";
-                        type = "other";
-                        break;
-                    }
-                    // case "": {
-                    //   stat = "item_mindamage_percent";
-                    //   type = "other";
-                    //   break;
-                    // }
-                    case "7": {
-                        stat = "item_maxdamage_percent";
-                        type = "all";
-                        break;
-                    }
-                    case "20": {
-                        stat = "item_indesctructible";
-                        type = "other";
-                        break;
-                    }
-                    // case "23": {
-                    //   stat = "ethereal"
-                    //   break;
-                    // }
-                    default: {
-                        break;
-                    }
                 }
                 var s = {};
                 if (stat)
                     s.s = stat;
-                if (type)
-                    s.type = type;
                 if (func)
                     s.f = +func;
-                if (val)
-                    s.val = +val;
-                stats[j - 1] = s;
+                prop[j - 1] = s;
             }
-            arr[propId] = stats;
+            if (prop.length) {
+                arr[code] = prop;
+            }
         }
     }
     return arr;
 }
-function propertyTypeFromFunc(func) {
-    switch (func) {
-        case "11":
-            return "proc";
-        case "19":
-            return "charges";
-        case "3":
-            return "all";
-        case "15":
-            return "min";
-        case "16":
-            return "max";
-        case "17":
-            return "param";
-        default:
-            return "other";
-    }
-}
-function _readRunewords(tsv, strings, skills) {
-    var _a;
+function _readRunewords(tsv, strings) {
     var arr = [];
     var cName = tsv.header.indexOf("Name");
-    var cComplete = tsv.header.indexOf("complete");
-    var types = [];
-    for (var i = 1; i < 7; i++) {
-        types.push(tsv.header.indexOf("itype" + i));
-    }
-    var runes = [];
-    for (var i = 1; i < 7; i++) {
-        runes.push(tsv.header.indexOf("Rune" + i));
-    }
-    var modifiers = [];
-    for (var i = 1; i < 12; i++) {
-        modifiers[i] = [];
-        modifiers[i].cMod = tsv.header.indexOf("T1Code" + i);
-        modifiers[i].cParam = tsv.header.indexOf("T1Param" + i);
-        modifiers[i].cMin = tsv.header.indexOf("T1Min" + i);
-        modifiers[i].cMax = tsv.header.indexOf("T1Max" + i);
-    }
-    var _loop_1 = function (i) {
+    for (var i = 1; i < tsv.lines.length; i++) {
         var name_3 = tsv.lines[i][cName];
-        var enabled = tsv.lines[i][cComplete];
-        var o = {};
-        if (enabled) {
+        if (name_3) {
             var id = +name_3.substring(8);
             //TODO: why?
             if (id > 75) {
@@ -4260,58 +3929,10 @@ function _readRunewords(tsv, strings, skills) {
             else {
                 id += 26;
             }
-            o.id = id;
-            o.n = strings[tsv.lines[i][cName]];
-            var t = [];
-            for (var j = 0; j <= 6; j++) {
-                var type = tsv.lines[i][types[j]];
-                if (!type) {
-                    break;
-                }
-                t[j] = type;
-            }
-            o.types = t;
-            var r = [];
-            for (var j = 0; j <= 6; j++) {
-                var rune = tsv.lines[i][runes[j]];
-                if (!rune) {
-                    break;
-                }
-                r[j] = rune;
-            }
-            o.r = r;
-            o.m = [];
-            var s = skills.filter(function (s) { return s && s.s; });
-            var _loop_2 = function (j) {
-                var mod = tsv.lines[i][modifiers[j].cMod];
-                if (!mod) {
-                    return "break";
-                }
-                var m = {};
-                m.prop = mod;
-                var param = Number(+tsv.lines[i][modifiers[j].cParam]);
-                //string value
-                if (Number.isNaN(param)) {
-                    param = (_a = s.find(function (s) { return s.s.trim().toLocaleLowerCase() == tsv.lines[i][modifiers[j].cParam].trim().toLocaleLowerCase(); })) === null || _a === void 0 ? void 0 : _a.id;
-                }
-                if (tsv.lines[i][modifiers[j].cParam])
-                    m.p = param;
-                if (tsv.lines[i][modifiers[j].cMin])
-                    m.min = +tsv.lines[i][modifiers[j].cMin];
-                if (tsv.lines[i][modifiers[j].cMax])
-                    m.max = +tsv.lines[i][modifiers[j].cMax];
-                o.m.push(m);
+            arr[id] = {
+                n: strings[tsv.lines[i][cName]],
             };
-            for (var j = 1; j < 12; j++) {
-                var state_1 = _loop_2(j);
-                if (state_1 === "break")
-                    break;
-            }
-            arr[id] = o;
         }
-    };
-    for (var i = 1; i < tsv.lines.length; i++) {
-        _loop_1(i);
     }
     return arr;
 }
@@ -4366,9 +3987,6 @@ function _readItems(tsv, itemtypes, strings) {
     var cCode = tsv.header.indexOf("code");
     var cNameStr = tsv.header.indexOf("namestr");
     var cStackable = tsv.header.indexOf("stackable");
-    var cMinac = tsv.header.indexOf("minac");
-    var cMaxac = tsv.header.indexOf("maxac");
-    var cDurability = tsv.header.indexOf("durability");
     var cMindam = tsv.header.indexOf("mindam");
     var cMaxdam = tsv.header.indexOf("maxdam");
     var cTwoHandMindam = tsv.header.indexOf("2handmindam");
@@ -4389,11 +4007,6 @@ function _readItems(tsv, itemtypes, strings) {
     var cNormCode = tsv.header.indexOf("normcode");
     var cUberCode = tsv.header.indexOf("ubercode");
     var cUltraCode = tsv.header.indexOf("ultracode");
-    var cGemSockets = tsv.header.indexOf("gemsockets");
-    var cSpawnable = tsv.header.indexOf("spawnable");
-    var cOneOrTwoHadned = tsv.header.indexOf("1or2handed");
-    var cTwoHanded = tsv.header.indexOf("2handed");
-    var cNodurability = tsv.header.indexOf("nodurability");
     for (var i = 1; i < tsv.lines.length; i++) {
         var code = tsv.lines[i][cCode];
         if (code) {
@@ -4411,12 +4024,6 @@ function _readItems(tsv, itemtypes, strings) {
             item.n = strings[tsv.lines[i][cNameStr]];
             if (tsv.lines[i][cStackable] && +tsv.lines[i][cStackable] > 0)
                 item.s = 1;
-            if (tsv.lines[i][cMinac] && +tsv.lines[i][cMinac] > 0)
-                item.minac = +tsv.lines[i][cMinac];
-            if (tsv.lines[i][cMaxac] && +tsv.lines[i][cMaxac] > 0)
-                item.maxac = +tsv.lines[i][cMaxac];
-            if (tsv.lines[i][cDurability])
-                item.durability = +tsv.lines[i][cDurability];
             if (tsv.lines[i][cMindam] && +tsv.lines[i][cMindam] > 0)
                 item.mind = +tsv.lines[i][cMindam];
             if (tsv.lines[i][cMaxdam] && +tsv.lines[i][cMaxdam] > 0)
@@ -4449,22 +4056,6 @@ function _readItems(tsv, itemtypes, strings) {
                 item.ih = +tsv.lines[i][cInvheight];
             if (tsv.lines[i][cInvtransform])
                 item.it = +tsv.lines[i][cInvtransform];
-            if (tsv.lines[i][cType])
-                item.type = tsv.lines[i][cType];
-            if (tsv.lines[i][cGemSockets]) {
-                item.gemsockets = +tsv.lines[i][cGemSockets];
-            }
-            else {
-                item.gemsockets = 0;
-            }
-            if (tsv.lines[i][cSpawnable])
-                item.spawnable = +tsv.lines[i][cSpawnable];
-            if (tsv.lines[i][cOneOrTwoHadned])
-                item.handed1or2 = +tsv.lines[i][cOneOrTwoHadned];
-            if (tsv.lines[i][cTwoHanded])
-                item.handed2 = +tsv.lines[i][cTwoHanded];
-            if (tsv.lines[i][cNodurability])
-                item.nodurability = +tsv.lines[i][cNodurability];
             var type = itemtypes[tsv.lines[i][cType]];
             if (type && type.ig) {
                 item.ig = type.ig;
@@ -4496,14 +4087,8 @@ function _readGems(miscItems, tsv, strings) {
         var code = tsv.lines[i][cCode];
         if (code && code != "Expansion") {
             var item = miscItems[code];
-            // const row = {
-            //   weapon: [],
-            //   helm: [],
-            //   shield: [],
-            // };
             for (var k = 0; k < 3; k++) {
                 var type = types[k];
-                //const m = {} as any;
                 for (var j = 1; j <= 3; j++) {
                     var mod = tsv.lines[i][cols[type][j].cMod];
                     if (!mod) {
@@ -4515,7 +4100,7 @@ function _readGems(miscItems, tsv, strings) {
                         item.m[k] = [];
                     }
                     var m = {};
-                    m.prop = mod;
+                    m.m = mod;
                     if (tsv.lines[i][cols[type][j].cParam])
                         m.p = +tsv.lines[i][cols[type][j].cParam];
                     if (tsv.lines[i][cols[type][j].cMin])
@@ -4524,14 +4109,11 @@ function _readGems(miscItems, tsv, strings) {
                         m.max = +tsv.lines[i][cols[type][j].cMax];
                     item.m[k].push(m);
                 }
-                //row[type].push(m);
             }
-            //item.m = row;
         }
     }
 }
-function _readSetOrUnqItems(tsv, strings, skills) {
-    var _a;
+function _readSetOrUnqItems(tsv, strings) {
     var arr = [];
     var cIndex = tsv.header.indexOf("index");
     var cInvfile = tsv.header.indexOf("invfile");
@@ -4539,21 +4121,11 @@ function _readSetOrUnqItems(tsv, strings, skills) {
     if (cCode < 0)
         cCode = tsv.header.indexOf("item");
     var cInvtransform = tsv.header.indexOf("invtransform");
-    var cLvl = tsv.header.indexOf("lvl");
-    var modifiers = [];
-    for (var i = 1; i < 12; i++) {
-        modifiers[i] = [];
-        modifiers[i].cMod = tsv.header.indexOf("prop" + i);
-        modifiers[i].cParam = tsv.header.indexOf("par" + i);
-        modifiers[i].cMin = tsv.header.indexOf("min" + i);
-        modifiers[i].cMax = tsv.header.indexOf("max" + i);
-    }
     var id = 0;
-    var _loop_3 = function (i) {
+    for (var i = 1; i < tsv.lines.length; i++) {
         var index = tsv.lines[i][cIndex];
         if (index && index != "Expansion") {
             var o = {};
-            o.id = id;
             o.n = strings[tsv.lines[i][cIndex]];
             if (tsv.lines[i][cInvfile])
                 o.i = tsv.lines[i][cInvfile];
@@ -4561,39 +4133,9 @@ function _readSetOrUnqItems(tsv, strings, skills) {
                 o.c = tsv.lines[i][cCode];
             if (tsv.lines[i][cInvtransform])
                 o.tc = tsv.lines[i][cInvtransform];
-            if (tsv.lines[i][cLvl])
-                o.lvl = tsv.lines[i][cLvl];
-            o.m = [];
-            var _loop_4 = function (j) {
-                var mod = tsv.lines[i][modifiers[j].cMod];
-                if (!mod) {
-                    return "break";
-                }
-                var m = {};
-                m.prop = mod;
-                var param = Number(+tsv.lines[i][modifiers[j].cParam]);
-                if (Number.isNaN(param)) {
-                    param = (_a = skills.filter(function (s) { return s && s.s; }).find(function (s) { return s.s == tsv.lines[i][modifiers[j].cParam]; })) === null || _a === void 0 ? void 0 : _a.id;
-                }
-                if (tsv.lines[i][modifiers[j].cParam])
-                    m.p = param;
-                if (tsv.lines[i][modifiers[j].cMin])
-                    m.min = +tsv.lines[i][modifiers[j].cMin];
-                if (tsv.lines[i][modifiers[j].cMax])
-                    m.max = +tsv.lines[i][modifiers[j].cMax];
-                o.m.push(m);
-            };
-            for (var j = 1; j < 12; j++) {
-                var state_2 = _loop_4(j);
-                if (state_2 === "break")
-                    break;
-            }
             arr[id] = o;
             id++;
         }
-    };
-    for (var i = 1; i < tsv.lines.length; i++) {
-        _loop_3(i);
     }
     return arr;
 }
@@ -4601,9 +4143,6 @@ function _readItemStatCosts(tsv, strings) {
     var arr = [];
     var cStat = tsv.header.indexOf("Stat");
     var cId = tsv.header.indexOf("ID");
-    if (cId < 0) {
-        cId = tsv.header.indexOf("*ID");
-    }
     var cCSvBits = tsv.header.indexOf("CSvBits");
     var cCSvParam = tsv.header.indexOf("CSvParam");
     var cCSvSigned = tsv.header.indexOf("CSvSigned");
@@ -4631,13 +4170,11 @@ function _readItemStatCosts(tsv, strings) {
     var cOpStat1 = tsv.header.indexOf("op stat1");
     var cOpStat2 = tsv.header.indexOf("op stat2");
     var cOpStat3 = tsv.header.indexOf("op stat3");
-    var id = 0;
     for (var i = 1; i < tsv.lines.length; i++) {
-        //const id = +tsv.lines[i][cId];
+        var id = +tsv.lines[i][cId];
         var stat = tsv.lines[i][cStat];
         if (stat) {
             var o = {};
-            o.id = id;
             o.s = stat;
             if (tsv.lines[i][cCSvBits])
                 o.cB = +tsv.lines[i][cCSvBits];
@@ -4700,7 +4237,6 @@ function _readItemStatCosts(tsv, strings) {
                 o.dE = strings[dmgstatrange.equalstr];
             }
             arr[id] = o;
-            id++;
         }
     }
     return arr;
@@ -4757,17 +4293,10 @@ Object.defineProperty(exports, "writeSkills", { enumerable: true, get: function 
 var attribute_enhancer_1 = __webpack_require__(/*! ./d2/attribute_enhancer */ "./src/d2/attribute_enhancer.ts");
 Object.defineProperty(exports, "enhanceAttributes", { enumerable: true, get: function () { return attribute_enhancer_1.enhanceAttributes; } });
 Object.defineProperty(exports, "enhanceItems", { enumerable: true, get: function () { return attribute_enhancer_1.enhanceItems; } });
-Object.defineProperty(exports, "enhanceItem", { enumerable: true, get: function () { return attribute_enhancer_1.enhanceItem; } });
 Object.defineProperty(exports, "enhancePlayerAttributes", { enumerable: true, get: function () { return attribute_enhancer_1.enhancePlayerAttributes; } });
-Object.defineProperty(exports, "compactAttributes", { enumerable: true, get: function () { return attribute_enhancer_1.compactAttributes; } });
-var constants_1 = __webpack_require__(/*! ./d2/constants */ "./src/d2/constants.ts");
-Object.defineProperty(exports, "getConstantData", { enumerable: true, get: function () { return constants_1.getConstantData; } });
-Object.defineProperty(exports, "setConstantData", { enumerable: true, get: function () { return constants_1.setConstantData; } });
 __exportStar(__webpack_require__(/*! ./data/parser */ "./src/data/parser.ts"), exports);
 exports.types = __importStar(__webpack_require__(/*! ./d2/types */ "./src/d2/types.ts"));
-var stash_1 = __webpack_require__(/*! ./d2/stash */ "./src/d2/stash.ts");
-Object.defineProperty(exports, "readStash", { enumerable: true, get: function () { return stash_1.readStash; } });
-Object.defineProperty(exports, "writeStash", { enumerable: true, get: function () { return stash_1.writeStash; } });
+__exportStar(__webpack_require__(/*! ./d2/stash */ "./src/d2/stash.ts"), exports);
 
 
 /***/ })

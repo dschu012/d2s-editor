@@ -120,19 +120,21 @@ export default {
     },
     numValues(id) {
       let stat = this.stats[id];
-      if (stat.np) {
-        return stat.np
+      if (stat) {
+        if (stat.np) {
+          return stat.np
+        }
+        if (stat.dF == 14 || stat.e == 2) {
+          return 3;
+        }
+        if (stat.e == 3) {
+          return 4;
+        }
+        if (stat.sP) {
+          return 2;
+        }
+        return 1;
       }
-      if (stat.dF == 14 || stat.e == 2) {
-        return 3;
-      }
-      if (stat.e == 3) {
-        return 4;
-      }
-      if (stat.sP) {
-        return 2;
-      }
-      return 1;
     }
   }
 }  
