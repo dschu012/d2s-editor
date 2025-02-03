@@ -42,10 +42,12 @@
               <Item v-if="preview?.type" :item="preview" clazz="item-edit"></Item>
             </div>
             <label for="Item">Item</label>
-            <multiselect v-model="previewModel" :options="itempack" label="key" valueProp="value" :searchable="true" @update:model-value="setPreviewItem"/>
+            <multiselect v-model="previewModel" :options="itempack" label="key" valueProp="value" :searchable="true"
+              @update:model-value="setPreviewItem" />
             <div v-if="baseOptions">
               <label>Base</label>
-              <multiselect v-model="baseModel" :options="baseOptions" label="label" valueProp="value" :searchable="true" @update:model-value="setBase"/>
+              <multiselect v-model="baseModel" :options="baseOptions" label="label" valueProp="value" :searchable="true"
+                @update:model-value="setBase" />
             </div>
           </div>
           <div class="modal-footer">
@@ -75,7 +77,8 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" name="d2sFile" class="custom-file-input" multiple @change="onFileChange" id="d2sFile" accept=".d2s,.d2i">
+                        <input type="file" name="d2sFile" class="custom-file-input" multiple @change="onFileChange"
+                          id="d2sFile" accept=".d2s,.d2i">
                         <label class="custom-file-label load-save-label" for="d2sFile">*.d2s,*.d2i</label>
                       </div>
                       <!-- <div>
@@ -101,8 +104,8 @@
                           <a class="nav-link" href="#">Create new</a>
                         </li>
                         <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle" href="#" id="navbarGeneral" role="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarGeneral" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Amazon
                           </a>
                           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarGeneral">
@@ -119,8 +122,8 @@
                           </div>
                         </li>
                         <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle" href="#" id="navbarGeneral" role="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarGeneral" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Assassin
                           </a>
                           <div class="dropdown-menu" aria-labelledby="navbarGeneral">
@@ -131,8 +134,8 @@
                           </div>
                         </li>
                         <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle" href="#" id="navbarGeneral" role="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarGeneral" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Barbarian
                           </a>
                           <div class="dropdown-menu" aria-labelledby="navbarGeneral">
@@ -144,8 +147,8 @@
                           </div>
                         </li>
                         <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle" href="#" id="navbarGeneral" role="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarGeneral" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Druid
                           </a>
                           <div class="dropdown-menu" aria-labelledby="navbarGeneral">
@@ -156,8 +159,8 @@
                           </div>
                         </li>
                         <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle" href="#" id="navbarGeneral" role="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarGeneral" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Necromancer
                           </a>
                           <div class="dropdown-menu" aria-labelledby="navbarGeneral">
@@ -168,8 +171,8 @@
                           </div>
                         </li>
                         <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle" href="#" id="navbarGeneral" role="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarGeneral" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Paladin
                           </a>
                           <div class="dropdown-menu" aria-labelledby="navbarGeneral">
@@ -181,8 +184,8 @@
                           </div>
                         </li>
                         <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle" href="#" id="navbarGeneral" role="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarGeneral" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Sorceress
                           </a>
                           <div class="dropdown-menu" aria-labelledby="navbarGeneral">
@@ -203,8 +206,8 @@
                   <div v-if="save != null">
                     <ul class="nav nav-tabs" id="tabs">
                       <li class="nav-item">
-                        <a class="nav-link active" id="items-tab" data-toggle="tab" data-target="#items-content" role="tab"
-                          type="button">Equipment</a>
+                        <a class="nav-link active" id="items-tab" data-toggle="tab" data-target="#items-content"
+                          role="tab" type="button">Equipment</a>
                       </li>
                       <li class="nav-item" role="presentation">
                         <a class="nav-link" id="stats-tab" data-toggle="tab" data-target="#stats-content" role="tab"
@@ -219,13 +222,14 @@
                           type="button">Quests</a>
                       </li>
                       <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="waypoints-tab" data-toggle="tab" data-target="#waypoints-content" role="tab"
-                          type="button">Waypoints</a>
+                        <a class="nav-link" id="waypoints-tab" data-toggle="tab" data-target="#waypoints-content"
+                          role="tab" type="button">Waypoints</a>
                       </li>
                     </ul>
                     <div class="tab-content" id="tabs-content">
                       <div class="tab-pane show active" id="items-content" role="tabpanel">
-                        <div v-for="(notification, idx) in notifications" :key="idx" :class="notification.alert" role="alert">
+                        <div v-for="(notification, idx) in notifications" :key="idx" :class="notification.alert"
+                          role="alert">
                           {{ notification.message }}
                           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
@@ -233,18 +237,22 @@
                         </div>
                         <div class="row mt-3">
                           <div class="col-auto equipment-inventory-col">
-                            <Equipped :items.sync="equipped" @item-selected="onSelect" @item-event="onEvent" :id="'Equipped'" :contextMenu="$refs.contextMenu">
+                            <Equipped :items.sync="equipped" @item-selected="onSelect" @item-event="onEvent"
+                              :id="'Equipped'" :contextMenu="$refs.contextMenu">
                             </Equipped>
                             <!-- <Grid v-if="activeTab == 1 || activeTab == 10" :width="grid.inv.w" :height="grid.inv.h" :page="1"
                               :items.sync="inventory" @item-selected="onSelect" @item-event="onEvent" :id="'InventoryGrid'" :contextMenu="$refs.contextMenu">
                             </Grid> -->
-                            <Stash :items.sync="stash" @item-selected="onSelect" @item-event="onEvent" :id="'Stash'" :contextMenu="$refs.contextMenu">
+                            <Stash :items.sync="stash" @item-selected="onSelect" @item-event="onEvent" :id="'Stash'"
+                              :contextMenu="$refs.contextMenu">
                             </Stash>
-                            <Mercenary :items.sync="mercenary" @item-selected="onSelect" :contextMenu="$refs.contextMenu">
+                            <Mercenary :items.sync="mercenary" @item-selected="onSelect"
+                              :contextMenu="$refs.contextMenu">
                             </Mercenary>
                             <div class="cube">
                               <Grid class="cube__grid" :width="grid.cube.w" :height="grid.cube.h" :page="8"
-                                    :items.sync="cube" @item-selected="onSelect" @item-event="onEvent" :id="'CubeGrid'" :contextMenu="$refs.contextMenu">
+                                :items.sync="cube" @item-selected="onSelect" @item-event="onEvent" :id="'CubeGrid'"
+                                :contextMenu="$refs.contextMenu">
                               </Grid>
                             </div>
                           </div>
@@ -252,26 +260,14 @@
                             <div class="col">
                               <div class="row mb-3 justify-content-end">
                                 <button type="button" class="btn btn-primary" :disabled="!clipboard"
-                                        @click="paste()">Paste</button>
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#LoadItem">Load
+                                  @click="paste()">Paste</button>
+                                <button type="button" class="btn btn-primary" data-toggle="modal"
+                                  data-target="#LoadItem">Load
                                   Item</button>
                               </div>
                             </div>
-                            <ItemEditor v-if="selected" :id="'Selected'" :item.sync="selected" :location="location" ref="editor" @item-event="onEvent"></ItemEditor>
-                            <div v-if="save != null">
-                              <div class="row">
-                                <button type="button" @click="unlockHell" class="btn btn-primary">Unlock Hell</button>
-                                <button type="button" @click="unlockAllWPs" class="btn btn-primary">Unlock All WPs</button>
-                                <button type="button" @click="setLvl99" class="btn btn-primary">Set Level 99</button>
-                                <button type="button" @click="setAllSkills20" class="btn btn-primary">Set All Skills 20</button>
-                                <button type="button" @click="unlockQs" class="btn btn-primary">Complete Skill/Stat Qs</button>
-                                <button type="button" @click="maxGold" class="btn btn-primary">Max Gold</button>
-                              </div>
-                              <div class="row mt-3">
-                                <button type="button" id="d2" class="btn btn-primary" @click="saveFile(0x60)">Save D2</button>
-                                <button type="button" id="d2r" class="btn btn-primary" @click="saveFile(0x63)">Save D2R</button>
-                              </div>
-                            </div>
+                            <ItemEditor v-if="selected" :id="'Selected'" :item.sync="selected" :location="location"
+                              ref="editor" @item-event="onEvent"></ItemEditor>
                           </div>
                         </div>
                       </div>
@@ -286,6 +282,20 @@
                       </div>
                       <div class="tab-pane" id="skills-content" role="tabpanel">
                         <Skills v-bind:save.sync="save" />
+                      </div>
+                    </div>
+                    <div v-if="save != null">
+                      <div class="row">
+                        <button type="button" @click="unlockHell" class="btn btn-primary">Unlock Hell</button>
+                        <button type="button" @click="unlockAllWPs" class="btn btn-primary">Unlock All WPs</button>
+                        <button type="button" @click="setLvl99" class="btn btn-primary">Set Level 99</button>
+                        <button type="button" @click="setAllSkills20" class="btn btn-primary">Set All Skills 20</button>
+                        <button type="button" @click="unlockQs" class="btn btn-primary">Complete Skill/Stat Qs</button>
+                        <button type="button" @click="maxGold" class="btn btn-primary">Max Gold</button>
+                      </div>
+                      <div class="row mt-3">
+                        <button type="button" id="d2" class="btn btn-primary" @click="saveFile(0x60)">Save D2</button>
+                        <button type="button" id="d2r" class="btn btn-primary" @click="saveFile(0x63)">Save D2R</button>
                       </div>
                     </div>
                   </div>

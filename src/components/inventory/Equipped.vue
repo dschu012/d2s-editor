@@ -308,8 +308,7 @@ export default {
       this.alt_displayed = value;
     },
     onSelect(item) {
-      console.log(item);
-
+      //console.log(item);
       // this.selected = item;
       this.$emit('item-selected', item);
     },
