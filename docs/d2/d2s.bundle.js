@@ -493,8 +493,8 @@ function postProcessItem(item, constants) {
             var gem = constants.other_items[socketed.type];
             if (gem.m) {
                 socketed.magic_attributes = generateFixedMods(gem.m[pt.gt], constants);
-                enhanceItem(socketed, constants);
             }
+            enhanceItem(socketed, constants);
         }
     }
     enhanceItem(item, constants);
